@@ -14,7 +14,7 @@ from typing import Any
 
 import monitor
 
-PAGE_SIZE = 60
+PAGE_SIZE = 90
 
 # High-signal terms that often indicate collectability or a miscatalogued special copy.
 SIGNALS: list[tuple[str, int]] = [
@@ -38,7 +38,7 @@ NAMES = {
     "alec soth": 14, "joel sternfeld": 12, "joel meyerowitz": 11, "lee friedlander": 12,
     "garry winogrand": 12, "bruce davidson": 11, "bruce gilden": 9, "saul leiter": 11,
     "daido moriyama": 14, "shomei tomatsu": 15, "nobuyoshi araki": 11, "eikoh hosoe": 13,
-    "masahisa fukase": 15, "ikKo narahara": 10, "hiroshi sugimoto": 11,
+    "masahisa fukase": 15, "ikko narahara": 10, "hiroshi sugimoto": 11,
     "ed van der elsken": 15, "josef koudelka": 15, "chris killip": 15, "paul graham": 14,
     "raymond depardon": 10, "rene burri": 10, "anders petersen": 13,
     "bernd becher": 13, "hilla becher": 13, "lewis baltz": 14, "robert adams": 13,
@@ -137,7 +137,6 @@ def score_item(item: dict[str, Any]) -> tuple[int, list[str]]:
         elif price >= 250:
             score -= 4
 
-    # Give a small boost to listings with unusually specific bibliographic clues.
     if re.search(r"\b(19[3-9]\d|200[0-9])\b", hay):
         score += 1
     if "dust jacket" in hay or "dustjacket" in hay or "dj" in hay:
@@ -172,7 +171,6 @@ def main() -> int:
         print(f"page {page + 1}/{pages}: +{len(items)} ({len(all_items)} collected)")
         time.sleep(0.25)
 
-    # Deduplicate by SKU while retaining catalogue order.
     seen: set[str] = set()
     unique: list[dict[str, Any]] = []
     for item in all_items:
