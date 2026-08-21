@@ -1,0 +1,62 @@
+name: Oxfam full Art and Photography parent scan
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "oxfam_parent_common.py"
+      - "parent_full_scan.py"
+      - ".github/workflows/parent-full-scan.yml"
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: oxfam-parent-full-scan
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Deep-scan complete Oxfam Art and Photography parent category
+        run: python parent_full_scan.py
+
+      - name: Persist candidate snapshot
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data/oxfam_parent_full_candidates.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update Oxfam broad Art and Photography scan [skip ci]"
+            for attempt in 1 2 3 4; do
+              git pull --rebase origin main
+              if git push origin HEAD:main; then
+                break
+              fi
+              if [ "$attempt" = "4" ]; then
+                exit 1
+              fi
+            done
+          fi
+
+      - name: Create deep-scan analysis issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create \
+            --title "$(cat runtime/parent_full_scan/issue-title.txt)" \
+            --body-file runtime/parent_full_scan/issue-body.md
