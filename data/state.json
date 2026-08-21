@@ -1,7 +1,10 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-08-21T14:40:54Z",
+  "last_successful_fetch": "2026-08-21T15:33:53Z",
   "last_top_skus": [
+    "HD_304173261",
+    "HD_304183237",
+    "HD_304178882",
     "HD_304182664",
     "HD_304182695",
     "HD_303805354",
@@ -28,10 +31,7 @@
     "HD_304178702",
     "HD_304178566",
     "HD_304178260",
-    "HD_304178059",
-    "HD_304155902",
-    "HD_304120456",
-    "HD_304120308"
+    "HD_304178059"
   ],
   "products": {
     "HD_303805354": {
@@ -178,6 +178,22 @@
       },
       "search_fingerprint": "95d14af412d3a7e6"
     },
+    "HD_304173261": {
+      "first_seen": "2026-08-21T15:33:53Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787324463000",
+        "description": "Shelf wear.<br/>Small pencil text on first page.<br/>No foxing.<br/>Page edges very lightly tanned.<br/>",
+        "isbn": null,
+        "price_gbp": 69.99,
+        "product_id": "book-HD__304173261",
+        "publisher": null,
+        "route": "/photography-at-the-bauhaus/product/HD_304173261",
+        "sku": "HD_304173261",
+        "title": "Photography at the Bauhaus"
+      },
+      "search_fingerprint": "d4a1b18de13f295f"
+    },
     "HD_304177228": {
       "first_seen": "baseline",
       "last_snapshot": {
@@ -273,6 +289,22 @@
         "title": "Souvenirs From Japan : Japanese Photography at the Turn of the Century - Margarita Winkel"
       },
       "search_fingerprint": "9275a7610bc47541"
+    },
+    "HD_304178882": {
+      "first_seen": "2026-08-21T15:33:53Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787322602000",
+        "description": "The are stickers and a tear to the front of the cellophane dust cover.<br/>57 black & white photographs  by the French photographer, Bettina Rheims with a forward by Serge Bramley, centered on taxidermy and stuffed animals",
+        "isbn": null,
+        "price_gbp": 30.0,
+        "product_id": "book-HD__304178882",
+        "publisher": null,
+        "route": "/animal/product/HD_304178882",
+        "sku": "HD_304178882",
+        "title": "Animal"
+      },
+      "search_fingerprint": "313260aaf74fbe2d"
     },
     "HD_304178974": {
       "first_seen": "baseline",
@@ -549,8 +581,24 @@
         "title": "Martin Parr:  Think of England [photography]"
       },
       "search_fingerprint": "a30d9dc5530ec9b6"
+    },
+    "HD_304183237": {
+      "first_seen": "2026-08-21T15:33:53Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787324311000",
+        "description": "A clean copy.<br/><br/>John Myers' portrait and landscape photography was produced throughout the 1970s in and around the West Midlands and went largely unnoticed until a signature exhibition at the Ikon Gallery, Birmingham in 2011. This new publication presents the artist's photographic response to 1970s conceptualism, and situates his work in the wider international context.Myers' landscape work compares favourably to the new understandings of 'man altered landscape' photography which were developed by the luminaries of the New Topographics movement (including Stephen Shore, Lewis Baltz and Bend and Hilla Becher) in the USA and in Europe from in the mid 1970s.It is becoming increasingly clear that this body of work was many years ahead of his time, asking visionary questions about what photography and landscape were 'for' in a uniquely austere series of black and white prints.Accompanies the exhibition at UH Galleries, Hatfield (2 December 2016 - 21 January 2017); Departure Lounge, Luton (24 February - 29 April 2017); and Wolverhampton Art Gallery and Museum, (3 March - 27 May 2018).",
+        "isbn": null,
+        "price_gbp": 25.0,
+        "product_id": "book-HD__304183237",
+        "publisher": null,
+        "route": "/john-myers-the-world-is-not-beautiful/product/HD_304183237",
+        "sku": "HD_304183237",
+        "title": "John Myers - the World Is Not Beautiful"
+      },
+      "search_fingerprint": "7d94810f463f30bd"
     }
   },
-  "reported_category_count": 2820,
+  "reported_category_count": 2822,
   "version": 1
 }
