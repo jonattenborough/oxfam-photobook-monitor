@@ -1,7 +1,9 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-08-21T15:33:53Z",
+  "last_successful_fetch": "2026-08-21T16:48:42Z",
   "last_top_skus": [
+    "HD_304183335",
+    "HD_304183301",
     "HD_304173261",
     "HD_304183237",
     "HD_304178882",
@@ -29,9 +31,7 @@
     "HD_304178974",
     "HD_304178787",
     "HD_304178702",
-    "HD_304178566",
-    "HD_304178260",
-    "HD_304178059"
+    "HD_304178566"
   ],
   "products": {
     "HD_303805354": {
@@ -597,8 +597,40 @@
         "title": "John Myers - the World Is Not Beautiful"
       },
       "search_fingerprint": "7d94810f463f30bd"
+    },
+    "HD_304183301": {
+      "first_seen": "2026-08-21T16:48:42Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787325840000",
+        "description": "This text documents Andreas Gursky's most recent work, consisting of four new groups of works that place the individual image within a specific thematic context. One of the main focal points in his work is the congregation of people and the places where they meet, be it a stock exchange, a high-tech factory or leisure facilities.<br/><br/>Book in good condition, at a glance it looks VG with only very minor defects. However, previous owner has fixed a tear in the top left corner of the dust jacket with cellotape. The die-cut space between the k&y in Gursky is also slightly damaged. Overall this makes it Good.",
+        "isbn": null,
+        "price_gbp": 24.99,
+        "product_id": "book-HD__304183301",
+        "publisher": null,
+        "route": "/andreas-gursky/product/HD_304183301",
+        "sku": "HD_304183301",
+        "title": "Andreas Gursky"
+      },
+      "search_fingerprint": "e2ce2397f69dd9a6"
+    },
+    "HD_304183335": {
+      "first_seen": "2026-08-21T16:48:42Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787327290000",
+        "description": "This book is a photographic record of a series of journeys made along five of the ancient Roman roads of Italy  the Via Appia, which extended from Rome to the great port of Brindisi, thus linking the city with the Orient; Via Cassia to Siena; Via Flaminia to Bologna; Via Aurelia to San Remo; Via Aemelia from Parma to Rimini (where it joined the Via Flaminia).<br/>These routes offer a natural framework to a record of the varied regions of Italy and how they have evolved over two thousand years - and an insight into the fusion of old and new that gives Italy its distinctive character. The journeys are rich in evocative contrasts, with the most modern expressions of 21st-century life played out against ancient backdrops.<br/>John Heseltine's romantic black and white photographs will appeal to all lovers of Italy.<br/><br/>The book is in very good condition with its only flaws being a small tear and some light scratching and scuffing on the dust sheet.",
+        "isbn": null,
+        "price_gbp": 5.99,
+        "product_id": "book-HD__304183335",
+        "publisher": null,
+        "route": "/roads-to-rome/product/HD_304183335",
+        "sku": "HD_304183335",
+        "title": "Roads to Rome"
+      },
+      "search_fingerprint": "0b3d43a78a36edd3"
     }
   },
-  "reported_category_count": 2822,
+  "reported_category_count": 2824,
   "version": 1
 }
