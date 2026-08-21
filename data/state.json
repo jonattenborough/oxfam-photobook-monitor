@@ -1,8 +1,9 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-08-21T14:20:55Z",
+  "last_successful_fetch": "2026-08-21T14:40:54Z",
   "last_top_skus": [
     "HD_304182664",
+    "HD_304182695",
     "HD_303805354",
     "HD_304179996",
     "HD_304177228",
@@ -30,8 +31,7 @@
     "HD_304178059",
     "HD_304155902",
     "HD_304120456",
-    "HD_304120308",
-    "HD_304163972"
+    "HD_304120308"
   ],
   "products": {
     "HD_303805354": {
@@ -533,8 +533,24 @@
         "title": "Casa Susanna"
       },
       "search_fingerprint": "10f47d22bb4e9145"
+    },
+    "HD_304182695": {
+      "first_seen": "2026-08-21T14:40:54Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787319961000",
+        "description": "By acclaimed Magnum photographer Martin Parr, with introductory text by Gerry Badger, this hardcover is a vibrant, comic, and affectionately satirical photo-essay on modern English identity.  It captures stereotypical and everyday elements of English life, ranging from high-society events like the Ascot races to seaside resorts, charity shops, baked beans, and tea drinking.  The book serves as a landmark cultural commentary, documenting the nuances of what it means to be English during a shifting political climate within Great Britain.<br/><br/>There is some minor damage to the bottom of the front cover.",
+        "isbn": null,
+        "price_gbp": 100.0,
+        "product_id": "book-HD__304182695",
+        "publisher": null,
+        "route": "/martin-parr-think-of-england-photography/product/HD_304182695",
+        "sku": "HD_304182695",
+        "title": "Martin Parr:  Think of England [photography]"
+      },
+      "search_fingerprint": "a30d9dc5530ec9b6"
     }
   },
-  "reported_category_count": 2818,
+  "reported_category_count": 2820,
   "version": 1
 }
