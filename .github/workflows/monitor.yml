@@ -1,4 +1,4 @@
-name: Oxfam photobook monitor
+name: Charity photobook monitor
 
 on:
   schedule:
@@ -8,6 +8,7 @@ on:
     branches: [main]
     paths:
       - "monitor.py"
+      - "charity_monitor.py"
       - ".github/workflows/monitor.yml"
 
 permissions:
@@ -15,13 +16,13 @@ permissions:
   issues: write
 
 concurrency:
-  group: oxfam-photobook-monitor
+  group: charity-photobook-monitor
   cancel-in-progress: false
 
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 8
 
     steps:
       - name: Check out repository
@@ -33,11 +34,15 @@ jobs:
           python-version: "3.13"
 
       - name: Query Oxfam and detect new listings
-        id: monitor
+        id: oxfam
         run: python monitor.py
 
-      - name: Create analysis issue for new listings
-        if: steps.monitor.outputs.new_count != '0'
+      - name: Query Shelter and Crisis
+        id: charity
+        run: python charity_monitor.py
+
+      - name: Create Oxfam analysis issue
+        if: steps.oxfam.outputs.new_count != '0'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -45,15 +50,43 @@ jobs:
             --title "$(cat runtime/issue-title.txt)" \
             --body-file runtime/issue-body.md
 
-      - name: Persist monitor state
-        if: steps.monitor.outputs.state_changed == 'true'
+      - name: Create Shelter/Crisis analysis issue
+        if: steps.charity.outputs.new_count != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          cp runtime/proposed-state.json data/state.json
+          gh issue create \
+            --title "$(cat runtime/charity/issue-title.txt)" \
+            --body-file runtime/charity/issue-body.md
+
+      - name: Persist monitor state only when catalogue data changed
+        env:
+          OXFAM_CHANGED: ${{ steps.oxfam.outputs.state_changed }}
+        run: |
+          set -euo pipefail
+          changed=false
+
+          if [ "$OXFAM_CHANGED" = "true" ]; then
+            cp runtime/proposed-state.json data/state.json
+            changed=true
+          fi
+
+          jq 'del(.last_checked) | .products |= with_entries(.value |= del(.last_seen))' data/charity_state.json > /tmp/charity-old.json
+          jq 'del(.last_checked) | .products |= with_entries(.value |= del(.last_seen))' runtime/charity/proposed-state.json > /tmp/charity-new.json
+          if ! cmp -s /tmp/charity-old.json /tmp/charity-new.json; then
+            cp runtime/charity/proposed-state.json data/charity_state.json
+            changed=true
+          fi
+
+          if [ "$changed" != "true" ]; then
+            exit 0
+          fi
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- data/state.json
+          git add -- data/state.json data/charity_state.json
           if git diff --cached --quiet; then
             exit 0
           fi
-          git commit -m "Update Oxfam monitor state [skip ci]"
+          git commit -m "Update charity monitor state [skip ci]"
           git push
