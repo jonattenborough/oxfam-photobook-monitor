@@ -84,6 +84,33 @@ TARGETS = [
     "john davies", "chris steele-perkins", "café royal books", "cafe royal books",
 ]
 
+# Short or generic canonical titles must not score by themselves. For example,
+# "go" previously matched ordinary prose in most descriptions. These title hits
+# count only when the associated photographer is present in the same listing.
+PAIRED_TARGETS = {
+    "the americans": ("robert frank",),
+    "guide": ("william eggleston",),
+    "diary": ("corinne day",),
+    "observations": ("richard avedon",),
+    "black book": ("robert mapplethorpe",),
+    "evidence": ("larry sultan", "mike mandel"),
+    "kodachrome": ("luigi ghirri",),
+    "go": ("bruce gilden",),
+    "stray dog": ("daido moriyama",),
+    "homecoming": ("don mccullin",),
+    "new west": ("robert adams",),
+    "summer nights": ("robert adams",),
+    "cape light": ("joel meyerowitz",),
+    "animals": ("gary winogrand",),
+    "self portrait": ("lee friedlander",),
+    "white women": ("helmut newton",),
+    "ravens": ("masahisa fukase",),
+    "the map": ("kikuji kawada",),
+    "chizu": ("kikuji kawada",),
+    "living room": ("nick waplington",),
+    "shipping forecast": ("mark power",),
+}
+
 PHOTO_TERMS = [
     "photograph", "photography", "photographer", "photographic", "photobook", "photo book",
     "photojournal", "camera", "darkroom", "contact sheet", "black-and-white photographs",
@@ -124,7 +151,13 @@ def score(item: dict[str, Any]) -> tuple[int, list[str]]:
     points = 0
     reasons: list[str] = []
 
-    targets = sorted({t for t in TARGETS if t in text})
+    targets = {t for t in TARGETS if t not in PAIRED_TARGETS and t in text}
+    targets.update(
+        title
+        for title, photographers in PAIRED_TARGETS.items()
+        if title in text and any(photographer in text for photographer in photographers)
+    )
+    targets = sorted(targets)
     if targets:
         points += min(40, 20 + 5 * (len(targets) - 1))
         reasons.append("target: " + ", ".join(targets[:5]))
