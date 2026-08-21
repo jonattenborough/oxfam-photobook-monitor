@@ -182,6 +182,63 @@ def discover_parent_dimension_id() -> tuple[str, str | None]:
     )
 
 
+def _collection_node(payload: dict[str, Any], repository_id: str) -> dict[str, Any] | None:
+    for node in iter_dicts(payload):
+        node_id = node.get("repositoryId") or node.get("id")
+        if str(node_id or "") == repository_id and node.get("dimensionId") not in (None, ""):
+            return node
+    for node in iter_dicts(payload):
+        if node.get("dimensionId") not in (None, "") and isinstance(node.get("childCategories"), list):
+            return node
+    return None
+
+
+def discover_leaf_dimension_ids(parent_repository_id: str | None) -> list[str]:
+    """Return leaf dimensions beneath the parent to bypass Oracle's roughly 10k result cap."""
+    if not parent_repository_id:
+        return []
+
+    queue = [parent_repository_id]
+    seen: set[str] = set()
+    leaves: list[str] = []
+    while queue and len(seen) < 1200:
+        repository_id = queue.pop(0)
+        if repository_id in seen:
+            continue
+        seen.add(repository_id)
+        payload = request_json(
+            BASE_URL + "/ccstore/v1/collections/" + urllib.parse.quote(repository_id, safe=""),
+            {
+                "catalogId": CATALOG_ID,
+                "expand": "childCategories",
+                "disableActiveProdCheck": "true",
+            },
+            retries=3,
+        )
+        node = _collection_node(payload, repository_id)
+        if not node:
+            raise RuntimeError(f"Could not parse Oxfam collection {repository_id!r}")
+
+        child_ids: list[str] = []
+        children = node.get("childCategories")
+        if isinstance(children, list):
+            for child in children:
+                if not isinstance(child, dict):
+                    continue
+                child_id = child.get("repositoryId") or child.get("id")
+                if child_id:
+                    child_ids.append(str(child_id))
+
+        if child_ids:
+            queue.extend(child_id for child_id in child_ids if child_id not in seen)
+        elif repository_id != parent_repository_id:
+            dimension_id = node.get("dimensionId")
+            if dimension_id not in (None, ""):
+                leaves.append(str(dimension_id))
+
+    return list(dict.fromkeys(leaves))
+
+
 def find_results_summary(payload: dict[str, Any]) -> dict[str, Any]:
     event = payload.get("searchEventSummary")
     if not isinstance(event, dict):
@@ -211,6 +268,12 @@ def find_results_summary(payload: dict[str, Any]) -> dict[str, Any]:
         if isinstance(summary, dict) and isinstance(summary.get("records"), list):
             return summary
     raise RuntimeError("No record-bearing resultsSummary found")
+
+
+def total_matching_records(payload: dict[str, Any]) -> int | None:
+    summary = find_results_summary(payload)
+    value = summary.get("totalMatchingRecords")
+    return value if isinstance(value, int) else None
 
 
 def require_newest_first(payload: dict[str, Any]) -> None:

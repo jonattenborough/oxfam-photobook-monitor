@@ -4,7 +4,7 @@ This patch adds two independent jobs alongside the existing Oxfam Photography mo
 
 ## 1. One-off full parent scan
 
-`parent_full_scan.py` crawls the entire Oxfam **Art & Photography** parent category at 90 products per request. It dynamically resolves the Oracle Commerce search dimension from the public route:
+`parent_full_scan.py` crawls the entire Oxfam **Art & Photography** parent category at 90 products per request. It dynamically resolves the Oracle Commerce search dimension from the public route and traverses its leaf categories to bypass Oracle's roughly 10,000-result ceiling:
 
 `/art-and-photography/category/art-photography`
 

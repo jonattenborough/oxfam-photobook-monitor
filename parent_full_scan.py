@@ -11,11 +11,13 @@ from typing import Any
 from oxfam_parent_common import (
     absolute_product_url,
     collect_metadata,
+    discover_leaf_dimension_ids,
     discover_parent_dimension_id,
     fetch_search,
     item_from_meta,
     ordered_skus,
     searchable_text,
+    total_matching_records,
     utc_now,
 )
 
@@ -173,35 +175,72 @@ def score(item: dict[str, Any]) -> tuple[int, list[str]]:
     return points, reasons
 
 
+def add_payload_items(payload: dict[str, Any], items: dict[str, dict[str, Any]]) -> tuple[int, list[str]]:
+    skus, product_ids = ordered_skus(payload)
+    metadata = collect_metadata(payload, set(skus))
+    added = 0
+    for sku in skus:
+        if sku in items:
+            continue
+        items[sku] = item_from_meta(sku, product_ids.get(sku), metadata.get(sku, {}))
+        added += 1
+    return added, skus
+
+
+def crawl_dimension(
+    dimension_id: str,
+    label: str,
+    items: dict[str, dict[str, Any]],
+    allow_backend_cap: bool = False,
+) -> None:
+    offset = 0
+    page = 0
+    local_seen: set[str] = set()
+    while True:
+        payload = fetch_search(dimension_id, offset, PAGE_SIZE)
+        added, skus = add_payload_items(payload, items)
+        if not skus:
+            break
+        new_local = [sku for sku in skus if sku not in local_seen]
+        local_seen.update(skus)
+        page += 1
+        print(f"{label} page {page}: {len(skus)} SKUs, {added} new, total unique {len(items)}")
+        if len(skus) < PAGE_SIZE:
+            break
+        if not new_local:
+            if allow_backend_cap:
+                print(f"{label}: Oracle pagination cap reached after {len(local_seen)} local SKUs")
+                break
+            raise RuntimeError(f"Search pagination repeated a page in {label}")
+        offset += PAGE_SIZE
+        if page > 400:
+            raise RuntimeError(f"Safety stop after 400 pages in {label}")
+
+
 def main() -> int:
     RUNTIME.mkdir(parents=True, exist_ok=True)
     dimension_id, repository_id = discover_parent_dimension_id()
     print(f"Resolved parent Art & Photography dimension: {dimension_id} (repo={repository_id})")
 
     items: dict[str, dict[str, Any]] = {}
-    offset = 0
-    page = 0
-    while True:
-        payload = fetch_search(dimension_id, offset, PAGE_SIZE)
-        skus, product_ids = ordered_skus(payload)
-        if not skus:
-            break
-        metadata = collect_metadata(payload, set(skus))
-        new_on_page = 0
-        for sku in skus:
-            if sku in items:
-                continue
-            items[sku] = item_from_meta(sku, product_ids.get(sku), metadata.get(sku, {}))
-            new_on_page += 1
-        page += 1
-        print(f"Page {page}: {len(skus)} SKUs, total unique {len(items)}")
-        if len(skus) < PAGE_SIZE:
-            break
-        if new_on_page == 0:
-            raise RuntimeError("Search pagination repeated a page; refusing an infinite loop")
-        offset += PAGE_SIZE
-        if page > 400:
-            raise RuntimeError("Safety stop after 400 pages")
+    parent_first = fetch_search(dimension_id, 0, PAGE_SIZE)
+    expected_total = total_matching_records(parent_first)
+    add_payload_items(parent_first, items)
+
+    leaf_dimensions = discover_leaf_dimension_ids(repository_id)
+    print(f"Resolved {len(leaf_dimensions)} leaf category dimensions")
+    for index, leaf_dimension in enumerate(leaf_dimensions, 1):
+        crawl_dimension(leaf_dimension, f"leaf {index}/{len(leaf_dimensions)}", items)
+
+    # Include products assigned directly to the parent. Oracle repeats pages at
+    # roughly 10,000 results, so this pass is allowed to stop at that ceiling.
+    if not leaf_dimensions or (expected_total is not None and len(items) < expected_total):
+        crawl_dimension(dimension_id, "parent fallback", items, allow_backend_cap=True)
+
+    if expected_total is not None and len(items) < expected_total:
+        raise RuntimeError(
+            f"Segmented crawl found {len(items)} of {expected_total} parent-category products"
+        )
 
     ranked = []
     for item in items.values():
@@ -227,6 +266,8 @@ def main() -> int:
         "source_route": "/art-and-photography/category/art-photography",
         "resolved_dimension_id": dimension_id,
         "resolved_repository_id": repository_id,
+        "expected_parent_products": expected_total,
+        "leaf_dimensions_scanned": len(leaf_dimensions),
         "unique_products_scanned": len(items),
         "candidate_count": len(ranked),
         "candidates": ranked[:2000],
