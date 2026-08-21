@@ -2,10 +2,6 @@ name: Oxfam full catalogue scan
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - 'full_scan.py'
-      - '.github/workflows/full-scan.yml'
 
 permissions:
   contents: write
@@ -25,7 +21,7 @@ jobs:
           python-version: '3.12'
 
       - name: Crawl entire Oxfam category
-        run: python -c "import full_scan; full_scan.PAGE_SIZE=30; raise SystemExit(full_scan.main())"
+        run: python full_scan.py
 
       - name: Commit catalogue snapshot
         run: |
