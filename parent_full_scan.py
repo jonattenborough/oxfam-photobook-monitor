@@ -193,6 +193,7 @@ def crawl_dimension(
     items: dict[str, dict[str, Any]],
     allow_backend_cap: bool = False,
     sort_key: str = "product.creationDate|1",
+    target_total: int | None = None,
 ) -> None:
     offset = 0
     page = 0
@@ -206,6 +207,9 @@ def crawl_dimension(
         local_seen.update(skus)
         page += 1
         print(f"{label} page {page}: {len(skus)} SKUs, {added} new, total unique {len(items)}")
+        if target_total is not None and len(items) >= target_total:
+            print(f"{label}: reached verified parent total {target_total}")
+            break
         if len(skus) < PAGE_SIZE:
             break
         if not new_local:
@@ -236,7 +240,13 @@ def main() -> int:
     # Include products assigned directly to the parent. Oracle repeats pages at
     # roughly 10,000 results, so this pass is allowed to stop at that ceiling.
     if not leaf_dimensions or (expected_total is not None and len(items) < expected_total):
-        crawl_dimension(dimension_id, "parent newest fallback", items, allow_backend_cap=True)
+        crawl_dimension(
+            dimension_id,
+            "parent newest fallback",
+            items,
+            allow_backend_cap=True,
+            target_total=expected_total,
+        )
 
     # The parent contains some listings not assigned to any leaf category. A
     # reverse chronological pass reaches the opposite side of Oracle's result
@@ -248,6 +258,28 @@ def main() -> int:
             items,
             allow_backend_cap=True,
             sort_key="product.creationDate|0",
+            target_total=expected_total,
+        )
+
+    # A small middle slice can remain hidden when both chronological ends hit
+    # Oracle's cap. Alternate stable catalogue sorts expose that slice. Stop as
+    # soon as the parent-reported total has been reached.
+    alternate_sorts = [
+        ("sku.listPrice|0", "parent cheapest fallback"),
+        ("sku.listPrice|1", "parent dearest fallback"),
+        ("product.displayName|0", "parent title-A fallback"),
+        ("product.displayName|1", "parent title-Z fallback"),
+    ]
+    for sort_key, label in alternate_sorts:
+        if expected_total is None or len(items) >= expected_total:
+            break
+        crawl_dimension(
+            dimension_id,
+            label,
+            items,
+            allow_backend_cap=True,
+            sort_key=sort_key,
+            target_total=expected_total,
         )
 
     if expected_total is not None and len(items) < expected_total:
