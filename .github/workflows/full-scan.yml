@@ -25,7 +25,7 @@ jobs:
           python-version: '3.12'
 
       - name: Crawl entire Oxfam category
-        run: python full_scan.py
+        run: python -c "import full_scan; full_scan.PAGE_SIZE=30; raise SystemExit(full_scan.main())"
 
       - name: Commit catalogue snapshot
         run: |
