@@ -192,12 +192,13 @@ def crawl_dimension(
     label: str,
     items: dict[str, dict[str, Any]],
     allow_backend_cap: bool = False,
+    sort_key: str = "product.creationDate|1",
 ) -> None:
     offset = 0
     page = 0
     local_seen: set[str] = set()
     while True:
-        payload = fetch_search(dimension_id, offset, PAGE_SIZE)
+        payload = fetch_search(dimension_id, offset, PAGE_SIZE, sort_key=sort_key)
         added, skus = add_payload_items(payload, items)
         if not skus:
             break
@@ -235,7 +236,19 @@ def main() -> int:
     # Include products assigned directly to the parent. Oracle repeats pages at
     # roughly 10,000 results, so this pass is allowed to stop at that ceiling.
     if not leaf_dimensions or (expected_total is not None and len(items) < expected_total):
-        crawl_dimension(dimension_id, "parent fallback", items, allow_backend_cap=True)
+        crawl_dimension(dimension_id, "parent newest fallback", items, allow_backend_cap=True)
+
+    # The parent contains some listings not assigned to any leaf category. A
+    # reverse chronological pass reaches the opposite side of Oracle's result
+    # ceiling and fills those direct-parent gaps without relying on price syntax.
+    if expected_total is not None and len(items) < expected_total:
+        crawl_dimension(
+            dimension_id,
+            "parent oldest fallback",
+            items,
+            allow_backend_cap=True,
+            sort_key="product.creationDate|0",
+        )
 
     if expected_total is not None and len(items) < expected_total:
         raise RuntimeError(

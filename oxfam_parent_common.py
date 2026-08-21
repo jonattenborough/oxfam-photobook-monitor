@@ -290,13 +290,18 @@ def require_newest_first(payload: dict[str, Any]) -> None:
         raise RuntimeError("Could not verify newest-first product.creationDate ordering")
 
 
-def fetch_search(dimension_id: str, offset: int, page_size: int) -> dict[str, Any]:
+def fetch_search(
+    dimension_id: str,
+    offset: int,
+    page_size: int,
+    sort_key: str = "product.creationDate|1",
+) -> dict[str, Any]:
     return request_json(SEARCH_URL, {
         "N": dimension_id,
         "No": str(offset),
         "Nr": "AND(NOT(sku.listPrice:0.000000),product.active:1)",
         "Nrpp": str(page_size),
-        "Ns": "product.creationDate|1",
+        "Ns": sort_key,
     })
 
 
