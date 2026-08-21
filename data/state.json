@@ -1,7 +1,8 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-08-21T13:49:44Z",
+  "last_successful_fetch": "2026-08-21T14:20:55Z",
   "last_top_skus": [
+    "HD_304182664",
     "HD_303805354",
     "HD_304179996",
     "HD_304177228",
@@ -30,8 +31,7 @@
     "HD_304155902",
     "HD_304120456",
     "HD_304120308",
-    "HD_304163972",
-    "HD_304120355"
+    "HD_304163972"
   ],
   "products": {
     "HD_303805354": {
@@ -517,8 +517,24 @@
     "HD_304182024": {
       "first_seen": "baseline",
       "search_fingerprint": null
+    },
+    "HD_304182664": {
+      "first_seen": "2026-08-21T14:20:55Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787320623000",
+        "description": "This is an album of snapshots taken roughly the mid-1950s and mid- 1960s, depicting a group of cross-dressers united around a place called Casa Susanna. The inhabitants, guests and visitors used it as a weekend headquarters for a regular girls life'. Through these wonderfully intimate shots, Susanna and her friends styled era- specific fashion shows and parties. However, it is in the more private life at Casa Susanna, where the girls clean, cook and play Scrabble, that the insight to a very private club becomes brilliant in its very ordinariness.'<br/><br/>Minor shelf wear to spine edges and back cover (missing two small pieces of burgundy to reveal white paper beneath). Clean, undamaged pages throughout.",
+        "isbn": null,
+        "price_gbp": 90.0,
+        "product_id": "book-HD__304182664",
+        "publisher": null,
+        "route": "/casa-susanna/product/HD_304182664",
+        "sku": "HD_304182664",
+        "title": "Casa Susanna"
+      },
+      "search_fingerprint": "10f47d22bb4e9145"
     }
   },
-  "reported_category_count": 2817,
+  "reported_category_count": 2818,
   "version": 1
 }
