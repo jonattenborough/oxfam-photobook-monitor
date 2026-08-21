@@ -1,29 +1,51 @@
-# Oxfam Photobook Monitor
+# Charity Photobook Monitor
 
-A small GitHub Actions monitor for Oxfam UK's **Art & Photography Books** category.
+A GitHub Actions monitor for newly listed collectible photography books and related bargains at Oxfam, Shelter and Crisis.
 
-## What it does
+## What it monitors
 
-- Queries Oxfam's public Oracle Commerce storefront search endpoint.
+### Oxfam
+
+- Oxfam UK's **Art & Photography Books** category.
+- Uses Oxfam's public Oracle Commerce storefront search endpoint.
 - Verifies results are sorted newest first by `product.creationDate`.
 - Checks the newest 30 listings every 10 minutes.
-- Stores a persistent set of seen `HD_...` SKUs in `data/state.json`.
-- Creates a GitHub issue titled `OXFAM_NEW:` only when previously unseen SKUs appear.
-- Attempts to enrich new SKUs through Oracle Commerce's product endpoint.
-- Does not send purchase alerts itself. The associated ChatGPT scheduled task reviews the issue, researches editions and market value, and emails only genuinely noteworthy finds.
+- Tracks stable `HD_...` SKU IDs in `data/state.json`.
+- Creates an `OXFAM_NEW:` GitHub issue only when genuinely new SKUs appear.
 
-## Why this architecture
+### Shelter
 
-Oxfam's normal category page is protected by bot-management rules, while the storefront itself exposes structured catalogue data through Oracle Commerce. Monitoring stable SKU IDs is more reliable than comparing rendered page text.
+The Shopify monitor checks:
+
+- **Art & Photography**: every newly listed available product is surfaced for analysis.
+- **Antiquarian, Rare & Collectable Books**: new books are surfaced when photography, rarity, edition or target-title signals match.
+- **Second Hand Books**: a broad safety-net scan catches miscategorised photobooks using photographer/title and edition keywords.
+
+Shelter products are deduplicated across collections using their Shopify product IDs.
+
+### Crisis
+
+- Checks the complete **Books** collection.
+- Every newly listed available book is surfaced for AI analysis because the collection is small enough to review cheaply and this avoids missing badly categorised photobooks.
+
+Shelter and Crisis state is stored separately in `data/charity_state.json`.
+
+## Alert pipeline
+
+The GitHub workflow detects new inventory first. New candidate listings create either an `OXFAM_NEW:` or `CHARITY_NEW:` issue containing the product link, price, description and available catalogue metadata. A separate ChatGPT scheduled task reviews those issues, verifies exact editions and market value, and emails only genuinely noteworthy bargains.
 
 ## Schedule
 
-The workflow runs at minutes 3, 13, 23, 33, 43 and 53 of every hour. GitHub scheduled jobs can occasionally start late, so this should be treated as approximately every 10 minutes rather than a hard real-time guarantee.
+The workflow runs at minutes 3, 13, 23, 33, 43 and 53 of every hour. GitHub scheduled jobs can occasionally start late, so this is approximately every 10 minutes rather than a hard real-time guarantee.
 
-## State safety
+## Baseline behaviour
 
-The repository is seeded with the 30 SKUs visible in the user's captured Oxfam JSON on 21 August 2026. This prevents the first live run from announcing the existing page as 30 new products. Baseline entries are silently hydrated with current fingerprints on the first successful live request.
+Oxfam was seeded from the captured live catalogue on 21 August 2026. Shelter and Crisis silently seed all products found on their first successful run. This prevents hundreds of existing listings from being falsely announced as new. Future additions are then compared against those persistent product IDs.
+
+## Full Oxfam catalogue scan
+
+`full_scan.py` and the separate full-scan workflow remain available for occasional complete Oxfam category sweeps. The live 10-minute monitor is intentionally much smaller and faster.
 
 ## Manual test
 
-Use **Actions → Oxfam photobook monitor → Run workflow**. A successful run prints the first ten SKUs it parsed. If Oxfam blocks GitHub-hosted runners, the workflow fails before changing the state file, so no listings are lost.
+Use **Actions → Charity photobook monitor → Run workflow**. A successful run prints counts for Oxfam, Shelter and Crisis and persists any required baseline/state changes. If a source request fails, the job fails before silently treating an empty response as valid inventory.
