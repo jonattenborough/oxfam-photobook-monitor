@@ -148,14 +148,15 @@ SOFT_PHOTO = ["plates", "images", "illustrated", "monograph", "portraits", "arch
 
 def score(item: dict[str, Any]) -> tuple[int, list[str]]:
     text = searchable_text(item)
+    target_text = " ".join(str(item.get(key) or "") for key in ("title", "author")).lower()
     points = 0
     reasons: list[str] = []
 
-    targets = {t for t in TARGETS if t not in PAIRED_TARGETS and t in text}
+    targets = {t for t in TARGETS if t not in PAIRED_TARGETS and t in target_text}
     targets.update(
         title
         for title, photographers in PAIRED_TARGETS.items()
-        if title in text and any(photographer in text for photographer in photographers)
+        if title in target_text and any(photographer in target_text for photographer in photographers)
     )
     targets = sorted(targets)
     if targets:
