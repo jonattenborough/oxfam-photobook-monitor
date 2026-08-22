@@ -2,12 +2,6 @@ name: Oxfam full Art and Photography parent scan
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - "oxfam_parent_common.py"
-      - "parent_full_scan.py"
-      - ".github/workflows/parent-full-scan.yml"
 
 permissions:
   contents: write
@@ -24,10 +18,10 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.13"
 
