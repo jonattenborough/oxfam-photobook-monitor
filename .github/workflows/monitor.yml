@@ -9,6 +9,7 @@ on:
     paths:
       - "monitor.py"
       - "charity_monitor.py"
+      - "external_monitor.py"
       - ".github/workflows/monitor.yml"
 
 permissions:
@@ -22,7 +23,7 @@ concurrency:
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 10
 
     steps:
       - name: Check out repository
@@ -40,6 +41,10 @@ jobs:
       - name: Query Shelter and Crisis
         id: charity
         run: python charity_monitor.py
+
+      - name: Query external charity and used-book pages
+        id: external
+        run: python external_monitor.py
 
       - name: Create Oxfam analysis issue
         if: steps.oxfam.outputs.new_count != '0'
@@ -59,9 +64,19 @@ jobs:
             --title "$(cat runtime/charity/issue-title.txt)" \
             --body-file runtime/charity/issue-body.md
 
+      - name: Create external analysis issue
+        if: steps.external.outputs.new_count != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create \
+            --title "$(cat runtime/external/issue-title.txt)" \
+            --body-file runtime/external/issue-body.md
+
       - name: Persist monitor state only when catalogue data changed
         env:
           OXFAM_CHANGED: ${{ steps.oxfam.outputs.state_changed }}
+          EXTERNAL_CHANGED: ${{ steps.external.outputs.state_changed }}
         run: |
           set -euo pipefail
           changed=false
@@ -78,13 +93,18 @@ jobs:
             changed=true
           fi
 
+          if [ "$EXTERNAL_CHANGED" = "true" ]; then
+            cp runtime/external/proposed-state.json data/external_state.json
+            changed=true
+          fi
+
           if [ "$changed" != "true" ]; then
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- data/state.json data/charity_state.json
+          git add -- data/state.json data/charity_state.json data/external_state.json
           if git diff --cached --quiet; then
             exit 0
           fi
