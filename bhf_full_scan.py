@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """Exhaustively scan the public British Heart Foundation eBay Books inventory.
 
-This is deliberately separate from the lightweight external monitor. It walks every
-publicly exposed storefront page, records every unique item ID, then ranks broad
-photobook and visual-art candidates for human research. The scan fails rather than
-claiming completeness if eBay repeats pages or the parsed inventory is materially
-shorter than an advertised catalogue count.
+The BHF storefront currently renders listing links with unquoted href attributes,
+which the lightweight external monitor intentionally does not parse. This scanner
+uses the storefront card markup directly, walks every page, records every unique
+item ID, and refuses to report success if pagination repeats or appears incomplete.
 """
 
 from __future__ import annotations
 
+import html
 import json
 import re
 import urllib.parse
@@ -20,11 +20,11 @@ from typing import Any
 from external_monitor import (
     DIRECT_PHOTO_TERMS,
     EDITION_TERMS,
+    PRICE_RE,
     PUBLISHER_TERMS,
     TARGET_TERMS,
-    VISUAL_ART_TERMS,
-    parse_ebay,
     request_html,
+    strip_html,
 )
 
 BASE_URL = (
@@ -39,9 +39,12 @@ COUNT_PATTERNS = [
     re.compile(r"([0-9,]+)\s+items\s+found", re.IGNORECASE),
 ]
 
-# Extra terms that are useful during a full sweep even when a seller has not used
-# the word photography. False positives are preferable here because research is
-# done only after the exhaustive enumeration stage.
+CARD_LINK_RE = re.compile(
+    r"<a\s+href=(?P<href>https://www\.ebay\.co\.uk/itm/(?P<id>\d{9,15})[^ >]*)"
+    r"(?P<attrs>[^>]*)aria-label=\"(?P<title>[^\"]+)\"(?P<tail>[^>]*)>",
+    re.IGNORECASE,
+)
+
 EXTRA_TARGETS = [
     "kikuji kawada", "tish murtha", "ken grant", "tom wood", "nick waplington",
     "eikoh hosoe", "masahisa fukase", "shomei tomatsu", "daido moriyama",
@@ -53,19 +56,29 @@ EXTRA_TARGETS = [
     "raymond depardon", "rene burri", "rené burri", "bruce davidson",
     "elliott erwitt", "eve arnold", "w. eugene smith", "eugene smith",
     "minor white", "aaron siskind", "harry callahan", "robert heinecken",
-    "jo ann callis", "jo ann walters", "jo spence", "sharon lockhart",
-    "rinao kawauchi", "rinko kawauchi", "takuma nakahira", "isoe hosoe",
-    "todd hido", "john galt", "brian finke", "larry fink", "philip-lorca dicorcia",
-    "philip lorca dicorcia", "roe ethridge", "terry richardson", "juergen teller",
-    "wolfgang tillmans", "andreas gursky", "thomas struth", "thomas ruff",
-    "bernd becher", "hilla becher", "new topographics", "john szarkowski",
-    "parr badger", "photobook: a history", "photobook a history",
+    "jo ann callis", "jo spence", "sharon lockhart", "rinko kawauchi",
+    "takuma nakahira", "todd hido", "brian finke", "larry fink",
+    "philip-lorca dicorcia", "philip lorca dicorcia", "roe ethridge",
+    "juergen teller", "wolfgang tillmans", "andreas gursky", "thomas struth",
+    "thomas ruff", "bernd becher", "hilla becher", "new topographics",
+    "john szarkowski", "parr badger", "photobook: a history", "photobook a history",
+    "sebastiao salgado", "sebastião salgado", "rene burri", "rené burri",
+    "larry towelly", "larry towell", "alex webb", "trent parke", "antoine d'agata",
+    "antoine d’agata", "raghu rai", "george rodger", "ian berry", "philip jones griffiths",
 ]
 
 GENERIC_LEAD_TERMS = [
-    "photography books", "photo books", "photobook", "photographs", "photo album",
-    "photo albums", "art books", "art book bundle", "book bundle", "illustrated books",
-    "exhibition catalogue", "exhibition catalog", "portfolio", "contact sheets",
+    "photography books", "photo books", "photobook", "photo book", "photographs",
+    "photo album", "photo albums", "art books", "art book bundle", "book bundle",
+    "illustrated books", "exhibition catalogue", "exhibition catalog", "portfolio",
+    "contact sheets", "picture book", "picture books",
+]
+
+# Avoid the bare substring "art", which would match the word "heart" in BHF page text.
+VISUAL_HINTS = [
+    "artist", "fine art", "architecture", "architectural", "fashion", "design",
+    "portrait", "portraits", "illustrated", "exhibition", "catalogue", "catalog",
+    "monograph", "portfolio", "visual culture", "museum", "gallery",
 ]
 
 
@@ -85,8 +98,9 @@ def page_url(page: int) -> str:
 
 
 def advertised_count(page_html: str) -> int | None:
+    text = html.unescape(page_html)
     for pattern in COUNT_PATTERNS:
-        match = pattern.search(page_html)
+        match = pattern.search(text)
         if match:
             try:
                 return int(match.group(1).replace(",", ""))
@@ -95,10 +109,45 @@ def advertised_count(page_html: str) -> int | None:
     return None
 
 
+def parse_store_page(page_html: str, source_url: str) -> list[dict[str, Any]]:
+    matches = [m for m in CARD_LINK_RE.finditer(page_html) if "str-item-card__link" in (m.group("attrs") + m.group("tail"))]
+    items: list[dict[str, Any]] = []
+    seen: set[str] = set()
+
+    for index, match in enumerate(matches):
+        item_id = match.group("id")
+        if item_id in seen:
+            continue
+        seen.add(item_id)
+
+        end = matches[index + 1].start() if index + 1 < len(matches) else min(len(page_html), match.start() + 24000)
+        raw_card = page_html[match.start():end]
+        context = strip_html(raw_card)
+        price_match = PRICE_RE.search(context)
+        price = None
+        if price_match:
+            try:
+                price = round(float(price_match.group(1).replace(",", "")), 2)
+            except ValueError:
+                pass
+
+        title = strip_html(html.unescape(match.group("title")))
+        items.append(
+            {
+                "external_id": item_id,
+                "title": title,
+                "price_gbp": price,
+                "url": f"https://www.ebay.co.uk/itm/{item_id}",
+                "source_page": source_url,
+                "context": context[:1800],
+            }
+        )
+
+    return items
+
+
 def text_for(item: dict[str, Any]) -> str:
-    return " ".join(
-        [str(item.get("title") or ""), str(item.get("context") or "")]
-    ).lower()
+    return " ".join([str(item.get("title") or ""), str(item.get("context") or "")]).lower()
 
 
 def score_item(item: dict[str, Any]) -> tuple[int, list[str]]:
@@ -131,10 +180,10 @@ def score_item(item: dict[str, Any]) -> tuple[int, list[str]]:
         score += 10
         reasons.append("generic lead: " + ", ".join(generic[:3]))
 
-    visual = [t for t in VISUAL_ART_TERMS if t in text]
+    visual = [t for t in VISUAL_HINTS if t in text]
     if visual:
         score += 4
-        reasons.append("visual-art signal")
+        reasons.append("visual-art signal: " + ", ".join(visual[:3]))
 
     price = item.get("price_gbp")
     if isinstance(price, (int, float)):
@@ -152,13 +201,6 @@ def score_item(item: dict[str, Any]) -> tuple[int, list[str]]:
 
 
 def main() -> int:
-    source_template = {
-        "id": "ebay_bhf_books_full",
-        "source_name": "British Heart Foundation eBay Books",
-        "kind": "ebay",
-        "url": BASE_URL,
-    }
-
     by_id: dict[str, dict[str, Any]] = {}
     page_stats: list[dict[str, Any]] = []
     first_page_size: int | None = None
@@ -171,9 +213,7 @@ def main() -> int:
         if page == 1:
             catalogue_count = advertised_count(page_html)
 
-        source = dict(source_template)
-        source["url"] = url
-        batch = parse_ebay(source, page_html)
+        batch = parse_store_page(page_html, url)
         ids = [str(item["external_id"]) for item in batch]
         new_ids = [item_id for item_id in ids if item_id not in by_id]
 
@@ -185,10 +225,11 @@ def main() -> int:
                 "new_unique_items": len(new_ids),
             }
         )
+        print(f"Page {page}: {len(batch)} listings, {len(new_ids)} new unique")
 
         if page == 1:
             if not batch:
-                raise RuntimeError("BHF first page fetched but no eBay book listings were parsed")
+                raise RuntimeError("BHF first page fetched but no storefront cards were parsed")
             first_page_size = len(batch)
         elif batch and not new_ids:
             raise RuntimeError(
@@ -202,7 +243,6 @@ def main() -> int:
         for item in batch:
             by_id[str(item["external_id"])] = item
 
-        # A short page is normally the final eBay result page.
         if first_page_size and len(batch) < first_page_size:
             completed_reason = f"page {page} was the final short page"
             break
@@ -210,9 +250,10 @@ def main() -> int:
         raise RuntimeError(f"BHF scan reached safety limit of {MAX_PAGES} pages")
 
     total = len(by_id)
+    if total < 100:
+        raise RuntimeError(f"Only {total} unique BHF books were parsed; refusing to mark scan complete")
+
     if catalogue_count is not None:
-        # eBay can include a handful of promoted or category-level records in its
-        # displayed count, so allow a small margin, but never a large unexplained gap.
         minimum_expected = max(1, int(catalogue_count * 0.90))
         if total < minimum_expected:
             raise RuntimeError(
@@ -282,8 +323,8 @@ def main() -> int:
     if catalogue_count is not None:
         print(f"Advertised catalogue count: {catalogue_count}")
     print(f"Completion: {completed_reason}")
-    print("Top 40 candidates:")
-    for item in candidates[:40]:
+    print("Top 60 candidates:")
+    for item in candidates[:60]:
         price = f"£{item['price_gbp']:.2f}" if isinstance(item.get("price_gbp"), (int, float)) else "price n/a"
         print(f"{item['score']:>3} | {price:>10} | {item['title']} | {item['url']}")
 
