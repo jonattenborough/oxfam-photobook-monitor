@@ -27,7 +27,9 @@ A Parr / Badger match is a discovery signal, not a purchase verdict. The matcher
 
 `parr_badger_runner.py` layers this matching onto newly detected listings from Oxfam, Shelter, Crisis and the existing external charity / used-book radar.
 
-`market_monitor.py` also uses the same master for the wider hourly search. It scans broad marketplace and specialist-photobook inventory, then rotates direct searches for master records across eBay UK, AbeBooks and Biblio. Per-query baselines prevent existing marketplace stock from being misreported as new.
+The hourly GitHub comprehensive search uses the same master against live-tested specialist feeds from The Photographers' Gallery, Photobookstore, Village Books and Setanta Books, plus rotating exact author/title searches on AbeBooks.
+
+The first live GitHub Actions runs confirmed that general eBay and Biblio block GitHub-hosted runners with HTTP 403. Those sources, together with viaLibri, ZVAB, PBFA, auction sites and independent dealers, are therefore assigned to the separate hourly wider-web search rather than repeatedly retried by GitHub.
 
 Neither path reprocesses historical inventory or full-scan candidate pools as new listings.
 
