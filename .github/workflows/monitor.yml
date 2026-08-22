@@ -9,7 +9,6 @@ on:
     paths:
       - "monitor.py"
       - "charity_monitor.py"
-      - "external_monitor.py"
       - "parr_badger_runner.py"
       - "data/parr_badger_master/**"
       - "bhf_full_scan.py"
@@ -30,10 +29,10 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.13"
 
@@ -47,10 +46,6 @@ jobs:
       - name: Query Shelter and Crisis
         id: charity
         run: python parr_badger_runner.py charity_monitor
-
-      - name: Query external charity and used-book pages
-        id: external
-        run: python parr_badger_runner.py external_monitor
 
       - name: Seed exhaustive BHF book inventory snapshot
         if: ${{ hashFiles('data/bhf_full_scan.json') == '' }}
@@ -74,19 +69,9 @@ jobs:
             --title "$(cat runtime/charity/issue-title.txt)" \
             --body-file runtime/charity/issue-body.md
 
-      - name: Create external analysis issue
-        if: steps.external.outputs.new_count != '0'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh issue create \
-            --title "$(cat runtime/external/issue-title.txt)" \
-            --body-file runtime/external/issue-body.md
-
       - name: Persist monitor state only when catalogue data changed
         env:
           OXFAM_CHANGED: ${{ steps.oxfam.outputs.state_changed }}
-          EXTERNAL_CHANGED: ${{ steps.external.outputs.state_changed }}
         run: |
           set -euo pipefail
           changed=false
@@ -103,11 +88,6 @@ jobs:
             changed=true
           fi
 
-          if [ "$EXTERNAL_CHANGED" = "true" ]; then
-            cp runtime/external/proposed-state.json data/external_state.json
-            changed=true
-          fi
-
           if [ -f data/bhf_full_scan.json ]; then
             git add -- data/bhf_full_scan.json
             if ! git diff --cached --quiet; then
@@ -121,7 +101,7 @@ jobs:
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- data/state.json data/charity_state.json data/external_state.json
+          git add -- data/state.json data/charity_state.json
           if [ -f data/bhf_full_scan.json ]; then
             git add -- data/bhf_full_scan.json
           fi
@@ -129,4 +109,12 @@ jobs:
             exit 0
           fi
           git commit -m "Update charity monitor state [skip ci]"
-          git push
+          for attempt in 1 2 3 4; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then
+              break
+            fi
+            if [ "$attempt" = "4" ]; then
+              exit 1
+            fi
+          done
