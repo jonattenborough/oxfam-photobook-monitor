@@ -10,6 +10,8 @@ on:
       - "monitor.py"
       - "charity_monitor.py"
       - "external_monitor.py"
+      - "parr_badger_runner.py"
+      - "data/parr_badger_master/**"
       - "bhf_full_scan.py"
       - ".github/workflows/monitor.yml"
 
@@ -35,17 +37,20 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Validate Parr Badger master
+        run: python parr_badger_runner.py self-test
+
       - name: Query Oxfam and detect new listings
         id: oxfam
-        run: python monitor.py
+        run: python parr_badger_runner.py monitor
 
       - name: Query Shelter and Crisis
         id: charity
-        run: python charity_monitor.py
+        run: python parr_badger_runner.py charity_monitor
 
       - name: Query external charity and used-book pages
         id: external
-        run: python external_monitor.py
+        run: python parr_badger_runner.py external_monitor
 
       - name: Seed exhaustive BHF book inventory snapshot
         if: ${{ hashFiles('data/bhf_full_scan.json') == '' }}
