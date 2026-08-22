@@ -34,29 +34,24 @@ jobs:
         with:
           python-version: "3.13"
 
-      - name: Inspect BHF storefront sort controls
+      - name: Scan every publicly exposed BHF book page
+        run: python bhf_full_scan.py
+
+      - name: Upload exhaustive BHF snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: bhf-full-scan
+          path: data/bhf_full_scan.json
+          if-no-files-found: error
+
+      - name: Persist exhaustive BHF snapshot
+        if: github.event_name != 'pull_request'
         run: |
-          python - <<'PY'
-          import re
-          from external_monitor import request_html
-          from bhf_full_scan import parse_store_page
-
-          base = "https://www.ebay.co.uk/str/britishheartfoundationshop/BOOKS/_i.html?store_cat=3893944012"
-          good = request_html(base + "&_sop=10")
-          print("GOOD HTML", len(good), "ITM", good.lower().count("/itm/"), "CARDS", len(parse_store_page(good, base)))
-          sop_values = sorted(set(re.findall(r"_sop(?:=|%3D)(\d+)", good, re.I)), key=int)
-          print("SOP VALUES IN LIVE PAGE", sop_values)
-          for match in re.finditer(r".{0,250}_sop(?:=|%3D)\d+.{0,350}", good, re.I | re.S):
-              text = match.group(0)
-              if "sort" in text.lower() or "price" in text.lower() or "newly" in text.lower() or "ending" in text.lower():
-                  print("SORT CONTEXT", repr(text[:700]))
-
-          for code in ["1","2","3","4","5","10","12","15","16","17","18"]:
-              url = base + "&_sop=" + code
-              try:
-                  page = request_html(url)
-                  cards = parse_store_page(page, url)
-                  print("CODE", code, "HTML", len(page), "ITM", page.lower().count("/itm/"), "CARDS", len(cards), "FIRST", [x['title'] for x in cards[:2]])
-              except Exception as exc:
-                  print("CODE", code, "ERROR", repr(exc))
-          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data/bhf_full_scan.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "Update BHF full inventory scan [skip ci]"
+          git push
