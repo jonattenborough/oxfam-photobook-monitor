@@ -42,7 +42,7 @@ jobs:
 
       - name: Search live-tested wider photobook market sources
         id: market
-        run: python market_monitor_safe.py --targets-per-run 12
+        run: python market_monitor_safe.py --targets-per-run 24
 
       - name: Create AI review issue for new market matches
         if: steps.market.outputs.new_count != '0'
