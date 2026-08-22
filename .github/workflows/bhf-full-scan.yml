@@ -7,12 +7,17 @@ on:
     paths:
       - "bhf_full_scan.py"
       - ".github/workflows/bhf-full-scan.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "bhf_full_scan.py"
+      - ".github/workflows/bhf-full-scan.yml"
 
 permissions:
   contents: write
 
 concurrency:
-  group: bhf-full-book-inventory-scan
+  group: bhf-full-book-inventory-scan-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -33,7 +38,15 @@ jobs:
       - name: Scan every publicly exposed BHF book page
         run: python bhf_full_scan.py
 
+      - name: Upload exhaustive BHF snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: bhf-full-scan
+          path: data/bhf_full_scan.json
+          if-no-files-found: error
+
       - name: Persist exhaustive BHF snapshot
+        if: github.event_name != 'pull_request'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
