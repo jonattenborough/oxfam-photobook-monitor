@@ -1,6 +1,6 @@
 # Charity Photobook Monitor
 
-A GitHub Actions monitoring system for newly listed collectible photography books and related bargains. It combines near-real-time charity-shop monitoring with a wider Parr / Badger market-discovery layer.
+A GitHub Actions monitoring system for newly listed collectible photography books and related bargains. It combines near-real-time charity-shop monitoring, a live-tested specialist-market layer, and a separate wider-web search for sites that block GitHub runners.
 
 ## Parr / Badger master
 
@@ -27,44 +27,22 @@ A Parr / Badger match is a discovery signal only. Exact edition, printing, compl
 
 ### Shelter and Crisis
 
-`charity_monitor.py` checks:
-
-- Shelter Art & Photography.
-- Shelter Antiquarian, Rare & Collectable Books.
-- Shelter Second Hand Books as a miscategorisation safety net.
-- Crisis Books.
-
-Products are deduplicated by Shopify product ID. Parr / Badger matches can qualify an otherwise unremarkable listing for review.
+`charity_monitor.py` checks Shelter Art & Photography, Shelter Antiquarian/Rare/Collectable, Shelter Second Hand Books, and Crisis Books. Products are deduplicated by Shopify product ID. Parr / Badger matches can qualify an otherwise unremarkable listing for review.
 
 ### External charity and used-book radar
 
-`external_monitor.py` checks newly surfaced items from:
-
-- British Heart Foundation eBay Books.
-- British Heart Foundation eBay Vintage & Collectable.
-- British Red Cross eBay Books and Antiquarian & Collectable.
-- Scope eBay Books.
-- Marie Curie eBay Books.
-- Sue Ryder Pre-loved eBay Books.
-- World of Books Photography.
-- World of Books Old & Rare Art, Fashion & Photography.
-- Awesome Books Art, Fashion & Photography.
-
-Each source silently baselines current visible inventory on its first successful fetch. A temporary source failure does not erase state or make existing stock look new.
+`external_monitor.py` checks British Heart Foundation, British Red Cross, Scope, Marie Curie and Sue Ryder eBay book feeds, plus World of Books and Awesome Books. Each source silently baselines current visible inventory on its first successful fetch. A temporary source failure does not erase state or make existing stock look new.
 
 ## Comprehensive market discovery
 
-`market_monitor.py` is the slower, wider search layer. It runs once per hour and uses two complementary methods.
+The hourly GitHub workflow uses `market_monitor_safe.py`, a live-tested wrapper around `market_monitor.py`.
 
-### Broad newest-stock feeds
+The first live Actions runs established that general eBay UK and Biblio return HTTP 403 to GitHub-hosted runners, and broad AbeBooks result pages were not reliable enough to parse. The workflow therefore does not waste repeated requests on those blocked paths.
 
-It scans recent or current photobook inventory from:
+### GitHub-hosted specialist feeds
 
-- eBay UK general photobook search.
-- eBay UK photography-book search.
-- eBay UK antiquarian photography search.
-- AbeBooks UK recent photobook search.
-- AbeBooks UK recent photography search.
+Every hour it checks current inventory from:
+
 - The Photographers' Gallery new arrivals.
 - Photobookstore.
 - Village Books.
@@ -72,42 +50,51 @@ It scans recent or current photobook inventory from:
 
 Only newly seen listings that match the Parr / Badger master are surfaced.
 
-### Rotating exact-title market sweep
+### Rotating exact-title AbeBooks sweep
 
-Every hourly run also selects 12 Parr / Badger records and searches them directly on:
+Every hourly run also selects 12 Parr / Badger records and searches them directly on AbeBooks. Direct AbeBooks title/author searches worked in live GitHub Actions testing even though the broad AbeBooks pages did not parse reliably.
 
-- eBay UK.
-- AbeBooks.
+The cursor is stored in `data/market_state.json`, so successive runs rotate through the master. Each title query is silently baselined the first time it is visited. Later newly appearing matching copies can create an `EXTERNAL_NEW:` issue.
+
+### Wider-web search for blocked or awkward sites
+
+The separate hourly ChatGPT task `Photobook Wider Web Search` uses the same GitHub Parr / Badger master and concentrates on sources better handled by web search rather than GitHub scraping, including:
+
+- general eBay UK.
 - Biblio.
+- viaLibri.
+- ZVAB.
+- PBFA and independent antiquarian dealers.
+- The Saleroom and other auction catalogues.
+- Catawiki.
+- specialist photobook dealers and newly indexed general-web listings.
 
-The cursor is stored in `data/market_state.json`, so successive runs rotate through the whole master instead of hammering every marketplace with hundreds of requests at once. Each title / marketplace query is silently baselined the first time it is visited. Later newly appearing copies can create an `EXTERNAL_NEW:` issue.
-
-The targeted sweep catches books whose seller descriptions do not contain generic terms such as `photobook` or `photography`.
+This split gives us coverage without repeatedly hammering sites that reject GitHub's IP ranges.
 
 ## Alert pipeline
 
-The GitHub workflows detect inventory first. New candidates create one of these issue prefixes:
+New GitHub candidates use one of these issue prefixes:
 
 - `OXFAM_NEW:`
 - `OXFAM_ART_NEW:`
 - `CHARITY_NEW:`
 - `EXTERNAL_NEW:`
 
-The market monitor deliberately also uses `EXTERNAL_NEW:` so the existing downstream ChatGPT review process can analyse it without a separate issue-processing rule.
-
-The AI review stage should verify exact edition, printing, completeness, condition, all-in UK price and comparable copies before any purchase recommendation or email alert.
+The comprehensive market monitor deliberately uses `EXTERNAL_NEW:` so the existing downstream ChatGPT issue-review task processes it. That task verifies exact edition, printing, completeness, condition, all-in UK price and comparable copies before any email alert.
 
 ## Schedules
 
 - **Charity photobook monitor:** minutes 3, 13, 23, 33, 43 and 53 of every hour.
 - **Oxfam broad Art & Photography monitor:** minutes 6, 16, 26, 36, 46 and 56 of every hour.
 - **Comprehensive photobook market discovery:** minute 27 of every hour.
+- **Photobook Wider Web Search:** hourly condition watch.
+- **Charity Photobook New Listings:** hourly condition watch for the GitHub issue-review and value-verification stage.
 
 GitHub scheduled jobs can start a few minutes late, so these are approximate rather than hard real-time guarantees.
 
 ## Baseline behaviour
 
-All monitors use persistent state and silently baseline existing inventory when a source or a targeted query is first introduced. This prevents a new source from flooding the issue queue with its entire existing catalogue.
+All monitors use persistent state and silently baseline existing inventory when a source or targeted query is first introduced. This prevents a new source from flooding the issue queue with its entire existing catalogue.
 
 The live issue-processing pipeline is intentionally restricted to genuinely newly detected listings. Historical full scans and bulk candidate pools are separate tools and are not treated as new-listing alerts.
 
@@ -121,6 +108,6 @@ In GitHub Actions you can manually run:
 
 - **Charity photobook monitor** for Oxfam Photography, Shelter, Crisis and the existing external radar.
 - **Oxfam broad Art and Photography monitor** for the wider Oxfam safety net.
-- **Comprehensive photobook market discovery** for the wider marketplace and dealer sweep.
+- **Comprehensive photobook market discovery** for specialist photobook shops and the rotating AbeBooks sweep.
 
 Each scheduled workflow validates the Parr / Badger master before running. Source failures are isolated where possible, while an all-source failure makes the job fail visibly rather than treating an empty response as valid inventory.
