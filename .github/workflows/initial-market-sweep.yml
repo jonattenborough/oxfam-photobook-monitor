@@ -1,0 +1,55 @@
+name: One-time Parr Badger initial market sweep
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "data/initial_market_sweep_trigger.txt"
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: one-time-parr-badger-initial-sweep
+  cancel-in-progress: false
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Validate Parr Badger master
+        run: python parr_badger_runner.py self-test
+
+      - name: Sweep current AbeBooks stock
+        id: sweep
+        run: python initial_market_sweep.py --shard ${{ matrix.shard }} --shards 16
+
+      - name: Create review issue for surfaced current-stock candidates
+        if: steps.sweep.outputs.candidate_count != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create \
+            --title "$(cat runtime/initial_sweep/shard-$(printf '%02d' ${{ matrix.shard }})/issue-title.txt)" \
+            --body-file "runtime/initial_sweep/shard-$(printf '%02d' ${{ matrix.shard }})/issue-body.md"
+
+      - name: Record shard summary
+        run: |
+          echo "Shard ${{ matrix.shard }}: candidates=${{ steps.sweep.outputs.candidate_count }}, successful=${{ steps.sweep.outputs.successful_queries }}, failures=${{ steps.sweep.outputs.failed_queries }}" >> "$GITHUB_STEP_SUMMARY"
