@@ -21,9 +21,31 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  scan:
+  scan-sort:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - sort_name: newly_listed
+            sort_code: "10"
+          - sort_name: ending_soonest
+            sort_code: "1"
+          - sort_name: best_match
+            sort_code: "12"
+          - sort_name: price_low
+            sort_code: "15"
+          - sort_name: price_high
+            sort_code: "16"
+          - sort_name: fallback_2
+            sort_code: "2"
+          - sort_name: fallback_3
+            sort_code: "3"
+          - sort_name: fallback_4
+            sort_code: "4"
+          - sort_name: fallback_5
+            sort_code: "5"
 
     steps:
       - name: Check out repository
@@ -34,30 +56,200 @@ jobs:
         with:
           python-version: "3.13"
 
-      - name: Use clean BHF storefront URL
+      - name: Scan one BHF storefront sort
+        env:
+          SORT_NAME: ${{ matrix.sort_name }}
+          SORT_CODE: ${{ matrix.sort_code }}
         run: |
           python - <<'PY'
+          import json
+          import os
+          import time
           from pathlib import Path
-          p = Path('bhf_full_scan.py')
-          s = p.read_text()
-          old = '''BASE_URL = (
-              "https://www.ebay.co.uk/str/britishheartfoundationshop/BOOKS/"
-              "_i.html?store_cat=3893944012&_dkr=1&_blrs=recall_filtering&"
-              "_ssn=bhf_shops&store_name=britishheartfoundationshop&_oac=1"
-          )'''
-          new = '''BASE_URL = (
-              "https://www.ebay.co.uk/str/britishheartfoundationshop/BOOKS/"
-              "_i.html?store_cat=3893944012"
-          )'''
-          if old not in s:
-              raise SystemExit('Expected BASE_URL block not found')
-          p.write_text(s.replace(old, new))
+          from external_monitor import request_html
+          from bhf_full_scan import advertised_count, parse_store_page
+
+          name = os.environ['SORT_NAME']
+          code = os.environ['SORT_CODE']
+          base = 'https://www.ebay.co.uk/str/britishheartfoundationshop/BOOKS/_i.html?store_cat=3893944012'
+          by_id = {}
+          counts = []
+          pages = []
+
+          def get_page(url):
+              last_html = ''
+              for attempt in range(1, 5):
+                  last_html = request_html(url)
+                  batch = parse_store_page(last_html, url)
+                  if batch:
+                      return last_html, batch, attempt
+                  if attempt < 4:
+                      time.sleep(1.2 * attempt)
+              return last_html, [], 4
+
+          for page in range(1, 11):
+              url = f'{base}&_sop={code}' + (f'&_pgn={page}' if page > 1 else '')
+              html, batch, attempts = get_page(url)
+              count = advertised_count(html)
+              if count is not None:
+                  counts.append(count)
+              ids = [str(x['external_id']) for x in batch]
+              new_ids = [x for x in ids if x not in by_id]
+              pages.append({
+                  'page': page,
+                  'url': url,
+                  'items': len(batch),
+                  'new_items': len(new_ids),
+                  'fetch_attempts': attempts,
+              })
+              print(f'{name} page {page}: {len(batch)} items, {len(new_ids)} new, attempts={attempts}')
+              if not batch:
+                  break
+              if page > 1 and not new_ids:
+                  print(f'{name}: repeated page detected, stopping this sort')
+                  break
+              for item in batch:
+                  by_id[str(item['external_id'])] = item
+              time.sleep(0.8)
+
+          out = {
+              'sort_name': name,
+              'sort_code': code,
+              'advertised_counts': sorted(set(counts)),
+              'unique_items': len(by_id),
+              'pages': pages,
+              'items': list(by_id.values()),
+          }
+          Path('runtime').mkdir(exist_ok=True)
+          path = Path('runtime') / f'bhf-sort-{code}.json'
+          path.write_text(json.dumps(out, ensure_ascii=False, indent=2) + '\n')
+          print(f'{name}: wrote {len(by_id)} unique items to {path}')
           PY
 
-      - name: Scan every publicly exposed BHF book page
-        run: python bhf_full_scan.py
+      - name: Upload sort snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: bhf-sort-${{ matrix.sort_code }}
+          path: runtime/bhf-sort-${{ matrix.sort_code }}.json
+          if-no-files-found: error
 
-      - name: Upload exhaustive BHF snapshot
+  aggregate:
+    needs: scan-sort
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Download sort snapshots
+        uses: actions/download-artifact@v4
+        with:
+          pattern: bhf-sort-*
+          path: runtime/bhf-sorts
+          merge-multiple: true
+
+      - name: Union, validate and rank BHF catalogue
+        run: |
+          python - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+          from bhf_full_scan import score_item
+
+          files = sorted(Path('runtime/bhf-sorts').glob('bhf-sort-*.json'))
+          if not files:
+              raise SystemExit('No BHF sort artifacts were available')
+
+          by_id = {}
+          counts = []
+          strategy_stats = []
+          for path in files:
+              data = json.loads(path.read_text())
+              counts.extend(data.get('advertised_counts') or [])
+              before = len(by_id)
+              for item in data.get('items') or []:
+                  item_id = str(item['external_id'])
+                  existing = by_id.get(item_id)
+                  if existing is None:
+                      by_id[item_id] = item
+                  else:
+                      if existing.get('price_gbp') is None and item.get('price_gbp') is not None:
+                          existing['price_gbp'] = item.get('price_gbp')
+                      if len(str(item.get('context') or '')) > len(str(existing.get('context') or '')):
+                          existing['context'] = item.get('context')
+              strategy_stats.append({
+                  'sort_name': data.get('sort_name'),
+                  'sort_code': data.get('sort_code'),
+                  'unique_items': data.get('unique_items'),
+                  'new_items_added_to_union': len(by_id) - before,
+                  'union_after_sort': len(by_id),
+                  'pages': data.get('pages'),
+              })
+
+          total = len(by_id)
+          advertised = max(counts) if counts else None
+          shortfall = (advertised - total) if advertised is not None else None
+          complete = advertised is not None and shortfall <= 5
+
+          candidates = []
+          for item in by_id.values():
+              score, reasons = score_item(item)
+              if score < 4:
+                  continue
+              candidates.append({
+                  'item_id': item['external_id'],
+                  'title': item.get('title'),
+                  'price_gbp': item.get('price_gbp'),
+                  'url': item.get('url'),
+                  'context': item.get('context'),
+                  'score': score,
+                  'score_reasons': reasons,
+              })
+          candidates.sort(key=lambda x: (-x['score'], x['price_gbp'] if isinstance(x.get('price_gbp'), (int, float)) else 999999, str(x.get('title') or '').lower()))
+
+          all_items = [{
+              'item_id': item['external_id'],
+              'title': item.get('title'),
+              'price_gbp': item.get('price_gbp'),
+              'url': item.get('url'),
+              'context': item.get('context'),
+          } for item in by_id.values()]
+          all_items.sort(key=lambda x: str(x.get('title') or '').lower())
+
+          snapshot = {
+              'generated_at': datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace('+00:00', 'Z'),
+              'source': 'British Heart Foundation eBay Books',
+              'advertised_catalogue_count': advertised,
+              'catalogue_counts_seen': sorted(set(counts)),
+              'unique_items_scanned': total,
+              'shortfall': shortfall,
+              'full_scan_complete': complete,
+              'strategies_run': strategy_stats,
+              'candidate_count': len(candidates),
+              'candidates': candidates,
+              'all_items': all_items,
+          }
+          Path('data').mkdir(exist_ok=True)
+          Path('data/bhf_full_scan.json').write_text(json.dumps(snapshot, ensure_ascii=False, indent=2) + '\n')
+
+          print(f'BHF union: {total} unique items, advertised={advertised}, shortfall={shortfall}, complete={complete}')
+          print('Sort contributions:')
+          for stat in strategy_stats:
+              print(stat['sort_name'], stat['sort_code'], 'unique', stat['unique_items'], 'added', stat['new_items_added_to_union'], 'union', stat['union_after_sort'])
+          print('Top 120 candidates:')
+          for item in candidates[:120]:
+              price = f"£{item['price_gbp']:.2f}" if isinstance(item.get('price_gbp'), (int, float)) else 'price n/a'
+              print(f"{item['score']:>3} | {price:>10} | {item['title']} | {item['url']}")
+          PY
+
+      - name: Upload aggregate BHF snapshot
         uses: actions/upload-artifact@v4
         with:
           name: bhf-full-scan
@@ -67,6 +259,10 @@ jobs:
       - name: Persist exhaustive BHF snapshot
         if: github.event_name != 'pull_request'
         run: |
+          if ! jq -e '.full_scan_complete == true' data/bhf_full_scan.json >/dev/null; then
+            echo "BHF union is incomplete, not persisting it as a completed baseline"
+            exit 0
+          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -- data/bhf_full_scan.json
