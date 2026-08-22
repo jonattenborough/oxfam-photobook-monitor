@@ -34,6 +34,9 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Use supported BHF storefront sorts
+        run: sed -i '/("ending_soonest", "1"),/d' bhf_full_scan.py
+
       - name: Scan every publicly exposed BHF book page
         run: python bhf_full_scan.py
 
