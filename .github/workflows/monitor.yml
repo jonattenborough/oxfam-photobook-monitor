@@ -10,6 +10,7 @@ on:
       - "monitor.py"
       - "charity_monitor.py"
       - "external_monitor.py"
+      - "bhf_full_scan.py"
       - ".github/workflows/monitor.yml"
 
 permissions:
@@ -23,7 +24,7 @@ concurrency:
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
 
     steps:
       - name: Check out repository
@@ -45,6 +46,10 @@ jobs:
       - name: Query external charity and used-book pages
         id: external
         run: python external_monitor.py
+
+      - name: Seed exhaustive BHF book inventory snapshot
+        if: ${{ hashFiles('data/bhf_full_scan.json') == '' }}
+        run: python bhf_full_scan.py
 
       - name: Create Oxfam analysis issue
         if: steps.oxfam.outputs.new_count != '0'
@@ -98,6 +103,13 @@ jobs:
             changed=true
           fi
 
+          if [ -f data/bhf_full_scan.json ]; then
+            git add -- data/bhf_full_scan.json
+            if ! git diff --cached --quiet; then
+              changed=true
+            fi
+          fi
+
           if [ "$changed" != "true" ]; then
             exit 0
           fi
@@ -105,6 +117,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -- data/state.json data/charity_state.json data/external_state.json
+          if [ -f data/bhf_full_scan.json ]; then
+            git add -- data/bhf_full_scan.json
+          fi
           if git diff --cached --quiet; then
             exit 0
           fi
