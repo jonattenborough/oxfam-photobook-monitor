@@ -1,11 +1,11 @@
 {
-  "cursor": 36,
+  "cursor": 48,
   "feeds": {
     "photobookstore": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 250,
-      "last_successful_fetch": "2026-08-22T14:28:47Z",
+      "last_successful_fetch": "2026-08-22T14:30:38Z",
       "seen": [
         "photobookstore:15834487521653",
         "photobookstore:15969006715253",
@@ -263,7 +263,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 232,
-      "last_successful_fetch": "2026-08-22T14:28:47Z",
+      "last_successful_fetch": "2026-08-22T14:30:38Z",
       "seen": [
         "setanta:16045232554366",
         "setanta:16045434241406",
@@ -503,7 +503,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 85,
-      "last_successful_fetch": "2026-08-22T14:28:47Z",
+      "last_successful_fetch": "2026-08-22T14:30:38Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -596,7 +596,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 209,
-      "last_successful_fetch": "2026-08-22T14:28:47Z",
+      "last_successful_fetch": "2026-08-22T14:30:38Z",
       "seen": [
         "village:10371039101210",
         "village:10371023995162",
@@ -812,7 +812,7 @@
   },
   "last_failures": [],
   "last_successful_requests": 16,
-  "last_successful_run": "2026-08-22T14:28:47Z",
+  "last_successful_run": "2026-08-22T14:30:38Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
@@ -1733,6 +1733,198 @@
         "abebooks:31387619104",
         "abebooks:30787192749",
         "abebooks:61210336"
+      ]
+    },
+    "abebooks|axel hutte|london": {
+      "first_successful_fetch": "2026-08-22T14:30:38Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T14:30:38Z",
+      "seen": [
+        "abebooks:31907132980",
+        "abebooks:9783888146848",
+        "abebooks:32481898362",
+        "abebooks:4505723217",
+        "abebooks:9783792710548",
+        "abebooks:32485974739",
+        "abebooks:22797823031",
+        "abebooks:22849542322",
+        "abebooks:30178387061",
+        "abebooks:21676138316"
+      ]
+    },
+    "abebooks|baevsky i bogovy i mekhlis l verite i|geroicheskaya epopeya": {
+      "first_successful_fetch": "2026-08-22T14:30:38Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T14:30:38Z",
+      "seen": []
+    },
+    "abebooks|barbara schulten|madaus eine aufgeschlossene firma madaus an innovative company": {
+      "first_successful_fetch": "2026-08-22T14:30:38Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T14:30:38Z",
+      "seen": [
+        "abebooks:22563047937",
+        "abebooks:32360999738",
+        "abebooks:22563035339"
+      ]
+    },
+    "abebooks|barnard george n|photographic views of shermans campaign": {
+      "first_successful_fetch": "2026-08-22T14:30:38Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T14:30:38Z",
+      "seen": [
+        "abebooks:31757987839",
+        "abebooks:9780486234458",
+        "abebooks:32178614552",
+        "abebooks:51141102",
+        "abebooks:32271441692",
+        "abebooks:30932463823",
+        "abebooks:31055135205",
+        "abebooks:31676780730",
+        "abebooks:10498244948",
+        "abebooks:32480143139",
+        "abebooks:32491948380",
+        "abebooks:50409043",
+        "abebooks:32418499943",
+        "abebooks:50563749",
+        "abebooks:18269276600",
+        "abebooks:9410861389",
+        "abebooks:32124093547",
+        "abebooks:31588112962",
+        "abebooks:31507110058",
+        "abebooks:85035236",
+        "abebooks:32469516285",
+        "abebooks:31578177550",
+        "abebooks:50610082",
+        "abebooks:32340007263",
+        "abebooks:32320585329"
+      ]
+    },
+    "abebooks|bart sorgedrager|mensenstroom": {
+      "first_successful_fetch": "2026-08-22T14:30:38Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T14:30:38Z",
+      "seen": [
+        "abebooks:30781521590",
+        "abebooks:66067709"
+      ]
+    },
+    "abebooks|bellmer hans|la poupee": {
+      "first_successful_fetch": "2026-08-22T14:30:38Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T14:30:38Z",
+      "seen": [
+        "abebooks:1135893676",
+        "abebooks:30501093278",
+        "abebooks:50203213",
+        "abebooks:32024957167",
+        "abebooks:32092268643",
+        "abebooks:30709779550",
+        "abebooks:31474065888",
+        "abebooks:72174693",
+        "abebooks:32463450074"
+      ]
+    },
+    "abebooks|bellmer hans|les jeux de la poupee": {
+      "first_successful_fetch": "2026-08-22T14:30:38Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T14:30:38Z",
+      "seen": [
+        "abebooks:30709779550",
+        "abebooks:32463450074"
+      ]
+    },
+    "abebooks|berghaus erwin|usa nackt": {
+      "first_successful_fetch": "2026-08-22T14:30:38Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T14:30:38Z",
+      "seen": [
+        "abebooks:32308490553",
+        "abebooks:62879827",
+        "abebooks:30288917107",
+        "abebooks:31469320191"
+      ]
+    },
+    "abebooks|bernard latarjet and francois hers eds|paysages photographies": {
+      "first_successful_fetch": "2026-08-22T14:30:38Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T14:30:38Z",
+      "seen": [
+        "abebooks:31534717934",
+        "abebooks:9782850252105",
+        "abebooks:32467589607",
+        "abebooks:82076540",
+        "abebooks:32245463673",
+        "abebooks:1293862395",
+        "abebooks:9782850250996",
+        "abebooks:30877947269"
+      ]
+    },
+    "abebooks|bernd and hilla becher|blast furnaces": {
+      "first_successful_fetch": "2026-08-22T14:30:38Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T14:30:38Z",
+      "seen": [
+        "abebooks:32360358053",
+        "abebooks:9780262023115",
+        "abebooks:32144253044",
+        "abebooks:52277777",
+        "abebooks:32418013847",
+        "abebooks:32391955690",
+        "abebooks:31316852288",
+        "abebooks:32477207565",
+        "abebooks:31920396961",
+        "abebooks:32387873995",
+        "abebooks:9783888143526"
+      ]
+    },
+    "abebooks|bernd and hilla becher|mineheads": {
+      "first_successful_fetch": "2026-08-22T14:30:38Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T14:30:38Z",
+      "seen": [
+        "abebooks:32457107788",
+        "abebooks:9783888141737",
+        "abebooks:54097735",
+        "abebooks:32426836529",
+        "abebooks:32444019606",
+        "abebooks:32426828738",
+        "abebooks:31481909105",
+        "abebooks:32437449621",
+        "abebooks:32373806187",
+        "abebooks:9780262024303",
+        "abebooks:31954655061",
+        "abebooks:31580010162",
+        "abebooks:86101065",
+        "abebooks:10267092759",
+        "abebooks:22392380505",
+        "abebooks:32459098915",
+        "abebooks:9783888148033",
+        "abebooks:53994756",
+        "abebooks:10267092758"
+      ]
+    },
+    "abebooks|bernd and hilla becher|pennsylvania coal mine tipples": {
+      "first_successful_fetch": "2026-08-22T14:30:38Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T14:30:38Z",
+      "seen": [
+        "abebooks:31795729103",
+        "abebooks:9780944521236",
+        "abebooks:32426272443",
+        "abebooks:9783888144080",
+        "abebooks:32062185023",
+        "abebooks:22446711736",
+        "abebooks:32437449620",
+        "abebooks:31726909190",
+        "abebooks:31507735074",
+        "abebooks:31082972091",
+        "abebooks:83879318",
+        "abebooks:22924227287",
+        "abebooks:32240683805",
+        "abebooks:30357277276",
+        "abebooks:30426666958",
+        "abebooks:31126336123"
       ]
     }
   },
