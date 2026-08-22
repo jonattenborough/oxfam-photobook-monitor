@@ -2,16 +2,6 @@ name: BHF full book inventory scan
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - "bhf_full_scan.py"
-      - ".github/workflows/bhf-full-scan.yml"
-  pull_request:
-    branches: [main]
-    paths:
-      - "bhf_full_scan.py"
-      - ".github/workflows/bhf-full-scan.yml"
 
 permissions:
   contents: write
@@ -27,14 +17,15 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.13"
 
-      # The scanner fails rather than claiming completeness if eBay repeats pages.
+      # eBay may block GitHub-hosted runners. Keep this diagnostic inventory
+      # scanner manual-only so it can never break or spam the live monitors.
       - name: Scan every publicly exposed BHF book page
         run: python bhf_full_scan.py
 
@@ -46,7 +37,6 @@ jobs:
           if-no-files-found: error
 
       - name: Persist exhaustive BHF snapshot
-        if: github.event_name != 'pull_request'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
