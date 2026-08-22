@@ -1,17 +1,20 @@
 #!/usr/bin/env python3
 """Exhaustively scan the public British Heart Foundation eBay Books inventory.
 
-This is deliberately separate from the lightweight external monitor. It walks every
-publicly exposed storefront page, records every unique item ID, then ranks broad
-photobook and visual-art candidates for human research. The scan fails rather than
-claiming completeness if eBay repeats pages or the parsed inventory is materially
-shorter than an advertised catalogue count.
+The BHF storefront renders about 48 listing cards per page and caps each sort
+order at 10 pages. A single sort therefore exposes at most about 480 books even
+when the store contains more than 1,000. This scanner sweeps multiple independent
+sort orders, retries transient empty storefront responses, deduplicates by eBay
+item ID, and refuses to report completeness unless the union closely matches the
+live catalogue count.
 """
 
 from __future__ import annotations
 
+import html
 import json
 import re
+import time
 import urllib.parse
 from datetime import datetime, timezone
 from pathlib import Path
@@ -20,28 +23,48 @@ from typing import Any
 from external_monitor import (
     DIRECT_PHOTO_TERMS,
     EDITION_TERMS,
+    PRICE_RE,
     PUBLISHER_TERMS,
     TARGET_TERMS,
-    VISUAL_ART_TERMS,
-    parse_ebay,
     request_html,
+    strip_html,
 )
 
 BASE_URL = (
     "https://www.ebay.co.uk/str/britishheartfoundationshop/BOOKS/"
-    "_i.html?store_cat=3893944012&_sop=10"
+    "_i.html?store_cat=3893944012&_dkr=1&_blrs=recall_filtering&"
+    "_ssn=bhf_shops&store_name=britishheartfoundationshop&_oac=1"
 )
 OUT = Path("data/bhf_full_scan.json")
-MAX_PAGES = 60
+PAGES_PER_SORT = 10
+EMPTY_PAGE_RETRIES = 4
+
+SORT_STRATEGIES = [
+    ("newly_listed", "10"),
+    ("ending_soonest", "1"),
+    ("price_low", "15"),
+    ("price_high", "16"),
+    ("best_match", "12"),
+    # These additional views currently resolve to valid BHF storefront grids.
+    # They are retained as fallback diversity if the advertised sorts still leave
+    # a small middle slice hidden by eBay's 480-item cap.
+    ("fallback_2", "2"),
+    ("fallback_3", "3"),
+    ("fallback_4", "4"),
+    ("fallback_5", "5"),
+]
 
 COUNT_PATTERNS = [
     re.compile(r"Search\s+all\s+([0-9,]+)\s+items", re.IGNORECASE),
     re.compile(r"([0-9,]+)\s+items\s+found", re.IGNORECASE),
 ]
 
-# Extra terms that are useful during a full sweep even when a seller has not used
-# the word photography. False positives are preferable here because research is
-# done only after the exhaustive enumeration stage.
+CARD_LINK_RE = re.compile(
+    r"<a\s+href=(?P<href>https://www\.ebay\.co\.uk/itm/(?P<id>\d{9,15})[^ >]*)"
+    r"(?P<attrs>[^>]*)aria-label=\"(?P<title>[^\"]+)\"(?P<tail>[^>]*)>",
+    re.IGNORECASE,
+)
+
 EXTRA_TARGETS = [
     "kikuji kawada", "tish murtha", "ken grant", "tom wood", "nick waplington",
     "eikoh hosoe", "masahisa fukase", "shomei tomatsu", "daido moriyama",
@@ -53,19 +76,30 @@ EXTRA_TARGETS = [
     "raymond depardon", "rene burri", "rené burri", "bruce davidson",
     "elliott erwitt", "eve arnold", "w. eugene smith", "eugene smith",
     "minor white", "aaron siskind", "harry callahan", "robert heinecken",
-    "jo ann callis", "jo ann walters", "jo spence", "sharon lockhart",
-    "rinao kawauchi", "rinko kawauchi", "takuma nakahira", "isoe hosoe",
-    "todd hido", "john galt", "brian finke", "larry fink", "philip-lorca dicorcia",
-    "philip lorca dicorcia", "roe ethridge", "terry richardson", "juergen teller",
-    "wolfgang tillmans", "andreas gursky", "thomas struth", "thomas ruff",
-    "bernd becher", "hilla becher", "new topographics", "john szarkowski",
-    "parr badger", "photobook: a history", "photobook a history",
+    "jo ann callis", "jo spence", "sharon lockhart", "rinko kawauchi",
+    "takuma nakahira", "todd hido", "brian finke", "larry fink",
+    "philip-lorca dicorcia", "philip lorca dicorcia", "roe ethridge",
+    "juergen teller", "wolfgang tillmans", "andreas gursky", "thomas struth",
+    "thomas ruff", "bernd becher", "hilla becher", "new topographics",
+    "john szarkowski", "parr badger", "photobook: a history", "photobook a history",
+    "sebastiao salgado", "sebastião salgado", "larry towell", "alex webb",
+    "trent parke", "antoine d'agata", "antoine d’agata", "raghu rai",
+    "george rodger", "ian berry", "philip jones griffiths", "moons of saturn",
+    "graciela iturbide", "cristina garcia rodero", "cristina garcía rodero",
+    "mark cohen", "friedlander", "winogrand", "van der elsken", "ed van der elsken",
 ]
 
 GENERIC_LEAD_TERMS = [
-    "photography books", "photo books", "photobook", "photographs", "photo album",
-    "photo albums", "art books", "art book bundle", "book bundle", "illustrated books",
-    "exhibition catalogue", "exhibition catalog", "portfolio", "contact sheets",
+    "photography books", "photo books", "photobook", "photo book", "photographs",
+    "photo album", "photo albums", "art books", "art book bundle", "book bundle",
+    "illustrated books", "exhibition catalogue", "exhibition catalog", "portfolio",
+    "contact sheets", "picture book", "picture books",
+]
+
+VISUAL_HINTS = [
+    "artist", "fine art", "architecture", "architectural", "fashion", "design",
+    "portrait", "portraits", "illustrated", "exhibition", "catalogue", "catalog",
+    "monograph", "portfolio", "visual culture", "museum", "gallery",
 ]
 
 
@@ -73,10 +107,11 @@ def now_utc() -> str:
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
 
-def page_url(page: int) -> str:
+def page_url(page: int, sort_code: str) -> str:
     parsed = urllib.parse.urlsplit(BASE_URL)
     query = urllib.parse.parse_qsl(parsed.query, keep_blank_values=True)
-    query = [(k, v) for k, v in query if k != "_pgn"]
+    query = [(k, v) for k, v in query if k not in {"_pgn", "_sop"}]
+    query.append(("_sop", sort_code))
     if page > 1:
         query.append(("_pgn", str(page)))
     return urllib.parse.urlunsplit(
@@ -85,8 +120,9 @@ def page_url(page: int) -> str:
 
 
 def advertised_count(page_html: str) -> int | None:
+    text = html.unescape(page_html)
     for pattern in COUNT_PATTERNS:
-        match = pattern.search(page_html)
+        match = pattern.search(text)
         if match:
             try:
                 return int(match.group(1).replace(",", ""))
@@ -95,10 +131,66 @@ def advertised_count(page_html: str) -> int | None:
     return None
 
 
+def parse_store_page(page_html: str, source_url: str) -> list[dict[str, Any]]:
+    matches = [
+        match
+        for match in CARD_LINK_RE.finditer(page_html)
+        if "str-item-card__link" in (match.group("attrs") + match.group("tail"))
+    ]
+    items: list[dict[str, Any]] = []
+    seen: set[str] = set()
+
+    for index, match in enumerate(matches):
+        item_id = match.group("id")
+        if item_id in seen:
+            continue
+        seen.add(item_id)
+
+        end = (
+            matches[index + 1].start()
+            if index + 1 < len(matches)
+            else min(len(page_html), match.start() + 24000)
+        )
+        raw_card = page_html[match.start():end]
+        context = strip_html(raw_card)
+        price_match = PRICE_RE.search(context)
+        price = None
+        if price_match:
+            try:
+                price = round(float(price_match.group(1).replace(",", "")), 2)
+            except ValueError:
+                pass
+
+        title = strip_html(html.unescape(match.group("title")))
+        items.append(
+            {
+                "external_id": item_id,
+                "title": title,
+                "price_gbp": price,
+                "url": f"https://www.ebay.co.uk/itm/{item_id}",
+                "source_page": source_url,
+                "context": context[:1800],
+            }
+        )
+
+    return items
+
+
+def fetch_parsed_page(url: str) -> tuple[str, list[dict[str, Any]], int]:
+    """Fetch a storefront page, retrying when eBay transiently returns an empty shell."""
+    last_html = ""
+    for attempt in range(1, EMPTY_PAGE_RETRIES + 1):
+        last_html = request_html(url)
+        batch = parse_store_page(last_html, url)
+        if batch:
+            return last_html, batch, attempt
+        if attempt < EMPTY_PAGE_RETRIES:
+            time.sleep(0.7 * attempt)
+    return last_html, [], EMPTY_PAGE_RETRIES
+
+
 def text_for(item: dict[str, Any]) -> str:
-    return " ".join(
-        [str(item.get("title") or ""), str(item.get("context") or "")]
-    ).lower()
+    return " ".join([str(item.get("title") or ""), str(item.get("context") or "")]).lower()
 
 
 def score_item(item: dict[str, Any]) -> tuple[int, list[str]]:
@@ -106,35 +198,35 @@ def score_item(item: dict[str, Any]) -> tuple[int, list[str]]:
     score = 0
     reasons: list[str] = []
 
-    targets = [t for t in [*TARGET_TERMS, *EXTRA_TARGETS] if t in text]
+    targets = [term for term in [*TARGET_TERMS, *EXTRA_TARGETS] if term in text]
     if targets:
         score += 30 + min(12, 4 * (len(targets) - 1))
         reasons.append("target: " + ", ".join(targets[:4]))
 
-    photo = [t for t in DIRECT_PHOTO_TERMS if t in text]
+    photo = [term for term in DIRECT_PHOTO_TERMS if term in text]
     if photo:
         score += 14
         reasons.append("photography: " + ", ".join(photo[:4]))
 
-    editions = [t for t in EDITION_TERMS if t in text]
+    editions = [term for term in EDITION_TERMS if term in text]
     if editions:
         score += 10 + min(8, 2 * (len(editions) - 1))
         reasons.append("edition: " + ", ".join(editions[:4]))
 
-    publishers = [t for t in PUBLISHER_TERMS if t in text]
+    publishers = [term for term in PUBLISHER_TERMS if term in text]
     if publishers:
         score += 8
         reasons.append("publisher: " + ", ".join(publishers[:3]))
 
-    generic = [t for t in GENERIC_LEAD_TERMS if t in text]
+    generic = [term for term in GENERIC_LEAD_TERMS if term in text]
     if generic:
         score += 10
         reasons.append("generic lead: " + ", ".join(generic[:3]))
 
-    visual = [t for t in VISUAL_ART_TERMS if t in text]
+    visual = [term for term in VISUAL_HINTS if term in text]
     if visual:
         score += 4
-        reasons.append("visual-art signal")
+        reasons.append("visual-art signal: " + ", ".join(visual[:3]))
 
     price = item.get("price_gbp")
     if isinstance(price, (int, float)):
@@ -152,73 +244,123 @@ def score_item(item: dict[str, Any]) -> tuple[int, list[str]]:
 
 
 def main() -> int:
-    source_template = {
-        "id": "ebay_bhf_books_full",
-        "source_name": "British Heart Foundation eBay Books",
-        "kind": "ebay",
-        "url": BASE_URL,
-    }
-
     by_id: dict[str, dict[str, Any]] = {}
     page_stats: list[dict[str, Any]] = []
-    first_page_size: int | None = None
-    catalogue_count: int | None = None
-    completed_reason = ""
+    strategy_stats: list[dict[str, Any]] = []
+    catalogue_counts_seen: list[int] = []
+    completion_reason = ""
 
-    for page in range(1, MAX_PAGES + 1):
-        url = page_url(page)
-        page_html = request_html(url)
-        if page == 1:
-            catalogue_count = advertised_count(page_html)
+    for strategy_name, sort_code in SORT_STRATEGIES:
+        strategy_ids: set[str] = set()
+        strategy_start_total = len(by_id)
+        first_page_size: int | None = None
+        pages_scanned = 0
+        strategy_available = True
 
-        source = dict(source_template)
-        source["url"] = url
-        batch = parse_ebay(source, page_html)
-        ids = [str(item["external_id"]) for item in batch]
-        new_ids = [item_id for item_id in ids if item_id not in by_id]
+        for page in range(1, PAGES_PER_SORT + 1):
+            url = page_url(page, sort_code)
+            page_html, batch, attempts = fetch_parsed_page(url)
+            pages_scanned += 1
 
-        page_stats.append(
+            count = advertised_count(page_html)
+            if count is not None:
+                catalogue_counts_seen.append(count)
+
+            ids = [str(item["external_id"]) for item in batch]
+            new_strategy_ids = [item_id for item_id in ids if item_id not in strategy_ids]
+            new_global_ids = [item_id for item_id in ids if item_id not in by_id]
+
+            page_stats.append(
+                {
+                    "strategy": strategy_name,
+                    "sort_code": sort_code,
+                    "page": page,
+                    "url": url,
+                    "fetch_attempts": attempts,
+                    "parsed_items": len(batch),
+                    "new_in_strategy": len(new_strategy_ids),
+                    "new_global_items": len(new_global_ids),
+                    "global_unique_before_page": len(by_id),
+                }
+            )
+            print(
+                f"{strategy_name} page {page}: {len(batch)} listings, "
+                f"{len(new_global_ids)} new globally, {attempts} fetch attempt(s)"
+            )
+
+            if page == 1 and not batch:
+                strategy_available = False
+                print(f"Strategy {strategy_name} unavailable after retries; continuing")
+                break
+
+            if not batch:
+                print(f"Strategy {strategy_name} ended at page {page}")
+                break
+
+            if page > 1 and not new_strategy_ids:
+                print(f"Strategy {strategy_name} repeated at page {page}; ending this strategy")
+                break
+
+            strategy_ids.update(ids)
+            for item in batch:
+                item_id = str(item["external_id"])
+                existing = by_id.get(item_id)
+                if existing is None:
+                    by_id[item_id] = item
+                else:
+                    if existing.get("price_gbp") is None and item.get("price_gbp") is not None:
+                        existing["price_gbp"] = item.get("price_gbp")
+                    if len(str(item.get("context") or "")) > len(str(existing.get("context") or "")):
+                        existing["context"] = item.get("context")
+
+            if first_page_size is None:
+                first_page_size = len(batch)
+            elif first_page_size and len(batch) < first_page_size:
+                print(f"Strategy {strategy_name} reached a short final page {page}")
+                break
+
+        added = len(by_id) - strategy_start_total
+        strategy_stats.append(
             {
-                "page": page,
-                "url": url,
-                "parsed_items": len(batch),
-                "new_unique_items": len(new_ids),
+                "strategy": strategy_name,
+                "sort_code": sort_code,
+                "available": strategy_available,
+                "pages_scanned": pages_scanned,
+                "unique_items_in_strategy": len(strategy_ids),
+                "new_global_items_added": added,
+                "global_unique_after_strategy": len(by_id),
             }
         )
+        print(
+            f"Strategy {strategy_name}: {len(strategy_ids)} unique visible, "
+            f"{added} newly added to union, {len(by_id)} union total"
+        )
 
-        if page == 1:
-            if not batch:
-                raise RuntimeError("BHF first page fetched but no eBay book listings were parsed")
-            first_page_size = len(batch)
-        elif batch and not new_ids:
-            raise RuntimeError(
-                f"BHF page {page} repeated already-seen inventory; refusing to claim a full scan"
-            )
-
-        if not batch:
-            completed_reason = f"page {page} contained no listings"
+        target_count = max(catalogue_counts_seen) if catalogue_counts_seen else None
+        if target_count is not None and len(by_id) >= target_count:
+            completion_reason = f"union reached advertised catalogue count after {strategy_name}"
             break
-
-        for item in batch:
-            by_id[str(item["external_id"])] = item
-
-        # A short page is normally the final eBay result page.
-        if first_page_size and len(batch) < first_page_size:
-            completed_reason = f"page {page} was the final short page"
-            break
-    else:
-        raise RuntimeError(f"BHF scan reached safety limit of {MAX_PAGES} pages")
 
     total = len(by_id)
+    catalogue_count = max(catalogue_counts_seen) if catalogue_counts_seen else None
+
+    if total < 100:
+        raise RuntimeError(f"Only {total} unique BHF books were parsed; refusing to mark scan complete")
+
     if catalogue_count is not None:
-        # eBay can include a handful of promoted or category-level records in its
-        # displayed count, so allow a small margin, but never a large unexplained gap.
-        minimum_expected = max(1, int(catalogue_count * 0.90))
-        if total < minimum_expected:
+        shortfall = catalogue_count - total
+        if shortfall > 5:
             raise RuntimeError(
-                f"Parsed only {total} unique BHF books versus advertised {catalogue_count}; "
-                "refusing to mark scan complete"
+                f"Multi-sort union parsed {total} unique BHF books versus advertised "
+                f"{catalogue_count}, shortfall {shortfall}; refusing to mark scan complete"
             )
+        if not completion_reason:
+            completion_reason = (
+                f"multi-sort union reached {total} of advertised {catalogue_count}; "
+                f"shortfall {max(0, shortfall)} within live-catalogue churn tolerance"
+            )
+    else:
+        raise RuntimeError("BHF catalogue count was not exposed; refusing to claim completeness")
 
     candidates: list[dict[str, Any]] = []
     for item in by_id.values():
@@ -238,10 +380,10 @@ def main() -> int:
         )
 
     candidates.sort(
-        key=lambda x: (
-            -x["score"],
-            x["price_gbp"] if isinstance(x.get("price_gbp"), (int, float)) else 999999,
-            str(x.get("title") or "").lower(),
+        key=lambda item: (
+            -item["score"],
+            item["price_gbp"] if isinstance(item.get("price_gbp"), (int, float)) else 999999,
+            str(item.get("title") or "").lower(),
         )
     )
 
@@ -255,19 +397,20 @@ def main() -> int:
         }
         for item in by_id.values()
     ]
-    all_items.sort(key=lambda x: str(x.get("title") or "").lower())
+    all_items.sort(key=lambda item: str(item.get("title") or "").lower())
 
     snapshot = {
         "generated_at": now_utc(),
         "source": "British Heart Foundation eBay Books",
         "source_url": BASE_URL,
         "advertised_catalogue_count": catalogue_count,
+        "catalogue_counts_seen": sorted(set(catalogue_counts_seen)),
         "unique_items_scanned": total,
-        "pages_scanned": len(page_stats),
-        "completion_reason": completed_reason,
         "full_scan_complete": True,
-        "candidate_count": len(candidates),
+        "completion_reason": completion_reason,
+        "strategies_run": strategy_stats,
         "page_stats": page_stats,
+        "candidate_count": len(candidates),
         "candidates": candidates,
         "all_items": all_items,
     }
@@ -276,15 +419,17 @@ def main() -> int:
     OUT.write_text(json.dumps(snapshot, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
     print(
-        f"BHF full scan complete: {total} unique books across {len(page_stats)} pages; "
+        f"BHF full scan complete: {total} unique books; advertised count {catalogue_count}; "
         f"{len(candidates)} broad candidates"
     )
-    if catalogue_count is not None:
-        print(f"Advertised catalogue count: {catalogue_count}")
-    print(f"Completion: {completed_reason}")
-    print("Top 40 candidates:")
-    for item in candidates[:40]:
-        price = f"£{item['price_gbp']:.2f}" if isinstance(item.get("price_gbp"), (int, float)) else "price n/a"
+    print(f"Completion: {completion_reason}")
+    print("Top 100 candidates:")
+    for item in candidates[:100]:
+        price = (
+            f"£{item['price_gbp']:.2f}"
+            if isinstance(item.get("price_gbp"), (int, float))
+            else "price n/a"
+        )
         print(f"{item['score']:>3} | {price:>10} | {item['title']} | {item['url']}")
 
     return 0
