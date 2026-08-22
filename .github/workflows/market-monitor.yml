@@ -9,6 +9,8 @@ on:
     paths:
       - "market_monitor.py"
       - "parr_badger_runner.py"
+      - "external_monitor.py"
+      - "charity_monitor.py"
       - "data/parr_badger_master/**"
       - ".github/workflows/market-monitor.yml"
 
