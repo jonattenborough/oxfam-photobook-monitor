@@ -1,9 +1,12 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-08-22T15:23:39Z",
+  "last_successful_fetch": "2026-08-22T15:48:24Z",
   "last_top_skus": [
     "HD_304184683",
     "HD_304184736",
+    "HD_304184471",
+    "HD_304184608",
+    "HD_304184188",
     "HD_304184477",
     "HD_304184504",
     "HD_304184073",
@@ -28,10 +31,7 @@
     "HD_304116678",
     "HD_304180051",
     "HD_304160511",
-    "HD_304179758",
-    "HD_304179638",
-    "HD_304179268",
-    "HD_304179143"
+    "HD_304179758"
   ],
   "products": {
     "HD_303805354": {
@@ -710,6 +710,38 @@
       },
       "search_fingerprint": "563b07f31637d674"
     },
+    "HD_304184188": {
+      "first_seen": "2026-08-22T15:48:24Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787408002000",
+        "description": "Skye (the Misty Isle) is the largest of the many beautiful islands lying off the west coast of Scotland and is part of Iverness-shire. It has an area of approximately 350, 000 acres, is fifty miles long from North to Suuth, and from seven to twenty-five miles broad. Every part of it is isolated from another by bens, glens, burns and winding sea lochs; the latter being responsible for its extensive coastline which measures hundreds of miles and is out of all proportion to its small area. No point on the island is more than five miles from the sea. Everything you want to know about Skye Island is in this book! Illustrated with 148 photographs by the author. Map endpapers.",
+        "isbn": null,
+        "price_gbp": 35.0,
+        "product_id": "book-HD__304184188",
+        "publisher": null,
+        "route": "/the-magic-of-skye-with-148-photographs-by-the-author-/product/HD_304184188",
+        "sku": "HD_304184188",
+        "title": "The Magic of Skye ( with 148 photographs by the author )"
+      },
+      "search_fingerprint": "9cb371c86b92ab55"
+    },
+    "HD_304184471": {
+      "first_seen": "2026-08-22T15:48:24Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787409883000",
+        "description": "Elliott Erwitt turns his trained eye on Scotland, going well beyond its glens and lochs to reveal a unique culture and national heritage. In 2013, Elliott Erwitt was asked to be a part of the distinguished Macallan Masters of Photography series.<br/><br/>Armed with his trusty Leica camera, he embarked on an exploration of Scotland in hopes of capturing its people’s particular spirit and allure, calling it his 'great Scottish adventure.' Going beyond what is simply picturesque, this magnificent collection of photographs candidly reveals both the sum and its parts of the varied landscapes, the characters ―and of course, the dogs! ― that are unique to Scotland.<br/><br/>Foreword by Alexander McCall Smith in English, French, and German.<br/><br/>Hardback<br/>2018 teNeues Media GmbH & Co<br/>160 pages<br/>Dimensions approx. 28 x 37 x 1.5<br/><br/>In very good condition - all pages clean and in As new condition, front cover has some gloss loss lines (can only see at  particular angles where the light hits it) and approx 9cm scratch on back cover<br/>",
+        "isbn": null,
+        "price_gbp": 45.0,
+        "product_id": "book-HD__304184471",
+        "publisher": null,
+        "route": "/elliot-erwitts-scotland/product/HD_304184471",
+        "sku": "HD_304184471",
+        "title": "Elliot Erwitt's Scotland"
+      },
+      "search_fingerprint": "05939690802126fd"
+    },
     "HD_304184477": {
       "first_seen": "2026-08-22T15:23:39Z",
       "last_snapshot": {
@@ -741,6 +773,22 @@
         "title": "On the Night Bus"
       },
       "search_fingerprint": "ee94afa920cae216"
+    },
+    "HD_304184608": {
+      "first_seen": "2026-08-22T15:48:24Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787409181000",
+        "description": "Paris Living Rooms<br/><br/>Slight spots on front cover",
+        "isbn": null,
+        "price_gbp": 30.0,
+        "product_id": "book-HD__304184608",
+        "publisher": null,
+        "route": "/paris-living-rooms/product/HD_304184608",
+        "sku": "HD_304184608",
+        "title": "Paris Living Rooms"
+      },
+      "search_fingerprint": "a20fd70b047f5f31"
     },
     "HD_304184683": {
       "first_seen": "2026-08-22T15:23:39Z",
@@ -775,6 +823,6 @@
       "search_fingerprint": "04f158cbc2dcf4d8"
     }
   },
-  "reported_category_count": 2803,
+  "reported_category_count": 2806,
   "version": 1
 }
