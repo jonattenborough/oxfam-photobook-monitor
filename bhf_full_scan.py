@@ -1,47 +1,45 @@
 #!/usr/bin/env python3
-"""Exhaustively scan the public British Heart Foundation eBay Books inventory.
+"""Exhaustively scan British Heart Foundation's eBay books inventory.
 
-This is deliberately separate from the lightweight external monitor. It walks every
-publicly exposed storefront page, records every unique item ID, then ranks broad
-photobook and visual-art candidates for human research. The scan fails rather than
-claiming completeness if eBay repeats pages or the parsed inventory is materially
-shorter than an advertised catalogue count.
+The old storefront HTML scraper is unreliable from GitHub-hosted runners because
+eBay often serves a page without parseable listing data. This scanner instead uses
+eBay's official Browse API, filtered to seller `bhf_shops` and the UK Books, Comics
+& Magazines category, then ranks the complete result set for photobook interest.
+
+Required repository secrets:
+  EBAY_CLIENT_ID
+  EBAY_CLIENT_SECRET
 """
-
 from __future__ import annotations
 
+import base64
 import json
+import os
 import re
+import urllib.error
 import urllib.parse
+import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+import canon_runner
 from external_monitor import (
     DIRECT_PHOTO_TERMS,
     EDITION_TERMS,
     PUBLISHER_TERMS,
     TARGET_TERMS,
     VISUAL_ART_TERMS,
-    parse_ebay,
-    request_html,
 )
 
-BASE_URL = (
-    "https://www.ebay.co.uk/str/britishheartfoundationshop/BOOKS/"
-    "_i.html?store_cat=3893944012&_sop=10"
-)
 OUT = Path("data/bhf_full_scan.json")
-MAX_PAGES = 60
+SELLER = "bhf_shops"
+EBAY_GB_BOOKS_CATEGORY = "267"
+OAUTH_URL = "https://api.ebay.com/identity/v1/oauth2/token"
+SEARCH_URL = "https://api.ebay.com/buy/browse/v1/item_summary/search"
+PAGE_SIZE = 100
+MAX_ITEMS = 10000
 
-COUNT_PATTERNS = [
-    re.compile(r"Search\s+all\s+([0-9,]+)\s+items", re.IGNORECASE),
-    re.compile(r"([0-9,]+)\s+items\s+found", re.IGNORECASE),
-]
-
-# Extra terms that are useful during a full sweep even when a seller has not used
-# the word photography. False positives are preferable here because research is
-# done only after the exhaustive enumeration stage.
 EXTRA_TARGETS = [
     "kikuji kawada", "tish murtha", "ken grant", "tom wood", "nick waplington",
     "eikoh hosoe", "masahisa fukase", "shomei tomatsu", "daido moriyama",
@@ -53,13 +51,11 @@ EXTRA_TARGETS = [
     "raymond depardon", "rene burri", "rené burri", "bruce davidson",
     "elliott erwitt", "eve arnold", "w. eugene smith", "eugene smith",
     "minor white", "aaron siskind", "harry callahan", "robert heinecken",
-    "jo ann callis", "jo ann walters", "jo spence", "sharon lockhart",
-    "rinao kawauchi", "rinko kawauchi", "takuma nakahira", "isoe hosoe",
-    "todd hido", "john galt", "brian finke", "larry fink", "philip-lorca dicorcia",
-    "philip lorca dicorcia", "roe ethridge", "terry richardson", "juergen teller",
+    "jo ann callis", "jo spence", "sharon lockhart", "rinko kawauchi",
+    "takuma nakahira", "todd hido", "brian finke", "larry fink",
+    "philip-lorca dicorcia", "roe ethridge", "terry richardson", "juergen teller",
     "wolfgang tillmans", "andreas gursky", "thomas struth", "thomas ruff",
     "bernd becher", "hilla becher", "new topographics", "john szarkowski",
-    "parr badger", "photobook: a history", "photobook a history",
 ]
 
 GENERIC_LEAD_TERMS = [
@@ -73,38 +69,189 @@ def now_utc() -> str:
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
 
-def page_url(page: int) -> str:
-    parsed = urllib.parse.urlsplit(BASE_URL)
-    query = urllib.parse.parse_qsl(parsed.query, keep_blank_values=True)
-    query = [(k, v) for k, v in query if k != "_pgn"]
-    if page > 1:
-        query.append(("_pgn", str(page)))
-    return urllib.parse.urlunsplit(
-        (parsed.scheme, parsed.netloc, parsed.path, urllib.parse.urlencode(query), parsed.fragment)
+def require_credentials() -> tuple[str, str]:
+    client_id = os.getenv("EBAY_CLIENT_ID", "").strip()
+    client_secret = os.getenv("EBAY_CLIENT_SECRET", "").strip()
+    if not client_id or not client_secret:
+        raise RuntimeError(
+            "Official eBay API credentials are not configured. Add repository Actions secrets "
+            "EBAY_CLIENT_ID and EBAY_CLIENT_SECRET, then run this workflow again."
+        )
+    return client_id, client_secret
+
+
+def json_request(req: urllib.request.Request, timeout: int = 45) -> dict[str, Any]:
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as response:
+            raw = response.read().decode("utf-8", errors="replace")
+    except urllib.error.HTTPError as exc:
+        body = exc.read().decode("utf-8", errors="replace")
+        raise RuntimeError(f"eBay API HTTP {exc.code}: {body[:1000]}") from exc
+    except urllib.error.URLError as exc:
+        raise RuntimeError(f"eBay API request failed: {exc}") from exc
+    try:
+        data = json.loads(raw)
+    except json.JSONDecodeError as exc:
+        raise RuntimeError(f"eBay API returned invalid JSON: {raw[:500]}") from exc
+    if not isinstance(data, dict):
+        raise RuntimeError("eBay API returned a non-object JSON response")
+    return data
+
+
+def application_token(client_id: str, client_secret: str) -> str:
+    basic = base64.b64encode(f"{client_id}:{client_secret}".encode("utf-8")).decode("ascii")
+    body = urllib.parse.urlencode({
+        "grant_type": "client_credentials",
+        "scope": "https://api.ebay.com/oauth/api_scope",
+    }).encode("utf-8")
+    req = urllib.request.Request(
+        OAUTH_URL,
+        data=body,
+        headers={
+            "Authorization": f"Basic {basic}",
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Accept": "application/json",
+        },
+        method="POST",
     )
+    data = json_request(req)
+    token = str(data.get("access_token") or "").strip()
+    if not token:
+        raise RuntimeError("eBay OAuth response did not contain an access token")
+    return token
 
 
-def advertised_count(page_html: str) -> int | None:
-    for pattern in COUNT_PATTERNS:
-        match = pattern.search(page_html)
-        if match:
+def legacy_id(item: dict[str, Any]) -> str:
+    direct = str(item.get("legacyItemId") or "").strip()
+    if direct:
+        return direct
+    raw = str(item.get("itemId") or "")
+    match = re.search(r"(?:^|\|)(\d{9,15})(?:\||$)", raw)
+    return match.group(1) if match else raw
+
+
+def price_gbp(item: dict[str, Any]) -> float | None:
+    price = item.get("price")
+    if not isinstance(price, dict):
+        return None
+    if str(price.get("currency") or "").upper() != "GBP":
+        return None
+    try:
+        return round(float(price.get("value")), 2)
+    except (TypeError, ValueError):
+        return None
+
+
+def normalise_item(item: dict[str, Any]) -> dict[str, Any]:
+    seller = item.get("seller") if isinstance(item.get("seller"), dict) else {}
+    context_parts = [
+        str(item.get("shortDescription") or ""),
+        str(item.get("condition") or ""),
+        str(item.get("conditionId") or ""),
+        str(seller.get("username") or ""),
+        " ".join(str(x) for x in (item.get("buyingOptions") or []) if x),
+        str(item.get("itemCreationDate") or ""),
+        str(item.get("itemEndDate") or ""),
+    ]
+    return {
+        "external_id": legacy_id(item),
+        "title": str(item.get("title") or "Untitled eBay item"),
+        "price_gbp": price_gbp(item),
+        "url": str(item.get("itemWebUrl") or item.get("itemAffiliateWebUrl") or ""),
+        "context": " | ".join(x for x in context_parts if x),
+        "condition": item.get("condition"),
+        "item_creation_date": item.get("itemCreationDate"),
+        "item_end_date": item.get("itemEndDate"),
+    }
+
+
+def fetch_all_items(token: str) -> tuple[list[dict[str, Any]], list[dict[str, Any]], int | None]:
+    by_id: dict[str, dict[str, Any]] = {}
+    page_stats: list[dict[str, Any]] = []
+    offset = 0
+    reported_total: int | None = None
+
+    while offset < MAX_ITEMS:
+        params = {
+            "category_ids": EBAY_GB_BOOKS_CATEGORY,
+            "filter": f"sellers:{{{SELLER}}}",
+            "limit": str(PAGE_SIZE),
+            "offset": str(offset),
+            "sort": "newlyListed",
+        }
+        url = SEARCH_URL + "?" + urllib.parse.urlencode(params)
+        req = urllib.request.Request(
+            url,
+            headers={
+                "Authorization": f"Bearer {token}",
+                "Accept": "application/json",
+                "X-EBAY-C-MARKETPLACE-ID": "EBAY_GB",
+            },
+            method="GET",
+        )
+        data = json_request(req)
+        if reported_total is None:
             try:
-                return int(match.group(1).replace(",", ""))
-            except ValueError:
-                pass
-    return None
+                reported_total = int(data.get("total"))
+            except (TypeError, ValueError):
+                reported_total = None
+
+        raw_items = data.get("itemSummaries")
+        batch = raw_items if isinstance(raw_items, list) else []
+        normalised = [normalise_item(x) for x in batch if isinstance(x, dict)]
+        new_count = 0
+        for row in normalised:
+            key = str(row.get("external_id") or "")
+            if not key:
+                continue
+            if key not in by_id:
+                new_count += 1
+            by_id[key] = row
+
+        page_stats.append({
+            "offset": offset,
+            "returned_items": len(batch),
+            "new_unique_items": new_count,
+        })
+
+        if not data.get("next"):
+            break
+        if not batch:
+            raise RuntimeError("eBay Browse API supplied a next page but returned no items")
+        offset += PAGE_SIZE
+    else:
+        raise RuntimeError("BHF API scan reached eBay's 10,000-result safety boundary")
+
+    if not by_id:
+        raise RuntimeError("eBay Browse API returned zero BHF items in category 267")
+    return list(by_id.values()), page_stats, reported_total
 
 
 def text_for(item: dict[str, Any]) -> str:
-    return " ".join(
-        [str(item.get("title") or ""), str(item.get("context") or "")]
-    ).lower()
+    return " ".join([str(item.get("title") or ""), str(item.get("context") or "")]).lower()
 
 
-def score_item(item: dict[str, Any]) -> tuple[int, list[str]]:
+def canon_matches(item: dict[str, Any]) -> list[dict[str, Any]]:
+    return canon_runner.pb.match_listing(
+        title=item.get("title"),
+        description=item.get("context"),
+        limit=3,
+    )
+
+
+def score_item(item: dict[str, Any]) -> tuple[int, list[str], list[dict[str, Any]]]:
     text = text_for(item)
     score = 0
     reasons: list[str] = []
+    matches = canon_matches(item)
+
+    if matches:
+        best = matches[0]
+        score += 65
+        label = "Roth 101" if str(best.get("volumes")) == "R101" else f"Parr/Badger V{best.get('volumes')}"
+        if "Roth 101" in str(best.get("pb_refs") or "") and str(best.get("volumes")) != "R101":
+            label += " + Roth 101"
+        reasons.append(f"canon: {label} {best.get('title')} ({best.get('score')}/100)")
 
     targets = [t for t in [*TARGET_TERMS, *EXTRA_TARGETS] if t in text]
     if targets:
@@ -131,8 +278,7 @@ def score_item(item: dict[str, Any]) -> tuple[int, list[str]]:
         score += 10
         reasons.append("generic lead: " + ", ".join(generic[:3]))
 
-    visual = [t for t in VISUAL_ART_TERMS if t in text]
-    if visual:
+    if any(t in text for t in VISUAL_ART_TERMS):
         score += 4
         reasons.append("visual-art signal")
 
@@ -148,145 +294,63 @@ def score_item(item: dict[str, Any]) -> tuple[int, list[str]]:
             score += 2
             reasons.append("£50 or less")
 
-    return score, reasons
+    return score, reasons, matches
 
 
 def main() -> int:
-    source_template = {
-        "id": "ebay_bhf_books_full",
-        "source_name": "British Heart Foundation eBay Books",
-        "kind": "ebay",
-        "url": BASE_URL,
-    }
-
-    by_id: dict[str, dict[str, Any]] = {}
-    page_stats: list[dict[str, Any]] = []
-    first_page_size: int | None = None
-    catalogue_count: int | None = None
-    completed_reason = ""
-
-    for page in range(1, MAX_PAGES + 1):
-        url = page_url(page)
-        page_html = request_html(url)
-        if page == 1:
-            catalogue_count = advertised_count(page_html)
-
-        source = dict(source_template)
-        source["url"] = url
-        batch = parse_ebay(source, page_html)
-        ids = [str(item["external_id"]) for item in batch]
-        new_ids = [item_id for item_id in ids if item_id not in by_id]
-
-        page_stats.append(
-            {
-                "page": page,
-                "url": url,
-                "parsed_items": len(batch),
-                "new_unique_items": len(new_ids),
-            }
-        )
-
-        if page == 1:
-            if not batch:
-                raise RuntimeError("BHF first page fetched but no eBay book listings were parsed")
-            first_page_size = len(batch)
-        elif batch and not new_ids:
-            raise RuntimeError(
-                f"BHF page {page} repeated already-seen inventory; refusing to claim a full scan"
-            )
-
-        if not batch:
-            completed_reason = f"page {page} contained no listings"
-            break
-
-        for item in batch:
-            by_id[str(item["external_id"])] = item
-
-        # A short page is normally the final eBay result page.
-        if first_page_size and len(batch) < first_page_size:
-            completed_reason = f"page {page} was the final short page"
-            break
-    else:
-        raise RuntimeError(f"BHF scan reached safety limit of {MAX_PAGES} pages")
-
-    total = len(by_id)
-    if catalogue_count is not None:
-        # eBay can include a handful of promoted or category-level records in its
-        # displayed count, so allow a small margin, but never a large unexplained gap.
-        minimum_expected = max(1, int(catalogue_count * 0.90))
-        if total < minimum_expected:
-            raise RuntimeError(
-                f"Parsed only {total} unique BHF books versus advertised {catalogue_count}; "
-                "refusing to mark scan complete"
-            )
+    client_id, client_secret = require_credentials()
+    token = application_token(client_id, client_secret)
+    items, page_stats, reported_total = fetch_all_items(token)
 
     candidates: list[dict[str, Any]] = []
-    for item in by_id.values():
-        score, reasons = score_item(item)
+    for item in items:
+        score, reasons, matches = score_item(item)
         if score < 4:
             continue
-        candidates.append(
-            {
-                "item_id": item["external_id"],
-                "title": item.get("title"),
-                "price_gbp": item.get("price_gbp"),
-                "url": item.get("url"),
-                "context": item.get("context"),
-                "score": score,
-                "score_reasons": reasons,
-            }
-        )
+        candidates.append({
+            **item,
+            "score": score,
+            "score_reasons": reasons,
+            "canon_matches": matches,
+        })
 
-    candidates.sort(
-        key=lambda x: (
-            -x["score"],
-            x["price_gbp"] if isinstance(x.get("price_gbp"), (int, float)) else 999999,
-            str(x.get("title") or "").lower(),
-        )
-    )
-
-    all_items = [
-        {
-            "item_id": item["external_id"],
-            "title": item.get("title"),
-            "price_gbp": item.get("price_gbp"),
-            "url": item.get("url"),
-            "context": item.get("context"),
-        }
-        for item in by_id.values()
-    ]
-    all_items.sort(key=lambda x: str(x.get("title") or "").lower())
+    candidates.sort(key=lambda x: (
+        -int(x.get("score") or 0),
+        x.get("price_gbp") if isinstance(x.get("price_gbp"), (int, float)) else 999999,
+        str(x.get("title") or "").lower(),
+    ))
+    items.sort(key=lambda x: str(x.get("title") or "").lower())
 
     snapshot = {
         "generated_at": now_utc(),
-        "source": "British Heart Foundation eBay Books",
-        "source_url": BASE_URL,
-        "advertised_catalogue_count": catalogue_count,
-        "unique_items_scanned": total,
+        "source": "British Heart Foundation eBay via official Browse API",
+        "seller": SELLER,
+        "ebay_marketplace": "EBAY_GB",
+        "ebay_category_id": EBAY_GB_BOOKS_CATEGORY,
+        "api_reported_total": reported_total,
+        "unique_items_scanned": len(items),
         "pages_scanned": len(page_stats),
-        "completion_reason": completed_reason,
+        "completion_reason": "followed Browse API pagination until no next page",
         "full_scan_complete": True,
         "candidate_count": len(candidates),
         "page_stats": page_stats,
         "candidates": candidates,
-        "all_items": all_items,
+        "all_items": items,
     }
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(snapshot, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
     print(
-        f"BHF full scan complete: {total} unique books across {len(page_stats)} pages; "
-        f"{len(candidates)} broad candidates"
+        f"BHF API full scan complete: {len(items)} unique listings across "
+        f"{len(page_stats)} API pages; {len(candidates)} broad candidates"
     )
-    if catalogue_count is not None:
-        print(f"Advertised catalogue count: {catalogue_count}")
-    print(f"Completion: {completed_reason}")
+    if reported_total is not None:
+        print(f"eBay API reported total: {reported_total}")
     print("Top 40 candidates:")
     for item in candidates[:40]:
         price = f"£{item['price_gbp']:.2f}" if isinstance(item.get("price_gbp"), (int, float)) else "price n/a"
         print(f"{item['score']:>3} | {price:>10} | {item['title']} | {item['url']}")
-
     return 0
 
 
