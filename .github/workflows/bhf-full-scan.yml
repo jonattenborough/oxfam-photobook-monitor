@@ -34,6 +34,26 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Use clean BHF storefront URL
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('bhf_full_scan.py')
+          s = p.read_text()
+          old = '''BASE_URL = (
+              "https://www.ebay.co.uk/str/britishheartfoundationshop/BOOKS/"
+              "_i.html?store_cat=3893944012&_dkr=1&_blrs=recall_filtering&"
+              "_ssn=bhf_shops&store_name=britishheartfoundationshop&_oac=1"
+          )'''
+          new = '''BASE_URL = (
+              "https://www.ebay.co.uk/str/britishheartfoundationshop/BOOKS/"
+              "_i.html?store_cat=3893944012"
+          )'''
+          if old not in s:
+              raise SystemExit('Expected BASE_URL block not found')
+          p.write_text(s.replace(old, new))
+          PY
+
       - name: Scan every publicly exposed BHF book page
         run: python bhf_full_scan.py
 
