@@ -34,31 +34,24 @@ jobs:
         with:
           python-version: "3.13"
 
-      - name: Inspect embedded BHF eBay listing records
-        run: |
-          python - <<'PY'
-          import re
-          from external_monitor import request_html, EBAY_ITEM_RE
-
-          url = "https://www.ebay.co.uk/str/britishheartfoundationshop/BOOKS/_i.html?store_cat=3893944012&_sop=10"
-          html = request_html(url)
-          print("HTML", len(html), "itm tokens", html.lower().count("/itm/"))
-          ids = []
-          for m in EBAY_ITEM_RE.finditer(html):
-              item_id = m.group("id")
-              if item_id not in ids:
-                  ids.append(item_id)
-              if len(ids) <= 5:
-                  lo = max(0, m.start() - 900)
-                  hi = min(len(html), m.end() + 1200)
-                  print("ITEM", item_id)
-                  print(repr(html[lo:hi]))
-                  print("====")
-          print("UNIQUE IDS", len(ids), ids[:10])
-          for needle in ["itemTitle", "title", "price", "itemId", "legacyItemId", "listingId"]:
-              print("NEEDLE", needle, html.find(needle))
-          PY
-
       - name: Scan every publicly exposed BHF book page
-        if: false
         run: python bhf_full_scan.py
+
+      - name: Upload exhaustive BHF snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: bhf-full-scan
+          path: data/bhf_full_scan.json
+          if-no-files-found: error
+
+      - name: Persist exhaustive BHF snapshot
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data/bhf_full_scan.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "Update BHF full inventory scan [skip ci]"
+          git push
