@@ -1,11 +1,11 @@
 {
-  "cursor": 192,
+  "cursor": 216,
   "feeds": {
     "photobookstore": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 250,
-      "last_successful_fetch": "2026-08-22T17:45:56Z",
+      "last_successful_fetch": "2026-08-22T18:57:55Z",
       "seen": [
         "photobookstore:15834487521653",
         "photobookstore:15969006715253",
@@ -263,7 +263,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 232,
-      "last_successful_fetch": "2026-08-22T17:45:56Z",
+      "last_successful_fetch": "2026-08-22T18:57:55Z",
       "seen": [
         "setanta:16045232554366",
         "setanta:16045434241406",
@@ -503,7 +503,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 85,
-      "last_successful_fetch": "2026-08-22T17:45:56Z",
+      "last_successful_fetch": "2026-08-22T18:57:55Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -596,7 +596,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 208,
-      "last_successful_fetch": "2026-08-22T17:45:56Z",
+      "last_successful_fetch": "2026-08-22T18:57:55Z",
       "seen": [
         "village:10371039101210",
         "village:10371023995162",
@@ -810,9 +810,11 @@
       ]
     }
   },
-  "last_failures": [],
-  "last_successful_requests": 28,
-  "last_successful_run": "2026-08-22T17:45:56Z",
+  "last_failures": [
+    "abebooks target Hoffmann, Heinrich / Das Antlitz des Führers: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Das+Antlitz+des+F%C3%BChrers&sortby=17&ds=50&an=Hoffmann%2C+Heinrich after 3 attempts: HTTP Error 503: Service Temporarily Unavailable"
+  ],
+  "last_successful_requests": 27,
+  "last_successful_run": "2026-08-22T18:57:55Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
@@ -5916,6 +5918,469 @@
         "abebooks:53994756",
         "abebooks:32258635198",
         "abebooks:89712618"
+      ]
+    },
+    "abebooks|groebli rene|magie der schiene": {
+      "first_successful_fetch": "2026-08-22T18:57:55Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T18:57:55Z",
+      "seen": [
+        "abebooks:3009055642",
+        "abebooks:30828278028",
+        "abebooks:22302675244",
+        "abebooks:30616734470",
+        "abebooks:51609284",
+        "abebooks:31700937988",
+        "abebooks:30970564611",
+        "abebooks:31114321678",
+        "abebooks:31498053208",
+        "abebooks:85803404",
+        "abebooks:20632364457",
+        "abebooks:3009055643"
+      ]
+    },
+    "abebooks|guido guidi|varianti": {
+      "first_successful_fetch": "2026-08-22T18:57:55Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T18:57:55Z",
+      "seen": [
+        "abebooks:32501005806",
+        "abebooks:9788886550123",
+        "abebooks:30109140024",
+        "abebooks:31952569608",
+        "abebooks:72313296",
+        "abebooks:32119742683",
+        "abebooks:59514781",
+        "abebooks:30316765607",
+        "abebooks:21676138324",
+        "abebooks:31542015572",
+        "abebooks:82273322"
+      ]
+    },
+    "abebooks|hamish fulton|hamish fulton": {
+      "first_successful_fetch": "2026-08-22T18:57:55Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T18:57:55Z",
+      "seen": [
+        "abebooks:31292491648",
+        "abebooks:22604979074",
+        "abebooks:9788877571458",
+        "abebooks:5064281696",
+        "abebooks:32369156396",
+        "abebooks:50113256",
+        "abebooks:30348456282",
+        "abebooks:9788881585168",
+        "abebooks:31523817993",
+        "abebooks:16822240682",
+        "abebooks:32124775181",
+        "abebooks:61588986",
+        "abebooks:31787006837",
+        "abebooks:62137526",
+        "abebooks:31290734175",
+        "abebooks:54097735",
+        "abebooks:30347744081",
+        "abebooks:64605719",
+        "abebooks:32049888718",
+        "abebooks:86101065",
+        "abebooks:31520387959",
+        "abebooks:22785460004",
+        "abebooks:56092880",
+        "abebooks:31406280282",
+        "abebooks:9788440498069",
+        "abebooks:30881468657",
+        "abebooks:30820509938",
+        "abebooks:9783037782279",
+        "abebooks:70340261",
+        "abebooks:18905072990",
+        "abebooks:31840464006",
+        "abebooks:9783925974533",
+        "abebooks:32307086379",
+        "abebooks:9788881582327",
+        "abebooks:15309387474",
+        "abebooks:9783893224715",
+        "abebooks:32474178937",
+        "abebooks:9789067300834",
+        "abebooks:58868502",
+        "abebooks:22902563977",
+        "abebooks:9782914381512",
+        "abebooks:64599383",
+        "abebooks:30213715002",
+        "abebooks:32409643782",
+        "abebooks:32499653536",
+        "abebooks:31168743048",
+        "abebooks:9783933807502",
+        "abebooks:31168739020",
+        "abebooks:9783921375297",
+        "abebooks:30759600312",
+        "abebooks:32185759081",
+        "abebooks:9780921613992",
+        "abebooks:53012360",
+        "abebooks:32177361247",
+        "abebooks:31501495405",
+        "abebooks:32075376392",
+        "abebooks:32498357914",
+        "abebooks:9780914782728",
+        "abebooks:32319892181",
+        "abebooks:59852454",
+        "abebooks:32319868347",
+        "abebooks:31422741862",
+        "abebooks:9783933807267",
+        "abebooks:31662320750",
+        "abebooks:30099345982",
+        "abebooks:32006706097",
+        "abebooks:32049014810",
+        "abebooks:32015366151",
+        "abebooks:32398037938",
+        "abebooks:32176666158",
+        "abebooks:32374050375",
+        "abebooks:9788461230891",
+        "abebooks:54825494",
+        "abebooks:32015369535",
+        "abebooks:14104466453",
+        "abebooks:30530222287",
+        "abebooks:30549393320",
+        "abebooks:32298257059"
+      ]
+    },
+    "abebooks|hans aarsman claudie de cleen julian germain|useful photography 002": {
+      "first_successful_fetch": "2026-08-22T18:57:55Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T18:57:55Z",
+      "seen": [
+        "abebooks:32091988962",
+        "abebooks:9789075380460",
+        "abebooks:31996616132",
+        "abebooks:51982769",
+        "abebooks:30919649479",
+        "abebooks:66067709",
+        "abebooks:1850827803",
+        "abebooks:32010888476",
+        "abebooks:82273322"
+      ]
+    },
+    "abebooks|hans aarsman|hollandse taferelen": {
+      "first_successful_fetch": "2026-08-22T18:57:55Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T18:57:55Z",
+      "seen": [
+        "abebooks:32484303219",
+        "abebooks:9789065790309",
+        "abebooks:54097735",
+        "abebooks:30417957328",
+        "abebooks:32485284497",
+        "abebooks:32343510896",
+        "abebooks:31881743809",
+        "abebooks:73370475",
+        "abebooks:31809895946",
+        "abebooks:31042334579",
+        "abebooks:63987325",
+        "abebooks:7260964526",
+        "abebooks:57132617",
+        "abebooks:21552365637",
+        "abebooks:52929955",
+        "abebooks:32477938691",
+        "abebooks:53994756"
+      ]
+    },
+    "abebooks|hans eijkelboom|portraits and cameras 1949 2009": {
+      "first_successful_fetch": "2026-08-22T18:57:55Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T18:57:55Z",
+      "seen": [
+        "abebooks:31087523748",
+        "abebooks:9789075848120",
+        "abebooks:31406469883",
+        "abebooks:54097735",
+        "abebooks:31539191048",
+        "abebooks:63348767",
+        "abebooks:30407454870",
+        "abebooks:66067709",
+        "abebooks:30809698040",
+        "abebooks:32484939913",
+        "abebooks:87591102",
+        "abebooks:15422116122",
+        "abebooks:50731200",
+        "abebooks:18483230568",
+        "abebooks:32477936042",
+        "abebooks:53994756"
+      ]
+    },
+    "abebooks|hans peter feldmann|11 bilder 11 pictures": {
+      "first_successful_fetch": "2026-08-22T18:57:55Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T18:57:55Z",
+      "seen": [
+        "abebooks:32337010885",
+        "abebooks:32330886309",
+        "abebooks:32476719413",
+        "abebooks:32255845830",
+        "abebooks:31567415951"
+      ]
+    },
+    "abebooks|hans peter feldmann|bilder pictures": {
+      "first_successful_fetch": "2026-08-22T18:57:55Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T18:57:55Z",
+      "seen": [
+        "abebooks:32109281130",
+        "abebooks:21857518290",
+        "abebooks:30828273302"
+      ]
+    },
+    "abebooks|hans peter feldmann|der uberfall the heist": {
+      "first_successful_fetch": "2026-08-22T18:57:55Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T18:57:55Z",
+      "seen": [
+        "abebooks:31648837009",
+        "abebooks:32340186442",
+        "abebooks:32436719859",
+        "abebooks:32202986876",
+        "abebooks:31255282816"
+      ]
+    },
+    "abebooks|hans peter feldmann|die toten 1967 1993 the dead 1967 1993": {
+      "first_successful_fetch": "2026-08-22T18:57:55Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T18:57:55Z",
+      "seen": [
+        "abebooks:32481393683",
+        "abebooks:32459835736",
+        "abebooks:32351134779",
+        "abebooks:32494484717",
+        "abebooks:32472958759"
+      ]
+    },
+    "abebooks|hans van der meer|hollandse velden": {
+      "first_successful_fetch": "2026-08-22T18:57:55Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T18:57:55Z",
+      "seen": [
+        "abebooks:32484940056",
+        "abebooks:9789074159333",
+        "abebooks:87591102",
+        "abebooks:30586793152",
+        "abebooks:9789074159197",
+        "abebooks:32307838450",
+        "abebooks:66067709",
+        "abebooks:30828275136",
+        "abebooks:30763112218"
+      ]
+    },
+    "abebooks|harry callahan|waters edge": {
+      "first_successful_fetch": "2026-08-22T18:57:55Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T18:57:55Z",
+      "seen": [
+        "abebooks:32471227130",
+        "abebooks:32332062387",
+        "abebooks:9780935112016",
+        "abebooks:674445018",
+        "abebooks:32042537324",
+        "abebooks:31781729033",
+        "abebooks:31170145820",
+        "abebooks:32221900434",
+        "abebooks:30014148632",
+        "abebooks:32438837591",
+        "abebooks:9780935112023",
+        "abebooks:52230677",
+        "abebooks:19769374767",
+        "abebooks:2677070074",
+        "abebooks:31385685419",
+        "abebooks:5575041754",
+        "abebooks:31021974820",
+        "abebooks:1387941472",
+        "abebooks:30312585186",
+        "abebooks:32481903766",
+        "abebooks:5682460235",
+        "abebooks:18919632166",
+        "abebooks:31624079087",
+        "abebooks:16458428936",
+        "abebooks:9164770428",
+        "abebooks:32063647825",
+        "abebooks:32475968371",
+        "abebooks:54990151"
+      ]
+    },
+    "abebooks|heinrich hoffmann ed|winterhilfswerk heftchen winter relief fund booklets": {
+      "first_successful_fetch": "2026-08-22T18:57:55Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T18:57:55Z",
+      "seen": [
+        "abebooks:22349260577",
+        "abebooks:50731200"
+      ]
+    },
+    "abebooks|heinrich riebesehl|agrarlandschaften agricultural landscapes": {
+      "first_successful_fetch": "2026-08-22T18:57:55Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T18:57:55Z",
+      "seen": [
+        "abebooks:22864238965",
+        "abebooks:17994301614",
+        "abebooks:22689116794",
+        "abebooks:30828278025",
+        "abebooks:17994301607"
+      ]
+    },
+    "abebooks|hellen van meene|untitled": {
+      "first_successful_fetch": "2026-08-22T18:57:55Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T18:57:55Z",
+      "seen": [
+        "abebooks:31694989312",
+        "abebooks:2900013320240",
+        "abebooks:32029665086",
+        "abebooks:9788884840011",
+        "abebooks:31416835972",
+        "abebooks:18893213289",
+        "abebooks:32260575343",
+        "abebooks:82663586",
+        "abebooks:19363299564",
+        "abebooks:19363299563",
+        "abebooks:21676138228",
+        "abebooks:32474808396",
+        "abebooks:53994756",
+        "abebooks:19363299568",
+        "abebooks:6610924802"
+      ]
+    },
+    "abebooks|helmer petersen keld|122 farvefotografier": {
+      "first_successful_fetch": "2026-08-22T18:57:55Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T18:57:55Z",
+      "seen": [
+        "abebooks:22394570367",
+        "abebooks:32081121702",
+        "abebooks:32258571252",
+        "abebooks:9781935004271",
+        "abebooks:89712618"
+      ]
+    },
+    "abebooks|henri maccheroni|cent photographies choisies dans la serie deux mille photographies du sexe d une femme": {
+      "first_successful_fetch": "2026-08-22T18:57:55Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T18:57:55Z",
+      "seen": [
+        "abebooks:32244286540",
+        "abebooks:9782702100226",
+        "abebooks:55410863",
+        "abebooks:31725635376",
+        "abebooks:30452727417",
+        "abebooks:71958310",
+        "abebooks:31114247848",
+        "abebooks:72313296",
+        "abebooks:31254604607",
+        "abebooks:63678090"
+      ]
+    },
+    "abebooks|henryk ross|ghetto lodz": {
+      "first_successful_fetch": "2026-08-22T18:57:55Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T18:57:55Z",
+      "seen": [
+        "abebooks:32310788989",
+        "abebooks:9780300264111",
+        "abebooks:53152918",
+        "abebooks:31789470271",
+        "abebooks:9780954281373",
+        "abebooks:84982828",
+        "abebooks:32474232691",
+        "abebooks:54515469",
+        "abebooks:32499649561",
+        "abebooks:31445529449",
+        "abebooks:52101753",
+        "abebooks:30546323863",
+        "abebooks:9781988788012",
+        "abebooks:31729251949",
+        "abebooks:70815944",
+        "abebooks:32458010691",
+        "abebooks:71454205",
+        "abebooks:31656089357",
+        "abebooks:31047994966",
+        "abebooks:32115741298",
+        "abebooks:9780966044010",
+        "abebooks:82663586",
+        "abebooks:31396614490",
+        "abebooks:52277777"
+      ]
+    },
+    "abebooks|hernan gustavo ortiz jimenez augustin|chimeneas": {
+      "first_successful_fetch": "2026-08-22T18:57:55Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T18:57:55Z",
+      "seen": [
+        "abebooks:5758474897",
+        "abebooks:9789688133439",
+        "abebooks:30113265916",
+        "abebooks:58932750",
+        "abebooks:31959484504"
+      ]
+    },
+    "abebooks|hine lewis w|men at work": {
+      "first_successful_fetch": "2026-08-22T18:57:55Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T18:57:55Z",
+      "seen": [
+        "abebooks:32501706249",
+        "abebooks:9780486234755",
+        "abebooks:52274160",
+        "abebooks:32469518995",
+        "abebooks:32498358986",
+        "abebooks:32407382531",
+        "abebooks:2900013854851",
+        "abebooks:31001437601",
+        "abebooks:31137356073",
+        "abebooks:53727726",
+        "abebooks:32493886830",
+        "abebooks:31109579339",
+        "abebooks:17974301083",
+        "abebooks:32414362605",
+        "abebooks:82739075",
+        "abebooks:30141968775",
+        "abebooks:32251707593",
+        "abebooks:32190566585",
+        "abebooks:31821430482",
+        "abebooks:32373625461"
+      ]
+    },
+    "abebooks|hiromix|girls blue rockin on": {
+      "first_successful_fetch": "2026-08-22T18:57:55Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T18:57:55Z",
+      "seen": [
+        "abebooks:32439767900",
+        "abebooks:9784947599445",
+        "abebooks:53994756"
+      ]
+    },
+    "abebooks|hiroshi hamaya|ikari to kanashimi no kiroku documents of anger and sadness": {
+      "first_successful_fetch": "2026-08-22T18:57:55Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T18:57:55Z",
+      "seen": [
+        "abebooks:32119265320",
+        "abebooks:32119258556",
+        "abebooks:32119264343",
+        "abebooks:31839727571",
+        "abebooks:30725275565"
+      ]
+    },
+    "abebooks|hoppe e o|deutsche arbeit": {
+      "first_successful_fetch": "2026-08-22T18:57:55Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T18:57:55Z",
+      "seen": [
+        "abebooks:32476681341",
+        "abebooks:6809928930",
+        "abebooks:31682357315",
+        "abebooks:52241158",
+        "abebooks:3940259939",
+        "abebooks:32496777108",
+        "abebooks:1809159231",
+        "abebooks:19494455964",
+        "abebooks:2508484862",
+        "abebooks:31055935983"
       ]
     }
   },
