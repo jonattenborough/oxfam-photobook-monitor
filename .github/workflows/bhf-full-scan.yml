@@ -34,25 +34,31 @@ jobs:
         with:
           python-version: "3.13"
 
-      # Full catalogue validation run for the current BHF books inventory.
-      - name: Scan every publicly exposed BHF book page
-        run: python bhf_full_scan.py
-
-      - name: Upload exhaustive BHF snapshot
-        uses: actions/upload-artifact@v4
-        with:
-          name: bhf-full-scan
-          path: data/bhf_full_scan.json
-          if-no-files-found: error
-
-      - name: Persist exhaustive BHF snapshot
-        if: github.event_name != 'pull_request'
+      - name: Diagnose public BHF eBay listing endpoints
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- data/bhf_full_scan.json
-          if git diff --cached --quiet; then
-            exit 0
-          fi
-          git commit -m "Update BHF full inventory scan [skip ci]"
-          git push
+          python - <<'PY'
+          from external_monitor import request_html, parse_ebay
+
+          urls = [
+              "https://www.ebay.co.uk/str/britishheartfoundationshop/BOOKS/_i.html?store_cat=3893944012&_sop=10",
+              "https://www.ebay.co.uk/sch/i.html?_ssn=bhf_shops&store_cat=3893944012&store_name=britishheartfoundationshop&_sop=10",
+              "https://www.ebay.co.uk/sch/i.html?_ssn=bhf_shops&_sacat=261186&_sop=10",
+              "https://www.ebay.co.uk/sch/i.html?_ssn=bhf_shops&_sacat=267&_sop=10",
+          ]
+          for url in urls:
+              print("URL", url)
+              try:
+                  html = request_html(url)
+                  source = {"id":"diag","source_name":"diag","kind":"ebay","url":url}
+                  parsed = parse_ebay(source, html)
+                  print("HTML", len(html), "itm tokens", html.lower().count("/itm/"), "parsed", len(parsed))
+                  print("HEAD", repr(html[:350]))
+                  print("TITLES", [x.get("title") for x in parsed[:5]])
+              except Exception as exc:
+                  print("ERROR", repr(exc))
+              print("---")
+          PY
+
+      - name: Scan every publicly exposed BHF book page
+        if: false
+        run: python bhf_full_scan.py
