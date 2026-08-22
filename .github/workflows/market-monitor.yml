@@ -8,6 +8,7 @@ on:
     branches: [main]
     paths:
       - "market_monitor.py"
+      - "market_monitor_safe.py"
       - "parr_badger_runner.py"
       - "external_monitor.py"
       - "charity_monitor.py"
@@ -25,7 +26,7 @@ concurrency:
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 20
 
     steps:
       - name: Check out repository
@@ -39,9 +40,9 @@ jobs:
       - name: Validate Parr Badger market matcher
         run: python market_monitor.py --self-test
 
-      - name: Search wider photobook market
+      - name: Search live-tested wider photobook market sources
         id: market
-        run: python market_monitor.py --targets-per-run 12
+        run: python market_monitor_safe.py --targets-per-run 12
 
       - name: Create AI review issue for new market matches
         if: steps.market.outputs.new_count != '0'
