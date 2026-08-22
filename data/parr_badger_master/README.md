@@ -25,7 +25,11 @@ The four CSV files are shards of one logical database. `parr_badger_runner.py` l
 
 A Parr / Badger match is a discovery signal, not a purchase verdict. The matcher normalizes punctuation and accents and performs contributor-aware fuzzy title matching. Short generic titles require contributor evidence. BROAD records require stronger matching than CORE records.
 
-The wrapper adds Parr / Badger matching to newly detected listings from Oxfam, Shelter, Crisis and the external charity / used-book monitors. It does not reprocess historical inventory or full-scan candidate pools.
+`parr_badger_runner.py` layers this matching onto newly detected listings from Oxfam, Shelter, Crisis and the existing external charity / used-book radar.
+
+`market_monitor.py` also uses the same master for the wider hourly search. It scans broad marketplace and specialist-photobook inventory, then rotates direct searches for master records across eBay UK, AbeBooks and Biblio. Per-query baselines prevent existing marketplace stock from being misreported as new.
+
+Neither path reprocesses historical inventory or full-scan candidate pools as new listings.
 
 ## Source quality
 
@@ -33,4 +37,4 @@ Volume II is currently the strongest section because it was extracted from the b
 
 ## Maintenance
 
-Update the master when better primary-source information becomes available. Keep uncertain records marked BROAD rather than silently promoting them to CORE.
+Update the master when better primary-source information becomes available. Keep uncertain records marked BROAD rather than silently promoting them to CORE. The scheduled workflows run matcher self-tests so an unexpectedly missing or very small master fails visibly.
