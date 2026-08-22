@@ -52,9 +52,9 @@ Only newly seen listings that match the Parr / Badger master are surfaced.
 
 ### Rotating exact-title AbeBooks sweep
 
-Every hourly run also selects 12 Parr / Badger records and searches them directly on AbeBooks. Direct AbeBooks title/author searches worked in live GitHub Actions testing even though the broad AbeBooks pages did not parse reliably.
+Every hourly run also selects 24 Parr / Badger records and searches them directly on AbeBooks. Direct AbeBooks title/author searches worked in live GitHub Actions testing even though the broad AbeBooks pages did not parse reliably.
 
-The cursor is stored in `data/market_state.json`, so successive runs rotate through the master. Each title query is silently baselined the first time it is visited. Later newly appearing matching copies can create an `EXTERNAL_NEW:` issue.
+The cursor is stored in `data/market_state.json`, so successive runs rotate through the master. At 24 records per hour, one complete 628-record rotation takes about 27 hours if runs complete normally. Each title query is silently baselined the first time it is visited. Later newly appearing matching copies can create an `EXTERNAL_NEW:` issue.
 
 ### Wider-web search for blocked or awkward sites
 
