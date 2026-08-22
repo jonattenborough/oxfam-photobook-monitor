@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """Exhaustively scan the public British Heart Foundation eBay Books inventory.
 
-The BHF storefront renders 48 listing cards per page and caps each sort order at
-10 pages. A single sort therefore exposes at most 480 books even when the store
-contains more than 1,000. This scanner sweeps several independent sort orders,
-deduplicates by eBay item ID, and refuses to report completeness unless the union
-matches the live catalogue count closely enough to account only for listings that
-may change while the scan itself is running.
+The BHF storefront renders about 48 listing cards per page and caps each sort
+order at 10 pages. A single sort therefore exposes at most about 480 books even
+when the store contains more than 1,000. This scanner sweeps multiple independent
+sort orders, retries transient empty storefront responses, deduplicates by eBay
+item ID, and refuses to report completeness unless the union closely matches the
+live catalogue count.
 """
 
 from __future__ import annotations
@@ -14,6 +14,7 @@ from __future__ import annotations
 import html
 import json
 import re
+import time
 import urllib.parse
 from datetime import datetime, timezone
 from pathlib import Path
@@ -31,20 +32,26 @@ from external_monitor import (
 
 BASE_URL = (
     "https://www.ebay.co.uk/str/britishheartfoundationshop/BOOKS/"
-    "_i.html?store_cat=3893944012"
+    "_i.html?store_cat=3893944012&_dkr=1&_blrs=recall_filtering&"
+    "_ssn=bhf_shops&store_name=britishheartfoundationshop&_oac=1"
 )
 OUT = Path("data/bhf_full_scan.json")
 PAGES_PER_SORT = 10
+EMPTY_PAGE_RETRIES = 4
 
-# eBay storefront sort codes. Price-low and price-high are especially useful
-# because together they expose opposite ends of a catalogue that is larger than
-# the 480-item per-sort storefront cap.
 SORT_STRATEGIES = [
     ("newly_listed", "10"),
     ("ending_soonest", "1"),
     ("price_low", "15"),
     ("price_high", "16"),
     ("best_match", "12"),
+    # These additional views currently resolve to valid BHF storefront grids.
+    # They are retained as fallback diversity if the advertised sorts still leave
+    # a small middle slice hidden by eBay's 480-item cap.
+    ("fallback_2", "2"),
+    ("fallback_3", "3"),
+    ("fallback_4", "4"),
+    ("fallback_5", "5"),
 ]
 
 COUNT_PATTERNS = [
@@ -79,7 +86,7 @@ EXTRA_TARGETS = [
     "trent parke", "antoine d'agata", "antoine d’agata", "raghu rai",
     "george rodger", "ian berry", "philip jones griffiths", "moons of saturn",
     "graciela iturbide", "cristina garcia rodero", "cristina garcía rodero",
-    "agata grzybowska", "mark cohen", "friedlander", "winogrand",
+    "mark cohen", "friedlander", "winogrand", "van der elsken", "ed van der elsken",
 ]
 
 GENERIC_LEAD_TERMS = [
@@ -89,7 +96,6 @@ GENERIC_LEAD_TERMS = [
     "contact sheets", "picture book", "picture books",
 ]
 
-# Avoid the bare substring "art", which would match the word "heart" in BHF text.
 VISUAL_HINTS = [
     "artist", "fine art", "architecture", "architectural", "fashion", "design",
     "portrait", "portraits", "illustrated", "exhibition", "catalogue", "catalog",
@@ -170,6 +176,19 @@ def parse_store_page(page_html: str, source_url: str) -> list[dict[str, Any]]:
     return items
 
 
+def fetch_parsed_page(url: str) -> tuple[str, list[dict[str, Any]], int]:
+    """Fetch a storefront page, retrying when eBay transiently returns an empty shell."""
+    last_html = ""
+    for attempt in range(1, EMPTY_PAGE_RETRIES + 1):
+        last_html = request_html(url)
+        batch = parse_store_page(last_html, url)
+        if batch:
+            return last_html, batch, attempt
+        if attempt < EMPTY_PAGE_RETRIES:
+            time.sleep(0.7 * attempt)
+    return last_html, [], EMPTY_PAGE_RETRIES
+
+
 def text_for(item: dict[str, Any]) -> str:
     return " ".join([str(item.get("title") or ""), str(item.get("context") or "")]).lower()
 
@@ -236,17 +255,17 @@ def main() -> int:
         strategy_start_total = len(by_id)
         first_page_size: int | None = None
         pages_scanned = 0
+        strategy_available = True
 
         for page in range(1, PAGES_PER_SORT + 1):
             url = page_url(page, sort_code)
-            page_html = request_html(url)
+            page_html, batch, attempts = fetch_parsed_page(url)
             pages_scanned += 1
 
             count = advertised_count(page_html)
             if count is not None:
                 catalogue_counts_seen.append(count)
 
-            batch = parse_store_page(page_html, url)
             ids = [str(item["external_id"]) for item in batch]
             new_strategy_ids = [item_id for item_id in ids if item_id not in strategy_ids]
             new_global_ids = [item_id for item_id in ids if item_id not in by_id]
@@ -257,30 +276,29 @@ def main() -> int:
                     "sort_code": sort_code,
                     "page": page,
                     "url": url,
+                    "fetch_attempts": attempts,
                     "parsed_items": len(batch),
                     "new_in_strategy": len(new_strategy_ids),
                     "new_global_items": len(new_global_ids),
-                    "global_unique_after_page": len(by_id) + len(new_global_ids),
+                    "global_unique_before_page": len(by_id),
                 }
             )
             print(
                 f"{strategy_name} page {page}: {len(batch)} listings, "
-                f"{len(new_global_ids)} new globally"
+                f"{len(new_global_ids)} new globally, {attempts} fetch attempt(s)"
             )
 
-            if page == 1:
-                if not batch:
-                    raise RuntimeError(
-                        f"BHF {strategy_name} first page fetched but no storefront cards were parsed"
-                    )
-                first_page_size = len(batch)
-            elif batch and not new_strategy_ids:
-                raise RuntimeError(
-                    f"BHF {strategy_name} page {page} repeated an earlier page in the same sort; "
-                    "refusing to claim a full scan"
-                )
+            if page == 1 and not batch:
+                strategy_available = False
+                print(f"Strategy {strategy_name} unavailable after retries; continuing")
+                break
 
             if not batch:
+                print(f"Strategy {strategy_name} ended at page {page}")
+                break
+
+            if page > 1 and not new_strategy_ids:
+                print(f"Strategy {strategy_name} repeated at page {page}; ending this strategy")
                 break
 
             strategy_ids.update(ids)
@@ -290,13 +308,15 @@ def main() -> int:
                 if existing is None:
                     by_id[item_id] = item
                 else:
-                    # Prefer whichever observation contains a price and the longer card context.
                     if existing.get("price_gbp") is None and item.get("price_gbp") is not None:
                         existing["price_gbp"] = item.get("price_gbp")
                     if len(str(item.get("context") or "")) > len(str(existing.get("context") or "")):
                         existing["context"] = item.get("context")
 
-            if first_page_size and len(batch) < first_page_size:
+            if first_page_size is None:
+                first_page_size = len(batch)
+            elif first_page_size and len(batch) < first_page_size:
+                print(f"Strategy {strategy_name} reached a short final page {page}")
                 break
 
         added = len(by_id) - strategy_start_total
@@ -304,6 +324,7 @@ def main() -> int:
             {
                 "strategy": strategy_name,
                 "sort_code": sort_code,
+                "available": strategy_available,
                 "pages_scanned": pages_scanned,
                 "unique_items_in_strategy": len(strategy_ids),
                 "new_global_items_added": added,
@@ -327,7 +348,6 @@ def main() -> int:
         raise RuntimeError(f"Only {total} unique BHF books were parsed; refusing to mark scan complete")
 
     if catalogue_count is not None:
-        # Permit at most five items of catalogue churn during the multi-request scan.
         shortfall = catalogue_count - total
         if shortfall > 5:
             raise RuntimeError(
@@ -339,7 +359,7 @@ def main() -> int:
                 f"multi-sort union reached {total} of advertised {catalogue_count}; "
                 f"shortfall {max(0, shortfall)} within live-catalogue churn tolerance"
             )
-    elif not completion_reason:
+    else:
         raise RuntimeError("BHF catalogue count was not exposed; refusing to claim completeness")
 
     candidates: list[dict[str, Any]] = []
@@ -403,8 +423,8 @@ def main() -> int:
         f"{len(candidates)} broad candidates"
     )
     print(f"Completion: {completion_reason}")
-    print("Top 80 candidates:")
-    for item in candidates[:80]:
+    print("Top 100 candidates:")
+    for item in candidates[:100]:
         price = (
             f"£{item['price_gbp']:.2f}"
             if isinstance(item.get("price_gbp"), (int, float))
