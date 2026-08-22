@@ -1,11 +1,11 @@
 {
-  "cursor": 216,
+  "cursor": 240,
   "feeds": {
     "photobookstore": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 250,
-      "last_successful_fetch": "2026-08-22T18:57:55Z",
+      "last_successful_fetch": "2026-08-22T19:45:37Z",
       "seen": [
         "photobookstore:15834487521653",
         "photobookstore:15969006715253",
@@ -263,7 +263,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 232,
-      "last_successful_fetch": "2026-08-22T18:57:55Z",
+      "last_successful_fetch": "2026-08-22T19:45:37Z",
       "seen": [
         "setanta:16045232554366",
         "setanta:16045434241406",
@@ -503,7 +503,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 85,
-      "last_successful_fetch": "2026-08-22T18:57:55Z",
+      "last_successful_fetch": "2026-08-22T19:45:37Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -596,7 +596,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 208,
-      "last_successful_fetch": "2026-08-22T18:57:55Z",
+      "last_successful_fetch": "2026-08-22T19:45:37Z",
       "seen": [
         "village:10371039101210",
         "village:10371023995162",
@@ -810,11 +810,9 @@
       ]
     }
   },
-  "last_failures": [
-    "abebooks target Hoffmann, Heinrich / Das Antlitz des Führers: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Das+Antlitz+des+F%C3%BChrers&sortby=17&ds=50&an=Hoffmann%2C+Heinrich after 3 attempts: HTTP Error 503: Service Temporarily Unavailable"
-  ],
-  "last_successful_requests": 27,
-  "last_successful_run": "2026-08-22T18:57:55Z",
+  "last_failures": [],
+  "last_successful_requests": 28,
+  "last_successful_run": "2026-08-22T19:45:37Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
@@ -6381,6 +6379,422 @@
         "abebooks:19494455964",
         "abebooks:2508484862",
         "abebooks:31055935983"
+      ]
+    },
+    "abebooks|horacio coppola|buenos aires": {
+      "first_successful_fetch": "2026-08-22T19:45:37Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "seen": [
+        "abebooks:32429543057",
+        "abebooks:30765372235",
+        "abebooks:9780870709616",
+        "abebooks:32424112357",
+        "abebooks:9789879395332",
+        "abebooks:54239244",
+        "abebooks:31216786983",
+        "abebooks:51188835",
+        "abebooks:30004800091",
+        "abebooks:32429935030",
+        "abebooks:51282581",
+        "abebooks:32120448890",
+        "abebooks:89127797",
+        "abebooks:19115400668",
+        "abebooks:52929955",
+        "abebooks:32428721600",
+        "abebooks:60421107",
+        "abebooks:30814423229",
+        "abebooks:57259283",
+        "abebooks:32085061415",
+        "abebooks:32402543959",
+        "abebooks:51209318",
+        "abebooks:31232360211",
+        "abebooks:58932750",
+        "abebooks:30966145672",
+        "abebooks:31825902302",
+        "abebooks:61012972",
+        "abebooks:30262496540",
+        "abebooks:30604812626",
+        "abebooks:52435167",
+        "abebooks:32258639299",
+        "abebooks:89712618",
+        "abebooks:30322098124"
+      ]
+    },
+    "abebooks|hosoe eikoh mishima yukio|barakei": {
+      "first_successful_fetch": "2026-08-22T19:45:37Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "seen": [
+        "abebooks:31586939580",
+        "abebooks:20000357890",
+        "abebooks:9781597110907",
+        "abebooks:50531827",
+        "abebooks:31635393001",
+        "abebooks:86378343",
+        "abebooks:31894400368",
+        "abebooks:51283250",
+        "abebooks:32037905188",
+        "abebooks:51584320",
+        "abebooks:31631751359",
+        "abebooks:31631752667",
+        "abebooks:32333461638",
+        "abebooks:90292497",
+        "abebooks:31192518212",
+        "abebooks:31631757970",
+        "abebooks:31635382879",
+        "abebooks:31429863088",
+        "abebooks:52390106",
+        "abebooks:32485566020",
+        "abebooks:32413750227",
+        "abebooks:31704639035",
+        "abebooks:31859281237",
+        "abebooks:30212133727",
+        "abebooks:52506076",
+        "abebooks:31172946571",
+        "abebooks:30212133722",
+        "abebooks:31423645792",
+        "abebooks:31082056428",
+        "abebooks:83879318"
+      ]
+    },
+    "abebooks|hosoe eikoh|kamaitachi": {
+      "first_successful_fetch": "2026-08-22T19:45:37Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "seen": [
+        "abebooks:30204668220",
+        "abebooks:52506076",
+        "abebooks:32192424631",
+        "abebooks:9781597111218",
+        "abebooks:65127573",
+        "abebooks:31884008966",
+        "abebooks:56443562",
+        "abebooks:32456041641",
+        "abebooks:9781931788809",
+        "abebooks:21121404896",
+        "abebooks:30447053855",
+        "abebooks:30510167445",
+        "abebooks:20751021406",
+        "abebooks:9784861520358",
+        "abebooks:13327516630",
+        "abebooks:14142626441",
+        "abebooks:20100937224",
+        "abebooks:31823341292",
+        "abebooks:86378343",
+        "abebooks:17915774658",
+        "abebooks:31823336396",
+        "abebooks:31718117783",
+        "abebooks:31538371272"
+      ]
+    },
+    "abebooks|hosoe eikoh|otoko to onna": {
+      "first_successful_fetch": "2026-08-22T19:45:37Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "seen": [
+        "abebooks:31406862969"
+      ]
+    },
+    "abebooks|hrabal bohumil|toto mesto je vespolecne peci obyvatel": {
+      "first_successful_fetch": "2026-08-22T19:45:37Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "seen": [
+        "abebooks:32124972609",
+        "abebooks:57906169",
+        "abebooks:15907388387"
+      ]
+    },
+    "abebooks|igor samolet|be happy": {
+      "first_successful_fetch": "2026-08-22T19:45:37Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "seen": [
+        "abebooks:32448036553",
+        "abebooks:9783941825543",
+        "abebooks:31854551825",
+        "abebooks:31854561231",
+        "abebooks:32199457913"
+      ]
+    },
+    "abebooks|ingulov s b|pishchyevaya industriya": {
+      "first_successful_fetch": "2026-08-22T19:45:37Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "seen": []
+    },
+    "abebooks|inspector thomas byrnes|professional criminals of america": {
+      "first_successful_fetch": "2026-08-22T19:45:37Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "seen": [
+        "abebooks:32496345819",
+        "abebooks:31956929358",
+        "abebooks:71436959",
+        "abebooks:923550876",
+        "abebooks:9781555213541",
+        "abebooks:32430463037",
+        "abebooks:58844980",
+        "abebooks:31071478165",
+        "abebooks:32140736950",
+        "abebooks:31235966412",
+        "abebooks:30118452871",
+        "abebooks:32372321302"
+      ]
+    },
+    "abebooks|international federation of trade unions|nie wieder krieg no more war plus jamais de guerre nunca jamas guerra nooit meer oorlog aldrig mere krig": {
+      "first_successful_fetch": "2026-08-22T19:45:37Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "seen": [
+        "abebooks:32434974828",
+        "abebooks:32434253089",
+        "abebooks:31960689469",
+        "abebooks:32501598852",
+        "abebooks:32501623632"
+      ]
+    },
+    "abebooks|ishimoto yasuhiro|aruhi arutokoro": {
+      "first_successful_fetch": "2026-08-22T19:45:37Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "seen": [
+        "abebooks:31406862971"
+      ]
+    },
+    "abebooks|ishiuchi miyako|yokosuka story": {
+      "first_successful_fetch": "2026-08-22T19:45:37Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "seen": [
+        "abebooks:18640437010",
+        "abebooks:56092880",
+        "abebooks:31103545885",
+        "abebooks:5603789851",
+        "abebooks:52506076"
+      ]
+    },
+    "abebooks|izis prevert jacques|le cirque d izis": {
+      "first_successful_fetch": "2026-08-22T19:45:37Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "seen": [
+        "abebooks:32416064659",
+        "abebooks:54141666",
+        "abebooks:32157301467",
+        "abebooks:61633597",
+        "abebooks:30309264941",
+        "abebooks:30763440119",
+        "abebooks:74014852",
+        "abebooks:32467589625",
+        "abebooks:82076540",
+        "abebooks:32452710686",
+        "abebooks:52748454",
+        "abebooks:11503192860",
+        "abebooks:32018926249",
+        "abebooks:32166153059",
+        "abebooks:57083135",
+        "abebooks:32214950095",
+        "abebooks:32358127131",
+        "abebooks:51293756",
+        "abebooks:32176040006",
+        "abebooks:30878115109",
+        "abebooks:31436584112",
+        "abebooks:10713183730",
+        "abebooks:30620612806",
+        "abebooks:18856128783",
+        "abebooks:32077595872",
+        "abebooks:31949680789",
+        "abebooks:63722933",
+        "abebooks:32337964293",
+        "abebooks:20948556226",
+        "abebooks:12882838312",
+        "abebooks:31232178931",
+        "abebooks:56723040",
+        "abebooks:14939422780",
+        "abebooks:31830205713"
+      ]
+    },
+    "abebooks|jacob holdt|amerikanske billeder": {
+      "first_successful_fetch": "2026-08-22T19:45:37Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "seen": [
+        "abebooks:32472651199",
+        "abebooks:63559039",
+        "abebooks:32482215829",
+        "abebooks:12483350259",
+        "abebooks:9788787498463",
+        "abebooks:50417431",
+        "abebooks:32400750082",
+        "abebooks:82663586",
+        "abebooks:17944392960",
+        "abebooks:17944392957"
+      ]
+    },
+    "abebooks|jacqueline hassink|the table of power": {
+      "first_successful_fetch": "2026-08-22T19:45:37Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "seen": [
+        "abebooks:32258549282",
+        "abebooks:9783775732147",
+        "abebooks:89712618"
+      ]
+    },
+    "abebooks|james allen|without sanctuary": {
+      "first_successful_fetch": "2026-08-22T19:45:37Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "seen": [
+        "abebooks:32502155996",
+        "abebooks:9780944092699",
+        "abebooks:32503143700",
+        "abebooks:32456616696",
+        "abebooks:86064178",
+        "abebooks:32494937810",
+        "abebooks:71666785",
+        "abebooks:32470155025",
+        "abebooks:32402982845",
+        "abebooks:32335678275",
+        "abebooks:52323279",
+        "abebooks:32500675949",
+        "abebooks:32446719788",
+        "abebooks:32452425216",
+        "abebooks:32452803981"
+      ]
+    },
+    "abebooks|james nachtwey|inferno": {
+      "first_successful_fetch": "2026-08-22T19:45:37Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "seen": [
+        "abebooks:32503140822",
+        "abebooks:9780714838151",
+        "abebooks:83259196",
+        "abebooks:32500135942",
+        "abebooks:31408568332",
+        "abebooks:9780714890760",
+        "abebooks:53994756",
+        "abebooks:31787679152",
+        "abebooks:32467990519",
+        "abebooks:32369096813"
+      ]
+    },
+    "abebooks|jan dirk van der burg|olifantenpaadjes": {
+      "first_successful_fetch": "2026-08-22T19:45:37Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "seen": []
+    },
+    "abebooks|jaroslav barta|letem ceskym svetem 1898 1998 obraz promeny ceskych zemi v odstupu stoleti 1898 1998 a flight over the czech world 1898 1998 a picture of the changes in the czech world over a century": {
+      "first_successful_fetch": "2026-08-22T19:45:37Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "seen": [
+        "abebooks:22908162581",
+        "abebooks:16667489814",
+        "abebooks:31801445289",
+        "abebooks:32486254206",
+        "abebooks:32432142111"
+      ]
+    },
+    "abebooks|jason fulford|the mushroom collector": {
+      "first_successful_fetch": "2026-08-22T19:45:37Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "seen": [
+        "abebooks:31993274753",
+        "abebooks:9789081058421",
+        "abebooks:53278250",
+        "abebooks:12440461889"
+      ]
+    },
+    "abebooks|jean gaumy|d apres nature": {
+      "first_successful_fetch": "2026-08-22T19:45:37Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "seen": [
+        "abebooks:32213183418",
+        "abebooks:9782365114332",
+        "abebooks:52839311",
+        "abebooks:32485284267",
+        "abebooks:9782915173581",
+        "abebooks:54893002",
+        "abebooks:31907639832",
+        "abebooks:70788857",
+        "abebooks:31679511629",
+        "abebooks:32376400320",
+        "abebooks:12432515065",
+        "abebooks:30164862573",
+        "abebooks:58502576",
+        "abebooks:31548371445",
+        "abebooks:32328819914",
+        "abebooks:82076540",
+        "abebooks:31595887774",
+        "abebooks:12459301288"
+      ]
+    },
+    "abebooks|jean gaumy|pleine mer men at sea": {
+      "first_successful_fetch": "2026-08-22T19:45:37Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "seen": [
+        "abebooks:32408185346",
+        "abebooks:50731200",
+        "abebooks:32408191154",
+        "abebooks:31256714000"
+      ]
+    },
+    "abebooks|jem southam|the raft of carrots": {
+      "first_successful_fetch": "2026-08-22T19:45:37Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "seen": [
+        "abebooks:12269484199",
+        "abebooks:9780907879343",
+        "abebooks:54897375",
+        "abebooks:31685502411",
+        "abebooks:82273322",
+        "abebooks:31067129369"
+      ]
+    },
+    "abebooks|jens liebchen|dl 07 stereotypes of war": {
+      "first_successful_fetch": "2026-08-22T19:45:37Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "seen": [
+        "abebooks:32043399981",
+        "abebooks:9783980607919",
+        "abebooks:30550596966",
+        "abebooks:32494234730",
+        "abebooks:31221749916",
+        "abebooks:18054102434",
+        "abebooks:12610958557",
+        "abebooks:60245682",
+        "abebooks:22618069132",
+        "abebooks:31610951341",
+        "abebooks:82273322",
+        "abebooks:18054102431",
+        "abebooks:1393611121",
+        "abebooks:18054102430",
+        "abebooks:1303456608",
+        "abebooks:32081207217"
+      ]
+    },
+    "abebooks|jens olof lasthein|moments in between": {
+      "first_successful_fetch": "2026-08-22T19:45:37Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "seen": [
+        "abebooks:30819410024",
+        "abebooks:9789197362962",
+        "abebooks:55443556",
+        "abebooks:22650694143",
+        "abebooks:30959026697",
+        "abebooks:30029159675",
+        "abebooks:3581348459"
       ]
     }
   },
