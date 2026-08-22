@@ -10,7 +10,9 @@ on:
       - "oxfam_parent_common.py"
       - "parent_monitor.py"
       - "parr_badger_runner.py"
+      - "canon_runner.py"
       - "data/parr_badger_master/**"
+      - "data/roth_101_master.csv"
       - ".github/workflows/parent-monitor.yml"
 
 permissions:
@@ -35,12 +37,12 @@ jobs:
         with:
           python-version: "3.13"
 
-      - name: Validate Parr Badger master
-        run: python parr_badger_runner.py self-test
+      - name: Validate combined photobook canon
+        run: python canon_runner.py self-test
 
       - name: Query broad Oxfam Art and Photography category
         id: monitor
-        run: python parr_badger_runner.py parent_monitor
+        run: python canon_runner.py parent_monitor
 
       - name: Create AI review issue for new parent-category listings
         if: steps.monitor.outputs.new_count != '0'
