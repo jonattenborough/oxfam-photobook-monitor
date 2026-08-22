@@ -24,9 +24,10 @@ jobs:
         with:
           python-version: "3.13"
 
-      # eBay may block GitHub-hosted runners. Keep this diagnostic inventory
-      # scanner manual-only so it can never break or spam the live monitors.
-      - name: Scan every publicly exposed BHF book page
+      - name: Scan complete BHF eBay book inventory via Browse API
+        env:
+          EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
+          EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
         run: python bhf_full_scan.py
 
       - name: Upload exhaustive BHF snapshot
@@ -45,4 +46,12 @@ jobs:
             exit 0
           fi
           git commit -m "Update BHF full inventory scan [skip ci]"
-          git push
+          for attempt in 1 2 3 4; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then
+              break
+            fi
+            if [ "$attempt" = "4" ]; then
+              exit 1
+            fi
+          done
