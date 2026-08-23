@@ -1,11 +1,11 @@
 {
-  "cursor": 212,
+  "cursor": 236,
   "feeds": {
     "photobookstore": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 250,
-      "last_successful_fetch": "2026-08-23T22:47:31Z",
+      "last_successful_fetch": "2026-08-23T23:45:19Z",
       "seen": [
         "photobookstore:15834487521653",
         "photobookstore:15969006715253",
@@ -263,7 +263,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 232,
-      "last_successful_fetch": "2026-08-23T22:47:31Z",
+      "last_successful_fetch": "2026-08-23T23:45:19Z",
       "seen": [
         "setanta:16045232554366",
         "setanta:16045434241406",
@@ -503,7 +503,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 85,
-      "last_successful_fetch": "2026-08-23T22:47:31Z",
+      "last_successful_fetch": "2026-08-23T23:45:19Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -596,7 +596,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 208,
-      "last_successful_fetch": "2026-08-23T22:47:31Z",
+      "last_successful_fetch": "2026-08-23T23:45:19Z",
       "seen": [
         "village:10371039101210",
         "village:10371023995162",
@@ -812,7 +812,7 @@
   },
   "last_failures": [],
   "last_successful_requests": 28,
-  "last_successful_run": "2026-08-23T22:47:31Z",
+  "last_successful_run": "2026-08-23T23:45:19Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
@@ -7374,7 +7374,7 @@
     "abebooks|hiromix|girls blue rockin on": {
       "first_successful_fetch": "2026-08-22T18:57:55Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T18:57:55Z",
+      "last_successful_fetch": "2026-08-23T23:45:19Z",
       "seen": [
         "abebooks:32439767900",
         "abebooks:9784947599445",
@@ -7384,13 +7384,40 @@
     "abebooks|hiroshi hamaya|ikari to kanashimi no kiroku documents of anger and sadness": {
       "first_successful_fetch": "2026-08-22T18:57:55Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T18:57:55Z",
+      "last_successful_fetch": "2026-08-23T23:45:19Z",
       "seen": [
-        "abebooks:32119265320",
         "abebooks:32119258556",
         "abebooks:32119264343",
+        "abebooks:32119265320",
         "abebooks:31839727571",
         "abebooks:30725275565"
+      ]
+    },
+    "abebooks|hoffmann heinrich|das antlitz des fuhrers": {
+      "first_successful_fetch": "2026-08-23T23:45:19Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T23:45:19Z",
+      "seen": [
+        "abebooks:32342675562",
+        "abebooks:31042349738",
+        "abebooks:32141230911",
+        "abebooks:31472674919",
+        "abebooks:22463338017",
+        "abebooks:30765383924",
+        "abebooks:72775904",
+        "abebooks:30765383064",
+        "abebooks:30765383920",
+        "abebooks:30765383922",
+        "abebooks:30765383923",
+        "abebooks:30765382085",
+        "abebooks:30765374452",
+        "abebooks:30765382086",
+        "abebooks:32226588951",
+        "abebooks:32226584292",
+        "abebooks:4884341396",
+        "abebooks:30723389146",
+        "abebooks:32422780807",
+        "abebooks:32392766513"
       ]
     },
     "abebooks|hoffmann heinrich|hitler uber deutschland": {
@@ -7448,7 +7475,7 @@
     "abebooks|hoppe e o|deutsche arbeit": {
       "first_successful_fetch": "2026-08-22T18:57:55Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T18:57:55Z",
+      "last_successful_fetch": "2026-08-23T23:45:19Z",
       "seen": [
         "abebooks:32476681341",
         "abebooks:6809928930",
@@ -7465,7 +7492,7 @@
     "abebooks|horacio coppola|buenos aires": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "last_successful_fetch": "2026-08-23T23:45:19Z",
       "seen": [
         "abebooks:32429543057",
         "abebooks:30765372235",
@@ -7505,7 +7532,7 @@
     "abebooks|hosoe eikoh mishima yukio|barakei": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "last_successful_fetch": "2026-08-23T23:45:19Z",
       "seen": [
         "abebooks:31586939580",
         "abebooks:20000357890",
@@ -7554,7 +7581,7 @@
     "abebooks|hosoe eikoh|kamaitachi": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "last_successful_fetch": "2026-08-23T23:45:19Z",
       "seen": [
         "abebooks:30204668220",
         "abebooks:52506076",
@@ -7584,7 +7611,7 @@
     "abebooks|hosoe eikoh|otoko to onna": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "last_successful_fetch": "2026-08-23T23:45:19Z",
       "seen": [
         "abebooks:31406862969"
       ]
@@ -7676,7 +7703,7 @@
     "abebooks|hrabal bohumil|toto mesto je vespolecne peci obyvatel": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "last_successful_fetch": "2026-08-23T23:45:19Z",
       "seen": [
         "abebooks:32124972609",
         "abebooks:57906169",
@@ -7711,7 +7738,7 @@
     "abebooks|igor samolet|be happy": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "last_successful_fetch": "2026-08-23T23:45:19Z",
       "seen": [
         "abebooks:32448036553",
         "abebooks:9783941825543",
@@ -7723,13 +7750,13 @@
     "abebooks|ingulov s b|pishchyevaya industriya": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "last_successful_fetch": "2026-08-23T23:45:19Z",
       "seen": []
     },
     "abebooks|inspector thomas byrnes|professional criminals of america": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "last_successful_fetch": "2026-08-23T23:45:19Z",
       "seen": [
         "abebooks:32496345819",
         "abebooks:31956929358",
@@ -7748,19 +7775,19 @@
     "abebooks|international federation of trade unions|nie wieder krieg no more war plus jamais de guerre nunca jamas guerra nooit meer oorlog aldrig mere krig": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "last_successful_fetch": "2026-08-23T23:45:19Z",
       "seen": [
         "abebooks:32434974828",
         "abebooks:32434253089",
         "abebooks:31960689469",
-        "abebooks:32501598852",
-        "abebooks:32501623632"
+        "abebooks:32501623632",
+        "abebooks:32501598852"
       ]
     },
     "abebooks|ishimoto yasuhiro|aruhi arutokoro": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "last_successful_fetch": "2026-08-23T23:45:19Z",
       "seen": [
         "abebooks:31406862971"
       ]
@@ -7845,7 +7872,7 @@
     "abebooks|ishiuchi miyako|yokosuka story": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "last_successful_fetch": "2026-08-23T23:45:19Z",
       "seen": [
         "abebooks:18640437010",
         "abebooks:56092880",
@@ -7857,7 +7884,7 @@
     "abebooks|izis prevert jacques|le cirque d izis": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "last_successful_fetch": "2026-08-23T23:45:19Z",
       "seen": [
         "abebooks:32416064659",
         "abebooks:54141666",
@@ -7898,7 +7925,7 @@
     "abebooks|jacob holdt|amerikanske billeder": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "last_successful_fetch": "2026-08-23T23:45:19Z",
       "seen": [
         "abebooks:32472651199",
         "abebooks:63559039",
@@ -7915,7 +7942,7 @@
     "abebooks|jacqueline hassink|the table of power": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "last_successful_fetch": "2026-08-23T23:45:19Z",
       "seen": [
         "abebooks:32258549282",
         "abebooks:9783775732147",
@@ -7925,7 +7952,7 @@
     "abebooks|james allen|without sanctuary": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "last_successful_fetch": "2026-08-23T23:45:19Z",
       "seen": [
         "abebooks:32502155996",
         "abebooks:9780944092699",
@@ -7934,6 +7961,9 @@
         "abebooks:86064178",
         "abebooks:32494937810",
         "abebooks:71666785",
+        "abebooks:32460855970",
+        "abebooks:58798915",
+        "abebooks:32460858854",
         "abebooks:32470155025",
         "abebooks:32402982845",
         "abebooks:32335678275",
@@ -7947,7 +7977,7 @@
     "abebooks|james nachtwey|inferno": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "last_successful_fetch": "2026-08-23T23:45:19Z",
       "seen": [
         "abebooks:32503140822",
         "abebooks:9780714838151",
@@ -7964,17 +7994,19 @@
     "abebooks|jan dirk van der burg|olifantenpaadjes": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "last_successful_fetch": "2026-08-23T23:45:19Z",
       "seen": []
     },
     "abebooks|jaroslav barta|letem ceskym svetem 1898 1998 obraz promeny ceskych zemi v odstupu stoleti 1898 1998 a flight over the czech world 1898 1998 a picture of the changes in the czech world over a century": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "last_successful_fetch": "2026-08-23T23:45:19Z",
       "seen": [
         "abebooks:22908162581",
         "abebooks:16667489814",
         "abebooks:31801445289",
+        "abebooks:32500225021",
+        "abebooks:32492836424",
         "abebooks:32486254206",
         "abebooks:32432142111"
       ]
@@ -7982,7 +8014,7 @@
     "abebooks|jason fulford|the mushroom collector": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "last_successful_fetch": "2026-08-23T23:45:19Z",
       "seen": [
         "abebooks:31993274753",
         "abebooks:9789081058421",
@@ -7993,7 +8025,7 @@
     "abebooks|jean gaumy|d apres nature": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T19:45:37Z",
+      "last_successful_fetch": "2026-08-23T23:45:19Z",
       "seen": [
         "abebooks:32213183418",
         "abebooks:9782365114332",
@@ -8001,9 +8033,9 @@
         "abebooks:32485284267",
         "abebooks:9782915173581",
         "abebooks:54893002",
-        "abebooks:31907639832",
-        "abebooks:70788857",
         "abebooks:31679511629",
+        "abebooks:70788857",
+        "abebooks:31907639832",
         "abebooks:32376400320",
         "abebooks:12432515065",
         "abebooks:30164862573",
