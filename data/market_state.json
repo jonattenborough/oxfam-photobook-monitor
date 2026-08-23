@@ -1,11 +1,11 @@
 {
-  "cursor": 116,
+  "cursor": 140,
   "feeds": {
     "photobookstore": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 250,
-      "last_successful_fetch": "2026-08-23T18:56:59Z",
+      "last_successful_fetch": "2026-08-23T19:44:58Z",
       "seen": [
         "photobookstore:15834487521653",
         "photobookstore:15969006715253",
@@ -263,7 +263,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 232,
-      "last_successful_fetch": "2026-08-23T18:56:59Z",
+      "last_successful_fetch": "2026-08-23T19:44:58Z",
       "seen": [
         "setanta:16045232554366",
         "setanta:16045434241406",
@@ -503,7 +503,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 85,
-      "last_successful_fetch": "2026-08-23T18:56:59Z",
+      "last_successful_fetch": "2026-08-23T19:44:58Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -596,7 +596,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 208,
-      "last_successful_fetch": "2026-08-23T18:56:59Z",
+      "last_successful_fetch": "2026-08-23T19:44:58Z",
       "seen": [
         "village:10371039101210",
         "village:10371023995162",
@@ -812,7 +812,7 @@
   },
   "last_failures": [],
   "last_successful_requests": 28,
-  "last_successful_run": "2026-08-23T18:56:59Z",
+  "last_successful_run": "2026-08-23T19:44:58Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
@@ -4333,7 +4333,7 @@
     "abebooks|david douglas duncan|i protest": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:52:01Z",
+      "last_successful_fetch": "2026-08-23T19:44:58Z",
       "seen": [
         "abebooks:32321551727",
         "abebooks:32304078068",
@@ -4362,13 +4362,14 @@
         "abebooks:31053971096",
         "abebooks:22446499272",
         "abebooks:30616586042",
+        "abebooks:31608802276",
         "abebooks:3057503468"
       ]
     },
     "abebooks|david galjaard|concresco": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:52:01Z",
+      "last_successful_fetch": "2026-08-23T19:44:58Z",
       "seen": [
         "abebooks:30412282588",
         "abebooks:9789461907813",
@@ -4383,7 +4384,7 @@
     "abebooks|david goldblatt|in boksburg": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:52:01Z",
+      "last_successful_fetch": "2026-08-23T19:44:58Z",
       "seen": [
         "abebooks:30795476831",
         "abebooks:9783869307961",
@@ -4421,7 +4422,7 @@
     "abebooks|david goldblatt|particulars": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:52:01Z",
+      "last_successful_fetch": "2026-08-23T19:44:58Z",
       "seen": [
         "abebooks:16726702404",
         "abebooks:9783869307770",
@@ -4449,7 +4450,7 @@
     "abebooks|davidson basil strand paul|tir a mhurain outer hebrides": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T15:45:54Z",
+      "last_successful_fetch": "2026-08-23T19:44:58Z",
       "seen": [
         "abebooks:32437684740",
         "abebooks:32146463664",
@@ -4492,7 +4493,7 @@
     "abebooks|dayanita singh|privacy": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T15:45:54Z",
+      "last_successful_fetch": "2026-08-23T19:44:58Z",
       "seen": [
         "abebooks:32362301476",
         "abebooks:9783882439625",
@@ -4520,7 +4521,7 @@
     "abebooks|decarava roy hughes langston|the sweet flypaper of life": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T15:45:54Z",
+      "last_successful_fetch": "2026-08-23T19:44:58Z",
       "seen": [
         "abebooks:31091083391",
         "abebooks:9780999843819",
@@ -4541,6 +4542,8 @@
         "abebooks:32493356619",
         "abebooks:71993491",
         "abebooks:31672958731",
+        "abebooks:32494236875",
+        "abebooks:62056631",
         "abebooks:32260845486",
         "abebooks:32396243366",
         "abebooks:32485607727",
@@ -4594,7 +4597,7 @@
     "abebooks|delamotte philip henry|photographic views of the progress of the crystal palace sydenham": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T15:45:54Z",
+      "last_successful_fetch": "2026-08-23T19:44:58Z",
       "seen": [
         "abebooks:32450733739",
         "abebooks:32359452370",
@@ -4606,7 +4609,7 @@
     "abebooks|delamotte philip henry|the sunbeam": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T15:45:54Z",
+      "last_successful_fetch": "2026-08-23T19:44:58Z",
       "seen": [
         "abebooks:32150492136",
         "abebooks:32486332095",
@@ -4618,7 +4621,7 @@
     "abebooks|dick jewell|found photos": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T15:45:54Z",
+      "last_successful_fetch": "2026-08-23T19:44:58Z",
       "seen": [
         "abebooks:31771743520",
         "abebooks:3380833795",
@@ -4628,7 +4631,7 @@
     "abebooks|dieter graf|point it": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T15:45:54Z",
+      "last_successful_fetch": "2026-08-23T19:44:58Z",
       "seen": [
         "abebooks:32502134720",
         "abebooks:9783980313025",
@@ -4637,9 +4640,13 @@
         "abebooks:52274160",
         "abebooks:12293352475",
         "abebooks:51947087",
-        "abebooks:32438921370",
+        "abebooks:32503493868",
         "abebooks:9783980880275",
+        "abebooks:65445109",
+        "abebooks:32438921370",
         "abebooks:65445138",
+        "abebooks:30280182031",
+        "abebooks:30279084757",
         "abebooks:32233613051",
         "abebooks:89806455",
         "abebooks:32278709977",
@@ -4660,6 +4667,9 @@
         "abebooks:31874239545",
         "abebooks:31023441274",
         "abebooks:9783980313018",
+        "abebooks:30564896772",
+        "abebooks:72536976",
+        "abebooks:30568048229",
         "abebooks:32405966479",
         "abebooks:52838368",
         "abebooks:32457871680",
@@ -4686,7 +4696,7 @@
     "abebooks|dirk alvermann|algerien l algerie": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T15:45:54Z",
+      "last_successful_fetch": "2026-08-23T19:44:58Z",
       "seen": [
         "abebooks:32129778860",
         "abebooks:32382511206",
@@ -4700,7 +4710,7 @@
     "abebooks|dirk braeckman|z z t": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T15:45:54Z",
+      "last_successful_fetch": "2026-08-23T19:44:58Z",
       "seen": [
         "abebooks:32457109648",
         "abebooks:9789055442416",
@@ -4749,7 +4759,7 @@
     "abebooks|domon ken tomatsu shomei|hiroshima nagasaki document 1961": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T15:45:54Z",
+      "last_successful_fetch": "2026-08-23T19:44:58Z",
       "seen": [
         "abebooks:31989312040",
         "abebooks:55366034",
@@ -4762,7 +4772,7 @@
     "abebooks|domon ken|chikuho no kodomotachi": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T15:45:54Z",
+      "last_successful_fetch": "2026-08-23T19:44:58Z",
       "seen": [
         "abebooks:32380222593",
         "abebooks:716997528",
@@ -4772,7 +4782,7 @@
     "abebooks|domon ken|hiroshima": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T15:45:54Z",
+      "last_successful_fetch": "2026-08-23T19:44:58Z",
       "seen": [
         "abebooks:31660932008",
         "abebooks:86378343",
@@ -4806,7 +4816,7 @@
     "abebooks|donald mccullin|the destruction business": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T15:45:54Z",
+      "last_successful_fetch": "2026-08-23T19:44:58Z",
       "seen": [
         "abebooks:31980406285",
         "abebooks:54140959",
@@ -4843,25 +4853,25 @@
     "abebooks|donald weber|interrogations": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T15:45:54Z",
+      "last_successful_fetch": "2026-08-23T19:44:58Z",
       "seen": [
         "abebooks:31966638902",
         "abebooks:9789053307595",
         "abebooks:59852454",
         "abebooks:16910556996",
-        "abebooks:32103200382",
-        "abebooks:63618813",
         "abebooks:30561336169",
         "abebooks:30983001441",
         "abebooks:19899074948",
         "abebooks:19899074939",
+        "abebooks:32103200382",
+        "abebooks:63618813",
         "abebooks:31520386397"
       ]
     },
     "abebooks|donigan cumming|the stage": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T15:45:54Z",
+      "last_successful_fetch": "2026-08-23T19:44:58Z",
       "seen": [
         "abebooks:32412470045",
         "abebooks:32496875118",
@@ -4883,7 +4893,7 @@
     "abebooks|donovan wylie|the maze": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T15:45:54Z",
+      "last_successful_fetch": "2026-08-23T19:44:58Z",
       "seen": [
         "abebooks:31939170090",
         "abebooks:9781862076846",
@@ -4911,7 +4921,7 @@
     "abebooks|doug rickard|a new american picture": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T15:45:54Z",
+      "last_successful_fetch": "2026-08-23T19:44:58Z",
       "seen": [
         "abebooks:32445039200",
         "abebooks:9781597112192",
@@ -4921,14 +4931,14 @@
         "abebooks:71288983",
         "abebooks:32250480062",
         "abebooks:32244533682",
-        "abebooks:31373526304",
-        "abebooks:9783863352097",
-        "abebooks:63618813",
         "abebooks:31542005783",
         "abebooks:82273322",
         "abebooks:32322060334",
         "abebooks:32485430625",
         "abebooks:9781590053645",
+        "abebooks:31912518740",
+        "abebooks:9783863352097",
+        "abebooks:73839339",
         "abebooks:32398830108",
         "abebooks:31147440590",
         "abebooks:58868502",
@@ -4947,25 +4957,28 @@
         "abebooks:61210336",
         "abebooks:30749318046",
         "abebooks:56385485",
-        "abebooks:8939661739"
+        "abebooks:8939661739",
+        "abebooks:31373526304",
+        "abebooks:63618813"
       ]
     },
     "abebooks|drtikol frantisek|zena ve svetle": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T15:45:54Z",
+      "last_successful_fetch": "2026-08-23T19:44:58Z",
       "seen": [
-        "abebooks:32382615456",
         "abebooks:32067812841",
         "abebooks:32479635308",
         "abebooks:32500898304",
-        "abebooks:32068295068"
+        "abebooks:32068295068",
+        "abebooks:32476322075",
+        "abebooks:32382615456"
       ]
     },
     "abebooks|du camp maxime|egypte nubie palestine et syrie": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T15:45:54Z",
+      "last_successful_fetch": "2026-08-23T19:44:58Z",
       "seen": [
         "abebooks:30270723374",
         "abebooks:54157392",
@@ -4979,7 +4992,7 @@
     "abebooks|duchenne de boulogne guillaume benjamin|mecanisme de la physionomie humaine": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T15:45:54Z",
+      "last_successful_fetch": "2026-08-23T19:44:58Z",
       "seen": [
         "abebooks:31114686630",
         "abebooks:56262577",
