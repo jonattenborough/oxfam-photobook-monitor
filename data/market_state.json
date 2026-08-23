@@ -1,11 +1,11 @@
 {
-  "cursor": 44,
+  "cursor": 68,
   "feeds": {
     "photobookstore": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 250,
-      "last_successful_fetch": "2026-08-23T15:47:22Z",
+      "last_successful_fetch": "2026-08-23T16:51:37Z",
       "seen": [
         "photobookstore:15834487521653",
         "photobookstore:15969006715253",
@@ -263,7 +263,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 232,
-      "last_successful_fetch": "2026-08-23T15:47:22Z",
+      "last_successful_fetch": "2026-08-23T16:51:37Z",
       "seen": [
         "setanta:16045232554366",
         "setanta:16045434241406",
@@ -503,7 +503,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 85,
-      "last_successful_fetch": "2026-08-23T15:47:22Z",
+      "last_successful_fetch": "2026-08-23T16:51:37Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -596,7 +596,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 208,
-      "last_successful_fetch": "2026-08-23T15:47:22Z",
+      "last_successful_fetch": "2026-08-23T16:51:37Z",
       "seen": [
         "village:10371039101210",
         "village:10371023995162",
@@ -812,7 +812,7 @@
   },
   "last_failures": [],
   "last_successful_requests": 28,
-  "last_successful_run": "2026-08-23T15:47:22Z",
+  "last_successful_run": "2026-08-23T16:51:37Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
@@ -1923,7 +1923,7 @@
     "abebooks|bernard latarjet and francois hers eds|paysages photographies": {
       "first_successful_fetch": "2026-08-22T14:30:38Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:30:38Z",
+      "last_successful_fetch": "2026-08-23T16:51:37Z",
       "seen": [
         "abebooks:31534717934",
         "abebooks:9782850252105",
@@ -1938,7 +1938,7 @@
     "abebooks|bernd and hilla becher|blast furnaces": {
       "first_successful_fetch": "2026-08-22T14:30:38Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:30:38Z",
+      "last_successful_fetch": "2026-08-23T16:51:37Z",
       "seen": [
         "abebooks:32360358053",
         "abebooks:9780262023115",
@@ -1956,7 +1956,7 @@
     "abebooks|bernd and hilla becher|mineheads": {
       "first_successful_fetch": "2026-08-22T14:30:38Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:30:38Z",
+      "last_successful_fetch": "2026-08-23T16:51:37Z",
       "seen": [
         "abebooks:32457107788",
         "abebooks:9783888141737",
@@ -1982,7 +1982,7 @@
     "abebooks|bernd and hilla becher|pennsylvania coal mine tipples": {
       "first_successful_fetch": "2026-08-22T14:30:38Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:30:38Z",
+      "last_successful_fetch": "2026-08-23T16:51:37Z",
       "seen": [
         "abebooks:31795729103",
         "abebooks:9780944521236",
@@ -2005,7 +2005,7 @@
     "abebooks|bernd and hilla becher|water towers": {
       "first_successful_fetch": "2026-08-22T14:31:05Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:31:05Z",
+      "last_successful_fetch": "2026-08-23T16:51:37Z",
       "seen": [
         "abebooks:32455672065",
         "abebooks:9780262022774",
@@ -2032,7 +2032,7 @@
     "abebooks|bernhard bernd and hilla becher|anonyme skulpturen": {
       "first_successful_fetch": "2026-08-22T14:31:05Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:31:05Z",
+      "last_successful_fetch": "2026-08-23T16:51:37Z",
       "seen": [
         "abebooks:30424051725"
       ]
@@ -2040,7 +2040,7 @@
     "abebooks|bertien van manen|a hundred summers a hundred winters": {
       "first_successful_fetch": "2026-08-22T14:31:05Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:31:05Z",
+      "last_successful_fetch": "2026-08-23T16:51:37Z",
       "seen": [
         "abebooks:32008010752",
         "abebooks:18893213260",
@@ -2069,7 +2069,7 @@
     "abebooks|bertolt brecht|kriegsfibel": {
       "first_successful_fetch": "2026-08-22T14:31:05Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:31:05Z",
+      "last_successful_fetch": "2026-08-23T16:51:37Z",
       "seen": [
         "abebooks:32140932734",
         "abebooks:9783359001737",
@@ -2082,13 +2082,11 @@
         "abebooks:31542071196",
         "abebooks:61569350",
         "abebooks:31542037629",
-        "abebooks:31943663462",
         "abebooks:32282593445",
         "abebooks:53186132",
+        "abebooks:31943663462",
         "abebooks:31099452289",
         "abebooks:32015487842",
-        "abebooks:32502453947",
-        "abebooks:87044093",
         "abebooks:32257414757",
         "abebooks:32304875542",
         "abebooks:32374107923",
@@ -2104,13 +2102,15 @@
         "abebooks:22538698920",
         "abebooks:32248088108",
         "abebooks:32481990326",
-        "abebooks:31082818298"
+        "abebooks:31082818298",
+        "abebooks:32502453947",
+        "abebooks:87044093"
       ]
     },
     "abebooks|bill burke|i want to take picture": {
       "first_successful_fetch": "2026-08-22T14:31:05Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:31:05Z",
+      "last_successful_fetch": "2026-08-23T16:51:37Z",
       "seen": [
         "abebooks:31114310996",
         "abebooks:31128011973",
@@ -2157,7 +2157,7 @@
     "abebooks|bill owens|suburbia": {
       "first_successful_fetch": "2026-08-22T14:31:05Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:31:05Z",
+      "last_successful_fetch": "2026-08-23T16:51:37Z",
       "seen": [
         "abebooks:32361700074",
         "abebooks:81756569",
@@ -2186,11 +2186,9 @@
         "abebooks:32382737985",
         "abebooks:31356333291",
         "abebooks:32407854771",
-        "abebooks:2823310017",
         "abebooks:32419797488",
         "abebooks:32382721491",
         "abebooks:18918156914",
-        "abebooks:21883616172",
         "abebooks:16166453585",
         "abebooks:31810008533",
         "abebooks:31705680672",
@@ -2216,13 +2214,15 @@
         "abebooks:32190994064",
         "abebooks:31463260015",
         "abebooks:32413767458",
-        "abebooks:32081200163"
+        "abebooks:32081200163",
+        "abebooks:2823310017",
+        "abebooks:21883616172"
       ]
     },
     "abebooks|billy monk|billy monk": {
       "first_successful_fetch": "2026-08-22T14:31:05Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:31:05Z",
+      "last_successful_fetch": "2026-08-23T16:51:37Z",
       "seen": [
         "abebooks:10123649102",
         "abebooks:9781907893186",
@@ -2249,7 +2249,7 @@
     "abebooks|blossfeldt karl|urformen der kunst": {
       "first_successful_fetch": "2026-08-22T14:31:05Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:31:05Z",
+      "last_successful_fetch": "2026-08-23T16:51:37Z",
       "seen": [
         "abebooks:32285329964",
         "abebooks:9783883793030",
@@ -2264,6 +2264,8 @@
         "abebooks:60816374",
         "abebooks:31577055374",
         "abebooks:55647294",
+        "abebooks:17051644717",
+        "abebooks:62056631",
         "abebooks:31171418768",
         "abebooks:84507079",
         "abebooks:31403698077",
@@ -2293,6 +2295,7 @@
         "abebooks:32092218652",
         "abebooks:31682486987",
         "abebooks:32392520375",
+        "abebooks:32503108201",
         "abebooks:30696261139",
         "abebooks:71958310",
         "abebooks:32472247084",
@@ -2301,6 +2304,8 @@
         "abebooks:32128406168",
         "abebooks:88547788",
         "abebooks:1395915497",
+        "abebooks:16853573315",
+        "abebooks:52297678",
         "abebooks:32345746284",
         "abebooks:63445542",
         "abebooks:31432337695",
@@ -2331,25 +2336,26 @@
     "abebooks|boldizsar ivan|tibore": {
       "first_successful_fetch": "2026-08-22T14:31:05Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:31:05Z",
+      "last_successful_fetch": "2026-08-23T16:51:37Z",
       "seen": []
     },
     "abebooks|boris mihailov mikhailov|am boden by the ground u zemli": {
       "first_successful_fetch": "2026-08-22T14:31:05Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:31:05Z",
+      "last_successful_fetch": "2026-08-23T16:51:37Z",
       "seen": [
         "abebooks:32334905695",
         "abebooks:32475111827",
         "abebooks:20371110512",
         "abebooks:20678256528",
+        "abebooks:31252815194",
         "abebooks:32494596794"
       ]
     },
     "abebooks|boris mihailov mikhailov|die dammerung at dusk sumerki": {
       "first_successful_fetch": "2026-08-22T14:31:05Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:31:05Z",
+      "last_successful_fetch": "2026-08-23T16:51:37Z",
       "seen": [
         "abebooks:31508482916",
         "abebooks:32471229469",
@@ -2361,7 +2367,7 @@
     "abebooks|boris mikhailov|case history": {
       "first_successful_fetch": "2026-08-22T14:31:05Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:31:05Z",
+      "last_successful_fetch": "2026-08-23T16:51:37Z",
       "seen": [
         "abebooks:32466723549",
         "abebooks:9783908247098",
@@ -2393,7 +2399,7 @@
     "abebooks|bourke white margaret caldwell erskine|you have seen their faces": {
       "first_successful_fetch": "2026-08-22T14:31:05Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:31:05Z",
+      "last_successful_fetch": "2026-08-23T16:51:37Z",
       "seen": [
         "abebooks:31776298376",
         "abebooks:31179320142",
@@ -2401,9 +2407,13 @@
         "abebooks:31072575169",
         "abebooks:59230140",
         "abebooks:31809250470",
+        "abebooks:17390816229",
+        "abebooks:58798915",
         "abebooks:30323394828",
         "abebooks:9780820316925",
         "abebooks:30428540383",
+        "abebooks:31231030414",
+        "abebooks:71436959",
         "abebooks:32471547948",
         "abebooks:31424952975",
         "abebooks:9780405067693",
@@ -2443,12 +2453,12 @@
         "abebooks:30530006459",
         "abebooks:11243897065",
         "abebooks:32357530808",
-        "abebooks:30595900527",
         "abebooks:30505876933",
         "abebooks:54990151",
         "abebooks:30530006458",
         "abebooks:31749303485",
-        "abebooks:30248753450"
+        "abebooks:30248753450",
+        "abebooks:30595900527"
       ]
     },
     "abebooks|bourke white margaret|eyes on russia": {
@@ -2491,20 +2501,20 @@
     "abebooks|bradford william|the arctic regions": {
       "first_successful_fetch": "2026-08-22T14:31:05Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:31:05Z",
+      "last_successful_fetch": "2026-08-23T16:51:37Z",
       "seen": [
-        "abebooks:32266552773",
-        "abebooks:9781567924510",
-        "abebooks:88583423",
         "abebooks:32335803242",
+        "abebooks:9781567924510",
         "abebooks:82663586",
-        "abebooks:32396036174"
+        "abebooks:32396036174",
+        "abebooks:32266552773",
+        "abebooks:88583423"
       ]
     },
     "abebooks|bragaglia anton giulio|fotodinamismo futurista": {
       "first_successful_fetch": "2026-08-22T14:31:05Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:31:05Z",
+      "last_successful_fetch": "2026-08-23T16:51:37Z",
       "seen": [
         "abebooks:32317911564",
         "abebooks:31942298846",
@@ -2516,7 +2526,7 @@
     "abebooks|brandt bill|a night in london": {
       "first_successful_fetch": "2026-08-22T14:31:05Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:31:05Z",
+      "last_successful_fetch": "2026-08-23T16:51:37Z",
       "seen": [
         "abebooks:32493343486",
         "abebooks:71469325",
@@ -2528,7 +2538,7 @@
     "abebooks|brandt bill|perspective of nudes": {
       "first_successful_fetch": "2026-08-22T14:31:05Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:31:05Z",
+      "last_successful_fetch": "2026-08-23T16:51:37Z",
       "seen": [
         "abebooks:31817751754",
         "abebooks:51743749",
@@ -2576,7 +2586,7 @@
     "abebooks|brandt bill|the english at home": {
       "first_successful_fetch": "2026-08-22T14:31:05Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:31:05Z",
+      "last_successful_fetch": "2026-08-23T16:51:37Z",
       "seen": [
         "abebooks:31368846025",
         "abebooks:17947135794",
@@ -2605,7 +2615,7 @@
     "abebooks|brassai morand paul|paris de nuit": {
       "first_successful_fetch": "2026-08-22T14:31:05Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:31:05Z",
+      "last_successful_fetch": "2026-08-23T16:51:37Z",
       "seen": [
         "abebooks:32378484570",
         "abebooks:9782901414322",
@@ -2714,7 +2724,7 @@
     "abebooks|brian griffin|open twenty one photographs by brian griffin": {
       "first_successful_fetch": "2026-08-22T14:31:05Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:31:05Z",
+      "last_successful_fetch": "2026-08-23T16:51:37Z",
       "seen": [
         "abebooks:32457748362",
         "abebooks:32406841579",
