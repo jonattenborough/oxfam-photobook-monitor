@@ -1,11 +1,11 @@
 {
-  "cursor": 480,
+  "cursor": 504,
   "feeds": {
     "photobookstore": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 250,
-      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "last_successful_fetch": "2026-08-23T08:57:30Z",
       "seen": [
         "photobookstore:15834487521653",
         "photobookstore:15969006715253",
@@ -263,7 +263,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 232,
-      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "last_successful_fetch": "2026-08-23T08:57:30Z",
       "seen": [
         "setanta:16045232554366",
         "setanta:16045434241406",
@@ -503,7 +503,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 85,
-      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "last_successful_fetch": "2026-08-23T08:57:30Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -596,7 +596,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 208,
-      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "last_successful_fetch": "2026-08-23T08:57:30Z",
       "seen": [
         "village:10371039101210",
         "village:10371023995162",
@@ -812,7 +812,7 @@
   },
   "last_failures": [],
   "last_successful_requests": 28,
-  "last_successful_run": "2026-08-23T07:56:00Z",
+  "last_successful_run": "2026-08-23T08:57:30Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
@@ -11929,6 +11929,478 @@
         "abebooks:32434332522",
         "abebooks:32480793719",
         "abebooks:32484468246"
+      ]
+    },
+    "abebooks|theo baart cary markerink and tracy metz|snelweg highways in the netherlands": {
+      "first_successful_fetch": "2026-08-23T08:57:30Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T08:57:30Z",
+      "seen": [
+        "abebooks:22177191886",
+        "abebooks:60417497",
+        "abebooks:8023201734",
+        "abebooks:57969438",
+        "abebooks:30784796211",
+        "abebooks:9789071570759",
+        "abebooks:66067709",
+        "abebooks:18723548375"
+      ]
+    },
+    "abebooks|thomas struth|museum photographs": {
+      "first_successful_fetch": "2026-08-23T08:57:30Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T08:57:30Z",
+      "seen": [
+        "abebooks:32017003602",
+        "abebooks:32366770667",
+        "abebooks:59852454",
+        "abebooks:32363366696",
+        "abebooks:9783888144967",
+        "abebooks:32353446072",
+        "abebooks:89952252",
+        "abebooks:32475318048",
+        "abebooks:9783829601078",
+        "abebooks:30895389741",
+        "abebooks:9783888146411",
+        "abebooks:57182615",
+        "abebooks:31172495068",
+        "abebooks:9783829601832",
+        "abebooks:32476393571",
+        "abebooks:72313296",
+        "abebooks:31019132916",
+        "abebooks:31757312016",
+        "abebooks:19868874400",
+        "abebooks:19868874395",
+        "abebooks:7345391693",
+        "abebooks:19868874390",
+        "abebooks:15422115978",
+        "abebooks:50731200",
+        "abebooks:19868874398",
+        "abebooks:19868874410",
+        "abebooks:31215677984",
+        "abebooks:1345265093"
+      ]
+    },
+    "abebooks|thomson john|foochow and the river min": {
+      "first_successful_fetch": "2026-08-23T08:57:30Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T08:57:30Z",
+      "seen": [
+        "abebooks:32136895593",
+        "abebooks:32452003603",
+        "abebooks:32503321964",
+        "abebooks:32502259364",
+        "abebooks:32495553500"
+      ]
+    },
+    "abebooks|tiane doan na champassak|the king of photography": {
+      "first_successful_fetch": "2026-08-23T08:57:30Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T08:57:30Z",
+      "seen": [
+        "abebooks:30006836415",
+        "abebooks:9781090359025",
+        "abebooks:50731200"
+      ]
+    },
+    "abebooks|tmej zdenek|abeceda dusevniho prazdna": {
+      "first_successful_fetch": "2026-08-23T08:57:30Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T08:57:30Z",
+      "seen": [
+        "abebooks:31367559458",
+        "abebooks:17497804345",
+        "abebooks:62123071",
+        "abebooks:30414709920",
+        "abebooks:14448867711",
+        "abebooks:22537848482",
+        "abebooks:14448864072",
+        "abebooks:18493831233",
+        "abebooks:9930634259"
+      ]
+    },
+    "abebooks|tom wood|all zones off peak": {
+      "first_successful_fetch": "2026-08-23T08:57:30Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T08:57:30Z",
+      "seen": [
+        "abebooks:32228712264",
+        "abebooks:9781899235865",
+        "abebooks:89594109",
+        "abebooks:32314095719",
+        "abebooks:32451658022",
+        "abebooks:30647066845",
+        "abebooks:54897375",
+        "abebooks:30743700608",
+        "abebooks:32489898824",
+        "abebooks:89053582",
+        "abebooks:869035073",
+        "abebooks:31939157104",
+        "abebooks:32348707257",
+        "abebooks:31700717737",
+        "abebooks:51538321",
+        "abebooks:30828274133",
+        "abebooks:30828279938",
+        "abebooks:31274717061"
+      ]
+    },
+    "abebooks|tomatsu shomei|11 02 nagasaki": {
+      "first_successful_fetch": "2026-08-23T08:57:30Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T08:57:30Z",
+      "seen": [
+        "abebooks:32456854296",
+        "abebooks:32265463194",
+        "abebooks:9784106024115",
+        "abebooks:71454205",
+        "abebooks:32260563340",
+        "abebooks:82663586",
+        "abebooks:5064295100",
+        "abebooks:30204707247",
+        "abebooks:52506076",
+        "abebooks:31676170207",
+        "abebooks:86378343",
+        "abebooks:31676171167",
+        "abebooks:31676169310"
+      ]
+    },
+    "abebooks|tomatsu shomei|oo shinjuku": {
+      "first_successful_fetch": "2026-08-23T08:57:30Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T08:57:30Z",
+      "seen": [
+        "abebooks:32109080727",
+        "abebooks:63659862"
+      ]
+    },
+    "abebooks|tomoyuki sakaguchi|home": {
+      "first_successful_fetch": "2026-08-23T08:57:30Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T08:57:30Z",
+      "seen": [
+        "abebooks:31614620391",
+        "abebooks:31542018616",
+        "abebooks:9784904120002",
+        "abebooks:82273322",
+        "abebooks:32472984429",
+        "abebooks:73859083",
+        "abebooks:30431856217"
+      ]
+    },
+    "abebooks|trine s ndergaard|now that you are mine": {
+      "first_successful_fetch": "2026-08-23T08:57:30Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T08:57:30Z",
+      "seen": [
+        "abebooks:31811236148",
+        "abebooks:72313296",
+        "abebooks:32190354217",
+        "abebooks:9783882438239",
+        "abebooks:64393506",
+        "abebooks:30163443023",
+        "abebooks:50731200"
+      ]
+    },
+    "abebooks|tripe captain linnaeus|photographic views in madura": {
+      "first_successful_fetch": "2026-08-23T08:57:30Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T08:57:30Z",
+      "seen": [
+        "abebooks:32453132079",
+        "abebooks:32134903442",
+        "abebooks:31574882019",
+        "abebooks:32498385373",
+        "abebooks:31952115710"
+      ]
+    },
+    "abebooks|tuggener jak|fabrik": {
+      "first_successful_fetch": "2026-08-23T08:57:30Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T08:57:30Z",
+      "seen": [
+        "abebooks:31129628805",
+        "abebooks:32262137024",
+        "abebooks:31669036678",
+        "abebooks:74014852",
+        "abebooks:32435932839",
+        "abebooks:52241158",
+        "abebooks:32175216983",
+        "abebooks:31465579290",
+        "abebooks:3840045737",
+        "abebooks:50417431",
+        "abebooks:30666961133",
+        "abebooks:22912093734",
+        "abebooks:62140563",
+        "abebooks:31740454266",
+        "abebooks:31086667918"
+      ]
+    },
+    "abebooks|tursunkhodzhaey m|10 let uzbekistana ssr": {
+      "first_successful_fetch": "2026-08-23T08:57:30Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T08:57:30Z",
+      "seen": []
+    },
+    "abebooks|ulmann doris|roll jordan rol": {
+      "first_successful_fetch": "2026-08-23T08:57:30Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T08:57:30Z",
+      "seen": [
+        "abebooks:32128335708",
+        "abebooks:32252163727",
+        "abebooks:32364981494",
+        "abebooks:32480397482",
+        "abebooks:32330209843"
+      ]
+    },
+    "abebooks|ulrich tillmann and wolfgang vollmer|meisterwerke der fotokunst": {
+      "first_successful_fetch": "2026-08-23T08:57:30Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T08:57:30Z",
+      "seen": [
+        "abebooks:18324611577",
+        "abebooks:9789111609661",
+        "abebooks:32164003944",
+        "abebooks:9783879091454",
+        "abebooks:70815944",
+        "abebooks:30875696739",
+        "abebooks:50761422",
+        "abebooks:14314359546",
+        "abebooks:16192491123",
+        "abebooks:57132617",
+        "abebooks:19513032780",
+        "abebooks:8738703804"
+      ]
+    },
+    "abebooks|van der elsken ed|een liefdesgeschiedenis in saint germain des pres": {
+      "first_successful_fetch": "2026-08-23T08:57:30Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T08:57:30Z",
+      "seen": [
+        "abebooks:31453221408",
+        "abebooks:52863049",
+        "abebooks:15065305149",
+        "abebooks:57132617",
+        "abebooks:30509870413",
+        "abebooks:9789074159241",
+        "abebooks:20205441631",
+        "abebooks:30475738389",
+        "abebooks:31052590541",
+        "abebooks:32471766706",
+        "abebooks:56092880",
+        "abebooks:32170745580",
+        "abebooks:71958310",
+        "abebooks:32079993049",
+        "abebooks:30823357589",
+        "abebooks:66067709",
+        "abebooks:32476476253",
+        "abebooks:6246315003"
+      ]
+    },
+    "abebooks|van der elsken ed|jazz": {
+      "first_successful_fetch": "2026-08-23T08:57:30Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T08:57:30Z",
+      "seen": [
+        "abebooks:31624225162",
+        "abebooks:9789065790866",
+        "abebooks:85449458",
+        "abebooks:32384584650",
+        "abebooks:51638837",
+        "abebooks:10759558281",
+        "abebooks:56836868",
+        "abebooks:32079987323",
+        "abebooks:9789065790422",
+        "abebooks:32327737172",
+        "abebooks:8745413618",
+        "abebooks:32476756356",
+        "abebooks:9783865213907",
+        "abebooks:66067709",
+        "abebooks:32476765017",
+        "abebooks:9783926048509",
+        "abebooks:32373859035",
+        "abebooks:61711481",
+        "abebooks:18923816435",
+        "abebooks:31116206391",
+        "abebooks:57182615",
+        "abebooks:32493709986",
+        "abebooks:32440813475",
+        "abebooks:9783865214430",
+        "abebooks:32490800667",
+        "abebooks:61572022",
+        "abebooks:1313627227",
+        "abebooks:32476760244",
+        "abebooks:9784845703746",
+        "abebooks:31086658520",
+        "abebooks:22571967748",
+        "abebooks:58754845",
+        "abebooks:12260570561",
+        "abebooks:22602578284",
+        "abebooks:31086664039",
+        "abebooks:32486146630",
+        "abebooks:57279187",
+        "abebooks:15422116156",
+        "abebooks:9783865214010",
+        "abebooks:50731200",
+        "abebooks:21759358138",
+        "abebooks:32486145739",
+        "abebooks:32486133260",
+        "abebooks:31264293898",
+        "abebooks:1054339046",
+        "abebooks:30600836447",
+        "abebooks:56092880",
+        "abebooks:30897637279",
+        "abebooks:12979852481",
+        "abebooks:32474685599",
+        "abebooks:31015206574"
+      ]
+    },
+    "abebooks|van der elsken ed|sweet life": {
+      "first_successful_fetch": "2026-08-23T08:57:30Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T08:57:30Z",
+      "seen": [
+        "abebooks:32407412822",
+        "abebooks:32231338759",
+        "abebooks:9783775709194",
+        "abebooks:30153130436",
+        "abebooks:32003110028",
+        "abebooks:9781935004257",
+        "abebooks:32109284110",
+        "abebooks:31073627352",
+        "abebooks:31932106932",
+        "abebooks:52277777",
+        "abebooks:32459023687",
+        "abebooks:52748454",
+        "abebooks:31767572083",
+        "abebooks:62882422",
+        "abebooks:32120640265",
+        "abebooks:32380034901",
+        "abebooks:61583533",
+        "abebooks:31952149350",
+        "abebooks:61588986",
+        "abebooks:32168191538",
+        "abebooks:70815944",
+        "abebooks:32478042397",
+        "abebooks:32499686833",
+        "abebooks:31363836388",
+        "abebooks:83879318",
+        "abebooks:32178631182",
+        "abebooks:59285191",
+        "abebooks:32158531805",
+        "abebooks:57906169",
+        "abebooks:32407411557",
+        "abebooks:31437463976",
+        "abebooks:30823422142",
+        "abebooks:66067709",
+        "abebooks:32184679929",
+        "abebooks:70032290",
+        "abebooks:32478056986",
+        "abebooks:30358204285",
+        "abebooks:32178590871",
+        "abebooks:32178605047",
+        "abebooks:32475209499",
+        "abebooks:32475212464",
+        "abebooks:31897512365",
+        "abebooks:50731200",
+        "abebooks:30766831414",
+        "abebooks:7260964507",
+        "abebooks:57132617",
+        "abebooks:8603414167",
+        "abebooks:8603501999",
+        "abebooks:52914992",
+        "abebooks:32467915417",
+        "abebooks:52983483",
+        "abebooks:19049964375",
+        "abebooks:19049964394",
+        "abebooks:32193253379",
+        "abebooks:31695774569",
+        "abebooks:3798343079",
+        "abebooks:22193921104",
+        "abebooks:31676171255",
+        "abebooks:86378343",
+        "abebooks:30663112614",
+        "abebooks:52506076",
+        "abebooks:18077993040",
+        "abebooks:12968141424",
+        "abebooks:32475215373",
+        "abebooks:32475206605",
+        "abebooks:32475213392",
+        "abebooks:14314359548",
+        "abebooks:31676161699",
+        "abebooks:32475208455"
+      ]
+    },
+    "abebooks|van der keuken johan joan|achter glas": {
+      "first_successful_fetch": "2026-08-23T08:57:30Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T08:57:30Z",
+      "seen": [
+        "abebooks:31735811624",
+        "abebooks:32374236404",
+        "abebooks:4438852013",
+        "abebooks:32129754425",
+        "abebooks:32077670333"
+      ]
+    },
+    "abebooks|van der keuken johan joan|paris mortel": {
+      "first_successful_fetch": "2026-08-23T08:57:30Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T08:57:30Z",
+      "seen": [
+        "abebooks:32409856775",
+        "abebooks:32435130938",
+        "abebooks:32403937880",
+        "abebooks:32499008725",
+        "abebooks:32496283621"
+      ]
+    },
+    "abebooks|van der keuken johan joan|wij zijn 17": {
+      "first_successful_fetch": "2026-08-23T08:57:30Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T08:57:30Z",
+      "seen": [
+        "abebooks:32434603218",
+        "abebooks:32445323973",
+        "abebooks:32434609421",
+        "abebooks:31628548085",
+        "abebooks:32133464561"
+      ]
+    },
+    "abebooks|various photographers|1999 the quake": {
+      "first_successful_fetch": "2026-08-23T08:57:30Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T08:57:30Z",
+      "seen": [
+        "abebooks:32465884127",
+        "abebooks:32474409868",
+        "abebooks:31994573295",
+        "abebooks:31994579059",
+        "abebooks:32436725579"
+      ]
+    },
+    "abebooks|various photographers|brycha 1945 1948 home through the vale of tears": {
+      "first_successful_fetch": "2026-08-23T08:57:30Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T08:57:30Z",
+      "seen": [
+        "abebooks:32403370291",
+        "abebooks:32390002454",
+        "abebooks:32318686394",
+        "abebooks:32274381435",
+        "abebooks:32467111960"
+      ]
+    },
+    "abebooks|various|10 21 to ha nanika what is 10 21": {
+      "first_successful_fetch": "2026-08-23T08:57:30Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T08:57:30Z",
+      "seen": [
+        "abebooks:32282505670",
+        "abebooks:32416587205",
+        "abebooks:31372098780",
+        "abebooks:32476852494",
+        "abebooks:32405229538"
       ]
     }
   },
