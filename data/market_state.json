@@ -1,11 +1,11 @@
 {
-  "cursor": 552,
+  "cursor": 576,
   "feeds": {
     "photobookstore": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 250,
-      "last_successful_fetch": "2026-08-23T10:50:04Z",
+      "last_successful_fetch": "2026-08-23T11:45:41Z",
       "seen": [
         "photobookstore:15834487521653",
         "photobookstore:15969006715253",
@@ -263,7 +263,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 232,
-      "last_successful_fetch": "2026-08-23T10:50:04Z",
+      "last_successful_fetch": "2026-08-23T11:45:41Z",
       "seen": [
         "setanta:16045232554366",
         "setanta:16045434241406",
@@ -503,7 +503,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 85,
-      "last_successful_fetch": "2026-08-23T10:50:04Z",
+      "last_successful_fetch": "2026-08-23T11:45:41Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -596,7 +596,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 208,
-      "last_successful_fetch": "2026-08-23T10:50:04Z",
+      "last_successful_fetch": "2026-08-23T11:45:41Z",
       "seen": [
         "village:10371039101210",
         "village:10371023995162",
@@ -812,7 +812,7 @@
   },
   "last_failures": [],
   "last_successful_requests": 28,
-  "last_successful_run": "2026-08-23T10:50:04Z",
+  "last_successful_run": "2026-08-23T11:45:41Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
@@ -5338,6 +5338,46 @@
         "abebooks:51283250"
       ]
     },
+    "abebooks|emerson peter henry|on english lagoons": {
+      "first_successful_fetch": "2026-08-23T11:45:41Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T11:45:41Z",
+      "seen": [
+        "abebooks:32121287705",
+        "abebooks:9781248854266",
+        "abebooks:87239718",
+        "abebooks:31618013388",
+        "abebooks:65733602",
+        "abebooks:31826007998",
+        "abebooks:9781120748874",
+        "abebooks:32169563796",
+        "abebooks:9781167048524",
+        "abebooks:32169571391",
+        "abebooks:9781167110115",
+        "abebooks:32162240042",
+        "abebooks:9781120857507",
+        "abebooks:32397243491",
+        "abebooks:51749587",
+        "abebooks:30867418792",
+        "abebooks:73551232",
+        "abebooks:31136203452",
+        "abebooks:51283250",
+        "abebooks:32405513060",
+        "abebooks:82580976"
+      ]
+    },
+    "abebooks|emerson peter henry|pictures of east anglia": {
+      "first_successful_fetch": "2026-08-23T11:45:41Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T11:45:41Z",
+      "seen": [
+        "abebooks:32337010885",
+        "abebooks:32330886309",
+        "abebooks:32476719413",
+        "abebooks:32255845830",
+        "abebooks:31567415951"
+      ]
+    },
     "abebooks|enrique bostelmann|america un viaje a traves de la injusticia america a journey through injustice": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
@@ -5352,6 +5392,14 @@
       "initialized": true,
       "last_successful_fetch": "2026-08-22T16:49:35Z",
       "seen": []
+    },
+    "abebooks|erich einhorn pravoslav sovak pavel kohout|marianske lazne": {
+      "first_successful_fetch": "2026-08-23T11:45:41Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T11:45:41Z",
+      "seen": [
+        "abebooks:32124527386"
+      ]
     },
     "abebooks|erik kessels|in almost every picture series title represented in volume iii": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
@@ -5682,6 +5730,78 @@
       "last_successful_fetch": "2026-08-22T16:49:35Z",
       "seen": []
     },
+    "abebooks|felix greene|vietnam vietnam": {
+      "first_successful_fetch": "2026-08-23T11:45:41Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T11:45:41Z",
+      "seen": [
+        "abebooks:31597945486",
+        "abebooks:82021208",
+        "abebooks:32451576311",
+        "abebooks:65440519",
+        "abebooks:32440991392",
+        "abebooks:55521360",
+        "abebooks:32423114638",
+        "abebooks:54448258",
+        "abebooks:9271761829",
+        "abebooks:31760741872",
+        "abebooks:31138459919",
+        "abebooks:32195506504",
+        "abebooks:30583258579",
+        "abebooks:31534793061",
+        "abebooks:51796207",
+        "abebooks:32049722343",
+        "abebooks:85117872",
+        "abebooks:31834018333",
+        "abebooks:53436069",
+        "abebooks:32184695384",
+        "abebooks:1138733535",
+        "abebooks:31075424494",
+        "abebooks:30824182670",
+        "abebooks:3782437582",
+        "abebooks:32501088960",
+        "abebooks:71993491",
+        "abebooks:18139879845",
+        "abebooks:30799911491",
+        "abebooks:137579872",
+        "abebooks:16440190644",
+        "abebooks:31934080580",
+        "abebooks:735315721",
+        "abebooks:32014922858",
+        "abebooks:1359424356",
+        "abebooks:19446171573",
+        "abebooks:17978984730",
+        "abebooks:108139794",
+        "abebooks:31939597281",
+        "abebooks:32478921788",
+        "abebooks:61102491",
+        "abebooks:32299240795",
+        "abebooks:31592283021",
+        "abebooks:50563749",
+        "abebooks:32127140355",
+        "abebooks:683855121",
+        "abebooks:2753774799",
+        "abebooks:30785248811",
+        "abebooks:31692127334",
+        "abebooks:30549446259",
+        "abebooks:31987490901",
+        "abebooks:31223638733",
+        "abebooks:22448919746",
+        "abebooks:30948858395",
+        "abebooks:60427896",
+        "abebooks:31643991993",
+        "abebooks:729470287",
+        "abebooks:19553749805",
+        "abebooks:61620793",
+        "abebooks:9198716833",
+        "abebooks:52771626",
+        "abebooks:31030108408",
+        "abebooks:72313296",
+        "abebooks:32312499461",
+        "abebooks:71454205",
+        "abebooks:3866497356"
+      ]
+    },
     "abebooks|fenton roger|photographs taken under the patronage of her majesty the queen in the crimea": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
@@ -5692,6 +5812,18 @@
         "abebooks:32442985918",
         "abebooks:32461021863",
         "abebooks:32502867313"
+      ]
+    },
+    "abebooks|ferrier claude marie owen hugh|reports by the juries": {
+      "first_successful_fetch": "2026-08-23T11:45:41Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T11:45:41Z",
+      "seen": [
+        "abebooks:32418045592",
+        "abebooks:32495800477",
+        "abebooks:32032991022",
+        "abebooks:32292595280",
+        "abebooks:32453179087"
       ]
     },
     "abebooks|florian bohm luca pizzaroni and wolfgang scheppe|endcommercial": {
@@ -5726,6 +5858,17 @@
         "abebooks:16870285730",
         "abebooks:31256704336",
         "abebooks:32148775069"
+      ]
+    },
+    "abebooks|franco ortolani|la festa del parco lambro": {
+      "first_successful_fetch": "2026-08-23T11:45:41Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T11:45:41Z",
+      "seen": [
+        "abebooks:30877720756",
+        "abebooks:72313296",
+        "abebooks:15610791816",
+        "abebooks:15696217936"
       ]
     },
     "abebooks|frank robert|flower is": {
@@ -5783,6 +5926,93 @@
         "abebooks:31784909703",
         "abebooks:31118898164",
         "abebooks:30443071239"
+      ]
+    },
+    "abebooks|frank robert|the americans": {
+      "first_successful_fetch": "2026-08-23T11:45:41Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T11:45:41Z",
+      "seen": [
+        "abebooks:32503045236",
+        "abebooks:9780002552080",
+        "abebooks:65445012",
+        "abebooks:9364337124",
+        "abebooks:31541469818",
+        "abebooks:9780028740348",
+        "abebooks:32503214081",
+        "abebooks:9783865215840",
+        "abebooks:85920211",
+        "abebooks:30049046097",
+        "abebooks:70393014",
+        "abebooks:22415811370",
+        "abebooks:32473492539",
+        "abebooks:32492768061",
+        "abebooks:54072508",
+        "abebooks:32145124696",
+        "abebooks:9781597115711",
+        "abebooks:32501594192",
+        "abebooks:9781881616108",
+        "abebooks:32459335774",
+        "abebooks:32402393781",
+        "abebooks:9781881616122",
+        "abebooks:32357078034",
+        "abebooks:31740620110",
+        "abebooks:31428014948",
+        "abebooks:56527950",
+        "abebooks:32461005988",
+        "abebooks:9783931141806",
+        "abebooks:83823308",
+        "abebooks:32170753297",
+        "abebooks:9780394742564",
+        "abebooks:32165687909",
+        "abebooks:32194373863",
+        "abebooks:32472954321",
+        "abebooks:9780893810337",
+        "abebooks:55366034",
+        "abebooks:32249117324",
+        "abebooks:87969072",
+        "abebooks:32474335963",
+        "abebooks:52110765",
+        "abebooks:31904348681",
+        "abebooks:52277777",
+        "abebooks:32351278369",
+        "abebooks:1092126061",
+        "abebooks:16631945499",
+        "abebooks:9783865217486",
+        "abebooks:32421875921",
+        "abebooks:65008528",
+        "abebooks:32501789530",
+        "abebooks:9780948797835",
+        "abebooks:65730156",
+        "abebooks:32180017267",
+        "abebooks:31900008099",
+        "abebooks:32368933487",
+        "abebooks:31702313534",
+        "abebooks:87258266",
+        "abebooks:32348709296",
+        "abebooks:32500723667",
+        "abebooks:32228908193",
+        "abebooks:31351152019",
+        "abebooks:32448305088",
+        "abebooks:32344302519",
+        "abebooks:50067872",
+        "abebooks:9956199539",
+        "abebooks:32402097373",
+        "abebooks:30896525101",
+        "abebooks:31955647272",
+        "abebooks:32279138484",
+        "abebooks:9782851072337",
+        "abebooks:31901951468",
+        "abebooks:30904752047",
+        "abebooks:52914992",
+        "abebooks:30601018907",
+        "abebooks:51145708",
+        "abebooks:32134518234",
+        "abebooks:65198171",
+        "abebooks:31988782900",
+        "abebooks:32137630051",
+        "abebooks:31812184905",
+        "abebooks:9780394549774"
       ]
     },
     "abebooks|frank robert|the lines of my hand": {
@@ -5860,6 +6090,67 @@
         "abebooks:30987401847"
       ]
     },
+    "abebooks|friedlander lee|self portrait": {
+      "first_successful_fetch": "2026-08-23T11:45:41Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T11:45:41Z",
+      "seen": [
+        "abebooks:22852428009",
+        "abebooks:9781881616962",
+        "abebooks:32371127840",
+        "abebooks:9780870703386",
+        "abebooks:53833589",
+        "abebooks:31251222514",
+        "abebooks:32326991440",
+        "abebooks:50933316",
+        "abebooks:1109380287",
+        "abebooks:31926059614",
+        "abebooks:22877785163",
+        "abebooks:30605180927",
+        "abebooks:31755941437",
+        "abebooks:62879643",
+        "abebooks:17147269609",
+        "abebooks:32177077287",
+        "abebooks:30933987342",
+        "abebooks:31901638466",
+        "abebooks:31509270016",
+        "abebooks:31760352377",
+        "abebooks:31399028611",
+        "abebooks:71993491",
+        "abebooks:32374522144",
+        "abebooks:89905167",
+        "abebooks:31694049919",
+        "abebooks:32228282541",
+        "abebooks:30836208605",
+        "abebooks:31081740554",
+        "abebooks:83879318",
+        "abebooks:31374409286",
+        "abebooks:30881241595",
+        "abebooks:72829785",
+        "abebooks:18893213309",
+        "abebooks:31339797278",
+        "abebooks:32476871622",
+        "abebooks:50731200",
+        "abebooks:32077268298",
+        "abebooks:17229307674",
+        "abebooks:11253397896",
+        "abebooks:17151655796",
+        "abebooks:30655928619",
+        "abebooks:31884499341",
+        "abebooks:31097293373",
+        "abebooks:17229307703",
+        "abebooks:17229307673",
+        "abebooks:31407388738",
+        "abebooks:17229307704",
+        "abebooks:30605178053",
+        "abebooks:31221777595",
+        "abebooks:17229307665",
+        "abebooks:31599839334",
+        "abebooks:30531170469",
+        "abebooks:31221776700",
+        "abebooks:17286669215"
+      ]
+    },
     "abebooks|frith francis|egypt and palestine": {
       "first_successful_fetch": "2026-08-22T17:45:56Z",
       "initialized": true,
@@ -5924,6 +6215,18 @@
         "abebooks:22890399356",
         "abebooks:22890756165",
         "abebooks:22890756171"
+      ]
+    },
+    "abebooks|frith francis|egypt sinai and jerusalem": {
+      "first_successful_fetch": "2026-08-23T11:45:41Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T11:45:41Z",
+      "seen": [
+        "abebooks:32476882211",
+        "abebooks:32398913397",
+        "abebooks:32452646707",
+        "abebooks:32395698765",
+        "abebooks:32224041461"
       ]
     },
     "abebooks|fukase masahisa|karasu": {
@@ -6278,6 +6581,77 @@
         "abebooks:72313296"
       ]
     },
+    "abebooks|gibson ralph|days at sea": {
+      "first_successful_fetch": "2026-08-23T11:45:41Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T11:45:41Z",
+      "seen": [
+        "abebooks:32347955599",
+        "abebooks:81756569",
+        "abebooks:32408669595",
+        "abebooks:90560489",
+        "abebooks:31199978676",
+        "abebooks:32244510497",
+        "abebooks:9780912810157",
+        "abebooks:64372035",
+        "abebooks:32441405185",
+        "abebooks:88391032",
+        "abebooks:32426262642",
+        "abebooks:31696101939",
+        "abebooks:32134318653",
+        "abebooks:31726348167",
+        "abebooks:31308745988",
+        "abebooks:32301961895",
+        "abebooks:54072508"
+      ]
+    },
+    "abebooks|gibson ralph|deja vu": {
+      "first_successful_fetch": "2026-08-23T11:45:41Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T11:45:41Z",
+      "seen": [
+        "abebooks:32482327371",
+        "abebooks:9780912810065",
+        "abebooks:32446714123",
+        "abebooks:31308740596",
+        "abebooks:32478699740",
+        "abebooks:2900013923496",
+        "abebooks:31466822502",
+        "abebooks:58363041",
+        "abebooks:32392062106",
+        "abebooks:32400622586",
+        "abebooks:31603829426",
+        "abebooks:32337970232",
+        "abebooks:31718320619",
+        "abebooks:31827156282",
+        "abebooks:31425524418",
+        "abebooks:60693627",
+        "abebooks:12847166831",
+        "abebooks:19086998982",
+        "abebooks:32081406901"
+      ]
+    },
+    "abebooks|gibson ralph|the somnambulist": {
+      "first_successful_fetch": "2026-08-23T11:45:41Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T11:45:41Z",
+      "seen": [
+        "abebooks:32401002683",
+        "abebooks:32462788144",
+        "abebooks:31690966948",
+        "abebooks:71993491",
+        "abebooks:32499247411",
+        "abebooks:31943723966",
+        "abebooks:9780912810096",
+        "abebooks:32502666598",
+        "abebooks:32331885344",
+        "abebooks:32458228182",
+        "abebooks:31712265652",
+        "abebooks:31603802225",
+        "abebooks:30141543574",
+        "abebooks:58926442"
+      ]
+    },
     "abebooks|gilbert and george|dark shadow": {
       "first_successful_fetch": "2026-08-22T17:45:56Z",
       "initialized": true,
@@ -6368,6 +6742,12 @@
         "abebooks:31356605155"
       ]
     },
+    "abebooks|gorfunkel v m|moskva rekonstruiruetsya": {
+      "first_successful_fetch": "2026-08-23T11:45:41Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T11:45:41Z",
+      "seen": []
+    },
     "abebooks|graff werner|es kommt der neue fotograf": {
       "first_successful_fetch": "2026-08-22T17:45:56Z",
       "initialized": true,
@@ -6396,6 +6776,18 @@
         "abebooks:83562495",
         "abebooks:17583003256",
         "abebooks:31865025579"
+      ]
+    },
+    "abebooks|greene john beasley|le nil monuments paysages": {
+      "first_successful_fetch": "2026-08-23T11:45:41Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T11:45:41Z",
+      "seen": [
+        "abebooks:32411047240",
+        "abebooks:30932467388",
+        "abebooks:32364620357",
+        "abebooks:32404263564",
+        "abebooks:32117166939"
       ]
     },
     "abebooks|gregoire pujade lauraine|a perpetual season": {
@@ -6455,6 +6847,40 @@
         "abebooks:21676138324",
         "abebooks:31542015572",
         "abebooks:82273322"
+      ]
+    },
+    "abebooks|gutschow arvid|see sand sonne": {
+      "first_successful_fetch": "2026-08-23T11:45:41Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T11:45:41Z",
+      "seen": [
+        "abebooks:32493665785",
+        "abebooks:31994792177",
+        "abebooks:61885318",
+        "abebooks:31999639123",
+        "abebooks:31806383734"
+      ]
+    },
+    "abebooks|guy tillim|avenue patrice lumumba": {
+      "first_successful_fetch": "2026-08-23T11:45:41Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T11:45:41Z",
+      "seen": [
+        "abebooks:32331883184",
+        "abebooks:31652814048",
+        "abebooks:70032290",
+        "abebooks:31186554152",
+        "abebooks:9783791340661",
+        "abebooks:15422116236",
+        "abebooks:50731200",
+        "abebooks:5064279962",
+        "abebooks:32438017549",
+        "abebooks:32409580522",
+        "abebooks:59852454",
+        "abebooks:31183617728",
+        "abebooks:30326599094",
+        "abebooks:30224642713",
+        "abebooks:55488571"
       ]
     },
     "abebooks|hamish fulton|hamish fulton": {
@@ -6723,6 +7149,19 @@
         "abebooks:17994301607"
       ]
     },
+    "abebooks|heisler jindrich|na jehlach techto dni": {
+      "first_successful_fetch": "2026-08-23T11:45:41Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T11:45:41Z",
+      "seen": [
+        "abebooks:32478959010",
+        "abebooks:9783924095116",
+        "abebooks:32179828012",
+        "abebooks:54803255",
+        "abebooks:15785178975",
+        "abebooks:32022950680"
+      ]
+    },
     "abebooks|hellen van meene|untitled": {
       "first_successful_fetch": "2026-08-22T18:57:55Z",
       "initialized": true,
@@ -6755,6 +7194,19 @@
         "abebooks:32258571252",
         "abebooks:9781935004271",
         "abebooks:89712618"
+      ]
+    },
+    "abebooks|henning paul|beautiful things around you": {
+      "first_successful_fetch": "2026-08-23T11:45:41Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T11:45:41Z",
+      "seen": [
+        "abebooks:32352146686",
+        "abebooks:90410113",
+        "abebooks:30613407320",
+        "abebooks:51744769",
+        "abebooks:31553027701",
+        "abebooks:61716861"
       ]
     },
     "abebooks|henri maccheroni|cent photographies choisies dans la serie deux mille photographies du sexe d une femme": {
@@ -6844,6 +7296,18 @@
         "abebooks:32373625461"
       ]
     },
+    "abebooks|hiromi tsuchida|new counting grains of sand": {
+      "first_successful_fetch": "2026-08-23T11:45:41Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T11:45:41Z",
+      "seen": [
+        "abebooks:31994665064",
+        "abebooks:9784887730311",
+        "abebooks:88468481",
+        "abebooks:32068717809",
+        "abebooks:61144623"
+      ]
+    },
     "abebooks|hiromix|girls blue rockin on": {
       "first_successful_fetch": "2026-08-22T18:57:55Z",
       "initialized": true,
@@ -6864,6 +7328,58 @@
         "abebooks:32119264343",
         "abebooks:31839727571",
         "abebooks:30725275565"
+      ]
+    },
+    "abebooks|hoffmann heinrich|hitler uber deutschland": {
+      "first_successful_fetch": "2026-08-23T11:45:41Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T11:45:41Z",
+      "seen": [
+        "abebooks:31929427322",
+        "abebooks:86190972",
+        "abebooks:32437293207",
+        "abebooks:32419628366",
+        "abebooks:30723389139"
+      ]
+    },
+    "abebooks|hoffmann heinrich|hitler wie ihn keiner kennt": {
+      "first_successful_fetch": "2026-08-23T11:45:41Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T11:45:41Z",
+      "seen": [
+        "abebooks:31327704069",
+        "abebooks:50409693",
+        "abebooks:32493307792",
+        "abebooks:32501645024",
+        "abebooks:61598011",
+        "abebooks:32104617804",
+        "abebooks:61582434",
+        "abebooks:18825469172",
+        "abebooks:30765319995",
+        "abebooks:72775904",
+        "abebooks:31243295700",
+        "abebooks:31795778428",
+        "abebooks:30765311441",
+        "abebooks:30765317075",
+        "abebooks:30765312454",
+        "abebooks:30765317079",
+        "abebooks:30765319035",
+        "abebooks:30765312449",
+        "abebooks:30765312452",
+        "abebooks:30765312451",
+        "abebooks:30765312455",
+        "abebooks:30765317081",
+        "abebooks:30765313251",
+        "abebooks:30765312450",
+        "abebooks:30765281312",
+        "abebooks:30765309875",
+        "abebooks:30765312456",
+        "abebooks:30765317082",
+        "abebooks:30765318042",
+        "abebooks:30855810005",
+        "abebooks:18269254707",
+        "abebooks:17726916653",
+        "abebooks:12983166355"
       ]
     },
     "abebooks|hoppe e o|deutsche arbeit": {
@@ -6960,6 +7476,18 @@
         "abebooks:83879318"
       ]
     },
+    "abebooks|hosoe eikoh|barakei shinshuban": {
+      "first_successful_fetch": "2026-08-23T11:45:41Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T11:45:41Z",
+      "seen": [
+        "abebooks:20000357890",
+        "abebooks:20653294931",
+        "abebooks:31547297608",
+        "abebooks:20003022788",
+        "abebooks:31894400368"
+      ]
+    },
     "abebooks|hosoe eikoh|kamaitachi": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
@@ -6998,6 +7526,90 @@
         "abebooks:31406862969"
       ]
     },
+    "abebooks|howitt william and mary|ruined abbeys and castles of great britain": {
+      "first_successful_fetch": "2026-08-23T11:45:41Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T11:45:41Z",
+      "seen": [
+        "abebooks:31027784574",
+        "abebooks:9780461237306",
+        "abebooks:32496966739",
+        "abebooks:9781022325210",
+        "abebooks:32237452238",
+        "abebooks:9781013907081",
+        "abebooks:89806455",
+        "abebooks:31616869506",
+        "abebooks:65733602",
+        "abebooks:31533762992",
+        "abebooks:31533754699",
+        "abebooks:31616890943",
+        "abebooks:30868040235",
+        "abebooks:9781330964361",
+        "abebooks:32306324646",
+        "abebooks:9783744793629",
+        "abebooks:32271124860",
+        "abebooks:9783744791700",
+        "abebooks:32206558454",
+        "abebooks:9781334060564",
+        "abebooks:30639336750",
+        "abebooks:31376258197",
+        "abebooks:31378436239",
+        "abebooks:30639344909",
+        "abebooks:31121201626",
+        "abebooks:9781377081854",
+        "abebooks:70780988",
+        "abebooks:32351306387",
+        "abebooks:9781020609329",
+        "abebooks:31830228790",
+        "abebooks:9781019395233",
+        "abebooks:30274521868",
+        "abebooks:54157392",
+        "abebooks:31432662167",
+        "abebooks:31958018216",
+        "abebooks:31424764814",
+        "abebooks:31422123933",
+        "abebooks:31432668013",
+        "abebooks:31432673938",
+        "abebooks:31424776493",
+        "abebooks:30820137874",
+        "abebooks:9780267993963",
+        "abebooks:30820136572",
+        "abebooks:9780265453582",
+        "abebooks:31490893273",
+        "abebooks:9783348023504",
+        "abebooks:57449362",
+        "abebooks:32480044834",
+        "abebooks:9783752594744",
+        "abebooks:87239718",
+        "abebooks:17095756684",
+        "abebooks:9780554847771",
+        "abebooks:32085938857",
+        "abebooks:30267856051",
+        "abebooks:30267860018",
+        "abebooks:32480049555",
+        "abebooks:9783752594751",
+        "abebooks:32216993735",
+        "abebooks:32478577974",
+        "abebooks:32335323338",
+        "abebooks:51320726",
+        "abebooks:32332345160",
+        "abebooks:52925922",
+        "abebooks:32153348510",
+        "abebooks:59230140",
+        "abebooks:31311417300",
+        "abebooks:55041853",
+        "abebooks:30811873786",
+        "abebooks:10497235287",
+        "abebooks:10427738739",
+        "abebooks:22445676775",
+        "abebooks:54237271",
+        "abebooks:22530730428",
+        "abebooks:32446755057",
+        "abebooks:88260056",
+        "abebooks:31946127930",
+        "abebooks:51735859"
+      ]
+    },
     "abebooks|hrabal bohumil|toto mesto je vespolecne peci obyvatel": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
@@ -7006,6 +7618,18 @@
         "abebooks:32124972609",
         "abebooks:57906169",
         "abebooks:15907388387"
+      ]
+    },
+    "abebooks|hugnet georges|guide rose huit jours a trebaumec": {
+      "first_successful_fetch": "2026-08-23T11:45:41Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T11:45:41Z",
+      "seen": [
+        "abebooks:32375896493",
+        "abebooks:32455844118",
+        "abebooks:32479413649",
+        "abebooks:32430408030",
+        "abebooks:32493310014"
       ]
     },
     "abebooks|igor samolet|be happy": {
