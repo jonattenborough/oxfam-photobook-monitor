@@ -1,11 +1,11 @@
 {
-  "cursor": 68,
+  "cursor": 92,
   "feeds": {
     "photobookstore": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 250,
-      "last_successful_fetch": "2026-08-23T16:51:37Z",
+      "last_successful_fetch": "2026-08-23T17:45:12Z",
       "seen": [
         "photobookstore:15834487521653",
         "photobookstore:15969006715253",
@@ -263,7 +263,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 232,
-      "last_successful_fetch": "2026-08-23T16:51:37Z",
+      "last_successful_fetch": "2026-08-23T17:45:12Z",
       "seen": [
         "setanta:16045232554366",
         "setanta:16045434241406",
@@ -503,7 +503,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 85,
-      "last_successful_fetch": "2026-08-23T16:51:37Z",
+      "last_successful_fetch": "2026-08-23T17:45:12Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -596,7 +596,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 208,
-      "last_successful_fetch": "2026-08-23T16:51:37Z",
+      "last_successful_fetch": "2026-08-23T17:45:12Z",
       "seen": [
         "village:10371039101210",
         "village:10371023995162",
@@ -812,7 +812,7 @@
   },
   "last_failures": [],
   "last_successful_requests": 28,
-  "last_successful_run": "2026-08-23T16:51:37Z",
+  "last_successful_run": "2026-08-23T17:45:12Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
@@ -2736,7 +2736,7 @@
     "abebooks|brodovitch alexey|ballet": {
       "first_successful_fetch": "2026-08-22T14:31:05Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:31:05Z",
+      "last_successful_fetch": "2026-08-23T17:45:12Z",
       "seen": [
         "abebooks:32453182832",
         "abebooks:31890839665",
@@ -2750,7 +2750,7 @@
     "abebooks|bruce bernard|century one hundred years of human progress regression suffering and hope": {
       "first_successful_fetch": "2026-08-22T14:31:05Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:31:05Z",
+      "last_successful_fetch": "2026-08-23T17:45:12Z",
       "seen": [
         "abebooks:32502226926",
         "abebooks:9780714842790",
@@ -2775,7 +2775,7 @@
     "abebooks|bruce davidson|east 100th street": {
       "first_successful_fetch": "2026-08-22T14:31:05Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:31:05Z",
+      "last_successful_fetch": "2026-08-23T17:45:12Z",
       "seen": [
         "abebooks:32429543077",
         "abebooks:32167299037",
@@ -2813,6 +2813,8 @@
         "abebooks:15422116225",
         "abebooks:9780971368132",
         "abebooks:50731200",
+        "abebooks:31231025780",
+        "abebooks:71436959",
         "abebooks:30255583251",
         "abebooks:31445389814",
         "abebooks:10136750786",
@@ -2822,7 +2824,6 @@
         "abebooks:32430241210",
         "abebooks:32480308395",
         "abebooks:22571522725",
-        "abebooks:12606323781",
         "abebooks:19899074950",
         "abebooks:31619619322",
         "abebooks:84819946",
@@ -2842,13 +2843,14 @@
         "abebooks:10431545119",
         "abebooks:31373621916",
         "abebooks:11780040576",
-        "abebooks:58643651"
+        "abebooks:58643651",
+        "abebooks:12606323781"
       ]
     },
     "abebooks|bruce gilden|go": {
       "first_successful_fetch": "2026-08-22T14:31:05Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:31:05Z",
+      "last_successful_fetch": "2026-08-23T17:45:12Z",
       "seen": [
         "abebooks:32454564126",
         "abebooks:54515469",
@@ -2871,7 +2873,7 @@
     "abebooks|bruehl anton|mexico": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:47:21Z",
+      "last_successful_fetch": "2026-08-23T17:45:12Z",
       "seen": [
         "abebooks:32478967828",
         "abebooks:32492189332",
@@ -2888,7 +2890,7 @@
     "abebooks|bruno ceschel ed|self publish be naughty": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:47:21Z",
+      "last_successful_fetch": "2026-08-23T17:45:12Z",
       "seen": [
         "abebooks:30942713255",
         "abebooks:72753589"
@@ -2897,7 +2899,7 @@
     "abebooks|bun yo ishikawa|chien tranh giai phong viet nam": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:47:21Z",
+      "last_successful_fetch": "2026-08-23T17:45:12Z",
       "seen": [
         "abebooks:22917366711",
         "abebooks:32205962000",
@@ -2909,7 +2911,7 @@
     "abebooks|burri rene|die deutschen": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:47:21Z",
+      "last_successful_fetch": "2026-08-23T17:45:12Z",
       "seen": [
         "abebooks:32484158949",
         "abebooks:9783888141614",
@@ -2979,7 +2981,7 @@
     "abebooks|burton yost berry|teenage styles and trends 1967 71 a retrospect": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:47:21Z",
+      "last_successful_fetch": "2026-08-23T17:45:12Z",
       "seen": [
         "abebooks:32365995111",
         "abebooks:22891933998",
@@ -2991,7 +2993,7 @@
     "abebooks|cahun claude deharme lise|le coeur de pic": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:47:21Z",
+      "last_successful_fetch": "2026-08-23T17:45:12Z",
       "seen": [
         "abebooks:31899724252",
         "abebooks:32206432497",
@@ -3038,7 +3040,7 @@
     "abebooks|cameron julia margaret|idylls of the king": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:47:21Z",
+      "last_successful_fetch": "2026-08-23T17:45:12Z",
       "seen": [
         "abebooks:32454039575",
         "abebooks:32347101232",
@@ -3050,7 +3052,7 @@
     "abebooks|capa robert|death in the making": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:47:21Z",
+      "last_successful_fetch": "2026-08-23T17:45:12Z",
       "seen": [
         "abebooks:32486220432",
         "abebooks:9788862087179",
@@ -3080,7 +3082,7 @@
     "abebooks|carl de keyzer|zona siberian prison camps": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:47:21Z",
+      "last_successful_fetch": "2026-08-23T17:45:12Z",
       "seen": [
         "abebooks:32429007544",
         "abebooks:9780954264840",
@@ -3101,7 +3103,7 @@
     "abebooks|carmi lisetta|i travestiti": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:47:21Z",
+      "last_successful_fetch": "2026-08-23T17:45:12Z",
       "seen": [
         "abebooks:32349091769",
         "abebooks:84828154"
@@ -3110,7 +3112,7 @@
     "abebooks|carpenter james nasmyth james|the moon considered as a planet a world and a satellite": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:47:21Z",
+      "last_successful_fetch": "2026-08-23T17:45:12Z",
       "seen": [
         "abebooks:32232962080",
         "abebooks:9789368347460",
@@ -3181,7 +3183,7 @@
     "abebooks|carroll tankersley ed|greyhound 1963": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:47:21Z",
+      "last_successful_fetch": "2026-08-23T17:45:12Z",
       "seen": [
         "abebooks:31022825038",
         "abebooks:32488163081",
@@ -3193,7 +3195,7 @@
     "abebooks|cartensen pay christian hitzer hans richter friedrich|deutschland": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:47:21Z",
+      "last_successful_fetch": "2026-08-23T17:45:12Z",
       "seen": [
         "abebooks:14061043650",
         "abebooks:31171412685",
@@ -3235,7 +3237,7 @@
     "abebooks|cartier bresson henri|the decisive moment": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:47:21Z",
+      "last_successful_fetch": "2026-08-23T17:45:12Z",
       "seen": [
         "abebooks:32485344879",
         "abebooks:9782959335112",
@@ -3247,13 +3249,11 @@
         "abebooks:32448730598",
         "abebooks:32365602974",
         "abebooks:7030643814",
-        "abebooks:32358542917",
-        "abebooks:9783869307886",
-        "abebooks:64275189",
         "abebooks:32229083961",
         "abebooks:52512508",
         "abebooks:31549612047",
         "abebooks:32159725062",
+        "abebooks:9783869307886",
         "abebooks:32490557878",
         "abebooks:19257124636",
         "abebooks:32487335786",
@@ -3281,13 +3281,15 @@
         "abebooks:31336500656",
         "abebooks:31408926097",
         "abebooks:64086551",
-        "abebooks:32151128990"
+        "abebooks:32151128990",
+        "abebooks:32358542917",
+        "abebooks:64275189"
       ]
     },
     "abebooks|cartier bresson henri|the europeans": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:47:21Z",
+      "last_successful_fetch": "2026-08-23T17:45:12Z",
       "seen": [
         "abebooks:32494368521",
         "abebooks:9780500542163",
@@ -3354,7 +3356,7 @@
     "abebooks|cela camilo jose colom joan|izas rabizas y colipoterras": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:47:21Z",
+      "last_successful_fetch": "2026-08-23T17:45:12Z",
       "seen": [
         "abebooks:22534407576",
         "abebooks:58450060",
@@ -3415,7 +3417,7 @@
     "abebooks|cela camilo jose maspons oriol ubina julio|toreo de salon": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:47:21Z",
+      "last_successful_fetch": "2026-08-23T17:45:12Z",
       "seen": [
         "abebooks:31782980050",
         "abebooks:82614946",
@@ -3502,7 +3504,7 @@
     "abebooks|cendrars blaise doisneau robert|la banlieue de paris": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:47:21Z",
+      "last_successful_fetch": "2026-08-23T17:45:12Z",
       "seen": [
         "abebooks:30726153750",
         "abebooks:32075686606",
@@ -3515,9 +3517,8 @@
         "abebooks:9782207229019",
         "abebooks:55410863",
         "abebooks:1161133711",
-        "abebooks:32502774342",
+        "abebooks:32334210691",
         "abebooks:9782207178737",
-        "abebooks:54448258",
         "abebooks:21668063421",
         "abebooks:32239882911",
         "abebooks:31820629048",
@@ -3572,13 +3573,15 @@
         "abebooks:22760688081",
         "abebooks:31733973236",
         "abebooks:31082060115",
-        "abebooks:83879318"
+        "abebooks:83879318",
+        "abebooks:32502774342",
+        "abebooks:54448258"
       ]
     },
     "abebooks|charbonnier jean philippe|chemins de la vie": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:47:21Z",
+      "last_successful_fetch": "2026-08-23T17:45:12Z",
       "seen": [
         "abebooks:32272520007",
         "abebooks:60568160",
@@ -3591,7 +3594,7 @@
     "abebooks|chargesheimer|koln 5 uhr 30": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:47:21Z",
+      "last_successful_fetch": "2026-08-23T17:45:12Z",
       "seen": [
         "abebooks:32402490483",
         "abebooks:62879827",
