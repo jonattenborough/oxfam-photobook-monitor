@@ -1,11 +1,11 @@
 {
-  "cursor": 456,
+  "cursor": 480,
   "feeds": {
     "photobookstore": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 250,
-      "last_successful_fetch": "2026-08-23T07:10:17Z",
+      "last_successful_fetch": "2026-08-23T07:56:00Z",
       "seen": [
         "photobookstore:15834487521653",
         "photobookstore:15969006715253",
@@ -263,7 +263,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 232,
-      "last_successful_fetch": "2026-08-23T07:10:17Z",
+      "last_successful_fetch": "2026-08-23T07:56:00Z",
       "seen": [
         "setanta:16045232554366",
         "setanta:16045434241406",
@@ -503,7 +503,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 85,
-      "last_successful_fetch": "2026-08-23T07:10:17Z",
+      "last_successful_fetch": "2026-08-23T07:56:00Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -596,7 +596,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 208,
-      "last_successful_fetch": "2026-08-23T07:10:17Z",
+      "last_successful_fetch": "2026-08-23T07:56:00Z",
       "seen": [
         "village:10371039101210",
         "village:10371023995162",
@@ -812,7 +812,7 @@
   },
   "last_failures": [],
   "last_successful_requests": 28,
-  "last_successful_run": "2026-08-23T07:10:17Z",
+  "last_successful_run": "2026-08-23T07:56:00Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
@@ -11466,6 +11466,469 @@
         "abebooks:55890076",
         "abebooks:32411099085",
         "abebooks:31073174069"
+      ]
+    },
+    "abebooks|stromholm christer|poste restante": {
+      "first_successful_fetch": "2026-08-23T07:56:00Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "seen": [
+        "abebooks:20900616484",
+        "abebooks:20900616479",
+        "abebooks:31999040718",
+        "abebooks:52241158",
+        "abebooks:32282245972",
+        "abebooks:31999050948",
+        "abebooks:31791608270",
+        "abebooks:63559039",
+        "abebooks:22902221417",
+        "abebooks:31129630688",
+        "abebooks:30881131030",
+        "abebooks:12553486639",
+        "abebooks:50417431",
+        "abebooks:30522166092",
+        "abebooks:20900616475",
+        "abebooks:22591810657",
+        "abebooks:32464086297",
+        "abebooks:61130051",
+        "abebooks:32081151583"
+      ]
+    },
+    "abebooks|styrsky jindrich|emile prichdzi ke mne ve snu": {
+      "first_successful_fetch": "2026-08-23T07:56:00Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "seen": []
+    },
+    "abebooks|sudek josef|praha panoramaticka": {
+      "first_successful_fetch": "2026-08-23T07:56:00Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "seen": [
+        "abebooks:32459560218",
+        "abebooks:88743008",
+        "abebooks:32446384019",
+        "abebooks:32480182201",
+        "abebooks:61616193",
+        "abebooks:32496702774",
+        "abebooks:87044093",
+        "abebooks:32480217532",
+        "abebooks:31186283713",
+        "abebooks:54803255",
+        "abebooks:16077773395",
+        "abebooks:57238839",
+        "abebooks:32399605344",
+        "abebooks:51743749",
+        "abebooks:31763529101",
+        "abebooks:9788020703637",
+        "abebooks:14448866167",
+        "abebooks:32276137941",
+        "abebooks:32340414377",
+        "abebooks:32501512103",
+        "abebooks:30524073713",
+        "abebooks:13352866326",
+        "abebooks:7756245659",
+        "abebooks:56103057",
+        "abebooks:31397400110",
+        "abebooks:17528420737",
+        "abebooks:30524075573",
+        "abebooks:32500772231",
+        "abebooks:30571869046",
+        "abebooks:60065630",
+        "abebooks:18888700222",
+        "abebooks:54990151",
+        "abebooks:31377938908",
+        "abebooks:30016192539",
+        "abebooks:31155482236",
+        "abebooks:30241506952",
+        "abebooks:16706788237",
+        "abebooks:18556120608",
+        "abebooks:22537848476",
+        "abebooks:724073420",
+        "abebooks:31082973198",
+        "abebooks:83879318",
+        "abebooks:22537848477",
+        "abebooks:31587641321",
+        "abebooks:22426779760",
+        "abebooks:31432697383",
+        "abebooks:32081168449"
+      ]
+    },
+    "abebooks|sugimoto hiroshi|sea of buddha": {
+      "first_successful_fetch": "2026-08-23T07:56:00Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "seen": [
+        "abebooks:32498096549",
+        "abebooks:32115385571"
+      ]
+    },
+    "abebooks|sugimoto hiroshi|theaters": {
+      "first_successful_fetch": "2026-08-23T07:56:00Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "seen": [
+        "abebooks:32502250971",
+        "abebooks:9788862084772",
+        "abebooks:50531827",
+        "abebooks:32137958080",
+        "abebooks:9780615115962",
+        "abebooks:58643651",
+        "abebooks:21425187391",
+        "abebooks:32462869396",
+        "abebooks:2900013906451",
+        "abebooks:31058944968",
+        "abebooks:83609288",
+        "abebooks:31058951119",
+        "abebooks:32491266375",
+        "abebooks:31235419318",
+        "abebooks:22626130295",
+        "abebooks:32296227286",
+        "abebooks:16788971395",
+        "abebooks:31040486187",
+        "abebooks:13674985320",
+        "abebooks:31040490161",
+        "abebooks:32472754713",
+        "abebooks:9788862085205",
+        "abebooks:50731200"
+      ]
+    },
+    "abebooks|sugimoto hiroshi|time exposed": {
+      "first_successful_fetch": "2026-08-23T07:56:00Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "seen": [
+        "abebooks:31898696543",
+        "abebooks:9784104781010",
+        "abebooks:31516582446",
+        "abebooks:32233253937",
+        "abebooks:9780500974278",
+        "abebooks:32492065787",
+        "abebooks:32350257247",
+        "abebooks:5064276202",
+        "abebooks:32153417713",
+        "abebooks:31658124839",
+        "abebooks:86378343",
+        "abebooks:4895518444",
+        "abebooks:31658126670",
+        "abebooks:2489022636",
+        "abebooks:16157426768",
+        "abebooks:31658132029"
+      ]
+    },
+    "abebooks|susan hiller|the j street project": {
+      "first_successful_fetch": "2026-08-23T07:56:00Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "seen": [
+        "abebooks:32186136070",
+        "abebooks:32465013816",
+        "abebooks:9780954654580",
+        "abebooks:53994756",
+        "abebooks:15422116112",
+        "abebooks:50731200",
+        "abebooks:32107011899"
+      ]
+    },
+    "abebooks|susan lipper|grapevine": {
+      "first_successful_fetch": "2026-08-23T07:56:00Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "seen": [
+        "abebooks:32280284934",
+        "abebooks:9780948797132",
+        "abebooks:32413822282",
+        "abebooks:85525324",
+        "abebooks:31764685974",
+        "abebooks:32092021088",
+        "abebooks:32075745942",
+        "abebooks:50731200"
+      ]
+    },
+    "abebooks|susan meiselas|nicaragua": {
+      "first_successful_fetch": "2026-08-23T07:56:00Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "seen": [
+        "abebooks:32463505640",
+        "abebooks:30321680076",
+        "abebooks:32460785499",
+        "abebooks:9780394739311",
+        "abebooks:32499860938",
+        "abebooks:9782733500057",
+        "abebooks:85974990",
+        "abebooks:32183124476",
+        "abebooks:32137195940",
+        "abebooks:9781597115902",
+        "abebooks:50531827",
+        "abebooks:32479365084",
+        "abebooks:32476104369",
+        "abebooks:31962218708",
+        "abebooks:9780906495674",
+        "abebooks:32322989265",
+        "abebooks:9788498013450",
+        "abebooks:50975631",
+        "abebooks:31794239848",
+        "abebooks:9780394512655",
+        "abebooks:32344018939",
+        "abebooks:89905167",
+        "abebooks:31815635573",
+        "abebooks:50889922",
+        "abebooks:9345184402",
+        "abebooks:9781597110716",
+        "abebooks:30427763894",
+        "abebooks:9780906495667",
+        "abebooks:32468052837",
+        "abebooks:2723587018",
+        "abebooks:54253258",
+        "abebooks:32344022945",
+        "abebooks:22453150680",
+        "abebooks:50731200",
+        "abebooks:31846562851",
+        "abebooks:9781597113830",
+        "abebooks:84443466",
+        "abebooks:32344029968",
+        "abebooks:32414310755",
+        "abebooks:51283250",
+        "abebooks:31288874358",
+        "abebooks:31288879994",
+        "abebooks:22507630537",
+        "abebooks:31400113356",
+        "abebooks:31288878108",
+        "abebooks:32386644906",
+        "abebooks:31215678991",
+        "abebooks:32470551840",
+        "abebooks:53994756",
+        "abebooks:2465157839",
+        "abebooks:22253719941",
+        "abebooks:32332411368",
+        "abebooks:21719613016",
+        "abebooks:20703588097",
+        "abebooks:31856380638",
+        "abebooks:5589697616",
+        "abebooks:9789977300191",
+        "abebooks:7453433060",
+        "abebooks:57757247",
+        "abebooks:31288879015",
+        "abebooks:31288880968",
+        "abebooks:31579125557",
+        "abebooks:1502760723",
+        "abebooks:31374415945"
+      ]
+    },
+    "abebooks|tacita dean|floh flea": {
+      "first_successful_fetch": "2026-08-23T07:56:00Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "seen": [
+        "abebooks:31727474170"
+      ]
+    },
+    "abebooks|tadanori yokoo|waterfall rapture": {
+      "first_successful_fetch": "2026-08-23T07:56:00Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "seen": [
+        "abebooks:30635963024",
+        "abebooks:9784104110018",
+        "abebooks:32465275852",
+        "abebooks:1036057257",
+        "abebooks:21252109759",
+        "abebooks:32485579505",
+        "abebooks:32166922399",
+        "abebooks:1151002886",
+        "abebooks:18735960120",
+        "abebooks:1158117915",
+        "abebooks:52506076"
+      ]
+    },
+    "abebooks|taiyo onorato and nico krebs|the great unreal": {
+      "first_successful_fetch": "2026-08-23T07:56:00Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "seen": [
+        "abebooks:30211093186",
+        "abebooks:9783905509830",
+        "abebooks:31146383613",
+        "abebooks:31942115978",
+        "abebooks:16332797414",
+        "abebooks:31350450580",
+        "abebooks:19789533026",
+        "abebooks:12538528326",
+        "abebooks:17147269615",
+        "abebooks:31627693238",
+        "abebooks:32258645354",
+        "abebooks:9783905929836",
+        "abebooks:89712618"
+      ]
+    },
+    "abebooks|takanashi yutaka|toshi e": {
+      "first_successful_fetch": "2026-08-23T07:56:00Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "seen": [
+        "abebooks:22855818240"
+      ]
+    },
+    "abebooks|takase yoshio|benjo": {
+      "first_successful_fetch": "2026-08-23T07:56:00Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "seen": [
+        "abebooks:12910364865",
+        "abebooks:52506076",
+        "abebooks:12799651853"
+      ]
+    },
+    "abebooks|takashi homma|tokyo suburbia": {
+      "first_successful_fetch": "2026-08-23T07:56:00Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "seen": [
+        "abebooks:1036912772",
+        "abebooks:30605171472",
+        "abebooks:31949619374",
+        "abebooks:9784771303447",
+        "abebooks:18789087977",
+        "abebooks:30075369295"
+      ]
+    },
+    "abebooks|tal b m|industriya sotzializma": {
+      "first_successful_fetch": "2026-08-23T07:56:00Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "seen": [
+        "abebooks:31360983811",
+        "abebooks:11255706570",
+        "abebooks:11358653504",
+        "abebooks:31156971156",
+        "abebooks:30091459872"
+      ]
+    },
+    "abebooks|talbot william henry fox|the pencil of nature": {
+      "first_successful_fetch": "2026-08-23T07:56:00Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "seen": [
+        "abebooks:32424202459",
+        "abebooks:9781986807593",
+        "abebooks:30323806016",
+        "abebooks:9781547095414",
+        "abebooks:30326333812",
+        "abebooks:9781721695713",
+        "abebooks:32217291015",
+        "abebooks:9789353445935",
+        "abebooks:32297275657",
+        "abebooks:9798867241421",
+        "abebooks:60344724",
+        "abebooks:32011989995",
+        "abebooks:9781729581025",
+        "abebooks:32416751685",
+        "abebooks:9789371600705",
+        "abebooks:70780988",
+        "abebooks:31994527477",
+        "abebooks:9780893819323",
+        "abebooks:32193853002",
+        "abebooks:9781023255721",
+        "abebooks:32276189323",
+        "abebooks:32354320273",
+        "abebooks:31404277055",
+        "abebooks:31904704380",
+        "abebooks:51283250",
+        "abebooks:32176182782",
+        "abebooks:9783777438511",
+        "abebooks:31800065571",
+        "abebooks:32201188913",
+        "abebooks:32460173976",
+        "abebooks:9780981773667",
+        "abebooks:32421731349",
+        "abebooks:32501936581",
+        "abebooks:31701500896",
+        "abebooks:32013695054",
+        "abebooks:32458668834",
+        "abebooks:9783895061813",
+        "abebooks:53994756"
+      ]
+    },
+    "abebooks|tamiko nishimura|shikishima": {
+      "first_successful_fetch": "2026-08-23T07:56:00Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "seen": [
+        "abebooks:32282893175",
+        "abebooks:32336230273",
+        "abebooks:9784905453345",
+        "abebooks:90386957"
+      ]
+    },
+    "abebooks|tandit l|xv let kazakhsko assr": {
+      "first_successful_fetch": "2026-08-23T07:56:00Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "seen": []
+    },
+    "abebooks|tano d amico|e il 77": {
+      "first_successful_fetch": "2026-08-23T07:56:00Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "seen": [
+        "abebooks:32203339652",
+        "abebooks:57863149",
+        "abebooks:31801054630",
+        "abebooks:72313296"
+      ]
+    },
+    "abebooks|tenmei kanoh|fuck": {
+      "first_successful_fetch": "2026-08-23T07:56:00Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "seen": []
+    },
+    "abebooks|terri weifenbach|in your dreams": {
+      "first_successful_fetch": "2026-08-23T07:56:00Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "seen": [
+        "abebooks:31865208791",
+        "abebooks:31817456961",
+        "abebooks:9783923922543",
+        "abebooks:52323279",
+        "abebooks:31069693499",
+        "abebooks:30871268155",
+        "abebooks:9783923922697",
+        "abebooks:51900969",
+        "abebooks:31380620253",
+        "abebooks:31060650193",
+        "abebooks:31090773997",
+        "abebooks:32463480930",
+        "abebooks:14969521726",
+        "abebooks:32216415860",
+        "abebooks:723763367"
+      ]
+    },
+    "abebooks|terry richardson|hysteric glamour": {
+      "first_successful_fetch": "2026-08-23T07:56:00Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "seen": [
+        "abebooks:13554627625",
+        "abebooks:1313423720",
+        "abebooks:52506076",
+        "abebooks:17293070370",
+        "abebooks:31832900881",
+        "abebooks:32013767312"
+      ]
+    },
+    "abebooks|teynard felix|egypte et nubie": {
+      "first_successful_fetch": "2026-08-23T07:56:00Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "seen": [
+        "abebooks:32434224295",
+        "abebooks:32430033036",
+        "abebooks:32434332522",
+        "abebooks:32480793719",
+        "abebooks:32484468246"
       ]
     }
   },
