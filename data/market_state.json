@@ -1,11 +1,11 @@
 {
-  "cursor": 528,
+  "cursor": 552,
   "feeds": {
     "photobookstore": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 250,
-      "last_successful_fetch": "2026-08-23T09:52:25Z",
+      "last_successful_fetch": "2026-08-23T10:50:04Z",
       "seen": [
         "photobookstore:15834487521653",
         "photobookstore:15969006715253",
@@ -263,7 +263,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 232,
-      "last_successful_fetch": "2026-08-23T09:52:25Z",
+      "last_successful_fetch": "2026-08-23T10:50:04Z",
       "seen": [
         "setanta:16045232554366",
         "setanta:16045434241406",
@@ -503,7 +503,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 85,
-      "last_successful_fetch": "2026-08-23T09:52:25Z",
+      "last_successful_fetch": "2026-08-23T10:50:04Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -596,7 +596,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 208,
-      "last_successful_fetch": "2026-08-23T09:52:25Z",
+      "last_successful_fetch": "2026-08-23T10:50:04Z",
       "seen": [
         "village:10371039101210",
         "village:10371023995162",
@@ -812,7 +812,7 @@
   },
   "last_failures": [],
   "last_successful_requests": 28,
-  "last_successful_run": "2026-08-23T09:52:25Z",
+  "last_successful_run": "2026-08-23T10:50:04Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
@@ -1514,6 +1514,18 @@
         "abebooks:9782849950098"
       ]
     },
+    "abebooks|araki nobuyoshi|a winter journey": {
+      "first_successful_fetch": "2026-08-23T10:50:04Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T10:50:04Z",
+      "seen": [
+        "abebooks:32493314069",
+        "abebooks:32447549672",
+        "abebooks:32220842900",
+        "abebooks:31759295993",
+        "abebooks:32416662416"
+      ]
+    },
     "abebooks|araki nobuyoshi|senchimentaru na tabi": {
       "first_successful_fetch": "2026-08-22T14:28:47Z",
       "initialized": true,
@@ -1829,6 +1841,39 @@
       "seen": [
         "abebooks:30781521590",
         "abebooks:66067709"
+      ]
+    },
+    "abebooks|beard richard|london labour": {
+      "first_successful_fetch": "2026-08-23T10:50:04Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T10:50:04Z",
+      "seen": [
+        "abebooks:32149010284",
+        "abebooks:32414502926",
+        "abebooks:32475843282",
+        "abebooks:32494415202",
+        "abebooks:32410639692"
+      ]
+    },
+    "abebooks|becher bernd and hilla|anonyme skulpturen": {
+      "first_successful_fetch": "2026-08-23T10:50:04Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T10:50:04Z",
+      "seen": [
+        "abebooks:31947165710",
+        "abebooks:86101065",
+        "abebooks:32478439003",
+        "abebooks:30424051725",
+        "abebooks:32014760711",
+        "abebooks:57253001",
+        "abebooks:32414876820",
+        "abebooks:32359329537",
+        "abebooks:22823867105",
+        "abebooks:32487914376",
+        "abebooks:32081192101",
+        "abebooks:31089873033",
+        "abebooks:83879318",
+        "abebooks:32426787981"
       ]
     },
     "abebooks|bellmer hans|la poupee": {
@@ -2181,6 +2226,18 @@
         "abebooks:89712618"
       ]
     },
+    "abebooks|bischof werner|indiens pas mort": {
+      "first_successful_fetch": "2026-08-23T10:50:04Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T10:50:04Z",
+      "seen": [
+        "abebooks:838323233",
+        "abebooks:32462808498",
+        "abebooks:31911778961",
+        "abebooks:32406157865",
+        "abebooks:1053145407"
+      ]
+    },
     "abebooks|blossfeldt karl|urformen der kunst": {
       "first_successful_fetch": "2026-08-22T14:31:05Z",
       "initialized": true,
@@ -2386,6 +2443,43 @@
         "abebooks:30248753450"
       ]
     },
+    "abebooks|bourke white margaret|eyes on russia": {
+      "first_successful_fetch": "2026-08-23T10:50:04Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T10:50:04Z",
+      "seen": [
+        "abebooks:30444618380",
+        "abebooks:60162693",
+        "abebooks:32013855138",
+        "abebooks:32412543798",
+        "abebooks:61520920",
+        "abebooks:31240560703",
+        "abebooks:57406320",
+        "abebooks:31888643189",
+        "abebooks:30504135121",
+        "abebooks:54990151",
+        "abebooks:31699195867",
+        "abebooks:31520394958",
+        "abebooks:72095310",
+        "abebooks:31449099003"
+      ]
+    },
+    "abebooks|bourneville desire regnard paul|iconographie photographique de la salpetriere": {
+      "first_successful_fetch": "2026-08-23T10:50:04Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T10:50:04Z",
+      "seen": [
+        "abebooks:31965329405",
+        "abebooks:54157392",
+        "abebooks:31594546256",
+        "abebooks:31594542858",
+        "abebooks:31651246388",
+        "abebooks:32485368200",
+        "abebooks:90283144",
+        "abebooks:32469851883",
+        "abebooks:91386147"
+      ]
+    },
     "abebooks|bradford william|the arctic regions": {
       "first_successful_fetch": "2026-08-22T14:31:05Z",
       "initialized": true,
@@ -2554,6 +2648,59 @@
         "abebooks:31082063988",
         "abebooks:83879318",
         "abebooks:31441564657"
+      ]
+    },
+    "abebooks|brassai|seville en fete": {
+      "first_successful_fetch": "2026-08-23T10:50:04Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T10:50:04Z",
+      "seen": [
+        "abebooks:31645374435",
+        "abebooks:59374266",
+        "abebooks:31516971040",
+        "abebooks:55467441",
+        "abebooks:31847375927",
+        "abebooks:73357968",
+        "abebooks:31725473216",
+        "abebooks:8600884001",
+        "abebooks:57757247",
+        "abebooks:30858324310",
+        "abebooks:22910176127",
+        "abebooks:32343255450",
+        "abebooks:30531884479",
+        "abebooks:57100425",
+        "abebooks:31141492377",
+        "abebooks:32130958392",
+        "abebooks:32162986800"
+      ]
+    },
+    "abebooks|brassai|the secret paris of the thirties": {
+      "first_successful_fetch": "2026-08-23T10:50:04Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T10:50:04Z",
+      "seen": [
+        "abebooks:32493306906",
+        "abebooks:9780394733845",
+        "abebooks:51315977",
+        "abebooks:31542388322",
+        "abebooks:9780500540404",
+        "abebooks:82983627",
+        "abebooks:30836787059"
+      ]
+    },
+    "abebooks|brassai|voluptes de paris": {
+      "first_successful_fetch": "2026-08-23T10:50:04Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T10:50:04Z",
+      "seen": [
+        "abebooks:32353673721",
+        "abebooks:74014852",
+        "abebooks:32264653722",
+        "abebooks:13392421769",
+        "abebooks:30881131026",
+        "abebooks:19171135857",
+        "abebooks:62954121",
+        "abebooks:156180814"
       ]
     },
     "abebooks|brian griffin|open twenty one photographs by brian griffin": {
@@ -2780,6 +2927,37 @@
         "abebooks:30794713967"
       ]
     },
+    "abebooks|burri rene|les allemands": {
+      "first_successful_fetch": "2026-08-23T10:50:04Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T10:50:04Z",
+      "seen": [
+        "abebooks:32248639351",
+        "abebooks:70461248",
+        "abebooks:32480223246",
+        "abebooks:30763441934",
+        "abebooks:74014852",
+        "abebooks:30864931119",
+        "abebooks:56246729",
+        "abebooks:32391248137",
+        "abebooks:32021177888",
+        "abebooks:32010932140",
+        "abebooks:82273322",
+        "abebooks:6959134205",
+        "abebooks:54253258",
+        "abebooks:12592962394",
+        "abebooks:54861572",
+        "abebooks:15853293500",
+        "abebooks:30994135014",
+        "abebooks:31936423621",
+        "abebooks:10898894094",
+        "abebooks:31753540516",
+        "abebooks:32428318322",
+        "abebooks:52748454",
+        "abebooks:17014969403",
+        "abebooks:16945723012"
+      ]
+    },
     "abebooks|burton yost berry|teenage styles and trends 1967 71 a retrospect": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
@@ -2802,6 +2980,41 @@
         "abebooks:13473369906",
         "abebooks:32502385452",
         "abebooks:30941932216"
+      ]
+    },
+    "abebooks|callahan harry|waters edge": {
+      "first_successful_fetch": "2026-08-23T10:50:04Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T10:50:04Z",
+      "seen": [
+        "abebooks:32471227130",
+        "abebooks:32332062387",
+        "abebooks:9780935112016",
+        "abebooks:674445018",
+        "abebooks:32042537324",
+        "abebooks:31781729033",
+        "abebooks:31170145820",
+        "abebooks:32221900434",
+        "abebooks:30014148632",
+        "abebooks:32438837591",
+        "abebooks:9780935112023",
+        "abebooks:52230677",
+        "abebooks:19769374767",
+        "abebooks:2677070074",
+        "abebooks:31385685419",
+        "abebooks:5575041754",
+        "abebooks:31021974820",
+        "abebooks:1387941472",
+        "abebooks:30312585186",
+        "abebooks:32481903766",
+        "abebooks:5682460235",
+        "abebooks:18919632166",
+        "abebooks:31624079087",
+        "abebooks:16458428936",
+        "abebooks:9164770428",
+        "abebooks:32063647825",
+        "abebooks:32475968371",
+        "abebooks:54990151"
       ]
     },
     "abebooks|cameron julia margaret|idylls of the king": {
@@ -2856,6 +3069,15 @@
         "abebooks:32439888570",
         "abebooks:32475368269",
         "abebooks:53994756"
+      ]
+    },
+    "abebooks|carlos guimaraes|resistencia popular generalizada": {
+      "first_successful_fetch": "2026-08-23T10:50:04Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T10:50:04Z",
+      "seen": [
+        "abebooks:30913514311",
+        "abebooks:72313296"
       ]
     },
     "abebooks|carmi lisetta|i travestiti": {
@@ -2921,6 +3143,23 @@
         "abebooks:51209318"
       ]
     },
+    "abebooks|carrieri mario|milano italia": {
+      "first_successful_fetch": "2026-08-23T10:50:04Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T10:50:04Z",
+      "seen": [
+        "abebooks:30623651559",
+        "abebooks:16166452801",
+        "abebooks:31508014042",
+        "abebooks:53848645",
+        "abebooks:14090171619",
+        "abebooks:31067121856",
+        "abebooks:30752158032",
+        "abebooks:51655662",
+        "abebooks:32080536007",
+        "abebooks:31067131108"
+      ]
+    },
     "abebooks|carroll tankersley ed|greyhound 1963": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
@@ -2943,6 +3182,36 @@
         "abebooks:32464633729",
         "abebooks:32122805079",
         "abebooks:30413639706"
+      ]
+    },
+    "abebooks|cartier bresson henri|les danses a bali": {
+      "first_successful_fetch": "2026-08-23T10:50:04Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T10:50:04Z",
+      "seen": [
+        "abebooks:22454893003",
+        "abebooks:9782851072665",
+        "abebooks:52839311",
+        "abebooks:31001510410",
+        "abebooks:31464418810",
+        "abebooks:394530226",
+        "abebooks:32278831028",
+        "abebooks:31779066864",
+        "abebooks:54260250",
+        "abebooks:31536856924",
+        "abebooks:30789398239",
+        "abebooks:30728380194",
+        "abebooks:63678090",
+        "abebooks:32353619775",
+        "abebooks:31236865063",
+        "abebooks:70200241",
+        "abebooks:30921036910",
+        "abebooks:54880967",
+        "abebooks:32499247500",
+        "abebooks:1131177551",
+        "abebooks:31972257258",
+        "abebooks:31350865727",
+        "abebooks:32162351759"
       ]
     },
     "abebooks|cartier bresson henri|the decisive moment": {
@@ -3489,6 +3758,40 @@
         "abebooks:61210336"
       ]
     },
+    "abebooks|clark larry|teenage lust": {
+      "first_successful_fetch": "2026-08-23T10:50:04Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T10:50:04Z",
+      "seen": [
+        "abebooks:31114312997",
+        "abebooks:32411030278",
+        "abebooks:31259001516",
+        "abebooks:32462795738",
+        "abebooks:30538205578",
+        "abebooks:32476904334",
+        "abebooks:31136670084",
+        "abebooks:31882533220",
+        "abebooks:32190381006",
+        "abebooks:9781111991142",
+        "abebooks:32493340252",
+        "abebooks:64430280",
+        "abebooks:30594414536",
+        "abebooks:30313443602",
+        "abebooks:30779958299",
+        "abebooks:32073010884",
+        "abebooks:61130051",
+        "abebooks:31883046211",
+        "abebooks:32404406862",
+        "abebooks:63787606",
+        "abebooks:31861478182",
+        "abebooks:32119235987",
+        "abebooks:31154876148",
+        "abebooks:22573439722",
+        "abebooks:31100201583",
+        "abebooks:10045167133",
+        "abebooks:31129628808"
+      ]
+    },
     "abebooks|clark larry|tulsa": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
@@ -3595,6 +3898,20 @@
         "abebooks:32431950122"
       ]
     },
+    "abebooks|clergue lucien|corps memorables": {
+      "first_successful_fetch": "2026-08-23T10:50:04Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T10:50:04Z",
+      "seen": [
+        "abebooks:32352591927",
+        "abebooks:74014852",
+        "abebooks:32175335979",
+        "abebooks:32009293518",
+        "abebooks:82076540",
+        "abebooks:17293632531",
+        "abebooks:31437484053"
+      ]
+    },
     "abebooks|clergue lucien|toros muertos": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
@@ -3626,6 +3943,34 @@
         "abebooks:17592647104",
         "abebooks:12882838282",
         "abebooks:32141256580"
+      ]
+    },
+    "abebooks|coburn alvin langdon|london": {
+      "first_successful_fetch": "2026-08-23T10:50:04Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T10:50:04Z",
+      "seen": [
+        "abebooks:32491546056",
+        "abebooks:32491556805",
+        "abebooks:32460702202",
+        "abebooks:31073605307",
+        "abebooks:31450959125",
+        "abebooks:30288683694",
+        "abebooks:32397435910",
+        "abebooks:31704624627",
+        "abebooks:30925788025",
+        "abebooks:30132802861",
+        "abebooks:30609626206",
+        "abebooks:30608575027",
+        "abebooks:31886721521",
+        "abebooks:30564597162",
+        "abebooks:30564599336",
+        "abebooks:30564603910",
+        "abebooks:30564598247",
+        "abebooks:30940333938",
+        "abebooks:32418347299",
+        "abebooks:32496674688",
+        "abebooks:31110342321"
       ]
     },
     "abebooks|coburn alvin langdon|new york": {
@@ -3903,6 +4248,18 @@
         "abebooks:12575876568"
       ]
     },
+    "abebooks|dash snow|gang bang at ground zero": {
+      "first_successful_fetch": "2026-08-23T10:50:04Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T10:50:04Z",
+      "seen": [
+        "abebooks:32477328453",
+        "abebooks:32438704370",
+        "abebooks:32492047270",
+        "abebooks:32296513118",
+        "abebooks:31987508131"
+      ]
+    },
     "abebooks|dave heath|a dialogue with solitude": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
@@ -4087,6 +4444,30 @@
         "abebooks:16166452800"
       ]
     },
+    "abebooks|davis theodore m|the tombs of harmhabi and touatankhamanou": {
+      "first_successful_fetch": "2026-08-23T10:50:04Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T10:50:04Z",
+      "seen": [
+        "abebooks:32470901115",
+        "abebooks:9780715630723",
+        "abebooks:50604927",
+        "abebooks:32482856287",
+        "abebooks:30639863638",
+        "abebooks:31412346087",
+        "abebooks:71530190",
+        "abebooks:22817665387",
+        "abebooks:32425621247",
+        "abebooks:50563749",
+        "abebooks:31767940764",
+        "abebooks:6533443750",
+        "abebooks:32396618984",
+        "abebooks:54515469",
+        "abebooks:31217099052",
+        "abebooks:32256305305",
+        "abebooks:89712618"
+      ]
+    },
     "abebooks|dayanita singh|privacy": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
@@ -4101,6 +4482,18 @@
         "abebooks:91076710",
         "abebooks:32257408614",
         "abebooks:89712618"
+      ]
+    },
+    "abebooks|dayanita singh|sent a letter": {
+      "first_successful_fetch": "2026-08-23T10:50:04Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T10:50:04Z",
+      "seen": [
+        "abebooks:32500795705",
+        "abebooks:31816240898",
+        "abebooks:32408964787",
+        "abebooks:9783865214546",
+        "abebooks:91076710"
       ]
     },
     "abebooks|decarava roy hughes langston|the sweet flypaper of life": {
@@ -4305,6 +4698,33 @@
         "abebooks:53994756"
       ]
     },
+    "abebooks|doisneau robert|les parisiens tels qu ils sont": {
+      "first_successful_fetch": "2026-08-23T10:50:04Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T10:50:04Z",
+      "seen": [
+        "abebooks:31728376175",
+        "abebooks:65952368",
+        "abebooks:32138315232",
+        "abebooks:31169524252",
+        "abebooks:17592644094",
+        "abebooks:31146005228",
+        "abebooks:32430536944",
+        "abebooks:20154316701",
+        "abebooks:50548222",
+        "abebooks:19466798280",
+        "abebooks:57402253",
+        "abebooks:31720011760",
+        "abebooks:31699978221",
+        "abebooks:32017939498",
+        "abebooks:32278828452",
+        "abebooks:32153734053",
+        "abebooks:14503929312",
+        "abebooks:31972257258",
+        "abebooks:31350865727",
+        "abebooks:32162351759"
+      ]
+    },
     "abebooks|domon ken tomatsu shomei|hiroshima nagasaki document 1961": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
@@ -4352,6 +4772,14 @@
         "abebooks:52758109",
         "abebooks:30719471306",
         "abebooks:54990151"
+      ]
+    },
+    "abebooks|domon ken|tumie chan wa otosan ga shinda": {
+      "first_successful_fetch": "2026-08-23T10:50:04Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T10:50:04Z",
+      "seen": [
+        "abebooks:22923094626"
       ]
     },
     "abebooks|donald mccullin|the destruction business": {
@@ -4718,6 +5146,14 @@
         "abebooks:8209442105"
       ]
     },
+    "abebooks|ehrenburg ilya lissitsky el|6 provesti o legkikh konstakh": {
+      "first_successful_fetch": "2026-08-23T10:50:04Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T10:50:04Z",
+      "seen": [
+        "abebooks:32109031713"
+      ]
+    },
     "abebooks|ehrenburg ilya|moi parizh": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
@@ -4856,6 +5292,50 @@
         "abebooks:31839684384",
         "abebooks:83435977",
         "abebooks:32294711664"
+      ]
+    },
+    "abebooks|emerson peter henry|naturalistic photography for students of the art": {
+      "first_successful_fetch": "2026-08-23T10:50:04Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T10:50:04Z",
+      "seen": [
+        "abebooks:32498245071",
+        "abebooks:9780405049064",
+        "abebooks:54448258",
+        "abebooks:32479109704",
+        "abebooks:9781015624207",
+        "abebooks:87239718",
+        "abebooks:30168364004",
+        "abebooks:9789333119429",
+        "abebooks:70780988",
+        "abebooks:31533563273",
+        "abebooks:65733602",
+        "abebooks:31618323724",
+        "abebooks:31657299860",
+        "abebooks:30638896681",
+        "abebooks:30589331094",
+        "abebooks:9781330039410",
+        "abebooks:31533567983",
+        "abebooks:32483952874",
+        "abebooks:9783337025212",
+        "abebooks:32118913059",
+        "abebooks:9781015619593",
+        "abebooks:31960219321",
+        "abebooks:54157392",
+        "abebooks:30264890868",
+        "abebooks:32483205307",
+        "abebooks:90283144",
+        "abebooks:30503003044",
+        "abebooks:9781527963412",
+        "abebooks:31424560682",
+        "abebooks:32229119135",
+        "abebooks:9780405049057",
+        "abebooks:30797932021",
+        "abebooks:9780817404017",
+        "abebooks:16677178701",
+        "abebooks:9781103558896",
+        "abebooks:31913201528",
+        "abebooks:51283250"
       ]
     },
     "abebooks|enrique bostelmann|america un viaje a traves de la injusticia america a journey through injustice": {
