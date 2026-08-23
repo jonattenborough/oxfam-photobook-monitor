@@ -1,11 +1,11 @@
 {
-  "cursor": 576,
+  "cursor": 600,
   "feeds": {
     "photobookstore": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 250,
-      "last_successful_fetch": "2026-08-23T11:45:41Z",
+      "last_successful_fetch": "2026-08-23T13:10:20Z",
       "seen": [
         "photobookstore:15834487521653",
         "photobookstore:15969006715253",
@@ -263,7 +263,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 232,
-      "last_successful_fetch": "2026-08-23T11:45:41Z",
+      "last_successful_fetch": "2026-08-23T13:10:20Z",
       "seen": [
         "setanta:16045232554366",
         "setanta:16045434241406",
@@ -503,7 +503,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 85,
-      "last_successful_fetch": "2026-08-23T11:45:41Z",
+      "last_successful_fetch": "2026-08-23T13:10:20Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -596,7 +596,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 208,
-      "last_successful_fetch": "2026-08-23T11:45:41Z",
+      "last_successful_fetch": "2026-08-23T13:10:20Z",
       "seen": [
         "village:10371039101210",
         "village:10371023995162",
@@ -812,7 +812,7 @@
   },
   "last_failures": [],
   "last_successful_requests": 28,
-  "last_successful_run": "2026-08-23T11:45:41Z",
+  "last_successful_run": "2026-08-23T13:10:20Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
@@ -7632,6 +7632,19 @@
         "abebooks:32493310014"
       ]
     },
+    "abebooks|hugnet georges|la septieme face du de": {
+      "first_successful_fetch": "2026-08-23T13:10:20Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T13:10:20Z",
+      "seen": [
+        "abebooks:31005333478",
+        "abebooks:61790674",
+        "abebooks:30617108131",
+        "abebooks:65952368",
+        "abebooks:31784227099",
+        "abebooks:30609653324"
+      ]
+    },
     "abebooks|igor samolet|be happy": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
@@ -7687,6 +7700,83 @@
       "last_successful_fetch": "2026-08-22T19:45:37Z",
       "seen": [
         "abebooks:31406862971"
+      ]
+    },
+    "abebooks|ishimoto yasuhiro|chicago chicago": {
+      "first_successful_fetch": "2026-08-23T13:10:20Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T13:10:20Z",
+      "seen": [
+        "abebooks:32272123408",
+        "abebooks:31082686248",
+        "abebooks:16331694475",
+        "abebooks:21393344795",
+        "abebooks:32451101145",
+        "abebooks:9780870405532",
+        "abebooks:54239244",
+        "abebooks:32156202298",
+        "abebooks:21393344801",
+        "abebooks:32423664367",
+        "abebooks:31920554641",
+        "abebooks:9780985096083",
+        "abebooks:31682426680",
+        "abebooks:86378343",
+        "abebooks:31682435224",
+        "abebooks:31682426654",
+        "abebooks:31682426655",
+        "abebooks:32109085456",
+        "abebooks:63659862",
+        "abebooks:22376956604",
+        "abebooks:31012948109",
+        "abebooks:51538321",
+        "abebooks:31682434235",
+        "abebooks:31934856064",
+        "abebooks:32363334987",
+        "abebooks:31682436980",
+        "abebooks:31653119441",
+        "abebooks:31682436958",
+        "abebooks:16293109670",
+        "abebooks:31795014669",
+        "abebooks:31823340311",
+        "abebooks:32109080726",
+        "abebooks:31666103954",
+        "abebooks:30204672305",
+        "abebooks:52506076"
+      ]
+    },
+    "abebooks|ishiuchi miyako|apartment": {
+      "first_successful_fetch": "2026-08-23T13:10:20Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T13:10:20Z",
+      "seen": [
+        "abebooks:18640437010",
+        "abebooks:56092880",
+        "abebooks:30095632876",
+        "abebooks:31660932863",
+        "abebooks:86378343",
+        "abebooks:31725946538",
+        "abebooks:31676175230"
+      ]
+    },
+    "abebooks|ishiuchi miyako|endless night": {
+      "first_successful_fetch": "2026-08-23T13:10:20Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T13:10:20Z",
+      "seen": [
+        "abebooks:31660936951",
+        "abebooks:86378343",
+        "abebooks:31676174436",
+        "abebooks:31725940674",
+        "abebooks:31949617399",
+        "abebooks:9784898300886",
+        "abebooks:32117027399",
+        "abebooks:85525324",
+        "abebooks:18640437010",
+        "abebooks:56092880",
+        "abebooks:30095632876",
+        "abebooks:13473344829",
+        "abebooks:30212130181",
+        "abebooks:52506076"
       ]
     },
     "abebooks|ishiuchi miyako|yokosuka story": {
@@ -8105,6 +8195,38 @@
         "abebooks:89803102"
       ]
     },
+    "abebooks|joel meyerowitz|aftermath world trade center archive": {
+      "first_successful_fetch": "2026-08-23T13:10:20Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T13:10:20Z",
+      "seen": [
+        "abebooks:32494865577",
+        "abebooks:9780714846552",
+        "abebooks:51315977",
+        "abebooks:32117103659",
+        "abebooks:51947087",
+        "abebooks:32350758492",
+        "abebooks:9780714862125",
+        "abebooks:32023990056",
+        "abebooks:55410863",
+        "abebooks:30052096372",
+        "abebooks:32488326238",
+        "abebooks:50604927",
+        "abebooks:5064276923",
+        "abebooks:30784110059",
+        "abebooks:32133606945",
+        "abebooks:70788857",
+        "abebooks:32498056354",
+        "abebooks:31986841326",
+        "abebooks:31109879435",
+        "abebooks:53994756",
+        "abebooks:31109712408",
+        "abebooks:32148920960",
+        "abebooks:31839203362",
+        "abebooks:32257714409",
+        "abebooks:89712618"
+      ]
+    },
     "abebooks|joel sternfeld|american prospects": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
@@ -8300,6 +8422,24 @@
         "abebooks:32257717181"
       ]
     },
+    "abebooks|jonsson sune|byn med det bla huset": {
+      "first_successful_fetch": "2026-08-23T13:10:20Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T13:10:20Z",
+      "seen": [
+        "abebooks:4438854675",
+        "abebooks:56468386",
+        "abebooks:31972351210",
+        "abebooks:52241158",
+        "abebooks:4438883041",
+        "abebooks:31542019984",
+        "abebooks:82273322",
+        "abebooks:31067125588",
+        "abebooks:18121074964",
+        "abebooks:2314926100",
+        "abebooks:18121074965"
+      ]
+    },
     "abebooks|jos r vilimek|letem ceskym svetem pul tisice fotograf pohledu z cech moravy slezska a slovenska a flight over the czech world five hundred views from bohemia moravia silesia and slovakia": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
@@ -8361,6 +8501,19 @@
         "abebooks:89712618"
       ]
     },
+    "abebooks|joseph szabo|almost grown": {
+      "first_successful_fetch": "2026-08-23T13:10:20Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T13:10:20Z",
+      "seen": [
+        "abebooks:32469287211",
+        "abebooks:9780517533284",
+        "abebooks:32172474868",
+        "abebooks:31905405597",
+        "abebooks:9780517533277",
+        "abebooks:50731200"
+      ]
+    },
     "abebooks|jouko lehtola|finlandia": {
       "first_successful_fetch": "2026-08-22T21:45:33Z",
       "initialized": true,
@@ -8400,6 +8553,17 @@
         "abebooks:51283250",
         "abebooks:30965165106",
         "abebooks:16177005814"
+      ]
+    },
+    "abebooks|julian baron|c e n s u r a": {
+      "first_successful_fetch": "2026-08-23T13:10:20Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T13:10:20Z",
+      "seen": [
+        "abebooks:6715987418",
+        "abebooks:31060721673",
+        "abebooks:17844252325",
+        "abebooks:12432515067"
       ]
     },
     "abebooks|julian germain|in soccer wonderland": {
@@ -8536,6 +8700,31 @@
         "abebooks:1907334964"
       ]
     },
+    "abebooks|kawada kikuji|chizu": {
+      "first_successful_fetch": "2026-08-23T13:10:20Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T13:10:20Z",
+      "seen": [
+        "abebooks:32385971174",
+        "abebooks:50731200",
+        "abebooks:31068132544",
+        "abebooks:31081111880",
+        "abebooks:9781590051238",
+        "abebooks:32171057958"
+      ]
+    },
+    "abebooks|kay lee ed|americas favorites": {
+      "first_successful_fetch": "2026-08-23T13:10:20Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T13:10:20Z",
+      "seen": [
+        "abebooks:32196938260",
+        "abebooks:32187600461",
+        "abebooks:32172131372",
+        "abebooks:32233012016",
+        "abebooks:32129454588"
+      ]
+    },
     "abebooks|kaye john william|the people of india": {
       "first_successful_fetch": "2026-08-22T21:45:33Z",
       "initialized": true,
@@ -8632,6 +8821,18 @@
         "abebooks:32442987546"
       ]
     },
+    "abebooks|kazuo kenmochi|mayaku narcotics photographic document": {
+      "first_successful_fetch": "2026-08-23T13:10:20Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T13:10:20Z",
+      "seen": [
+        "abebooks:32405011715",
+        "abebooks:31800914153",
+        "abebooks:31725942770",
+        "abebooks:31711689851",
+        "abebooks:31711687843"
+      ]
+    },
     "abebooks|kazuo kitai|sanrizuka 1969 1971": {
       "first_successful_fetch": "2026-08-22T21:45:33Z",
       "initialized": true,
@@ -8662,6 +8863,19 @@
         "abebooks:32218450828",
         "abebooks:21676138291",
         "abebooks:9784309261485"
+      ]
+    },
+    "abebooks|keizo kitajima|shashin tokkyubin tokyo photomail from tokyo": {
+      "first_successful_fetch": "2026-08-23T13:10:20Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T13:10:20Z",
+      "seen": [
+        "abebooks:32407363381",
+        "abebooks:18392620520",
+        "abebooks:5588208472",
+        "abebooks:52506076",
+        "abebooks:5588208461",
+        "abebooks:21245004532"
       ]
     },
     "abebooks|kent klich|gaza photo album": {
@@ -8761,6 +8975,56 @@
         "abebooks:22849542349",
         "abebooks:22849542393",
         "abebooks:31827159272"
+      ]
+    },
+    "abebooks|klein william|life is good and good for you in new york": {
+      "first_successful_fetch": "2026-08-23T13:10:20Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T13:10:20Z",
+      "seen": [
+        "abebooks:22922665676",
+        "abebooks:32427417008",
+        "abebooks:32161765259",
+        "abebooks:9781935004080",
+        "abebooks:65127573",
+        "abebooks:32501750158",
+        "abebooks:9781899235254",
+        "abebooks:32501002327",
+        "abebooks:56385485",
+        "abebooks:32357924934",
+        "abebooks:57448406",
+        "abebooks:30263132305",
+        "abebooks:30039429435",
+        "abebooks:31768038896",
+        "abebooks:32315558497",
+        "abebooks:61744380",
+        "abebooks:16583336236",
+        "abebooks:31295673032",
+        "abebooks:52377594",
+        "abebooks:31746193672",
+        "abebooks:86378343",
+        "abebooks:31741688617",
+        "abebooks:32022655197",
+        "abebooks:11114874598",
+        "abebooks:31538542602",
+        "abebooks:32172423395",
+        "abebooks:32014768938",
+        "abebooks:57253001",
+        "abebooks:31741686727",
+        "abebooks:31741686732",
+        "abebooks:32006147502",
+        "abebooks:201488995",
+        "abebooks:32417087875",
+        "abebooks:31741695109",
+        "abebooks:31321212143",
+        "abebooks:32260531141",
+        "abebooks:31741696123",
+        "abebooks:32379169880",
+        "abebooks:31080503846",
+        "abebooks:83879318",
+        "abebooks:12845445758",
+        "abebooks:22042421079",
+        "abebooks:32073108332"
       ]
     },
     "abebooks|kohei yoshiyuki|document kouen": {
@@ -8941,6 +9205,46 @@
         "abebooks:30430261840",
         "abebooks:57132617",
         "abebooks:21679903389"
+      ]
+    },
+    "abebooks|lange dorothea taylor paul s|an american exodus": {
+      "first_successful_fetch": "2026-08-23T13:10:20Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T13:10:20Z",
+      "seen": [
+        "abebooks:32502508589",
+        "abebooks:32452258591",
+        "abebooks:9782858935130",
+        "abebooks:91289373",
+        "abebooks:32160787022",
+        "abebooks:32355491027",
+        "abebooks:32413888482",
+        "abebooks:58955986",
+        "abebooks:32168167730",
+        "abebooks:21076788172",
+        "abebooks:30912704792",
+        "abebooks:32419557926",
+        "abebooks:55366034",
+        "abebooks:31780309928",
+        "abebooks:32346639290",
+        "abebooks:57672385",
+        "abebooks:32370061030",
+        "abebooks:32323988774",
+        "abebooks:59852454",
+        "abebooks:31810244641",
+        "abebooks:54990151",
+        "abebooks:32498384100",
+        "abebooks:32226445277",
+        "abebooks:53389994",
+        "abebooks:31131722048",
+        "abebooks:31328641075",
+        "abebooks:31725367193",
+        "abebooks:31566184933",
+        "abebooks:32501597457",
+        "abebooks:30976522184",
+        "abebooks:22890919805",
+        "abebooks:31519465358",
+        "abebooks:71649133"
       ]
     },
     "abebooks|larry sultan and mike mandel|evidence": {
@@ -9131,6 +9435,17 @@
         "abebooks:17286669217"
       ]
     },
+    "abebooks|leigh ledare|pretend you re actually alive": {
+      "first_successful_fetch": "2026-08-23T13:10:20Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T13:10:20Z",
+      "seen": [
+        "abebooks:18893213296",
+        "abebooks:9780971548053",
+        "abebooks:31080512785",
+        "abebooks:83879318"
+      ]
+    },
     "abebooks|lerski helmar|kopfe des alltags unbekannte menschen": {
       "first_successful_fetch": "2026-08-22T22:47:34Z",
       "initialized": true,
@@ -9287,6 +9602,27 @@
         "abebooks:30902126294"
       ]
     },
+    "abebooks|lise sarfati|she": {
+      "first_successful_fetch": "2026-08-23T13:10:20Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T13:10:20Z",
+      "seen": [
+        "abebooks:32320485645",
+        "abebooks:9781936611003",
+        "abebooks:32252040429",
+        "abebooks:32242401337",
+        "abebooks:32481256838",
+        "abebooks:55410863",
+        "abebooks:31590551236",
+        "abebooks:53866791",
+        "abebooks:72536976",
+        "abebooks:31458833898",
+        "abebooks:12542911419",
+        "abebooks:21683558352",
+        "abebooks:32258570524",
+        "abebooks:89712618"
+      ]
+    },
     "abebooks|loewy maurice m puiseux m pierre|atlas photographique de la lune": {
       "first_successful_fetch": "2026-08-22T22:47:34Z",
       "initialized": true,
@@ -9297,6 +9633,32 @@
         "abebooks:32439236430",
         "abebooks:32447130931",
         "abebooks:32445703639"
+      ]
+    },
+    "abebooks|lorinczy gyorgy|new york new york": {
+      "first_successful_fetch": "2026-08-23T13:10:20Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T13:10:20Z",
+      "seen": [
+        "abebooks:30723736943",
+        "abebooks:30545380491",
+        "abebooks:9783932187438",
+        "abebooks:50971847",
+        "abebooks:32010893228",
+        "abebooks:82273322",
+        "abebooks:30765406115",
+        "abebooks:57132617",
+        "abebooks:31809164079",
+        "abebooks:32374654480",
+        "abebooks:32115988718",
+        "abebooks:3376566495",
+        "abebooks:14630165252",
+        "abebooks:56631208",
+        "abebooks:31078716912",
+        "abebooks:20388485257",
+        "abebooks:20388485277",
+        "abebooks:31087109670",
+        "abebooks:83879318"
       ]
     },
     "abebooks|louis aragon and benjamin peret eds|1929": {
@@ -9326,6 +9688,16 @@
         "abebooks:5117072559",
         "abebooks:54803255",
         "abebooks:31323252857"
+      ]
+    },
+    "abebooks|luc chessex|le visage de la revolution": {
+      "first_successful_fetch": "2026-08-23T13:10:20Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T13:10:20Z",
+      "seen": [
+        "abebooks:31000041290",
+        "abebooks:13694033739",
+        "abebooks:55488571"
       ]
     },
     "abebooks|luc delahaye|winterreise": {
@@ -9434,6 +9806,25 @@
         "abebooks:54990151"
       ]
     },
+    "abebooks|maccheroni henri|cent photographies du sexe d une femme": {
+      "first_successful_fetch": "2026-08-23T13:10:20Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T13:10:20Z",
+      "seen": [
+        "abebooks:32244286540",
+        "abebooks:9782702100226",
+        "abebooks:55410863",
+        "abebooks:31725635376",
+        "abebooks:32241024248",
+        "abebooks:50664265",
+        "abebooks:30452727417",
+        "abebooks:71958310",
+        "abebooks:31114247848",
+        "abebooks:72313296",
+        "abebooks:31254604607",
+        "abebooks:63678090"
+      ]
+    },
     "abebooks|macleish archibald|land of the free": {
       "first_successful_fetch": "2026-08-22T23:45:27Z",
       "initialized": true,
@@ -9489,6 +9880,18 @@
       "seen": [
         "abebooks:19033285543",
         "abebooks:52346410"
+      ]
+    },
+    "abebooks|manuel gasser|aus dem leben der rennfahrer": {
+      "first_successful_fetch": "2026-08-23T13:10:20Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T13:10:20Z",
+      "seen": [
+        "abebooks:32431482193",
+        "abebooks:32029699532",
+        "abebooks:30735803255",
+        "abebooks:31936242761",
+        "abebooks:30736053623"
       ]
     },
     "abebooks|mao ishikawa|hot nights in camp hansen": {
@@ -9584,6 +9987,27 @@
         "abebooks:32460154013"
       ]
     },
+    "abebooks|martone michael|dark light": {
+      "first_successful_fetch": "2026-08-23T13:10:20Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T13:10:20Z",
+      "seen": [
+        "abebooks:32415544116",
+        "abebooks:9780912810119",
+        "abebooks:54448258",
+        "abebooks:32502716855",
+        "abebooks:30769522523",
+        "abebooks:331398078",
+        "abebooks:31371501508",
+        "abebooks:30495045305",
+        "abebooks:16788971408",
+        "abebooks:32079362459",
+        "abebooks:31720105419",
+        "abebooks:32278578632",
+        "abebooks:30297637665",
+        "abebooks:9780912810126"
+      ]
+    },
     "abebooks|marvin heiferman and carole kismaric|i m so happy": {
       "first_successful_fetch": "2026-08-22T23:45:27Z",
       "initialized": true,
@@ -9627,6 +10051,32 @@
       "seen": [
         "abebooks:1047788458",
         "abebooks:30918063134"
+      ]
+    },
+    "abebooks|masao gozu|in new york": {
+      "first_successful_fetch": "2026-08-23T13:10:20Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T13:10:20Z",
+      "seen": [
+        "abebooks:14710319449",
+        "abebooks:31627690734",
+        "abebooks:72313296",
+        "abebooks:31689973608",
+        "abebooks:32125958750",
+        "abebooks:2900013595372",
+        "abebooks:31324821796"
+      ]
+    },
+    "abebooks|masao gozu|in new york feb 1971 apr 1990": {
+      "first_successful_fetch": "2026-08-23T13:10:20Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T13:10:20Z",
+      "seen": [
+        "abebooks:31627690734",
+        "abebooks:72313296",
+        "abebooks:31689973608",
+        "abebooks:32125958750",
+        "abebooks:2900013595372"
       ]
     },
     "abebooks|massimo vitali|les plages du var": {
@@ -9927,6 +10377,35 @@
         "abebooks:31013736066",
         "abebooks:31089414088",
         "abebooks:2936969891"
+      ]
+    },
+    "abebooks|michael wolf|tokyo compression": {
+      "first_successful_fetch": "2026-08-23T13:10:20Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T13:10:20Z",
+      "seen": [
+        "abebooks:32493767665",
+        "abebooks:9789881531766",
+        "abebooks:87044093",
+        "abebooks:32308233451",
+        "abebooks:72313296",
+        "abebooks:32494233380",
+        "abebooks:9783941825413",
+        "abebooks:84418107",
+        "abebooks:22388313110",
+        "abebooks:53994756",
+        "abebooks:30330875469",
+        "abebooks:9783941825086",
+        "abebooks:22388313109",
+        "abebooks:32502963043",
+        "abebooks:32182207308",
+        "abebooks:9783941825253",
+        "abebooks:30371124823",
+        "abebooks:32484934975",
+        "abebooks:87591102",
+        "abebooks:22388313111",
+        "abebooks:9789881971685",
+        "abebooks:31838991013"
       ]
     },
     "abebooks|michael wolf|tokyo compression three": {
