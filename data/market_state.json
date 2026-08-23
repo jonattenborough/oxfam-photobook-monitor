@@ -1,11 +1,11 @@
 {
-  "cursor": 140,
+  "cursor": 164,
   "feeds": {
     "photobookstore": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 250,
-      "last_successful_fetch": "2026-08-23T19:44:58Z",
+      "last_successful_fetch": "2026-08-23T20:48:27Z",
       "seen": [
         "photobookstore:15834487521653",
         "photobookstore:15969006715253",
@@ -263,7 +263,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 232,
-      "last_successful_fetch": "2026-08-23T19:44:58Z",
+      "last_successful_fetch": "2026-08-23T20:48:27Z",
       "seen": [
         "setanta:16045232554366",
         "setanta:16045434241406",
@@ -503,7 +503,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 85,
-      "last_successful_fetch": "2026-08-23T19:44:58Z",
+      "last_successful_fetch": "2026-08-23T20:48:27Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -596,7 +596,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 208,
-      "last_successful_fetch": "2026-08-23T19:44:58Z",
+      "last_successful_fetch": "2026-08-23T20:48:27Z",
       "seen": [
         "village:10371039101210",
         "village:10371023995162",
@@ -812,7 +812,7 @@
   },
   "last_failures": [],
   "last_successful_requests": 28,
-  "last_successful_run": "2026-08-23T19:44:58Z",
+  "last_successful_run": "2026-08-23T20:48:27Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
@@ -5003,19 +5003,20 @@
     "abebooks|eamonn doyle|i": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T15:45:54Z",
+      "last_successful_fetch": "2026-08-23T20:48:27Z",
       "seen": [
         "abebooks:32206498813",
         "abebooks:31833945547",
         "abebooks:32500807077",
-        "abebooks:32434142031",
-        "abebooks:32433211778"
+        "abebooks:32433211778",
+        "abebooks:32413591585",
+        "abebooks:32434142031"
       ]
     },
     "abebooks|eder josef maria valenta eduard|versuche uber photographie mittelst der rontgen schen strahlen": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T15:45:54Z",
+      "last_successful_fetch": "2026-08-23T20:48:27Z",
       "seen": [
         "abebooks:17098106009",
         "abebooks:31548441895",
@@ -5027,7 +5028,7 @@
     "abebooks|edward ed ruscha|every building on the sunset strip": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T15:45:54Z",
+      "last_successful_fetch": "2026-08-23T20:48:27Z",
       "seen": [
         "abebooks:30102856177",
         "abebooks:20935723281",
@@ -5038,7 +5039,7 @@
     "abebooks|edward ed ruscha|some los angeles apartments": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T15:45:54Z",
+      "last_successful_fetch": "2026-08-23T20:48:27Z",
       "seen": [
         "abebooks:32500282409",
         "abebooks:32369341478",
@@ -5050,7 +5051,7 @@
     "abebooks|edward ed ruscha|thirtyfour parking lots in los angeles": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T16:49:35Z",
+      "last_successful_fetch": "2026-08-23T20:48:27Z",
       "seen": [
         "abebooks:31044051253"
       ]
@@ -5058,7 +5059,7 @@
     "abebooks|edward ed ruscha|twentysix gasoline stations": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T16:49:35Z",
+      "last_successful_fetch": "2026-08-23T20:48:27Z",
       "seen": [
         "abebooks:32314214912",
         "abebooks:32479248643",
@@ -5070,7 +5071,7 @@
     "abebooks|edward ed ruscha|various small fires and milk": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T16:49:35Z",
+      "last_successful_fetch": "2026-08-23T20:48:27Z",
       "seen": [
         "abebooks:32283707995"
       ]
@@ -5078,11 +5079,13 @@
     "abebooks|edward steichen|the family of man": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T16:49:35Z",
+      "last_successful_fetch": "2026-08-23T20:48:27Z",
       "seen": [
-        "abebooks:32484312317",
+        "abebooks:32494968827",
         "abebooks:9780671554118",
-        "abebooks:52274160",
+        "abebooks:71230030",
+        "abebooks:32503258472",
+        "abebooks:9780870703416",
         "abebooks:31890161162",
         "abebooks:57785937",
         "abebooks:32493059118",
@@ -5099,20 +5102,19 @@
         "abebooks:31994664154",
         "abebooks:32004459097",
         "abebooks:31522289452",
-        "abebooks:30933101125",
-        "abebooks:9780870703416",
         "abebooks:32245282823",
         "abebooks:31437547770",
         "abebooks:65198171",
         "abebooks:32499834828",
         "abebooks:9780810961692",
+        "abebooks:52274160",
         "abebooks:31897697326",
         "abebooks:31816246638",
         "abebooks:32469041582",
-        "abebooks:32311794875",
         "abebooks:32340090624",
-        "abebooks:31996752323",
+        "abebooks:32311794875",
         "abebooks:32358306215",
+        "abebooks:31996752323",
         "abebooks:32366430630",
         "abebooks:32405333920",
         "abebooks:32483935494",
@@ -5145,13 +5147,15 @@
         "abebooks:32394461581",
         "abebooks:59781097",
         "abebooks:32190576148",
-        "abebooks:22696556099"
+        "abebooks:22696556099",
+        "abebooks:32484312317",
+        "abebooks:30933101125"
       ]
     },
     "abebooks|eggleston william|william egglestons guide": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T16:49:35Z",
+      "last_successful_fetch": "2026-08-23T20:48:27Z",
       "seen": [
         "abebooks:31064012106",
         "abebooks:9780870703782",
@@ -5191,7 +5195,7 @@
     "abebooks|ehrenburg ilya|moi parizh": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T16:49:35Z",
+      "last_successful_fetch": "2026-08-23T20:48:27Z",
       "seen": [
         "abebooks:21923174035",
         "abebooks:31860667007"
@@ -5200,7 +5204,7 @@
     "abebooks|ehrenburg ilya|no pasaran ispania tom ii": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T16:49:35Z",
+      "last_successful_fetch": "2026-08-23T20:48:27Z",
       "seen": [
         "abebooks:32461385639",
         "abebooks:32208306092",
@@ -5212,7 +5216,7 @@
     "abebooks|ehrhardt alfred|das watt": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T16:49:35Z",
+      "last_successful_fetch": "2026-08-23T20:48:27Z",
       "seen": [
         "abebooks:31316081684",
         "abebooks:9782365110266",
@@ -5259,7 +5263,7 @@
     "abebooks|eluard paul|facile": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T16:49:35Z",
+      "last_successful_fetch": "2026-08-23T20:48:27Z",
       "seen": [
         "abebooks:32315264260",
         "abebooks:89200414",
@@ -5286,7 +5290,7 @@
     "abebooks|emerson peter henry goodall thomas frederick|life and landscape on the norfolk broads": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T16:49:35Z",
+      "last_successful_fetch": "2026-08-23T20:48:27Z",
       "seen": [
         "abebooks:32414379509",
         "abebooks:31961810114"
@@ -5295,7 +5299,7 @@
     "abebooks|emerson peter henry|marsh leaves": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T16:49:35Z",
+      "last_successful_fetch": "2026-08-23T20:48:27Z",
       "seen": [
         "abebooks:30999461675",
         "abebooks:9781333597887",
@@ -5415,7 +5419,7 @@
     "abebooks|enrique bostelmann|america un viaje a traves de la injusticia america a journey through injustice": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T16:49:35Z",
+      "last_successful_fetch": "2026-08-23T20:48:27Z",
       "seen": [
         "abebooks:31129630681",
         "abebooks:31129626795"
@@ -5424,7 +5428,7 @@
     "abebooks|enzo aresani fernando fondi caterina ossola|ignis 25": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T16:49:35Z",
+      "last_successful_fetch": "2026-08-23T20:48:27Z",
       "seen": []
     },
     "abebooks|erich einhorn pravoslav sovak pavel kohout|marianske lazne": {
@@ -5438,7 +5442,7 @@
     "abebooks|erik kessels|in almost every picture series title represented in volume iii": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T16:49:35Z",
+      "last_successful_fetch": "2026-08-23T20:48:27Z",
       "seen": [
         "abebooks:32415272130",
         "abebooks:32164092376",
@@ -5450,7 +5454,7 @@
     "abebooks|ernest cole|house of bondage": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T16:49:35Z",
+      "last_successful_fetch": "2026-08-23T20:48:27Z",
       "seen": [
         "abebooks:32402103408",
         "abebooks:32463494370",
@@ -5487,7 +5491,7 @@
     "abebooks|ernst friedrich|krieg dem kriege war against war": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T16:49:35Z",
+      "last_successful_fetch": "2026-08-23T20:48:27Z",
       "seen": [
         "abebooks:31376112384",
         "abebooks:31376110565",
@@ -5522,7 +5526,7 @@
     "abebooks|esko mannikko|naarashauki the female pike": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T16:49:35Z",
+      "last_successful_fetch": "2026-08-23T20:48:27Z",
       "seen": [
         "abebooks:32402750551",
         "abebooks:9789529235001",
@@ -5547,7 +5551,7 @@
     "abebooks|eugene richards|dorchester days": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T16:49:35Z",
+      "last_successful_fetch": "2026-08-23T20:48:27Z",
       "seen": [
         "abebooks:32373809821",
         "abebooks:9780714840017",
@@ -5573,7 +5577,7 @@
     "abebooks|eugene richards|the fat baby": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T16:49:35Z",
+      "last_successful_fetch": "2026-08-23T20:48:27Z",
       "seen": [
         "abebooks:31792943614",
         "abebooks:32414347161",
@@ -5599,11 +5603,11 @@
     "abebooks|evans walker|american photographs": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T16:49:35Z",
+      "last_successful_fetch": "2026-08-23T20:48:27Z",
       "seen": [
-        "abebooks:32464565242",
+        "abebooks:32498862496",
         "abebooks:9780618127498",
-        "abebooks:65445169",
+        "abebooks:65445138",
         "abebooks:32461535543",
         "abebooks:9780395957714",
         "abebooks:51090990",
@@ -5676,7 +5680,9 @@
         "abebooks:9791534024",
         "abebooks:22404383293",
         "abebooks:30766835597",
-        "abebooks:50399171"
+        "abebooks:50399171",
+        "abebooks:32464565242",
+        "abebooks:65445169"
       ]
     },
     "abebooks|evans walker|many are called": {
