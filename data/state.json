@@ -1,7 +1,8 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-08-22T19:26:11Z",
+  "last_successful_fetch": "2026-08-23T14:35:56Z",
   "last_top_skus": [
+    "HD_304185510",
     "HD_304185028",
     "HD_304184683",
     "HD_304184736",
@@ -30,8 +31,7 @@
     "HD_304180070",
     "HD_304116678",
     "HD_304180051",
-    "HD_304160511",
-    "HD_304179758"
+    "HD_304160511"
   ],
   "products": {
     "HD_303805354": {
@@ -837,8 +837,24 @@
         "title": "Exposure - From Snapshots to Great Shots"
       },
       "search_fingerprint": "e07be57186164f09"
+    },
+    "HD_304185510": {
+      "first_seen": "2026-08-23T14:35:56Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787493481000",
+        "description": "Throughout the world some of the most beautiful and bizarre of all landforms are found in limestone, a rock which besides being subject to the normal processes of weathering and erosion also slowly dissolves in contact with water. Perhaps no single feature anywhere in New Zealand is better known for displaying the kind of sculptural flourish which can occur in limestones than the curious 'pancake' formations which have brought a measure of fame to the small settlement of Punakaiki on the West Coast of the South Island.",
+        "isbn": null,
+        "price_gbp": 10.99,
+        "product_id": "book-HD__304185510",
+        "publisher": null,
+        "route": "/images-from-a-limestone-landscape/product/HD_304185510",
+        "sku": "HD_304185510",
+        "title": "Images From a Limestone Landscape"
+      },
+      "search_fingerprint": "c897d6e7b740ab34"
     }
   },
-  "reported_category_count": 2804,
+  "reported_category_count": 2793,
   "version": 1
 }
