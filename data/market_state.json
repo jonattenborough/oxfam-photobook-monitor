@@ -1,11 +1,11 @@
 {
-  "cursor": 20,
+  "cursor": 44,
   "feeds": {
     "photobookstore": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 250,
-      "last_successful_fetch": "2026-08-23T14:49:09Z",
+      "last_successful_fetch": "2026-08-23T15:47:22Z",
       "seen": [
         "photobookstore:15834487521653",
         "photobookstore:15969006715253",
@@ -263,7 +263,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 232,
-      "last_successful_fetch": "2026-08-23T14:49:09Z",
+      "last_successful_fetch": "2026-08-23T15:47:22Z",
       "seen": [
         "setanta:16045232554366",
         "setanta:16045434241406",
@@ -503,7 +503,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 85,
-      "last_successful_fetch": "2026-08-23T14:49:09Z",
+      "last_successful_fetch": "2026-08-23T15:47:22Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -596,7 +596,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 208,
-      "last_successful_fetch": "2026-08-23T14:49:09Z",
+      "last_successful_fetch": "2026-08-23T15:47:22Z",
       "seen": [
         "village:10371039101210",
         "village:10371023995162",
@@ -812,7 +812,7 @@
   },
   "last_failures": [],
   "last_successful_requests": 28,
-  "last_successful_run": "2026-08-23T14:49:09Z",
+  "last_successful_run": "2026-08-23T15:47:22Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
@@ -1282,7 +1282,7 @@
     "abebooks|andy warhol|andy warhol": {
       "first_successful_fetch": "2026-08-22T14:23:03Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:23:03Z",
+      "last_successful_fetch": "2026-08-23T15:47:22Z",
       "seen": [
         "abebooks:32413848585",
         "abebooks:9780735341982",
@@ -1319,42 +1319,40 @@
         "abebooks:32363476278",
         "abebooks:9780735338661",
         "abebooks:65445109",
-        "abebooks:32396860207",
-        "abebooks:9780735339019",
-        "abebooks:51315977",
-        "abebooks:32438373228",
-        "abebooks:9780871142658",
-        "abebooks:86215928",
         "abebooks:32021922592",
         "abebooks:9780292764996",
         "abebooks:54239244",
+        "abebooks:32396860207",
+        "abebooks:9780735339019",
+        "abebooks:51315977",
         "abebooks:32501150301",
         "abebooks:9780446391382",
+        "abebooks:32438373228",
+        "abebooks:9780871142658",
+        "abebooks:86215928",
         "abebooks:32417707874",
         "abebooks:9780063418295",
         "abebooks:32193720768",
         "abebooks:9780811843171",
         "abebooks:57785937",
-        "abebooks:22832362533",
-        "abebooks:9780141189420",
-        "abebooks:51947087",
         "abebooks:31155517482",
         "abebooks:9780786713646",
         "abebooks:30193761637",
         "abebooks:32491619266",
         "abebooks:9781538739181",
         "abebooks:91637384",
+        "abebooks:22832362533",
+        "abebooks:9780141189420",
+        "abebooks:51947087",
+        "abebooks:32482668918",
+        "abebooks:9780821222898",
         "abebooks:5862699550",
         "abebooks:31875891163",
         "abebooks:9781452112039",
-        "abebooks:32482668918",
-        "abebooks:9780821222898",
         "abebooks:31544937166",
         "abebooks:60162693",
         "abebooks:32476444196",
         "abebooks:9780394737386",
-        "abebooks:32285181965",
-        "abebooks:9780241752326",
         "abebooks:32473776859",
         "abebooks:9780711924000",
         "abebooks:31441577147",
@@ -1363,13 +1361,15 @@
         "abebooks:9781892145932",
         "abebooks:22738509223",
         "abebooks:9780670030002",
-        "abebooks:32247523376"
+        "abebooks:32247523376",
+        "abebooks:9780262522724",
+        "abebooks:31565692809"
       ]
     },
     "abebooks|andy warhol|andy warhols index book": {
       "first_successful_fetch": "2026-08-22T14:23:03Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:23:03Z",
+      "last_successful_fetch": "2026-08-23T15:47:22Z",
       "seen": [
         "abebooks:32151890694",
         "abebooks:31606329343",
@@ -1440,7 +1440,7 @@
     "abebooks|annan thomas|the old closes and streets of glasgow": {
       "first_successful_fetch": "2026-08-22T14:23:03Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:23:03Z",
+      "last_successful_fetch": "2026-08-23T15:47:22Z",
       "seen": [
         "abebooks:32496271729",
         "abebooks:9780486234427",
@@ -1462,24 +1462,24 @@
     "abebooks|anne sophie merryman|mrs merrymans collection": {
       "first_successful_fetch": "2026-08-22T14:23:03Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:23:03Z",
+      "last_successful_fetch": "2026-08-23T15:47:22Z",
       "seen": [
         "abebooks:12432515066",
         "abebooks:9781907946257",
-        "abebooks:30060812388",
-        "abebooks:63618813",
         "abebooks:31058087359",
         "abebooks:71549136",
         "abebooks:18931754209",
         "abebooks:31585045826",
         "abebooks:32258563776",
-        "abebooks:89712618"
+        "abebooks:89712618",
+        "abebooks:30060812388",
+        "abebooks:63618813"
       ]
     },
     "abebooks|anonymous|album photographs of the demonstrations which took place in palestine": {
       "first_successful_fetch": "2026-08-22T14:28:47Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:28:47Z",
+      "last_successful_fetch": "2026-08-23T15:47:22Z",
       "seen": [
         "abebooks:30425508387",
         "abebooks:30188720906",
@@ -1513,7 +1513,7 @@
     "abebooks|antoine d agata|stigma": {
       "first_successful_fetch": "2026-08-22T14:28:47Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:28:47Z",
+      "last_successful_fetch": "2026-08-23T15:47:22Z",
       "seen": [
         "abebooks:31744571744",
         "abebooks:9782849950098"
@@ -1534,7 +1534,7 @@
     "abebooks|araki nobuyoshi|senchimentaru na tabi": {
       "first_successful_fetch": "2026-08-22T14:28:47Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:28:47Z",
+      "last_successful_fetch": "2026-08-23T15:47:22Z",
       "seen": [
         "abebooks:31825721189",
         "abebooks:31838987252",
@@ -1544,7 +1544,7 @@
     "abebooks|araki nobuyoshi|shokuji": {
       "first_successful_fetch": "2026-08-22T14:28:47Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:28:47Z",
+      "last_successful_fetch": "2026-08-23T15:47:22Z",
       "seen": [
         "abebooks:32276153984",
         "abebooks:12914055324",
@@ -1555,7 +1555,7 @@
     "abebooks|araki nobuyoshi|tokyo lucky hole": {
       "first_successful_fetch": "2026-08-22T14:28:47Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:28:47Z",
+      "last_successful_fetch": "2026-08-23T15:47:22Z",
       "seen": [
         "abebooks:22537782180",
         "abebooks:9783836556385",
@@ -1595,20 +1595,20 @@
     "abebooks|araki nobuyoshi|zerokkusu shashincho 24": {
       "first_successful_fetch": "2026-08-22T14:28:47Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:28:47Z",
+      "last_successful_fetch": "2026-08-23T15:47:22Z",
       "seen": []
     },
     "abebooks|arbus diane|diane arbus": {
       "first_successful_fetch": "2026-08-22T14:28:47Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:28:47Z",
+      "last_successful_fetch": "2026-08-23T15:47:22Z",
       "seen": [
         "abebooks:32295210629",
         "abebooks:9780393312072",
         "abebooks:81650706",
-        "abebooks:32491713115",
-        "abebooks:9780912334400",
-        "abebooks:54448258",
+        "abebooks:32503483411",
+        "abebooks:9780912334417",
+        "abebooks:65440519",
         "abebooks:5348194404",
         "abebooks:32386468774",
         "abebooks:9780394504049",
@@ -1642,13 +1642,11 @@
         "abebooks:31807166978",
         "abebooks:70934854",
         "abebooks:31114621548",
-        "abebooks:31114315908",
         "abebooks:31114316905",
+        "abebooks:31114315908",
         "abebooks:32502079227",
         "abebooks:9780893816940",
         "abebooks:83729825",
-        "abebooks:31012941212",
-        "abebooks:9780912334417",
         "abebooks:32148939268",
         "abebooks:9780747513094",
         "abebooks:3941834580",
@@ -1657,6 +1655,8 @@
         "abebooks:9781597111751",
         "abebooks:54239244",
         "abebooks:32011138533",
+        "abebooks:32284550025",
+        "abebooks:9780713907278",
         "abebooks:7904512504",
         "abebooks:57672385",
         "abebooks:31114309084",
@@ -1671,24 +1671,24 @@
         "abebooks:22910176423",
         "abebooks:32498240227",
         "abebooks:54522233",
-        "abebooks:30280618619",
         "abebooks:32481851305",
         "abebooks:9780375506208",
         "abebooks:32249133406",
-        "abebooks:32284550025",
-        "abebooks:9780713907278",
+        "abebooks:54448258",
         "abebooks:31114314961",
         "abebooks:16807718959",
         "abebooks:31989510511",
         "abebooks:32471538389",
         "abebooks:32268284396",
-        "abebooks:31406120653"
+        "abebooks:31406120653",
+        "abebooks:32377001666",
+        "abebooks:64430280"
       ]
     },
     "abebooks|arianna arcara and luca santese|found photos in detroit": {
       "first_successful_fetch": "2026-08-22T14:28:47Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:28:47Z",
+      "last_successful_fetch": "2026-08-23T15:47:22Z",
       "seen": [
         "abebooks:32396028526"
       ]
@@ -1696,7 +1696,7 @@
     "abebooks|armando salas portugal|fotografia del pensamiento photography of thought": {
       "first_successful_fetch": "2026-08-22T14:28:47Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:28:47Z",
+      "last_successful_fetch": "2026-08-23T15:47:22Z",
       "seen": [
         "abebooks:32360045154",
         "abebooks:32067293139",
@@ -1708,9 +1708,10 @@
     "abebooks|atkins anna|photographs of british algae": {
       "first_successful_fetch": "2026-08-22T14:28:47Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:28:47Z",
+      "last_successful_fetch": "2026-08-23T15:47:22Z",
       "seen": [
         "abebooks:32452549877",
+        "abebooks:32491582254",
         "abebooks:32363709210",
         "abebooks:32177477182",
         "abebooks:31793242392",
@@ -1720,7 +1721,7 @@
     "abebooks|attali marc delfau jacques|les erotiques du regard": {
       "first_successful_fetch": "2026-08-22T14:28:47Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:28:47Z",
+      "last_successful_fetch": "2026-08-23T15:47:22Z",
       "seen": [
         "abebooks:31905290679",
         "abebooks:50566777",
@@ -1737,13 +1738,15 @@
     "abebooks|avedon richard baldwin james|nothing personal": {
       "first_successful_fetch": "2026-08-22T14:28:47Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:28:47Z",
+      "last_successful_fetch": "2026-08-23T15:47:22Z",
       "seen": [
         "abebooks:32412678887",
         "abebooks:58646251",
         "abebooks:32498308957",
         "abebooks:9783836569569",
         "abebooks:55410863",
+        "abebooks:32485792090",
+        "abebooks:59876381",
         "abebooks:32463031919",
         "abebooks:32254631129",
         "abebooks:61012972",
@@ -1777,7 +1780,7 @@
     "abebooks|axel hutte|london": {
       "first_successful_fetch": "2026-08-22T14:30:38Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:30:38Z",
+      "last_successful_fetch": "2026-08-23T15:47:22Z",
       "seen": [
         "abebooks:31907132980",
         "abebooks:9783888146848",
@@ -1794,13 +1797,13 @@
     "abebooks|baevsky i bogovy i mekhlis l verite i|geroicheskaya epopeya": {
       "first_successful_fetch": "2026-08-22T14:30:38Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:30:38Z",
+      "last_successful_fetch": "2026-08-23T15:47:22Z",
       "seen": []
     },
     "abebooks|barbara schulten|madaus eine aufgeschlossene firma madaus an innovative company": {
       "first_successful_fetch": "2026-08-22T14:30:38Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:30:38Z",
+      "last_successful_fetch": "2026-08-23T15:47:22Z",
       "seen": [
         "abebooks:22563047937",
         "abebooks:32360999738",
@@ -1810,7 +1813,7 @@
     "abebooks|barnard george n|photographic views of shermans campaign": {
       "first_successful_fetch": "2026-08-22T14:30:38Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:30:38Z",
+      "last_successful_fetch": "2026-08-23T15:47:22Z",
       "seen": [
         "abebooks:31757987839",
         "abebooks:9780486234458",
@@ -1842,7 +1845,7 @@
     "abebooks|bart sorgedrager|mensenstroom": {
       "first_successful_fetch": "2026-08-22T14:30:38Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:30:38Z",
+      "last_successful_fetch": "2026-08-23T15:47:22Z",
       "seen": [
         "abebooks:30781521590",
         "abebooks:66067709"
@@ -1884,7 +1887,7 @@
     "abebooks|bellmer hans|la poupee": {
       "first_successful_fetch": "2026-08-22T14:30:38Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:30:38Z",
+      "last_successful_fetch": "2026-08-23T15:47:22Z",
       "seen": [
         "abebooks:1135893676",
         "abebooks:30501093278",
@@ -1900,7 +1903,7 @@
     "abebooks|bellmer hans|les jeux de la poupee": {
       "first_successful_fetch": "2026-08-22T14:30:38Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:30:38Z",
+      "last_successful_fetch": "2026-08-23T15:47:22Z",
       "seen": [
         "abebooks:30709779550",
         "abebooks:32463450074"
@@ -1909,12 +1912,12 @@
     "abebooks|berghaus erwin|usa nackt": {
       "first_successful_fetch": "2026-08-22T14:30:38Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-22T14:30:38Z",
+      "last_successful_fetch": "2026-08-23T15:47:22Z",
       "seen": [
-        "abebooks:32308490553",
-        "abebooks:62879827",
         "abebooks:30288917107",
-        "abebooks:31469320191"
+        "abebooks:31469320191",
+        "abebooks:32308490553",
+        "abebooks:62879827"
       ]
     },
     "abebooks|bernard latarjet and francois hers eds|paysages photographies": {
