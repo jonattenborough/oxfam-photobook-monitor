@@ -1,11 +1,11 @@
 {
-  "cursor": 336,
+  "cursor": 360,
   "feeds": {
     "photobookstore": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 250,
-      "last_successful_fetch": "2026-08-22T23:45:27Z",
+      "last_successful_fetch": "2026-08-23T02:09:18Z",
       "seen": [
         "photobookstore:15834487521653",
         "photobookstore:15969006715253",
@@ -263,7 +263,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 232,
-      "last_successful_fetch": "2026-08-22T23:45:27Z",
+      "last_successful_fetch": "2026-08-23T02:09:18Z",
       "seen": [
         "setanta:16045232554366",
         "setanta:16045434241406",
@@ -503,7 +503,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 85,
-      "last_successful_fetch": "2026-08-22T23:45:27Z",
+      "last_successful_fetch": "2026-08-23T02:09:18Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -596,7 +596,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 208,
-      "last_successful_fetch": "2026-08-22T23:45:27Z",
+      "last_successful_fetch": "2026-08-23T02:09:18Z",
       "seen": [
         "village:10371039101210",
         "village:10371023995162",
@@ -812,7 +812,7 @@
   },
   "last_failures": [],
   "last_successful_requests": 28,
-  "last_successful_run": "2026-08-22T23:45:27Z",
+  "last_successful_run": "2026-08-23T02:09:18Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
@@ -8817,6 +8817,470 @@
         "abebooks:22388313110",
         "abebooks:53994756",
         "abebooks:32502963043"
+      ]
+    },
+    "abebooks|miguel rio branco|silent book": {
+      "first_successful_fetch": "2026-08-23T02:09:18Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T02:09:18Z",
+      "seen": [
+        "abebooks:32153042116",
+        "abebooks:9789112468274",
+        "abebooks:22853349246",
+        "abebooks:9788586374210",
+        "abebooks:32010931051",
+        "abebooks:82273322",
+        "abebooks:22853349247",
+        "abebooks:15422115893",
+        "abebooks:9788540500167",
+        "abebooks:50731200",
+        "abebooks:10643557378"
+      ]
+    },
+    "abebooks|mike brodie|a period of juvenile prosperity": {
+      "first_successful_fetch": "2026-08-23T02:09:18Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T02:09:18Z",
+      "seen": [
+        "abebooks:32503095645",
+        "abebooks:9781936611027",
+        "abebooks:32502300344",
+        "abebooks:89905167",
+        "abebooks:32438654906",
+        "abebooks:84034154",
+        "abebooks:32435726885",
+        "abebooks:31691336975",
+        "abebooks:51283250",
+        "abebooks:30891142888",
+        "abebooks:32441400528",
+        "abebooks:88391032",
+        "abebooks:32283372110",
+        "abebooks:32450208610",
+        "abebooks:59725019",
+        "abebooks:32476536004",
+        "abebooks:71288983",
+        "abebooks:31919694623",
+        "abebooks:30423672795",
+        "abebooks:9781936611102"
+      ]
+    },
+    "abebooks|mishima yukio|baraker shinshuban": {
+      "first_successful_fetch": "2026-08-23T02:09:18Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T02:09:18Z",
+      "seen": []
+    },
+    "abebooks|mitch epstein|family business": {
+      "first_successful_fetch": "2026-08-23T02:09:18Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T02:09:18Z",
+      "seen": [
+        "abebooks:32299142546",
+        "abebooks:2900013728497",
+        "abebooks:30893319915",
+        "abebooks:9783882439137",
+        "abebooks:52101753",
+        "abebooks:32241043631",
+        "abebooks:61080768",
+        "abebooks:31470947650",
+        "abebooks:31994113077",
+        "abebooks:31921379916",
+        "abebooks:32116481694",
+        "abebooks:83031196",
+        "abebooks:32490888925",
+        "abebooks:32484775779",
+        "abebooks:9783882439595",
+        "abebooks:87591102"
+      ]
+    },
+    "abebooks|miyako ishiuchi|mothers": {
+      "first_successful_fetch": "2026-08-23T02:09:18Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T02:09:18Z",
+      "seen": [
+        "abebooks:31676174435",
+        "abebooks:86378343",
+        "abebooks:31725941735",
+        "abebooks:31030593081",
+        "abebooks:9784473032577",
+        "abebooks:31509966392",
+        "abebooks:52101753",
+        "abebooks:30893353036",
+        "abebooks:32408863628",
+        "abebooks:30750455343",
+        "abebooks:18640437010",
+        "abebooks:56092880",
+        "abebooks:30095632876"
+      ]
+    },
+    "abebooks|moholy nagy laszlo|malerei fotografie film": {
+      "first_successful_fetch": "2026-08-23T02:09:18Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T02:09:18Z",
+      "seen": [
+        "abebooks:31650022905",
+        "abebooks:32454194185",
+        "abebooks:9783786114659",
+        "abebooks:50604927",
+        "abebooks:31942282376",
+        "abebooks:31453051591",
+        "abebooks:84263976",
+        "abebooks:31476903860",
+        "abebooks:54157392",
+        "abebooks:31739569972",
+        "abebooks:9783957705990",
+        "abebooks:30929726474",
+        "abebooks:62882422",
+        "abebooks:31348636186",
+        "abebooks:9783783700077",
+        "abebooks:17445764136",
+        "abebooks:32231716618",
+        "abebooks:30962370306",
+        "abebooks:30766248216",
+        "abebooks:31498047265",
+        "abebooks:85803404",
+        "abebooks:31498049696",
+        "abebooks:32145747161",
+        "abebooks:61603188"
+      ]
+    },
+    "abebooks|morgagni manlio|italia imperiale": {
+      "first_successful_fetch": "2026-08-23T02:09:18Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T02:09:18Z",
+      "seen": [
+        "abebooks:31475396554",
+        "abebooks:12520744712",
+        "abebooks:50635337",
+        "abebooks:30656542345",
+        "abebooks:61744380",
+        "abebooks:31449071493",
+        "abebooks:32133712349"
+      ]
+    },
+    "abebooks|moriyama daido|71 ny": {
+      "first_successful_fetch": "2026-08-23T02:09:18Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T02:09:18Z",
+      "seen": [
+        "abebooks:32129652012",
+        "abebooks:9780967077499",
+        "abebooks:31037283037",
+        "abebooks:31628589405",
+        "abebooks:86378343",
+        "abebooks:31181267491",
+        "abebooks:57278531",
+        "abebooks:32362131851",
+        "abebooks:32356436433",
+        "abebooks:32485966318",
+        "abebooks:82663586",
+        "abebooks:30893324149",
+        "abebooks:52101753",
+        "abebooks:31628589368"
+      ]
+    },
+    "abebooks|moriyama daido|karyudo": {
+      "first_successful_fetch": "2026-08-23T02:09:18Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T02:09:18Z",
+      "seen": []
+    },
+    "abebooks|moriyama daido|mo kuni new york": {
+      "first_successful_fetch": "2026-08-23T02:09:18Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T02:09:18Z",
+      "seen": [
+        "abebooks:17229307685"
+      ]
+    },
+    "abebooks|moriyama daido|nippon gekijo shashincho": {
+      "first_successful_fetch": "2026-08-23T02:09:18Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T02:09:18Z",
+      "seen": [
+        "abebooks:7803082088",
+        "abebooks:9784106024184",
+        "abebooks:30987407944",
+        "abebooks:14070693104",
+        "abebooks:52506076",
+        "abebooks:32109078716",
+        "abebooks:63659862"
+      ]
+    },
+    "abebooks|mu chen and shao yinong|family register": {
+      "first_successful_fetch": "2026-08-23T02:09:18Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T02:09:18Z",
+      "seen": [
+        "abebooks:30219410594",
+        "abebooks:9789572880036",
+        "abebooks:32009193661",
+        "abebooks:82273322",
+        "abebooks:17772179232"
+      ]
+    },
+    "abebooks|muybridge eadweard|animal locomotion": {
+      "first_successful_fetch": "2026-08-23T02:09:18Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T02:09:18Z",
+      "seen": [
+        "abebooks:30645997828",
+        "abebooks:9789333472418",
+        "abebooks:51749587",
+        "abebooks:32382310564",
+        "abebooks:9781016869898",
+        "abebooks:31350906101",
+        "abebooks:9781014520647",
+        "abebooks:32310569437",
+        "abebooks:9781013862212",
+        "abebooks:32339692576",
+        "abebooks:9781016593953",
+        "abebooks:32417651561",
+        "abebooks:9783337235550",
+        "abebooks:32392024440",
+        "abebooks:9781334341762",
+        "abebooks:30707242706",
+        "abebooks:9780260873668",
+        "abebooks:31534544994",
+        "abebooks:65733602",
+        "abebooks:32118006881",
+        "abebooks:9781016860888",
+        "abebooks:87239718",
+        "abebooks:30274506865",
+        "abebooks:54157392",
+        "abebooks:32009310651",
+        "abebooks:30274501324",
+        "abebooks:32439073411",
+        "abebooks:9781013571176",
+        "abebooks:32125876508",
+        "abebooks:9781016589352",
+        "abebooks:30839958415",
+        "abebooks:9780331480542",
+        "abebooks:30266799759",
+        "abebooks:32009323085",
+        "abebooks:31434611259",
+        "abebooks:30274525995",
+        "abebooks:32459156151",
+        "abebooks:9780486237923",
+        "abebooks:54239244",
+        "abebooks:31434190799",
+        "abebooks:31433998131",
+        "abebooks:32485149750",
+        "abebooks:90283144",
+        "abebooks:32485837329",
+        "abebooks:32485198025",
+        "abebooks:32481069028",
+        "abebooks:31434376165",
+        "abebooks:32030802600",
+        "abebooks:9781013393686",
+        "abebooks:59718070",
+        "abebooks:32414105798",
+        "abebooks:32414121374",
+        "abebooks:32500881604",
+        "abebooks:91386147",
+        "abebooks:32085934236",
+        "abebooks:32414136082",
+        "abebooks:30267774000",
+        "abebooks:32050125365",
+        "abebooks:32246959697",
+        "abebooks:32246960058",
+        "abebooks:6518568328",
+        "abebooks:9780486237930",
+        "abebooks:32351263364",
+        "abebooks:9783836550826",
+        "abebooks:82383716",
+        "abebooks:32079249927",
+        "abebooks:57298717",
+        "abebooks:32500557709",
+        "abebooks:31752854250",
+        "abebooks:32152984594",
+        "abebooks:32375450853",
+        "abebooks:84243933",
+        "abebooks:32492116040",
+        "abebooks:9780486237947",
+        "abebooks:32278681806",
+        "abebooks:51722192",
+        "abebooks:32017021551",
+        "abebooks:50731200",
+        "abebooks:31995677297",
+        "abebooks:9783337629748"
+      ]
+    },
+    "abebooks|nacho lopez|la ciudad de mexico ii": {
+      "first_successful_fetch": "2026-08-23T02:09:18Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T02:09:18Z",
+      "seen": [
+        "abebooks:32419921781",
+        "abebooks:32464922216",
+        "abebooks:32463800789",
+        "abebooks:32493549168",
+        "abebooks:32358039713"
+      ]
+    },
+    "abebooks|nakahira takuma|kitarubeki kotoba no tameni": {
+      "first_successful_fetch": "2026-08-23T02:09:18Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T02:09:18Z",
+      "seen": [
+        "abebooks:32266483651",
+        "abebooks:30037104586",
+        "abebooks:31086659398",
+        "abebooks:32458113863",
+        "abebooks:32109088390",
+        "abebooks:63659862"
+      ]
+    },
+    "abebooks|nan goldin|the ballad of sexual dependency": {
+      "first_successful_fetch": "2026-08-23T02:09:18Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T02:09:18Z",
+      "seen": [
+        "abebooks:32489520827",
+        "abebooks:9781597112086",
+        "abebooks:66132442",
+        "abebooks:32283293895",
+        "abebooks:9780893813390",
+        "abebooks:31647072132",
+        "abebooks:9780436179860",
+        "abebooks:61588986",
+        "abebooks:32409318422",
+        "abebooks:31516342879",
+        "abebooks:9780893812362",
+        "abebooks:55366034",
+        "abebooks:32419308702",
+        "abebooks:90307527",
+        "abebooks:32486766757",
+        "abebooks:31139618750",
+        "abebooks:54803255",
+        "abebooks:32403876146",
+        "abebooks:8552565036",
+        "abebooks:31905409126",
+        "abebooks:85684349",
+        "abebooks:30770267906",
+        "abebooks:50731200",
+        "abebooks:32472981737",
+        "abebooks:73859083"
+      ]
+    },
+    "abebooks|negre charles|voyage d exploration a la mer morte": {
+      "first_successful_fetch": "2026-08-23T02:09:18Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T02:09:18Z",
+      "seen": [
+        "abebooks:32077283145"
+      ]
+    },
+    "abebooks|nezval vitezslav|abeceda": {
+      "first_successful_fetch": "2026-08-23T02:09:18Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T02:09:18Z",
+      "seen": [
+        "abebooks:32039848326",
+        "abebooks:9788085639124",
+        "abebooks:32348419765",
+        "abebooks:32425478339",
+        "abebooks:32210992805",
+        "abebooks:32111838932",
+        "abebooks:51982769",
+        "abebooks:31778985709",
+        "abebooks:31747550127",
+        "abebooks:31747547420",
+        "abebooks:32262427865",
+        "abebooks:31703303967",
+        "abebooks:31082063035",
+        "abebooks:83879318"
+      ]
+    },
+    "abebooks|nguyen manh dan and nguyen ngoc hanh|viet nam in flames": {
+      "first_successful_fetch": "2026-08-23T02:09:18Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T02:09:18Z",
+      "seen": [
+        "abebooks:31752847735",
+        "abebooks:30263118198",
+        "abebooks:7900778187",
+        "abebooks:50159740",
+        "abebooks:31880562731",
+        "abebooks:82273322",
+        "abebooks:30876862957",
+        "abebooks:72313296",
+        "abebooks:30179589195",
+        "abebooks:18775020617"
+      ]
+    },
+    "abebooks|o sullivan timothy|photographs showing landscapes geological and other features of portions of the western territory of the united states": {
+      "first_successful_fetch": "2026-08-23T02:09:18Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T02:09:18Z",
+      "seen": [
+        "abebooks:32459937943",
+        "abebooks:32474334727",
+        "abebooks:32357458661",
+        "abebooks:32501456827",
+        "abebooks:32495436383"
+      ]
+    },
+    "abebooks|o winston link|night trick on the norfolk and western railway": {
+      "first_successful_fetch": "2026-08-23T02:09:18Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T02:09:18Z",
+      "seen": [
+        "abebooks:32068438400",
+        "abebooks:50869000",
+        "abebooks:31515002611",
+        "abebooks:32481900397",
+        "abebooks:31815642941"
+      ]
+    },
+    "abebooks|ohara ken|one": {
+      "first_successful_fetch": "2026-08-23T02:09:18Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T02:09:18Z",
+      "seen": [
+        "abebooks:31932506461",
+        "abebooks:9783822878668",
+        "abebooks:55410863",
+        "abebooks:31858457472",
+        "abebooks:65231187",
+        "abebooks:31359144015",
+        "abebooks:9781590051467",
+        "abebooks:1022083674",
+        "abebooks:17180936613",
+        "abebooks:62835344",
+        "abebooks:32256257135",
+        "abebooks:53414316",
+        "abebooks:17384241697",
+        "abebooks:726840525",
+        "abebooks:32436555052",
+        "abebooks:17347058616",
+        "abebooks:30730890702",
+        "abebooks:63559039",
+        "abebooks:71993491",
+        "abebooks:52506076",
+        "abebooks:16177005813",
+        "abebooks:30255988190"
+      ]
+    },
+    "abebooks|oliviero toscani|colors cacas": {
+      "first_successful_fetch": "2026-08-23T02:09:18Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T02:09:18Z",
+      "seen": [
+        "abebooks:32109073902",
+        "abebooks:71549136",
+        "abebooks:12975888097",
+        "abebooks:9788878133358",
+        "abebooks:22451023423",
+        "abebooks:22689116819"
+      ]
+    },
+    "abebooks|ongania ferdinando|streets and canals in venice": {
+      "first_successful_fetch": "2026-08-23T02:09:18Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-23T02:09:18Z",
+      "seen": [
+        "abebooks:31267204187"
       ]
     }
   },
