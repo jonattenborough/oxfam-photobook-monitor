@@ -421,6 +421,18 @@ def item_from_meta(sku: str, product_id: str | None, meta: dict[str, Any]) -> di
     publisher = first_value(meta, ["product.publisher", "publisher"]) or fuzzy_value(meta, ("publisher",))
     route = first_value(meta, ["product.route", "route", "product.url", "url"]) or fuzzy_value(meta, ("route",))
     condition = first_value(meta, ["product.condition", "condition", "sku.condition"]) or fuzzy_value(meta, ("condition",))
+    year = first_value(meta, [
+        "product.year", "year", "product.bookYear", "book-year", "product.ox_year"
+    ]) or fuzzy_value(meta, ("bookyear", "publicationyear", "ox_year"))
+    book_format = first_value(meta, [
+        "product.format", "format", "product.bookFormat", "book-format", "product.binding", "binding"
+    ]) or fuzzy_value(meta, ("bookformat", "binding"))
+    edition = first_value(meta, [
+        "product.edition", "edition", "product.bookEdition", "book-edition", "product.ox_edition"
+    ]) or fuzzy_value(meta, ("bookedition", "ox_edition"))
+    pages = first_value(meta, [
+        "product.pages", "pages", "product.bookPages", "book-pages", "product.ox_pages"
+    ]) or fuzzy_value(meta, ("bookpages", "ox_pages"))
     price = normalize_price(first_value(meta, [
         "sku.activePrice", "activePrice", "sku.listPrice", "listPrice", "sku.minActivePrice"
     ]) or fuzzy_value(meta, ("activeprice", "listprice")))
@@ -434,6 +446,10 @@ def item_from_meta(sku: str, product_id: str | None, meta: dict[str, Any]) -> di
         "condition": strip_html(condition),
         "publisher": strip_html(publisher),
         "isbn": strip_html(first_value(meta, ["product.isbn", "isbn", "ISBN"]) or fuzzy_value(meta, ("isbn",))),
+        "year": strip_html(year),
+        "format": strip_html(book_format),
+        "edition": strip_html(edition),
+        "pages": strip_html(pages),
         "creation_date": first_value(meta, ["product.creationDate", "creationDate"]) or fuzzy_value(meta, ("creationdate",)),
         "route": route,
     }
