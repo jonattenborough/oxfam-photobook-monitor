@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import html
+import http.client
 import json
 import re
 import time
@@ -43,7 +44,7 @@ def utc_now() -> str:
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
 
-def request_json(url: str, params: dict[str, str] | None = None, retries: int = 4) -> dict[str, Any]:
+def request_json(url: str, params: dict[str, str] | None = None, retries: int = 6) -> dict[str, Any]:
     if params:
         url = url + "?" + urllib.parse.urlencode(params)
     last_error: Exception | None = None
@@ -59,8 +60,15 @@ def request_json(url: str, params: dict[str, str] | None = None, retries: int = 
                 if not isinstance(payload, dict):
                     raise RuntimeError(f"Expected JSON object from {url}")
                 return payload
-        except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError,
-                RuntimeError, json.JSONDecodeError) as exc:
+        except (
+            urllib.error.URLError,
+            urllib.error.HTTPError,
+            http.client.IncompleteRead,
+            ConnectionError,
+            TimeoutError,
+            RuntimeError,
+            json.JSONDecodeError,
+        ) as exc:
             last_error = exc
             if attempt + 1 < retries:
                 time.sleep(2 ** attempt)
