@@ -1,7 +1,9 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-08-24T15:39:56Z",
+  "last_successful_fetch": "2026-08-24T17:33:15Z",
   "last_top_skus": [
+    "HD_304188858",
+    "HD_304189108",
     "HD_304184758",
     "HD_304188600",
     "HD_304188543",
@@ -29,9 +31,7 @@
     "HD_304186245",
     "HD_304186190",
     "HD_304186114",
-    "HD_304186116",
-    "HD_304186082",
-    "HD_304185721"
+    "HD_304186116"
   ],
   "products": {
     "HD_303805354": {
@@ -1365,8 +1365,40 @@
         "title": "Silencios"
       },
       "search_fingerprint": "f6d8d0c027b3306f"
+    },
+    "HD_304188858": {
+      "first_seen": "2026-08-24T17:33:15Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787590681000",
+        "description": "Reaching beyond the intimate setting of the fashion show, the photographer paints a portrait of haute couture that takes the couturier’s intention to enchant the public and elevates it to the level of the sublime. The great names in photography, the mythical photos that have constructed Dior’s image, and the emblematic subjects of the house’s iconography—whether they are dreams of a faraway place or captured in the vast open-sky “studios” of Paris or Versailles—are all evoked in this vast panorama that takes us through more than sixty years in the history of fashion photography.<br/><br/>Published to accompany the Dior and Fashion Photography exhibition presented at the Musée Christian Dior in Granville, France, this lavish volume presents a wealth of gorgeous photographs that bring the character of the couturier’s dresses to life, with each photographer interpreting them in his or her unique style. Legendary contributors include Horst P. Horst, Richard Avedon, Irving Penn, Cecil Beaton, Norman Parkinson, Henry Clarke, William Klein, Helmut Newton, Guy Bourdin, Sarah Moon, Paolo Roversi, Nick Knight, Ines Van Lamsweerde and Vinoodh Matadin, Tim Walker, Willy Vanderperre, Patrick Demarchelier, and many more. Stunning, glamorous, and iconic, Dior and Fashion Photography exemplifies how the haute couture house transcended fashion to enter the realm of legend.",
+        "isbn": null,
+        "price_gbp": 30.0,
+        "product_id": "book-HD__304188858",
+        "publisher": null,
+        "route": "/dior-the-legendary-images-great-photographers-and-dior/product/HD_304188858",
+        "sku": "HD_304188858",
+        "title": "Dior, The Legendary Images: Great Photographers and Dior"
+      },
+      "search_fingerprint": "0cc533d10b18d93a"
+    },
+    "HD_304189108": {
+      "first_seen": "2026-08-24T17:33:15Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787590560000",
+        "description": "This book celebrates Marzaroli's extraordinary talent with a number of specially-commissioned essays and a selection of previously unpublished photographs, as well as many of the iconic, much loved work for which he is renowned. The first section, 'Europe: A Man with a Vision' (Anne Marzaroli), highlights Oscar's journey into photography at the age of eighteen and features figure and landscape shots from Scotland and beyond, as well as photographs of family and friends. 'Waiting for the Magic' is a piece by the late James Grassie, who worked with Marzaroli on many of his documentary films. Photographs include land and seascapes, and images which explore the human response to the natural environment. 'Glasgow: A Dear Green Place' (Robert Crawford, St Andrews University) contains some of Marzaroli's most familiar Glasgow shots, as well as many images never before published. All are of extraordinary historical and social importance as they depict the city during a profound process of change. 'Marzaroli's People (Peter Ross, Scotland on Sunday). Marzaroli's portraits always had a purpose and a point; his empathy is apparent as is his lack of intrusion and respect for people in their unique landscape, whether it be urban or country.",
+        "isbn": null,
+        "price_gbp": 60.0,
+        "product_id": "book-HD__304189108",
+        "publisher": null,
+        "route": "/waiting-for-the-magic-the-photography-of-oscar-marzaroli/product/HD_304189108",
+        "sku": "HD_304189108",
+        "title": "Waiting for the Magic: The Photography of Oscar Marzaroli"
+      },
+      "search_fingerprint": "19e20bf784b18664"
     }
   },
-  "reported_category_count": 2809,
+  "reported_category_count": 2811,
   "version": 1
 }
