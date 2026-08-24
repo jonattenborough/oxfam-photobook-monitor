@@ -317,9 +317,20 @@ def main() -> int:
             target_total=expected_total,
         )
 
-    if expected_total is not None and len(items) < expected_total:
+    # Oxfam's parent total is a live count and can change while this long crawl
+    # is running. Accept only a tiny shortfall, enough for normal catalogue churn,
+    # while retaining a hard failure for pagination or discovery regressions.
+    crawl_shortfall = max(0, expected_total - len(items)) if expected_total is not None else 0
+    shortfall_tolerance = max(5, int(expected_total * 0.0005)) if expected_total else 0
+    if crawl_shortfall > shortfall_tolerance:
         raise RuntimeError(
-            f"Segmented crawl found {len(items)} of {expected_total} parent-category products"
+            f"Segmented crawl found {len(items)} of {expected_total} parent-category products "
+            f"(shortfall {crawl_shortfall} exceeds tolerance {shortfall_tolerance})"
+        )
+    if crawl_shortfall:
+        print(
+            f"Warning: accepting live-catalogue shortfall of {crawl_shortfall} product(s); "
+            f"tolerance is {shortfall_tolerance}"
         )
 
     # The complete catalogue is intentionally a runtime hand-off rather than a
@@ -331,6 +342,8 @@ def main() -> int:
                 "generated_at": utc_now(),
                 "expected_parent_products": expected_total,
                 "unique_products_scanned": len(items),
+                "catalogue_shortfall": crawl_shortfall,
+                "catalogue_shortfall_tolerance": shortfall_tolerance,
                 "products": list(items.values()),
             },
             indent=2,
@@ -367,6 +380,8 @@ def main() -> int:
         "expected_parent_products": expected_total,
         "leaf_dimensions_scanned": len(leaf_dimensions),
         "unique_products_scanned": len(items),
+        "catalogue_shortfall": crawl_shortfall,
+        "catalogue_shortfall_tolerance": shortfall_tolerance,
         "candidate_count": len(ranked),
         "candidates": ranked[:2000],
     }
