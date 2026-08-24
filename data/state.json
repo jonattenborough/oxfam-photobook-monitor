@@ -1,7 +1,8 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-08-24T13:17:42Z",
+  "last_successful_fetch": "2026-08-24T14:06:06Z",
   "last_top_skus": [
+    "HD_304188047",
     "HD_304186495",
     "HD_304187574",
     "HD_304187523",
@@ -30,8 +31,7 @@
     "HD_304184477",
     "HD_304184073",
     "HD_304183947",
-    "HD_304183924",
-    "HD_304171903"
+    "HD_304183924"
   ],
   "products": {
     "HD_303805354": {
@@ -1141,8 +1141,24 @@
         "title": "Wildlife Photographer of the Year. Portfolio 33"
       },
       "search_fingerprint": "28dc586a0c84402a"
+    },
+    "HD_304188047": {
+      "first_seen": "2026-08-24T14:06:06Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787575575000",
+        "description": "A clean copy.<br/><br/>Dedicated to Francisco de Zurbarn (1598-1664), one of the great painters of seventeenthcentury Spain, this publication celebrates the drama and power of his distinctive body of work.A peer of Murillo and Velzquez, Zurbarn's innovative approach to sacred subjects imbues his works with a startling naturalism and deep emotional force. He spent most of his life in Seville, then one of the wealthiest cities in Europe. Working for monasteries, private patrons and the King of Spain, he produced striking depictions of saints and altarpieces of staggering scale and ingenuity. His still-life paintings, rich in finely observed details and charged with symbolism, remain vivid today. Written by experts in the field and featuring exciting new discoveries, this lavishly illustrated publication explores Zurbarn's most important commissions, from dramatic religious visions to tender domestic scenes, offering a fresh appraisal of this singularly gifted artist.<br/> <br/>Exhibition Schedule:<br/><br/>The National Gallery, London<br/>(2 May-23 August 2026)<br/><br/>Muse du Louvre, Paris<br/>(7 October 2026-25 January 2027)<br/><br/>Art Institute of Chicago<br/>(28 February-20 June 2027)Published by National Gallery Global Ltd/Distributed by Yale University Press",
+        "isbn": null,
+        "price_gbp": 20.0,
+        "product_id": "book-HD__304188047",
+        "publisher": null,
+        "route": "/zurbar%C3%A1n/product/HD_304188047",
+        "sku": "HD_304188047",
+        "title": "Zurbarán"
+      },
+      "search_fingerprint": "a0f1c4331b477201"
     }
   },
-  "reported_category_count": 2794,
+  "reported_category_count": 2796,
   "version": 1
 }
