@@ -1,7 +1,9 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-08-24T11:47:36Z",
+  "last_successful_fetch": "2026-08-24T12:16:53Z",
   "last_top_skus": [
+    "HD_304187574",
+    "HD_304187523",
     "HD_304187218",
     "HD_304187131",
     "HD_304002522",
@@ -29,9 +31,7 @@
     "HD_304183335",
     "HD_304173261",
     "HD_304178882",
-    "HD_304182664",
-    "HD_303805354",
-    "HD_304179996"
+    "HD_304182664"
   ],
   "products": {
     "HD_303805354": {
@@ -1029,8 +1029,40 @@
         "title": "Wildlife Photographer of the Year. Portfolio 19"
       },
       "search_fingerprint": "239c14ab56d45f68"
+    },
+    "HD_304187523": {
+      "first_seen": "2026-08-24T12:16:53Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787571482000",
+        "description": "For more than 50 years, the Wildlife Photographer of the Year competition has championed honest and ethical wildlife photography, while pushing the boundaries of artistic freedom, technical skill, and narrative excellence. This powerful collection of pictures features all the winning photographs from the 2015 competition. The collection represents the work of many international photographers, both professionals and amateurs. The photographs are chosen by an international jury for their artistic merit and originality, from categories that together represent a diversity of natural subjects. The range of styles is also diverse, as is the genre of photography, including action, macro, underwater, landscape, or environmental reportage. Together this outstanding collection is a reminder of the splendor, drama, and variety of life on Earth. Each stunning photograph is accompanied by an extended caption and there is an introduction by one of the world's most respected nature photographers.",
+        "isbn": null,
+        "price_gbp": 14.99,
+        "product_id": "book-HD__304187523",
+        "publisher": null,
+        "route": "/wildlife-photographer-of-the-year-portfolio-26/product/HD_304187523",
+        "sku": "HD_304187523",
+        "title": "Wildlife Photographer of the Year. Portfolio 26"
+      },
+      "search_fingerprint": "1cfe4c1705af1f2c"
+    },
+    "HD_304187574": {
+      "first_seen": "2026-08-24T12:16:53Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787571689000",
+        "description": "This is the most memorable and surprising collection of wildlife imagery of the year-             a gallery of work by more than 70 photographers from 30 countries-             all 100 pictures awarded in the Wildlife Photographer of the Year competition. You will find beauty and drama, and will discover the stories behind the pictures-             how they were created and what they reveal about the behaviour of the subjects and the nature of the unforgettable scenes.",
+        "isbn": null,
+        "price_gbp": 14.99,
+        "product_id": "book-HD__304187574",
+        "publisher": null,
+        "route": "/wildlife-photographer-of-the-year-portfolio-33/product/HD_304187574",
+        "sku": "HD_304187574",
+        "title": "Wildlife Photographer of the Year. Portfolio 33"
+      },
+      "search_fingerprint": "28dc586a0c84402a"
     }
   },
-  "reported_category_count": 2790,
+  "reported_category_count": 2791,
   "version": 1
 }
