@@ -1,9 +1,10 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-08-24T08:25:08Z",
+  "last_successful_fetch": "2026-08-24T09:23:23Z",
   "last_top_skus": [
     "HD_304185721",
     "HD_304185631",
+    "HD_304185612",
     "HD_304185510",
     "HD_304185028",
     "HD_304184683",
@@ -30,8 +31,7 @@
     "HD_304180801",
     "HD_304180591",
     "HD_304180127",
-    "HD_304180070",
-    "HD_304116678"
+    "HD_304180070"
   ],
   "products": {
     "HD_303805354": {
@@ -854,6 +854,22 @@
       },
       "search_fingerprint": "c897d6e7b740ab34"
     },
+    "HD_304185612": {
+      "first_seen": "2026-08-24T09:23:23Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787555700000",
+        "description": "The Royal Opera House, Covent Garden, presents some of the most accomplished ballet and opera artists in productions of world-renowned quality and remarkable scale. There have been three theatres on the site. The original theatre opened in December 1732 and served initially as a playhouse. The first ballet was performed there in 1734, and the first opera (by Handel, who wrote many operas and oratorios for Covent Garden) later in the same year. The present building – the third on the Covent Garden site following two disastrous fires – opened in 1858 and has been known as the Royal Opera House since 1892. The Covent Garden complex was extensively transformed in several phases during the late 20th and early 21st centuries. It is the home of The Royal Opera, The Royal Ballet and the Orchestra of the Royal Opera House.<br/><br/>Harry Cory Wright’s photographs explore every aspect of the Royal Opera House, from the red-and-gold auditorium and the rehearsal spaces of The Royal Ballet to the behind-the-scenes workshops where props, wigs, costumes, weapons and sets are created on site with extraordinary skill.<br/><br/>Paperback. As new condition.<br/><br/>175 pages. Size 17 x 12.2 x 1.6 cm.",
+        "isbn": null,
+        "price_gbp": 4.99,
+        "product_id": "book-HD__304185612",
+        "publisher": null,
+        "route": "/royal-opera-house-pocket-photo-books/product/HD_304185612",
+        "sku": "HD_304185612",
+        "title": "Royal Opera House (Pocket Photo Books)"
+      },
+      "search_fingerprint": "6513d2810b929ade"
+    },
     "HD_304185631": {
       "first_seen": "2026-08-24T08:25:08Z",
       "last_snapshot": {
@@ -887,6 +903,6 @@
       "search_fingerprint": "070e976368fc2fab"
     }
   },
-  "reported_category_count": 2787,
+  "reported_category_count": 2786,
   "version": 1
 }
