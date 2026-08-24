@@ -67,6 +67,9 @@ jobs:
           git add -- data/oxfam_catalogue_audit_queue.json data/oxfam_catalogue_audit_state.json
           if ! git diff --cached --quiet; then
             git commit -m "Prepare Oxfam full catalogue gem audit [skip ci]"
+            # The crawl also refreshes the legacy broad-candidate snapshot. It is
+            # not part of this audit handoff and must not block the rebase.
+            git restore --worktree -- data/oxfam_parent_full_candidates.json
             for attempt in 1 2 3 4; do
               git pull --rebase origin main
               if git push origin HEAD:main; then
