@@ -1,11 +1,11 @@
 {
-  "cursor": 452,
+  "cursor": 476,
   "feeds": {
     "photobookstore": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 250,
-      "last_successful_fetch": "2026-08-24T11:54:17Z",
+      "last_successful_fetch": "2026-08-24T13:29:56Z",
       "seen": [
         "photobookstore:15834487521653",
         "photobookstore:15969006715253",
@@ -263,8 +263,9 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 232,
-      "last_successful_fetch": "2026-08-24T11:54:17Z",
+      "last_successful_fetch": "2026-08-24T13:29:56Z",
       "seen": [
+        "setanta:16058501595518",
         "setanta:16045232554366",
         "setanta:16045434241406",
         "setanta:16054161047934",
@@ -503,7 +504,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 85,
-      "last_successful_fetch": "2026-08-24T11:54:17Z",
+      "last_successful_fetch": "2026-08-24T13:29:56Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -596,7 +597,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 208,
-      "last_successful_fetch": "2026-08-24T11:54:17Z",
+      "last_successful_fetch": "2026-08-24T13:29:56Z",
       "seen": [
         "village:10371039101210",
         "village:10371023995162",
@@ -812,7 +813,7 @@
   },
   "last_failures": [],
   "last_successful_requests": 28,
-  "last_successful_run": "2026-08-24T11:54:17Z",
+  "last_successful_run": "2026-08-24T13:29:56Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
@@ -13614,7 +13615,7 @@
     "abebooks|stephen shore|american surfaces": {
       "first_successful_fetch": "2026-08-23T07:10:17Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:10:17Z",
+      "last_successful_fetch": "2026-08-24T13:29:56Z",
       "seen": [
         "abebooks:32463588628",
         "abebooks:9781838661373",
@@ -13656,7 +13657,7 @@
     "abebooks|stephen shore|uncommon places": {
       "first_successful_fetch": "2026-08-23T07:10:17Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:10:17Z",
+      "last_successful_fetch": "2026-08-24T13:29:56Z",
       "seen": [
         "abebooks:32502646871",
         "abebooks:9780500544457",
@@ -13806,7 +13807,7 @@
     "abebooks|stillman william j|the acropolis of athens": {
       "first_successful_fetch": "2026-08-23T07:10:17Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:10:17Z",
+      "last_successful_fetch": "2026-08-24T13:29:56Z",
       "seen": [
         "abebooks:32428855668"
       ]
@@ -13814,7 +13815,7 @@
     "abebooks|stone sir benjamin|sir benjamin stones pictures": {
       "first_successful_fetch": "2026-08-23T07:10:17Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:10:17Z",
+      "last_successful_fetch": "2026-08-24T13:29:56Z",
       "seen": [
         "abebooks:30962754061",
         "abebooks:30639423795",
@@ -13898,10 +13899,10 @@
     "abebooks|stromholm christer|poste restante": {
       "first_successful_fetch": "2026-08-23T07:56:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "last_successful_fetch": "2026-08-24T13:29:56Z",
       "seen": [
-        "abebooks:20900616484",
         "abebooks:20900616479",
+        "abebooks:20900616484",
         "abebooks:31999040718",
         "abebooks:52241158",
         "abebooks:32282245972",
@@ -13924,7 +13925,7 @@
     "abebooks|styrsky jindrich|emile prichdzi ke mne ve snu": {
       "first_successful_fetch": "2026-08-23T07:56:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "last_successful_fetch": "2026-08-24T13:29:56Z",
       "seen": []
     },
     "abebooks|styrsky jindrich|na jehlach techto dni": {
@@ -13940,7 +13941,7 @@
     "abebooks|sudek josef|praha panoramaticka": {
       "first_successful_fetch": "2026-08-23T07:56:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "last_successful_fetch": "2026-08-24T13:29:56Z",
       "seen": [
         "abebooks:32459560218",
         "abebooks:88743008",
@@ -13994,7 +13995,7 @@
     "abebooks|sugimoto hiroshi|sea of buddha": {
       "first_successful_fetch": "2026-08-23T07:56:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "last_successful_fetch": "2026-08-24T13:29:56Z",
       "seen": [
         "abebooks:32498096549",
         "abebooks:32115385571"
@@ -14003,7 +14004,7 @@
     "abebooks|sugimoto hiroshi|theaters": {
       "first_successful_fetch": "2026-08-23T07:56:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "last_successful_fetch": "2026-08-24T13:29:56Z",
       "seen": [
         "abebooks:32502250971",
         "abebooks:9788862084772",
@@ -14033,7 +14034,7 @@
     "abebooks|sugimoto hiroshi|time exposed": {
       "first_successful_fetch": "2026-08-23T07:56:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "last_successful_fetch": "2026-08-24T13:29:56Z",
       "seen": [
         "abebooks:31898696543",
         "abebooks:9784104781010",
@@ -14056,7 +14057,7 @@
     "abebooks|susan hiller|the j street project": {
       "first_successful_fetch": "2026-08-23T07:56:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "last_successful_fetch": "2026-08-24T13:29:56Z",
       "seen": [
         "abebooks:32186136070",
         "abebooks:32465013816",
@@ -14070,7 +14071,7 @@
     "abebooks|susan lipper|grapevine": {
       "first_successful_fetch": "2026-08-23T07:56:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "last_successful_fetch": "2026-08-24T13:29:56Z",
       "seen": [
         "abebooks:32280284934",
         "abebooks:9780948797132",
@@ -14085,7 +14086,7 @@
     "abebooks|susan meiselas|nicaragua": {
       "first_successful_fetch": "2026-08-23T07:56:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "last_successful_fetch": "2026-08-24T13:29:56Z",
       "seen": [
         "abebooks:32463505640",
         "abebooks:30321680076",
@@ -14156,7 +14157,7 @@
     "abebooks|tacita dean|floh flea": {
       "first_successful_fetch": "2026-08-23T07:56:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "last_successful_fetch": "2026-08-24T13:29:56Z",
       "seen": [
         "abebooks:31727474170"
       ]
@@ -14164,7 +14165,7 @@
     "abebooks|tadanori yokoo|waterfall rapture": {
       "first_successful_fetch": "2026-08-23T07:56:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "last_successful_fetch": "2026-08-24T13:29:56Z",
       "seen": [
         "abebooks:30635963024",
         "abebooks:9784104110018",
@@ -14194,7 +14195,7 @@
     "abebooks|taiyo onorato and nico krebs|the great unreal": {
       "first_successful_fetch": "2026-08-23T07:56:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "last_successful_fetch": "2026-08-24T13:29:56Z",
       "seen": [
         "abebooks:30211093186",
         "abebooks:9783905509830",
@@ -14214,7 +14215,7 @@
     "abebooks|takanashi yutaka|toshi e": {
       "first_successful_fetch": "2026-08-23T07:56:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "last_successful_fetch": "2026-08-24T13:29:56Z",
       "seen": [
         "abebooks:22855818240"
       ]
@@ -14222,7 +14223,7 @@
     "abebooks|takase yoshio|benjo": {
       "first_successful_fetch": "2026-08-23T07:56:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "last_successful_fetch": "2026-08-24T13:29:56Z",
       "seen": [
         "abebooks:12910364865",
         "abebooks:52506076",
@@ -14232,7 +14233,7 @@
     "abebooks|takashi homma|tokyo suburbia": {
       "first_successful_fetch": "2026-08-23T07:56:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "last_successful_fetch": "2026-08-24T13:29:56Z",
       "seen": [
         "abebooks:1036912772",
         "abebooks:30605171472",
@@ -14245,7 +14246,7 @@
     "abebooks|tal b m|industriya sotzializma": {
       "first_successful_fetch": "2026-08-23T07:56:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "last_successful_fetch": "2026-08-24T13:29:56Z",
       "seen": [
         "abebooks:31360983811",
         "abebooks:11255706570",
@@ -14257,7 +14258,7 @@
     "abebooks|talbot william henry fox|the pencil of nature": {
       "first_successful_fetch": "2026-08-23T07:56:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "last_successful_fetch": "2026-08-24T13:29:56Z",
       "seen": [
         "abebooks:32424202459",
         "abebooks:9781986807593",
@@ -14302,7 +14303,7 @@
     "abebooks|tamiko nishimura|shikishima": {
       "first_successful_fetch": "2026-08-23T07:56:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "last_successful_fetch": "2026-08-24T13:29:56Z",
       "seen": [
         "abebooks:32282893175",
         "abebooks:32336230273",
@@ -14313,13 +14314,13 @@
     "abebooks|tandit l|xv let kazakhsko assr": {
       "first_successful_fetch": "2026-08-23T07:56:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "last_successful_fetch": "2026-08-24T13:29:56Z",
       "seen": []
     },
     "abebooks|tano d amico|e il 77": {
       "first_successful_fetch": "2026-08-23T07:56:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:56:00Z",
+      "last_successful_fetch": "2026-08-24T13:29:56Z",
       "seen": [
         "abebooks:32203339652",
         "abebooks:57863149",
