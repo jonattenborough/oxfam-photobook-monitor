@@ -1,11 +1,11 @@
 {
-  "cursor": 64,
+  "cursor": 88,
   "feeds": {
     "photobookstore": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 249,
-      "last_successful_fetch": "2026-08-24T22:53:15Z",
+      "last_successful_fetch": "2026-08-24T23:46:08Z",
       "seen": [
         "photobookstore:15834487521653",
         "photobookstore:15969006715253",
@@ -263,7 +263,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 232,
-      "last_successful_fetch": "2026-08-24T22:53:15Z",
+      "last_successful_fetch": "2026-08-24T23:46:08Z",
       "seen": [
         "setanta:16055650910590",
         "setanta:16055570039166",
@@ -507,7 +507,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 85,
-      "last_successful_fetch": "2026-08-24T22:53:15Z",
+      "last_successful_fetch": "2026-08-24T23:46:08Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -600,7 +600,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 208,
-      "last_successful_fetch": "2026-08-24T22:53:15Z",
+      "last_successful_fetch": "2026-08-24T23:46:08Z",
       "seen": [
         "village:10371039101210",
         "village:10371023995162",
@@ -816,7 +816,7 @@
   },
   "last_failures": [],
   "last_successful_requests": 28,
-  "last_successful_run": "2026-08-24T22:53:15Z",
+  "last_successful_run": "2026-08-24T23:46:08Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
@@ -2558,7 +2558,7 @@
     "abebooks|brandt bill|perspective of nudes": {
       "first_successful_fetch": "2026-08-22T14:31:05Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T16:51:37Z",
+      "last_successful_fetch": "2026-08-24T23:46:08Z",
       "seen": [
         "abebooks:31817751754",
         "abebooks:51743749",
@@ -2606,7 +2606,7 @@
     "abebooks|brandt bill|the english at home": {
       "first_successful_fetch": "2026-08-22T14:31:05Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T16:51:37Z",
+      "last_successful_fetch": "2026-08-24T23:46:08Z",
       "seen": [
         "abebooks:31368846025",
         "abebooks:17947135794",
@@ -2620,6 +2620,8 @@
         "abebooks:57279187",
         "abebooks:32115928458",
         "abebooks:31172278279",
+        "abebooks:32305101440",
+        "abebooks:57635549",
         "abebooks:32224275412",
         "abebooks:71634524",
         "abebooks:32453929117",
@@ -2635,7 +2637,7 @@
     "abebooks|brassai morand paul|paris de nuit": {
       "first_successful_fetch": "2026-08-22T14:31:05Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T16:51:37Z",
+      "last_successful_fetch": "2026-08-24T23:46:08Z",
       "seen": [
         "abebooks:32378484570",
         "abebooks:9782901414322",
@@ -2744,7 +2746,7 @@
     "abebooks|brian griffin|open twenty one photographs by brian griffin": {
       "first_successful_fetch": "2026-08-22T14:31:05Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T16:51:37Z",
+      "last_successful_fetch": "2026-08-24T23:46:08Z",
       "seen": [
         "abebooks:32457748362",
         "abebooks:32406841579",
@@ -2756,7 +2758,7 @@
     "abebooks|brodovitch alexey|ballet": {
       "first_successful_fetch": "2026-08-22T14:31:05Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T17:45:12Z",
+      "last_successful_fetch": "2026-08-24T23:46:08Z",
       "seen": [
         "abebooks:32453182832",
         "abebooks:31890839665",
@@ -2764,13 +2766,15 @@
         "abebooks:30337980631",
         "abebooks:32245556583",
         "abebooks:89632934",
+        "abebooks:32472672176",
+        "abebooks:57635549",
         "abebooks:32068914080"
       ]
     },
     "abebooks|bruce bernard|century one hundred years of human progress regression suffering and hope": {
       "first_successful_fetch": "2026-08-22T14:31:05Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T17:45:12Z",
+      "last_successful_fetch": "2026-08-24T23:46:08Z",
       "seen": [
         "abebooks:32502226926",
         "abebooks:9780714842790",
@@ -2795,7 +2799,7 @@
     "abebooks|bruce davidson|east 100th street": {
       "first_successful_fetch": "2026-08-22T14:31:05Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T17:45:12Z",
+      "last_successful_fetch": "2026-08-24T23:46:08Z",
       "seen": [
         "abebooks:32429543077",
         "abebooks:32167299037",
@@ -2870,7 +2874,7 @@
     "abebooks|bruce gilden|go": {
       "first_successful_fetch": "2026-08-22T14:31:05Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T17:45:12Z",
+      "last_successful_fetch": "2026-08-24T23:46:08Z",
       "seen": [
         "abebooks:32454564126",
         "abebooks:54515469",
@@ -2893,7 +2897,7 @@
     "abebooks|bruehl anton|mexico": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T17:45:12Z",
+      "last_successful_fetch": "2026-08-24T23:46:08Z",
       "seen": [
         "abebooks:32478967828",
         "abebooks:32492189332",
@@ -2910,7 +2914,7 @@
     "abebooks|bruno ceschel ed|self publish be naughty": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T17:45:12Z",
+      "last_successful_fetch": "2026-08-24T23:46:08Z",
       "seen": [
         "abebooks:30942713255",
         "abebooks:72753589"
@@ -2919,7 +2923,7 @@
     "abebooks|bun yo ishikawa|chien tranh giai phong viet nam": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T17:45:12Z",
+      "last_successful_fetch": "2026-08-24T23:46:08Z",
       "seen": [
         "abebooks:22917366711",
         "abebooks:32205962000",
@@ -2931,7 +2935,7 @@
     "abebooks|burri rene|die deutschen": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T17:45:12Z",
+      "last_successful_fetch": "2026-08-24T23:46:08Z",
       "seen": [
         "abebooks:32484158949",
         "abebooks:9783888141614",
@@ -3001,7 +3005,7 @@
     "abebooks|burton yost berry|teenage styles and trends 1967 71 a retrospect": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T17:45:12Z",
+      "last_successful_fetch": "2026-08-24T23:46:08Z",
       "seen": [
         "abebooks:32365995111",
         "abebooks:22891933998",
@@ -3013,7 +3017,7 @@
     "abebooks|cahun claude deharme lise|le coeur de pic": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T17:45:12Z",
+      "last_successful_fetch": "2026-08-24T23:46:08Z",
       "seen": [
         "abebooks:31899724252",
         "abebooks:32206432497",
@@ -3060,7 +3064,7 @@
     "abebooks|cameron julia margaret|idylls of the king": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T17:45:12Z",
+      "last_successful_fetch": "2026-08-24T23:46:08Z",
       "seen": [
         "abebooks:32454039575",
         "abebooks:32347101232",
@@ -3072,7 +3076,7 @@
     "abebooks|capa robert|death in the making": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T17:45:12Z",
+      "last_successful_fetch": "2026-08-24T23:46:08Z",
       "seen": [
         "abebooks:32486220432",
         "abebooks:9788862087179",
@@ -3102,7 +3106,7 @@
     "abebooks|carl de keyzer|zona siberian prison camps": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T17:45:12Z",
+      "last_successful_fetch": "2026-08-24T23:46:08Z",
       "seen": [
         "abebooks:32429007544",
         "abebooks:9780954264840",
@@ -3123,7 +3127,7 @@
     "abebooks|carmi lisetta|i travestiti": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T17:45:12Z",
+      "last_successful_fetch": "2026-08-24T23:46:08Z",
       "seen": [
         "abebooks:32349091769",
         "abebooks:84828154"
@@ -3132,7 +3136,7 @@
     "abebooks|carpenter james nasmyth james|the moon considered as a planet a world and a satellite": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T17:45:12Z",
+      "last_successful_fetch": "2026-08-24T23:46:08Z",
       "seen": [
         "abebooks:32232962080",
         "abebooks:9789368347460",
@@ -3166,9 +3170,9 @@
         "abebooks:31241640681",
         "abebooks:9781314149050",
         "abebooks:51194787",
-        "abebooks:32485809049",
-        "abebooks:90283144",
         "abebooks:32453074752",
+        "abebooks:90283144",
+        "abebooks:32485809049",
         "abebooks:32162039483",
         "abebooks:9780548982099",
         "abebooks:31244135162",
@@ -3203,7 +3207,7 @@
     "abebooks|carroll tankersley ed|greyhound 1963": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T17:45:12Z",
+      "last_successful_fetch": "2026-08-24T23:46:08Z",
       "seen": [
         "abebooks:31022825038",
         "abebooks:32488163081",
@@ -3215,7 +3219,7 @@
     "abebooks|cartensen pay christian hitzer hans richter friedrich|deutschland": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T17:45:12Z",
+      "last_successful_fetch": "2026-08-24T23:46:08Z",
       "seen": [
         "abebooks:14061043650",
         "abebooks:31171412685",
@@ -3258,7 +3262,7 @@
     "abebooks|cartier bresson henri|the decisive moment": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T17:45:12Z",
+      "last_successful_fetch": "2026-08-24T23:46:08Z",
       "seen": [
         "abebooks:32485344879",
         "abebooks:9782959335112",
@@ -3310,24 +3314,24 @@
     "abebooks|cartier bresson henri|the europeans": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T17:45:12Z",
+      "last_successful_fetch": "2026-08-24T23:46:08Z",
       "seen": [
-        "abebooks:32494368521",
-        "abebooks:9780500542163",
-        "abebooks:53572034",
         "abebooks:32463485719",
         "abebooks:9781853321740",
         "abebooks:50604927",
         "abebooks:32351643527",
         "abebooks:9782959335136",
+        "abebooks:32494368521",
+        "abebooks:9780500542163",
+        "abebooks:53572034",
         "abebooks:5170948531",
         "abebooks:31388728140",
         "abebooks:31573324614",
         "abebooks:9780500281222",
-        "abebooks:32350519300",
-        "abebooks:9780821225226",
-        "abebooks:83749664",
         "abebooks:32458262056",
+        "abebooks:32472312130",
+        "abebooks:9780821225226",
+        "abebooks:71454205",
         "abebooks:32351098295",
         "abebooks:51283250",
         "abebooks:31434997802",
@@ -3371,21 +3375,23 @@
         "abebooks:56741591",
         "abebooks:32190577214",
         "abebooks:31564117982",
-        "abebooks:54990151"
+        "abebooks:54990151",
+        "abebooks:32350519300",
+        "abebooks:83749664"
       ]
     },
     "abebooks|cela camilo jose colom joan|izas rabizas y colipoterras": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T17:45:12Z",
+      "last_successful_fetch": "2026-08-24T23:46:08Z",
       "seen": [
         "abebooks:22534407576",
         "abebooks:58450060",
-        "abebooks:32358145342",
-        "abebooks:51293756",
         "abebooks:31110999188",
         "abebooks:9788426429964",
         "abebooks:84077708",
+        "abebooks:30339734733",
+        "abebooks:71505964",
         "abebooks:32387590963",
         "abebooks:52139424",
         "abebooks:31621709013",
@@ -3394,6 +3400,9 @@
         "abebooks:20384619970",
         "abebooks:52921363",
         "abebooks:30568758078",
+        "abebooks:32355416903",
+        "abebooks:9788426441393",
+        "abebooks:50541990",
         "abebooks:835781652",
         "abebooks:32170378085",
         "abebooks:21711355393",
@@ -3410,7 +3419,6 @@
         "abebooks:54191243",
         "abebooks:12714619059",
         "abebooks:51562860",
-        "abebooks:32358118699",
         "abebooks:22890452088",
         "abebooks:66023206",
         "abebooks:30277412391",
@@ -3432,7 +3440,10 @@
         "abebooks:30369335206",
         "abebooks:31677025428",
         "abebooks:18018982529",
-        "abebooks:18018982564"
+        "abebooks:18018982564",
+        "abebooks:32358145342",
+        "abebooks:51293756",
+        "abebooks:32358118699"
       ]
     },
     "abebooks|cela camilo jose maspons oriol ubina julio|toreo de salon": {
