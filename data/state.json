@@ -1,7 +1,10 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-08-24T10:52:40Z",
+  "last_successful_fetch": "2026-08-24T11:47:36Z",
   "last_top_skus": [
+    "HD_304187218",
+    "HD_304187131",
+    "HD_304002522",
     "HD_304186245",
     "HD_304186190",
     "HD_304186114",
@@ -28,10 +31,7 @@
     "HD_304178882",
     "HD_304182664",
     "HD_303805354",
-    "HD_304179996",
-    "HD_304177228",
-    "HD_304171502",
-    "HD_304180982"
+    "HD_304179996"
   ],
   "products": {
     "HD_303805354": {
@@ -49,6 +49,22 @@
         "title": "Works/Obras 2003-2013"
       },
       "search_fingerprint": "915229f64f1f20b8"
+    },
+    "HD_304002522": {
+      "first_seen": "2026-08-24T11:47:36Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787566661000",
+        "description": "Bert Hardy: My Life. Gordon Fraser, 1985. Quarto. VG cond. in Good+  dj. slightly frayed a the spine. DJ. and cloth covers are bright and clean. Book is unmarked. VG. for its age with hardly any fading though mark on the final page. Ill. with numerous ph. by the author, all in b. & w some within the text, others full page. Text in double-columns. At the back, technical notes and Index. 192pp.<br/>The author was for many years chief photographer of Picture Post and like that magazine, he clearly had a political agenda. He is renowned for his explicit photographs showing suffering of those in poverty or as a result of war and he was one of the first photographers in Belsen. However, this would give a misleading impression of these Memoirs which are full of warmth and humour and contain may  beautiful photographs. After Picture Post closed, the author gave up photography and became a farmer.<br/><br/><br/>This copy £45",
+        "isbn": null,
+        "price_gbp": 45.0,
+        "product_id": "book-HD__304002522",
+        "publisher": null,
+        "route": "/bert-hardy-my-life/product/HD_304002522",
+        "sku": "HD_304002522",
+        "title": "Bert Hardy: My Life"
+      },
+      "search_fingerprint": "73fc4ceac7d235b9"
     },
     "HD_304116678": {
       "first_seen": "baseline",
@@ -981,8 +997,40 @@
         "title": "Shooting Range - Photography & The Great War"
       },
       "search_fingerprint": "cb6f0a145ab5d4e7"
+    },
+    "HD_304187131": {
+      "first_seen": "2026-08-24T11:47:36Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787569074000",
+        "description": "Wildlife Photographer of the Year Portfolio 18 is undoubtedly the most outstanding new collection of nature photographs available. The book showcases more than 120 stunning images from the 2008 Wildlife Photographer of the Year competition - the most prestigious event of its kind. All the winning and commended photographs are here, selected by an international panel of expert judges and beautifully reproduced in this portfolio.Choosing the winning entries from an incredible 35,000 entries submitted by photographers around the world is not easy. Each year the new collection is eagerly awaited by nature lovers and photography buffs alike - and each year they are not disappointed, as the quality of the images and the ingenuity of photographers reach new heights of excellence.The range of subjects and styles is diverse - from abstract nature images to animal behaviour and portraits to environmental reportage. Together they celebrate the splendour, drama and variety of life on Earth. Each photograph is accompanied by a memorable caption that tells the story of how and why the shot was taken.Being placed in this competition is something that wildlife photographers the world over aspire to. To succeed, they need a mixture of vision, technical ability, knowledge of nature - and luck. All these elements are here in abundance in these inspirational photographs that bring the breathtaking beauty of the natural world to your coffee table.",
+        "isbn": null,
+        "price_gbp": 15.0,
+        "product_id": "book-HD__304187131",
+        "publisher": null,
+        "route": "/wildlife-photographer-of-the-year-portfolio-18/product/HD_304187131",
+        "sku": "HD_304187131",
+        "title": "Wildlife Photographer of the Year. Portfolio 18"
+      },
+      "search_fingerprint": "a70f8e5181b73a65"
+    },
+    "HD_304187218": {
+      "first_seen": "2026-08-24T11:47:36Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787569417000",
+        "description": "Wildlife Photographer of the Year Portfolio 19 is undoubtedly the most outstanding new collection of nature photographs available. The book showcases more than 120 stunning images from the 2009 Wildlife Photographer of the Year Competition - the most prestigious event of its kind. All the winning and commended photographs are here, selected by an international panel of expert judges and beautifully reproduced in this portfolio.Choosing the winning entries from an incredible 35,000 entries submitted by photographers around the world is not easy. Each year the new collection is eagerly awaited by nature lovers and photography buffs alike - and each year they are not disappointed, as the quality of the images and the ingenuity of photographers reach new heights of excellence.The range of subjects and styles is diverse - from abstract nature images to animal behaviour and portraits to environmental reportage. Together they celebrate the splendour, drama and variety of life on Earth. Each photograph is accompanied by a memorable caption that tells the story of how and why the shot was taken.Being placed in this competition is something that wildlife photographers the world over aspire to. To succeed, they need a mixture of vision, technical ability, knowledge of nature - and luck. All these elements are here in abundance in these inspirational photographs that bring the breathtaking beauty of the natural world to your coffee table.",
+        "isbn": null,
+        "price_gbp": 15.0,
+        "product_id": "book-HD__304187218",
+        "publisher": null,
+        "route": "/wildlife-photographer-of-the-year-portfolio-19/product/HD_304187218",
+        "sku": "HD_304187218",
+        "title": "Wildlife Photographer of the Year. Portfolio 19"
+      },
+      "search_fingerprint": "239c14ab56d45f68"
     }
   },
-  "reported_category_count": 2789,
+  "reported_category_count": 2790,
   "version": 1
 }
