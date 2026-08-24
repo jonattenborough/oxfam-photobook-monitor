@@ -1,7 +1,9 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-08-23T14:35:56Z",
+  "last_successful_fetch": "2026-08-24T08:25:08Z",
   "last_top_skus": [
+    "HD_304185721",
+    "HD_304185631",
     "HD_304185510",
     "HD_304185028",
     "HD_304184683",
@@ -29,9 +31,7 @@
     "HD_304180591",
     "HD_304180127",
     "HD_304180070",
-    "HD_304116678",
-    "HD_304180051",
-    "HD_304160511"
+    "HD_304116678"
   ],
   "products": {
     "HD_303805354": {
@@ -853,8 +853,40 @@
         "title": "Images From a Limestone Landscape"
       },
       "search_fingerprint": "c897d6e7b740ab34"
+    },
+    "HD_304185631": {
+      "first_seen": "2026-08-24T08:25:08Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787556120000",
+        "description": "Ron Sanderson was born in the Park district of Sheffield in January 1944. He grew up on Skye Edge Road with his parents Lily and George and two sisters, Pat and Janet.<br/><br/>He attended Manor Lodge Primary and First School and went on to Hurlfield Comprehensive. In 1959 he won a scholarship to Sheffield College of Arts and Crafts. Ron joined his father in the steel works as a smither but still attended college in the evenings. He was a talented artist and became an avid photographer.<br/><br/>Ron photographed many parts of his beloved city and people - he would walk many miles taking pictures of ordinary people and their everyday lives.<br/><br/>In the mid-seventies he achieved one of his ambitions - to have his photographs displayed in the city's Graves Art Gallery. This one man exhibition led to his work being displayed all over the country.<br/><br/>He continued to photograph Sheffield's changes throughout the Seventies and Eighties. In the early 1990s, he sadly became ill with cancer and following a long fight with this, he died in 1994.<br/><br/>Ron's memory will live on through his beautiful photographs.<br/><br/>Paperback. Seventy-six black and white photographs, with brief details. <br/><br/>Very good condition, with just some slight rubbing to the covers. The contents are bright and unmarked.<br/><br/>79 pages. Size 29.6 x 21 x 0.6 cm.",
+        "isbn": null,
+        "price_gbp": 9.99,
+        "product_id": "book-HD__304185631",
+        "publisher": null,
+        "route": "/the-ron-sanderson-collection-a-selection-of-photographs-taken-in-sheffield-1960s-1980s/product/HD_304185631",
+        "sku": "HD_304185631",
+        "title": "The Ron Sanderson Collection - A Selection of Photographs Taken in Sheffield 1960s-1980s"
+      },
+      "search_fingerprint": "7b7b7c8d71849474"
+    },
+    "HD_304185721": {
+      "first_seen": "2026-08-24T08:25:08Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787557860000",
+        "description": "Take Better Pictures: An Amateur Photographer Book is a vintage, practical guide designed to help beginner photographers master the fundamentals of their camera. Written by Martin Hodder, this handbook serves as an instructional manual on classic film photography techniques. It covers essential topics like lighting, composition, choosing the right lens, and adjusting camera settings to transition from simple snapshots into deliberate photographs.",
+        "isbn": null,
+        "price_gbp": 3.99,
+        "product_id": "book-HD__304185721",
+        "publisher": null,
+        "route": "/take-better-pictures-an-amateur-photographer-book/product/HD_304185721",
+        "sku": "HD_304185721",
+        "title": "Take Better Pictures: An amateur photographer book"
+      },
+      "search_fingerprint": "070e976368fc2fab"
     }
   },
-  "reported_category_count": 2793,
+  "reported_category_count": 2787,
   "version": 1
 }
