@@ -1,11 +1,11 @@
 {
-  "cursor": 428,
+  "cursor": 452,
   "feeds": {
     "photobookstore": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 250,
-      "last_successful_fetch": "2026-08-24T11:01:52Z",
+      "last_successful_fetch": "2026-08-24T11:54:17Z",
       "seen": [
         "photobookstore:15834487521653",
         "photobookstore:15969006715253",
@@ -263,7 +263,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 232,
-      "last_successful_fetch": "2026-08-24T11:01:52Z",
+      "last_successful_fetch": "2026-08-24T11:54:17Z",
       "seen": [
         "setanta:16045232554366",
         "setanta:16045434241406",
@@ -503,7 +503,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 85,
-      "last_successful_fetch": "2026-08-24T11:01:52Z",
+      "last_successful_fetch": "2026-08-24T11:54:17Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -596,7 +596,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 208,
-      "last_successful_fetch": "2026-08-24T11:01:52Z",
+      "last_successful_fetch": "2026-08-24T11:54:17Z",
       "seen": [
         "village:10371039101210",
         "village:10371023995162",
@@ -812,7 +812,7 @@
   },
   "last_failures": [],
   "last_successful_requests": 28,
-  "last_successful_run": "2026-08-24T11:01:52Z",
+  "last_successful_run": "2026-08-24T11:54:17Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
@@ -12901,7 +12901,7 @@
     "abebooks|salvador costa|punk": {
       "first_successful_fetch": "2026-08-23T05:54:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T05:54:21Z",
+      "last_successful_fetch": "2026-08-24T11:54:17Z",
       "seen": [
         "abebooks:32253419340",
         "abebooks:85525324",
@@ -12918,16 +12918,16 @@
     "abebooks|salzmann auguste|jerusalem": {
       "first_successful_fetch": "2026-08-23T05:54:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T05:54:21Z",
+      "last_successful_fetch": "2026-08-24T11:54:17Z",
       "seen": [
         "abebooks:32477513909",
         "abebooks:9782011338037",
         "abebooks:87239718",
         "abebooks:31986738507",
         "abebooks:9782011345899",
-        "abebooks:32147353373",
-        "abebooks:63929678",
         "abebooks:32365902881",
+        "abebooks:63929678",
+        "abebooks:32147353373",
         "abebooks:32045211897",
         "abebooks:59718070",
         "abebooks:32045102365",
@@ -12944,7 +12944,7 @@
     "abebooks|sander august|antlitz der zeit": {
       "first_successful_fetch": "2026-08-23T05:54:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T05:54:21Z",
+      "last_successful_fetch": "2026-08-24T11:54:17Z",
       "seen": [
         "abebooks:32471215174",
         "abebooks:9783921375112",
@@ -12985,7 +12985,7 @@
     "abebooks|sanja ivekovic|tragedy of a venus 1975": {
       "first_successful_fetch": "2026-08-23T05:54:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T05:54:21Z",
+      "last_successful_fetch": "2026-08-24T11:54:17Z",
       "seen": [
         "abebooks:31993995468"
       ]
@@ -12993,7 +12993,7 @@
     "abebooks|sannes sanne|sex a gogo": {
       "first_successful_fetch": "2026-08-23T07:10:17Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:10:17Z",
+      "last_successful_fetch": "2026-08-24T11:54:17Z",
       "seen": [
         "abebooks:32205564395",
         "abebooks:32485276030",
@@ -13043,7 +13043,7 @@
     "abebooks|serge klarsfeld|french children of the holocaust": {
       "first_successful_fetch": "2026-08-23T07:10:17Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:10:17Z",
+      "last_successful_fetch": "2026-08-24T11:54:17Z",
       "seen": [
         "abebooks:32375582080",
         "abebooks:9780814726624",
@@ -13065,19 +13065,20 @@
     "abebooks|sergio larrain|el rectangulo en la mano the rectangle in the hand": {
       "first_successful_fetch": "2026-08-23T07:10:17Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:10:17Z",
+      "last_successful_fetch": "2026-08-24T11:54:17Z",
       "seen": [
-        "abebooks:32481118605",
         "abebooks:22688698143",
         "abebooks:32156720553",
         "abebooks:32377091550",
-        "abebooks:31671080917"
+        "abebooks:31671080917",
+        "abebooks:31754266332",
+        "abebooks:32481118605"
       ]
     },
     "abebooks|sergio larrain|valparaiso": {
       "first_successful_fetch": "2026-08-23T07:10:17Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:10:17Z",
+      "last_successful_fetch": "2026-08-24T11:54:17Z",
       "seen": [
         "abebooks:31960336730",
         "abebooks:9780500544808",
@@ -13125,7 +13126,7 @@
     "abebooks|shinoyama kishin|hareta hi": {
       "first_successful_fetch": "2026-08-23T07:10:17Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:10:17Z",
+      "last_successful_fetch": "2026-08-24T11:54:17Z",
       "seen": [
         "abebooks:31996743888",
         "abebooks:70079296",
@@ -13154,10 +13155,12 @@
     "abebooks|shirana shahbaz|goftare nik": {
       "first_successful_fetch": "2026-08-23T07:10:17Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:10:17Z",
+      "last_successful_fetch": "2026-08-24T11:54:17Z",
       "seen": [
         "abebooks:22683618597",
         "abebooks:9783952122754",
+        "abebooks:32428364482",
+        "abebooks:84208706",
         "abebooks:32005998661",
         "abebooks:61588986",
         "abebooks:32179322523",
@@ -13172,7 +13175,7 @@
     "abebooks|simmons owen|the book of bread": {
       "first_successful_fetch": "2026-08-23T07:10:17Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:10:17Z",
+      "last_successful_fetch": "2026-08-24T11:54:17Z",
       "seen": [
         "abebooks:31534662020",
         "abebooks:65733602",
@@ -13199,7 +13202,7 @@
     "abebooks|simon roberts|we english": {
       "first_successful_fetch": "2026-08-23T07:10:17Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:10:17Z",
+      "last_successful_fetch": "2026-08-24T11:54:17Z",
       "seen": [
         "abebooks:5064289718",
         "abebooks:31544138183",
@@ -13214,7 +13217,7 @@
     "abebooks|siskind aaron|aaron siskind photographs": {
       "first_successful_fetch": "2026-08-23T07:10:17Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:10:17Z",
+      "last_successful_fetch": "2026-08-24T11:54:17Z",
       "seen": [
         "abebooks:32493360471",
         "abebooks:9781560980414",
@@ -13287,7 +13290,7 @@
     "abebooks|slim aarons|a wonderful time": {
       "first_successful_fetch": "2026-08-23T07:10:17Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:10:17Z",
+      "last_successful_fetch": "2026-08-24T11:54:17Z",
       "seen": [
         "abebooks:32414359535",
         "abebooks:82739075",
@@ -13322,7 +13325,7 @@
     "abebooks|smith adolphe thomson john|street life in london": {
       "first_successful_fetch": "2026-08-23T07:10:17Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:10:17Z",
+      "last_successful_fetch": "2026-08-24T11:54:17Z",
       "seen": [
         "abebooks:32503276523",
         "abebooks:9781941667033",
@@ -13363,7 +13366,7 @@
     "abebooks|smith g elliot|the royal mummies": {
       "first_successful_fetch": "2026-08-23T07:10:17Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:10:17Z",
+      "last_successful_fetch": "2026-08-24T11:54:17Z",
       "seen": [
         "abebooks:32500576559",
         "abebooks:9780715629598",
@@ -13380,7 +13383,6 @@
         "abebooks:30930041517",
         "abebooks:56522875",
         "abebooks:32346378567",
-        "abebooks:32346387274",
         "abebooks:32492021098",
         "abebooks:65445109",
         "abebooks:32498686904",
@@ -13393,6 +13395,7 @@
         "abebooks:32386103271",
         "abebooks:71454205",
         "abebooks:32140412963",
+        "abebooks:32346387274",
         "abebooks:31720354587",
         "abebooks:10196321191",
         "abebooks:32268999356",
@@ -13403,7 +13406,7 @@
     "abebooks|sol lewitt|autobiography": {
       "first_successful_fetch": "2026-08-23T07:10:17Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:10:17Z",
+      "last_successful_fetch": "2026-08-24T11:54:17Z",
       "seen": [
         "abebooks:31116243190",
         "abebooks:32077269800",
@@ -13430,7 +13433,7 @@
     "abebooks|sophie calle|la fille du docteur": {
       "first_successful_fetch": "2026-08-23T07:10:17Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:10:17Z",
+      "last_successful_fetch": "2026-08-24T11:54:17Z",
       "seen": [
         "abebooks:32262148819",
         "abebooks:31585094508",
@@ -13440,7 +13443,7 @@
     "abebooks|sophie calle|rachel monique": {
       "first_successful_fetch": "2026-08-23T07:10:17Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:10:17Z",
+      "last_successful_fetch": "2026-08-24T11:54:17Z",
       "seen": [
         "abebooks:22454874362",
         "abebooks:9782915173789",
@@ -13452,25 +13455,26 @@
     "abebooks|sophie ristelhueber|fait koweit 1991 fact kuwait 1991": {
       "first_successful_fetch": "2026-08-23T07:10:17Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:10:17Z",
+      "last_successful_fetch": "2026-08-24T11:54:17Z",
       "seen": [
         "abebooks:32104147036",
         "abebooks:32498190985",
         "abebooks:30941927139",
-        "abebooks:31809580122",
-        "abebooks:32146268730"
+        "abebooks:32146268730",
+        "abebooks:31809580122"
       ]
     },
     "abebooks|sougez emmanuel|regarde": {
       "first_successful_fetch": "2026-08-23T07:10:17Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:10:17Z",
+      "last_successful_fetch": "2026-08-24T11:54:17Z",
       "seen": [
         "abebooks:31739763359",
-        "abebooks:32279094290",
-        "abebooks:31731830977",
+        "abebooks:32407374586",
         "abebooks:31566494872",
-        "abebooks:32407374586"
+        "abebooks:31519868974",
+        "abebooks:32279094290",
+        "abebooks:31731830977"
       ]
     },
     "abebooks|steichen edward|the first picture book": {
@@ -13505,7 +13509,7 @@
     "abebooks|steinert dr otto|subjektive fotografie": {
       "first_successful_fetch": "2026-08-23T07:10:17Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:10:17Z",
+      "last_successful_fetch": "2026-08-24T11:54:17Z",
       "seen": [
         "abebooks:17445253955",
         "abebooks:15506004420",
@@ -13517,7 +13521,7 @@
     "abebooks|stephanie saia phyllis prinz|private moments in public places": {
       "first_successful_fetch": "2026-08-23T07:10:17Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:10:17Z",
+      "last_successful_fetch": "2026-08-24T11:54:17Z",
       "seen": [
         "abebooks:30358998376"
       ]
@@ -13525,7 +13529,7 @@
     "abebooks|stephen gill|hackney wick": {
       "first_successful_fetch": "2026-08-23T07:10:17Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T07:10:17Z",
+      "last_successful_fetch": "2026-08-24T11:54:17Z",
       "seen": [
         "abebooks:32471558472",
         "abebooks:57906169",
