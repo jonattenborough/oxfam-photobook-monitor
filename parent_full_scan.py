@@ -21,7 +21,7 @@ from oxfam_parent_common import (
     utc_now,
 )
 
-PAGE_SIZE = 90
+PAGE_SIZE = 60
 OUT = Path("data/oxfam_parent_full_candidates.json")
 RUNTIME = Path("runtime/parent_full_scan")
 FULL_RUNTIME_OUT = RUNTIME / "full_catalogue.json"
