@@ -102,6 +102,15 @@ The live issue-processing pipeline is intentionally restricted to genuinely newl
 
 `full_scan.py`, `parent_full_scan.py`, `charity_full_scan.py` and `bhf_full_scan.py` remain available for occasional catalogue auditing and backfill work. Their outputs are not part of the normal new-listing alert stream.
 
+### Full catalogue gem audit
+
+`.github/workflows/catalogue-audit.yml` is a separate, resumable one-off audit of the complete Oxfam Art & Photography parent category. It runs the proven segmented crawl, evaluates every live product and creates two ranked review tracks:
+
+- `collection` for canonical, collectible, historically important, scarce or strongly relevant photobooks;
+- `cheap` for worthwhile books at £20 or below, including useful additions to qualifying promotional baskets.
+
+The deterministic scores are high-recall triage rather than buy recommendations. The workflow stores a compact queue in `data/oxfam_catalogue_audit_queue.json`, creates review batches with the `OXFAM_CATALOGUE_AUDIT:` prefix and opens a master `OXFAM_CATALOGUE_AUDIT_REPORT:` issue. These prefixes are intentionally excluded from the live new-listing reviewer so historical stock never contaminates `OXFAM_NEW:` alerts.
+
 ## Manual tests
 
 In GitHub Actions you can manually run:

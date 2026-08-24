@@ -1,0 +1,96 @@
+name: Oxfam full catalogue gem audit
+
+on:
+  workflow_dispatch:
+    inputs:
+      max_collection:
+        description: Maximum collection-track candidates
+        required: true
+        default: "800"
+      max_cheap:
+        description: Maximum cheap-track candidates
+        required: true
+        default: "400"
+      batch_size:
+        description: Candidates per review issue
+        required: true
+        default: "30"
+  push:
+    branches: [main]
+    paths:
+      - data/catalogue_audit_trigger.txt
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: oxfam-full-catalogue-gem-audit
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+
+      - name: Validate audit scoring
+        run: python -m unittest -v test_catalogue_audit.py
+
+      - name: Crawl complete Oxfam Art and Photography catalogue
+        run: python parent_full_scan.py
+
+      - name: Prepare collection and cheap-book review queues
+        env:
+          MAX_COLLECTION: ${{ inputs.max_collection || '800' }}
+          MAX_CHEAP: ${{ inputs.max_cheap || '400' }}
+          BATCH_SIZE: ${{ inputs.batch_size || '30' }}
+        run: |
+          python catalogue_audit.py \
+            --max-collection "$MAX_COLLECTION" \
+            --max-cheap "$MAX_CHEAP" \
+            --batch-size "$BATCH_SIZE"
+
+      - name: Persist compact audit queue and state
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data/oxfam_catalogue_audit_queue.json data/oxfam_catalogue_audit_state.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Prepare Oxfam full catalogue gem audit [skip ci]"
+            for attempt in 1 2 3 4; do
+              git pull --rebase origin main
+              if git push origin HEAD:main; then
+                break
+              fi
+              if [ "$attempt" = "4" ]; then
+                exit 1
+              fi
+            done
+          fi
+
+      - name: Create audit report and review batches
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          report_url=$(gh issue create \
+            --title "$(cat runtime/catalogue_audit/report.title)" \
+            --body-file runtime/catalogue_audit/report.md)
+          report_number=${report_url##*/}
+          for title_file in runtime/catalogue_audit/issues/*.title; do
+            body_file="${title_file%.title}.md"
+            printf '\nMaster report: #%s\n' "$report_number" >> "$body_file"
+            gh issue create \
+              --title "$(cat "$title_file")" \
+              --body-file "$body_file"
+          done

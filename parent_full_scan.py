@@ -24,6 +24,7 @@ from oxfam_parent_common import (
 PAGE_SIZE = 90
 OUT = Path("data/oxfam_parent_full_candidates.json")
 RUNTIME = Path("runtime/parent_full_scan")
+FULL_RUNTIME_OUT = RUNTIME / "full_catalogue.json"
 
 # High-priority photographer/title fingerprints.
 TARGETS = [
@@ -320,6 +321,24 @@ def main() -> int:
         raise RuntimeError(
             f"Segmented crawl found {len(items)} of {expected_total} parent-category products"
         )
+
+    # The complete catalogue is intentionally a runtime hand-off rather than a
+    # committed repository artefact. The catalogue-audit workflow consumes it
+    # immediately and persists only its compact, ranked review queue.
+    FULL_RUNTIME_OUT.write_text(
+        json.dumps(
+            {
+                "generated_at": utc_now(),
+                "expected_parent_products": expected_total,
+                "unique_products_scanned": len(items),
+                "products": list(items.values()),
+            },
+            indent=2,
+            ensure_ascii=False,
+            sort_keys=True,
+        ) + "\n",
+        encoding="utf-8",
+    )
 
     ranked = []
     for item in items.values():
