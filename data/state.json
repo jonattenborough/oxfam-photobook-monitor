@@ -1,7 +1,8 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-08-25T16:04:46Z",
+  "last_successful_fetch": "2026-08-25T16:52:41Z",
   "last_top_skus": [
+    "HD_304192792",
     "HD_304192668",
     "HD_304191552",
     "HD_304191618",
@@ -30,8 +31,7 @@
     "HD_304188401",
     "HD_304188373",
     "HD_304188344",
-    "HD_304188047",
-    "HD_304187574"
+    "HD_304188047"
   ],
   "products": {
     "HD_303805354": {
@@ -1733,8 +1733,24 @@
         "title": "\"Godfrey Daniels\"! - Verbal and visual gems from the short films of W C Fields"
       },
       "search_fingerprint": "8b814545472e6b67"
+    },
+    "HD_304192792": {
+      "first_seen": "2026-08-25T16:52:41Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787672309000",
+        "description": "Photographs depict the effects, both beneficial and disastrous, of the annual monsoon rains in India, Asia, and Australia's Arnhem Land.<br/>For more than half the world's population, the weather is not a matter of convenience—it is a matter of survival. Monsoon delivers a powerful visual narrative that documents how a single, uncontrollable meteorological event dictates life, death, prosperity, and famine across continents.",
+        "isbn": null,
+        "price_gbp": 16.99,
+        "product_id": "book-HD__304192792",
+        "publisher": null,
+        "route": "/monsoon/product/HD_304192792",
+        "sku": "HD_304192792",
+        "title": "Monsoon"
+      },
+      "search_fingerprint": "9d8757a467aeb483"
     }
   },
-  "reported_category_count": 2787,
+  "reported_category_count": 2788,
   "version": 1
 }
