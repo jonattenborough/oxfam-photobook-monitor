@@ -1,11 +1,11 @@
 {
-  "cursor": 400,
+  "cursor": 424,
   "feeds": {
     "photobookstore": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 250,
-      "last_successful_fetch": "2026-08-25T15:20:52Z",
+      "last_successful_fetch": "2026-08-25T16:08:08Z",
       "seen": [
         "photobookstore:15970158444917",
         "photobookstore:15834487521653",
@@ -264,8 +264,8 @@
     "setanta": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
-      "last_count": 232,
-      "last_successful_fetch": "2026-08-25T15:20:52Z",
+      "last_count": 231,
+      "last_successful_fetch": "2026-08-25T16:08:08Z",
       "seen": [
         "setanta:16055810523518",
         "setanta:16055650910590",
@@ -509,8 +509,8 @@
     "tpg_new": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
-      "last_count": 85,
-      "last_successful_fetch": "2026-08-25T15:20:52Z",
+      "last_count": 86,
+      "last_successful_fetch": "2026-08-25T16:08:08Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -568,6 +568,7 @@
         "tpg_new:15992627036540",
         "tpg_new:15997400646012",
         "tpg_new:15992673075580",
+        "tpg_new:15983984247164",
         "tpg_new:8269583614173",
         "tpg_new:15987487375740",
         "tpg_new:15992570544508",
@@ -603,7 +604,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 207,
-      "last_successful_fetch": "2026-08-25T15:20:52Z",
+      "last_successful_fetch": "2026-08-25T16:08:08Z",
       "seen": [
         "village:10371020095770",
         "village:10373810258202",
@@ -821,7 +822,7 @@
   },
   "last_failures": [],
   "last_successful_requests": 28,
-  "last_successful_run": "2026-08-25T15:20:52Z",
+  "last_successful_run": "2026-08-25T16:08:08Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
@@ -12390,7 +12391,7 @@
     "abebooks|riley sharbonno and monica haller|riley and his story me and my outrage you and us": {
       "first_successful_fetch": "2026-08-23T05:01:41Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T10:10:02Z",
+      "last_successful_fetch": "2026-08-25T16:08:08Z",
       "seen": [
         "abebooks:5395867588",
         "abebooks:9782915359381"
@@ -12399,7 +12400,7 @@
     "abebooks|rineke dijkstra|beaches": {
       "first_successful_fetch": "2026-08-23T05:01:41Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T10:10:02Z",
+      "last_successful_fetch": "2026-08-25T16:08:08Z",
       "seen": [
         "abebooks:31761138988",
         "abebooks:2900013366767",
@@ -12423,13 +12424,23 @@
     "abebooks|rinko kawauchi|illuminance": {
       "first_successful_fetch": "2026-08-23T05:01:41Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T10:10:02Z",
+      "last_successful_fetch": "2026-08-25T16:08:08Z",
       "seen": [
         "abebooks:32178086062",
         "abebooks:9781597115148",
+        "abebooks:32157970528",
+        "abebooks:50531827",
+        "abebooks:32172321973",
+        "abebooks:32163393984",
+        "abebooks:32501831942",
+        "abebooks:32166687795",
         "abebooks:32353090507",
         "abebooks:9781597111447",
         "abebooks:32207341403",
+        "abebooks:32158144934",
+        "abebooks:73551232",
+        "abebooks:32053548406",
+        "abebooks:52402892",
         "abebooks:31838997039",
         "abebooks:31917252507",
         "abebooks:32334888767",
@@ -12449,13 +12460,15 @@
         "abebooks:31129636925",
         "abebooks:32460442723",
         "abebooks:9782915173758",
-        "abebooks:53994756"
+        "abebooks:53994756",
+        "abebooks:32258532632",
+        "abebooks:89712618"
       ]
     },
     "abebooks|rinko kawauchi|utatane": {
       "first_successful_fetch": "2026-08-23T05:01:41Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T10:10:02Z",
+      "last_successful_fetch": "2026-08-25T16:08:08Z",
       "seen": [
         "abebooks:30871686280",
         "abebooks:9784898150528",
@@ -12498,7 +12511,7 @@
     "abebooks|rob philip|on the game": {
       "first_successful_fetch": "2026-08-23T05:01:41Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T11:01:52Z",
+      "last_successful_fetch": "2026-08-25T16:08:08Z",
       "seen": [
         "abebooks:32368454441",
         "abebooks:9789081033510",
@@ -12515,28 +12528,31 @@
     "abebooks|robert adams|listening to the river": {
       "first_successful_fetch": "2026-08-23T05:01:41Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T11:01:52Z",
+      "last_successful_fetch": "2026-08-25T16:08:08Z",
       "seen": [
-        "abebooks:32479209275",
+        "abebooks:31971499596",
         "abebooks:9780893815653",
         "abebooks:32484711311",
         "abebooks:30787725025",
         "abebooks:32372017084",
         "abebooks:89905167",
         "abebooks:31359461363",
+        "abebooks:32371466442",
+        "abebooks:61796106",
         "abebooks:30176467773",
         "abebooks:1194377900",
         "abebooks:32129618158",
         "abebooks:57906169",
-        "abebooks:31082968480",
+        "abebooks:31089431668",
         "abebooks:83879318",
-        "abebooks:31089431668"
+        "abebooks:31082968480",
+        "abebooks:32479209275"
       ]
     },
     "abebooks|robert adams|the new west": {
       "first_successful_fetch": "2026-08-23T05:01:41Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T11:01:52Z",
+      "last_successful_fetch": "2026-08-25T16:08:08Z",
       "seen": [
         "abebooks:32401789298",
         "abebooks:9780893810634",
@@ -12550,30 +12566,53 @@
         "abebooks:57672385",
         "abebooks:31093997739",
         "abebooks:54803255",
-        "abebooks:32470717321",
+        "abebooks:32443083259",
         "abebooks:9781597110600",
+        "abebooks:52275949",
+        "abebooks:32470717321",
         "abebooks:32222588350",
         "abebooks:89594109",
         "abebooks:32341237419",
         "abebooks:52323279",
+        "abebooks:31504693180",
+        "abebooks:86072357",
+        "abebooks:32436544536",
+        "abebooks:31736824589",
+        "abebooks:50068598",
+        "abebooks:30734426597",
+        "abebooks:56340540",
+        "abebooks:31471008262",
+        "abebooks:32362283737",
+        "abebooks:89905167",
+        "abebooks:32483930559",
+        "abebooks:57278531",
+        "abebooks:32346687764",
         "abebooks:31743310784",
         "abebooks:32456163160",
         "abebooks:9783869309002",
+        "abebooks:31446115073",
+        "abebooks:52101753",
         "abebooks:31166354795",
         "abebooks:9780893810597",
-        "abebooks:52101753",
         "abebooks:30073492527",
+        "abebooks:32371329140",
+        "abebooks:54425434",
+        "abebooks:32476726693",
+        "abebooks:53994756",
         "abebooks:31089431668",
         "abebooks:83879318",
         "abebooks:32183577542",
-        "abebooks:32443083259",
-        "abebooks:52275949"
+        "abebooks:31749492663",
+        "abebooks:32461951403",
+        "abebooks:89712618",
+        "abebooks:32258647429",
+        "abebooks:32257777084"
       ]
     },
     "abebooks|robert cumming|the weight of franchise meat": {
       "first_successful_fetch": "2026-08-23T05:01:41Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T11:01:52Z",
+      "last_successful_fetch": "2026-08-25T16:08:08Z",
       "seen": [
         "abebooks:31952245512",
         "abebooks:57906169",
@@ -12744,13 +12783,13 @@
     "abebooks|rodionov f|raboche krest yanskaya krasnaya armiya": {
       "first_successful_fetch": "2026-08-23T05:54:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T11:01:52Z",
+      "last_successful_fetch": "2026-08-25T16:08:08Z",
       "seen": []
     },
     "abebooks|roe ethridge|le luxe": {
       "first_successful_fetch": "2026-08-23T05:54:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T11:01:52Z",
+      "last_successful_fetch": "2026-08-25T16:08:08Z",
       "seen": [
         "abebooks:32377448896",
         "abebooks:9781907946080",
@@ -12780,7 +12819,7 @@
     "abebooks|ron franz|foto auge oeil et photo photo eye": {
       "first_successful_fetch": "2026-08-23T05:54:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T11:01:52Z",
+      "last_successful_fetch": "2026-08-25T16:08:08Z",
       "seen": [
         "abebooks:32469504076",
         "abebooks:32364198076",
@@ -12792,7 +12831,7 @@
     "abebooks|roni horn|still water": {
       "first_successful_fetch": "2026-08-23T05:54:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T11:01:52Z",
+      "last_successful_fetch": "2026-08-25T16:08:08Z",
       "seen": [
         "abebooks:32478695774",
         "abebooks:9780970077417",
@@ -12810,115 +12849,123 @@
     "abebooks|roni horn|to place book i bluff life": {
       "first_successful_fetch": "2026-08-23T05:54:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T11:01:52Z",
+      "last_successful_fetch": "2026-08-25T16:08:08Z",
       "seen": [
         "abebooks:32440276520",
         "abebooks:32502463571",
         "abebooks:32413566915",
-        "abebooks:31622727641",
-        "abebooks:30662352082"
+        "abebooks:30662352082",
+        "abebooks:32468229348",
+        "abebooks:31622727641"
       ]
     },
     "abebooks|roni horn|to place book ii folds": {
       "first_successful_fetch": "2026-08-23T05:54:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T11:01:52Z",
+      "last_successful_fetch": "2026-08-25T16:08:08Z",
       "seen": [
         "abebooks:32440276520",
         "abebooks:32502463571",
         "abebooks:32413566915",
-        "abebooks:31622727641",
-        "abebooks:30662352082"
+        "abebooks:30662352082",
+        "abebooks:32468229348",
+        "abebooks:31622727641"
       ]
     },
     "abebooks|roni horn|to place book iii lava": {
       "first_successful_fetch": "2026-08-23T05:54:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T11:01:52Z",
+      "last_successful_fetch": "2026-08-25T16:08:08Z",
       "seen": [
         "abebooks:32440276520",
         "abebooks:32502463571",
         "abebooks:32413566915",
-        "abebooks:31622727641",
-        "abebooks:30662352082"
+        "abebooks:30662352082",
+        "abebooks:32468229348",
+        "abebooks:31622727641"
       ]
     },
     "abebooks|roni horn|to place book iv pooling waters volume 1 photographs": {
       "first_successful_fetch": "2026-08-23T05:54:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T11:01:52Z",
+      "last_successful_fetch": "2026-08-25T16:08:08Z",
       "seen": [
         "abebooks:31368724860",
         "abebooks:32447160789",
-        "abebooks:32437671999",
+        "abebooks:32314529154",
         "abebooks:32444790356",
-        "abebooks:32314529154"
+        "abebooks:32437671999"
       ]
     },
     "abebooks|roni horn|to place book iv pooling waters volume 2 text": {
       "first_successful_fetch": "2026-08-23T05:54:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T11:01:52Z",
+      "last_successful_fetch": "2026-08-25T16:08:08Z",
       "seen": [
         "abebooks:32321034561",
         "abebooks:32231233120",
         "abebooks:32489053598",
-        "abebooks:32497161428",
-        "abebooks:32391597144"
+        "abebooks:32391597144",
+        "abebooks:32032750394",
+        "abebooks:32497161428"
       ]
     },
     "abebooks|roni horn|to place book v vernes journey": {
       "first_successful_fetch": "2026-08-23T05:54:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T11:01:52Z",
+      "last_successful_fetch": "2026-08-25T16:08:08Z",
       "seen": [
         "abebooks:32502463571",
-        "abebooks:31622727641",
         "abebooks:30662352082",
         "abebooks:32385440380",
-        "abebooks:32456574646"
+        "abebooks:32456574646",
+        "abebooks:32446057264",
+        "abebooks:31622727641"
       ]
     },
     "abebooks|roni horn|to place book vi haraldsdottir": {
       "first_successful_fetch": "2026-08-23T05:54:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T11:01:52Z",
+      "last_successful_fetch": "2026-08-25T16:08:08Z",
       "seen": [
         "abebooks:32440276520",
         "abebooks:32502463571",
         "abebooks:32413566915",
-        "abebooks:31622727641",
-        "abebooks:30662352082"
+        "abebooks:30662352082",
+        "abebooks:32468229348",
+        "abebooks:31622727641"
       ]
     },
     "abebooks|roni horn|to place book vii arctic circles": {
       "first_successful_fetch": "2026-08-23T05:54:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T11:01:52Z",
+      "last_successful_fetch": "2026-08-25T16:08:08Z",
       "seen": [
         "abebooks:32502463571",
-        "abebooks:31622727641",
         "abebooks:30662352082",
         "abebooks:32385440380",
-        "abebooks:32456574646"
+        "abebooks:32456574646",
+        "abebooks:32446057264",
+        "abebooks:31622727641"
       ]
     },
     "abebooks|roni horn|to place book viii becoming a landscape": {
       "first_successful_fetch": "2026-08-23T05:54:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T11:01:52Z",
+      "last_successful_fetch": "2026-08-25T16:08:08Z",
       "seen": [
         "abebooks:32502463571",
-        "abebooks:31622727641",
         "abebooks:30662352082",
         "abebooks:31776399647",
-        "abebooks:32408255312"
+        "abebooks:32408255312",
+        "abebooks:32503689213",
+        "abebooks:31622727641"
       ]
     },
     "abebooks|roni horn|to place supplement inner geography": {
       "first_successful_fetch": "2026-08-23T05:54:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T11:01:52Z",
+      "last_successful_fetch": "2026-08-25T16:08:08Z",
       "seen": [
         "abebooks:30901352805",
         "abebooks:32414259760"
@@ -12927,25 +12974,37 @@
     "abebooks|roy claude strand paul|la france de profil": {
       "first_successful_fetch": "2026-08-23T05:54:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T11:01:52Z",
+      "last_successful_fetch": "2026-08-25T16:08:08Z",
       "seen": [
         "abebooks:32427961761",
         "abebooks:9780893818746",
         "abebooks:31777169928",
         "abebooks:71386540",
+        "abebooks:32478337236",
+        "abebooks:88277264",
+        "abebooks:31921898140",
         "abebooks:32183002111",
         "abebooks:53593239",
+        "abebooks:32390364713",
+        "abebooks:31602325753",
         "abebooks:30894589802",
+        "abebooks:31778604095",
+        "abebooks:17726060883",
+        "abebooks:32338897231",
+        "abebooks:31477162354",
+        "abebooks:63348534",
         "abebooks:32369983589",
         "abebooks:63929678",
         "abebooks:32492398976",
         "abebooks:63018633",
+        "abebooks:31166420163",
+        "abebooks:52101753",
         "abebooks:32183083962",
         "abebooks:54072508",
         "abebooks:32476651488",
-        "abebooks:32382183069",
         "abebooks:32005000891",
         "abebooks:56246729",
+        "abebooks:32382183069",
         "abebooks:32474871404",
         "abebooks:31696244141",
         "abebooks:55366034",
@@ -12956,6 +13015,8 @@
         "abebooks:31929585272",
         "abebooks:32398049983",
         "abebooks:32317747795",
+        "abebooks:32371333864",
+        "abebooks:54425434",
         "abebooks:31820684806",
         "abebooks:60919595",
         "abebooks:30405852527",
@@ -12963,6 +13024,8 @@
         "abebooks:63532523",
         "abebooks:32138555329",
         "abebooks:83538922",
+        "abebooks:32493757563",
+        "abebooks:53994756",
         "abebooks:31716492911",
         "abebooks:31464421253",
         "abebooks:32019689921",
@@ -12970,9 +13033,9 @@
         "abebooks:31308746932",
         "abebooks:32012761309",
         "abebooks:57237370",
-        "abebooks:31515672564",
         "abebooks:32375307211",
         "abebooks:90287760",
+        "abebooks:31515672564",
         "abebooks:20987768509",
         "abebooks:30927566005",
         "abebooks:5851894915",
@@ -12990,29 +13053,51 @@
     "abebooks|roy decarava|the sound i saw": {
       "first_successful_fetch": "2026-08-23T05:54:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T11:01:52Z",
+      "last_successful_fetch": "2026-08-25T16:08:08Z",
       "seen": [
-        "abebooks:32474659094",
+        "abebooks:32487224166",
         "abebooks:9780714843315",
+        "abebooks:53572034",
+        "abebooks:32464212622",
+        "abebooks:32474659094",
         "abebooks:65730156",
+        "abebooks:31994692598",
         "abebooks:30687670028",
+        "abebooks:32132282667",
+        "abebooks:88115450",
+        "abebooks:31576430435",
         "abebooks:30976047160",
+        "abebooks:30553559066",
+        "abebooks:52233525",
         "abebooks:1109380059",
+        "abebooks:32312459187",
+        "abebooks:71454205",
+        "abebooks:30831621161",
         "abebooks:31084623260",
         "abebooks:32345649339",
         "abebooks:32442813454",
         "abebooks:32407854374",
         "abebooks:9780714841236",
+        "abebooks:31445845926",
+        "abebooks:52101753",
         "abebooks:30421195313",
         "abebooks:9781644230107",
+        "abebooks:30421191465",
+        "abebooks:54825494",
+        "abebooks:32484857541",
+        "abebooks:87591102",
         "abebooks:32008340206",
         "abebooks:31743809266",
+        "abebooks:30498176949",
         "abebooks:13850365131",
         "abebooks:30371122838",
         "abebooks:31830002609",
         "abebooks:31298894733",
+        "abebooks:32477931286",
+        "abebooks:53994756",
         "abebooks:30918061159",
         "abebooks:22446822302",
+        "abebooks:30554157523",
         "abebooks:32124968789",
         "abebooks:57906169",
         "abebooks:31303103347",
