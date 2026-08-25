@@ -1,7 +1,8 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-08-25T15:21:44Z",
+  "last_successful_fetch": "2026-08-25T16:04:46Z",
   "last_top_skus": [
+    "HD_304192668",
     "HD_304191552",
     "HD_304191618",
     "HD_304191817",
@@ -30,8 +31,7 @@
     "HD_304188373",
     "HD_304188344",
     "HD_304188047",
-    "HD_304187574",
-    "HD_304187523"
+    "HD_304187574"
   ],
   "products": {
     "HD_303805354": {
@@ -1717,6 +1717,22 @@
         "title": "The Daybooks of Edward Weston. Two Volumes In One. 1 : Mexico. 2  : California."
       },
       "search_fingerprint": "040adca6090d4b3c"
+    },
+    "HD_304192668": {
+      "first_seen": "2026-08-25T16:04:46Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787670541000",
+        "description": "Black and white photographs and gags from some of W C Fields' short films.",
+        "isbn": null,
+        "price_gbp": 10.0,
+        "product_id": "book-HD__304192668",
+        "publisher": null,
+        "route": "/godfrey-daniels-verbal-and-visual-gems-from-the-short-films-of-w-c-fields/product/HD_304192668",
+        "sku": "HD_304192668",
+        "title": "\"Godfrey Daniels\"! - Verbal and visual gems from the short films of W C Fields"
+      },
+      "search_fingerprint": "8b814545472e6b67"
     }
   },
   "reported_category_count": 2787,
