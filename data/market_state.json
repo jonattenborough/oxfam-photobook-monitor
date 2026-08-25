@@ -1,11 +1,11 @@
 {
-  "cursor": 520,
+  "cursor": 544,
   "feeds": {
     "photobookstore": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 250,
-      "last_successful_fetch": "2026-08-25T19:55:33Z",
+      "last_successful_fetch": "2026-08-25T20:55:50Z",
       "seen": [
         "photobookstore:15970158444917",
         "photobookstore:15834487521653",
@@ -265,7 +265,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 231,
-      "last_successful_fetch": "2026-08-25T19:55:33Z",
+      "last_successful_fetch": "2026-08-25T20:55:50Z",
       "seen": [
         "setanta:16055810523518",
         "setanta:16055650910590",
@@ -510,7 +510,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 86,
-      "last_successful_fetch": "2026-08-25T19:55:33Z",
+      "last_successful_fetch": "2026-08-25T20:55:50Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -604,7 +604,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 207,
-      "last_successful_fetch": "2026-08-25T19:55:33Z",
+      "last_successful_fetch": "2026-08-25T20:55:50Z",
       "seen": [
         "village:10371020095770",
         "village:10373810258202",
@@ -820,9 +820,34 @@
       ]
     }
   },
-  "last_failures": [],
-  "last_successful_requests": 28,
-  "last_successful_run": "2026-08-25T19:55:33Z",
+  "last_failures": [
+    "abebooks target Wolfgang Schmidt / Oh Ihr Verdammten Arschlocher: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Oh+Ihr+Verdammten+Arschlocher&sortby=17&ds=50&an=Wolfgang+Schmidt after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Oh+Ihr+Verdammten+Arschlocher&sortby=17&ds=50&an=Wolfgang+Schmidt",
+    "abebooks target Wolfgang Tillmans / Concorde: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Concorde&sortby=17&ds=50&an=Wolfgang+Tillmans after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Concorde&sortby=17&ds=50&an=Wolfgang+Tillmans",
+    "abebooks target Xu Yong / Xiaofangjia Hutong: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Xiaofangjia+Hutong&sortby=17&ds=50&an=Xu+Yong after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Xiaofangjia+Hutong&sortby=17&ds=50&an=Xu+Yong",
+    "abebooks target Yasuhiko Uchihara / Son of a bit: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Son+of+a+bit&sortby=17&ds=50&an=Yasuhiko+Uchihara after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Son+of+a+bit&sortby=17&ds=50&an=Yasuhiko+Uchihara",
+    "abebooks target Yoshikazu Suzuki / Shohachi Kimura / Ginza Kaiwai / Ginza Haccho: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Ginza+Kaiwai+%2F+Ginza+Haccho&sortby=17&ds=50&an=Yoshikazu+Suzuki after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Ginza+Kaiwai+%2F+Ginza+Haccho&sortby=17&ds=50&an=Yoshikazu+Suzuki",
+    "abebooks target Yves Marchand & Romain Meffre / The Ruins of Detroit: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=The+Ruins+of+Detroit&sortby=17&ds=50&an=Yves+Marchand+%26+Romain+Meffre after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=The+Ruins+of+Detroit&sortby=17&ds=50&an=Yves+Marchand+%26+Romain+Meffre",
+    "abebooks target Anonymous / Chile ayer hoy / yesterday today / hier aujourd'hui: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Chile+ayer+hoy+%2F+yesterday+today+%2F+hier+aujourd%27hui&sortby=17&ds=50&an=Anonymous after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Chile+ayer+hoy+%2F+yesterday+today+%2F+hier+aujourd%27hui&sortby=17&ds=50&an=Anonymous",
+    "abebooks target Anouk Kruithof / Lang Zal Ze Leven / Happy Birthday To You: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Lang+Zal+Ze+Leven+%2F+Happy+Birthday+To+You&sortby=17&ds=50&an=Anouk+Kruithof after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Lang+Zal+Ze+Leven+%2F+Happy+Birthday+To+You&sortby=17&ds=50&an=Anouk+Kruithof",
+    "abebooks target Araki, Nobuyoshi / A Winter Journey: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=A+Winter+Journey&sortby=17&ds=50&an=Araki%2C+Nobuyoshi after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=A+Winter+Journey&sortby=17&ds=50&an=Araki%2C+Nobuyoshi",
+    "abebooks target Beard, Richard / London Labour: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=London+Labour&sortby=17&ds=50&an=Beard%2C+Richard after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=London+Labour&sortby=17&ds=50&an=Beard%2C+Richard",
+    "abebooks target Becher, Bernd and Hilla / Anonyme Skulpturen: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Anonyme+Skulpturen&sortby=17&ds=50&an=Becher%2C+Bernd after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Anonyme+Skulpturen&sortby=17&ds=50&an=Becher%2C+Bernd",
+    "abebooks target Bischof, Werner / indiens pas mort: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=indiens+pas+mort&sortby=17&ds=50&an=Bischof%2C+Werner after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=indiens+pas+mort&sortby=17&ds=50&an=Bischof%2C+Werner",
+    "abebooks target Bourke-White, Margaret / Eyes on Russia: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Eyes+on+Russia&sortby=17&ds=50&an=Bourke-White%2C+Margaret after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Eyes+on+Russia&sortby=17&ds=50&an=Bourke-White%2C+Margaret",
+    "abebooks target Bourneville, Désiré / Regnard, Paul / Iconographie photographique de la Salpêtrière: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Iconographie+photographique+de+la+Salp%C3%AAtri%C3%A8re&sortby=17&ds=50&an=Bourneville%2C+D%C3%A9sir%C3%A9 after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Iconographie+photographique+de+la+Salp%C3%AAtri%C3%A8re&sortby=17&ds=50&an=Bourneville%2C+D%C3%A9sir%C3%A9",
+    "abebooks target Brassaï / Séville en fête: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=S%C3%A9ville+en+f%C3%AAte&sortby=17&ds=50&an=Brassa%C3%AF after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=S%C3%A9ville+en+f%C3%AAte&sortby=17&ds=50&an=Brassa%C3%AF",
+    "abebooks target Brassaï / The Secret Paris of the Thirties: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=The+Secret+Paris+of+the+Thirties&sortby=17&ds=50&an=Brassa%C3%AF after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=The+Secret+Paris+of+the+Thirties&sortby=17&ds=50&an=Brassa%C3%AF",
+    "abebooks target Brassaï / Voluptés de paris: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Volupt%C3%A9s+de+paris&sortby=17&ds=50&an=Brassa%C3%AF after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Volupt%C3%A9s+de+paris&sortby=17&ds=50&an=Brassa%C3%AF",
+    "abebooks target Burri, René / Les Allemands: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Les+Allemands&sortby=17&ds=50&an=Burri%2C+Ren%C3%A9 after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Les+Allemands&sortby=17&ds=50&an=Burri%2C+Ren%C3%A9",
+    "abebooks target Callahan, Harry / Water's Edge: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Water%27s+Edge&sortby=17&ds=50&an=Callahan%2C+Harry after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Water%27s+Edge&sortby=17&ds=50&an=Callahan%2C+Harry",
+    "abebooks target Carlos Guimaraes / Resistencia Popular Generalizada: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Resistencia+Popular+Generalizada&sortby=17&ds=50&an=Carlos+Guimaraes after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Resistencia+Popular+Generalizada&sortby=17&ds=50&an=Carlos+Guimaraes",
+    "abebooks target Carrieri, Mario / Milano, Italia: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Milano%2C+Italia&sortby=17&ds=50&an=Carrieri%2C+Mario after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Milano%2C+Italia&sortby=17&ds=50&an=Carrieri%2C+Mario",
+    "abebooks target Cartier-Bresson, Henri / Les Danses a bali: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Les+Danses+a+bali&sortby=17&ds=50&an=Cartier-Bresson%2C+Henri after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Les+Danses+a+bali&sortby=17&ds=50&an=Cartier-Bresson%2C+Henri",
+    "abebooks target Clark, Larry / Teenage Lust: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Teenage+Lust&sortby=17&ds=50&an=Clark%2C+Larry after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Teenage+Lust&sortby=17&ds=50&an=Clark%2C+Larry",
+    "abebooks target Clergue, Lucien / Corps mémorables: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Corps+m%C3%A9morables&sortby=17&ds=50&an=Clergue%2C+Lucien after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Corps+m%C3%A9morables&sortby=17&ds=50&an=Clergue%2C+Lucien"
+  ],
+  "last_successful_requests": 4,
+  "last_successful_run": "2026-08-25T20:55:50Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
