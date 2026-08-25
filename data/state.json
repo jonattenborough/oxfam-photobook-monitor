@@ -1,7 +1,11 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-08-25T12:48:15Z",
+  "last_successful_fetch": "2026-08-25T13:37:09Z",
   "last_top_skus": [
+    "HD_304191723",
+    "HD_304191685",
+    "HD_304191678",
+    "HD_304191669",
     "HD_304187766",
     "HD_304190950",
     "HD_304145305",
@@ -27,11 +31,7 @@
     "HD_304187523",
     "HD_304187487",
     "HD_304187442",
-    "HD_304187455",
-    "HD_304186778",
-    "HD_304187218",
-    "HD_304187131",
-    "HD_304002522"
+    "HD_304187455"
   ],
   "products": {
     "HD_303805354": {
@@ -1573,6 +1573,70 @@
         "title": "Portrait of an Era: Trinity College Dublin in the 1960's"
       },
       "search_fingerprint": "9b0d303206ef9e9c"
+    },
+    "HD_304191669": {
+      "first_seen": "2026-08-25T13:37:09Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787662127000",
+        "description": "GRAPHITE is a high-end quarterly magazine bringing readers over 100 pages of beautiful and inspiring drawings, sketches, interviews, and tutorials in an elegant periodical format. Each issue combines eclectic, exciting artwork with informative guides and personal insights from industry professionals and talented newcomers. GRAPHITE's luxurious design and in-depth learning resources make it a timeless gift for any art appreciator, and a perfect investment for artists of any skill level or field of interest. In Issue 3, readers learn how to improve their sketching skills, experiment with new drawing techniques, and create better concept designs.",
+        "isbn": null,
+        "price_gbp": 3.99,
+        "product_id": "book-HD__304191669",
+        "publisher": null,
+        "route": "/graphite-3/product/HD_304191669",
+        "sku": "HD_304191669",
+        "title": "GRAPHITE 3"
+      },
+      "search_fingerprint": "6e7711cd776b6329"
+    },
+    "HD_304191678": {
+      "first_seen": "2026-08-25T13:37:09Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787662162000",
+        "description": "GRAPHITE is the new quarterly magazine by 3dtotal Publishing, bringing artists and art lovers over 100 pages of inspirational drawings, sketches, interviews and tutorials in an elegant periodical format. Combining eclectic, exciting artwork with informative guides and personal insights from both industry professionals and talented newcomers, GRAPHITE's luxurious design and timeless content make it a perfect investment for any artist.",
+        "isbn": null,
+        "price_gbp": 3.99,
+        "product_id": "book-HD__304191678",
+        "publisher": null,
+        "route": "/graphite-2/product/HD_304191678",
+        "sku": "HD_304191678",
+        "title": "GRAPHITE 2"
+      },
+      "search_fingerprint": "145ffd8a482f7c1d"
+    },
+    "HD_304191685": {
+      "first_seen": "2026-08-25T13:37:09Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787662224000",
+        "description": "A look at the boxes designed by M.C. Escher",
+        "isbn": null,
+        "price_gbp": 16.99,
+        "product_id": "book-HD__304191685",
+        "publisher": null,
+        "route": "/mcescher-book-of-boxes/product/HD_304191685",
+        "sku": "HD_304191685",
+        "title": "M.C.Escher Book of Boxes"
+      },
+      "search_fingerprint": "9349431551b3e62d"
+    },
+    "HD_304191723": {
+      "first_seen": "2026-08-25T13:37:09Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787662552000",
+        "description": "Any ocean lover knows the transformative power of the ocean wave and its perfect confluence of energy, water, and light. Waves offers a mesmerizing collection of photography that explores the many faces of the singular ocean wave, whether it is the quiet rush of a crystalline wavelet over tropical sand or the deadly slam of storm surf against Oregon cliffs. Former editor of Surfer magazine, Steve Hawk has selected photographs from New Zealand to Newfoundland, from Fiji to the Aleutians, and paired them with insightful ruminations on the science and poetry of waves. With work from world-renowned photographers such as Art Brewer, Jeff Divine, Wayne Levin, and Joel Meyerowitz, Waves will captivate all those with a passion for the sea.",
+        "isbn": null,
+        "price_gbp": 7.99,
+        "product_id": "book-HD__304191723",
+        "publisher": null,
+        "route": "/waves/product/HD_304191723",
+        "sku": "HD_304191723",
+        "title": "Waves"
+      },
+      "search_fingerprint": "2b157d165ccb5779"
     }
   },
   "reported_category_count": 2788,
