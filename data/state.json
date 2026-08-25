@@ -1,7 +1,10 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-08-25T08:24:57Z",
+  "last_successful_fetch": "2026-08-25T10:53:59Z",
   "last_top_skus": [
+    "HD_304190062",
+    "HD_304119769",
+    "HD_304189895",
     "HD_304189359",
     "HD_304188858",
     "HD_304189108",
@@ -28,10 +31,7 @@
     "HD_304186116",
     "HD_304186082",
     "HD_304185721",
-    "HD_304185631",
-    "HD_304185612",
-    "HD_304185510",
-    "HD_304185028"
+    "HD_304185631"
   ],
   "products": {
     "HD_303805354": {
@@ -81,6 +81,22 @@
         "title": "sami guner objektifinden"
       },
       "search_fingerprint": "80a02a63aa7e1c66"
+    },
+    "HD_304119769": {
+      "first_seen": "2026-08-25T10:53:59Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787650561000",
+        "description": "This book is in good to very good condition. There are some minor signs of wear to the dust jacket, such as rubbed edges and a couple of small closed tears. There is also a large crease to the bottom edge. Otherwise the books is smart, with hardly any wear to the black cloth boards. There is a gift plate glued to the front free endpaper, and the glue has seeped through to the other side of the paper . Otherwise, the pages are clean and fresh throughout. The binding is tight and sound. This appears to be a first edition published in 1989.<br/><br/>This book provides a retrospective of Canadian photographer Yousuf Karsh's portraiture as well as the development of portraiture throughout the twentieth century until the pre-digital era. Published by the National Gallery of Canada, the book contains plates, essays, a catalogue and biographical notes to give insights into the full range of Karsh's life and work.",
+        "isbn": null,
+        "price_gbp": 9.99,
+        "product_id": "book-HD__304119769",
+        "publisher": null,
+        "route": "/karsh-the-art-of-the-portrait/product/HD_304119769",
+        "sku": "HD_304119769",
+        "title": "Karsh: The Art of the Portrait"
+      },
+      "search_fingerprint": "13e57174346d1157"
     },
     "HD_304120308": {
       "first_seen": "baseline",
@@ -1413,8 +1429,40 @@
         "title": "André Villers - An Exhibition at Michael Hoppen Gallery, London, in 2006"
       },
       "search_fingerprint": "1a10213f7da469ee"
+    },
+    "HD_304189895": {
+      "first_seen": "2026-08-25T10:53:59Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787649662000",
+        "description": "Book showcasing the works of students at the Royal College of Art.",
+        "isbn": null,
+        "price_gbp": 19.99,
+        "product_id": "book-HD__304189895",
+        "publisher": null,
+        "route": "/royal-college-of-art-photographic-practice-2008/product/HD_304189895",
+        "sku": "HD_304189895",
+        "title": "Royal College of Art, Photographic Practice 2008"
+      },
+      "search_fingerprint": "52411d53ad84762b"
+    },
+    "HD_304190062": {
+      "first_seen": "2026-08-25T10:53:59Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787650799000",
+        "description": "A commentary on the operas of Wagner, first published in 1949, which examines, describes and judges each opera from \"The Flying Dutchman\" to \"Parsifal\".",
+        "isbn": null,
+        "price_gbp": 3.99,
+        "product_id": "book-HD__304190062",
+        "publisher": null,
+        "route": "/wagner-nights/product/HD_304190062",
+        "sku": "HD_304190062",
+        "title": "Wagner Nights"
+      },
+      "search_fingerprint": "3016c90bdc9db144"
     }
   },
-  "reported_category_count": 2787,
+  "reported_category_count": 2785,
   "version": 1
 }
