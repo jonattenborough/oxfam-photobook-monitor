@@ -1,11 +1,14 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-08-25T13:37:09Z",
+  "last_successful_fetch": "2026-08-25T15:21:44Z",
   "last_top_skus": [
+    "HD_304191552",
+    "HD_304191618",
+    "HD_304191817",
+    "HD_304191739",
+    "HD_304191922",
     "HD_304191723",
     "HD_304191685",
-    "HD_304191678",
-    "HD_304191669",
     "HD_304187766",
     "HD_304190950",
     "HD_304145305",
@@ -28,10 +31,7 @@
     "HD_304188344",
     "HD_304188047",
     "HD_304187574",
-    "HD_304187523",
-    "HD_304187487",
-    "HD_304187442",
-    "HD_304187455"
+    "HD_304187523"
   ],
   "products": {
     "HD_303805354": {
@@ -1574,6 +1574,38 @@
       },
       "search_fingerprint": "9b0d303206ef9e9c"
     },
+    "HD_304191552": {
+      "first_seen": "2026-08-25T15:21:44Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787666384000",
+        "description": "Well-captioned old photographs of Ilkley in Yorkshire.<br/><br/>Booklet with pictorial card covers. Staple binding. Light bumping.No inscriptions. Illustrated in b&w.",
+        "isbn": null,
+        "price_gbp": null,
+        "product_id": "book-HD__304191552",
+        "publisher": null,
+        "route": "/images-of-ilkley-in-the-19th-and-20th-centuries/product/HD_304191552",
+        "sku": "HD_304191552",
+        "title": "Images of Ilkley in the 19th and 20th Centuries"
+      },
+      "search_fingerprint": "6a1d41e36779a7cf"
+    },
+    "HD_304191618": {
+      "first_seen": "2026-08-25T15:21:44Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787666383000",
+        "description": "A Thoresby Society Occasional Publication. Introduction by A. R. Budge. Includes : Leeds Tramways 1871-1959 by J. Bushell ; The Mexborough Arms, Potternewton by S. Burt ; Kirkstall Forge by J.M. Collinson, et al.<br/><br/>Pictorial card covers. Staple binding. Light bumping. No inscriptions. Illustrated in b&w - ca 40 illustrations. Unpaginated. Undated",
+        "isbn": null,
+        "price_gbp": null,
+        "product_id": "book-HD__304191618",
+        "publisher": null,
+        "route": "/lantern-slide-leeds/product/HD_304191618",
+        "sku": "HD_304191618",
+        "title": "Lantern Slide Leeds"
+      },
+      "search_fingerprint": "82d6182ec8b17b2f"
+    },
     "HD_304191669": {
       "first_seen": "2026-08-25T13:37:09Z",
       "last_snapshot": {
@@ -1637,8 +1669,56 @@
         "title": "Waves"
       },
       "search_fingerprint": "2b157d165ccb5779"
+    },
+    "HD_304191739": {
+      "first_seen": "2026-08-25T15:21:44Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787666358000",
+        "description": "Illustrated guide to the War monument at Edinburgh castle, with many illustrations and text. Foreword by Major Blackburn. <br/><br/>Brown card covers (stained) with red lettering and cover decoration. Corners bumped. Pictorial dust jacket, torn. No inscriptions. Illustrated in b&w. Tight spine. Unpaginated. Undated (ca 1927)<br/>",
+        "isbn": null,
+        "price_gbp": null,
+        "product_id": "book-HD__304191739",
+        "publisher": null,
+        "route": "/the-scottish-national-war-memorial-at-the-castle-of-edinburgh/product/HD_304191739",
+        "sku": "HD_304191739",
+        "title": "The Scottish National War Memorial at the Castle of Edinburgh"
+      },
+      "search_fingerprint": "3a921b5483f819d9"
+    },
+    "HD_304191817": {
+      "first_seen": "2026-08-25T15:21:44Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787666383000",
+        "description": "Laminated pictorial card covers. Staple binding. Light bumping. lllustrated in b&w. Tight spine. Unpaginated",
+        "isbn": null,
+        "price_gbp": null,
+        "product_id": "book-HD__304191817",
+        "publisher": null,
+        "route": "/halifax-as-it-was/product/HD_304191817",
+        "sku": "HD_304191817",
+        "title": "Halifax as it Was"
+      },
+      "search_fingerprint": "2572c548ec3ad3f0"
+    },
+    "HD_304191922": {
+      "first_seen": "2026-08-25T15:21:44Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787664484000",
+        "description": "Softback. Good+ condition. Mild rubbing to edges. Internally clean with no inscriptions. Illustrated with black & white photographs. <br/><br/>A towering figure in twentieth-century photography, Weston sought to awaken human vision. His restless quest for beauty and the mystical presence behind it created a body of work unrivaled in the medium.For more than fifteen years, Edward Weston kept a diary in which he recorded his struggle to understand himself, his society, and his medium. Seldom has an artist written about his life as vividly, intimately, or sensitively. His journal has become a classic of photographic literature.<br/><br/>",
+        "isbn": null,
+        "price_gbp": 20.0,
+        "product_id": "book-HD__304191922",
+        "publisher": null,
+        "route": "/the-daybooks-of-edward-weston-two-volumes-in-one-1-mexico-2-california/product/HD_304191922",
+        "sku": "HD_304191922",
+        "title": "The Daybooks of Edward Weston. Two Volumes In One. 1 : Mexico. 2  : California."
+      },
+      "search_fingerprint": "040adca6090d4b3c"
     }
   },
-  "reported_category_count": 2788,
+  "reported_category_count": 2787,
   "version": 1
 }
