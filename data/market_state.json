@@ -1,11 +1,11 @@
 {
-  "cursor": 496,
+  "cursor": 520,
   "feeds": {
     "photobookstore": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 250,
-      "last_successful_fetch": "2026-08-25T19:08:31Z",
+      "last_successful_fetch": "2026-08-25T19:55:33Z",
       "seen": [
         "photobookstore:15970158444917",
         "photobookstore:15834487521653",
@@ -265,7 +265,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 231,
-      "last_successful_fetch": "2026-08-25T19:08:31Z",
+      "last_successful_fetch": "2026-08-25T19:55:33Z",
       "seen": [
         "setanta:16055810523518",
         "setanta:16055650910590",
@@ -510,7 +510,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 86,
-      "last_successful_fetch": "2026-08-25T19:08:31Z",
+      "last_successful_fetch": "2026-08-25T19:55:33Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -604,7 +604,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 207,
-      "last_successful_fetch": "2026-08-25T19:08:31Z",
+      "last_successful_fetch": "2026-08-25T19:55:33Z",
       "seen": [
         "village:10371020095770",
         "village:10373810258202",
@@ -822,7 +822,7 @@
   },
   "last_failures": [],
   "last_successful_requests": 28,
-  "last_successful_run": "2026-08-25T19:08:31Z",
+  "last_successful_run": "2026-08-25T19:55:33Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
@@ -15051,7 +15051,7 @@
     "abebooks|van der elsken ed|jazz": {
       "first_successful_fetch": "2026-08-23T08:57:30Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T15:10:07Z",
+      "last_successful_fetch": "2026-08-25T19:55:33Z",
       "seen": [
         "abebooks:31624225162",
         "abebooks:9789065790866",
@@ -15109,7 +15109,7 @@
     "abebooks|van der elsken ed|sweet life": {
       "first_successful_fetch": "2026-08-23T08:57:30Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T15:10:07Z",
+      "last_successful_fetch": "2026-08-25T19:55:33Z",
       "seen": [
         "abebooks:32407412822",
         "abebooks:32231338759",
@@ -15185,7 +15185,7 @@
     "abebooks|van der keuken johan joan|achter glas": {
       "first_successful_fetch": "2026-08-23T08:57:30Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T15:10:07Z",
+      "last_successful_fetch": "2026-08-25T19:55:33Z",
       "seen": [
         "abebooks:31735811624",
         "abebooks:32374236404",
@@ -15197,19 +15197,20 @@
     "abebooks|van der keuken johan joan|paris mortel": {
       "first_successful_fetch": "2026-08-23T08:57:30Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T15:10:07Z",
+      "last_successful_fetch": "2026-08-25T19:55:33Z",
       "seen": [
         "abebooks:32409856775",
         "abebooks:32435130938",
         "abebooks:32499008725",
-        "abebooks:32403937880",
-        "abebooks:32496283621"
+        "abebooks:32496283621",
+        "abebooks:32482457859",
+        "abebooks:32403937880"
       ]
     },
     "abebooks|van der keuken johan joan|wij zijn 17": {
       "first_successful_fetch": "2026-08-23T08:57:30Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T16:03:48Z",
+      "last_successful_fetch": "2026-08-25T19:55:33Z",
       "seen": [
         "abebooks:32434603218",
         "abebooks:32445323973",
@@ -15221,7 +15222,7 @@
     "abebooks|various photographers|1999 the quake": {
       "first_successful_fetch": "2026-08-23T08:57:30Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T16:03:48Z",
+      "last_successful_fetch": "2026-08-25T19:55:33Z",
       "seen": [
         "abebooks:32465884127",
         "abebooks:32474409868",
@@ -15233,32 +15234,35 @@
     "abebooks|various photographers|brycha 1945 1948 home through the vale of tears": {
       "first_successful_fetch": "2026-08-23T08:57:30Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T16:03:48Z",
+      "last_successful_fetch": "2026-08-25T19:55:33Z",
       "seen": [
         "abebooks:32403370291",
-        "abebooks:32390002454",
-        "abebooks:32318686394",
         "abebooks:32274381435",
-        "abebooks:32467111960"
+        "abebooks:32467111960",
+        "abebooks:32436607783",
+        "abebooks:32146087699",
+        "abebooks:32390002454",
+        "abebooks:32318686394"
       ]
     },
     "abebooks|various photographers|mexico y su evolucion economica mexico and its economic evolution": {
       "first_successful_fetch": "2026-08-23T09:52:25Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T16:03:48Z",
+      "last_successful_fetch": "2026-08-25T19:55:33Z",
       "seen": [
-        "abebooks:32491043371",
         "abebooks:32250330509",
+        "abebooks:32471983464",
         "abebooks:32243914105",
         "abebooks:31151741910",
         "abebooks:31146219385",
+        "abebooks:32491043371",
         "abebooks:32072156401"
       ]
     },
     "abebooks|various photographers|nein onkel": {
       "first_successful_fetch": "2026-08-23T09:52:25Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T16:03:48Z",
+      "last_successful_fetch": "2026-08-25T19:55:33Z",
       "seen": [
         "abebooks:32428419068",
         "abebooks:32417885260",
@@ -15271,33 +15275,35 @@
     "abebooks|various photographers|the extermination of polish jewry album of pictures": {
       "first_successful_fetch": "2026-08-23T09:52:25Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T16:03:48Z",
+      "last_successful_fetch": "2026-08-25T19:55:33Z",
       "seen": [
         "abebooks:32403270182",
         "abebooks:32483805735",
         "abebooks:32450207713",
-        "abebooks:32397790436",
-        "abebooks:32469376307"
+        "abebooks:32469376307",
+        "abebooks:32397790436"
       ]
     },
     "abebooks|various|10 21 to ha nanika what is 10 21": {
       "first_successful_fetch": "2026-08-23T08:57:30Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T16:03:48Z",
+      "last_successful_fetch": "2026-08-25T19:55:33Z",
       "seen": [
-        "abebooks:32282505670",
         "abebooks:32416587205",
         "abebooks:31372098780",
         "abebooks:32476852494",
-        "abebooks:32405229538"
+        "abebooks:32405229538",
+        "abebooks:32375959953",
+        "abebooks:32282505670"
       ]
     },
     "abebooks|ver mai moshe raviv vorobeichic|ein ghetto im osten wilna": {
       "first_successful_fetch": "2026-08-23T09:52:25Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T16:03:48Z",
+      "last_successful_fetch": "2026-08-25T19:55:33Z",
       "seen": [
         "abebooks:32502669421",
+        "abebooks:32485779921",
         "abebooks:32387398525",
         "abebooks:32492291311",
         "abebooks:32359591142",
@@ -15319,7 +15325,7 @@
     "abebooks|viviane sassen|flamboya": {
       "first_successful_fetch": "2026-08-23T09:52:25Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T16:03:48Z",
+      "last_successful_fetch": "2026-08-25T19:55:33Z",
       "seen": [
         "abebooks:30809215099",
         "abebooks:9788869651397",
@@ -15336,7 +15342,7 @@
     "abebooks|volker heinze|ahnung": {
       "first_successful_fetch": "2026-08-23T09:52:25Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T16:03:48Z",
+      "last_successful_fetch": "2026-08-25T19:55:33Z",
       "seen": [
         "abebooks:15685335104",
         "abebooks:31320784417",
@@ -15346,7 +15352,7 @@
     "abebooks|walter niedermayr|reservate des augenblicks momentary resorts": {
       "first_successful_fetch": "2026-08-23T09:52:25Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T16:03:48Z",
+      "last_successful_fetch": "2026-08-25T19:55:33Z",
       "seen": [
         "abebooks:31997454940",
         "abebooks:9783893229628",
@@ -15369,7 +15375,7 @@
     "abebooks|watabe yukichi|a criminal investigation": {
       "first_successful_fetch": "2026-08-23T09:52:25Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T16:03:48Z",
+      "last_successful_fetch": "2026-08-25T19:55:33Z",
       "seen": [
         "abebooks:32501105835",
         "abebooks:9782915173826",
@@ -15384,7 +15390,7 @@
     "abebooks|watkins carleton e whitney josiah dwight|the yosemite book": {
       "first_successful_fetch": "2026-08-23T09:52:25Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T16:03:48Z",
+      "last_successful_fetch": "2026-08-25T19:55:33Z",
       "seen": [
         "abebooks:31727023302"
       ]
@@ -15392,7 +15398,7 @@
     "abebooks|weegee|naked city": {
       "first_successful_fetch": "2026-08-23T09:52:25Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T16:03:48Z",
+      "last_successful_fetch": "2026-08-25T19:55:33Z",
       "seen": [
         "abebooks:32498700471",
         "abebooks:9780306812040",
@@ -15403,14 +15409,11 @@
         "abebooks:32500875475",
         "abebooks:9780306802416",
         "abebooks:54448258",
-        "abebooks:32502252872",
-        "abebooks:9788862086950",
-        "abebooks:50531827",
+        "abebooks:31755852652",
+        "abebooks:51283250",
         "abebooks:32480216615",
         "abebooks:22628631302",
         "abebooks:32495393993",
-        "abebooks:31755852652",
-        "abebooks:51283250",
         "abebooks:32494981667",
         "abebooks:21454934432",
         "abebooks:9749853920",
@@ -15450,13 +15453,16 @@
         "abebooks:30260006664",
         "abebooks:17751921903",
         "abebooks:32081166824",
+        "abebooks:32502252872",
+        "abebooks:9788862086950",
+        "abebooks:50531827",
         "abebooks:32491023914"
       ]
     },
     "abebooks|wendy ewald|portraits and dreams": {
       "first_successful_fetch": "2026-08-23T09:52:25Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T16:03:48Z",
+      "last_successful_fetch": "2026-08-25T19:55:33Z",
       "seen": [
         "abebooks:32495710109",
         "abebooks:9780863160882",
@@ -15476,6 +15482,7 @@
         "abebooks:9781912339891",
         "abebooks:31447574271",
         "abebooks:31967023679",
+        "abebooks:32412945762",
         "abebooks:32127447705",
         "abebooks:32409843065",
         "abebooks:31566183041",
@@ -15492,7 +15499,7 @@
     "abebooks|wessing koen|chili september 1973": {
       "first_successful_fetch": "2026-08-23T09:52:25Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T16:03:48Z",
+      "last_successful_fetch": "2026-08-25T19:55:33Z",
       "seen": [
         "abebooks:31374108948",
         "abebooks:9781935004141",
@@ -15535,32 +15542,32 @@
     "abebooks|will mcbride|show me": {
       "first_successful_fetch": "2026-08-23T09:52:25Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T16:03:48Z",
+      "last_successful_fetch": "2026-08-25T19:55:33Z",
       "seen": [
-        "abebooks:32081883860",
         "abebooks:32455908304",
         "abebooks:32135822827",
         "abebooks:31924602025",
+        "abebooks:32081883860",
         "abebooks:32318560317"
       ]
     },
     "abebooks|william eggleston|african realty trust pty limited": {
       "first_successful_fetch": "2026-08-23T09:52:25Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T16:03:48Z",
+      "last_successful_fetch": "2026-08-25T19:55:33Z",
       "seen": [
-        "abebooks:32453178234",
         "abebooks:32503289354",
         "abebooks:32328440462",
         "abebooks:32184337493",
         "abebooks:32456409541",
-        "abebooks:32473126929"
+        "abebooks:32473126929",
+        "abebooks:32453178234"
       ]
     },
     "abebooks|william eggleston|inside the house of hanover": {
       "first_successful_fetch": "2026-08-23T09:52:25Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T16:03:48Z",
+      "last_successful_fetch": "2026-08-25T19:55:33Z",
       "seen": [
         "abebooks:32482605678",
         "abebooks:32491932243",
@@ -15572,7 +15579,7 @@
     "abebooks|winogrand garry|the animals": {
       "first_successful_fetch": "2026-08-23T09:52:25Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T16:03:48Z",
+      "last_successful_fetch": "2026-08-25T19:55:33Z",
       "seen": [
         "abebooks:32030271081",
         "abebooks:31461406440",
