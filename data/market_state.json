@@ -1,11 +1,11 @@
 {
-  "cursor": 544,
+  "cursor": 568,
   "feeds": {
     "photobookstore": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 250,
-      "last_successful_fetch": "2026-08-25T20:55:50Z",
+      "last_successful_fetch": "2026-08-25T21:53:11Z",
       "seen": [
         "photobookstore:15970158444917",
         "photobookstore:15834487521653",
@@ -265,7 +265,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 231,
-      "last_successful_fetch": "2026-08-25T20:55:50Z",
+      "last_successful_fetch": "2026-08-25T21:53:11Z",
       "seen": [
         "setanta:16055810523518",
         "setanta:16055650910590",
@@ -510,7 +510,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 86,
-      "last_successful_fetch": "2026-08-25T20:55:50Z",
+      "last_successful_fetch": "2026-08-25T21:53:11Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -603,8 +603,8 @@
     "village": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
-      "last_count": 207,
-      "last_successful_fetch": "2026-08-25T20:55:50Z",
+      "last_count": 206,
+      "last_successful_fetch": "2026-08-25T21:53:11Z",
       "seen": [
         "village:10371020095770",
         "village:10373810258202",
@@ -628,7 +628,6 @@
         "village:10367495340314",
         "village:10367391924506",
         "village:10367308267802",
-        "village:10367317803290",
         "village:10366904664346",
         "village:10366901780762",
         "village:10365703749914",
@@ -813,6 +812,7 @@
         "village:10278052430106",
         "village:10277989089562",
         "village:10278021890330",
+        "village:10367317803290",
         "village:10278042632474",
         "village:10278013174042",
         "village:9889685209370",
@@ -820,34 +820,9 @@
       ]
     }
   },
-  "last_failures": [
-    "abebooks target Wolfgang Schmidt / Oh Ihr Verdammten Arschlocher: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Oh+Ihr+Verdammten+Arschlocher&sortby=17&ds=50&an=Wolfgang+Schmidt after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Oh+Ihr+Verdammten+Arschlocher&sortby=17&ds=50&an=Wolfgang+Schmidt",
-    "abebooks target Wolfgang Tillmans / Concorde: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Concorde&sortby=17&ds=50&an=Wolfgang+Tillmans after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Concorde&sortby=17&ds=50&an=Wolfgang+Tillmans",
-    "abebooks target Xu Yong / Xiaofangjia Hutong: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Xiaofangjia+Hutong&sortby=17&ds=50&an=Xu+Yong after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Xiaofangjia+Hutong&sortby=17&ds=50&an=Xu+Yong",
-    "abebooks target Yasuhiko Uchihara / Son of a bit: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Son+of+a+bit&sortby=17&ds=50&an=Yasuhiko+Uchihara after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Son+of+a+bit&sortby=17&ds=50&an=Yasuhiko+Uchihara",
-    "abebooks target Yoshikazu Suzuki / Shohachi Kimura / Ginza Kaiwai / Ginza Haccho: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Ginza+Kaiwai+%2F+Ginza+Haccho&sortby=17&ds=50&an=Yoshikazu+Suzuki after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Ginza+Kaiwai+%2F+Ginza+Haccho&sortby=17&ds=50&an=Yoshikazu+Suzuki",
-    "abebooks target Yves Marchand & Romain Meffre / The Ruins of Detroit: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=The+Ruins+of+Detroit&sortby=17&ds=50&an=Yves+Marchand+%26+Romain+Meffre after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=The+Ruins+of+Detroit&sortby=17&ds=50&an=Yves+Marchand+%26+Romain+Meffre",
-    "abebooks target Anonymous / Chile ayer hoy / yesterday today / hier aujourd'hui: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Chile+ayer+hoy+%2F+yesterday+today+%2F+hier+aujourd%27hui&sortby=17&ds=50&an=Anonymous after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Chile+ayer+hoy+%2F+yesterday+today+%2F+hier+aujourd%27hui&sortby=17&ds=50&an=Anonymous",
-    "abebooks target Anouk Kruithof / Lang Zal Ze Leven / Happy Birthday To You: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Lang+Zal+Ze+Leven+%2F+Happy+Birthday+To+You&sortby=17&ds=50&an=Anouk+Kruithof after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Lang+Zal+Ze+Leven+%2F+Happy+Birthday+To+You&sortby=17&ds=50&an=Anouk+Kruithof",
-    "abebooks target Araki, Nobuyoshi / A Winter Journey: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=A+Winter+Journey&sortby=17&ds=50&an=Araki%2C+Nobuyoshi after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=A+Winter+Journey&sortby=17&ds=50&an=Araki%2C+Nobuyoshi",
-    "abebooks target Beard, Richard / London Labour: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=London+Labour&sortby=17&ds=50&an=Beard%2C+Richard after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=London+Labour&sortby=17&ds=50&an=Beard%2C+Richard",
-    "abebooks target Becher, Bernd and Hilla / Anonyme Skulpturen: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Anonyme+Skulpturen&sortby=17&ds=50&an=Becher%2C+Bernd after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Anonyme+Skulpturen&sortby=17&ds=50&an=Becher%2C+Bernd",
-    "abebooks target Bischof, Werner / indiens pas mort: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=indiens+pas+mort&sortby=17&ds=50&an=Bischof%2C+Werner after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=indiens+pas+mort&sortby=17&ds=50&an=Bischof%2C+Werner",
-    "abebooks target Bourke-White, Margaret / Eyes on Russia: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Eyes+on+Russia&sortby=17&ds=50&an=Bourke-White%2C+Margaret after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Eyes+on+Russia&sortby=17&ds=50&an=Bourke-White%2C+Margaret",
-    "abebooks target Bourneville, Désiré / Regnard, Paul / Iconographie photographique de la Salpêtrière: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Iconographie+photographique+de+la+Salp%C3%AAtri%C3%A8re&sortby=17&ds=50&an=Bourneville%2C+D%C3%A9sir%C3%A9 after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Iconographie+photographique+de+la+Salp%C3%AAtri%C3%A8re&sortby=17&ds=50&an=Bourneville%2C+D%C3%A9sir%C3%A9",
-    "abebooks target Brassaï / Séville en fête: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=S%C3%A9ville+en+f%C3%AAte&sortby=17&ds=50&an=Brassa%C3%AF after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=S%C3%A9ville+en+f%C3%AAte&sortby=17&ds=50&an=Brassa%C3%AF",
-    "abebooks target Brassaï / The Secret Paris of the Thirties: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=The+Secret+Paris+of+the+Thirties&sortby=17&ds=50&an=Brassa%C3%AF after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=The+Secret+Paris+of+the+Thirties&sortby=17&ds=50&an=Brassa%C3%AF",
-    "abebooks target Brassaï / Voluptés de paris: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Volupt%C3%A9s+de+paris&sortby=17&ds=50&an=Brassa%C3%AF after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Volupt%C3%A9s+de+paris&sortby=17&ds=50&an=Brassa%C3%AF",
-    "abebooks target Burri, René / Les Allemands: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Les+Allemands&sortby=17&ds=50&an=Burri%2C+Ren%C3%A9 after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Les+Allemands&sortby=17&ds=50&an=Burri%2C+Ren%C3%A9",
-    "abebooks target Callahan, Harry / Water's Edge: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Water%27s+Edge&sortby=17&ds=50&an=Callahan%2C+Harry after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Water%27s+Edge&sortby=17&ds=50&an=Callahan%2C+Harry",
-    "abebooks target Carlos Guimaraes / Resistencia Popular Generalizada: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Resistencia+Popular+Generalizada&sortby=17&ds=50&an=Carlos+Guimaraes after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Resistencia+Popular+Generalizada&sortby=17&ds=50&an=Carlos+Guimaraes",
-    "abebooks target Carrieri, Mario / Milano, Italia: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Milano%2C+Italia&sortby=17&ds=50&an=Carrieri%2C+Mario after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Milano%2C+Italia&sortby=17&ds=50&an=Carrieri%2C+Mario",
-    "abebooks target Cartier-Bresson, Henri / Les Danses a bali: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Les+Danses+a+bali&sortby=17&ds=50&an=Cartier-Bresson%2C+Henri after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Les+Danses+a+bali&sortby=17&ds=50&an=Cartier-Bresson%2C+Henri",
-    "abebooks target Clark, Larry / Teenage Lust: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Teenage+Lust&sortby=17&ds=50&an=Clark%2C+Larry after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Teenage+Lust&sortby=17&ds=50&an=Clark%2C+Larry",
-    "abebooks target Clergue, Lucien / Corps mémorables: Failed to fetch https://www.abebooks.co.uk/servlet/SearchResults?tn=Corps+m%C3%A9morables&sortby=17&ds=50&an=Clergue%2C+Lucien after 3 attempts: HTTP 202 from https://www.abebooks.co.uk/servlet/SearchResults?tn=Corps+m%C3%A9morables&sortby=17&ds=50&an=Clergue%2C+Lucien"
-  ],
-  "last_successful_requests": 4,
-  "last_successful_run": "2026-08-25T20:55:50Z",
+  "last_failures": [],
+  "last_successful_requests": 28,
+  "last_successful_run": "2026-08-25T21:53:11Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
@@ -4040,7 +4015,7 @@
     "abebooks|coburn alvin langdon|london": {
       "first_successful_fetch": "2026-08-23T10:50:04Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T17:04:44Z",
+      "last_successful_fetch": "2026-08-25T21:53:11Z",
       "seen": [
         "abebooks:32491546056",
         "abebooks:32491556805",
@@ -4344,7 +4319,7 @@
     "abebooks|dash snow|gang bang at ground zero": {
       "first_successful_fetch": "2026-08-23T10:50:04Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T17:04:44Z",
+      "last_successful_fetch": "2026-08-25T21:53:11Z",
       "seen": [
         "abebooks:32477328453",
         "abebooks:32438704370",
@@ -4543,7 +4518,7 @@
     "abebooks|davis theodore m|the tombs of harmhabi and touatankhamanou": {
       "first_successful_fetch": "2026-08-23T10:50:04Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T17:04:44Z",
+      "last_successful_fetch": "2026-08-25T21:53:11Z",
       "seen": [
         "abebooks:32470901115",
         "abebooks:9780715630723",
@@ -4552,6 +4527,7 @@
         "abebooks:30639863638",
         "abebooks:31412346087",
         "abebooks:71530190",
+        "abebooks:32503961382",
         "abebooks:22817665387",
         "abebooks:32425621247",
         "abebooks:50563749",
@@ -4583,7 +4559,7 @@
     "abebooks|dayanita singh|sent a letter": {
       "first_successful_fetch": "2026-08-23T10:50:04Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T17:04:44Z",
+      "last_successful_fetch": "2026-08-25T21:53:11Z",
       "seen": [
         "abebooks:32500795705",
         "abebooks:31816240898",
@@ -4808,11 +4784,13 @@
     "abebooks|doisneau robert|les parisiens tels qu ils sont": {
       "first_successful_fetch": "2026-08-23T10:50:04Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T17:57:34Z",
+      "last_successful_fetch": "2026-08-25T21:53:11Z",
       "seen": [
         "abebooks:31728376175",
         "abebooks:65952368",
         "abebooks:32138315232",
+        "abebooks:32459580408",
+        "abebooks:50154680",
         "abebooks:31169524252",
         "abebooks:17592644094",
         "abebooks:31146005228",
@@ -4888,7 +4866,7 @@
     "abebooks|domon ken|tumie chan wa otosan ga shinda": {
       "first_successful_fetch": "2026-08-23T10:50:04Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T17:57:34Z",
+      "last_successful_fetch": "2026-08-25T21:53:11Z",
       "seen": [
         "abebooks:22923094626"
       ]
@@ -5272,7 +5250,7 @@
     "abebooks|ehrenburg ilya lissitsky el|6 provesti o legkikh konstakh": {
       "first_successful_fetch": "2026-08-23T10:50:04Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T17:57:34Z",
+      "last_successful_fetch": "2026-08-25T21:53:11Z",
       "seen": [
         "abebooks:32109031713"
       ]
@@ -5420,7 +5398,7 @@
     "abebooks|emerson peter henry|naturalistic photography for students of the art": {
       "first_successful_fetch": "2026-08-23T10:50:04Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T17:57:34Z",
+      "last_successful_fetch": "2026-08-25T21:53:11Z",
       "seen": [
         "abebooks:32498245071",
         "abebooks:9780405049064",
@@ -5464,7 +5442,7 @@
     "abebooks|emerson peter henry|on english lagoons": {
       "first_successful_fetch": "2026-08-23T11:45:41Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T17:57:34Z",
+      "last_successful_fetch": "2026-08-25T21:53:11Z",
       "seen": [
         "abebooks:32121287705",
         "abebooks:9781248854266",
@@ -5492,13 +5470,14 @@
     "abebooks|emerson peter henry|pictures of east anglia": {
       "first_successful_fetch": "2026-08-23T11:45:41Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T17:57:34Z",
+      "last_successful_fetch": "2026-08-25T21:53:11Z",
       "seen": [
         "abebooks:32337010885",
         "abebooks:32330886309",
-        "abebooks:32476719413",
+        "abebooks:32333838038",
         "abebooks:32255845830",
-        "abebooks:31567415951"
+        "abebooks:31567415951",
+        "abebooks:32476719413"
       ]
     },
     "abebooks|enrique bostelmann|america un viaje a traves de la injusticia america a journey through injustice": {
@@ -5519,7 +5498,7 @@
     "abebooks|erich einhorn pravoslav sovak pavel kohout|marianske lazne": {
       "first_successful_fetch": "2026-08-23T11:45:41Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T17:57:34Z",
+      "last_successful_fetch": "2026-08-25T21:53:11Z",
       "seen": [
         "abebooks:32124527386"
       ]
@@ -5860,7 +5839,7 @@
     "abebooks|felix greene|vietnam vietnam": {
       "first_successful_fetch": "2026-08-23T11:45:41Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T17:57:34Z",
+      "last_successful_fetch": "2026-08-25T21:53:11Z",
       "seen": [
         "abebooks:31597945486",
         "abebooks:82021208",
@@ -5945,7 +5924,7 @@
     "abebooks|ferrier claude marie owen hugh|reports by the juries": {
       "first_successful_fetch": "2026-08-23T11:45:41Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T17:57:34Z",
+      "last_successful_fetch": "2026-08-25T21:53:11Z",
       "seen": [
         "abebooks:32418045592",
         "abebooks:32495800477",
@@ -5991,7 +5970,7 @@
     "abebooks|franco ortolani|la festa del parco lambro": {
       "first_successful_fetch": "2026-08-23T11:45:41Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T17:57:34Z",
+      "last_successful_fetch": "2026-08-25T21:53:11Z",
       "seen": [
         "abebooks:30877720756",
         "abebooks:72313296",
@@ -6059,7 +6038,7 @@
     "abebooks|frank robert|the americans": {
       "first_successful_fetch": "2026-08-23T11:45:41Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T17:57:34Z",
+      "last_successful_fetch": "2026-08-25T21:53:11Z",
       "seen": [
         "abebooks:32503045236",
         "abebooks:9780002552080",
@@ -6067,9 +6046,9 @@
         "abebooks:9364337124",
         "abebooks:31541469818",
         "abebooks:9780028740348",
-        "abebooks:32503214081",
+        "abebooks:32471308751",
         "abebooks:9783865215840",
-        "abebooks:85920211",
+        "abebooks:55753652",
         "abebooks:30049046097",
         "abebooks:70393014",
         "abebooks:22415811370",
@@ -6114,14 +6093,13 @@
         "abebooks:9780948797835",
         "abebooks:65730156",
         "abebooks:32180017267",
-        "abebooks:31900008099",
         "abebooks:32368933487",
         "abebooks:31702313534",
         "abebooks:87258266",
         "abebooks:32348709296",
         "abebooks:32500723667",
-        "abebooks:31351152019",
         "abebooks:32228908193",
+        "abebooks:31351152019",
         "abebooks:32448305088",
         "abebooks:32344302519",
         "abebooks:50067872",
@@ -6140,7 +6118,8 @@
         "abebooks:51145708",
         "abebooks:32134518234",
         "abebooks:65198171",
-        "abebooks:31988782900"
+        "abebooks:31988782900",
+        "abebooks:32137630051"
       ]
     },
     "abebooks|frank robert|the lines of my hand": {
@@ -6222,7 +6201,7 @@
     "abebooks|friedlander lee|self portrait": {
       "first_successful_fetch": "2026-08-23T11:45:41Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T17:57:34Z",
+      "last_successful_fetch": "2026-08-25T21:53:11Z",
       "seen": [
         "abebooks:22852428009",
         "abebooks:9781881616962",
@@ -6370,7 +6349,7 @@
     "abebooks|frith francis|egypt sinai and jerusalem": {
       "first_successful_fetch": "2026-08-23T11:45:41Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T17:57:34Z",
+      "last_successful_fetch": "2026-08-25T21:53:11Z",
       "seen": [
         "abebooks:32476882211",
         "abebooks:32398913397",
@@ -6738,7 +6717,7 @@
     "abebooks|gibson ralph|days at sea": {
       "first_successful_fetch": "2026-08-23T11:45:41Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T17:57:34Z",
+      "last_successful_fetch": "2026-08-25T21:53:11Z",
       "seen": [
         "abebooks:32347955599",
         "abebooks:81756569",
@@ -6764,7 +6743,7 @@
     "abebooks|gibson ralph|deja vu": {
       "first_successful_fetch": "2026-08-23T11:45:41Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T17:57:34Z",
+      "last_successful_fetch": "2026-08-25T21:53:11Z",
       "seen": [
         "abebooks:32482327371",
         "abebooks:9780912810065",
@@ -6790,7 +6769,7 @@
     "abebooks|gibson ralph|the somnambulist": {
       "first_successful_fetch": "2026-08-23T11:45:41Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T17:57:34Z",
+      "last_successful_fetch": "2026-08-25T21:53:11Z",
       "seen": [
         "abebooks:32401002683",
         "abebooks:32462788144",
@@ -6903,7 +6882,7 @@
     "abebooks|gorfunkel v m|moskva rekonstruiruetsya": {
       "first_successful_fetch": "2026-08-23T11:45:41Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T17:57:34Z",
+      "last_successful_fetch": "2026-08-25T21:53:11Z",
       "seen": []
     },
     "abebooks|graff werner|es kommt der neue fotograf": {
@@ -6939,7 +6918,7 @@
     "abebooks|greene john beasley|le nil monuments paysages": {
       "first_successful_fetch": "2026-08-23T11:45:41Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T17:57:34Z",
+      "last_successful_fetch": "2026-08-25T21:53:11Z",
       "seen": [
         "abebooks:32411047240",
         "abebooks:30932467388",
@@ -7010,7 +6989,7 @@
     "abebooks|gutschow arvid|see sand sonne": {
       "first_successful_fetch": "2026-08-23T11:45:41Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T17:57:34Z",
+      "last_successful_fetch": "2026-08-25T21:53:11Z",
       "seen": [
         "abebooks:32493665785",
         "abebooks:31994792177",
@@ -7022,7 +7001,7 @@
     "abebooks|guy tillim|avenue patrice lumumba": {
       "first_successful_fetch": "2026-08-23T11:45:41Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T17:57:34Z",
+      "last_successful_fetch": "2026-08-25T21:53:11Z",
       "seen": [
         "abebooks:32479240239",
         "abebooks:9783791340661",
