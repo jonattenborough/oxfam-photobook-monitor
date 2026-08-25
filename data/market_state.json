@@ -1,11 +1,11 @@
 {
-  "cursor": 88,
+  "cursor": 112,
   "feeds": {
     "photobookstore": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 249,
-      "last_successful_fetch": "2026-08-24T23:46:08Z",
+      "last_successful_fetch": "2026-08-25T01:59:42Z",
       "seen": [
         "photobookstore:15834487521653",
         "photobookstore:15969006715253",
@@ -263,7 +263,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 232,
-      "last_successful_fetch": "2026-08-24T23:46:08Z",
+      "last_successful_fetch": "2026-08-25T01:59:42Z",
       "seen": [
         "setanta:16055650910590",
         "setanta:16055570039166",
@@ -507,7 +507,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 85,
-      "last_successful_fetch": "2026-08-24T23:46:08Z",
+      "last_successful_fetch": "2026-08-25T01:59:42Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -600,7 +600,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 208,
-      "last_successful_fetch": "2026-08-24T23:46:08Z",
+      "last_successful_fetch": "2026-08-25T01:59:42Z",
       "seen": [
         "village:10371039101210",
         "village:10371023995162",
@@ -816,7 +816,7 @@
   },
   "last_failures": [],
   "last_successful_requests": 28,
-  "last_successful_run": "2026-08-24T23:46:08Z",
+  "last_successful_run": "2026-08-25T01:59:42Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
@@ -3449,7 +3449,7 @@
     "abebooks|cela camilo jose maspons oriol ubina julio|toreo de salon": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T17:45:12Z",
+      "last_successful_fetch": "2026-08-25T01:59:42Z",
       "seen": [
         "abebooks:31782980050",
         "abebooks:82614946",
@@ -3464,20 +3464,17 @@
         "abebooks:50896064",
         "abebooks:13794155710",
         "abebooks:51695599",
-        "abebooks:32358147253",
-        "abebooks:51293756",
         "abebooks:30707417932",
         "abebooks:51283197",
-        "abebooks:32358125597",
-        "abebooks:32358122800",
         "abebooks:32230037841",
         "abebooks:9788426429971",
         "abebooks:87428383",
-        "abebooks:32358125587",
         "abebooks:22571431376",
         "abebooks:52346410",
         "abebooks:31549574555",
         "abebooks:52921363",
+        "abebooks:32454083079",
+        "abebooks:57809752",
         "abebooks:32385128101",
         "abebooks:51302196",
         "abebooks:1187061632",
@@ -3487,6 +3484,8 @@
         "abebooks:57932840",
         "abebooks:611537188",
         "abebooks:50658984",
+        "abebooks:30339737723",
+        "abebooks:71505964",
         "abebooks:32486361600",
         "abebooks:50661654",
         "abebooks:8677468082",
@@ -3497,10 +3496,11 @@
         "abebooks:30722214780",
         "abebooks:31675963902",
         "abebooks:51285782",
+        "abebooks:31255629483",
+        "abebooks:50541990",
         "abebooks:32089768461",
         "abebooks:51239795",
         "abebooks:15349590558",
-        "abebooks:32358130127",
         "abebooks:19375509012",
         "abebooks:50541981",
         "abebooks:32305970015",
@@ -3513,6 +3513,7 @@
         "abebooks:58450060",
         "abebooks:31077275654",
         "abebooks:50849056",
+        "abebooks:31786935444",
         "abebooks:30889302486",
         "abebooks:72108568",
         "abebooks:32460459431",
@@ -3529,14 +3530,13 @@
         "abebooks:30972157522",
         "abebooks:50625829",
         "abebooks:31114377588",
-        "abebooks:31677025843",
-        "abebooks:84077708"
+        "abebooks:31677025843"
       ]
     },
     "abebooks|cendrars blaise doisneau robert|la banlieue de paris": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T17:45:12Z",
+      "last_successful_fetch": "2026-08-25T01:59:42Z",
       "seen": [
         "abebooks:30726153750",
         "abebooks:32075686606",
@@ -3613,7 +3613,7 @@
     "abebooks|charbonnier jean philippe|chemins de la vie": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T17:45:12Z",
+      "last_successful_fetch": "2026-08-25T01:59:42Z",
       "seen": [
         "abebooks:32272520007",
         "abebooks:60568160",
@@ -3626,7 +3626,7 @@
     "abebooks|chargesheimer|koln 5 uhr 30": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T17:45:12Z",
+      "last_successful_fetch": "2026-08-25T01:59:42Z",
       "seen": [
         "abebooks:32402490483",
         "abebooks:62879827",
@@ -3639,19 +3639,20 @@
     "abebooks|charnay claude joseph louis desire|cites et ruines americaines": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T18:56:59Z",
+      "last_successful_fetch": "2026-08-25T01:59:42Z",
       "seen": [
         "abebooks:30645981672",
         "abebooks:30704794093",
         "abebooks:32401487363",
         "abebooks:19442069794",
+        "abebooks:30167426305",
         "abebooks:32015219693"
       ]
     },
     "abebooks|chauncey hare|interior america": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T18:56:59Z",
+      "last_successful_fetch": "2026-08-25T01:59:42Z",
       "seen": [
         "abebooks:32249113287",
         "abebooks:9780893810542",
@@ -3673,7 +3674,7 @@
     "abebooks|chris killip|in flagrante": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T18:56:59Z",
+      "last_successful_fetch": "2026-08-25T01:59:42Z",
       "seen": [
         "abebooks:32190969080",
         "abebooks:9783869309606",
@@ -3681,8 +3682,9 @@
         "abebooks:32222598130",
         "abebooks:9782092900901",
         "abebooks:89594109",
-        "abebooks:32471648910",
+        "abebooks:32164014727",
         "abebooks:9780436233562",
+        "abebooks:88613622",
         "abebooks:32500060120",
         "abebooks:2900013938445",
         "abebooks:32190733280",
@@ -3695,13 +3697,14 @@
         "abebooks:51538321",
         "abebooks:31129634126",
         "abebooks:31651416646",
-        "abebooks:53375103"
+        "abebooks:53375103",
+        "abebooks:32471648910"
       ]
     },
     "abebooks|christian boltanski|inventaire des objets ayant appartenu a une femme de bois colombes": {
       "first_successful_fetch": "2026-08-22T14:47:21Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T18:56:59Z",
+      "last_successful_fetch": "2026-08-25T01:59:42Z",
       "seen": [
         "abebooks:22410900546",
         "abebooks:31935461505",
@@ -3720,7 +3723,7 @@
     "abebooks|christian boltanski|kaddish": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T18:56:59Z",
+      "last_successful_fetch": "2026-08-25T01:59:42Z",
       "seen": [
         "abebooks:32452780114",
         "abebooks:9782879003962",
@@ -3741,7 +3744,7 @@
     "abebooks|christian patterson|redheaded peckerwood": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T18:56:59Z",
+      "last_successful_fetch": "2026-08-25T01:59:42Z",
       "seen": [
         "abebooks:32428862328",
         "abebooks:9781907946141",
@@ -3758,7 +3761,7 @@
     "abebooks|christien meindertsma|checked baggage": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T18:56:59Z",
+      "last_successful_fetch": "2026-08-25T01:59:42Z",
       "seen": [
         "abebooks:31353599495",
         "abebooks:9784990717377",
@@ -3770,7 +3773,7 @@
     "abebooks|cindy sherman|untitled film stills": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T18:56:59Z",
+      "last_successful_fetch": "2026-08-25T01:59:42Z",
       "seen": [
         "abebooks:5064289938",
         "abebooks:9783829601160",
@@ -3804,6 +3807,8 @@
         "abebooks:32319222398",
         "abebooks:32350252693",
         "abebooks:19899074957",
+        "abebooks:32402350891",
+        "abebooks:57635549",
         "abebooks:19899074936",
         "abebooks:31167278313",
         "abebooks:83879318",
@@ -3848,7 +3853,7 @@
     "abebooks|clark larry|tulsa": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T18:56:59Z",
+      "last_successful_fetch": "2026-08-25T01:59:42Z",
       "seen": [
         "abebooks:32501103006",
         "abebooks:9780802137487",
@@ -3860,6 +3865,9 @@
         "abebooks:31764688399",
         "abebooks:51283250",
         "abebooks:32479369632",
+        "abebooks:32503852823",
+        "abebooks:9788889412152",
+        "abebooks:59514781",
         "abebooks:31853352308",
         "abebooks:71288983",
         "abebooks:32481777326",
@@ -3925,7 +3933,7 @@
     "abebooks|claudia andujar and george love|amazonia": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T18:56:59Z",
+      "last_successful_fetch": "2026-08-25T01:59:42Z",
       "seen": [
         "abebooks:31891567468",
         "abebooks:32306614181",
@@ -3937,18 +3945,18 @@
     "abebooks|clercq louis de|voyage en orient": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T18:56:59Z",
+      "last_successful_fetch": "2026-08-25T01:59:42Z",
       "seen": [
         "abebooks:32484767880",
         "abebooks:9783893221639",
         "abebooks:87591102",
-        "abebooks:30832648617",
         "abebooks:31527291265",
         "abebooks:7501643949",
         "abebooks:32458676455",
         "abebooks:53994756",
         "abebooks:32445432216",
-        "abebooks:32431950122"
+        "abebooks:32431950122",
+        "abebooks:30832648617"
       ]
     },
     "abebooks|clergue lucien|corps memorables": {
@@ -3968,7 +3976,7 @@
     "abebooks|clergue lucien|toros muertos": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T18:56:59Z",
+      "last_successful_fetch": "2026-08-25T01:59:42Z",
       "seen": [
         "abebooks:32450254795",
         "abebooks:31729620997",
@@ -4029,7 +4037,7 @@
     "abebooks|coburn alvin langdon|new york": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T18:56:59Z",
+      "last_successful_fetch": "2026-08-25T01:59:42Z",
       "seen": [
         "abebooks:31429198126",
         "abebooks:9788498444988",
@@ -4050,7 +4058,7 @@
     "abebooks|cocteau jean jahan pierre|la mort et les statues": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T18:56:59Z",
+      "last_successful_fetch": "2026-08-25T01:59:42Z",
       "seen": [
         "abebooks:31613560486",
         "abebooks:13049628805",
@@ -4070,7 +4078,7 @@
     "abebooks|coppens martien|impressies 1945": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T18:56:59Z",
+      "last_successful_fetch": "2026-08-25T01:59:42Z",
       "seen": [
         "abebooks:32444761359",
         "abebooks:91174960",
@@ -4098,7 +4106,7 @@
     "abebooks|cristina de middel|the afronauts": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T18:56:59Z",
+      "last_successful_fetch": "2026-08-25T01:59:42Z",
       "seen": [
         "abebooks:20203768002",
         "abebooks:50731200",
@@ -4113,7 +4121,7 @@
     "abebooks|cristina faesler bremer ed|abcdf diccionario grafico de la ciudad de mexico abcdf graphic dictionary of mexico city": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T18:56:59Z",
+      "last_successful_fetch": "2026-08-25T01:59:42Z",
       "seen": [
         "abebooks:16788971334",
         "abebooks:9789685467001"
@@ -4122,7 +4130,7 @@
     "abebooks|cuny janssen|macedonia": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T18:56:59Z",
+      "last_successful_fetch": "2026-08-25T01:59:42Z",
       "seen": [
         "abebooks:32298183521",
         "abebooks:9783932187346",
@@ -4140,16 +4148,16 @@
     "abebooks|curtis edward s|the north american indian": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T18:56:59Z",
+      "last_successful_fetch": "2026-08-25T01:59:42Z",
       "seen": [
-        "abebooks:32452515679",
-        "abebooks:9780590075053",
-        "abebooks:52274160",
         "abebooks:32476860804",
         "abebooks:9783822847725",
         "abebooks:86215928",
         "abebooks:32486987480",
         "abebooks:9783822810392",
+        "abebooks:52274160",
+        "abebooks:32452515679",
+        "abebooks:9780590075053",
         "abebooks:32468852535",
         "abebooks:9780827172029",
         "abebooks:51315977",
@@ -4169,19 +4177,20 @@
         "abebooks:32503406313",
         "abebooks:9780743203746",
         "abebooks:54448258",
-        "abebooks:32501047335",
-        "abebooks:9780060903800",
-        "abebooks:32475472918",
-        "abebooks:9780800879457",
-        "abebooks:57821908",
         "abebooks:540497553",
         "abebooks:2664317743",
+        "abebooks:32501047335",
+        "abebooks:9780060903800",
         "abebooks:32474241416",
         "abebooks:31360854661",
         "abebooks:71383353",
         "abebooks:32323006597",
         "abebooks:9780891040033",
         "abebooks:58363041",
+        "abebooks:32475472918",
+        "abebooks:9780800879457",
+        "abebooks:57821908",
+        "abebooks:22466953238",
         "abebooks:22545030725",
         "abebooks:59026742",
         "abebooks:32417380681",
@@ -4195,9 +4204,8 @@
         "abebooks:5236715771",
         "abebooks:1226623107",
         "abebooks:1398444133",
-        "abebooks:32234942622",
+        "abebooks:31556788289",
         "abebooks:9780916870003",
-        "abebooks:82507845",
         "abebooks:32217195743",
         "abebooks:9789356906792",
         "abebooks:31990469157",
@@ -4210,9 +4218,9 @@
         "abebooks:30735285949",
         "abebooks:9780912334356",
         "abebooks:52447198",
-        "abebooks:22414354953",
         "abebooks:32405967420",
         "abebooks:9783822823354",
+        "abebooks:22414354953",
         "abebooks:31149551271",
         "abebooks:54061016",
         "abebooks:30526002389",
@@ -4227,7 +4235,7 @@
     "abebooks|dag alveng|asylum": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T18:56:59Z",
+      "last_successful_fetch": "2026-08-25T01:59:42Z",
       "seen": [
         "abebooks:14081182357",
         "abebooks:31476051872",
