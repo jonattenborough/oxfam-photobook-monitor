@@ -1,29 +1,23 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-08-24T17:33:15Z",
+  "last_successful_fetch": "2026-08-25T08:24:57Z",
   "last_top_skus": [
+    "HD_304189359",
     "HD_304188858",
     "HD_304189108",
     "HD_304184758",
-    "HD_304188600",
-    "HD_304188543",
-    "HD_304188758",
     "HD_304188812",
     "HD_304188536",
     "HD_304176295",
-    "HD_304176170",
-    "HD_304175418",
     "HD_304188401",
     "HD_304188373",
     "HD_304188344",
-    "HD_304188317",
     "HD_304188047",
-    "HD_304186495",
     "HD_304187574",
     "HD_304187523",
     "HD_304187487",
-    "HD_304187455",
     "HD_304187442",
+    "HD_304187455",
     "HD_304186778",
     "HD_304187218",
     "HD_304187131",
@@ -31,7 +25,13 @@
     "HD_304186245",
     "HD_304186190",
     "HD_304186114",
-    "HD_304186116"
+    "HD_304186116",
+    "HD_304186082",
+    "HD_304185721",
+    "HD_304185631",
+    "HD_304185612",
+    "HD_304185510",
+    "HD_304185028"
   ],
   "products": {
     "HD_303805354": {
@@ -1397,8 +1397,24 @@
         "title": "Waiting for the Magic: The Photography of Oscar Marzaroli"
       },
       "search_fingerprint": "19e20bf784b18664"
+    },
+    "HD_304189359": {
+      "first_seen": "2026-08-25T08:24:57Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787642258000",
+        "description": "\"It was March 1953 when I discovered painting, and the first painter I photographed was not just anybody, it was Picasso!\" - André Villers<br/><br/>Published to accompany an exhibition of works by the French photographer and painter André Villers, at Michael Hoppen Gallery, London, in 2006.<br/><br/>Hardcover with illustrated paper covered boards. A two-page introduction by Michael Hoppen and Genny Janvrin, followed by reproductions of works by Villers across 68 pages.<br/><br/>Very good condition. There is some light wear to the covers. The binding is flexible, but sound. The contents are bright and unmarked.<br/><br/>78 pages. Size 23.3 x 22.6 x 1.3 cm.<br/><br/>The picture is of the actual book for sale.<br/><br/>Please search for 'Henley Exhibit' to see more of our art exhibition catalogues and guides.",
+        "isbn": null,
+        "price_gbp": 30.0,
+        "product_id": "book-HD__304189359",
+        "publisher": null,
+        "route": "/andr%C3%A9-villers-an-exhibition-at-michael-hoppen-gallery-london-in-2006/product/HD_304189359",
+        "sku": "HD_304189359",
+        "title": "André Villers - An Exhibition at Michael Hoppen Gallery, London, in 2006"
+      },
+      "search_fingerprint": "1a10213f7da469ee"
     }
   },
-  "reported_category_count": 2811,
+  "reported_category_count": 2787,
   "version": 1
 }
