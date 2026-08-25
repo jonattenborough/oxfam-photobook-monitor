@@ -1,7 +1,10 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-08-25T11:55:04Z",
+  "last_successful_fetch": "2026-08-25T12:48:15Z",
   "last_top_skus": [
+    "HD_304187766",
+    "HD_304190950",
+    "HD_304145305",
     "HD_304156976",
     "HD_304190928",
     "HD_304157672",
@@ -28,10 +31,7 @@
     "HD_304186778",
     "HD_304187218",
     "HD_304187131",
-    "HD_304002522",
-    "HD_304186245",
-    "HD_304186190",
-    "HD_304186114"
+    "HD_304002522"
   ],
   "products": {
     "HD_303805354": {
@@ -145,6 +145,22 @@
         "title": "Henri Cartier-Bresson"
       },
       "search_fingerprint": "70f267d9f1448b35"
+    },
+    "HD_304145305": {
+      "first_seen": "2026-08-25T12:48:15Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787656544000",
+        "description": "This is the third volume taken from the Beken family nautical photography collection (containing over 75,000 plates). The book presents, in 135 four-colour images, major international sailing craft and ocean-going racers of the 20th century.<br/>Very Good. Minor wear on outer edges of dust jacket. The binding remains tight. The text and images within are sharp and clear",
+        "isbn": null,
+        "price_gbp": null,
+        "product_id": "book-HD__304145305",
+        "publisher": null,
+        "route": "/sailing-thoroughbreds/product/HD_304145305",
+        "sku": "HD_304145305",
+        "title": "Sailing Thoroughbreds"
+      },
+      "search_fingerprint": "c5541061db31b353"
     },
     "HD_304155902": {
       "first_seen": "baseline",
@@ -1270,6 +1286,22 @@
       },
       "search_fingerprint": "28dc586a0c84402a"
     },
+    "HD_304187766": {
+      "first_seen": "2026-08-25T12:48:15Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787659582000",
+        "description": "A fantastic large-format hardcover book for any James Bond, 007 or film enthusiast.<br/><br/>The James Bond Archives is edited by renowned film historian Paul Duncan and published by TASCHEN. This is the 2015 updated SPECTRE Edition, released to coincide with the James Bond film Spectre.<br/><br/>The book takes readers behind the scenes of the James Bond film franchise, drawing on the official EON Productions archives. It contains hundreds of photographs, film stills, production designs, storyboards, posters, documents and behind-the-scenes material, together with recollections from cast and crew involved in making the films.<br/><br/>The 2015 edition contains 624 pages and includes additional material relating to Spectre. It covers the Bond films from Dr. No through Spectre, as well as the non-EON productions Casino Royale (1967) and Never Say Never Again (1983).<br/><br/>It includes material relating to:<br/>Sean Connery<br/>George Lazenby<br/>Roger Moore<br/>Timothy Dalton<br/>Pierce Brosnan<br/>Daniel Craig<br/>Ian Fleming<br/>Directors and producers<br/>Production designers<br/>Stunt performers<br/>Costume and set designers<br/>Special effects<br/>Iconic Bond cars, gadgets and locations<br/>Behind-the-scenes photography<br/>Storyboards and concept artwork<br/>Film posters and production documents<br/><br/>The book has been carefully checked. Please see the photographs for the exact condition and any signs of wear.<br/>",
+        "isbn": null,
+        "price_gbp": 200.0,
+        "product_id": "book-HD__304187766",
+        "publisher": null,
+        "route": "/the-james-bond-archives/product/HD_304187766",
+        "sku": "HD_304187766",
+        "title": "The James Bond Archives"
+      },
+      "search_fingerprint": "327869a907bef9a1"
+    },
     "HD_304188047": {
       "first_seen": "2026-08-24T14:06:06Z",
       "last_snapshot": {
@@ -1525,8 +1557,24 @@
         "title": "When the Levee Breaks"
       },
       "search_fingerprint": "1ceee246c5a43581"
+    },
+    "HD_304190950": {
+      "first_seen": "2026-08-25T12:48:15Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787656548000",
+        "description": "This wonderful collection of photographs, taken in the 1960's, shows undergraduates during The Golden Era when Trinity was 'small enough to be a college yet large enough to be a university'. It was a time when everybody knew each other and the entire student body fitted easily into the beautiful Georgian Buildings, situated in the very heart of Dublin.<br/>",
+        "isbn": null,
+        "price_gbp": null,
+        "product_id": "book-HD__304190950",
+        "publisher": null,
+        "route": "/portrait-of-an-era-trinity-college-dublin-in-the-1960s/product/HD_304190950",
+        "sku": "HD_304190950",
+        "title": "Portrait of an Era: Trinity College Dublin in the 1960's"
+      },
+      "search_fingerprint": "9b0d303206ef9e9c"
     }
   },
-  "reported_category_count": 2785,
+  "reported_category_count": 2788,
   "version": 1
 }
