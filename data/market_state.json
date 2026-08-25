@@ -1,11 +1,11 @@
 {
-  "cursor": 232,
+  "cursor": 256,
   "feeds": {
     "photobookstore": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 250,
-      "last_successful_fetch": "2026-08-25T07:24:58Z",
+      "last_successful_fetch": "2026-08-25T08:09:23Z",
       "seen": [
         "photobookstore:15834487521653",
         "photobookstore:15969006715253",
@@ -264,7 +264,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 232,
-      "last_successful_fetch": "2026-08-25T07:24:58Z",
+      "last_successful_fetch": "2026-08-25T08:09:23Z",
       "seen": [
         "setanta:16055650910590",
         "setanta:16055570039166",
@@ -508,7 +508,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 85,
-      "last_successful_fetch": "2026-08-25T07:24:58Z",
+      "last_successful_fetch": "2026-08-25T08:09:23Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -601,7 +601,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 208,
-      "last_successful_fetch": "2026-08-25T07:24:58Z",
+      "last_successful_fetch": "2026-08-25T08:09:23Z",
       "seen": [
         "village:10371039101210",
         "village:10371023995162",
@@ -817,7 +817,7 @@
   },
   "last_failures": [],
   "last_successful_requests": 28,
-  "last_successful_run": "2026-08-25T07:24:58Z",
+  "last_successful_run": "2026-08-25T08:09:23Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
@@ -8063,27 +8063,27 @@
     "abebooks|jan dirk van der burg|olifantenpaadjes": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T23:45:19Z",
+      "last_successful_fetch": "2026-08-25T08:09:23Z",
       "seen": []
     },
     "abebooks|jaroslav barta|letem ceskym svetem 1898 1998 obraz promeny ceskych zemi v odstupu stoleti 1898 1998 a flight over the czech world 1898 1998 a picture of the changes in the czech world over a century": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T23:45:19Z",
+      "last_successful_fetch": "2026-08-25T08:09:23Z",
       "seen": [
         "abebooks:22908162581",
         "abebooks:16667489814",
         "abebooks:31801445289",
-        "abebooks:32500225021",
-        "abebooks:32492836424",
         "abebooks:32486254206",
-        "abebooks:32432142111"
+        "abebooks:32432142111",
+        "abebooks:32500225021",
+        "abebooks:32492836424"
       ]
     },
     "abebooks|jason fulford|the mushroom collector": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T23:45:19Z",
+      "last_successful_fetch": "2026-08-25T08:09:23Z",
       "seen": [
         "abebooks:31993274753",
         "abebooks:9789081058421",
@@ -8094,7 +8094,7 @@
     "abebooks|jean gaumy|d apres nature": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-23T23:45:19Z",
+      "last_successful_fetch": "2026-08-25T08:09:23Z",
       "seen": [
         "abebooks:32213183418",
         "abebooks:9782365114332",
@@ -8109,9 +8109,9 @@
         "abebooks:12432515065",
         "abebooks:30164862573",
         "abebooks:58502576",
-        "abebooks:31548371445",
         "abebooks:32328819914",
         "abebooks:82076540",
+        "abebooks:31548371445",
         "abebooks:31595887774",
         "abebooks:12459301288"
       ]
@@ -8119,7 +8119,7 @@
     "abebooks|jean gaumy|pleine mer men at sea": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T02:07:08Z",
+      "last_successful_fetch": "2026-08-25T08:09:23Z",
       "seen": [
         "abebooks:32408185346",
         "abebooks:50731200",
@@ -8130,7 +8130,7 @@
     "abebooks|jem southam|the raft of carrots": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T02:07:08Z",
+      "last_successful_fetch": "2026-08-25T08:09:23Z",
       "seen": [
         "abebooks:12269484199",
         "abebooks:9780907879343",
@@ -8143,7 +8143,7 @@
     "abebooks|jens liebchen|dl 07 stereotypes of war": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T02:07:08Z",
+      "last_successful_fetch": "2026-08-25T08:09:23Z",
       "seen": [
         "abebooks:32043399981",
         "abebooks:9783980607919",
@@ -8166,7 +8166,7 @@
     "abebooks|jens olof lasthein|moments in between": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T02:07:08Z",
+      "last_successful_fetch": "2026-08-25T08:09:23Z",
       "seen": [
         "abebooks:30819410024",
         "abebooks:9789197362962",
@@ -8180,7 +8180,7 @@
     "abebooks|jerry defalco and joan davidson eds|the valley green 1951": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T02:07:08Z",
+      "last_successful_fetch": "2026-08-25T08:09:23Z",
       "seen": [
         "abebooks:32503076182",
         "abebooks:32500812830",
@@ -8192,7 +8192,7 @@
     "abebooks|jessica dimmock|the ninth floor": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T02:07:08Z",
+      "last_successful_fetch": "2026-08-25T08:09:23Z",
       "seen": [
         "abebooks:31638628124",
         "abebooks:9788869650598",
@@ -8208,7 +8208,7 @@
     "abebooks|jh engstrom|trying to dance": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T02:07:08Z",
+      "last_successful_fetch": "2026-08-25T08:09:23Z",
       "seen": [
         "abebooks:31723253572"
       ]
@@ -8216,7 +8216,7 @@
     "abebooks|jim goldberg|raised by wolves": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T02:07:08Z",
+      "last_successful_fetch": "2026-08-25T08:09:23Z",
       "seen": [
         "abebooks:32482168882",
         "abebooks:9781881616504",
@@ -8238,7 +8238,7 @@
     "abebooks|jiri putta|the catalogue of meat products conserves and lard": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T02:07:08Z",
+      "last_successful_fetch": "2026-08-25T08:09:23Z",
       "seen": [
         "abebooks:32415920157",
         "abebooks:32415917309",
@@ -8250,7 +8250,7 @@
     "abebooks|jitka hanzlova|rokytnik": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T02:07:08Z",
+      "last_successful_fetch": "2026-08-25T08:09:23Z",
       "seen": [
         "abebooks:31649113500",
         "abebooks:32109283073",
@@ -8269,7 +8269,7 @@
     "abebooks|jo ractliffe|as terras do fim do mundo": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T02:07:08Z",
+      "last_successful_fetch": "2026-08-25T08:09:23Z",
       "seen": [
         "abebooks:31762010517",
         "abebooks:9780620485517"
@@ -8278,23 +8278,25 @@
     "abebooks|joachim schmid|other peoples photographs": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T02:07:08Z",
+      "last_successful_fetch": "2026-08-25T08:09:23Z",
       "seen": [
         "abebooks:32499500591",
         "abebooks:32456179882",
         "abebooks:32494398243",
         "abebooks:32449311678",
+        "abebooks:32122738259",
         "abebooks:32407363422"
       ]
     },
     "abebooks|joan fontcuberta and pere formiguera|dr ameisenhaufens fauna": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T02:07:08Z",
+      "last_successful_fetch": "2026-08-25T08:09:23Z",
       "seen": [
         "abebooks:32488854883",
         "abebooks:9783923283163",
         "abebooks:31988721351",
+        "abebooks:31750274656",
         "abebooks:32458534315",
         "abebooks:30254194997",
         "abebooks:59065164",
@@ -8309,7 +8311,7 @@
     "abebooks|joan fontcuberta|sputnik": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T02:07:08Z",
+      "last_successful_fetch": "2026-08-25T08:09:23Z",
       "seen": [
         "abebooks:31812884800",
         "abebooks:61790674",
@@ -8325,7 +8327,7 @@
     "abebooks|joan fontcuberta|the artist and the photograph": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T02:07:08Z",
+      "last_successful_fetch": "2026-08-25T08:09:23Z",
       "seen": [
         "abebooks:32489468396",
         "abebooks:9788495273307",
@@ -8345,7 +8347,7 @@
     "abebooks|joao rocha|kim jong il looking at things": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T02:07:08Z",
+      "last_successful_fetch": "2026-08-25T08:09:23Z",
       "seen": [
         "abebooks:31750197378",
         "abebooks:9782365680615",
@@ -8394,7 +8396,7 @@
     "abebooks|joel sternfeld|american prospects": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T02:07:08Z",
+      "last_successful_fetch": "2026-08-25T08:09:23Z",
       "seen": [
         "abebooks:32311616179",
         "abebooks:31698759901",
@@ -8444,7 +8446,7 @@
     "abebooks|john baldessari|choosing green beans": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T02:07:08Z",
+      "last_successful_fetch": "2026-08-25T08:09:23Z",
       "seen": [
         "abebooks:32194180920",
         "abebooks:54283240",
@@ -8461,7 +8463,7 @@
     "abebooks|john davies|a green and pleasant land": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T02:07:08Z",
+      "last_successful_fetch": "2026-08-25T08:09:23Z",
       "seen": [
         "abebooks:32491010902",
         "abebooks:9780948797101",
@@ -8482,7 +8484,7 @@
     "abebooks|john gossage|stadt des schwarz": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T02:07:08Z",
+      "last_successful_fetch": "2026-08-25T08:09:23Z",
       "seen": [
         "abebooks:30745839308",
         "abebooks:32499204537",
