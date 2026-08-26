@@ -1,12 +1,16 @@
 {
-  "cursor": 228,
+  "cursor": 252,
   "feeds": {
     "photobookstore": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 249,
-      "last_successful_fetch": "2026-08-26T13:33:25Z",
+      "last_successful_fetch": "2026-08-26T15:59:03Z",
       "seen": [
+        "photobookstore:15972267917685",
+        "photobookstore:15972257300853",
+        "photobookstore:15972246487413",
+        "photobookstore:15972239737205",
         "photobookstore:14873986859381",
         "photobookstore:15972118593909",
         "photobookstore:15970158444917",
@@ -267,8 +271,13 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 231,
-      "last_successful_fetch": "2026-08-26T13:33:25Z",
+      "last_successful_fetch": "2026-08-26T15:59:03Z",
       "seen": [
+        "setanta:16061783409022",
+        "setanta:16061754278270",
+        "setanta:16061733339518",
+        "setanta:16061694247294",
+        "setanta:16061691527550",
         "setanta:16060409446782",
         "setanta:16060371108222",
         "setanta:16060294529406",
@@ -516,7 +525,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 86,
-      "last_successful_fetch": "2026-08-26T13:33:25Z",
+      "last_successful_fetch": "2026-08-26T15:59:03Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -610,7 +619,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 209,
-      "last_successful_fetch": "2026-08-26T13:33:25Z",
+      "last_successful_fetch": "2026-08-26T15:59:03Z",
       "seen": [
         "village:10374544654618",
         "village:10374542688538",
@@ -836,7 +845,7 @@
   },
   "last_failures": [],
   "last_successful_requests": 28,
-  "last_successful_run": "2026-08-26T13:33:25Z",
+  "last_successful_run": "2026-08-26T15:59:03Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
@@ -8084,7 +8093,7 @@
     "abebooks|jacob holdt|amerikanske billeder": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T07:24:58Z",
+      "last_successful_fetch": "2026-08-26T15:59:03Z",
       "seen": [
         "abebooks:32472651199",
         "abebooks:63559039",
@@ -8101,7 +8110,7 @@
     "abebooks|jacqueline hassink|the table of power": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T07:24:58Z",
+      "last_successful_fetch": "2026-08-26T15:59:03Z",
       "seen": [
         "abebooks:32258549282",
         "abebooks:9783775732147",
@@ -8111,32 +8120,94 @@
     "abebooks|james allen|without sanctuary": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T07:24:58Z",
+      "last_successful_fetch": "2026-08-26T15:59:03Z",
       "seen": [
         "abebooks:32502155996",
         "abebooks:9780944092699",
         "abebooks:32503143700",
+        "abebooks:32402464810",
+        "abebooks:32474942176",
+        "abebooks:32343571919",
+        "abebooks:62819353",
+        "abebooks:31510179043",
+        "abebooks:32086378859",
+        "abebooks:51315977",
+        "abebooks:31371710024",
+        "abebooks:50531827",
+        "abebooks:32453420056",
+        "abebooks:84034154",
+        "abebooks:32453364476",
+        "abebooks:32479189961",
+        "abebooks:90785345",
+        "abebooks:31510172649",
+        "abebooks:32405644054",
+        "abebooks:32359763420",
+        "abebooks:89802999",
+        "abebooks:31803876074",
+        "abebooks:31803823189",
+        "abebooks:31993361655",
+        "abebooks:70780988",
+        "abebooks:31695730917",
+        "abebooks:87239718",
+        "abebooks:31273257985",
+        "abebooks:32359118556",
+        "abebooks:89806455",
+        "abebooks:31180002032",
+        "abebooks:72536976",
+        "abebooks:31859257435",
+        "abebooks:59718070",
+        "abebooks:31274068030",
+        "abebooks:31825029566",
         "abebooks:32456616696",
         "abebooks:86064178",
         "abebooks:32494937810",
         "abebooks:71666785",
+        "abebooks:31994287704",
+        "abebooks:51749587",
+        "abebooks:32444768982",
+        "abebooks:31825033377",
+        "abebooks:54825494",
         "abebooks:32460855970",
         "abebooks:58798915",
         "abebooks:32460858854",
+        "abebooks:32403335213",
+        "abebooks:32018470071",
+        "abebooks:88588720",
+        "abebooks:31156263173",
+        "abebooks:32377718429",
+        "abebooks:32359794450",
+        "abebooks:89803102",
+        "abebooks:32390555739",
+        "abebooks:71454205",
+        "abebooks:32356473128",
+        "abebooks:51283250",
+        "abebooks:31297790625",
+        "abebooks:32415129291",
+        "abebooks:31297154535",
+        "abebooks:52402892",
         "abebooks:32470155025",
+        "abebooks:32359232102",
+        "abebooks:89802850",
+        "abebooks:32405143085",
+        "abebooks:32462872003",
+        "abebooks:32347105255",
+        "abebooks:84294867",
+        "abebooks:32412595713",
+        "abebooks:52317170",
+        "abebooks:32367187854",
+        "abebooks:32378920912",
         "abebooks:32402982845",
         "abebooks:32335678275",
         "abebooks:52323279",
         "abebooks:32500675949",
         "abebooks:32446719788",
-        "abebooks:32452425216",
-        "abebooks:32452803981"
+        "abebooks:32452425216"
       ]
     },
     "abebooks|james nachtwey|inferno": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T07:24:58Z",
+      "last_successful_fetch": "2026-08-26T15:59:03Z",
       "seen": [
         "abebooks:32503140822",
         "abebooks:9780714838151",
@@ -8153,27 +8224,28 @@
     "abebooks|jan dirk van der burg|olifantenpaadjes": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T08:09:23Z",
+      "last_successful_fetch": "2026-08-26T15:59:03Z",
       "seen": []
     },
     "abebooks|jaroslav barta|letem ceskym svetem 1898 1998 obraz promeny ceskych zemi v odstupu stoleti 1898 1998 a flight over the czech world 1898 1998 a picture of the changes in the czech world over a century": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T08:09:23Z",
+      "last_successful_fetch": "2026-08-26T15:59:03Z",
       "seen": [
         "abebooks:22908162581",
         "abebooks:16667489814",
         "abebooks:31801445289",
+        "abebooks:32500225021",
+        "abebooks:32482085089",
         "abebooks:32486254206",
         "abebooks:32432142111",
-        "abebooks:32500225021",
         "abebooks:32492836424"
       ]
     },
     "abebooks|jason fulford|the mushroom collector": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T08:09:23Z",
+      "last_successful_fetch": "2026-08-26T15:59:03Z",
       "seen": [
         "abebooks:31993274753",
         "abebooks:9789081058421",
@@ -8184,7 +8256,7 @@
     "abebooks|jean gaumy|d apres nature": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T08:09:23Z",
+      "last_successful_fetch": "2026-08-26T15:59:03Z",
       "seen": [
         "abebooks:32213183418",
         "abebooks:9782365114332",
@@ -8192,9 +8264,9 @@
         "abebooks:32485284267",
         "abebooks:9782915173581",
         "abebooks:54893002",
-        "abebooks:31679511629",
-        "abebooks:70788857",
         "abebooks:31907639832",
+        "abebooks:70788857",
+        "abebooks:31679511629",
         "abebooks:32376400320",
         "abebooks:12432515065",
         "abebooks:30164862573",
@@ -8202,6 +8274,8 @@
         "abebooks:32328819914",
         "abebooks:82076540",
         "abebooks:31548371445",
+        "abebooks:22765478693",
+        "abebooks:54278753",
         "abebooks:31595887774",
         "abebooks:12459301288"
       ]
@@ -8209,7 +8283,7 @@
     "abebooks|jean gaumy|pleine mer men at sea": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T08:09:23Z",
+      "last_successful_fetch": "2026-08-26T15:59:03Z",
       "seen": [
         "abebooks:32408185346",
         "abebooks:50731200",
@@ -8220,7 +8294,7 @@
     "abebooks|jem southam|the raft of carrots": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T08:09:23Z",
+      "last_successful_fetch": "2026-08-26T15:59:03Z",
       "seen": [
         "abebooks:12269484199",
         "abebooks:9780907879343",
@@ -8233,13 +8307,15 @@
     "abebooks|jens liebchen|dl 07 stereotypes of war": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T08:09:23Z",
+      "last_successful_fetch": "2026-08-26T15:59:03Z",
       "seen": [
         "abebooks:32043399981",
         "abebooks:9783980607919",
         "abebooks:30550596966",
+        "abebooks:32027838386",
         "abebooks:32494234730",
         "abebooks:31221749916",
+        "abebooks:32067683370",
         "abebooks:18054102434",
         "abebooks:12610958557",
         "abebooks:60245682",
@@ -8248,7 +8324,10 @@
         "abebooks:82273322",
         "abebooks:18054102431",
         "abebooks:1393611121",
+        "abebooks:30554191039",
         "abebooks:18054102430",
+        "abebooks:32488018761",
+        "abebooks:53994756",
         "abebooks:1303456608",
         "abebooks:32081207217"
       ]
@@ -8256,7 +8335,7 @@
     "abebooks|jens olof lasthein|moments in between": {
       "first_successful_fetch": "2026-08-22T19:45:37Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T08:09:23Z",
+      "last_successful_fetch": "2026-08-26T15:59:03Z",
       "seen": [
         "abebooks:30819410024",
         "abebooks:9789197362962",
@@ -8264,25 +8343,29 @@
         "abebooks:22650694143",
         "abebooks:30959026697",
         "abebooks:30029159675",
+        "abebooks:22765476710",
+        "abebooks:54278753",
         "abebooks:3581348459"
       ]
     },
     "abebooks|jerry defalco and joan davidson eds|the valley green 1951": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T08:09:23Z",
+      "last_successful_fetch": "2026-08-26T15:59:03Z",
       "seen": [
         "abebooks:32503076182",
-        "abebooks:32500812830",
         "abebooks:32495125123",
-        "abebooks:32484721620",
-        "abebooks:32149002425"
+        "abebooks:32149002425",
+        "abebooks:32369441193",
+        "abebooks:32296715939",
+        "abebooks:32500812830",
+        "abebooks:32484721620"
       ]
     },
     "abebooks|jessica dimmock|the ninth floor": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T08:09:23Z",
+      "last_successful_fetch": "2026-08-26T15:59:03Z",
       "seen": [
         "abebooks:31638628124",
         "abebooks:9788869650598",
@@ -8298,7 +8381,7 @@
     "abebooks|jh engstrom|trying to dance": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T08:09:23Z",
+      "last_successful_fetch": "2026-08-26T15:59:03Z",
       "seen": [
         "abebooks:31723253572"
       ]
@@ -8306,29 +8389,43 @@
     "abebooks|jim goldberg|raised by wolves": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T08:09:23Z",
+      "last_successful_fetch": "2026-08-26T15:59:03Z",
       "seen": [
-        "abebooks:32482168882",
+        "abebooks:32494336323",
         "abebooks:9781881616504",
+        "abebooks:87866654",
+        "abebooks:32482168882",
         "abebooks:88570533",
         "abebooks:32471039996",
+        "abebooks:32493588889",
         "abebooks:30443563736",
         "abebooks:9780997827507",
+        "abebooks:32476896513",
+        "abebooks:32490036791",
+        "abebooks:50672066",
         "abebooks:32463493593",
         "abebooks:21941456404",
+        "abebooks:32423258076",
+        "abebooks:60361656",
         "abebooks:31373621926",
         "abebooks:50731200",
         "abebooks:32033807567",
         "abebooks:31727472141",
         "abebooks:31373617266",
         "abebooks:32408182588",
-        "abebooks:31445432751"
+        "abebooks:20618368432",
+        "abebooks:31274773844",
+        "abebooks:32405076721",
+        "abebooks:85508973",
+        "abebooks:31445432751",
+        "abebooks:32499333463",
+        "abebooks:53994756"
       ]
     },
     "abebooks|jiri putta|the catalogue of meat products conserves and lard": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T08:09:23Z",
+      "last_successful_fetch": "2026-08-26T15:59:03Z",
       "seen": [
         "abebooks:32415920157",
         "abebooks:32415917309",
@@ -8340,7 +8437,7 @@
     "abebooks|jitka hanzlova|rokytnik": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T08:09:23Z",
+      "last_successful_fetch": "2026-08-26T15:59:03Z",
       "seen": [
         "abebooks:31649113500",
         "abebooks:32109283073",
@@ -8359,7 +8456,7 @@
     "abebooks|jo ractliffe|as terras do fim do mundo": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T08:09:23Z",
+      "last_successful_fetch": "2026-08-26T15:59:03Z",
       "seen": [
         "abebooks:31762010517",
         "abebooks:9780620485517"
@@ -8368,7 +8465,7 @@
     "abebooks|joachim schmid|other peoples photographs": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T08:09:23Z",
+      "last_successful_fetch": "2026-08-26T15:59:03Z",
       "seen": [
         "abebooks:32499500591",
         "abebooks:32456179882",
@@ -8381,7 +8478,7 @@
     "abebooks|joan fontcuberta and pere formiguera|dr ameisenhaufens fauna": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T08:09:23Z",
+      "last_successful_fetch": "2026-08-26T15:59:03Z",
       "seen": [
         "abebooks:32488854883",
         "abebooks:9783923283163",
@@ -8391,6 +8488,8 @@
         "abebooks:30254194997",
         "abebooks:59065164",
         "abebooks:1359391486",
+        "abebooks:22765477000",
+        "abebooks:54278753",
         "abebooks:32475359559",
         "abebooks:53994756",
         "abebooks:21676138227",
@@ -8401,7 +8500,7 @@
     "abebooks|joan fontcuberta|sputnik": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T08:09:23Z",
+      "last_successful_fetch": "2026-08-26T15:59:03Z",
       "seen": [
         "abebooks:31812884800",
         "abebooks:61790674",
@@ -8417,7 +8516,7 @@
     "abebooks|joan fontcuberta|the artist and the photograph": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T08:09:23Z",
+      "last_successful_fetch": "2026-08-26T15:59:03Z",
       "seen": [
         "abebooks:32489468396",
         "abebooks:9788495273307",
@@ -8437,7 +8536,7 @@
     "abebooks|joao rocha|kim jong il looking at things": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T08:09:23Z",
+      "last_successful_fetch": "2026-08-26T15:59:03Z",
       "seen": [
         "abebooks:31750197378",
         "abebooks:9782365680615",
