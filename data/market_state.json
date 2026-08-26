@@ -1,11 +1,11 @@
 {
-  "cursor": 108,
+  "cursor": 132,
   "feeds": {
     "photobookstore": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 249,
-      "last_successful_fetch": "2026-08-26T08:09:44Z",
+      "last_successful_fetch": "2026-08-26T09:11:17Z",
       "seen": [
         "photobookstore:15970158444917",
         "photobookstore:15834487521653",
@@ -265,7 +265,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 231,
-      "last_successful_fetch": "2026-08-26T08:09:44Z",
+      "last_successful_fetch": "2026-08-26T09:11:17Z",
       "seen": [
         "setanta:16055810523518",
         "setanta:16055650910590",
@@ -510,7 +510,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 86,
-      "last_successful_fetch": "2026-08-26T08:09:44Z",
+      "last_successful_fetch": "2026-08-26T09:11:17Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -604,7 +604,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 206,
-      "last_successful_fetch": "2026-08-26T08:09:44Z",
+      "last_successful_fetch": "2026-08-26T09:11:17Z",
       "seen": [
         "village:10371020095770",
         "village:10373810258202",
@@ -822,7 +822,7 @@
   },
   "last_failures": [],
   "last_successful_requests": 28,
-  "last_successful_run": "2026-08-26T08:09:44Z",
+  "last_successful_run": "2026-08-26T09:11:17Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
@@ -4162,7 +4162,7 @@
     "abebooks|cristina faesler bremer ed|abcdf diccionario grafico de la ciudad de mexico abcdf graphic dictionary of mexico city": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T01:59:42Z",
+      "last_successful_fetch": "2026-08-26T09:11:17Z",
       "seen": [
         "abebooks:16788971334",
         "abebooks:9789685467001"
@@ -4171,7 +4171,7 @@
     "abebooks|cuny janssen|macedonia": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T01:59:42Z",
+      "last_successful_fetch": "2026-08-26T09:11:17Z",
       "seen": [
         "abebooks:32298183521",
         "abebooks:9783932187346",
@@ -4189,14 +4189,14 @@
     "abebooks|curtis edward s|the north american indian": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T01:59:42Z",
+      "last_successful_fetch": "2026-08-26T09:11:17Z",
       "seen": [
-        "abebooks:32476860804",
-        "abebooks:9783822847725",
-        "abebooks:86215928",
         "abebooks:32486987480",
         "abebooks:9783822810392",
         "abebooks:52274160",
+        "abebooks:32476860804",
+        "abebooks:9783822847725",
+        "abebooks:86215928",
         "abebooks:32452515679",
         "abebooks:9780590075053",
         "abebooks:32468852535",
@@ -4205,16 +4205,16 @@
         "abebooks:32411672795",
         "abebooks:9781463726164",
         "abebooks:71230030",
+        "abebooks:32471429144",
+        "abebooks:9783836536349",
+        "abebooks:54248992",
         "abebooks:32502446313",
         "abebooks:9780760776223",
         "abebooks:31261172285",
         "abebooks:9780517228104",
-        "abebooks:32471429144",
-        "abebooks:9783836536349",
-        "abebooks:54248992",
-        "abebooks:22809274840",
+        "abebooks:32503552546",
         "abebooks:9783822881835",
-        "abebooks:51947087",
+        "abebooks:60344724",
         "abebooks:32503406313",
         "abebooks:9780743203746",
         "abebooks:54448258",
@@ -4259,8 +4259,6 @@
         "abebooks:30735285949",
         "abebooks:9780912334356",
         "abebooks:52447198",
-        "abebooks:32405967420",
-        "abebooks:9783822823354",
         "abebooks:22414354953",
         "abebooks:31149551271",
         "abebooks:54061016",
@@ -4270,13 +4268,15 @@
         "abebooks:32314956188",
         "abebooks:9780559125935",
         "abebooks:50264611",
+        "abebooks:31678686934",
+        "abebooks:9780976912712",
         "abebooks:32437181890"
       ]
     },
     "abebooks|dag alveng|asylum": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T01:59:42Z",
+      "last_successful_fetch": "2026-08-26T09:11:17Z",
       "seen": [
         "abebooks:14081182357",
         "abebooks:31476051872",
@@ -4287,7 +4287,7 @@
     "abebooks|daniela rossell|ricas y famosas": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T03:26:16Z",
+      "last_successful_fetch": "2026-08-26T09:11:17Z",
       "seen": [
         "abebooks:32491726217",
         "abebooks:9788475065199",
@@ -4298,7 +4298,7 @@
     "abebooks|danny lyon|conversations with the dead": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T03:26:16Z",
+      "last_successful_fetch": "2026-08-26T09:11:17Z",
       "seen": [
         "abebooks:30956927769",
         "abebooks:54061016",
@@ -4307,6 +4307,8 @@
         "abebooks:32177591025",
         "abebooks:18151243411",
         "abebooks:30497441367",
+        "abebooks:32357877112",
+        "abebooks:50990576",
         "abebooks:22606642108",
         "abebooks:32412539682",
         "abebooks:9780030850691",
@@ -4366,7 +4368,7 @@
     "abebooks|dave heath|a dialogue with solitude": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T03:26:16Z",
+      "last_successful_fetch": "2026-08-26T09:11:17Z",
       "seen": [
         "abebooks:32495171749",
         "abebooks:9780921542117",
@@ -4377,8 +4379,8 @@
         "abebooks:32025149095",
         "abebooks:30187904255",
         "abebooks:31540324291",
-        "abebooks:30378458171",
         "abebooks:31957609755",
+        "abebooks:30378458171",
         "abebooks:31107905649",
         "abebooks:52913943",
         "abebooks:31519461271",
@@ -4405,7 +4407,7 @@
     "abebooks|david alan harvey|based on a true story": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T03:26:16Z",
+      "last_successful_fetch": "2026-08-26T09:11:17Z",
       "seen": [
         "abebooks:31438048104",
         "abebooks:50731200",
@@ -4415,7 +4417,7 @@
     "abebooks|david douglas duncan|i protest": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T03:26:16Z",
+      "last_successful_fetch": "2026-08-26T09:11:17Z",
       "seen": [
         "abebooks:32321551727",
         "abebooks:32304078068",
@@ -4441,19 +4443,19 @@
         "abebooks:64430280",
         "abebooks:31231521071",
         "abebooks:30700215072",
-        "abebooks:32216532148",
-        "abebooks:60693627",
         "abebooks:31053971096",
         "abebooks:22446499272",
         "abebooks:30616586042",
         "abebooks:31608802276",
-        "abebooks:3057503468"
+        "abebooks:3057503468",
+        "abebooks:32216532148",
+        "abebooks:60693627"
       ]
     },
     "abebooks|david galjaard|concresco": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T03:26:16Z",
+      "last_successful_fetch": "2026-08-26T09:11:17Z",
       "seen": [
         "abebooks:30412282588",
         "abebooks:9789461907813",
@@ -4468,7 +4470,7 @@
     "abebooks|david goldblatt|in boksburg": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T03:26:16Z",
+      "last_successful_fetch": "2026-08-26T09:11:17Z",
       "seen": [
         "abebooks:30795476831",
         "abebooks:9783869307961",
@@ -4506,7 +4508,7 @@
     "abebooks|david goldblatt|particulars": {
       "first_successful_fetch": "2026-08-22T14:52:01Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T03:26:16Z",
+      "last_successful_fetch": "2026-08-26T09:11:17Z",
       "seen": [
         "abebooks:16726702404",
         "abebooks:9783869307770",
@@ -4534,7 +4536,7 @@
     "abebooks|davidson basil strand paul|tir a mhurain outer hebrides": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T03:26:16Z",
+      "last_successful_fetch": "2026-08-26T09:11:17Z",
       "seen": [
         "abebooks:32437684740",
         "abebooks:32146463664",
@@ -4578,7 +4580,7 @@
     "abebooks|dayanita singh|privacy": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T03:26:16Z",
+      "last_successful_fetch": "2026-08-26T09:11:17Z",
       "seen": [
         "abebooks:32362301476",
         "abebooks:9783882439625",
@@ -4606,7 +4608,7 @@
     "abebooks|decarava roy hughes langston|the sweet flypaper of life": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T03:26:16Z",
+      "last_successful_fetch": "2026-08-26T09:11:17Z",
       "seen": [
         "abebooks:32235436520",
         "abebooks:9780999843819",
@@ -4684,7 +4686,7 @@
     "abebooks|delamotte philip henry|photographic views of the progress of the crystal palace sydenham": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T03:26:16Z",
+      "last_successful_fetch": "2026-08-26T09:11:17Z",
       "seen": [
         "abebooks:32450733739",
         "abebooks:32359452370",
@@ -4696,7 +4698,7 @@
     "abebooks|delamotte philip henry|the sunbeam": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T03:26:16Z",
+      "last_successful_fetch": "2026-08-26T09:11:17Z",
       "seen": [
         "abebooks:32150492136",
         "abebooks:32486332095",
@@ -4708,7 +4710,7 @@
     "abebooks|dick jewell|found photos": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T03:26:16Z",
+      "last_successful_fetch": "2026-08-26T09:11:17Z",
       "seen": [
         "abebooks:31771743520",
         "abebooks:3380833795",
@@ -4718,13 +4720,13 @@
     "abebooks|dieter graf|point it": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T03:26:16Z",
+      "last_successful_fetch": "2026-08-26T09:11:17Z",
       "seen": [
-        "abebooks:32489784019",
-        "abebooks:9783980313025",
-        "abebooks:52274160",
         "abebooks:32502134720",
+        "abebooks:9783980313025",
         "abebooks:63271547",
+        "abebooks:32489784019",
+        "abebooks:52274160",
         "abebooks:12293352475",
         "abebooks:51947087",
         "abebooks:32503493868",
@@ -4737,6 +4739,7 @@
         "abebooks:32233613051",
         "abebooks:89806455",
         "abebooks:32278709977",
+        "abebooks:20887173827",
         "abebooks:32234175737",
         "abebooks:32492056376",
         "abebooks:88915814",
@@ -4744,7 +4747,6 @@
         "abebooks:57278531",
         "abebooks:32496824653",
         "abebooks:60633801",
-        "abebooks:20887173827",
         "abebooks:19610663372",
         "abebooks:30033625784",
         "abebooks:55410863",
@@ -4752,6 +4754,8 @@
         "abebooks:9783981925067",
         "abebooks:30028684358",
         "abebooks:31874239545",
+        "abebooks:32380432196",
+        "abebooks:87044093",
         "abebooks:31023441274",
         "abebooks:9783980313018",
         "abebooks:30564896772",
@@ -4783,21 +4787,21 @@
     "abebooks|dirk alvermann|algerien l algerie": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T03:26:16Z",
+      "last_successful_fetch": "2026-08-26T09:11:17Z",
       "seen": [
-        "abebooks:32129778860",
         "abebooks:32382511206",
         "abebooks:61752854",
         "abebooks:31283667603",
         "abebooks:30426139937",
         "abebooks:15422115895",
-        "abebooks:50731200"
+        "abebooks:50731200",
+        "abebooks:32129778860"
       ]
     },
     "abebooks|dirk braeckman|z z t": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T03:26:16Z",
+      "last_successful_fetch": "2026-08-26T09:11:17Z",
       "seen": [
         "abebooks:32457109648",
         "abebooks:9789055442416",
@@ -4852,7 +4856,7 @@
     "abebooks|domon ken tomatsu shomei|hiroshima nagasaki document 1961": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T03:26:16Z",
+      "last_successful_fetch": "2026-08-26T09:11:17Z",
       "seen": [
         "abebooks:31989312040",
         "abebooks:55366034",
@@ -4865,7 +4869,7 @@
     "abebooks|domon ken|chikuho no kodomotachi": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T03:26:16Z",
+      "last_successful_fetch": "2026-08-26T09:11:17Z",
       "seen": [
         "abebooks:32380222593",
         "abebooks:716997528",
@@ -4875,7 +4879,7 @@
     "abebooks|domon ken|hiroshima": {
       "first_successful_fetch": "2026-08-22T15:45:54Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T03:26:16Z",
+      "last_successful_fetch": "2026-08-26T09:11:17Z",
       "seen": [
         "abebooks:31660932008",
         "abebooks:86378343",
