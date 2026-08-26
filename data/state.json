@@ -1,7 +1,8 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-08-26T14:01:44Z",
+  "last_successful_fetch": "2026-08-26T14:53:11Z",
   "last_top_skus": [
+    "HD_304195364",
     "HD_304194850",
     "HD_304174500",
     "HD_304187175",
@@ -30,8 +31,7 @@
     "HD_304182937",
     "HD_304190062",
     "HD_304119769",
-    "HD_304189895",
-    "HD_304189359"
+    "HD_304189895"
   ],
   "products": {
     "HD_303805354": {
@@ -1915,8 +1915,24 @@
         "title": "The Photobook: A History Volume I by Martin Parr & Gerry Badger Hardback 2004"
       },
       "search_fingerprint": "8c3131e4281251a7"
+    },
+    "HD_304195364": {
+      "first_seen": "2026-08-26T14:53:11Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787751529000",
+        "description": "This is a guide to the techniques of animation, aimed at the amateur, and to people already working in a production studio or those just keen to expand their knowledge. It covers three types of animation - drawn, modelled and computer generated. It gives a comprehensive, behind the scenes view of creating animated film, from treatments, scripts and storyboarding to filming and marketing. Through a mix of step-by-step photography and artwork commissioned by top animators, and from traditional pen and ink animation to claymation and computer generated, the techniques and advice cover areas such as suitable tools and equipment, characterization, movement, lighting, voices, music and planning layouts and backgrounds. This work includes a gallery of finished works by established animators as an inspiration and to demonstrate how professionals have used techniques to achieve a variety of effects. A supplementary section on preproduction systems, budgeting and how to launch yourself as a professional, aim to provide a guide to setting a career in motion.<br/><br/>*Some light striking to spine and cover - in otherwise very good condition",
+        "isbn": null,
+        "price_gbp": 7.49,
+        "product_id": "book-HD__304195364",
+        "publisher": null,
+        "route": "/encyclopedia-of-animation-techniques/product/HD_304195364",
+        "sku": "HD_304195364",
+        "title": "Encyclopedia of Animation Techniques"
+      },
+      "search_fingerprint": "ac34d0fa7b5a808d"
     }
   },
-  "reported_category_count": 2795,
+  "reported_category_count": 2793,
   "version": 1
 }
