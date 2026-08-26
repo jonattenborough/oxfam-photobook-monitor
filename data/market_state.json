@@ -1,11 +1,11 @@
 {
-  "cursor": 252,
+  "cursor": 276,
   "feeds": {
     "photobookstore": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 249,
-      "last_successful_fetch": "2026-08-26T15:59:03Z",
+      "last_successful_fetch": "2026-08-26T20:32:48Z",
       "seen": [
         "photobookstore:15972267917685",
         "photobookstore:15972257300853",
@@ -270,9 +270,11 @@
     "setanta": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
-      "last_count": 231,
-      "last_successful_fetch": "2026-08-26T15:59:03Z",
+      "last_count": 232,
+      "last_successful_fetch": "2026-08-26T20:32:48Z",
       "seen": [
+        "setanta:16061581656446",
+        "setanta:16060428910974",
         "setanta:16061783409022",
         "setanta:16061754278270",
         "setanta:16061733339518",
@@ -525,7 +527,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 86,
-      "last_successful_fetch": "2026-08-26T15:59:03Z",
+      "last_successful_fetch": "2026-08-26T20:32:48Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -619,7 +621,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 209,
-      "last_successful_fetch": "2026-08-26T15:59:03Z",
+      "last_successful_fetch": "2026-08-26T20:32:48Z",
       "seen": [
         "village:10374544654618",
         "village:10374542688538",
@@ -845,7 +847,7 @@
   },
   "last_failures": [],
   "last_successful_requests": 28,
-  "last_successful_run": "2026-08-26T15:59:03Z",
+  "last_successful_run": "2026-08-26T20:32:48Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
@@ -8585,7 +8587,7 @@
     "abebooks|joel sternfeld|american prospects": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T08:09:23Z",
+      "last_successful_fetch": "2026-08-26T20:32:48Z",
       "seen": [
         "abebooks:32311616179",
         "abebooks:31698759901",
@@ -8604,6 +8606,7 @@
         "abebooks:9780812916591",
         "abebooks:89905167",
         "abebooks:32476485772",
+        "abebooks:31764421942",
         "abebooks:32473019867",
         "abebooks:31712298980",
         "abebooks:9781935202974",
@@ -8611,6 +8614,7 @@
         "abebooks:32181206794",
         "abebooks:83823308",
         "abebooks:32449491679",
+        "abebooks:16445041765",
         "abebooks:31805957210",
         "abebooks:32363367771",
         "abebooks:1674584010",
@@ -8635,7 +8639,7 @@
     "abebooks|john baldessari|choosing green beans": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T08:09:23Z",
+      "last_successful_fetch": "2026-08-26T20:32:48Z",
       "seen": [
         "abebooks:32194180920",
         "abebooks:54283240",
@@ -8652,7 +8656,7 @@
     "abebooks|john davies|a green and pleasant land": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T08:09:23Z",
+      "last_successful_fetch": "2026-08-26T20:32:48Z",
       "seen": [
         "abebooks:32491010902",
         "abebooks:9780948797101",
@@ -8673,7 +8677,7 @@
     "abebooks|john gossage|stadt des schwarz": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T08:09:23Z",
+      "last_successful_fetch": "2026-08-26T20:32:48Z",
       "seen": [
         "abebooks:30745839308",
         "abebooks:32499204537",
@@ -8691,14 +8695,12 @@
     "abebooks|john gossage|the pond": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T09:07:50Z",
+      "last_successful_fetch": "2026-08-26T20:32:48Z",
       "seen": [
-        "abebooks:32504074082",
-        "abebooks:9781597111324",
-        "abebooks:51171978",
         "abebooks:32319647094",
         "abebooks:31999617155",
         "abebooks:32248241337",
+        "abebooks:9781597111324",
         "abebooks:32378918896",
         "abebooks:9780893812065",
         "abebooks:32319225371",
@@ -8707,13 +8709,15 @@
         "abebooks:31749361568",
         "abebooks:32312632329",
         "abebooks:8086160686",
-        "abebooks:9781597111676"
+        "abebooks:9781597111676",
+        "abebooks:32504074082",
+        "abebooks:51171978"
       ]
     },
     "abebooks|john stezaker|the 3rd person archive": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T09:07:50Z",
+      "last_successful_fetch": "2026-08-26T20:32:48Z",
       "seen": [
         "abebooks:31114260902",
         "abebooks:72313296",
@@ -8725,7 +8729,7 @@
     "abebooks|john szarkowski|the photographers eye": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T09:07:50Z",
+      "last_successful_fetch": "2026-08-26T20:32:48Z",
       "seen": [
         "abebooks:32490636895",
         "abebooks:9780870705243",
@@ -8744,9 +8748,6 @@
         "abebooks:32050840268",
         "abebooks:31749550618",
         "abebooks:31821671010",
-        "abebooks:32453156031",
-        "abebooks:9780436441486",
-        "abebooks:53833589",
         "abebooks:31435564142",
         "abebooks:31742349648",
         "abebooks:61572827",
@@ -8769,14 +8770,17 @@
         "abebooks:32475695976",
         "abebooks:31920782661",
         "abebooks:5682460255",
-        "abebooks:31883067313",
-        "abebooks:85803404",
         "abebooks:30413578342",
         "abebooks:31956359912",
         "abebooks:203014973",
         "abebooks:32258561760",
         "abebooks:89712618",
         "abebooks:32257717181",
+        "abebooks:32453156031",
+        "abebooks:9780436441486",
+        "abebooks:53833589",
+        "abebooks:31883067313",
+        "abebooks:85803404",
         "abebooks:32360902721",
         "abebooks:51090990"
       ]
@@ -8802,13 +8806,13 @@
     "abebooks|jos r vilimek|letem ceskym svetem pul tisice fotograf pohledu z cech moravy slezska a slovenska a flight over the czech world five hundred views from bohemia moravia silesia and slovakia": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T09:07:50Z",
+      "last_successful_fetch": "2026-08-26T20:32:48Z",
       "seen": []
     },
     "abebooks|jose pedro cortes|things here and things still to come": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T09:07:50Z",
+      "last_successful_fetch": "2026-08-26T20:32:48Z",
       "seen": [
         "abebooks:31919989193",
         "abebooks:9789729982583",
@@ -8818,6 +8822,8 @@
         "abebooks:50731200",
         "abebooks:31921375671",
         "abebooks:21719613007",
+        "abebooks:22765475102",
+        "abebooks:54278753",
         "abebooks:19298544815",
         "abebooks:31352579750",
         "abebooks:17733368466",
@@ -8827,7 +8833,7 @@
     "abebooks|josef koudelka|cerny trojuhelnik podkrusnohori fotografie 1990 1994 the black triangle the foothills of the ore mountains 1990 1994": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T09:07:50Z",
+      "last_successful_fetch": "2026-08-26T20:32:48Z",
       "seen": [
         "abebooks:32452300969",
         "abebooks:9788090113145",
@@ -8839,7 +8845,7 @@
     "abebooks|josef koudelka|limestone": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T09:07:50Z",
+      "last_successful_fetch": "2026-08-26T20:32:48Z",
       "seen": [
         "abebooks:15057948863",
         "abebooks:32493316590",
@@ -8853,7 +8859,7 @@
     "abebooks|josep renau|fotomontador photomontagist": {
       "first_successful_fetch": "2026-08-22T20:48:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T09:07:50Z",
+      "last_successful_fetch": "2026-08-26T20:32:48Z",
       "seen": [
         "abebooks:32257460520",
         "abebooks:9788448244040",
@@ -8876,7 +8882,7 @@
     "abebooks|jouko lehtola|finlandia": {
       "first_successful_fetch": "2026-08-22T21:45:33Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T09:07:50Z",
+      "last_successful_fetch": "2026-08-26T20:32:48Z",
       "seen": [
         "abebooks:31805736141",
         "abebooks:9789511389590",
@@ -8892,7 +8898,7 @@
     "abebooks|jules spinatsch|temporary discomfort chapter i v": {
       "first_successful_fetch": "2026-08-22T21:45:33Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T09:07:50Z",
+      "last_successful_fetch": "2026-08-26T20:32:48Z",
       "seen": [
         "abebooks:32236947645",
         "abebooks:9783037780473",
@@ -8911,6 +8917,8 @@
         "abebooks:31385907300",
         "abebooks:51283250",
         "abebooks:30965165106",
+        "abebooks:22765477144",
+        "abebooks:54278753",
         "abebooks:16177005814"
       ]
     },
@@ -8928,7 +8936,7 @@
     "abebooks|julian germain|in soccer wonderland": {
       "first_successful_fetch": "2026-08-22T21:45:33Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T09:07:50Z",
+      "last_successful_fetch": "2026-08-26T20:32:48Z",
       "seen": [
         "abebooks:32472734145",
         "abebooks:9781873968307",
@@ -8950,7 +8958,7 @@
     "abebooks|jurgen teller|nurnberg": {
       "first_successful_fetch": "2026-08-22T21:45:33Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T09:07:50Z",
+      "last_successful_fetch": "2026-08-26T20:32:48Z",
       "seen": [
         "abebooks:32112987979",
         "abebooks:22873969409",
@@ -8973,7 +8981,7 @@
     "abebooks|kalman kata|tiborc": {
       "first_successful_fetch": "2026-08-22T21:45:33Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T09:07:50Z",
+      "last_successful_fetch": "2026-08-26T20:32:48Z",
       "seen": [
         "abebooks:7260964447",
         "abebooks:57132617",
@@ -8994,7 +9002,7 @@
     "abebooks|karin apollonia muller|angels in fall": {
       "first_successful_fetch": "2026-08-22T21:45:33Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T09:07:50Z",
+      "last_successful_fetch": "2026-08-26T20:32:48Z",
       "seen": [
         "abebooks:30506842662",
         "abebooks:9783934923096",
@@ -9022,7 +9030,7 @@
     "abebooks|karl bassil zeina maasri walid raad and akram zaatari eds|mapping sitting": {
       "first_successful_fetch": "2026-08-22T21:45:33Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T09:07:50Z",
+      "last_successful_fetch": "2026-08-26T20:32:48Z",
       "seen": [
         "abebooks:31912298077",
         "abebooks:9789953000589"
@@ -9031,7 +9039,7 @@
     "abebooks|karl roos|kan vi v re dette bekendt can we allow ourselves this": {
       "first_successful_fetch": "2026-08-22T21:45:33Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T09:07:50Z",
+      "last_successful_fetch": "2026-08-26T20:32:48Z",
       "seen": [
         "abebooks:12471279819",
         "abebooks:50417431",
@@ -9041,7 +9049,7 @@
     "abebooks|katinka goldberg|surfacing": {
       "first_successful_fetch": "2026-08-22T21:45:33Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T09:07:50Z",
+      "last_successful_fetch": "2026-08-26T20:32:48Z",
       "seen": [
         "abebooks:32018311179",
         "abebooks:9789197887632",
@@ -9051,7 +9059,7 @@
     "abebooks|katsumi watanabe|shinjuku gunto den 66 73": {
       "first_successful_fetch": "2026-08-22T21:45:33Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T09:07:50Z",
+      "last_successful_fetch": "2026-08-26T20:32:48Z",
       "seen": [
         "abebooks:31628592183",
         "abebooks:32390811171",
@@ -9088,7 +9096,7 @@
     "abebooks|kaye john william|the people of india": {
       "first_successful_fetch": "2026-08-22T21:45:33Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T09:07:50Z",
+      "last_successful_fetch": "2026-08-26T20:32:48Z",
       "seen": [
         "abebooks:30999489109",
         "abebooks:9781331913634",
@@ -9146,10 +9154,10 @@
         "abebooks:30274475501",
         "abebooks:31509612542",
         "abebooks:9788121289511",
-        "abebooks:31509615994",
-        "abebooks:9788121289474",
         "abebooks:31459353154",
         "abebooks:9788121289481",
+        "abebooks:31509615994",
+        "abebooks:9788121289474",
         "abebooks:31509608724",
         "abebooks:9788121289467",
         "abebooks:31509613249",
@@ -9172,7 +9180,7 @@
     "abebooks|kazimierz smolen ed|oswiecim auschwitz": {
       "first_successful_fetch": "2026-08-22T21:45:33Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T09:07:50Z",
+      "last_successful_fetch": "2026-08-26T20:32:48Z",
       "seen": [
         "abebooks:32470437705",
         "abebooks:32228322853",
