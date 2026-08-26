@@ -1,7 +1,8 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-08-26T10:35:57Z",
+  "last_successful_fetch": "2026-08-26T11:41:32Z",
   "last_top_skus": [
+    "HD_304193901",
     "HD_304191722",
     "HD_304193315",
     "HD_304193284",
@@ -30,8 +31,7 @@
     "HD_304184758",
     "HD_304188812",
     "HD_304188536",
-    "HD_304176295",
-    "HD_304188401"
+    "HD_304176295"
   ],
   "products": {
     "HD_303805354": {
@@ -1803,8 +1803,24 @@
         "title": "Iconoclysms:  Shattered in Venice, Rome and Barcelona [photography][religious desecration]"
       },
       "search_fingerprint": "ad37b048af8d2258"
+    },
+    "HD_304193901": {
+      "first_seen": "2026-08-26T11:41:32Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787742001000",
+        "description": "A collection of photographs by the America film actor. \"Jeff Bridges has constructed a rich, compelling and highly personal chronicle of behind-the-scenes Hollywood\".<br/><br/>Landscape format hardback book in very good condition. Ding to top edge of back board. With dust jacket in very good condition. Ends of spine and corners lightly bumped and worn.  Light shelf wear to edges.",
+        "isbn": null,
+        "price_gbp": 150.0,
+        "product_id": "book-HD__304193901",
+        "publisher": null,
+        "route": "/jeff-bridges-pictures-first-edition-2003/product/HD_304193901",
+        "sku": "HD_304193901",
+        "title": "Jeff Bridges - Pictures - First edition, 2003"
+      },
+      "search_fingerprint": "4bcad117288c817a"
     }
   },
-  "reported_category_count": 2788,
+  "reported_category_count": 2789,
   "version": 1
 }
