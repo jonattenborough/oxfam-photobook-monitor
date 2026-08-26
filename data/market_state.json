@@ -1,11 +1,11 @@
 {
-  "cursor": 616,
+  "cursor": 12,
   "feeds": {
     "photobookstore": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 250,
-      "last_successful_fetch": "2026-08-26T02:08:27Z",
+      "last_successful_fetch": "2026-08-26T03:32:53Z",
       "seen": [
         "photobookstore:15970158444917",
         "photobookstore:15834487521653",
@@ -265,7 +265,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 231,
-      "last_successful_fetch": "2026-08-26T02:08:27Z",
+      "last_successful_fetch": "2026-08-26T03:32:53Z",
       "seen": [
         "setanta:16055810523518",
         "setanta:16055650910590",
@@ -510,7 +510,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 86,
-      "last_successful_fetch": "2026-08-26T02:08:27Z",
+      "last_successful_fetch": "2026-08-26T03:32:53Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -604,7 +604,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 206,
-      "last_successful_fetch": "2026-08-26T02:08:27Z",
+      "last_successful_fetch": "2026-08-26T03:32:53Z",
       "seen": [
         "village:10371020095770",
         "village:10373810258202",
@@ -822,12 +822,12 @@
   },
   "last_failures": [],
   "last_successful_requests": 28,
-  "last_successful_run": "2026-08-26T02:08:27Z",
+  "last_successful_run": "2026-08-26T03:32:53Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T20:58:51Z",
+      "last_successful_fetch": "2026-08-26T03:32:53Z",
       "seen": [
         "abebooks:30971283142",
         "abebooks:32115372620"
@@ -836,14 +836,14 @@
     "abebooks|abbott berenice|changing new york": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T20:58:51Z",
+      "last_successful_fetch": "2026-08-26T03:32:53Z",
       "seen": [
         "abebooks:12016725286",
         "abebooks:9780486229676",
         "abebooks:32479890960",
         "abebooks:9781565843776",
         "abebooks:32201160542",
-        "abebooks:31932813217",
+        "abebooks:32026927318",
         "abebooks:9783888146466",
         "abebooks:55410863",
         "abebooks:32144052966",
@@ -891,23 +891,23 @@
         "abebooks:54990151",
         "abebooks:30472119245",
         "abebooks:22533584678",
-        "abebooks:32026927318"
+        "abebooks:31932813217"
       ]
     },
     "abebooks|agee james evans walker|let us now praise famous men": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T20:58:51Z",
+      "last_successful_fetch": "2026-08-26T03:32:53Z",
       "seen": [
+        "abebooks:32479244734",
+        "abebooks:9780618127498",
+        "abebooks:63271547",
         "abebooks:32491465603",
         "abebooks:9780395489017",
         "abebooks:52274160",
-        "abebooks:32460634615",
+        "abebooks:32457973200",
         "abebooks:9780395488973",
-        "abebooks:65440519",
-        "abebooks:32498862496",
-        "abebooks:9780618127498",
-        "abebooks:65445138",
+        "abebooks:65445109",
         "abebooks:32447273846",
         "abebooks:9780395296967",
         "abebooks:32388950030",
@@ -921,9 +921,10 @@
         "abebooks:54239244",
         "abebooks:32476800513",
         "abebooks:31729177974",
-        "abebooks:31444028994",
-        "abebooks:32033023457",
+        "abebooks:31862609405",
         "abebooks:9780345276964",
+        "abebooks:51315977",
+        "abebooks:31444028994",
         "abebooks:30377602002",
         "abebooks:31922039185",
         "abebooks:65198171",
@@ -952,11 +953,10 @@
         "abebooks:32488633271",
         "abebooks:9781931082815",
         "abebooks:32184061407",
-        "abebooks:32486833005",
-        "abebooks:9780345237651",
         "abebooks:32370010342",
         "abebooks:9780395957714",
-        "abebooks:51315977",
+        "abebooks:32486833005",
+        "abebooks:9780345237651",
         "abebooks:32113483119",
         "abebooks:52362351",
         "abebooks:32197381088",
@@ -984,7 +984,7 @@
     "abebooks|alain resnais and jorge semprun|reperages": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T20:58:51Z",
+      "last_successful_fetch": "2026-08-26T03:32:53Z",
       "seen": [
         "abebooks:32355691498",
         "abebooks:9782851080080",
@@ -995,7 +995,7 @@
     "abebooks|albert blitz ed various photographers|blauwe maandag omdat mijn huis daar stond": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T20:58:51Z",
+      "last_successful_fetch": "2026-08-26T03:32:53Z",
       "seen": [
         "abebooks:32387238556",
         "abebooks:32400627342",
@@ -1005,7 +1005,7 @@
     "abebooks|albert renger patzsch|kupferhammer grunthal vierhundert jahre deutscher arbeitskultur 1537 1937 the grunthal copperworks 400 years of german labour 1537 1937": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T20:58:51Z",
+      "last_successful_fetch": "2026-08-26T03:32:53Z",
       "seen": [
         "abebooks:17164487347",
         "abebooks:31858866609",
@@ -1017,7 +1017,7 @@
     "abebooks|albin guillot laure|micrographie decorative": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T20:58:51Z",
+      "last_successful_fetch": "2026-08-26T03:32:53Z",
       "seen": [
         "abebooks:31111146047",
         "abebooks:65110750"
@@ -1026,7 +1026,7 @@
     "abebooks|alec soth|broken manual": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T20:58:51Z",
+      "last_successful_fetch": "2026-08-26T03:32:53Z",
       "seen": [
         "abebooks:32467392088",
         "abebooks:9781913620783",
@@ -1042,7 +1042,7 @@
     "abebooks|alec soth|sleeping by the mississippi": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T20:58:51Z",
+      "last_successful_fetch": "2026-08-26T03:32:53Z",
       "seen": [
         "abebooks:32450008430",
         "abebooks:9781910164891",
@@ -1096,7 +1096,7 @@
     "abebooks|aleksandar vuco askerland and dusan matic|podvizi druzine pet petlica the exploits of the five cockerels gang": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T20:58:51Z",
+      "last_successful_fetch": "2026-08-26T03:32:53Z",
       "seen": [
         "abebooks:32502806399",
         "abebooks:32389336587",
@@ -1108,7 +1108,7 @@
     "abebooks|alexander honory|the lost pictures": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T20:58:51Z",
+      "last_successful_fetch": "2026-08-26T03:32:53Z",
       "seen": [
         "abebooks:32483995363",
         "abebooks:32482367852",
@@ -1120,7 +1120,7 @@
     "abebooks|alice rose george gilles peress|here is new york": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T20:58:51Z",
+      "last_successful_fetch": "2026-08-26T03:32:53Z",
       "seen": [
         "abebooks:32448195698",
         "abebooks:9783908247661",
@@ -13473,7 +13473,7 @@
     "abebooks|shinro ohtake|uk77 digging my way to london": {
       "first_successful_fetch": "2026-08-23T13:53:32Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T19:55:03Z",
+      "last_successful_fetch": "2026-08-26T03:32:53Z",
       "seen": [
         "abebooks:32498259521",
         "abebooks:31721990672",
@@ -13817,7 +13817,7 @@
     "abebooks|steichen edward|the first picture book": {
       "first_successful_fetch": "2026-08-23T13:53:32Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T19:55:03Z",
+      "last_successful_fetch": "2026-08-26T03:32:53Z",
       "seen": [
         "abebooks:31805871019",
         "abebooks:63832371",
@@ -13898,7 +13898,7 @@
     "abebooks|stephen shore|a road trip journal": {
       "first_successful_fetch": "2026-08-23T13:53:32Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T19:55:03Z",
+      "last_successful_fetch": "2026-08-26T03:32:53Z",
       "seen": [
         "abebooks:31787518424",
         "abebooks:31100662343",
@@ -14051,19 +14051,20 @@
     "abebooks|stewart john|souvenir des pyrenees": {
       "first_successful_fetch": "2026-08-23T13:53:32Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T19:55:03Z",
+      "last_successful_fetch": "2026-08-26T03:32:53Z",
       "seen": [
-        "abebooks:32501897122",
+        "abebooks:32504644788",
         "abebooks:32463273264",
         "abebooks:32442988857",
         "abebooks:31599126661",
-        "abebooks:32262265487"
+        "abebooks:32262265487",
+        "abebooks:32501897122"
       ]
     },
     "abebooks|stieglitz alfred|camera work": {
       "first_successful_fetch": "2026-08-23T13:53:32Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T20:58:51Z",
+      "last_successful_fetch": "2026-08-26T03:32:53Z",
       "seen": [
         "abebooks:32428253070",
         "abebooks:9780486235912",
@@ -14103,8 +14104,6 @@
         "abebooks:87428383",
         "abebooks:32041200888",
         "abebooks:30387570148",
-        "abebooks:32337964094",
-        "abebooks:50101118",
         "abebooks:21822246912",
         "abebooks:3159139412",
         "abebooks:54202199",
@@ -14142,7 +14141,9 @@
         "abebooks:20785608874",
         "abebooks:31942437913",
         "abebooks:30466774065",
-        "abebooks:32485226287"
+        "abebooks:32485226287",
+        "abebooks:32337964094",
+        "abebooks:50101118"
       ]
     },
     "abebooks|stillman william j|the acropolis of athens": {
@@ -14199,7 +14200,7 @@
     "abebooks|strand paul|time in new england": {
       "first_successful_fetch": "2026-08-23T13:53:32Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T20:58:51Z",
+      "last_successful_fetch": "2026-08-26T03:32:53Z",
       "seen": [
         "abebooks:10704879119",
         "abebooks:32212172024",
@@ -14274,7 +14275,7 @@
     "abebooks|styrsky jindrich|na jehlach techto dni": {
       "first_successful_fetch": "2026-08-23T13:53:32Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T20:58:51Z",
+      "last_successful_fetch": "2026-08-26T03:32:53Z",
       "seen": [
         "abebooks:32478959010",
         "abebooks:9783924095116",
@@ -14528,7 +14529,7 @@
     "abebooks|tadao mitome|sanrizuka moeru hokuso daichi document 1966 71": {
       "first_successful_fetch": "2026-08-23T13:53:32Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T20:58:51Z",
+      "last_successful_fetch": "2026-08-26T03:32:53Z",
       "seen": [
         "abebooks:30608028350",
         "abebooks:30913456969",
@@ -14791,7 +14792,7 @@
     "abebooks|thomson john|illustrations of china and its people": {
       "first_successful_fetch": "2026-08-23T14:49:09Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T20:58:51Z",
+      "last_successful_fetch": "2026-08-26T03:32:53Z",
       "seen": [
         "abebooks:32417380108",
         "abebooks:9781016196789",
@@ -15024,7 +15025,7 @@
     "abebooks|valerio spada|gomorrah girl": {
       "first_successful_fetch": "2026-08-23T14:49:09Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T20:58:51Z",
+      "last_successful_fetch": "2026-08-26T03:32:53Z",
       "seen": [
         "abebooks:31840330822",
         "abebooks:9781936611072",
@@ -15337,7 +15338,7 @@
     "abebooks|vigier viscount|album des pyrenees": {
       "first_successful_fetch": "2026-08-23T14:49:09Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T20:58:51Z",
+      "last_successful_fetch": "2026-08-26T03:32:53Z",
       "seen": [
         "abebooks:32387207047",
         "abebooks:31004455897",
@@ -15546,7 +15547,7 @@
     "abebooks|weston edward|the art of edward weston": {
       "first_successful_fetch": "2026-08-23T14:49:09Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-24T20:58:51Z",
+      "last_successful_fetch": "2026-08-26T03:32:53Z",
       "seen": [
         "abebooks:31640255972",
         "abebooks:86870086",
