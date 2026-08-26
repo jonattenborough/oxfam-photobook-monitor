@@ -1,12 +1,14 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-08-25T23:25:19Z",
+  "last_successful_fetch": "2026-08-26T09:54:17Z",
   "last_top_skus": [
+    "HD_304193315",
+    "HD_304193284",
     "HD_304192792",
     "HD_304192668",
     "HD_304191552",
-    "HD_304191618",
     "HD_304191817",
+    "HD_304191618",
     "HD_304191739",
     "HD_304191922",
     "HD_304191723",
@@ -29,9 +31,7 @@
     "HD_304188536",
     "HD_304176295",
     "HD_304188401",
-    "HD_304188373",
-    "HD_304188344",
-    "HD_304188047"
+    "HD_304188373"
   ],
   "products": {
     "HD_303805354": {
@@ -1755,8 +1755,40 @@
         "title": "Monsoon"
       },
       "search_fingerprint": "9d8757a467aeb483"
+    },
+    "HD_304193284": {
+      "first_seen": "2026-08-26T09:54:17Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787734215000",
+        "description": "This book was published on the occasion of the 2018/2019 exhibition of the same name at the Hamburger-Bahnhof Museum in Berlin.  The text in English and German.<br/><br/>There is a mark from a sticker on the back cover.",
+        "isbn": null,
+        "price_gbp": 25.0,
+        "product_id": "book-HD__304193284",
+        "publisher": null,
+        "route": "/how-to-talk-with-birds-trees-fish-shells-snakes-bulls-and-lions-exhibition-catalogueart/product/HD_304193284",
+        "sku": "HD_304193284",
+        "title": "How to Talk with Birds, Trees, Fish, Shells, Snakes, Bulls and Lions [exhibition catalogue][art]"
+      },
+      "search_fingerprint": "03a49d4f15558e63"
+    },
+    "HD_304193315": {
+      "first_seen": "2026-08-26T09:54:17Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787734801000",
+        "description": "This book is both a memoir and a story twisting the Byzantine notion of shattering images for religious reasons into a lens for viewing the history of art and architecture, real-world tragedies both personal (bereavement) and public (terrorist attacks) – a damaged Renaissance canvas in Venice,  a church in Rome turned inside out, a multicoloured mosaic park bench in Barcelona made of broken crockery, a dragon fountain made of old farm implements, images destroyed, space rearranged, objects repurposed.",
+        "isbn": null,
+        "price_gbp": 25.0,
+        "product_id": "book-HD__304193315",
+        "publisher": null,
+        "route": "/iconoclysms-shattered-in-venice-rome-and-barcelona-photographyreligious-desecration/product/HD_304193315",
+        "sku": "HD_304193315",
+        "title": "Iconoclysms:  Shattered in Venice, Rome and Barcelona [photography][religious desecration]"
+      },
+      "search_fingerprint": "ad37b048af8d2258"
     }
   },
-  "reported_category_count": 2786,
+  "reported_category_count": 2788,
   "version": 1
 }
