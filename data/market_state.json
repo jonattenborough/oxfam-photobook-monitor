@@ -1,11 +1,11 @@
 {
-  "cursor": 180,
+  "cursor": 204,
   "feeds": {
     "photobookstore": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 249,
-      "last_successful_fetch": "2026-08-26T11:00:59Z",
+      "last_successful_fetch": "2026-08-26T11:55:56Z",
       "seen": [
         "photobookstore:15970158444917",
         "photobookstore:15834487521653",
@@ -265,8 +265,11 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 231,
-      "last_successful_fetch": "2026-08-26T11:00:59Z",
+      "last_successful_fetch": "2026-08-26T11:55:56Z",
       "seen": [
+        "setanta:16060371108222",
+        "setanta:16060294529406",
+        "setanta:16058905952638",
         "setanta:16055810523518",
         "setanta:16055650910590",
         "setanta:16055570039166",
@@ -510,7 +513,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 86,
-      "last_successful_fetch": "2026-08-26T11:00:59Z",
+      "last_successful_fetch": "2026-08-26T11:55:56Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -603,9 +606,14 @@
     "village": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
-      "last_count": 206,
-      "last_successful_fetch": "2026-08-26T11:00:59Z",
+      "last_count": 207,
+      "last_successful_fetch": "2026-08-26T11:55:56Z",
       "seen": [
+        "village:10372152262938",
+        "village:10372147708186",
+        "village:10372147609882",
+        "village:10372145217818",
+        "village:10372741628186",
         "village:10371020095770",
         "village:10373810258202",
         "village:10371039101210",
@@ -822,7 +830,7 @@
   },
   "last_failures": [],
   "last_successful_requests": 28,
-  "last_successful_run": "2026-08-26T11:00:59Z",
+  "last_successful_run": "2026-08-26T11:55:56Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
@@ -6600,7 +6608,7 @@
     "abebooks|geert van kesteren|why mister why": {
       "first_successful_fetch": "2026-08-22T17:45:56Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:05:05Z",
+      "last_successful_fetch": "2026-08-26T11:55:56Z",
       "seen": [
         "abebooks:30786487203",
         "abebooks:9789085460091",
@@ -6617,7 +6625,7 @@
     "abebooks|genthe arnold|pictures of old chinatown": {
       "first_successful_fetch": "2026-08-22T17:45:56Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:05:05Z",
+      "last_successful_fetch": "2026-08-26T11:55:56Z",
       "seen": [
         "abebooks:32155689991",
         "abebooks:9781409730804",
@@ -6683,7 +6691,7 @@
     "abebooks|george hashiguchi|juunanasai no chizu": {
       "first_successful_fetch": "2026-08-22T17:45:56Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:05:05Z",
+      "last_successful_fetch": "2026-08-26T11:55:56Z",
       "seen": [
         "abebooks:12610970519",
         "abebooks:60245682",
@@ -6694,7 +6702,7 @@
     "abebooks|gerhard richter|atlas of the photographs collages and sketches": {
       "first_successful_fetch": "2026-08-22T17:45:56Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:05:05Z",
+      "last_successful_fetch": "2026-08-26T11:55:56Z",
       "seen": [
         "abebooks:30740730302",
         "abebooks:54283240",
@@ -6715,7 +6723,7 @@
     "abebooks|ghirri luigi|kodachrome": {
       "first_successful_fetch": "2026-08-22T17:45:56Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:57:26Z",
+      "last_successful_fetch": "2026-08-26T11:55:56Z",
       "seen": [
         "abebooks:32501080356",
         "abebooks:9781907946240",
@@ -6723,20 +6731,20 @@
         "abebooks:31036111323",
         "abebooks:32462248420",
         "abebooks:59222433",
-        "abebooks:32069575179",
-        "abebooks:50531827",
         "abebooks:32239566424",
         "abebooks:89806455",
         "abebooks:32370482161",
         "abebooks:55661942",
+        "abebooks:32069575179",
+        "abebooks:50531827",
         "abebooks:30041433503",
         "abebooks:51194787",
         "abebooks:13019472350",
         "abebooks:32353727970",
-        "abebooks:31767923670",
-        "abebooks:52402892",
         "abebooks:32238961862",
         "abebooks:89802850",
+        "abebooks:31767923670",
+        "abebooks:52402892",
         "abebooks:32458670777",
         "abebooks:53994756",
         "abebooks:32092270422",
@@ -6753,15 +6761,15 @@
     "abebooks|gian butturini|london": {
       "first_successful_fetch": "2026-08-22T17:45:56Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:57:26Z",
+      "last_successful_fetch": "2026-08-26T11:55:56Z",
       "seen": [
-        "abebooks:31209375382",
-        "abebooks:9788862085588",
-        "abebooks:53833589",
         "abebooks:31214535065",
         "abebooks:52346410",
         "abebooks:30873280601",
-        "abebooks:72313296"
+        "abebooks:72313296",
+        "abebooks:31209375382",
+        "abebooks:9788862085588",
+        "abebooks:53833589"
       ]
     },
     "abebooks|gibson ralph|days at sea": {
@@ -6840,7 +6848,7 @@
     "abebooks|gilbert and george|dark shadow": {
       "first_successful_fetch": "2026-08-22T17:45:56Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:57:26Z",
+      "last_successful_fetch": "2026-08-26T11:55:56Z",
       "seen": [
         "abebooks:30996278360",
         "abebooks:32199752014",
@@ -6883,7 +6891,7 @@
     "abebooks|gilles peress|telex persan": {
       "first_successful_fetch": "2026-08-22T17:45:56Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:57:26Z",
+      "last_successful_fetch": "2026-08-26T11:55:56Z",
       "seen": [
         "abebooks:31798008669",
         "abebooks:9782859490553",
@@ -6895,7 +6903,7 @@
     "abebooks|ginger gordon and william levy|the virgin sperm dancer": {
       "first_successful_fetch": "2026-08-22T17:45:56Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:57:26Z",
+      "last_successful_fetch": "2026-08-26T11:55:56Z",
       "seen": [
         "abebooks:22768932090",
         "abebooks:16652202902",
@@ -6913,7 +6921,7 @@
     "abebooks|gordon matta clark|walls paper": {
       "first_successful_fetch": "2026-08-22T17:45:56Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:57:26Z",
+      "last_successful_fetch": "2026-08-26T11:55:56Z",
       "seen": [
         "abebooks:31090992299",
         "abebooks:63243490",
@@ -6938,7 +6946,7 @@
     "abebooks|graff werner|es kommt der neue fotograf": {
       "first_successful_fetch": "2026-08-22T17:45:56Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:57:26Z",
+      "last_successful_fetch": "2026-08-26T11:55:56Z",
       "seen": [
         "abebooks:32386913455",
         "abebooks:9783883750019",
@@ -6980,7 +6988,7 @@
     "abebooks|gregoire pujade lauraine|a perpetual season": {
       "first_successful_fetch": "2026-08-22T17:45:56Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:57:26Z",
+      "last_successful_fetch": "2026-08-26T11:55:56Z",
       "seen": [
         "abebooks:32229083292",
         "abebooks:52512508",
@@ -7002,7 +7010,7 @@
     "abebooks|groebli rene|magie der schiene": {
       "first_successful_fetch": "2026-08-22T18:57:55Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:57:26Z",
+      "last_successful_fetch": "2026-08-26T11:55:56Z",
       "seen": [
         "abebooks:3009055642",
         "abebooks:30828278028",
@@ -7012,16 +7020,16 @@
         "abebooks:31700937988",
         "abebooks:30970564611",
         "abebooks:31114321678",
-        "abebooks:31498053208",
-        "abebooks:85803404",
         "abebooks:20632364457",
-        "abebooks:3009055643"
+        "abebooks:3009055643",
+        "abebooks:31498053208",
+        "abebooks:85803404"
       ]
     },
     "abebooks|guido guidi|varianti": {
       "first_successful_fetch": "2026-08-22T18:57:55Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:57:26Z",
+      "last_successful_fetch": "2026-08-26T11:55:56Z",
       "seen": [
         "abebooks:32501005806",
         "abebooks:9788886550123",
@@ -7075,7 +7083,7 @@
     "abebooks|hamish fulton|hamish fulton": {
       "first_successful_fetch": "2026-08-22T18:57:55Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:57:26Z",
+      "last_successful_fetch": "2026-08-26T11:55:56Z",
       "seen": [
         "abebooks:31292491648",
         "abebooks:22604979074",
@@ -7160,7 +7168,7 @@
     "abebooks|hans aarsman claudie de cleen julian germain|useful photography 002": {
       "first_successful_fetch": "2026-08-22T18:57:55Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:57:26Z",
+      "last_successful_fetch": "2026-08-26T11:55:56Z",
       "seen": [
         "abebooks:32091988962",
         "abebooks:9789075380460",
@@ -7176,7 +7184,7 @@
     "abebooks|hans aarsman|hollandse taferelen": {
       "first_successful_fetch": "2026-08-22T18:57:55Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:57:26Z",
+      "last_successful_fetch": "2026-08-26T11:55:56Z",
       "seen": [
         "abebooks:32484303219",
         "abebooks:9789065790309",
@@ -7200,7 +7208,7 @@
     "abebooks|hans eijkelboom|portraits and cameras 1949 2009": {
       "first_successful_fetch": "2026-08-22T18:57:55Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:57:26Z",
+      "last_successful_fetch": "2026-08-26T11:55:56Z",
       "seen": [
         "abebooks:31087523748",
         "abebooks:9789075848120",
@@ -7223,19 +7231,20 @@
     "abebooks|hans peter feldmann|11 bilder 11 pictures": {
       "first_successful_fetch": "2026-08-22T18:57:55Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:57:26Z",
+      "last_successful_fetch": "2026-08-26T11:55:56Z",
       "seen": [
         "abebooks:32337010885",
         "abebooks:32330886309",
-        "abebooks:32476719413",
+        "abebooks:32333838038",
         "abebooks:32255845830",
-        "abebooks:31567415951"
+        "abebooks:31567415951",
+        "abebooks:32476719413"
       ]
     },
     "abebooks|hans peter feldmann|bilder pictures": {
       "first_successful_fetch": "2026-08-22T18:57:55Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:57:26Z",
+      "last_successful_fetch": "2026-08-26T11:55:56Z",
       "seen": [
         "abebooks:32109281130",
         "abebooks:21857518290",
@@ -7245,7 +7254,7 @@
     "abebooks|hans peter feldmann|der uberfall the heist": {
       "first_successful_fetch": "2026-08-22T18:57:55Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:57:26Z",
+      "last_successful_fetch": "2026-08-26T11:55:56Z",
       "seen": [
         "abebooks:31648837009",
         "abebooks:32340186442",
@@ -7257,7 +7266,7 @@
     "abebooks|hans peter feldmann|die toten 1967 1993 the dead 1967 1993": {
       "first_successful_fetch": "2026-08-22T18:57:55Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:57:26Z",
+      "last_successful_fetch": "2026-08-26T11:55:56Z",
       "seen": [
         "abebooks:32481393683",
         "abebooks:32459835736",
@@ -7269,7 +7278,7 @@
     "abebooks|hans van der meer|hollandse velden": {
       "first_successful_fetch": "2026-08-22T18:57:55Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:57:26Z",
+      "last_successful_fetch": "2026-08-26T11:55:56Z",
       "seen": [
         "abebooks:32484940056",
         "abebooks:9789074159333",
@@ -7285,7 +7294,7 @@
     "abebooks|harry callahan|waters edge": {
       "first_successful_fetch": "2026-08-22T18:57:55Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:57:26Z",
+      "last_successful_fetch": "2026-08-26T11:55:56Z",
       "seen": [
         "abebooks:32471227130",
         "abebooks:32332062387",
