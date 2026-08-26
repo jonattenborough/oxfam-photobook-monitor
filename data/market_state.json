@@ -1,11 +1,11 @@
 {
-  "cursor": 156,
+  "cursor": 180,
   "feeds": {
     "photobookstore": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 249,
-      "last_successful_fetch": "2026-08-26T10:05:17Z",
+      "last_successful_fetch": "2026-08-26T11:00:59Z",
       "seen": [
         "photobookstore:15970158444917",
         "photobookstore:15834487521653",
@@ -265,7 +265,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 231,
-      "last_successful_fetch": "2026-08-26T10:05:17Z",
+      "last_successful_fetch": "2026-08-26T11:00:59Z",
       "seen": [
         "setanta:16055810523518",
         "setanta:16055650910590",
@@ -510,7 +510,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 86,
-      "last_successful_fetch": "2026-08-26T10:05:17Z",
+      "last_successful_fetch": "2026-08-26T11:00:59Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -604,7 +604,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 206,
-      "last_successful_fetch": "2026-08-26T10:05:17Z",
+      "last_successful_fetch": "2026-08-26T11:00:59Z",
       "seen": [
         "village:10371020095770",
         "village:10373810258202",
@@ -822,7 +822,7 @@
   },
   "last_failures": [],
   "last_successful_requests": 28,
-  "last_successful_run": "2026-08-26T10:05:17Z",
+  "last_successful_run": "2026-08-26T11:00:59Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
@@ -5533,7 +5533,7 @@
     "abebooks|enzo aresani fernando fondi caterina ossola|ignis 25": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T04:11:08Z",
+      "last_successful_fetch": "2026-08-26T11:00:59Z",
       "seen": []
     },
     "abebooks|erich einhorn pravoslav sovak pavel kohout|marianske lazne": {
@@ -5547,24 +5547,25 @@
     "abebooks|erik kessels|in almost every picture series title represented in volume iii": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T04:11:08Z",
+      "last_successful_fetch": "2026-08-26T11:00:59Z",
       "seen": [
         "abebooks:32415272130",
         "abebooks:32164092376",
-        "abebooks:31817586032",
+        "abebooks:31691786877",
+        "abebooks:32488630808",
         "abebooks:32469020131",
+        "abebooks:31817586032",
         "abebooks:32385491523"
       ]
     },
     "abebooks|ernest cole|house of bondage": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T04:11:08Z",
+      "last_successful_fetch": "2026-08-26T11:00:59Z",
       "seen": [
         "abebooks:32402103408",
-        "abebooks:32430433079",
+        "abebooks:32463494370",
         "abebooks:9780394429359",
-        "abebooks:65440519",
         "abebooks:31890776222",
         "abebooks:9781597115339",
         "abebooks:32469001540",
@@ -5592,13 +5593,14 @@
         "abebooks:63838350",
         "abebooks:31098043404",
         "abebooks:32340202467",
-        "abebooks:32463494370"
+        "abebooks:32430433079",
+        "abebooks:65440519"
       ]
     },
     "abebooks|ernst friedrich|krieg dem kriege war against war": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T04:11:08Z",
+      "last_successful_fetch": "2026-08-26T11:00:59Z",
       "seen": [
         "abebooks:31376112384",
         "abebooks:31376110565",
@@ -5633,7 +5635,7 @@
     "abebooks|esko mannikko|naarashauki the female pike": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:05:05Z",
+      "last_successful_fetch": "2026-08-26T11:00:59Z",
       "seen": [
         "abebooks:32402750551",
         "abebooks:9789529235001",
@@ -5658,7 +5660,7 @@
     "abebooks|eugene richards|dorchester days": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:05:05Z",
+      "last_successful_fetch": "2026-08-26T11:00:59Z",
       "seen": [
         "abebooks:32373809821",
         "abebooks:9780714840017",
@@ -5684,7 +5686,7 @@
     "abebooks|eugene richards|the fat baby": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:05:05Z",
+      "last_successful_fetch": "2026-08-26T11:00:59Z",
       "seen": [
         "abebooks:31792943614",
         "abebooks:32414347161",
@@ -5710,7 +5712,7 @@
     "abebooks|evans walker|american photographs": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:05:05Z",
+      "last_successful_fetch": "2026-08-26T11:00:59Z",
       "seen": [
         "abebooks:32498862496",
         "abebooks:9780618127498",
@@ -5795,11 +5797,10 @@
     "abebooks|evans walker|many are called": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:05:05Z",
+      "last_successful_fetch": "2026-08-26T11:00:59Z",
       "seen": [
-        "abebooks:32486201269",
+        "abebooks:32462037475",
         "abebooks:9780300106176",
-        "abebooks:52274160",
         "abebooks:32316320720",
         "abebooks:31935021163",
         "abebooks:32144007758",
@@ -5824,13 +5825,15 @@
         "abebooks:5064294578",
         "abebooks:31693998138",
         "abebooks:11560755619",
-        "abebooks:31062161011"
+        "abebooks:31062161011",
+        "abebooks:32486201269",
+        "abebooks:52274160"
       ]
     },
     "abebooks|fargue leon paul parry roger|banalite": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:05:05Z",
+      "last_successful_fetch": "2026-08-26T11:00:59Z",
       "seen": [
         "abebooks:32129670400",
         "abebooks:9782329753119",
@@ -5847,6 +5850,8 @@
         "abebooks:9782070119172",
         "abebooks:21836843983",
         "abebooks:11000629313",
+        "abebooks:31120652352",
+        "abebooks:50154680",
         "abebooks:30842907416",
         "abebooks:30821727035",
         "abebooks:60919595",
@@ -5874,7 +5879,7 @@
     "abebooks|federov i v|sssr stroit sotsialism": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:05:05Z",
+      "last_successful_fetch": "2026-08-26T11:00:59Z",
       "seen": []
     },
     "abebooks|felix greene|vietnam vietnam": {
@@ -5952,7 +5957,7 @@
     "abebooks|fenton roger|photographs taken under the patronage of her majesty the queen in the crimea": {
       "first_successful_fetch": "2026-08-22T16:49:35Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:05:05Z",
+      "last_successful_fetch": "2026-08-26T11:00:59Z",
       "seen": [
         "abebooks:32430336812",
         "abebooks:32495705206",
@@ -5977,7 +5982,7 @@
     "abebooks|florian bohm luca pizzaroni and wolfgang scheppe|endcommercial": {
       "first_successful_fetch": "2026-08-22T17:45:56Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:05:05Z",
+      "last_successful_fetch": "2026-08-26T11:00:59Z",
       "seen": [
         "abebooks:32133260940",
         "abebooks:32487099413",
@@ -5993,7 +5998,7 @@
     "abebooks|franco basaglia and franca basaglia ongaro eds|morire di classe": {
       "first_successful_fetch": "2026-08-22T17:45:56Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:05:05Z",
+      "last_successful_fetch": "2026-08-26T11:00:59Z",
       "seen": [
         "abebooks:31766036752",
         "abebooks:9788842833741",
@@ -6022,7 +6027,7 @@
     "abebooks|frank robert|flower is": {
       "first_successful_fetch": "2026-08-22T17:45:56Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:05:05Z",
+      "last_successful_fetch": "2026-08-26T11:00:59Z",
       "seen": [
         "abebooks:9462744373",
         "abebooks:32104712195",
@@ -6036,14 +6041,11 @@
     "abebooks|frank robert|les americains": {
       "first_successful_fetch": "2026-08-22T17:45:56Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:05:05Z",
+      "last_successful_fetch": "2026-08-26T11:00:59Z",
       "seen": [
         "abebooks:31299684634",
         "abebooks:9791095821458",
         "abebooks:52839311",
-        "abebooks:32475893845",
-        "abebooks:9782851070081",
-        "abebooks:53833589",
         "abebooks:32279138484",
         "abebooks:9782851072337",
         "abebooks:32227361011",
@@ -6059,6 +6061,8 @@
         "abebooks:52748454",
         "abebooks:32376170915",
         "abebooks:51982769",
+        "abebooks:32466827286",
+        "abebooks:52356458",
         "abebooks:30804419335",
         "abebooks:32350127664",
         "abebooks:30671431519",
@@ -6073,7 +6077,10 @@
         "abebooks:3009052538",
         "abebooks:31784909703",
         "abebooks:31118898164",
-        "abebooks:30443071239"
+        "abebooks:30443071239",
+        "abebooks:32475893845",
+        "abebooks:9782851070081",
+        "abebooks:53833589"
       ]
     },
     "abebooks|frank robert|the americans": {
@@ -6166,7 +6173,7 @@
     "abebooks|frank robert|the lines of my hand": {
       "first_successful_fetch": "2026-08-22T17:45:56Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:05:05Z",
+      "last_successful_fetch": "2026-08-26T11:00:59Z",
       "seen": [
         "abebooks:31758627598",
         "abebooks:32492048467",
@@ -6186,9 +6193,9 @@
         "abebooks:59696358",
         "abebooks:32199455210",
         "abebooks:31827151419",
-        "abebooks:32207040209",
         "abebooks:31793361484",
         "abebooks:9780436162565",
+        "abebooks:32207040209",
         "abebooks:32198271902",
         "abebooks:59285191",
         "abebooks:32322649844",
@@ -6209,16 +6216,16 @@
         "abebooks:22469579918",
         "abebooks:32250323323",
         "abebooks:32079993050",
-        "abebooks:32013013211",
         "abebooks:32201982798",
+        "abebooks:32013013211",
         "abebooks:30848660813",
         "abebooks:32158375772",
         "abebooks:30833112104",
         "abebooks:5350070568",
         "abebooks:50417431",
         "abebooks:32244538481",
-        "abebooks:31507732175",
         "abebooks:32077605988",
+        "abebooks:31507732175",
         "abebooks:32043435227",
         "abebooks:31172735167",
         "abebooks:61572827",
@@ -6303,7 +6310,7 @@
     "abebooks|frith francis|egypt and palestine": {
       "first_successful_fetch": "2026-08-22T17:45:56Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:05:05Z",
+      "last_successful_fetch": "2026-08-26T11:00:59Z",
       "seen": [
         "abebooks:32251916550",
         "abebooks:9781013851278",
@@ -6330,13 +6337,40 @@
         "abebooks:32086012426",
         "abebooks:32086005769",
         "abebooks:31935457993",
-        "abebooks:22890765977",
-        "abebooks:54453129",
         "abebooks:22890765978",
+        "abebooks:54453129",
+        "abebooks:22890765977",
         "abebooks:31935446344",
         "abebooks:22890765975",
         "abebooks:22890765976",
         "abebooks:31935456993",
+        "abebooks:22890399356",
+        "abebooks:22890756165",
+        "abebooks:22890756171",
+        "abebooks:22890760291",
+        "abebooks:22890760292",
+        "abebooks:22890408768",
+        "abebooks:22890756164",
+        "abebooks:22890756181",
+        "abebooks:22890399357",
+        "abebooks:22890760294",
+        "abebooks:22890408764",
+        "abebooks:22890756166",
+        "abebooks:22890399352",
+        "abebooks:22890760298",
+        "abebooks:22890756180",
+        "abebooks:22890765965",
+        "abebooks:22890765966",
+        "abebooks:22890760288",
+        "abebooks:22890399351",
+        "abebooks:22890765962",
+        "abebooks:22890756168",
+        "abebooks:22890760295",
+        "abebooks:22890399349",
+        "abebooks:22890765964",
+        "abebooks:22890399355",
+        "abebooks:22890756174",
+        "abebooks:22890399353",
         "abebooks:22890756172",
         "abebooks:22890760293",
         "abebooks:22890756167",
@@ -6357,34 +6391,7 @@
         "abebooks:22890756178",
         "abebooks:22890760300",
         "abebooks:22890408766",
-        "abebooks:22890756182",
-        "abebooks:22890760290",
-        "abebooks:22890756179",
-        "abebooks:22890760302",
-        "abebooks:22890399356",
-        "abebooks:22890756165",
-        "abebooks:22890756171",
-        "abebooks:22890760291",
-        "abebooks:22890760292",
-        "abebooks:22890756164",
-        "abebooks:22890408768",
-        "abebooks:22890756181",
-        "abebooks:22890760294",
-        "abebooks:22890399357",
-        "abebooks:22890408764",
-        "abebooks:22890756166",
-        "abebooks:22890399352",
-        "abebooks:22890760298",
-        "abebooks:22890756180",
-        "abebooks:22890765965",
-        "abebooks:22890399351",
-        "abebooks:22890765966",
-        "abebooks:22890760288",
-        "abebooks:22890765962",
-        "abebooks:22890756168",
-        "abebooks:22890760295",
-        "abebooks:22890399349",
-        "abebooks:22890765964"
+        "abebooks:22890756182"
       ]
     },
     "abebooks|frith francis|egypt sinai and jerusalem": {
@@ -6402,7 +6409,7 @@
     "abebooks|fukase masahisa|karasu": {
       "first_successful_fetch": "2026-08-22T17:45:56Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:05:05Z",
+      "last_successful_fetch": "2026-08-26T11:00:59Z",
       "seen": [
         "abebooks:31067131109",
         "abebooks:30700046607"
@@ -6411,7 +6418,7 @@
     "abebooks|gabriele basilico|porti di mare": {
       "first_successful_fetch": "2026-08-22T17:45:56Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:05:05Z",
+      "last_successful_fetch": "2026-08-26T11:00:59Z",
       "seen": [
         "abebooks:32347022085",
         "abebooks:9788885893207",
@@ -6427,7 +6434,7 @@
     "abebooks|gardner alexander|gardners photographic sketchbook of the war": {
       "first_successful_fetch": "2026-08-22T17:45:56Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:05:05Z",
+      "last_successful_fetch": "2026-08-26T11:00:59Z",
       "seen": [
         "abebooks:32468596206",
         "abebooks:9780486227313",
@@ -6485,8 +6492,11 @@
     "abebooks|garry winogrand|public relations": {
       "first_successful_fetch": "2026-08-22T17:45:56Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:05:05Z",
+      "last_successful_fetch": "2026-08-26T11:00:59Z",
       "seen": [
+        "abebooks:32419745605",
+        "abebooks:9780870705427",
+        "abebooks:55414194",
         "abebooks:32186148086",
         "abebooks:50264611",
         "abebooks:32202864936",
@@ -6496,8 +6506,6 @@
         "abebooks:32404656526",
         "abebooks:32110213773",
         "abebooks:32180713583",
-        "abebooks:32476912259",
-        "abebooks:9780870705427",
         "abebooks:30772925274",
         "abebooks:31350581619",
         "abebooks:9780870706325",
@@ -6511,19 +6519,20 @@
         "abebooks:9780087075429",
         "abebooks:2746089224",
         "abebooks:17462648086",
-        "abebooks:32473938169"
+        "abebooks:32473938169",
+        "abebooks:32476912259"
       ]
     },
     "abebooks|gary lee boas|starstruck": {
       "first_successful_fetch": "2026-08-22T17:45:56Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:05:05Z",
+      "last_successful_fetch": "2026-08-26T11:00:59Z",
       "seen": [
-        "abebooks:32117494730",
-        "abebooks:9780966427257",
-        "abebooks:85920211",
         "abebooks:32379296160",
+        "abebooks:9780966427257",
         "abebooks:52274160",
+        "abebooks:32117494730",
+        "abebooks:85920211",
         "abebooks:32452812178",
         "abebooks:32466921630",
         "abebooks:65440519",
@@ -6533,11 +6542,11 @@
         "abebooks:51315977",
         "abebooks:32440734620",
         "abebooks:31262499640",
-        "abebooks:32041716737",
-        "abebooks:54448258",
         "abebooks:32385257905",
         "abebooks:32429891263",
         "abebooks:63271547",
+        "abebooks:32041716737",
+        "abebooks:54448258",
         "abebooks:32433784021",
         "abebooks:89403255",
         "abebooks:32216744816",
@@ -6578,7 +6587,7 @@
     "abebooks|geert van kesteren|baghdad calling": {
       "first_successful_fetch": "2026-08-22T17:45:56Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T05:05:05Z",
+      "last_successful_fetch": "2026-08-26T11:00:59Z",
       "seen": [
         "abebooks:31474870844",
         "abebooks:72313296",
