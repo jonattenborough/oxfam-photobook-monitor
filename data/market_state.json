@@ -1,11 +1,11 @@
 {
-  "cursor": 276,
+  "cursor": 300,
   "feeds": {
     "photobookstore": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 249,
-      "last_successful_fetch": "2026-08-26T20:32:48Z",
+      "last_successful_fetch": "2026-08-27T00:57:09Z",
       "seen": [
         "photobookstore:15972267917685",
         "photobookstore:15972257300853",
@@ -271,7 +271,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 232,
-      "last_successful_fetch": "2026-08-26T20:32:48Z",
+      "last_successful_fetch": "2026-08-27T00:57:09Z",
       "seen": [
         "setanta:16061581656446",
         "setanta:16060428910974",
@@ -527,7 +527,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 86,
-      "last_successful_fetch": "2026-08-26T20:32:48Z",
+      "last_successful_fetch": "2026-08-27T00:57:09Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -621,7 +621,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 209,
-      "last_successful_fetch": "2026-08-26T20:32:48Z",
+      "last_successful_fetch": "2026-08-27T00:57:09Z",
       "seen": [
         "village:10374544654618",
         "village:10374542688538",
@@ -847,7 +847,7 @@
   },
   "last_failures": [],
   "last_successful_requests": 28,
-  "last_successful_run": "2026-08-26T20:32:48Z",
+  "last_successful_run": "2026-08-27T00:57:09Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
@@ -9204,7 +9204,7 @@
     "abebooks|kazuo kitai|sanrizuka 1969 1971": {
       "first_successful_fetch": "2026-08-22T21:45:33Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T09:07:50Z",
+      "last_successful_fetch": "2026-08-27T00:57:09Z",
       "seen": [
         "abebooks:31320788300",
         "abebooks:32086737903",
@@ -9216,7 +9216,7 @@
     "abebooks|kazuo kitai|teikoh resistance": {
       "first_successful_fetch": "2026-08-22T21:45:33Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T09:07:50Z",
+      "last_successful_fetch": "2026-08-27T00:57:09Z",
       "seen": [
         "abebooks:30663112529",
         "abebooks:52506076",
@@ -9226,7 +9226,7 @@
     "abebooks|keizo kitajima|a d 1991": {
       "first_successful_fetch": "2026-08-22T21:45:33Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T09:07:50Z",
+      "last_successful_fetch": "2026-08-27T00:57:09Z",
       "seen": [
         "abebooks:32218450828",
         "abebooks:21676138291",
@@ -9249,18 +9249,20 @@
     "abebooks|kent klich|gaza photo album": {
       "first_successful_fetch": "2026-08-22T21:45:33Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T09:07:50Z",
+      "last_successful_fetch": "2026-08-27T00:57:09Z",
       "seen": [
         "abebooks:30819338886",
         "abebooks:9789197762595",
         "abebooks:55443556",
+        "abebooks:22765478809",
+        "abebooks:54278753",
         "abebooks:30118356315"
       ]
     },
     "abebooks|kertesz andre|day of paris": {
       "first_successful_fetch": "2026-08-22T21:45:33Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:00:09Z",
+      "last_successful_fetch": "2026-08-27T00:57:09Z",
       "seen": [
         "abebooks:32499249456",
         "abebooks:63787606",
@@ -9279,19 +9281,20 @@
         "abebooks:32425192450",
         "abebooks:6567527608",
         "abebooks:3009055560",
-        "abebooks:4455388476"
+        "abebooks:4455388476",
+        "abebooks:30687079970"
       ]
     },
     "abebooks|kilian dr h|facies dolorosa": {
       "first_successful_fetch": "2026-08-22T21:45:33Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:00:09Z",
+      "last_successful_fetch": "2026-08-27T00:57:09Z",
       "seen": []
     },
     "abebooks|kimura ihei ver mai moshe raviv vorobeichic|paris": {
       "first_successful_fetch": "2026-08-22T21:45:33Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:00:09Z",
+      "last_successful_fetch": "2026-08-27T00:57:09Z",
       "seen": [
         "abebooks:31660935505",
         "abebooks:86378343",
@@ -9315,7 +9318,7 @@
     "abebooks|klaus staeck|pornografie": {
       "first_successful_fetch": "2026-08-22T21:45:33Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:00:09Z",
+      "last_successful_fetch": "2026-08-27T00:57:09Z",
       "seen": [
         "abebooks:32226417746",
         "abebooks:32140132034",
@@ -9400,7 +9403,7 @@
     "abebooks|kohei yoshiyuki|document kouen": {
       "first_successful_fetch": "2026-08-22T21:45:33Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:00:09Z",
+      "last_successful_fetch": "2026-08-27T00:57:09Z",
       "seen": [
         "abebooks:32489339423",
         "abebooks:52347050",
@@ -9415,7 +9418,7 @@
     "abebooks|koishi kiyoshi|shoka shinkei": {
       "first_successful_fetch": "2026-08-22T21:45:33Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:00:09Z",
+      "last_successful_fetch": "2026-08-27T00:57:09Z",
       "seen": [
         "abebooks:544162507",
         "abebooks:30953145847",
@@ -9425,7 +9428,7 @@
     "abebooks|koudelka josef|gypsies": {
       "first_successful_fetch": "2026-08-22T21:45:33Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:00:09Z",
+      "last_successful_fetch": "2026-08-27T00:57:09Z",
       "seen": [
         "abebooks:32464209308",
         "abebooks:30597116485",
@@ -9445,8 +9448,6 @@
         "abebooks:32417819969",
         "abebooks:32424002670",
         "abebooks:63559039",
-        "abebooks:31695942509",
-        "abebooks:9781597111775",
         "abebooks:32458246828",
         "abebooks:32297862270",
         "abebooks:31453136301",
@@ -9460,6 +9461,7 @@
         "abebooks:89594109",
         "abebooks:32131258906",
         "abebooks:15059620005",
+        "abebooks:9781597111775",
         "abebooks:31856392859",
         "abebooks:61616193",
         "abebooks:32303615360",
@@ -9487,32 +9489,33 @@
         "abebooks:32295207997",
         "abebooks:15500643749",
         "abebooks:50731200",
-        "abebooks:16471586116"
+        "abebooks:16471586116",
+        "abebooks:31695942509"
       ]
     },
     "abebooks|kozik frantisek|juventud y belleza": {
       "first_successful_fetch": "2026-08-22T21:45:33Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:00:09Z",
+      "last_successful_fetch": "2026-08-27T00:57:09Z",
       "seen": []
     },
     "abebooks|krass clement|drum et sted i irland drum a place in ireland": {
       "first_successful_fetch": "2026-08-22T22:47:34Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:00:09Z",
+      "last_successful_fetch": "2026-08-27T00:57:09Z",
       "seen": [
         "abebooks:31299572094",
         "abebooks:31091147626",
         "abebooks:22445728943",
         "abebooks:17822695287",
-        "abebooks:30057134020",
-        "abebooks:32498204956"
+        "abebooks:32498204956",
+        "abebooks:30057134020"
       ]
     },
     "abebooks|krass clement|ved d den": {
       "first_successful_fetch": "2026-08-22T22:47:34Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:00:09Z",
+      "last_successful_fetch": "2026-08-27T00:57:09Z",
       "seen": [
         "abebooks:32318693490",
         "abebooks:63559039"
@@ -9521,7 +9524,7 @@
     "abebooks|kruckenhauser stefan|ein dorf wird": {
       "first_successful_fetch": "2026-08-22T22:47:34Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:00:09Z",
+      "last_successful_fetch": "2026-08-27T00:57:09Z",
       "seen": [
         "abebooks:31255528676",
         "abebooks:31516495402",
@@ -9533,7 +9536,7 @@
     "abebooks|krull germaine|etudes de nu": {
       "first_successful_fetch": "2026-08-22T22:47:34Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:00:09Z",
+      "last_successful_fetch": "2026-08-27T00:57:09Z",
       "seen": [
         "abebooks:32428846889",
         "abebooks:31825168259",
@@ -9543,7 +9546,7 @@
     "abebooks|krull germaine|metal": {
       "first_successful_fetch": "2026-08-22T22:47:34Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:00:09Z",
+      "last_successful_fetch": "2026-08-27T00:57:09Z",
       "seen": [
         "abebooks:32485325081",
         "abebooks:32425137964",
@@ -9554,7 +9557,7 @@
     "abebooks|kurata seiji|flash up": {
       "first_successful_fetch": "2026-08-22T22:47:34Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:00:09Z",
+      "last_successful_fetch": "2026-08-27T00:57:09Z",
       "seen": [
         "abebooks:31949628216",
         "abebooks:5603798023",
@@ -9564,7 +9567,7 @@
     "abebooks|l harpman and p a becx eds|plem 1909 1959": {
       "first_successful_fetch": "2026-08-22T22:47:34Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:00:09Z",
+      "last_successful_fetch": "2026-08-27T00:57:09Z",
       "seen": [
         "abebooks:11278073163",
         "abebooks:31947196347",
@@ -9624,7 +9627,7 @@
     "abebooks|larry sultan and mike mandel|evidence": {
       "first_successful_fetch": "2026-08-22T22:47:34Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:00:09Z",
+      "last_successful_fetch": "2026-08-27T00:57:09Z",
       "seen": [
         "abebooks:32019044050",
         "abebooks:9781636816999",
@@ -9637,6 +9640,7 @@
         "abebooks:9781891024627",
         "abebooks:32316395945",
         "abebooks:52323279",
+        "abebooks:32297424415",
         "abebooks:31934852931",
         "abebooks:32202899630",
         "abebooks:30174257382",
@@ -9654,7 +9658,7 @@
     "abebooks|larry sultan|pictures from home": {
       "first_successful_fetch": "2026-08-22T22:47:34Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:00:09Z",
+      "last_successful_fetch": "2026-08-27T00:57:09Z",
       "seen": [
         "abebooks:32237502145",
         "abebooks:9781910164785",
@@ -9662,12 +9666,12 @@
         "abebooks:32202845954",
         "abebooks:50531827",
         "abebooks:31282781745",
-        "abebooks:31674290871",
-        "abebooks:52402892",
         "abebooks:30991106954",
         "abebooks:51194787",
         "abebooks:32238968034",
         "abebooks:89802850",
+        "abebooks:31674290871",
+        "abebooks:52402892",
         "abebooks:31406858116",
         "abebooks:32222051724",
         "abebooks:9780810937215",
@@ -9680,12 +9684,12 @@
         "abebooks:32473937172",
         "abebooks:32475980569",
         "abebooks:32460213476",
-        "abebooks:32401432261",
-        "abebooks:71454205",
         "abebooks:32276037938",
         "abebooks:32484785885",
         "abebooks:87591102",
         "abebooks:31727467164",
+        "abebooks:32401432261",
+        "abebooks:71454205",
         "abebooks:32486822848",
         "abebooks:82930722"
       ]
@@ -9693,7 +9697,7 @@
     "abebooks|larry towell|the mennonites": {
       "first_successful_fetch": "2026-08-22T22:47:34Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:00:09Z",
+      "last_successful_fetch": "2026-08-27T00:57:09Z",
       "seen": [
         "abebooks:31613555688",
         "abebooks:9781910401538",
@@ -9714,6 +9718,8 @@
         "abebooks:71288983",
         "abebooks:31448622895",
         "abebooks:31586671982",
+        "abebooks:22765478712",
+        "abebooks:54278753",
         "abebooks:31535677157",
         "abebooks:31581079662",
         "abebooks:50409043",
@@ -9726,7 +9732,7 @@
     "abebooks|lars tunbjork|landet utom sig": {
       "first_successful_fetch": "2026-08-22T22:47:34Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:00:09Z",
+      "last_successful_fetch": "2026-08-27T00:57:09Z",
       "seen": [
         "abebooks:32274426169",
         "abebooks:63559039",
@@ -9734,21 +9740,23 @@
         "abebooks:51638837",
         "abebooks:30982020243",
         "abebooks:50526948",
-        "abebooks:31634538101",
-        "abebooks:52953283",
         "abebooks:31364590109",
         "abebooks:22797823058",
         "abebooks:31907132977",
         "abebooks:9789163018343",
         "abebooks:31993855959",
         "abebooks:52241158",
-        "abebooks:2339867961"
+        "abebooks:22765477917",
+        "abebooks:54278753",
+        "abebooks:2339867961",
+        "abebooks:31634538101",
+        "abebooks:52953283"
       ]
     },
     "abebooks|lars tunbjork|office kontor": {
       "first_successful_fetch": "2026-08-22T22:47:34Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:00:09Z",
+      "last_successful_fetch": "2026-08-27T00:57:09Z",
       "seen": [
         "abebooks:32469788678",
         "abebooks:32475572394",
