@@ -1,12 +1,13 @@
 {
-  "cursor": 324,
+  "cursor": 348,
   "feeds": {
     "photobookstore": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
-      "last_count": 250,
-      "last_successful_fetch": "2026-08-27T11:47:10Z",
+      "last_count": 249,
+      "last_successful_fetch": "2026-08-27T22:28:32Z",
       "seen": [
+        "photobookstore:15968683131253",
         "photobookstore:15907319349621",
         "photobookstore:15972267917685",
         "photobookstore:15972257300853",
@@ -176,7 +177,6 @@
         "photobookstore:15712577552757",
         "photobookstore:15711782535541",
         "photobookstore:15503990751605",
-        "photobookstore:15041004601717",
         "photobookstore:15009258406261",
         "photobookstore:15707698921845",
         "photobookstore:15707697021301",
@@ -256,6 +256,7 @@
         "photobookstore:14814535876981",
         "photobookstore:15584838779253",
         "photobookstore:15584829768053",
+        "photobookstore:15041004601717",
         "photobookstore:15584829342069",
         "photobookstore:15568062480757",
         "photobookstore:15567711666549",
@@ -271,9 +272,14 @@
     "setanta": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
-      "last_count": 232,
-      "last_successful_fetch": "2026-08-27T11:47:10Z",
+      "last_count": 235,
+      "last_successful_fetch": "2026-08-27T22:28:32Z",
       "seen": [
+        "setanta:16063058444670",
+        "setanta:16062983045502",
+        "setanta:16062930420094",
+        "setanta:16062833197438",
+        "setanta:16062877467006",
         "setanta:16062642553214",
         "setanta:16061581656446",
         "setanta:16060428910974",
@@ -529,7 +535,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 86,
-      "last_successful_fetch": "2026-08-27T11:47:10Z",
+      "last_successful_fetch": "2026-08-27T22:28:32Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -622,9 +628,11 @@
     "village": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
-      "last_count": 209,
-      "last_successful_fetch": "2026-08-27T11:47:10Z",
+      "last_count": 208,
+      "last_successful_fetch": "2026-08-27T22:28:32Z",
       "seen": [
+        "village:10375606862106",
+        "village:10375589429530",
         "village:10374544654618",
         "village:10374542688538",
         "village:10374536167706",
@@ -849,7 +857,7 @@
   },
   "last_failures": [],
   "last_successful_requests": 28,
-  "last_successful_run": "2026-08-27T11:47:10Z",
+  "last_successful_run": "2026-08-27T22:28:32Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
@@ -10507,7 +10515,7 @@
     "abebooks|matsue taiji|taiji matsue": {
       "first_successful_fetch": "2026-08-22T23:45:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:59:07Z",
+      "last_successful_fetch": "2026-08-27T22:28:32Z",
       "seen": [
         "abebooks:32008044629",
         "abebooks:32134451849",
@@ -10527,6 +10535,8 @@
         "abebooks:32488280666",
         "abebooks:9784861525254",
         "abebooks:89818129",
+        "abebooks:32505423468",
+        "abebooks:9784868310266",
         "abebooks:30746328337",
         "abebooks:9784990184285",
         "abebooks:32408859202",
@@ -10545,17 +10555,19 @@
     "abebooks|matthew sleeth|tour of duty winning hearts and minds in east timor": {
       "first_successful_fetch": "2026-08-22T23:45:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:59:07Z",
+      "last_successful_fetch": "2026-08-27T22:28:32Z",
       "seen": [
         "abebooks:22675078327",
         "abebooks:9781740640664",
+        "abebooks:22765477069",
+        "abebooks:54278753",
         "abebooks:22888029596"
       ]
     },
     "abebooks|max pam|going east": {
       "first_successful_fetch": "2026-08-22T23:45:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:59:07Z",
+      "last_successful_fetch": "2026-08-27T22:28:32Z",
       "seen": [
         "abebooks:32317754615",
         "abebooks:9782862341026",
@@ -10582,8 +10594,10 @@
     "abebooks|max pam|ramadan in yemen": {
       "first_successful_fetch": "2026-08-22T23:45:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:59:07Z",
+      "last_successful_fetch": "2026-08-27T22:28:32Z",
       "seen": [
+        "abebooks:22765478625",
+        "abebooks:54278753",
         "abebooks:30852719905",
         "abebooks:9782953720402",
         "abebooks:30529405949",
@@ -10596,11 +10610,11 @@
     "abebooks|mayakovsky vladimir rodchenko alexander|pro eto ei i mne": {
       "first_successful_fetch": "2026-08-22T23:45:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T11:54:50Z",
+      "last_successful_fetch": "2026-08-27T22:28:32Z",
       "seen": [
+        "abebooks:32220078574",
         "abebooks:32000579280",
         "abebooks:32024771063",
-        "abebooks:32220078574",
         "abebooks:32503280031",
         "abebooks:32471453734",
         "abebooks:32474251839"
@@ -10609,7 +10623,7 @@
     "abebooks|mayito mario garcia joya|a la plaza con fidel": {
       "first_successful_fetch": "2026-08-22T23:45:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T11:54:50Z",
+      "last_successful_fetch": "2026-08-27T22:28:32Z",
       "seen": [
         "abebooks:32484794936",
         "abebooks:9781935004400",
@@ -10629,10 +10643,11 @@
     "abebooks|mendelsohn erich|amerika bilderbuch eines architekten": {
       "first_successful_fetch": "2026-08-22T23:45:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T11:54:50Z",
+      "last_successful_fetch": "2026-08-27T22:28:32Z",
       "seen": [
         "abebooks:32426718670",
         "abebooks:9780306708305",
+        "abebooks:32505663594",
         "abebooks:32452763101",
         "abebooks:32467364240",
         "abebooks:51562770",
@@ -10662,31 +10677,28 @@
     "abebooks|merry alpern|dirty windows": {
       "first_successful_fetch": "2026-08-22T23:45:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T11:54:50Z",
+      "last_successful_fetch": "2026-08-27T22:28:32Z",
       "seen": []
     },
     "abebooks|michael lesy|wisconsin death trip": {
       "first_successful_fetch": "2026-08-22T23:45:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T11:54:50Z",
+      "last_successful_fetch": "2026-08-27T22:28:32Z",
       "seen": [
-        "abebooks:32503838229",
+        "abebooks:32250292320",
         "abebooks:9780826321930",
-        "abebooks:65445012",
         "abebooks:31686122551",
         "abebooks:32346248362",
         "abebooks:32403442715",
         "abebooks:9780394721392",
         "abebooks:71993491",
-        "abebooks:32374604684",
-        "abebooks:9780394709628",
-        "abebooks:89905167",
         "abebooks:31864652743",
         "abebooks:51283250",
         "abebooks:30893127779",
         "abebooks:9780385412155",
         "abebooks:52101753",
         "abebooks:32439161223",
+        "abebooks:9780394709628",
         "abebooks:32492862278",
         "abebooks:82910637",
         "abebooks:32480427190",
@@ -10695,8 +10707,6 @@
         "abebooks:32442725726",
         "abebooks:9780713906608",
         "abebooks:50699977",
-        "abebooks:32137450921",
-        "abebooks:61821314",
         "abebooks:31442470227",
         "abebooks:32404398808",
         "abebooks:50225471",
@@ -10712,6 +10722,12 @@
         "abebooks:57834746",
         "abebooks:31101844310",
         "abebooks:32296282076",
+        "abebooks:32503838229",
+        "abebooks:65445012",
+        "abebooks:32374604684",
+        "abebooks:89905167",
+        "abebooks:32137450921",
+        "abebooks:61821314",
         "abebooks:31851911416",
         "abebooks:32500716061"
       ]
@@ -10719,7 +10735,7 @@
     "abebooks|michael schmidt|waffenruhe": {
       "first_successful_fetch": "2026-08-22T23:45:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T11:54:50Z",
+      "last_successful_fetch": "2026-08-27T22:28:32Z",
       "seen": [
         "abebooks:32193455332",
         "abebooks:9783960982852",
@@ -10737,8 +10753,12 @@
         "abebooks:9783889400208",
         "abebooks:31099593570",
         "abebooks:32423693406",
+        "abebooks:32353643643",
+        "abebooks:56055087",
         "abebooks:31046574425",
         "abebooks:52323279",
+        "abebooks:22765476548",
+        "abebooks:54278753",
         "abebooks:32351838715",
         "abebooks:31996429974",
         "abebooks:31082969586",
@@ -10748,7 +10768,7 @@
     "abebooks|michael snow|cover to cover": {
       "first_successful_fetch": "2026-08-22T23:45:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T11:54:50Z",
+      "last_successful_fetch": "2026-08-27T22:28:32Z",
       "seen": [
         "abebooks:32473505924",
         "abebooks:9781901033182",
@@ -10762,14 +10782,12 @@
         "abebooks:32502647884",
         "abebooks:31304024963",
         "abebooks:2900013092970",
-        "abebooks:32492002065",
-        "abebooks:9780919616059",
-        "abebooks:51006063",
         "abebooks:31751934066",
         "abebooks:9780919616066",
         "abebooks:61069644",
         "abebooks:31710040669",
         "abebooks:64430280",
+        "abebooks:31833866112",
         "abebooks:32472982566",
         "abebooks:73859083",
         "abebooks:32342524716",
@@ -10784,6 +10802,9 @@
         "abebooks:50869000",
         "abebooks:22470787539",
         "abebooks:31013736066",
+        "abebooks:32492002065",
+        "abebooks:9780919616059",
+        "abebooks:51006063",
         "abebooks:31089414088",
         "abebooks:2936969891"
       ]
@@ -10820,7 +10841,7 @@
     "abebooks|michael wolf|tokyo compression three": {
       "first_successful_fetch": "2026-08-22T23:45:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T11:54:50Z",
+      "last_successful_fetch": "2026-08-27T22:28:32Z",
       "seen": [
         "abebooks:32493767665",
         "abebooks:9789881531766",
@@ -10836,7 +10857,7 @@
     "abebooks|miguel rio branco|silent book": {
       "first_successful_fetch": "2026-08-23T02:09:18Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T11:54:50Z",
+      "last_successful_fetch": "2026-08-27T22:28:32Z",
       "seen": [
         "abebooks:32153042116",
         "abebooks:9789112468274",
@@ -10854,7 +10875,7 @@
     "abebooks|mike brodie|a period of juvenile prosperity": {
       "first_successful_fetch": "2026-08-23T02:09:18Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T11:54:50Z",
+      "last_successful_fetch": "2026-08-27T22:28:32Z",
       "seen": [
         "abebooks:32052387601",
         "abebooks:9781936611027",
@@ -10882,13 +10903,13 @@
     "abebooks|mishima yukio|baraker shinshuban": {
       "first_successful_fetch": "2026-08-23T02:09:18Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T11:54:50Z",
+      "last_successful_fetch": "2026-08-27T22:28:32Z",
       "seen": []
     },
     "abebooks|mitch epstein|family business": {
       "first_successful_fetch": "2026-08-23T02:09:18Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T11:54:50Z",
+      "last_successful_fetch": "2026-08-27T22:28:32Z",
       "seen": [
         "abebooks:32299142546",
         "abebooks:2900013728497",
@@ -10900,9 +10921,9 @@
         "abebooks:31470947650",
         "abebooks:31994113077",
         "abebooks:31921379916",
-        "abebooks:32490888925",
         "abebooks:32116481694",
         "abebooks:83031196",
+        "abebooks:32490888925",
         "abebooks:32484775779",
         "abebooks:9783882439595",
         "abebooks:87591102"
@@ -10911,7 +10932,7 @@
     "abebooks|miyako ishiuchi|mothers": {
       "first_successful_fetch": "2026-08-23T02:09:18Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T11:54:50Z",
+      "last_successful_fetch": "2026-08-27T22:28:32Z",
       "seen": [
         "abebooks:31676174435",
         "abebooks:86378343",
@@ -10931,12 +10952,14 @@
     "abebooks|moholy nagy laszlo|malerei fotografie film": {
       "first_successful_fetch": "2026-08-23T02:09:18Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T11:54:50Z",
+      "last_successful_fetch": "2026-08-27T22:28:32Z",
       "seen": [
         "abebooks:31650022905",
         "abebooks:32454194185",
         "abebooks:9783786114659",
         "abebooks:50604927",
+        "abebooks:32494854068",
+        "abebooks:62843344",
         "abebooks:31942282376",
         "abebooks:31453051591",
         "abebooks:84263976",
@@ -10944,25 +10967,26 @@
         "abebooks:54157392",
         "abebooks:30929726474",
         "abebooks:62882422",
-        "abebooks:31739569972",
-        "abebooks:9783957705990",
         "abebooks:31348636186",
         "abebooks:9783783700077",
         "abebooks:17445764136",
+        "abebooks:31854923042",
+        "abebooks:9783957705990",
         "abebooks:32231716618",
         "abebooks:30962370306",
         "abebooks:30766248216",
+        "abebooks:32145747161",
+        "abebooks:61603188",
+        "abebooks:31739569972",
         "abebooks:31498047265",
         "abebooks:85803404",
-        "abebooks:31498049696",
-        "abebooks:32145747161",
-        "abebooks:61603188"
+        "abebooks:31498049696"
       ]
     },
     "abebooks|morgagni manlio|italia imperiale": {
       "first_successful_fetch": "2026-08-23T02:09:18Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T11:54:50Z",
+      "last_successful_fetch": "2026-08-27T22:28:32Z",
       "seen": [
         "abebooks:31475396554",
         "abebooks:12520744712",
@@ -10976,7 +11000,7 @@
     "abebooks|moriyama daido|71 ny": {
       "first_successful_fetch": "2026-08-23T02:09:18Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T11:54:50Z",
+      "last_successful_fetch": "2026-08-27T22:28:32Z",
       "seen": [
         "abebooks:32129652012",
         "abebooks:9780967077499",
@@ -10999,13 +11023,13 @@
     "abebooks|moriyama daido|karyudo": {
       "first_successful_fetch": "2026-08-23T02:09:18Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T11:54:50Z",
+      "last_successful_fetch": "2026-08-27T22:28:32Z",
       "seen": []
     },
     "abebooks|moriyama daido|mo kuni new york": {
       "first_successful_fetch": "2026-08-23T02:09:18Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T11:54:50Z",
+      "last_successful_fetch": "2026-08-27T22:28:32Z",
       "seen": [
         "abebooks:17229307685"
       ]
@@ -11013,7 +11037,7 @@
     "abebooks|moriyama daido|nippon gekijo shashincho": {
       "first_successful_fetch": "2026-08-23T02:09:18Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T11:54:50Z",
+      "last_successful_fetch": "2026-08-27T22:28:32Z",
       "seen": [
         "abebooks:7803082088",
         "abebooks:9784106024184",
@@ -11043,7 +11067,7 @@
     "abebooks|mu chen and shao yinong|family register": {
       "first_successful_fetch": "2026-08-23T02:09:18Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T11:54:50Z",
+      "last_successful_fetch": "2026-08-27T22:28:32Z",
       "seen": [
         "abebooks:30219410594",
         "abebooks:9789572880036",
