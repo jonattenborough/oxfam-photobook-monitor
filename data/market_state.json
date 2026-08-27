@@ -1,12 +1,13 @@
 {
-  "cursor": 300,
+  "cursor": 324,
   "feeds": {
     "photobookstore": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
-      "last_count": 249,
-      "last_successful_fetch": "2026-08-27T00:57:09Z",
+      "last_count": 250,
+      "last_successful_fetch": "2026-08-27T11:47:10Z",
       "seen": [
+        "photobookstore:15907319349621",
         "photobookstore:15972267917685",
         "photobookstore:15972257300853",
         "photobookstore:15972246487413",
@@ -271,8 +272,9 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 232,
-      "last_successful_fetch": "2026-08-27T00:57:09Z",
+      "last_successful_fetch": "2026-08-27T11:47:10Z",
       "seen": [
+        "setanta:16062642553214",
         "setanta:16061581656446",
         "setanta:16060428910974",
         "setanta:16061783409022",
@@ -527,7 +529,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 86,
-      "last_successful_fetch": "2026-08-27T00:57:09Z",
+      "last_successful_fetch": "2026-08-27T11:47:10Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -621,7 +623,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 209,
-      "last_successful_fetch": "2026-08-27T00:57:09Z",
+      "last_successful_fetch": "2026-08-27T11:47:10Z",
       "seen": [
         "village:10374544654618",
         "village:10374542688538",
@@ -847,7 +849,7 @@
   },
   "last_failures": [],
   "last_successful_requests": 28,
-  "last_successful_run": "2026-08-27T00:57:09Z",
+  "last_successful_run": "2026-08-27T11:47:10Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
@@ -9768,7 +9770,7 @@
     "abebooks|lee friedlander|cray at chippewa falls": {
       "first_successful_fetch": "2026-08-22T22:47:34Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:00:09Z",
+      "last_successful_fetch": "2026-08-27T11:47:10Z",
       "seen": [
         "abebooks:32428030088",
         "abebooks:1244806653",
@@ -9790,7 +9792,7 @@
     "abebooks|lee friedlander|the american monument": {
       "first_successful_fetch": "2026-08-22T22:47:34Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:00:09Z",
+      "last_successful_fetch": "2026-08-27T11:47:10Z",
       "seen": [
         "abebooks:32448000921",
         "abebooks:9780871300720",
@@ -9807,6 +9809,7 @@
         "abebooks:31808292954",
         "abebooks:32260832958",
         "abebooks:19639148225",
+        "abebooks:32343031249",
         "abebooks:31463090168",
         "abebooks:32081220512",
         "abebooks:32352626081",
@@ -9831,7 +9834,7 @@
     "abebooks|lerski helmar|kopfe des alltags unbekannte menschen": {
       "first_successful_fetch": "2026-08-22T22:47:34Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:00:09Z",
+      "last_successful_fetch": "2026-08-27T11:47:10Z",
       "seen": [
         "abebooks:31988103947",
         "abebooks:22866945375",
@@ -9849,7 +9852,7 @@
     "abebooks|les krims|making chicken soup": {
       "first_successful_fetch": "2026-08-22T22:47:34Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:00:09Z",
+      "last_successful_fetch": "2026-08-27T11:47:10Z",
       "seen": [
         "abebooks:32444776392",
         "abebooks:32069809557",
@@ -9866,7 +9869,7 @@
     "abebooks|levitt helen|a way of seeing": {
       "first_successful_fetch": "2026-08-22T22:47:34Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:59:07Z",
+      "last_successful_fetch": "2026-08-27T11:47:10Z",
       "seen": [
         "abebooks:31514132415",
         "abebooks:9780822307334",
@@ -9905,7 +9908,9 @@
         "abebooks:32376621110",
         "abebooks:89905167",
         "abebooks:20341393963",
+        "abebooks:14428627222",
         "abebooks:31161036124",
+        "abebooks:32179153365",
         "abebooks:32499678050",
         "abebooks:31930032147",
         "abebooks:31466971426",
@@ -9921,6 +9926,7 @@
         "abebooks:30503401048",
         "abebooks:64086551",
         "abebooks:31967033214",
+        "abebooks:32493437337",
         "abebooks:30121305061",
         "abebooks:31934048168",
         "abebooks:31402711380",
@@ -9941,14 +9947,13 @@
         "abebooks:31354025648",
         "abebooks:30573283846",
         "abebooks:56026818",
-        "abebooks:14428627222",
         "abebooks:32035522323"
       ]
     },
     "abebooks|lewis baltz|park city": {
       "first_successful_fetch": "2026-08-22T22:47:34Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:59:07Z",
+      "last_successful_fetch": "2026-08-27T11:47:10Z",
       "seen": [
         "abebooks:30343177002",
         "abebooks:32209894601",
@@ -9976,13 +9981,14 @@
         "abebooks:7772211571",
         "abebooks:3778944895",
         "abebooks:50417431",
-        "abebooks:22924227314"
+        "abebooks:22924227314",
+        "abebooks:5633323201"
       ]
     },
     "abebooks|lionel wendt|lionel wendts ceylon": {
       "first_successful_fetch": "2026-08-22T22:47:34Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:59:07Z",
+      "last_successful_fetch": "2026-08-27T11:47:10Z",
       "seen": [
         "abebooks:31405491448",
         "abebooks:71958310",
@@ -10015,7 +10021,7 @@
     "abebooks|loewy maurice m puiseux m pierre|atlas photographique de la lune": {
       "first_successful_fetch": "2026-08-22T22:47:34Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:59:07Z",
+      "last_successful_fetch": "2026-08-27T11:47:10Z",
       "seen": [
         "abebooks:30495343152",
         "abebooks:30495340225",
@@ -10053,7 +10059,7 @@
     "abebooks|louis aragon and benjamin peret eds|1929": {
       "first_successful_fetch": "2026-08-22T22:47:34Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:59:07Z",
+      "last_successful_fetch": "2026-08-27T11:47:10Z",
       "seen": [
         "abebooks:32083992210",
         "abebooks:9782844851529",
@@ -10061,6 +10067,9 @@
         "abebooks:31306239908",
         "abebooks:30240067212",
         "abebooks:9788857239309",
+        "abebooks:32504545335",
+        "abebooks:9782844858092",
+        "abebooks:63929678",
         "abebooks:22406102029",
         "abebooks:32207124642",
         "abebooks:64372035",
@@ -10092,7 +10101,7 @@
     "abebooks|luc delahaye|winterreise": {
       "first_successful_fetch": "2026-08-22T22:47:34Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:59:07Z",
+      "last_successful_fetch": "2026-08-27T11:47:10Z",
       "seen": [
         "abebooks:32502278309",
         "abebooks:9780714839974",
@@ -10108,8 +10117,6 @@
         "abebooks:9780714843391",
         "abebooks:89594109",
         "abebooks:31071893966",
-        "abebooks:32408477072",
-        "abebooks:83749664",
         "abebooks:32227720879",
         "abebooks:71634524",
         "abebooks:31360948534",
@@ -10119,13 +10126,15 @@
         "abebooks:9780714891224",
         "abebooks:31288877206",
         "abebooks:32469427221",
-        "abebooks:53994756"
+        "abebooks:53994756",
+        "abebooks:32408477072",
+        "abebooks:83749664"
       ]
     },
     "abebooks|luynes honore d albert duc de|voyage d exploration a la mer morte": {
       "first_successful_fetch": "2026-08-22T22:47:34Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:59:07Z",
+      "last_successful_fetch": "2026-08-27T11:47:10Z",
       "seen": [
         "abebooks:32503955135",
         "abebooks:9781363104130",
@@ -10141,7 +10150,7 @@
     "abebooks|lyon danny|the bikeriders": {
       "first_successful_fetch": "2026-08-22T22:47:34Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:59:07Z",
+      "last_successful_fetch": "2026-08-27T11:47:10Z",
       "seen": [
         "abebooks:32487212077",
         "abebooks:9780811841610",
@@ -10223,7 +10232,7 @@
     "abebooks|macleish archibald|land of the free": {
       "first_successful_fetch": "2026-08-22T23:45:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:59:07Z",
+      "last_successful_fetch": "2026-08-27T11:47:10Z",
       "seen": [
         "abebooks:32445549677",
         "abebooks:9780306800801",
@@ -10254,26 +10263,26 @@
     "abebooks|manfred willmann|das land": {
       "first_successful_fetch": "2026-08-22T23:45:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:59:07Z",
+      "last_successful_fetch": "2026-08-27T11:47:10Z",
       "seen": [
         "abebooks:32018658029",
-        "abebooks:31151400401",
-        "abebooks:9783901756160",
-        "abebooks:61821314",
         "abebooks:31500851177",
+        "abebooks:9783901756160",
         "abebooks:65952368",
         "abebooks:31504555581",
         "abebooks:82273322",
         "abebooks:30033397313",
         "abebooks:31681713311",
         "abebooks:61678148",
-        "abebooks:30959930331"
+        "abebooks:30959930331",
+        "abebooks:31151400401",
+        "abebooks:61821314"
       ]
     },
     "abebooks|manuel alvarez bravo|fotografias photographs": {
       "first_successful_fetch": "2026-08-22T23:45:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:59:07Z",
+      "last_successful_fetch": "2026-08-27T11:47:10Z",
       "seen": [
         "abebooks:19033285543",
         "abebooks:52346410"
@@ -10294,7 +10303,7 @@
     "abebooks|mao ishikawa|hot nights in camp hansen": {
       "first_successful_fetch": "2026-08-22T23:45:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:59:07Z",
+      "last_successful_fetch": "2026-08-27T11:47:10Z",
       "seen": [
         "abebooks:31847569167"
       ]
@@ -10302,7 +10311,7 @@
     "abebooks|marcelo brodsky|buena memoria good memory": {
       "first_successful_fetch": "2026-08-22T23:45:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:59:07Z",
+      "last_successful_fetch": "2026-08-27T11:47:10Z",
       "seen": [
         "abebooks:32470694253",
         "abebooks:9783775713535",
@@ -10320,7 +10329,7 @@
     "abebooks|marjaana kella|marjaana kella": {
       "first_successful_fetch": "2026-08-22T23:45:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:59:07Z",
+      "last_successful_fetch": "2026-08-27T11:47:10Z",
       "seen": [
         "abebooks:32069807705",
         "abebooks:9789075574227",
@@ -10337,7 +10346,7 @@
     "abebooks|mark power|the treasury project": {
       "first_successful_fetch": "2026-08-22T23:45:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:59:07Z",
+      "last_successful_fetch": "2026-08-27T11:47:10Z",
       "seen": [
         "abebooks:30760256275",
         "abebooks:9781903796054",
@@ -10362,7 +10371,7 @@
     "abebooks|martien coppens|monsters van de peel": {
       "first_successful_fetch": "2026-08-22T23:45:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:59:07Z",
+      "last_successful_fetch": "2026-08-27T11:47:10Z",
       "seen": [
         "abebooks:31388739420",
         "abebooks:66067709",
@@ -10374,7 +10383,7 @@
     "abebooks|martins costa palla victor|lisboa cidade triste e alegre": {
       "first_successful_fetch": "2026-08-22T23:45:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:59:07Z",
+      "last_successful_fetch": "2026-08-27T11:47:10Z",
       "seen": [
         "abebooks:32493357114",
         "abebooks:52898911",
@@ -10408,7 +10417,7 @@
     "abebooks|marvin heiferman and carole kismaric|i m so happy": {
       "first_successful_fetch": "2026-08-22T23:45:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:59:07Z",
+      "last_successful_fetch": "2026-08-27T11:47:10Z",
       "seen": [
         "abebooks:32410535651",
         "abebooks:9780679720959",
@@ -10444,7 +10453,7 @@
     "abebooks|masafumi sanai|wakaranai": {
       "first_successful_fetch": "2026-08-22T23:45:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:59:07Z",
+      "last_successful_fetch": "2026-08-27T11:47:10Z",
       "seen": [
         "abebooks:1047788458",
         "abebooks:30918063134"
@@ -10479,7 +10488,7 @@
     "abebooks|massimo vitali|les plages du var": {
       "first_successful_fetch": "2026-08-22T23:45:27Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T10:59:07Z",
+      "last_successful_fetch": "2026-08-27T11:47:10Z",
       "seen": [
         "abebooks:22532516879",
         "abebooks:30508756345",
