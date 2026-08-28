@@ -1,0 +1,765 @@
+{
+  "cursor_index": 0,
+  "last_run": "2026-08-28T15:23:18Z",
+  "last_run_books_scanned": 49349,
+  "last_run_calls": 298,
+  "last_run_failures": [],
+  "last_run_successful_pages": 298,
+  "sellers": {
+    "EBAY_GB:ageuk": {
+      "books_scanned": 23,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "ageuk"
+    },
+    "EBAY_GB:ageukbromsgroveredditchwyreforest": {
+      "books_scanned": 29,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "ageukbromsgroveredditchwyreforest"
+    },
+    "EBAY_GB:ardgowanhospiceonline": {
+      "books_scanned": 46,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "ardgowanhospiceonline"
+    },
+    "EBAY_GB:arthurrankhospicecharity": {
+      "books_scanned": 1509,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 1400,
+      "pages_scanned": 8,
+      "seller_id": "arthurrankhospicecharity"
+    },
+    "EBAY_GB:bhf_shops": {
+      "books_scanned": 61,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "bhf_shops"
+    },
+    "EBAY_GB:bluecrossshop": {
+      "books_scanned": 15,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "bluecrossshop"
+    },
+    "EBAY_GB:blythehousehospice": {
+      "books_scanned": 81,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "blythehousehospice"
+    },
+    "EBAY_GB:books2africacharityshop2": {
+      "books_scanned": 2520,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 2400,
+      "pages_scanned": 13,
+      "seller_id": "books2africacharityshop2"
+    },
+    "EBAY_GB:books2africacharityshop3": {
+      "books_scanned": 648,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 600,
+      "pages_scanned": 4,
+      "seller_id": "books2africacharityshop3"
+    },
+    "EBAY_GB:books2africararebooks": {
+      "books_scanned": 383,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 200,
+      "pages_scanned": 2,
+      "seller_id": "books2africararebooks"
+    },
+    "EBAY_GB:britishredcross": {
+      "books_scanned": 2091,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 2000,
+      "pages_scanned": 11,
+      "seller_id": "britishredcross"
+    },
+    "EBAY_GB:childrenssocietystores": {
+      "books_scanned": 944,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 800,
+      "pages_scanned": 5,
+      "seller_id": "childrenssocietystores"
+    },
+    "EBAY_GB:debra_charity": {
+      "books_scanned": 22,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "debra_charity"
+    },
+    "EBAY_GB:dorothy_house": {
+      "books_scanned": 377,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 200,
+      "pages_scanned": 2,
+      "seller_id": "dorothy_house"
+    },
+    "EBAY_GB:durhamcp": {
+      "books_scanned": 34,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "durhamcp"
+    },
+    "EBAY_GB:eachbookshop": {
+      "books_scanned": 4654,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 4600,
+      "pages_scanned": 24,
+      "seller_id": "eachbookshop"
+    },
+    "EBAY_GB:edenvalleyhospice": {
+      "books_scanned": 90,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "edenvalleyhospice"
+    },
+    "EBAY_GB:emmauscarlton": {
+      "books_scanned": 9,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "emmauscarlton"
+    },
+    "EBAY_GB:emmausglosonline": {
+      "books_scanned": 224,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 200,
+      "pages_scanned": 2,
+      "seller_id": "emmausglosonline"
+    },
+    "EBAY_GB:emmaushertfordshire": {
+      "books_scanned": 27,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "emmaushertfordshire"
+    },
+    "EBAY_GB:emmauslambethcharity": {
+      "books_scanned": 0,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "emmauslambethcharity"
+    },
+    "EBAY_GB:emmausoxfordstore": {
+      "books_scanned": 32,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "emmausoxfordstore"
+    },
+    "EBAY_GB:farleighhospice": {
+      "books_scanned": 0,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "farleighhospice"
+    },
+    "EBAY_GB:ferneanimalsanctuary123": {
+      "books_scanned": 106,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "ferneanimalsanctuary123"
+    },
+    "EBAY_GB:hoperescue": {
+      "books_scanned": 28,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "hoperescue"
+    },
+    "EBAY_GB:hospiscare": {
+      "books_scanned": 81,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "hospiscare"
+    },
+    "EBAY_GB:infocuscharityshop": {
+      "books_scanned": 27,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "infocuscharityshop"
+    },
+    "EBAY_GB:isabelhospice": {
+      "books_scanned": 136,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "isabelhospice"
+    },
+    "EBAY_GB:keech-hospice-care": {
+      "books_scanned": 66,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "keech-hospice-care"
+    },
+    "EBAY_GB:loros1": {
+      "books_scanned": 11,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "loros1"
+    },
+    "EBAY_GB:lovefarashop": {
+      "books_scanned": 976,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 800,
+      "pages_scanned": 5,
+      "seller_id": "lovefarashop"
+    },
+    "EBAY_GB:mencapretailuk": {
+      "books_scanned": 42,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "mencapretailuk"
+    },
+    "EBAY_GB:mindshops": {
+      "books_scanned": 59,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "mindshops"
+    },
+    "EBAY_GB:mshtrading": {
+      "books_scanned": 59,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "mshtrading"
+    },
+    "EBAY_GB:oxfam_ebay_shop": {
+      "books_scanned": 831,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 800,
+      "pages_scanned": 5,
+      "seller_id": "oxfam_ebay_shop"
+    },
+    "EBAY_GB:oxfam_f3849_turlstreet": {
+      "books_scanned": 54,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "oxfam_f3849_turlstreet"
+    },
+    "EBAY_GB:pendlesidehospiceshop": {
+      "books_scanned": 211,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 200,
+      "pages_scanned": 2,
+      "seller_id": "pendlesidehospiceshop"
+    },
+    "EBAY_GB:priscillabaconhospice": {
+      "books_scanned": 40,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "priscillabaconhospice"
+    },
+    "EBAY_GB:prospecthospice": {
+      "books_scanned": 57,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "prospecthospice"
+    },
+    "EBAY_GB:rainbowshospice": {
+      "books_scanned": 17,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "rainbowshospice"
+    },
+    "EBAY_GB:salvationarmyshop": {
+      "books_scanned": 0,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "salvationarmyshop"
+    },
+    "EBAY_GB:scope_charity_shop": {
+      "books_scanned": 2,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "scope_charity_shop"
+    },
+    "EBAY_GB:sensecharityretail": {
+      "books_scanned": 60,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "sensecharityretail"
+    },
+    "EBAY_GB:shopforshelter": {
+      "books_scanned": 522,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 400,
+      "pages_scanned": 3,
+      "seller_id": "shopforshelter"
+    },
+    "EBAY_GB:st-elizabeth-hospice": {
+      "books_scanned": 23,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "st-elizabeth-hospice"
+    },
+    "EBAY_GB:st.gileshospice": {
+      "books_scanned": 113,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "st.gileshospice"
+    },
+    "EBAY_GB:st_peters_hospice": {
+      "books_scanned": 0,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "st_peters_hospice"
+    },
+    "EBAY_GB:st_vincents_shop": {
+      "books_scanned": 32,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "st_vincents_shop"
+    },
+    "EBAY_GB:stchristopherstrading": {
+      "books_scanned": 30,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "stchristopherstrading"
+    },
+    "EBAY_GB:stlukeshospiceplymouth": {
+      "books_scanned": 19,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "stlukeshospiceplymouth"
+    },
+    "EBAY_GB:stpjhospice": {
+      "books_scanned": 13,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "stpjhospice"
+    },
+    "EBAY_GB:strichardshospice": {
+      "books_scanned": 19,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "strichardshospice"
+    },
+    "EBAY_GB:stroccoshospice": {
+      "books_scanned": 27,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "stroccoshospice"
+    },
+    "EBAY_GB:sueryderpre-loved": {
+      "books_scanned": 0,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "sueryderpre-loved"
+    },
+    "EBAY_GB:the_childrens_society": {
+      "books_scanned": 0,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "the_childrens_society"
+    },
+    "EBAY_GB:the_linen_hall_charity_bookshop": {
+      "books_scanned": 19,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "the_linen_hall_charity_bookshop"
+    },
+    "EBAY_GB:thewellcharityshop": {
+      "books_scanned": 44,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "thewellcharityshop"
+    },
+    "EBAY_GB:westnorfolkdeafassociation": {
+      "books_scanned": 227,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 200,
+      "pages_scanned": 2,
+      "seller_id": "westnorfolkdeafassociation"
+    },
+    "EBAY_GB:willenhospiceventuresltd": {
+      "books_scanned": 253,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 200,
+      "pages_scanned": 2,
+      "seller_id": "willenhospiceventuresltd"
+    },
+    "EBAY_GB:wisdomhospiceshops": {
+      "books_scanned": 33,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "wisdomhospiceshops"
+    },
+    "EBAY_GB:yorkshirecancerresearch": {
+      "books_scanned": 175,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "yorkshirecancerresearch"
+    },
+    "EBAY_US:baybooks53217fwfbl": {
+      "books_scanned": 496,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_US",
+      "next_offset": 400,
+      "pages_scanned": 3,
+      "seller_id": "baybooks53217fwfbl"
+    },
+    "EBAY_US:blountcofriendsoflibrary": {
+      "books_scanned": 1355,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_US",
+      "next_offset": 1200,
+      "pages_scanned": 7,
+      "seller_id": "blountcofriendsoflibrary"
+    },
+    "EBAY_US:brentwood_friends": {
+      "books_scanned": 1191,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_US",
+      "next_offset": 1000,
+      "pages_scanned": 6,
+      "seller_id": "brentwood_friends"
+    },
+    "EBAY_US:chandlerpubliclibraryfriends": {
+      "books_scanned": 538,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_US",
+      "next_offset": 400,
+      "pages_scanned": 3,
+      "seller_id": "chandlerpubliclibraryfriends"
+    },
+    "EBAY_US:foilbooks": {
+      "books_scanned": 0,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_US",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "foilbooks"
+    },
+    "EBAY_US:fol.lubbock": {
+      "books_scanned": 5717,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_US",
+      "next_offset": 5600,
+      "pages_scanned": 29,
+      "seller_id": "fol.lubbock"
+    },
+    "EBAY_US:friendsofthepaloaltolibrary": {
+      "books_scanned": 1144,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_US",
+      "next_offset": 1000,
+      "pages_scanned": 6,
+      "seller_id": "friendsofthepaloaltolibrary"
+    },
+    "EBAY_US:goodwillbks": {
+      "books_scanned": 0,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_US",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "goodwillbks"
+    },
+    "EBAY_US:goodwillminnesota": {
+      "books_scanned": 0,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_US",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "goodwillminnesota"
+    },
+    "EBAY_US:mtwyouth": {
+      "books_scanned": 10000,
+      "capped_at_10000": true,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_US",
+      "next_offset": 9800,
+      "pages_scanned": 50,
+      "seller_id": "mtwyouth"
+    },
+    "EBAY_US:sacramentobookden": {
+      "books_scanned": 10000,
+      "capped_at_10000": true,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_US",
+      "next_offset": 9800,
+      "pages_scanned": 50,
+      "seller_id": "sacramentobookden"
+    },
+    "EBAY_US:slofol": {
+      "books_scanned": 154,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_US",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "slofol"
+    },
+    "EBAY_US:southbutlerlibrary_friends_book_shop": {
+      "books_scanned": 514,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_US",
+      "next_offset": 400,
+      "pages_scanned": 3,
+      "seller_id": "southbutlerlibrary_friends_book_shop"
+    },
+    "EBAY_US:svdpecomm": {
+      "books_scanned": 9,
+      "complete": true,
+      "completed_at": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:23:18Z",
+      "marketplace": "EBAY_US",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "svdpecomm"
+    }
+  },
+  "total_books_scanned": 49349,
+  "total_calls": 298,
+  "version": 1
+}
