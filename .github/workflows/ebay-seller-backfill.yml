@@ -8,6 +8,7 @@ on:
     branches: [main]
     paths:
       - "ebay_seller_backfill.py"
+      - "parr_badger_runner.py"
       - "test_ebay_seller_backfill.py"
       - "data/ebay_sellers.json"
       - ".github/workflows/ebay-seller-backfill.yml"

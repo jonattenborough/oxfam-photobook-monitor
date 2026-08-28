@@ -54,6 +54,35 @@ class EbaySellerBackfillTests(unittest.TestCase):
             "2019-12-31T23:59:59.999Z",
         )
 
+    def test_generic_non_photography_book_does_not_get_short_title_canon_match(self):
+        item = {
+            "key": "ebay:999",
+            "title": "Sherlock Holmes Selected Stories by Arthur Conan Doyle",
+            "context": "Used fixed-price book",
+            "vendor": "seller",
+            "price_gbp": 10.0,
+        }
+        matches = backfill.canon_runner.pb.matches_for_item(item)
+        self.assertFalse(any(match.get("title") == "i" for match in matches))
+        self.assertIsNone(backfill.classify(item))
+
+    def test_revalidation_removes_old_false_candidates(self):
+        findings = {
+            "items": {
+                "ebay:999": {
+                    "key": "ebay:999",
+                    "title": "Sherlock Holmes Selected Stories by Arthur Conan Doyle",
+                    "context": "Used fixed-price book",
+                    "vendor": "seller",
+                    "backfill_first_found": "2026-08-28T15:00:00Z",
+                }
+            }
+        }
+        removed, changed = backfill.revalidate_findings(findings)
+        self.assertEqual(removed, 1)
+        self.assertTrue(changed)
+        self.assertEqual(findings["items"], {})
+
     def test_round_robin_scan_completes_short_sellers_and_records_candidates(self):
         sellers = [
             {"id": "one", "marketplace": "EBAY_GB"},

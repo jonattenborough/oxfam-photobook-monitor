@@ -6,6 +6,7 @@ import argparse
 import json
 import os
 import sys
+import math
 from datetime import datetime, timedelta, timezone
 from functools import lru_cache
 from pathlib import Path
@@ -91,6 +92,20 @@ def classify(item: dict[str, Any]) -> dict[str, Any] | None:
     text = " ".join([str(item.get("title") or ""), str(item.get("context") or "")]).lower()
     plausible = external_monitor.plausible(item)
     matches = canon_runner.pb.matches_for_item(item) if might_match_canon(item) else []
+    listing_tokens = set(
+        canon_runner.pb.normalize(
+            f"{item.get('title') or ''} {item.get('context') or ''} {item.get('vendor') or ''}"
+        ).split()
+    )
+    reliable_matches: list[dict[str, Any]] = []
+    for match in matches:
+        contributor = canon_runner.pb.contributor_tokens(match.get("contributor"))
+        if not contributor:
+            continue
+        required = len(contributor) if len(contributor) <= 2 else math.ceil(len(contributor) * 0.67)
+        if len(contributor & listing_tokens) >= required:
+            reliable_matches.append(match)
+    matches = reliable_matches
     if not plausible and not matches:
         return None
 
@@ -126,6 +141,25 @@ def classify(item: dict[str, Any]) -> dict[str, Any] | None:
     if matches:
         candidate["parr_badger_matches"] = matches
     return candidate
+
+
+def revalidate_findings(findings: dict[str, Any]) -> tuple[int, bool]:
+    items = findings.get("items")
+    if not isinstance(items, dict):
+        raise RuntimeError("eBay seller backfill findings items is not an object")
+    refreshed: dict[str, Any] = {}
+    for key, item in items.items():
+        if not isinstance(item, dict):
+            continue
+        candidate = classify(item)
+        if candidate is None:
+            continue
+        candidate["backfill_first_found"] = item.get("backfill_first_found")
+        refreshed[str(key)] = candidate
+    changed = refreshed != items
+    removed = len(items) - len(refreshed)
+    findings["items"] = refreshed
+    return removed, changed
 
 
 def scan_page(
@@ -407,6 +441,7 @@ def main() -> int:
     sellers = live_monitor.load_config(Path(args.config))
     state = load_json(Path(args.state), {"version": 1, "sellers": {}}, "Backfill state")
     findings = load_json(Path(args.findings), {"version": 1, "items": {}}, "Backfill findings")
+    removed_findings, findings_cleaned = revalidate_findings(findings)
     detected_at = live_monitor.utc_now()
     clients = {
         marketplace: ebay_api.EbayBrowseClient(marketplace=marketplace)
@@ -421,6 +456,7 @@ def main() -> int:
         call_budget=max(1, min(args.max_calls, DEFAULT_CALL_BUDGET)),
         detected_at=detected_at,
     )
+    result["removed_stale_candidates"] = removed_findings
     runtime = Path(args.runtime_dir)
     write_json(runtime / "proposed-state.json", state)
     write_json(runtime / "proposed-findings.json", findings)
@@ -438,12 +474,13 @@ def main() -> int:
         )
 
     set_output("new_count", len(new_candidates))
-    set_output("state_changed", "true" if result["calls"] else "false")
+    set_output("state_changed", "true" if result["calls"] or findings_cleaned else "false")
     set_output("remaining_sellers", result["remaining_sellers"])
     set_output("complete", "true" if result["remaining_sellers"] == 0 else "false")
     print(
         f"Backfill run complete: {result['calls']} calls, {result['books_scanned']} books, "
-        f"{len(new_candidates)} new candidates, {result['completed_sellers']}/{len(sellers)} sellers complete."
+        f"{len(new_candidates)} new candidates, {removed_findings} stale candidates removed, "
+        f"{result['completed_sellers']}/{len(sellers)} sellers complete."
     )
     return 0
 

@@ -57,6 +57,13 @@ def contributor_tokens(value: Any) -> set[str]:
     }
 
 
+def contains_normalized_phrase(haystack: str, needle: str) -> bool:
+    """Match complete normalized words rather than arbitrary substrings."""
+    if not haystack or not needle:
+        return False
+    return needle == haystack or f" {needle} " in f" {haystack} "
+
+
 @lru_cache(maxsize=1)
 def load_master() -> tuple[dict[str, Any], ...]:
     rows: list[dict[str, Any]] = []
@@ -89,10 +96,10 @@ def score_record(
     listing_tokens = set(listing_full.split())
 
     contributor_hit = bool(contributor_set & listing_tokens)
-    exact_in_title = bool(listing_title and book_title in listing_title)
-    exact_anywhere = book_title in listing_full
+    exact_in_title = contains_normalized_phrase(listing_title, book_title)
+    exact_anywhere = contains_normalized_phrase(listing_full, book_title)
 
-    short_title = len(title_tokens) <= 2 and len(book_title) < 16
+    short_title = len(title_tokens) <= 3 and len(book_title) < 24
     if short_title and not contributor_hit:
         return None
 
