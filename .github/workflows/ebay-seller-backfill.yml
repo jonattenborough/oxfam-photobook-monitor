@@ -1,0 +1,77 @@
+name: eBay seller current-inventory back-search
+
+on:
+  schedule:
+    - cron: "17 2 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "ebay_seller_backfill.py"
+      - "test_ebay_seller_backfill.py"
+      - "data/ebay_sellers.json"
+      - ".github/workflows/ebay-seller-backfill.yml"
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: ebay-seller-current-inventory-back-search
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+
+      - name: Validate back-search
+        run: python -m unittest -v test_ebay_api.py test_ebay_seller_monitor.py test_ebay_seller_backfill.py
+
+      - name: Scan current seller inventory within daily API budget
+        id: backfill
+        env:
+          EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
+          EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
+        run: python ebay_seller_backfill.py --max-calls 300
+
+      - name: Create historical-stock review issue
+        if: steps.backfill.outputs.new_count != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create \
+            --title "$(cat runtime/ebay-seller-backfill/issue-title.txt)" \
+            --body-file runtime/ebay-seller-backfill/issue-body.md
+
+      - name: Persist back-search progress and findings
+        if: steps.backfill.outputs.state_changed == 'true'
+        run: |
+          set -euo pipefail
+          cp runtime/ebay-seller-backfill/proposed-state.json data/ebay_seller_backfill_state.json
+          cp runtime/ebay-seller-backfill/proposed-findings.json data/ebay_seller_backfill_findings.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data/ebay_seller_backfill_state.json data/ebay_seller_backfill_findings.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "Advance eBay seller current-inventory back-search [skip ci]"
+          for attempt in 1 2 3 4; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then
+              break
+            fi
+            if [ "$attempt" = "4" ]; then
+              exit 1
+            fi
+          done

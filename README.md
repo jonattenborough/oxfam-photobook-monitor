@@ -53,6 +53,12 @@ The first successful search for each seller silently records its newest 200 fixe
 
 At the normal cadence the 75 seller queries use about 3,600 Browse API calls per day. With the existing 624 daily broad and exact-title calls, expected usage is about 4,224 of the 5,000-call daily allowance. Extra pages are requested only when one seller has more than 200 books inside an incremental search window.
 
+### Current-inventory seller back-search
+
+The live monitor intentionally alerts only on listings added after each seller's silent baseline. `ebay_seller_backfill.py` is a separate resumable audit of older current inventory, including stock beyond the newest 200 books.
+
+It scans sellers in round-robin 200-item pages, records progress independently for every seller, ranks photography and canon candidates, and labels its review issues `EBAY_BACKFILL:` so historical stock cannot be mistaken for a newly listed item. The daily run is capped at 300 Browse API calls, leaving operating room beneath the 5,000-call allowance while the live monitors continue. It stops making API calls automatically after all accessible current inventory has been covered.
+
 ### GitHub-hosted specialist feeds
 
 Every hour it checks current inventory from:
@@ -102,6 +108,7 @@ The comprehensive market monitor deliberately uses `EXTERNAL_NEW:` so the existi
 - **Oxfam broad Art & Photography monitor:** minutes 6, 16, 26, 36, 46 and 56 of every hour.
 - **Comprehensive photobook market discovery:** minute 27 of every hour.
 - **Selected eBay charity sellers:** minutes 9 and 39 of every hour.
+- **Current-inventory eBay seller back-search:** daily at 02:17 UTC until complete.
 - **Photobook Wider Web Search:** hourly condition watch.
 - **Charity Photobook New Listings:** hourly condition watch for the GitHub issue-review and value-verification stage.
 
