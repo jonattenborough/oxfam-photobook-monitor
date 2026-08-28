@@ -2,7 +2,7 @@ name: eBay charity seller photobook monitor
 
 on:
   schedule:
-    - cron: "9,39 * * * *"
+    - cron: "39 * * * *"
   workflow_dispatch:
   push:
     branches: [main]
