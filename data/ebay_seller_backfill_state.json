@@ -1,10 +1,10 @@
 {
-  "cursor_index": 0,
-  "last_run": "2026-08-28T15:23:18Z",
-  "last_run_books_scanned": 49349,
-  "last_run_calls": 298,
+  "cursor_index": 62,
+  "last_run": "2026-08-28T15:33:48Z",
+  "last_run_books_scanned": 59809,
+  "last_run_calls": 300,
   "last_run_failures": [],
-  "last_run_successful_pages": 298,
+  "last_run_successful_pages": 300,
   "sellers": {
     "EBAY_GB:ageuk": {
       "books_scanned": 23,
@@ -707,25 +707,30 @@
       "seller_id": "goodwillminnesota"
     },
     "EBAY_US:mtwyouth": {
-      "books_scanned": 10000,
+      "books_scanned": 69600,
       "capped_at_10000": true,
-      "complete": true,
+      "capped_segments": 6,
+      "complete": false,
       "completed_at": "2026-08-28T15:23:18Z",
-      "last_successful_page": "2026-08-28T15:23:18Z",
+      "last_successful_page": "2026-08-28T15:33:48Z",
       "marketplace": "EBAY_US",
-      "next_offset": 9800,
-      "pages_scanned": 50,
+      "next_offset": 9400,
+      "pages_scanned": 348,
+      "segment_end": "2026-04-07T00:45:11.999Z",
       "seller_id": "mtwyouth"
     },
     "EBAY_US:sacramentobookden": {
-      "books_scanned": 10000,
+      "books_scanned": 10209,
       "capped_at_10000": true,
+      "capped_segments": 1,
       "complete": true,
-      "completed_at": "2026-08-28T15:23:18Z",
-      "last_successful_page": "2026-08-28T15:23:18Z",
+      "completed_at": "2026-08-28T15:33:48Z",
+      "date_partitions_complete": true,
+      "last_successful_page": "2026-08-28T15:33:48Z",
       "marketplace": "EBAY_US",
-      "next_offset": 9800,
-      "pages_scanned": 50,
+      "next_offset": 0,
+      "pages_scanned": 52,
+      "segment_end": "2024-09-12T10:42:30.999Z",
       "seller_id": "sacramentobookden"
     },
     "EBAY_US:slofol": {
@@ -759,7 +764,7 @@
       "seller_id": "svdpecomm"
     }
   },
-  "total_books_scanned": 49349,
-  "total_calls": 298,
+  "total_books_scanned": 109158,
+  "total_calls": 598,
   "version": 1
 }
