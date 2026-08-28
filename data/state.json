@@ -1,7 +1,9 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-08-28T00:24:39Z",
+  "last_successful_fetch": "2026-08-28T11:39:29Z",
   "last_top_skus": [
+    "HD_304177701",
+    "HD_304199251",
     "HD_304199970",
     "HD_304199985",
     "HD_304179523",
@@ -29,9 +31,7 @@
     "HD_304193901",
     "HD_304191722",
     "HD_304193315",
-    "HD_304193284",
-    "HD_304192792",
-    "HD_304192668"
+    "HD_304193284"
   ],
   "products": {
     "HD_303805354": {
@@ -386,6 +386,22 @@
         "title": "The Leica and Leicaflex Way 9th ed 1969"
       },
       "search_fingerprint": "c1f75b2866dfe93f"
+    },
+    "HD_304177701": {
+      "first_seen": "2026-08-28T11:39:29Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787910183000",
+        "description": "In 1977 William Eggleston released Election Eve, his first and most elaborate artist's book, containing 100 original prints in two leather-bound volumes housed in a linen box. It was published by Caldecot Chubb in New York in an edition of only five, and has since become Eggleston's rarest collectible book. This new Steidl edition recreates the full original sequence of photos in a single volume, making it available to the wider public for the first time. Election Eve contains images made in October 1976 during Eggleston's pilgrimage from Memphis to the small town of Plains, Georgia, the home of Jimmy Carter who in November 1976 was elected 39th President of the United States. Eggleston began photographing even before he left Memphis and depicted the surrounding countryside and villages of Sumter Country, before he reached Plains. His photos of lonesome roads, train tracks, cars, gas stations and houses are mostly empty of people and form an intuitive, unsettling portrait of Plains, starkly different to the idealized image of it subsequently promoted by the media.  The photographs have a quietude and unsentimental romanticism, as well as an edge of poignance, which belie the expectations of hopefulness or portentousness suggested by a knowledge of the time and place in which they were made. On the eve of the election, when nothing had yet been decided, when everything hung in the balance, Eggleston made an elegy a statement of perfect calm.<br/><br/>Book weighs just about 2kg with packaging and will be sent via courier.",
+        "isbn": null,
+        "price_gbp": 29.99,
+        "product_id": "book-HD__304177701",
+        "publisher": null,
+        "route": "/election-eve/product/HD_304177701",
+        "sku": "HD_304177701",
+        "title": "Election Eve"
+      },
+      "search_fingerprint": "c82dbfcc2fb67e76"
     },
     "HD_304178059": {
       "first_seen": "baseline",
@@ -2158,6 +2174,22 @@
       },
       "search_fingerprint": "15a847501b7fdeb0"
     },
+    "HD_304199251": {
+      "first_seen": "2026-08-28T11:39:29Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787907066000",
+        "description": "\"Around the World in 92 Minutes\". Hadfield adds insightful information to some of his favourite images from the international space station.  Photographs mainly arranged by continent.<br/><br/>Hardback book in very good condition.  Top end of spine and back corners lightly bumped.  Small tear to bottom of one page.  Signed on title page.<br/><br/>Dust jacket in very good condition.  Ends of spine and corners lightly bumped and worn.  Light shelf wear to edges.   Light wear on covers.<br/>",
+        "isbn": null,
+        "price_gbp": 30.0,
+        "product_id": "book-HD__304199251",
+        "publisher": null,
+        "route": "/you-are-here-chris-hadfield-signed-first-gb-edition/product/HD_304199251",
+        "sku": "HD_304199251",
+        "title": "You Are Here - Chris Hadfield - Signed First GB Edition"
+      },
+      "search_fingerprint": "4b0756919cda638f"
+    },
     "HD_304199302": {
       "first_seen": "2026-08-27T15:11:44Z",
       "last_snapshot": {
@@ -2271,6 +2303,6 @@
       "search_fingerprint": "14803c84a1685123"
     }
   },
-  "reported_category_count": 2789,
+  "reported_category_count": 2788,
   "version": 1
 }
