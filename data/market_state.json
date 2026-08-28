@@ -1,13 +1,31 @@
 {
-  "cursor": 468,
+  "cursor": 492,
   "feeds": {
     "ebay_api_photo_book": {
       "first_successful_fetch": "2026-08-28T14:46:23Z",
       "initialized": true,
       "last_count": 200,
-      "last_successful_fetch": "2026-08-28T15:33:55Z",
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
       "seen": [
+        "ebay:327330785473",
+        "ebay:800576992355",
+        "ebay:800576992357",
+        "ebay:377454016389",
+        "ebay:377454016209",
+        "ebay:377454015939",
+        "ebay:287551058844",
+        "ebay:820058591839",
+        "ebay:820058591832",
+        "ebay:366634496142",
+        "ebay:800576985960",
+        "ebay:188853625551",
+        "ebay:800576979278",
+        "ebay:407176681096",
+        "ebay:407176681100",
+        "ebay:137671715045",
+        "ebay:366634484705",
         "ebay:237035555295",
+        "ebay:227495461084",
         "ebay:336766361324",
         "ebay:307151204531",
         "ebay:407176675377",
@@ -587,8 +605,9 @@
       "first_successful_fetch": "2026-08-28T14:46:23Z",
       "initialized": true,
       "last_count": 200,
-      "last_successful_fetch": "2026-08-28T15:33:55Z",
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
       "seen": [
+        "ebay:278320303128",
         "ebay:307151204521",
         "ebay:377453988784",
         "ebay:377453984104",
@@ -813,7 +832,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 250,
-      "last_successful_fetch": "2026-08-28T15:33:55Z",
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
       "seen": [
         "photobookstore:15968683131253",
         "photobookstore:15907319349621",
@@ -1081,7 +1100,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 235,
-      "last_successful_fetch": "2026-08-28T15:33:55Z",
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
       "seen": [
         "setanta:16063058444670",
         "setanta:16062983045502",
@@ -1343,7 +1362,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 86,
-      "last_successful_fetch": "2026-08-28T15:33:55Z",
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -1437,7 +1456,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 206,
-      "last_successful_fetch": "2026-08-28T15:33:55Z",
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
       "seen": [
         "village:10375606862106",
         "village:10375589429530",
@@ -1665,7 +1684,7 @@
   },
   "last_failures": [],
   "last_successful_requests": 54,
-  "last_successful_run": "2026-08-28T15:33:55Z",
+  "last_successful_run": "2026-08-28T15:41:03Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
@@ -15646,7 +15665,7 @@
     "abebooks|takanashi yutaka|toshi e": {
       "first_successful_fetch": "2026-08-23T07:56:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T17:55:44Z",
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
       "seen": [
         "abebooks:22855818240"
       ]
@@ -15654,7 +15673,7 @@
     "abebooks|takase yoshio|benjo": {
       "first_successful_fetch": "2026-08-23T07:56:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T17:55:44Z",
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
       "seen": [
         "abebooks:12910364865",
         "abebooks:52506076",
@@ -15664,20 +15683,20 @@
     "abebooks|takashi homma|tokyo suburbia": {
       "first_successful_fetch": "2026-08-23T07:56:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T17:55:44Z",
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
       "seen": [
         "abebooks:1036912772",
         "abebooks:30605171472",
         "abebooks:31949619374",
         "abebooks:9784771303447",
-        "abebooks:18789087977",
-        "abebooks:30075369295"
+        "abebooks:30075369295",
+        "abebooks:18789087977"
       ]
     },
     "abebooks|tal b m|industriya sotzializma": {
       "first_successful_fetch": "2026-08-23T07:56:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T17:55:44Z",
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
       "seen": [
         "abebooks:31360983811",
         "abebooks:11255706570",
@@ -15689,7 +15708,7 @@
     "abebooks|talbot william henry fox|the pencil of nature": {
       "first_successful_fetch": "2026-08-23T07:56:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T19:08:31Z",
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
       "seen": [
         "abebooks:32424202459",
         "abebooks:9781986807593",
@@ -15734,7 +15753,7 @@
     "abebooks|tamiko nishimura|shikishima": {
       "first_successful_fetch": "2026-08-23T07:56:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T19:08:31Z",
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
       "seen": [
         "abebooks:32282893175",
         "abebooks:32336230273",
@@ -15745,13 +15764,13 @@
     "abebooks|tandit l|xv let kazakhsko assr": {
       "first_successful_fetch": "2026-08-23T07:56:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T19:08:31Z",
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
       "seen": []
     },
     "abebooks|tano d amico|e il 77": {
       "first_successful_fetch": "2026-08-23T07:56:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T19:08:31Z",
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
       "seen": [
         "abebooks:32203339652",
         "abebooks:57863149",
@@ -15762,13 +15781,13 @@
     "abebooks|tenmei kanoh|fuck": {
       "first_successful_fetch": "2026-08-23T07:56:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T19:08:31Z",
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
       "seen": []
     },
     "abebooks|terri weifenbach|in your dreams": {
       "first_successful_fetch": "2026-08-23T07:56:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T19:08:31Z",
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
       "seen": [
         "abebooks:31865208791",
         "abebooks:31817456961",
@@ -15790,7 +15809,7 @@
     "abebooks|terry richardson|hysteric glamour": {
       "first_successful_fetch": "2026-08-23T07:56:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T19:08:31Z",
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
       "seen": [
         "abebooks:13554627625",
         "abebooks:1313423720",
@@ -15803,7 +15822,7 @@
     "abebooks|teynard felix|egypte et nubie": {
       "first_successful_fetch": "2026-08-23T07:56:00Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T19:08:31Z",
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
       "seen": [
         "abebooks:32434224295",
         "abebooks:32430033036",
@@ -15815,7 +15834,7 @@
     "abebooks|theo baart cary markerink and tracy metz|snelweg highways in the netherlands": {
       "first_successful_fetch": "2026-08-23T08:57:30Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T19:08:31Z",
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
       "seen": [
         "abebooks:22177191886",
         "abebooks:60417497",
@@ -15830,7 +15849,7 @@
     "abebooks|thomas struth|museum photographs": {
       "first_successful_fetch": "2026-08-23T08:57:30Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T19:08:31Z",
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
       "seen": [
         "abebooks:32017003602",
         "abebooks:32366770667",
@@ -15850,6 +15869,11 @@
         "abebooks:72313296",
         "abebooks:31019132916",
         "abebooks:31757312016",
+        "abebooks:22765477939",
+        "abebooks:54278753",
+        "abebooks:22765477052",
+        "abebooks:22765476588",
+        "abebooks:22765477348",
         "abebooks:19868874400",
         "abebooks:19868874395",
         "abebooks:7345391693",
@@ -15865,7 +15889,7 @@
     "abebooks|thomson john|foochow and the river min": {
       "first_successful_fetch": "2026-08-23T08:57:30Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T19:08:31Z",
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
       "seen": [
         "abebooks:32136895593",
         "abebooks:32452003603",
@@ -15929,7 +15953,7 @@
     "abebooks|tiane doan na champassak|the king of photography": {
       "first_successful_fetch": "2026-08-23T08:57:30Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T19:08:31Z",
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
       "seen": [
         "abebooks:30006836415",
         "abebooks:9781090359025",
@@ -15939,7 +15963,7 @@
     "abebooks|tmej zdenek|abeceda dusevniho prazdna": {
       "first_successful_fetch": "2026-08-23T08:57:30Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T19:08:31Z",
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
       "seen": [
         "abebooks:31367559458",
         "abebooks:17497804345",
@@ -15955,7 +15979,7 @@
     "abebooks|tom wood|all zones off peak": {
       "first_successful_fetch": "2026-08-23T08:57:30Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T19:08:31Z",
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
       "seen": [
         "abebooks:32228712264",
         "abebooks:9781899235865",
@@ -15980,7 +16004,7 @@
     "abebooks|tomatsu shomei|11 02 nagasaki": {
       "first_successful_fetch": "2026-08-23T08:57:30Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T19:08:31Z",
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
       "seen": [
         "abebooks:32456854296",
         "abebooks:32265463194",
@@ -16002,7 +16026,7 @@
     "abebooks|tomatsu shomei|oo shinjuku": {
       "first_successful_fetch": "2026-08-23T08:57:30Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T19:08:31Z",
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
       "seen": [
         "abebooks:32109080727",
         "abebooks:63659862"
@@ -16011,7 +16035,7 @@
     "abebooks|tomoyuki sakaguchi|home": {
       "first_successful_fetch": "2026-08-23T08:57:30Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T19:08:31Z",
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
       "seen": [
         "abebooks:31614620391",
         "abebooks:31542018616",
@@ -16025,13 +16049,15 @@
     "abebooks|trine s ndergaard|now that you are mine": {
       "first_successful_fetch": "2026-08-23T08:57:30Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T19:08:31Z",
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
       "seen": [
         "abebooks:31811236148",
         "abebooks:72313296",
         "abebooks:32190354217",
         "abebooks:9783882438239",
         "abebooks:64393506",
+        "abebooks:32138308011",
+        "abebooks:56055087",
         "abebooks:30163443023",
         "abebooks:50731200"
       ]
@@ -16039,7 +16065,7 @@
     "abebooks|tripe captain linnaeus|photographic views in madura": {
       "first_successful_fetch": "2026-08-23T08:57:30Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T19:08:31Z",
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
       "seen": [
         "abebooks:32453132079",
         "abebooks:32134903442",
@@ -16051,7 +16077,7 @@
     "abebooks|tuggener jak|fabrik": {
       "first_successful_fetch": "2026-08-23T08:57:30Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T19:08:31Z",
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
       "seen": [
         "abebooks:31129628805",
         "abebooks:32262137024",
@@ -16061,6 +16087,8 @@
         "abebooks:52241158",
         "abebooks:32175216983",
         "abebooks:31465579290",
+        "abebooks:22765478604",
+        "abebooks:54278753",
         "abebooks:3840045737",
         "abebooks:50417431",
         "abebooks:30666961133",
@@ -17952,6 +17980,258 @@
         "ebay:178140228678",
         "ebay:376191484742",
         "ebay:156291709702"
+      ]
+    },
+    "ebay_api|takanashi yutaka|toshi e": {
+      "first_successful_fetch": "2026-08-28T15:41:03Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
+      "seen": [
+        "ebay:318493692069"
+      ]
+    },
+    "ebay_api|takase yoshio|benjo": {
+      "first_successful_fetch": "2026-08-28T15:41:03Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
+      "seen": []
+    },
+    "ebay_api|takashi homma|tokyo suburbia": {
+      "first_successful_fetch": "2026-08-28T15:41:03Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
+      "seen": [
+        "ebay:366625309787",
+        "ebay:307123534355",
+        "ebay:358200355698",
+        "ebay:306296775787",
+        "ebay:306296772949",
+        "ebay:306296766947",
+        "ebay:306296765614",
+        "ebay:256381134490"
+      ]
+    },
+    "ebay_api|tal b m|industriya sotzializma": {
+      "first_successful_fetch": "2026-08-28T15:41:03Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
+      "seen": []
+    },
+    "ebay_api|talbot william henry fox|the pencil of nature": {
+      "first_successful_fetch": "2026-08-28T15:41:03Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
+      "seen": [
+        "ebay:407163395003",
+        "ebay:800507055717",
+        "ebay:307124377290",
+        "ebay:307115857218",
+        "ebay:117339270166",
+        "ebay:227458538877",
+        "ebay:307099391825",
+        "ebay:358863747553",
+        "ebay:800050084326",
+        "ebay:389954413779",
+        "ebay:397820428329",
+        "ebay:389312050542",
+        "ebay:146885827548",
+        "ebay:235769206536"
+      ]
+    },
+    "ebay_api|tamiko nishimura|shikishima": {
+      "first_successful_fetch": "2026-08-28T15:41:03Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
+      "seen": [
+        "ebay:146802576393"
+      ]
+    },
+    "ebay_api|tandit l|xv let kazakhsko assr": {
+      "first_successful_fetch": "2026-08-28T15:41:03Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
+      "seen": []
+    },
+    "ebay_api|tano d amico|e il 77": {
+      "first_successful_fetch": "2026-08-28T15:41:03Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
+      "seen": []
+    },
+    "ebay_api|tenmei kanoh|fuck": {
+      "first_successful_fetch": "2026-08-28T15:41:03Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
+      "seen": [
+        "ebay:116726111599"
+      ]
+    },
+    "ebay_api|terri weifenbach|in your dreams": {
+      "first_successful_fetch": "2026-08-28T15:41:03Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
+      "seen": [
+        "ebay:127995055962",
+        "ebay:117306920170",
+        "ebay:167884370725",
+        "ebay:315373579337",
+        "ebay:204509635455",
+        "ebay:267635857201",
+        "ebay:254136967293"
+      ]
+    },
+    "ebay_api|terry richardson|hysteric glamour": {
+      "first_successful_fetch": "2026-08-28T15:41:03Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
+      "seen": [
+        "ebay:820044377883",
+        "ebay:820044331850",
+        "ebay:820044206770",
+        "ebay:287525290527",
+        "ebay:287507126319",
+        "ebay:287478480800",
+        "ebay:178300875471",
+        "ebay:407019792588",
+        "ebay:407019792577",
+        "ebay:407019792484",
+        "ebay:407019792317",
+        "ebay:407019792318",
+        "ebay:407019792306",
+        "ebay:206224192725",
+        "ebay:206067973937",
+        "ebay:358111485299",
+        "ebay:406148363014",
+        "ebay:157248807675",
+        "ebay:376485292321",
+        "ebay:296753862524",
+        "ebay:286702743525",
+        "ebay:275578819062",
+        "ebay:163344731434"
+      ]
+    },
+    "ebay_api|teynard felix|egypte et nubie": {
+      "first_successful_fetch": "2026-08-28T15:41:03Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
+      "seen": []
+    },
+    "ebay_api|theo baart cary markerink and tracy metz|snelweg highways in the netherlands": {
+      "first_successful_fetch": "2026-08-28T15:41:03Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
+      "seen": []
+    },
+    "ebay_api|thomas struth|museum photographs": {
+      "first_successful_fetch": "2026-08-28T15:41:03Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
+      "seen": [
+        "ebay:278231927265",
+        "ebay:227443516745",
+        "ebay:127979603546",
+        "ebay:257568046397",
+        "ebay:127873802950",
+        "ebay:277985281403",
+        "ebay:206259554087",
+        "ebay:178112018550",
+        "ebay:236877730377",
+        "ebay:227322762465",
+        "ebay:287181019567",
+        "ebay:127572472885",
+        "ebay:317565925639",
+        "ebay:277348004625",
+        "ebay:226144405606",
+        "ebay:306565481081",
+        "ebay:255116713567",
+        "ebay:284140933568",
+        "ebay:222141730432"
+      ]
+    },
+    "ebay_api|thomson john|foochow and the river min": {
+      "first_successful_fetch": "2026-08-28T15:41:03Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
+      "seen": []
+    },
+    "ebay_api|tiane doan na champassak|the king of photography": {
+      "first_successful_fetch": "2026-08-28T15:41:03Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
+      "seen": []
+    },
+    "ebay_api|tmej zdenek|abeceda dusevniho prazdna": {
+      "first_successful_fetch": "2026-08-28T15:41:03Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
+      "seen": []
+    },
+    "ebay_api|tom wood|all zones off peak": {
+      "first_successful_fetch": "2026-08-28T15:41:03Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
+      "seen": [
+        "ebay:117307816274",
+        "ebay:397993134413",
+        "ebay:277320819386",
+        "ebay:255683043622",
+        "ebay:252261088278"
+      ]
+    },
+    "ebay_api|tomatsu shomei|11 02 nagasaki": {
+      "first_successful_fetch": "2026-08-28T15:41:03Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
+      "seen": [
+        "ebay:117349791473",
+        "ebay:377392550012",
+        "ebay:157845871267",
+        "ebay:147254342448",
+        "ebay:366029848445",
+        "ebay:127512471593",
+        "ebay:227058223971",
+        "ebay:157384916981",
+        "ebay:376553111522",
+        "ebay:397000986514",
+        "ebay:387883248684",
+        "ebay:173570398958"
+      ]
+    },
+    "ebay_api|tomatsu shomei|oo shinjuku": {
+      "first_successful_fetch": "2026-08-28T15:41:03Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
+      "seen": []
+    },
+    "ebay_api|tomoyuki sakaguchi|home": {
+      "first_successful_fetch": "2026-08-28T15:41:03Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
+      "seen": [
+        "ebay:157822210529",
+        "ebay:406792677589",
+        "ebay:187701333440",
+        "ebay:146059360038"
+      ]
+    },
+    "ebay_api|trine s ndergaard|now that you are mine": {
+      "first_successful_fetch": "2026-08-28T15:41:03Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
+      "seen": []
+    },
+    "ebay_api|tripe captain linnaeus|photographic views in madura": {
+      "first_successful_fetch": "2026-08-28T15:41:03Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
+      "seen": []
+    },
+    "ebay_api|tuggener jak|fabrik": {
+      "first_successful_fetch": "2026-08-28T15:41:03Z",
+      "initialized": true,
+      "last_successful_fetch": "2026-08-28T15:41:03Z",
+      "seen": [
+        "ebay:284959711674"
       ]
     }
   },
