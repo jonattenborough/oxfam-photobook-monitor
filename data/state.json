@@ -1,7 +1,9 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-08-28T15:41:04Z",
+  "last_successful_fetch": "2026-08-28T21:30:51Z",
   "last_top_skus": [
+    "HD_304203337",
+    "HD_304202729",
     "HD_304203130",
     "HD_304202694",
     "HD_304202490",
@@ -19,7 +21,6 @@
     "HD_304179523",
     "HD_304199892",
     "HD_304179970",
-    "HD_304199503",
     "HD_304199302",
     "HD_304199308",
     "HD_304199178",
@@ -30,8 +31,7 @@
     "HD_304197229",
     "HD_304196988",
     "HD_304196761",
-    "HD_304196598",
-    "HD_304196442"
+    "HD_304196598"
   ],
   "products": {
     "HD_303805354": {
@@ -2446,6 +2446,22 @@
       },
       "search_fingerprint": "76aa49bd28e374d7"
     },
+    "HD_304202729": {
+      "first_seen": "2026-08-28T21:30:51Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787930654000",
+        "description": "Hrair Sarkassian - Extra Ordinary - The Abraaj Group Art Prize <br/>Really interesting book documenting the photography of Hrair Sarkassian, in very good condition. <br/>",
+        "isbn": null,
+        "price_gbp": 15.99,
+        "product_id": "book-HD__304202729",
+        "publisher": null,
+        "route": "/extra-ordinary-the-abraaj-group-art-prize/product/HD_304202729",
+        "sku": "HD_304202729",
+        "title": "Extra Ordinary - The Abraaj Group Art Prize"
+      },
+      "search_fingerprint": "7308276f7d195dae"
+    },
     "HD_304203130": {
       "first_seen": "2026-08-28T15:41:04Z",
       "last_snapshot": {
@@ -2461,8 +2477,24 @@
         "title": "Goa"
       },
       "search_fingerprint": "09911ccd8b4f3a55"
+    },
+    "HD_304203337": {
+      "first_seen": "2026-08-28T21:30:51Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787936160000",
+        "description": "Legendary film director Wim Wenders spent two months driving around the south trying to find locations for his Palme D'or winning film Paris, Texas and this is the result. <br/><br/>Condition.<br/>As you should be able to see there is a roughly 1cm strip of discoloration framing the left and top of the book. <br/><br/>Indentations visible under strong light as if someone once doodled carelessly on top but these marks are only really obvious if you look for them.",
+        "isbn": null,
+        "price_gbp": 90.0,
+        "product_id": "book-HD__304203337",
+        "publisher": null,
+        "route": "/written-in-the-west/product/HD_304203337",
+        "sku": "HD_304203337",
+        "title": "Written In The West"
+      },
+      "search_fingerprint": "a65f2d9e4cdd6852"
     }
   },
-  "reported_category_count": 2793,
+  "reported_category_count": 2790,
   "version": 1
 }
