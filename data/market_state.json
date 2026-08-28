@@ -1,11 +1,11 @@
 {
-  "cursor": 348,
+  "cursor": 372,
   "feeds": {
     "photobookstore": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 249,
-      "last_successful_fetch": "2026-08-27T22:28:32Z",
+      "last_successful_fetch": "2026-08-28T07:00:14Z",
       "seen": [
         "photobookstore:15968683131253",
         "photobookstore:15907319349621",
@@ -273,7 +273,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 235,
-      "last_successful_fetch": "2026-08-27T22:28:32Z",
+      "last_successful_fetch": "2026-08-28T07:00:14Z",
       "seen": [
         "setanta:16063058444670",
         "setanta:16062983045502",
@@ -535,7 +535,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 86,
-      "last_successful_fetch": "2026-08-27T22:28:32Z",
+      "last_successful_fetch": "2026-08-28T07:00:14Z",
       "seen": [
         "tpg_new:16091262517628",
         "tpg_new:16091290927484",
@@ -629,7 +629,7 @@
       "first_successful_fetch": "2026-08-22T14:21:00Z",
       "initialized": true,
       "last_count": 208,
-      "last_successful_fetch": "2026-08-27T22:28:32Z",
+      "last_successful_fetch": "2026-08-28T07:00:14Z",
       "seen": [
         "village:10375606862106",
         "village:10375589429530",
@@ -857,7 +857,7 @@
   },
   "last_failures": [],
   "last_successful_requests": 28,
-  "last_successful_run": "2026-08-27T22:28:32Z",
+  "last_successful_run": "2026-08-28T07:00:14Z",
   "queries": {
     "abebooks|abbott berenice atget eugene|atget photographe de paris": {
       "first_successful_fetch": "2026-08-22T14:21:00Z",
@@ -11079,7 +11079,7 @@
     "abebooks|muybridge eadweard|animal locomotion": {
       "first_successful_fetch": "2026-08-23T02:09:18Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T11:54:50Z",
+      "last_successful_fetch": "2026-08-28T07:00:14Z",
       "seen": [
         "abebooks:30645997828",
         "abebooks:9789333472418",
@@ -11154,19 +11154,19 @@
         "abebooks:32152984594",
         "abebooks:32375450853",
         "abebooks:84243933",
-        "abebooks:32492116040",
-        "abebooks:9780486237947",
         "abebooks:32278681806",
         "abebooks:51722192",
         "abebooks:32017021551",
         "abebooks:50731200",
-        "abebooks:31995677297"
+        "abebooks:31995677297",
+        "abebooks:9783337629748",
+        "abebooks:73689807"
       ]
     },
     "abebooks|nacho lopez|la ciudad de mexico ii": {
       "first_successful_fetch": "2026-08-23T02:09:18Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T11:54:50Z",
+      "last_successful_fetch": "2026-08-28T07:00:14Z",
       "seen": [
         "abebooks:32419921781",
         "abebooks:32464922216",
@@ -11178,7 +11178,7 @@
     "abebooks|nakahira takuma|kitarubeki kotoba no tameni": {
       "first_successful_fetch": "2026-08-23T02:09:18Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T11:54:50Z",
+      "last_successful_fetch": "2026-08-28T07:00:14Z",
       "seen": [
         "abebooks:32266483651",
         "abebooks:30037104586",
@@ -11191,7 +11191,7 @@
     "abebooks|nan goldin|the ballad of sexual dependency": {
       "first_successful_fetch": "2026-08-23T02:09:18Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T11:54:50Z",
+      "last_successful_fetch": "2026-08-28T07:00:14Z",
       "seen": [
         "abebooks:32489520827",
         "abebooks:9781597112086",
@@ -11208,6 +11208,9 @@
         "abebooks:32419308702",
         "abebooks:90307527",
         "abebooks:32486766757",
+        "abebooks:32504640846",
+        "abebooks:32055115624",
+        "abebooks:56055087",
         "abebooks:31139618750",
         "abebooks:54803255",
         "abebooks:32403876146",
@@ -11223,7 +11226,7 @@
     "abebooks|negre charles|voyage d exploration a la mer morte": {
       "first_successful_fetch": "2026-08-23T02:09:18Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T13:27:51Z",
+      "last_successful_fetch": "2026-08-28T07:00:14Z",
       "seen": [
         "abebooks:32077283145"
       ]
@@ -11231,7 +11234,7 @@
     "abebooks|nezval vitezslav|abeceda": {
       "first_successful_fetch": "2026-08-23T02:09:18Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T13:27:51Z",
+      "last_successful_fetch": "2026-08-28T07:00:14Z",
       "seen": [
         "abebooks:32039848326",
         "abebooks:9788085639124",
@@ -11252,9 +11255,8 @@
     "abebooks|nguyen manh dan and nguyen ngoc hanh|viet nam in flames": {
       "first_successful_fetch": "2026-08-23T02:09:18Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T13:27:51Z",
+      "last_successful_fetch": "2026-08-28T07:00:14Z",
       "seen": [
-        "abebooks:31752847735",
         "abebooks:30263118198",
         "abebooks:7900778187",
         "abebooks:50159740",
@@ -11263,7 +11265,8 @@
         "abebooks:30876862957",
         "abebooks:72313296",
         "abebooks:30179589195",
-        "abebooks:18775020617"
+        "abebooks:18775020617",
+        "abebooks:31752847735"
       ]
     },
     "abebooks|nicolas simarik|la deroute": {
@@ -11275,7 +11278,7 @@
     "abebooks|o sullivan timothy|photographs showing landscapes geological and other features of portions of the western territory of the united states": {
       "first_successful_fetch": "2026-08-23T02:09:18Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T13:27:51Z",
+      "last_successful_fetch": "2026-08-28T07:00:14Z",
       "seen": [
         "abebooks:32459937943",
         "abebooks:32474334727",
@@ -11287,7 +11290,7 @@
     "abebooks|o winston link|night trick on the norfolk and western railway": {
       "first_successful_fetch": "2026-08-23T02:09:18Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T13:27:51Z",
+      "last_successful_fetch": "2026-08-28T07:00:14Z",
       "seen": [
         "abebooks:32068438400",
         "abebooks:50869000",
@@ -11299,7 +11302,7 @@
     "abebooks|ohara ken|one": {
       "first_successful_fetch": "2026-08-23T02:09:18Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T13:27:51Z",
+      "last_successful_fetch": "2026-08-28T07:00:14Z",
       "seen": [
         "abebooks:9783822878668",
         "abebooks:53247111",
@@ -11314,6 +11317,8 @@
         "abebooks:53414316",
         "abebooks:17384241697",
         "abebooks:726840525",
+        "abebooks:22765476555",
+        "abebooks:54278753",
         "abebooks:32436555052",
         "abebooks:17347058616",
         "abebooks:30730890702",
@@ -11329,7 +11334,7 @@
     "abebooks|oliviero toscani|colors cacas": {
       "first_successful_fetch": "2026-08-23T02:09:18Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T13:27:51Z",
+      "last_successful_fetch": "2026-08-28T07:00:14Z",
       "seen": [
         "abebooks:32109073902",
         "abebooks:71549136",
@@ -11344,7 +11349,7 @@
     "abebooks|ongania ferdinando|streets and canals in venice": {
       "first_successful_fetch": "2026-08-23T02:09:18Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T13:27:51Z",
+      "last_successful_fetch": "2026-08-28T07:00:14Z",
       "seen": [
         "abebooks:31267204187"
       ]
@@ -11352,7 +11357,7 @@
     "abebooks|orsi carlo pirelli giulia|milano": {
       "first_successful_fetch": "2026-08-23T03:29:29Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T13:27:51Z",
+      "last_successful_fetch": "2026-08-28T07:00:14Z",
       "seen": [
         "abebooks:31542443038",
         "abebooks:52983483",
@@ -11381,7 +11386,7 @@
     "abebooks|osamu kanemura|spiders strategy": {
       "first_successful_fetch": "2026-08-23T03:29:29Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T13:27:51Z",
+      "last_successful_fetch": "2026-08-28T07:00:14Z",
       "seen": [
         "abebooks:31800909479",
         "abebooks:86378343",
@@ -11400,7 +11405,7 @@
     "abebooks|osamu nagahama|the island of long hot nights": {
       "first_successful_fetch": "2026-08-23T03:29:29Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T13:27:51Z",
+      "last_successful_fetch": "2026-08-28T07:00:14Z",
       "seen": [
         "abebooks:32145939574",
         "abebooks:30824168203",
@@ -11412,7 +11417,7 @@
     "abebooks|paola mattioli and anna candiani|immagini del no": {
       "first_successful_fetch": "2026-08-23T03:29:29Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T13:27:51Z",
+      "last_successful_fetch": "2026-08-28T07:00:14Z",
       "seen": [
         "abebooks:32279547997",
         "abebooks:59514781",
@@ -11424,7 +11429,7 @@
     "abebooks|paolo gasparini|megalopolis los angeles mexico san paolo": {
       "first_successful_fetch": "2026-08-23T03:29:29Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T13:27:51Z",
+      "last_successful_fetch": "2026-08-28T07:00:14Z",
       "seen": [
         "abebooks:31640238470",
         "abebooks:30598502621",
@@ -11434,7 +11439,7 @@
     "abebooks|paolo gasparini|para verte mejor america latina to see you more clearly latin america": {
       "first_successful_fetch": "2026-08-23T03:29:29Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T13:27:51Z",
+      "last_successful_fetch": "2026-08-28T07:00:14Z",
       "seen": [
         "abebooks:14500571739"
       ]
@@ -11442,7 +11447,7 @@
     "abebooks|paolo pellegrin|kosovo 1999 2000": {
       "first_successful_fetch": "2026-08-23T03:29:29Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T13:27:51Z",
+      "last_successful_fetch": "2026-08-28T07:00:14Z",
       "seen": [
         "abebooks:32483075047",
         "abebooks:9780954207939",
@@ -11462,7 +11467,7 @@
     "abebooks|paul fusco|rfk funeral train": {
       "first_successful_fetch": "2026-08-23T03:29:29Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T13:27:51Z",
+      "last_successful_fetch": "2026-08-28T07:00:14Z",
       "seen": [
         "abebooks:32439873196",
         "abebooks:9781884167041",
@@ -11485,15 +11490,13 @@
     "abebooks|paul graham|a shimmer of possibility": {
       "first_successful_fetch": "2026-08-23T03:29:29Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T13:27:51Z",
+      "last_successful_fetch": "2026-08-28T07:00:14Z",
       "seen": [
         "abebooks:31960892555",
         "abebooks:31744286079",
         "abebooks:72313296",
         "abebooks:31720965923",
         "abebooks:9783865218629",
-        "abebooks:32372982830",
-        "abebooks:53833589",
         "abebooks:31092666883",
         "abebooks:31922532734",
         "abebooks:1262308941",
@@ -11511,13 +11514,15 @@
         "abebooks:83879318",
         "abebooks:32476730531",
         "abebooks:9781910164174",
-        "abebooks:53994756"
+        "abebooks:53994756",
+        "abebooks:32372982830",
+        "abebooks:53833589"
       ]
     },
     "abebooks|paul graham|beyond caring": {
       "first_successful_fetch": "2026-08-23T03:29:29Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T13:27:51Z",
+      "last_successful_fetch": "2026-08-28T07:00:14Z",
       "seen": [
         "abebooks:32411040743",
         "abebooks:30962114956",
@@ -11550,12 +11555,14 @@
     "abebooks|paul graham|new europe": {
       "first_successful_fetch": "2026-08-23T03:29:29Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T13:27:51Z",
+      "last_successful_fetch": "2026-08-28T07:00:14Z",
       "seen": [
         "abebooks:32312003060",
         "abebooks:9780739107553",
         "abebooks:63714625",
         "abebooks:22526213858",
+        "abebooks:32353643640",
+        "abebooks:56055087",
         "abebooks:31922492575",
         "abebooks:73965193",
         "abebooks:32242178630",
@@ -11578,7 +11585,7 @@
     "abebooks|paul kranzler|land of milk and honey": {
       "first_successful_fetch": "2026-08-23T03:29:29Z",
       "initialized": true,
-      "last_successful_fetch": "2026-08-25T13:27:51Z",
+      "last_successful_fetch": "2026-08-28T07:00:14Z",
       "seen": [
         "abebooks:31854564107",
         "abebooks:9783901756535",
