@@ -100,6 +100,26 @@ class EbayApiTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "query or category_ids"):
             client.search(None)
 
+    @mock.patch("ebay_api.urllib.request.urlopen")
+    def test_closed_item_start_date_range(self, urlopen):
+        urlopen.side_effect = [
+            FakeResponse({"access_token": "short-lived-token"}),
+            FakeResponse({"itemSummaries": []}),
+        ]
+        client = ebay_api.EbayBrowseClient("app-id", "cert-id")
+        client.search(
+            None,
+            category_ids="261186",
+            item_start_date="1995-01-01T00:00:00Z",
+            item_end_date="2020-01-01T00:00:00Z",
+        )
+        request = urlopen.call_args_list[1].args[0]
+        params = urllib.parse.parse_qs(urllib.parse.urlparse(request.full_url).query)
+        self.assertEqual(
+            params["filter"],
+            ["buyingOptions:{FIXED_PRICE},itemStartDate:[1995-01-01T00:00:00Z..2020-01-01T00:00:00Z]"],
+        )
+
     def test_summary_is_converted_to_monitor_listing(self):
         source = {"id": "ebay_api_photobook", "name": "eBay UK newest photobooks"}
         listing = ebay_api.listing_from_summary(

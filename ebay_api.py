@@ -122,6 +122,7 @@ class EbayBrowseClient:
         seller_ids: list[str] | tuple[str, ...] | None = None,
         delivery_country: str | None = None,
         item_start_date: str | None = None,
+        item_end_date: str | None = None,
         offset: int = 0,
     ) -> list[dict[str, Any]]:
         params: dict[str, str] = {
@@ -153,8 +154,10 @@ class EbayBrowseClient:
             if not re.fullmatch(r"[A-Z]{2}", country):
                 raise ValueError("delivery_country must be a two-letter country code")
             filters.append(f"deliveryCountry:{country}")
-        if item_start_date:
-            filters.append(f"itemStartDate:[{item_start_date.strip()}..]")
+        if item_start_date or item_end_date:
+            start = item_start_date.strip() if item_start_date else ""
+            end = item_end_date.strip() if item_end_date else ""
+            filters.append(f"itemStartDate:[{start}..{end}]")
         if filters:
             params["filter"] = ",".join(filters)
         request = urllib.request.Request(
@@ -233,6 +236,7 @@ def search_listings(
     seller_ids: list[str] | tuple[str, ...] | None = None,
     delivery_country: str | None = None,
     item_start_date: str | None = None,
+    item_end_date: str | None = None,
     offset: int = 0,
 ) -> list[dict[str, Any]]:
     """Search newest-first and convert summaries to the monitor's row shape."""
@@ -247,6 +251,7 @@ def search_listings(
         seller_ids=seller_ids,
         delivery_country=delivery_country,
         item_start_date=item_start_date,
+        item_end_date=item_end_date,
         offset=offset,
     )
     converted = [listing_from_summary(row, source) for row in rows]

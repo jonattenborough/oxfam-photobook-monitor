@@ -57,7 +57,7 @@ At the normal cadence the 75 seller queries use about 3,600 Browse API calls per
 
 The live monitor intentionally alerts only on listings added after each seller's silent baseline. `ebay_seller_backfill.py` is a separate resumable audit of older current inventory, including stock beyond the newest 200 books.
 
-It scans sellers in round-robin 200-item pages, records progress independently for every seller, ranks photography and canon candidates, and labels its review issues `EBAY_BACKFILL:` so historical stock cannot be mistaken for a newly listed item. The daily run is capped at 300 Browse API calls, leaving operating room beneath the 5,000-call allowance while the live monitors continue. It stops making API calls automatically after all accessible current inventory has been covered.
+It scans sellers in round-robin 200-item pages, records progress independently for every seller, ranks photography and canon candidates, and labels its review issues `EBAY_BACKFILL:` so historical stock cannot be mistaken for a newly listed item. If a seller exceeds eBay's 10,000-result offset window, the scan opens an older listing-date segment and continues. The daily run is capped at 300 Browse API calls, leaving operating room beneath the 5,000-call allowance while the live monitors continue. It stops making API calls automatically after all current inventory has been covered.
 
 ### GitHub-hosted specialist feeds
 

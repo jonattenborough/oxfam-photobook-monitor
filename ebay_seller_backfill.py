@@ -6,6 +6,7 @@ import argparse
 import json
 import os
 import sys
+from datetime import datetime, timedelta, timezone
 from functools import lru_cache
 from pathlib import Path
 from typing import Any
@@ -19,6 +20,7 @@ PAGE_SIZE = 200
 DEFAULT_CALL_BUDGET = 300
 MAX_OFFSET = 9800
 ISSUE_ITEM_LIMIT = 50
+EBAY_EPOCH = "1995-01-01T00:00:00Z"
 
 
 def load_json(path: Path, default: dict[str, Any], label: str) -> dict[str, Any]:
@@ -130,7 +132,8 @@ def scan_page(
     client: ebay_api.EbayBrowseClient,
     seller: dict[str, str],
     offset: int,
-) -> tuple[list[dict[str, Any]], int]:
+    item_end_date: str | None = None,
+) -> tuple[list[dict[str, Any]], int, str | None]:
     source = {
         "id": f"ebay_backfill_{seller['marketplace'].lower()}_{seller['id'].lower()}",
         "name": f"eBay seller {seller['id']}",
@@ -144,6 +147,8 @@ def scan_page(
         fixed_price_only=True,
         seller_ids=[seller["id"]],
         delivery_country=seller.get("delivery_country"),
+        item_start_date=EBAY_EPOCH if item_end_date else None,
+        item_end_date=item_end_date,
     )
     items: list[dict[str, Any]] = []
     for row in rows:
@@ -154,7 +159,24 @@ def scan_page(
         item["marketplace"] = seller["marketplace"]
         item["source_page"] = live_monitor.seller_url(seller["marketplace"], seller["id"])
         items.append(item)
-    return items, len(rows)
+    creation_dates = [
+        str(row.get("itemCreationDate") or "").strip()
+        for row in rows
+        if str(row.get("itemCreationDate") or "").strip()
+    ]
+    oldest_creation = min(creation_dates) if creation_dates else None
+    return items, len(rows), oldest_creation
+
+
+def before_timestamp(value: str) -> str | None:
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=timezone.utc)
+    boundary = parsed.astimezone(timezone.utc) - timedelta(milliseconds=1)
+    return boundary.isoformat(timespec="milliseconds").replace("+00:00", "Z")
 
 
 def progress_entry(state: dict[str, Any], seller: dict[str, str]) -> dict[str, Any]:
@@ -195,6 +217,15 @@ def run_backfill(
     failures: list[str] = []
     failed_keys: set[str] = set()
 
+    # States written by the first version stopped at eBay's 10,000-result
+    # offset ceiling. Reopen them once, recover the oldest page timestamp,
+    # then continue in older date-bounded segments.
+    for seller in sellers:
+        entry = progress_entry(state, seller)
+        if entry.get("capped_at_10000") and not entry.get("date_partitions_complete"):
+            entry["complete"] = False
+            entry["boundary_recovery"] = True
+
     while calls < call_budget:
         attempted_this_round = 0
         for _ in range(len(sellers)):
@@ -208,7 +239,12 @@ def run_backfill(
             calls += 1
             offset = int(entry.get("next_offset") or 0)
             try:
-                items, raw_count = scan_page(clients[seller["marketplace"]], seller, offset)
+                items, raw_count, oldest_creation = scan_page(
+                    clients[seller["marketplace"]],
+                    seller,
+                    offset,
+                    str(entry.get("segment_end") or "") or None,
+                )
             except Exception as exc:
                 warning = f"{seller['marketplace']} {seller['id']} at offset {offset}: {exc}"
                 failures.append(warning)
@@ -234,16 +270,34 @@ def run_backfill(
 
             if raw_count < PAGE_SIZE:
                 entry["complete"] = True
+                entry["date_partitions_complete"] = True
                 entry["completed_at"] = detected_at
+                entry.pop("boundary_recovery", None)
                 print(
                     f"{seller['marketplace']} {seller['id']}: complete after "
                     f"{entry['pages_scanned']} page(s) and {entry['books_scanned']} books."
                 )
             elif offset >= MAX_OFFSET:
-                entry["complete"] = True
-                entry["capped_at_10000"] = True
-                entry["completed_at"] = detected_at
-                print(f"{seller['marketplace']} {seller['id']}: reached eBay's 10,000-result window cap.")
+                next_segment_end = before_timestamp(oldest_creation or "")
+                if next_segment_end:
+                    entry["capped_at_10000"] = True
+                    entry["capped_segments"] = int(entry.get("capped_segments") or 0) + 1
+                    entry["segment_end"] = next_segment_end
+                    entry["next_offset"] = 0
+                    entry["complete"] = False
+                    entry.pop("boundary_recovery", None)
+                    print(
+                        f"{seller['marketplace']} {seller['id']}: opened an older date segment "
+                        f"after reaching the 10,000-result window."
+                    )
+                else:
+                    entry["complete"] = True
+                    entry["unresolved_10000_cap"] = True
+                    entry["completed_at"] = detected_at
+                    print(
+                        f"{seller['marketplace']} {seller['id']}: could not derive a date boundary "
+                        f"beyond the 10,000-result window."
+                    )
             else:
                 entry["next_offset"] = offset + PAGE_SIZE
 
