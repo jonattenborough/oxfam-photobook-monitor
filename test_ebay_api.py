@@ -61,7 +61,44 @@ class EbayApiTests(unittest.TestCase):
         self.assertEqual(params["limit"], ["200"])
         self.assertEqual(params["category_ids"], ["261186"])
         self.assertEqual(params["filter"], ["buyingOptions:{FIXED_PRICE}"])
+        self.assertEqual(params["offset"], ["0"])
         self.assertEqual(search_request.get_header("X-ebay-c-marketplace-id"), "EBAY_GB")
+
+    @mock.patch("ebay_api.urllib.request.urlopen")
+    def test_category_only_seller_search_combines_filters(self, urlopen):
+        urlopen.side_effect = [
+            FakeResponse({"access_token": "short-lived-token"}),
+            FakeResponse({"itemSummaries": []}),
+        ]
+        client = ebay_api.EbayBrowseClient("app-id", "cert-id", marketplace="EBAY_US")
+        client.search(
+            None,
+            category_ids="261186",
+            seller_ids=["goodwillbks"],
+            delivery_country="gb",
+            item_start_date="2026-08-28T12:00:00Z",
+            offset=200,
+            limit=200,
+        )
+
+        search_request = urlopen.call_args_list[1].args[0]
+        params = urllib.parse.parse_qs(urllib.parse.urlparse(search_request.full_url).query)
+        self.assertNotIn("q", params)
+        self.assertEqual(params["category_ids"], ["261186"])
+        self.assertEqual(params["offset"], ["200"])
+        self.assertEqual(
+            params["filter"],
+            [
+                "buyingOptions:{FIXED_PRICE},sellers:{goodwillbks},"
+                "deliveryCountry:GB,itemStartDate:[2026-08-28T12:00:00Z..]"
+            ],
+        )
+        self.assertEqual(search_request.get_header("X-ebay-c-marketplace-id"), "EBAY_US")
+
+    def test_search_requires_query_or_category(self):
+        client = ebay_api.EbayBrowseClient("app-id", "cert-id")
+        with self.assertRaisesRegex(ValueError, "query or category_ids"):
+            client.search(None)
 
     def test_summary_is_converted_to_monitor_listing(self):
         source = {"id": "ebay_api_photobook", "name": "eBay UK newest photobooks"}
@@ -84,6 +121,23 @@ class EbayApiTests(unittest.TestCase):
         self.assertEqual(listing["price_gbp"], 25.50)
         self.assertEqual(listing["vendor"], "bookseller")
         self.assertIn("Used", listing["context"])
+
+    def test_us_summary_retains_original_currency(self):
+        source = {"id": "seller", "name": "US seller", "marketplace": "EBAY_US"}
+        listing = ebay_api.listing_from_summary(
+            {
+                "itemId": "v1|123456789012|0",
+                "title": "Photography book",
+                "price": {"value": "19.95", "currency": "USD"},
+            },
+            source,
+        )
+        self.assertIsNotNone(listing)
+        assert listing is not None
+        self.assertEqual(listing["price_value"], 19.95)
+        self.assertEqual(listing["price_currency"], "USD")
+        self.assertIsNone(listing["price_gbp"])
+        self.assertEqual(listing["url"], "https://www.ebay.com/itm/123456789012")
 
 
 if __name__ == "__main__":

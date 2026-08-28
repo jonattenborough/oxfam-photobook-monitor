@@ -45,6 +45,14 @@ Every hour, the workflow asks the eBay Browse API for the newest fixed-price UK 
 
 The same run searches eBay for 24 exact Parr / Badger contributor and title combinations. Together with the two broad searches, this uses about 624 API calls per day, comfortably below the production keyset's 5,000-call daily limit. Authentication uses short-lived application tokens generated at run time from the encrypted `EBAY_CLIENT_ID` and `EBAY_CLIENT_SECRET` repository secrets.
 
+### Selected eBay charity sellers
+
+`ebay_seller_monitor.py` separately checks 75 selected charity and library sellers every 30 minutes: 61 on eBay UK and 14 on eBay US. Each seller gets an independent Books-category query, so a large seller cannot consume a shared 200-result page and hide stock from smaller shops. The US searches also require delivery availability to Great Britain.
+
+The first successful search for each seller silently records its newest 200 fixed-price books. Later runs use that seller's last successful timestamp with a ten-minute overlap, then alert only on previously unseen listings that contain photography-book signals or match the combined Parr/Badger and Roth canon. Seller state is isolated, so one temporary seller failure does not turn existing stock into new alerts.
+
+At the normal cadence the 75 seller queries use about 3,600 Browse API calls per day. With the existing 624 daily broad and exact-title calls, expected usage is about 4,224 of the 5,000-call daily allowance. Extra pages are requested only when one seller has more than 200 books inside an incremental search window.
+
 ### GitHub-hosted specialist feeds
 
 Every hour it checks current inventory from:
@@ -93,6 +101,7 @@ The comprehensive market monitor deliberately uses `EXTERNAL_NEW:` so the existi
 - **Charity photobook monitor:** minutes 3, 13, 23, 33, 43 and 53 of every hour.
 - **Oxfam broad Art & Photography monitor:** minutes 6, 16, 26, 36, 46 and 56 of every hour.
 - **Comprehensive photobook market discovery:** minute 27 of every hour.
+- **Selected eBay charity sellers:** minutes 9 and 39 of every hour.
 - **Photobook Wider Web Search:** hourly condition watch.
 - **Charity Photobook New Listings:** hourly condition watch for the GitHub issue-review and value-verification stage.
 
@@ -124,5 +133,6 @@ In GitHub Actions you can manually run:
 - **Charity photobook monitor** for Oxfam Photography, Shelter, Crisis and the existing external radar.
 - **Oxfam broad Art and Photography monitor** for the wider Oxfam safety net.
 - **Comprehensive photobook market discovery** for the authenticated eBay search, specialist photobook shops, and the rotating eBay and AbeBooks sweep.
+- **eBay charity seller photobook monitor** for the 61 UK and 14 US seller-specific searches.
 
 Each scheduled workflow validates the Parr / Badger master before running. Source failures are isolated where possible, while an all-source failure makes the job fail visibly rather than treating an empty response as valid inventory.

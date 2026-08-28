@@ -114,22 +114,49 @@ class EbayBrowseClient:
 
     def search(
         self,
-        query: str,
+        query: str | None = None,
         *,
         limit: int = 50,
         category_ids: str | None = None,
         fixed_price_only: bool = True,
+        seller_ids: list[str] | tuple[str, ...] | None = None,
+        delivery_country: str | None = None,
+        item_start_date: str | None = None,
+        offset: int = 0,
     ) -> list[dict[str, Any]]:
         params: dict[str, str] = {
-            "q": query,
             "limit": str(max(1, min(int(limit), 200))),
             "sort": "newlyListed",
             "fieldgroups": "EXTENDED",
+            "offset": str(max(0, min(int(offset), 9999))),
         }
+        if query and query.strip():
+            params["q"] = query.strip()
         if category_ids:
             params["category_ids"] = category_ids
+        if "q" not in params and "category_ids" not in params:
+            raise ValueError("An eBay search requires a query or category_ids")
+
+        filters: list[str] = []
         if fixed_price_only:
-            params["filter"] = "buyingOptions:{FIXED_PRICE}"
+            filters.append("buyingOptions:{FIXED_PRICE}")
+        if seller_ids:
+            cleaned_sellers = [str(value).strip() for value in seller_ids if str(value).strip()]
+            if len(cleaned_sellers) > 250:
+                raise ValueError("eBay supports at most 250 seller IDs per search")
+            if any(not re.fullmatch(r"[A-Za-z0-9_.-]+", seller) for seller in cleaned_sellers):
+                raise ValueError("An eBay seller ID contains unsupported characters")
+            if cleaned_sellers:
+                filters.append(f"sellers:{{{'|'.join(cleaned_sellers)}}}")
+        if delivery_country:
+            country = delivery_country.strip().upper()
+            if not re.fullmatch(r"[A-Z]{2}", country):
+                raise ValueError("delivery_country must be a two-letter country code")
+            filters.append(f"deliveryCountry:{country}")
+        if item_start_date:
+            filters.append(f"itemStartDate:[{item_start_date.strip()}..]")
+        if filters:
+            params["filter"] = ",".join(filters)
         request = urllib.request.Request(
             SEARCH_URL + "?" + urllib.parse.urlencode(params),
             headers={
@@ -161,9 +188,11 @@ def listing_from_summary(item: dict[str, Any], source: dict[str, Any]) -> dict[s
     seller = item.get("seller") if isinstance(item.get("seller"), dict) else {}
     price = item.get("price") if isinstance(item.get("price"), dict) else {}
     try:
-        price_gbp = round(float(price.get("value")), 2) if price.get("currency") == "GBP" else None
+        price_value = round(float(price.get("value")), 2)
     except (TypeError, ValueError):
-        price_gbp = None
+        price_value = None
+    price_currency = str(price.get("currency") or "").upper()
+    price_gbp = price_value if price_currency == "GBP" else None
     buying_options = item.get("buyingOptions") if isinstance(item.get("buyingOptions"), list) else []
     context_parts = [
         str(item.get("shortDescription") or ""),
@@ -173,7 +202,8 @@ def listing_from_summary(item: dict[str, Any], source: dict[str, Any]) -> dict[s
     ]
     url = str(item.get("itemWebUrl") or "").strip()
     if not url and legacy_id.isdigit():
-        url = f"https://www.ebay.co.uk/itm/{legacy_id}"
+        domain = "www.ebay.com" if source.get("marketplace") == "EBAY_US" else "www.ebay.co.uk"
+        url = f"https://{domain}/itm/{legacy_id}"
     return {
         "key": f"ebay:{legacy_id}",
         "external_id": legacy_id,
@@ -182,6 +212,8 @@ def listing_from_summary(item: dict[str, Any], source: dict[str, Any]) -> dict[s
         "title": title[:350],
         "url": url,
         "price_gbp": price_gbp,
+        "price_value": price_value,
+        "price_currency": price_currency,
         "context": " | ".join(part.strip() for part in context_parts if part.strip())[:1800],
         "vendor": str(seller.get("username") or ""),
         "tags": " ".join(str(value) for value in buying_options),
@@ -192,12 +224,16 @@ _DEFAULT_CLIENT: EbayBrowseClient | None = None
 
 
 def search_listings(
-    query: str,
+    query: str | None,
     source: dict[str, Any],
     *,
     limit: int = 50,
     category_ids: str | None = None,
     fixed_price_only: bool = True,
+    seller_ids: list[str] | tuple[str, ...] | None = None,
+    delivery_country: str | None = None,
+    item_start_date: str | None = None,
+    offset: int = 0,
 ) -> list[dict[str, Any]]:
     """Search newest-first and convert summaries to the monitor's row shape."""
     global _DEFAULT_CLIENT
@@ -208,7 +244,10 @@ def search_listings(
         limit=limit,
         category_ids=category_ids,
         fixed_price_only=fixed_price_only,
+        seller_ids=seller_ids,
+        delivery_country=delivery_country,
+        item_start_date=item_start_date,
+        offset=offset,
     )
     converted = [listing_from_summary(row, source) for row in rows]
     return [row for row in converted if row is not None]
-

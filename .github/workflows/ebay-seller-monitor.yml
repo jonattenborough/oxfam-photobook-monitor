@@ -1,0 +1,83 @@
+name: eBay charity seller photobook monitor
+
+on:
+  schedule:
+    - cron: "9,39 * * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "ebay_seller_monitor.py"
+      - "ebay_api.py"
+      - "external_monitor.py"
+      - "canon_runner.py"
+      - "parr_badger_runner.py"
+      - "test_ebay_api.py"
+      - "test_ebay_seller_monitor.py"
+      - "data/ebay_sellers.json"
+      - "data/parr_badger_master/**"
+      - "data/roth_101_master.csv"
+      - ".github/workflows/ebay-seller-monitor.yml"
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: ebay-charity-seller-photobook-monitor
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+
+      - name: Validate seller monitor and eBay API client
+        run: python -m unittest -v test_ebay_api.py test_ebay_seller_monitor.py
+
+      - name: Check monitored sellers for new photography books
+        id: sellers
+        env:
+          EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
+          EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
+        run: python ebay_seller_monitor.py
+
+      - name: Create AI review issue for new seller candidates
+        if: steps.sellers.outputs.new_count != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create \
+            --title "$(cat runtime/ebay-sellers/issue-title.txt)" \
+            --body-file runtime/ebay-sellers/issue-body.md
+
+      - name: Persist eBay seller state
+        if: steps.sellers.outputs.state_changed == 'true'
+        run: |
+          set -euo pipefail
+          cp runtime/ebay-sellers/proposed-state.json data/ebay_seller_state.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data/ebay_seller_state.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "Update eBay seller monitor state [skip ci]"
+          for attempt in 1 2 3 4; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then
+              break
+            fi
+            if [ "$attempt" = "4" ]; then
+              exit 1
+            fi
+          done
