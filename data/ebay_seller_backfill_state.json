@@ -1,10 +1,10 @@
 {
   "cursor_index": 62,
-  "last_run": "2026-08-28T15:41:15Z",
-  "last_run_books_scanned": 6131,
-  "last_run_calls": 31,
+  "last_run": "2026-08-28T16:37:46Z",
+  "last_run_books_scanned": 12682,
+  "last_run_calls": 80,
   "last_run_failures": [],
-  "last_run_successful_pages": 31,
+  "last_run_successful_pages": 80,
   "sellers": {
     "EBAY_GB:ageuk": {
       "books_scanned": 23,
@@ -26,6 +26,28 @@
       "pages_scanned": 1,
       "seller_id": "ageukbromsgroveredditchwyreforest"
     },
+    "EBAY_GB:ageuksouthcumbria": {
+      "books_scanned": 296,
+      "complete": true,
+      "completed_at": "2026-08-28T16:37:46Z",
+      "date_partitions_complete": true,
+      "last_successful_page": "2026-08-28T16:37:46Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 200,
+      "pages_scanned": 2,
+      "seller_id": "ageuksouthcumbria"
+    },
+    "EBAY_GB:amnestyinternationaluk": {
+      "books_scanned": 454,
+      "complete": true,
+      "completed_at": "2026-08-28T16:37:46Z",
+      "date_partitions_complete": true,
+      "last_successful_page": "2026-08-28T16:37:46Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 400,
+      "pages_scanned": 3,
+      "seller_id": "amnestyinternationaluk"
+    },
     "EBAY_GB:ardgowanhospiceonline": {
       "books_scanned": 46,
       "complete": true,
@@ -45,6 +67,28 @@
       "next_offset": 1400,
       "pages_scanned": 8,
       "seller_id": "arthurrankhospicecharity"
+    },
+    "EBAY_GB:aukesnewhaven": {
+      "books_scanned": 28,
+      "complete": true,
+      "completed_at": "2026-08-28T16:37:46Z",
+      "date_partitions_complete": true,
+      "last_successful_page": "2026-08-28T16:37:46Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "aukesnewhaven"
+    },
+    "EBAY_GB:barnardos_charity": {
+      "books_scanned": 60,
+      "complete": true,
+      "completed_at": "2026-08-28T16:37:46Z",
+      "date_partitions_complete": true,
+      "last_successful_page": "2026-08-28T16:37:46Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "barnardos_charity"
     },
     "EBAY_GB:bhf_shops": {
       "books_scanned": 61,
@@ -75,6 +119,17 @@
       "next_offset": 0,
       "pages_scanned": 1,
       "seller_id": "blythehousehospice"
+    },
+    "EBAY_GB:bookreliefuk": {
+      "books_scanned": 1090,
+      "complete": true,
+      "completed_at": "2026-08-28T16:37:46Z",
+      "date_partitions_complete": true,
+      "last_successful_page": "2026-08-28T16:37:46Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 1000,
+      "pages_scanned": 6,
+      "seller_id": "bookreliefuk"
     },
     "EBAY_GB:books2africacharityshop2": {
       "books_scanned": 2520,
@@ -116,6 +171,17 @@
       "pages_scanned": 11,
       "seller_id": "britishredcross"
     },
+    "EBAY_GB:catchinglivesbookshop": {
+      "books_scanned": 584,
+      "complete": true,
+      "completed_at": "2026-08-28T16:37:46Z",
+      "date_partitions_complete": true,
+      "last_successful_page": "2026-08-28T16:37:46Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 400,
+      "pages_scanned": 3,
+      "seller_id": "catchinglivesbookshop"
+    },
     "EBAY_GB:childrenssocietystores": {
       "books_scanned": 944,
       "complete": true,
@@ -126,6 +192,17 @@
       "pages_scanned": 5,
       "seller_id": "childrenssocietystores"
     },
+    "EBAY_GB:clairehousecentral": {
+      "books_scanned": 23,
+      "complete": true,
+      "completed_at": "2026-08-28T16:37:46Z",
+      "date_partitions_complete": true,
+      "last_successful_page": "2026-08-28T16:37:46Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "clairehousecentral"
+    },
     "EBAY_GB:debra_charity": {
       "books_scanned": 22,
       "complete": true,
@@ -135,6 +212,17 @@
       "next_offset": 0,
       "pages_scanned": 1,
       "seller_id": "debra_charity"
+    },
+    "EBAY_GB:devonairambulance": {
+      "books_scanned": 299,
+      "complete": true,
+      "completed_at": "2026-08-28T16:37:46Z",
+      "date_partitions_complete": true,
+      "last_successful_page": "2026-08-28T16:37:46Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 200,
+      "pages_scanned": 2,
+      "seller_id": "devonairambulance"
     },
     "EBAY_GB:dorothy_house": {
       "books_scanned": 377,
@@ -246,6 +334,61 @@
       "pages_scanned": 1,
       "seller_id": "ferneanimalsanctuary123"
     },
+    "EBAY_GB:fightforsight": {
+      "books_scanned": 32,
+      "complete": true,
+      "completed_at": "2026-08-28T16:37:46Z",
+      "date_partitions_complete": true,
+      "last_successful_page": "2026-08-28T16:37:46Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "fightforsight"
+    },
+    "EBAY_GB:force_cancer_charity": {
+      "books_scanned": 46,
+      "complete": true,
+      "completed_at": "2026-08-28T16:37:46Z",
+      "date_partitions_complete": true,
+      "last_successful_page": "2026-08-28T16:37:46Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "force_cancer_charity"
+    },
+    "EBAY_GB:forestup": {
+      "books_scanned": 1586,
+      "complete": true,
+      "completed_at": "2026-08-28T16:37:46Z",
+      "date_partitions_complete": true,
+      "last_successful_page": "2026-08-28T16:37:46Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 1400,
+      "pages_scanned": 8,
+      "seller_id": "forestup"
+    },
+    "EBAY_GB:helenanddouglashouse": {
+      "books_scanned": 105,
+      "complete": true,
+      "completed_at": "2026-08-28T16:37:46Z",
+      "date_partitions_complete": true,
+      "last_successful_page": "2026-08-28T16:37:46Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "helenanddouglashouse"
+    },
+    "EBAY_GB:highlandhospice": {
+      "books_scanned": 201,
+      "complete": true,
+      "completed_at": "2026-08-28T16:37:46Z",
+      "date_partitions_complete": true,
+      "last_successful_page": "2026-08-28T16:37:46Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 200,
+      "pages_scanned": 2,
+      "seller_id": "highlandhospice"
+    },
     "EBAY_GB:hoperescue": {
       "books_scanned": 28,
       "complete": true,
@@ -296,6 +439,17 @@
       "pages_scanned": 1,
       "seller_id": "keech-hospice-care"
     },
+    "EBAY_GB:longfieldhospicecare": {
+      "books_scanned": 381,
+      "complete": true,
+      "completed_at": "2026-08-28T16:37:46Z",
+      "date_partitions_complete": true,
+      "last_successful_page": "2026-08-28T16:37:46Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 200,
+      "pages_scanned": 2,
+      "seller_id": "longfieldhospicecare"
+    },
     "EBAY_GB:loros1": {
       "books_scanned": 11,
       "complete": true,
@@ -315,6 +469,28 @@
       "next_offset": 800,
       "pages_scanned": 5,
       "seller_id": "lovefarashop"
+    },
+    "EBAY_GB:mariecurietrading": {
+      "books_scanned": 16,
+      "complete": true,
+      "completed_at": "2026-08-28T16:37:46Z",
+      "date_partitions_complete": true,
+      "last_successful_page": "2026-08-28T16:37:46Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "mariecurietrading"
+    },
+    "EBAY_GB:martinhls23": {
+      "books_scanned": 106,
+      "complete": true,
+      "completed_at": "2026-08-28T16:37:46Z",
+      "date_partitions_complete": true,
+      "last_successful_page": "2026-08-28T16:37:46Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "martinhls23"
     },
     "EBAY_GB:mencapretailuk": {
       "books_scanned": 42,
@@ -346,6 +522,28 @@
       "pages_scanned": 1,
       "seller_id": "mshtrading"
     },
+    "EBAY_GB:northdevonhospiceshop": {
+      "books_scanned": 25,
+      "complete": true,
+      "completed_at": "2026-08-28T16:37:46Z",
+      "date_partitions_complete": true,
+      "last_successful_page": "2026-08-28T16:37:46Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "northdevonhospiceshop"
+    },
+    "EBAY_GB:outlet_trading": {
+      "books_scanned": 4292,
+      "complete": true,
+      "completed_at": "2026-08-28T16:37:46Z",
+      "date_partitions_complete": true,
+      "last_successful_page": "2026-08-28T16:37:46Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 4200,
+      "pages_scanned": 22,
+      "seller_id": "outlet_trading"
+    },
     "EBAY_GB:oxfam_ebay_shop": {
       "books_scanned": 831,
       "complete": true,
@@ -355,6 +553,17 @@
       "next_offset": 800,
       "pages_scanned": 5,
       "seller_id": "oxfam_ebay_shop"
+    },
+    "EBAY_GB:oxfam_f2156_harborne": {
+      "books_scanned": 574,
+      "complete": true,
+      "completed_at": "2026-08-28T16:37:46Z",
+      "date_partitions_complete": true,
+      "last_successful_page": "2026-08-28T16:37:46Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 400,
+      "pages_scanned": 3,
+      "seller_id": "oxfam_f2156_harborne"
     },
     "EBAY_GB:oxfam_f3849_turlstreet": {
       "books_scanned": 54,
@@ -375,6 +584,17 @@
       "next_offset": 200,
       "pages_scanned": 2,
       "seller_id": "pendlesidehospiceshop"
+    },
+    "EBAY_GB:ppwhospice": {
+      "books_scanned": 23,
+      "complete": true,
+      "completed_at": "2026-08-28T16:37:46Z",
+      "date_partitions_complete": true,
+      "last_successful_page": "2026-08-28T16:37:46Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "ppwhospice"
     },
     "EBAY_GB:priscillabaconhospice": {
       "books_scanned": 40,
@@ -405,6 +625,17 @@
       "next_offset": 0,
       "pages_scanned": 1,
       "seller_id": "rainbowshospice"
+    },
+    "EBAY_GB:rowcrofthospice": {
+      "books_scanned": 357,
+      "complete": true,
+      "completed_at": "2026-08-28T16:37:46Z",
+      "date_partitions_complete": true,
+      "last_successful_page": "2026-08-28T16:37:46Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 200,
+      "pages_scanned": 2,
+      "seller_id": "rowcrofthospice"
     },
     "EBAY_GB:salvationarmyshop": {
       "books_scanned": 0,
@@ -445,6 +676,17 @@
       "next_offset": 400,
       "pages_scanned": 3,
       "seller_id": "shopforshelter"
+    },
+    "EBAY_GB:southernhospicegroup": {
+      "books_scanned": 16,
+      "complete": true,
+      "completed_at": "2026-08-28T16:37:46Z",
+      "date_partitions_complete": true,
+      "last_successful_page": "2026-08-28T16:37:46Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "southernhospicegroup"
     },
     "EBAY_GB:st-elizabeth-hospice": {
       "books_scanned": 23,
@@ -496,6 +738,39 @@
       "pages_scanned": 1,
       "seller_id": "stchristopherstrading"
     },
+    "EBAY_GB:stcuthbertshospice": {
+      "books_scanned": 188,
+      "complete": true,
+      "completed_at": "2026-08-28T16:37:46Z",
+      "date_partitions_complete": true,
+      "last_successful_page": "2026-08-28T16:37:46Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "stcuthbertshospice"
+    },
+    "EBAY_GB:stgemmasshop": {
+      "books_scanned": 71,
+      "complete": true,
+      "completed_at": "2026-08-28T16:37:46Z",
+      "date_partitions_complete": true,
+      "last_successful_page": "2026-08-28T16:37:46Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "stgemmasshop"
+    },
+    "EBAY_GB:stleonardshospice": {
+      "books_scanned": 178,
+      "complete": true,
+      "completed_at": "2026-08-28T16:37:46Z",
+      "date_partitions_complete": true,
+      "last_successful_page": "2026-08-28T16:37:46Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "stleonardshospice"
+    },
     "EBAY_GB:stlukeshospiceplymouth": {
       "books_scanned": 19,
       "complete": true,
@@ -505,6 +780,39 @@
       "next_offset": 0,
       "pages_scanned": 1,
       "seller_id": "stlukeshospiceplymouth"
+    },
+    "EBAY_GB:stmhospicehastings": {
+      "books_scanned": 350,
+      "complete": true,
+      "completed_at": "2026-08-28T16:37:46Z",
+      "date_partitions_complete": true,
+      "last_successful_page": "2026-08-28T16:37:46Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 200,
+      "pages_scanned": 2,
+      "seller_id": "stmhospicehastings"
+    },
+    "EBAY_GB:stmichaelshospicehereford1": {
+      "books_scanned": 81,
+      "complete": true,
+      "completed_at": "2026-08-28T16:37:46Z",
+      "date_partitions_complete": true,
+      "last_successful_page": "2026-08-28T16:37:46Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "stmichaelshospicehereford1"
+    },
+    "EBAY_GB:stoswaldshospice": {
+      "books_scanned": 41,
+      "complete": true,
+      "completed_at": "2026-08-28T16:37:46Z",
+      "date_partitions_complete": true,
+      "last_successful_page": "2026-08-28T16:37:46Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "stoswaldshospice"
     },
     "EBAY_GB:stpjhospice": {
       "books_scanned": 13,
@@ -536,6 +844,17 @@
       "pages_scanned": 1,
       "seller_id": "stroccoshospice"
     },
+    "EBAY_GB:stwilfridshospice2010": {
+      "books_scanned": 942,
+      "complete": true,
+      "completed_at": "2026-08-28T16:37:46Z",
+      "date_partitions_complete": true,
+      "last_successful_page": "2026-08-28T16:37:46Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 800,
+      "pages_scanned": 5,
+      "seller_id": "stwilfridshospice2010"
+    },
     "EBAY_GB:sueryderpre-loved": {
       "books_scanned": 0,
       "complete": true,
@@ -545,6 +864,28 @@
       "next_offset": 0,
       "pages_scanned": 1,
       "seller_id": "sueryderpre-loved"
+    },
+    "EBAY_GB:sussexemmaus": {
+      "books_scanned": 192,
+      "complete": true,
+      "completed_at": "2026-08-28T16:37:46Z",
+      "date_partitions_complete": true,
+      "last_successful_page": "2026-08-28T16:37:46Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "sussexemmaus"
+    },
+    "EBAY_GB:tenovuscancercare": {
+      "books_scanned": 45,
+      "complete": true,
+      "completed_at": "2026-08-28T16:37:46Z",
+      "date_partitions_complete": true,
+      "last_successful_page": "2026-08-28T16:37:46Z",
+      "marketplace": "EBAY_GB",
+      "next_offset": 0,
+      "pages_scanned": 1,
+      "seller_id": "tenovuscancercare"
     },
     "EBAY_GB:the_childrens_society": {
       "books_scanned": 0,
@@ -765,7 +1106,7 @@
       "seller_id": "svdpecomm"
     }
   },
-  "total_books_scanned": 115289,
-  "total_calls": 629,
+  "total_books_scanned": 127971,
+  "total_calls": 709,
   "version": 1
 }
