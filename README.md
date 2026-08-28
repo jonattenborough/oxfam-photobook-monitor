@@ -1,6 +1,6 @@
 # Charity Photobook Monitor
 
-A GitHub Actions monitoring system for newly listed collectible photography books and related bargains. It combines near-real-time charity-shop monitoring, a live-tested specialist-market layer, and a separate wider-web search for sites that block GitHub runners.
+A GitHub Actions monitoring system for newly listed collectible photography books and related bargains. It combines near-real-time charity-shop monitoring, an authenticated eBay API layer, specialist-market feeds, and a separate wider-web search for awkward sites.
 
 ## Parr / Badger master
 
@@ -37,7 +37,13 @@ A Parr / Badger match is a discovery signal only. Exact edition, printing, compl
 
 The hourly GitHub workflow uses `market_monitor_safe.py`, a live-tested wrapper around `market_monitor.py`.
 
-The first live Actions runs established that general eBay UK and Biblio return HTTP 403 to GitHub-hosted runners, and broad AbeBooks result pages were not reliable enough to parse. The workflow therefore does not waste repeated requests on those blocked paths.
+The first live Actions runs established that eBay's public HTML pages and Biblio return HTTP 403 to GitHub-hosted runners, and broad AbeBooks result pages were not reliable enough to parse. eBay is now queried through its official production Browse API instead of scraping those blocked pages.
+
+### Authenticated eBay UK discovery
+
+Every hour, the workflow asks the eBay Browse API for the newest fixed-price UK listings matching `photobook` and `photography book`. It reads up to 200 results per query, restricts the broad searches to eBay's Books category, and silently baselines the currently visible stock when the API source first activates.
+
+The same run searches eBay for 24 exact Parr / Badger contributor and title combinations. Together with the two broad searches, this uses about 624 API calls per day, comfortably below the production keyset's 5,000-call daily limit. Authentication uses short-lived application tokens generated at run time from the encrypted `EBAY_CLIENT_ID` and `EBAY_CLIENT_SECRET` repository secrets.
 
 ### GitHub-hosted specialist feeds
 
@@ -50,9 +56,9 @@ Every hour it checks current inventory from:
 
 Only newly seen listings that match the Parr / Badger master are surfaced.
 
-### Rotating exact-title AbeBooks sweep
+### Rotating exact-title eBay and AbeBooks sweep
 
-Every hourly run also selects 24 Parr / Badger records and searches them directly on AbeBooks. Direct AbeBooks title/author searches worked in live GitHub Actions testing even though the broad AbeBooks pages did not parse reliably.
+Every hourly run also selects 24 Parr / Badger records and searches them directly on both eBay and AbeBooks. Direct AbeBooks title/author searches worked in live GitHub Actions testing even though the broad AbeBooks pages did not parse reliably.
 
 The cursor is stored in `data/market_state.json`, so successive runs rotate through the master. At 24 records per hour, one complete 628-record rotation takes about 27 hours if runs complete normally. Each title query is silently baselined the first time it is visited. Later newly appearing matching copies can create an `EXTERNAL_NEW:` issue.
 
@@ -60,7 +66,7 @@ The cursor is stored in `data/market_state.json`, so successive runs rotate thro
 
 The separate hourly ChatGPT task `Photobook Wider Web Search` uses the same GitHub Parr / Badger master and concentrates on sources better handled by web search rather than GitHub scraping, including:
 
-- general eBay UK.
+- eBay UK as an independent web-search safety net.
 - Biblio.
 - viaLibri.
 - ZVAB.
@@ -117,6 +123,6 @@ In GitHub Actions you can manually run:
 
 - **Charity photobook monitor** for Oxfam Photography, Shelter, Crisis and the existing external radar.
 - **Oxfam broad Art and Photography monitor** for the wider Oxfam safety net.
-- **Comprehensive photobook market discovery** for specialist photobook shops and the rotating AbeBooks sweep.
+- **Comprehensive photobook market discovery** for the authenticated eBay search, specialist photobook shops, and the rotating eBay and AbeBooks sweep.
 
 Each scheduled workflow validates the Parr / Badger master before running. Source failures are isolated where possible, while an all-source failure makes the job fail visibly rather than treating an empty response as valid inventory.

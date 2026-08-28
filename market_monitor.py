@@ -12,6 +12,7 @@ from pathlib import Path
 from typing import Any
 
 import charity_monitor as charity
+import ebay_api
 import external_monitor as ext
 from parr_badger_runner import load_master, match_listing, normalize
 
@@ -111,6 +112,14 @@ def shopify(source: dict[str, Any]) -> list[dict[str, Any]]:
 
 def fetch_feed(source: dict[str, Any]) -> list[dict[str, Any]]:
     kind = source["kind"]
+    if kind == "ebay_api":
+        return ebay_api.search_listings(
+            str(source["query"]),
+            source,
+            limit=int(source.get("limit") or 200),
+            category_ids=str(source.get("category_ids") or "") or None,
+            fixed_price_only=bool(source.get("fixed_price_only", True)),
+        )
     if kind == "ebay":
         return ext.parse_ebay({"id":source["id"],"source_name":source["name"],"url":source["url"]}, ext.request_html(source["url"]))
     if kind in {"abebooks","biblio"}:
@@ -137,7 +146,7 @@ def contributor_name(value: Any) -> str:
 def target_url(market: str, row: dict[str, Any]) -> tuple[str,str]:
     title, author = str(row.get("Title") or "").strip(), contributor_name(row.get("Contributor"))
     query = f"{author} {title}".strip()
-    if market == "ebay":
+    if market in {"ebay", "ebay_api"}:
         return "https://www.ebay.co.uk/sch/i.html?" + urllib.parse.urlencode({"_nkw":query,"_sop":"10","_ipg":"60"}), query
     if market == "abebooks":
         p = {"tn":title,"sortby":"17","ds":"50"}
@@ -149,11 +158,15 @@ def target_url(market: str, row: dict[str, Any]) -> tuple[str,str]:
 
 def fetch_target(market: str, row: dict[str, Any]) -> list[dict[str, Any]]:
     url, query = target_url(market, row)
-    source = {"id":f"target_{market}","name":f"{market.title()} targeted Parr/Badger search","url":url}
-    page = ext.request_html(url)
+    market_name = "eBay UK API" if market == "ebay_api" else market.title()
+    source = {"id":f"target_{market}","name":f"{market_name} targeted Parr/Badger search","url":url}
+    if market == "ebay_api":
+        items = ebay_api.search_listings(query, source, limit=50, fixed_price_only=True)
+    else:
+        page = ext.request_html(url)
     if market == "ebay":
         items = ext.parse_ebay({"id":source["id"],"source_name":source["name"],"url":url}, page)
-    else:
+    elif market != "ebay_api":
         items = parse_abe_or_biblio(page, source, market)
     for item in items: item["target_query"] = query
     return items

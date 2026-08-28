@@ -9,6 +9,8 @@ on:
     paths:
       - "market_monitor.py"
       - "market_monitor_safe.py"
+      - "ebay_api.py"
+      - "test_ebay_api.py"
       - "parr_badger_runner.py"
       - "external_monitor.py"
       - "charity_monitor.py"
@@ -42,6 +44,9 @@ jobs:
 
       - name: Search live-tested wider photobook market sources
         id: market
+        env:
+          EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
+          EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
         run: python market_monitor_safe.py --targets-per-run 24
 
       - name: Create AI review issue for new market matches
