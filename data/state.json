@@ -1,7 +1,12 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-08-29T15:04:28Z",
+  "last_successful_fetch": "2026-08-29T18:25:15Z",
   "last_top_skus": [
+    "HD_304205117",
+    "HD_304205050",
+    "HD_304205016",
+    "HD_304204843",
+    "HD_304204700",
     "HD_304155879",
     "HD_304155151",
     "HD_304204363",
@@ -26,12 +31,7 @@
     "HD_304201400",
     "HD_304197460",
     "HD_304201032",
-    "HD_304199251",
-    "HD_304199970",
-    "HD_304199985",
-    "HD_304179523",
-    "HD_304199892",
-    "HD_304179970"
+    "HD_304199251"
   ],
   "products": {
     "HD_303805354": {
@@ -2686,8 +2686,88 @@
         "title": "Sex, Madonna, 1992"
       },
       "search_fingerprint": "641a1b7f08ba54c7"
+    },
+    "HD_304204700": {
+      "first_seen": "2026-08-29T18:25:15Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788012883000",
+        "description": "Softback - published by Tauranac Press - 1997 - edited by John Tauranac - cover has rubbing along all edges and turning to outer corners - all pages clean and unmarked - spine, binding and pages all tight, secure and intact - illustrated with colour and b/w photographs",
+        "isbn": null,
+        "price_gbp": 15.0,
+        "product_id": "book-HD__304204700",
+        "publisher": null,
+        "route": "/new-york-from-on-high-a-guide-to-the-view-from-the-empire-state-building/product/HD_304204700",
+        "sku": "HD_304204700",
+        "title": "New York From On High : A Guide To The View From The Empire State Building"
+      },
+      "search_fingerprint": "3ad1309d2e5bc76a"
+    },
+    "HD_304204843": {
+      "first_seen": "2026-08-29T18:25:15Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788015162000",
+        "description": "The original Farmers Market at Third Street and Fairfax Avenue in Los Angeles has been at the center of its city's history for 75 years. Farmers Market led Los Angeles out of the Great Depression, drew tourists from around the world, and became the most popular attraction in Southern California. It is Los Angeles's beloved grocery store, its town square, its favorite dining room and den, Hollywood's best friend, and one of the city's most delightfully eccentric citizens. From its uniquely quirky beginnings to its contemporary stature as the coolest place in town, Farmers Market has a history rich in stories and is alive with character, integrity, and tradition.<br/><br/>Very good condition with some shelf wear",
+        "isbn": null,
+        "price_gbp": 5.0,
+        "product_id": "book-HD__304204843",
+        "publisher": null,
+        "route": "/los-angeless-original-farmers-market/product/HD_304204843",
+        "sku": "HD_304204843",
+        "title": "Los Angeles's Original Farmers Market"
+      },
+      "search_fingerprint": "2a7312c16643a8eb"
+    },
+    "HD_304205016": {
+      "first_seen": "2026-08-29T18:25:15Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788017077000",
+        "description": "In this extraordinary memoir, the acclaimed American photographer Sally Mann blends narrative and image to explore the forces that shaped her work. Delving back into her family's past and the storied landscapes of the South, Hold Still is about how we are made by people and place, and how we make our experiences into art. This is a totally original form of personal history that has the page-turning drama of a great novel but is firmly rooted in the fertile soil of Mann's remarkable life.<br/><br/>",
+        "isbn": null,
+        "price_gbp": 15.0,
+        "product_id": "book-HD__304205016",
+        "publisher": null,
+        "route": "/hold-still/product/HD_304205016",
+        "sku": "HD_304205016",
+        "title": "Hold Still"
+      },
+      "search_fingerprint": "b190de5fe4fea201"
+    },
+    "HD_304205050": {
+      "first_seen": "2026-08-29T18:25:15Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788017654000",
+        "description": "This copy is in as new condition, no obvious flaws.",
+        "isbn": null,
+        "price_gbp": 39.99,
+        "product_id": "book-HD__304205050",
+        "publisher": null,
+        "route": "/nue-york/product/HD_304205050",
+        "sku": "HD_304205050",
+        "title": "Nue York"
+      },
+      "search_fingerprint": "4c335d8659144942"
+    },
+    "HD_304205117": {
+      "first_seen": "2026-08-29T18:25:15Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788019443000",
+        "description": "Amazing photography by Philip Plisson; text in French by Arnaud Guerin and Patrick Mahe.<br/><br/>Volume 3 of the collection entitled La France vue de la mer : De Brest à Nantes, was published on 1 June 2011 with 263 pages of photography focusing on the rugged coastlines, islands, and bays of Southern Brittany — including the Crozon Peninsula (cap de la Chèvre), the pointe du Raz, Belle-Île, and the Gulf of Morbihan.",
+        "isbn": null,
+        "price_gbp": 15.0,
+        "product_id": "book-HD__304205117",
+        "publisher": null,
+        "route": "/la-france-vue-de-la-mer-de-brest-a-nantes/product/HD_304205117",
+        "sku": "HD_304205117",
+        "title": "La France vue de la mer: De Brest a Nantes"
+      },
+      "search_fingerprint": "103a4e775bcb3ae2"
     }
   },
-  "reported_category_count": 2788,
+  "reported_category_count": 2792,
   "version": 1
 }
