@@ -1,7 +1,9 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-08-29T03:17:41Z",
+  "last_successful_fetch": "2026-08-29T10:12:45Z",
   "last_top_skus": [
+    "HD_304203402",
+    "HD_304203391",
     "HD_304203337",
     "HD_304202729",
     "HD_304203130",
@@ -29,9 +31,7 @@
     "HD_304197181",
     "HD_304197229",
     "HD_304196988",
-    "HD_304196761",
-    "HD_304196598",
-    "HD_304196442"
+    "HD_304196761"
   ],
   "products": {
     "HD_303805354": {
@@ -2494,8 +2494,40 @@
         "title": "Written In The West"
       },
       "search_fingerprint": "a65f2d9e4cdd6852"
+    },
+    "HD_304203391": {
+      "first_seen": "2026-08-29T10:12:45Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787991780000",
+        "description": "A Century of Japanese Photography, compiled by the Japan Photographers' Association, offers a comprehensive visual and historical chronicle of Japan's photographic evolution from the 19th century through the post-World War II era. The volume showcases rare archival images and artistic milestones that reflect the nation's deep cultural, social, and political transformations.<br/><br/>The slipcase has wear, mainly around the edges. The boards have some slight wear and fading. There is some very slight foxing to the page edges at the back of the book.",
+        "isbn": null,
+        "price_gbp": 28.0,
+        "product_id": "book-HD__304203391",
+        "publisher": null,
+        "route": "/a-century-of-japanese-photography/product/HD_304203391",
+        "sku": "HD_304203391",
+        "title": "A Century of Japanese Photography"
+      },
+      "search_fingerprint": "b7b7a033b4810466"
+    },
+    "HD_304203402": {
+      "first_seen": "2026-08-29T10:12:45Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1787992629000",
+        "description": "This is a very special Ansel Adams book with a limited availability. It contains 44 photographs of an ecological/ environmental nature by Ansel Adams as well as work by Eliot Porter, Philip Hyde, Edward Weston and Margaret Bourke-White.<br/>This work contains 85 photographs of an environmental nature, including 44 by Ansel Adams, and others by Eliot Porter, Philip Hyde, Edward Weston and Margaret Bourke-White. The photographs are reprinted from new prints supplied by the Ansel Adams Trust. The pictures exhibit the stark contrast between those spaces forever altered by the forces of development and those left unscarred by human presence. As the text explores the threads that unite the Earth as an ever-shifting whole, Adams features Yosemite's rocky peaks, Porter shows a single tern in flight, and William Garnett despairs at the smog and mazes of tract housing. The images are a call for the preservation of wilderness. They are designed to make the reader ask what is the value of solitude, the cost of freedom, the legacy of our ingenuity, and the peril of our march from nature.<br/>About the Authors<br/>In a career that spanned over five decades, Adams was at once America's foremost landscape photographer and one of its most ardent environmentalists. A master photographer, teacher and naturalist, the profound impact of his work continues to expand as each generation discovers the magnificent, luminous beauty of his art.<br/>Nancy Newhall (1908-1974) was respected as a writer, critic, designer, editor and curator of photography.",
+        "isbn": null,
+        "price_gbp": 24.0,
+        "product_id": "book-HD__304203402",
+        "publisher": null,
+        "route": "/this-is-the-american-earth-ansel-adams-nancy-newhall/product/HD_304203402",
+        "sku": "HD_304203402",
+        "title": "This Is the American Earth - Ansel Adams; Nancy Newhall"
+      },
+      "search_fingerprint": "1f1708eda55a9e88"
     }
   },
-  "reported_category_count": 2788,
+  "reported_category_count": 2787,
   "version": 1
 }
