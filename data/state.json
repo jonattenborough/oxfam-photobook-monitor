@@ -1,6 +1,6 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-08-28T21:30:51Z",
+  "last_successful_fetch": "2026-08-29T03:17:41Z",
   "last_top_skus": [
     "HD_304203337",
     "HD_304202729",
@@ -14,7 +14,6 @@
     "HD_304201400",
     "HD_304197460",
     "HD_304201032",
-    "HD_304177701",
     "HD_304199251",
     "HD_304199970",
     "HD_304199985",
@@ -31,7 +30,8 @@
     "HD_304197229",
     "HD_304196988",
     "HD_304196761",
-    "HD_304196598"
+    "HD_304196598",
+    "HD_304196442"
   ],
   "products": {
     "HD_303805354": {
@@ -2352,19 +2352,20 @@
     },
     "HD_304201657": {
       "first_seen": "2026-08-28T15:41:04Z",
+      "last_changed": "2026-08-29T03:17:41Z",
       "last_snapshot": {
         "condition": null,
         "creation_date": "1787918350000",
         "description": "From a rising generation of indigenous artists in Canada, Meryl McMaster (b. 1988, Ottawa) uses photography to explore identity and its distinct cultural landscapes with extraordinary visual impact.Creating elaborate, sculptural garments and props, her performative self-portraits present journeys which are both actual and imaginative, into the realms of her ancestors.McMaster is of the nhiyawak community (Plains Cree) and a member of the Siksika First Nation (Alberta, Canada) on her father's side, and Euro-Canadian (British and Dutch) on her mother's.In her recent series As Immense as the Sky (2019), McMaster draws on place-based narratives, memory and self. Captured across ancestral sites in Saskatchewan and early settlements in Ontario and Newfoundland, she interprets, and re-stages patrimonial stories collected from relatives and community knowledge-keepers.Acknowledging the personal and social history and effects of colonisation, McMaster contemplates how ancestral stories are written into the landscape by the people who once lived, as well as those who still reside there. She presents herself in nature, viewing the environment and seasons as an integral part of the cultural context.Works from her series Edge of a Moment (2017), taken in Head-Smashed-In Buffalo Jump in Alberta (an important historical site for the Siksika First Nation), address the environmental consequences of colonisation. McMaster references the dangers of unsustainable land usage and the erasure of key species within ancestral ecosystems.This catalogue features exclusive new texts from influential American writer and curator Lucy Lippard, and the Indigenous Canadian writer and curator Lindsay Nixon.Published on the occasion of the exhibition, Meryl McMaster: As Immense as the Sky at Ikon Gallery, Birmingham, 4 December 2019 - 23 February 2020.Essays in English, poems in English and Plains Cree.",
         "isbn": null,
-        "price_gbp": null,
+        "price_gbp": 22.99,
         "product_id": "book-HD__304201657",
         "publisher": null,
         "route": "/meryl-mcmaster-as-immense-as-the-sky/product/HD_304201657",
         "sku": "HD_304201657",
         "title": "Meryl McMaster - as Immense as the Sky"
       },
-      "search_fingerprint": "58de9363fd134417"
+      "search_fingerprint": "8e879202dec8b137"
     },
     "HD_304201876": {
       "first_seen": "2026-08-28T15:41:04Z",
@@ -2495,6 +2496,6 @@
       "search_fingerprint": "a65f2d9e4cdd6852"
     }
   },
-  "reported_category_count": 2790,
+  "reported_category_count": 2788,
   "version": 1
 }
