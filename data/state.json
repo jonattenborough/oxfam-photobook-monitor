@@ -1,7 +1,8 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-08-30T12:17:48Z",
+  "last_successful_fetch": "2026-08-30T16:46:46Z",
   "last_top_skus": [
+    "HD_304205730",
     "HD_304205194",
     "HD_304205117",
     "HD_304205050",
@@ -30,8 +31,7 @@
     "HD_304201657",
     "HD_304201400",
     "HD_304197460",
-    "HD_304201032",
-    "HD_304199251"
+    "HD_304201032"
   ],
   "products": {
     "HD_303805354": {
@@ -2782,8 +2782,24 @@
         "title": "National Geographic Rarely Seen : Photographs of the Extraordinary"
       },
       "search_fingerprint": "e20ccf0f0a2d51bf"
+    },
+    "HD_304205730": {
+      "first_seen": "2026-08-30T16:46:46Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788100028000",
+        "description": "Futurism as a movement touched many art forms, among which photography is the least explored. Giovanni Lista's study explores the photographs and work produced during the futurist revolution from 1909 to 1939.",
+        "isbn": null,
+        "price_gbp": 11.99,
+        "product_id": "book-HD__304205730",
+        "publisher": null,
+        "route": "/futurism-photography/product/HD_304205730",
+        "sku": "HD_304205730",
+        "title": "Futurism & Photography"
+      },
+      "search_fingerprint": "58e53c2a473d5958"
     }
   },
-  "reported_category_count": 2788,
+  "reported_category_count": 2789,
   "version": 1
 }
