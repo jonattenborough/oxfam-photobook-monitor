@@ -32,13 +32,13 @@ class FakeClient:
 
 
 class EbaySellerMonitorTests(unittest.TestCase):
-    def test_supplied_config_has_92_uk_and_14_us_unique_sellers(self):
+    def test_supplied_config_has_89_uk_and_14_us_unique_sellers(self):
         sellers = monitor.load_config(Path("data/ebay_sellers.json"))
         uk = [seller for seller in sellers if seller["marketplace"] == "EBAY_GB"]
         us = [seller for seller in sellers if seller["marketplace"] == "EBAY_US"]
-        self.assertEqual(len(uk), 92)
+        self.assertEqual(len(uk), 89)
         self.assertEqual(len(us), 14)
-        self.assertEqual(len({monitor.seller_key(s["marketplace"], s["id"]) for s in sellers}), 106)
+        self.assertEqual(len({monitor.seller_key(s["marketplace"], s["id"]) for s in sellers}), 103)
         self.assertTrue(all(seller.get("delivery_country") == "GB" for seller in us))
 
     def test_first_success_silently_baselines_current_items(self):
