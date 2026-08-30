@@ -1,7 +1,8 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-08-29T18:25:15Z",
+  "last_successful_fetch": "2026-08-30T12:17:48Z",
   "last_top_skus": [
+    "HD_304205194",
     "HD_304205117",
     "HD_304205050",
     "HD_304205016",
@@ -12,7 +13,6 @@
     "HD_304204363",
     "HD_304204208",
     "HD_304204030",
-    "HD_304203862",
     "HD_304203830",
     "HD_304203838",
     "HD_304203797",
@@ -2766,8 +2766,24 @@
         "title": "La France vue de la mer: De Brest a Nantes"
       },
       "search_fingerprint": "103a4e775bcb3ae2"
+    },
+    "HD_304205194": {
+      "first_seen": "2026-08-30T12:17:48Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788073229000",
+        "description": "This \"mini\" sized version of the New York Times bestseller showcases astounding natural phenomena, far-flung landscapes, and uncommon animal species, shot by star National Geographic photographers. Volcanic lightning cuts through the night sky. A lone kangaroo skims the surface of a lake at sunset. A jeweled scarab from King Tut's tomb glitters in the darkness. The dazzling landmark book shot by an elite group of acclaimed photographers is now available as a compact gift book. Culled to reflect the many variations of our planet's secret wonders--from 30,000-year-old cave paintings to flowers that bloom every few years to engravings inside Abraham Lincoln's watch--each image offers a powerful perspective that will astonish and inspire. Filled with behind-the-scenes stories and wrought with beauty, mystery, and joy, Rarely Seen is a breathtaking window to the extraordinary.",
+        "isbn": null,
+        "price_gbp": 10.0,
+        "product_id": "book-HD__304205194",
+        "publisher": null,
+        "route": "/national-geographic-rarely-seen-photographs-of-the-extraordinary/product/HD_304205194",
+        "sku": "HD_304205194",
+        "title": "National Geographic Rarely Seen : Photographs of the Extraordinary"
+      },
+      "search_fingerprint": "e20ccf0f0a2d51bf"
     }
   },
-  "reported_category_count": 2792,
+  "reported_category_count": 2788,
   "version": 1
 }
