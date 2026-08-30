@@ -9,6 +9,7 @@ on:
     paths:
       - "market_monitor.py"
       - "market_monitor_safe.py"
+      - "market_issue_batches.py"
       - "ebay_api.py"
       - "test_ebay_api.py"
       - "parr_badger_runner.py"
@@ -49,14 +50,28 @@ jobs:
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
         run: python market_monitor_safe.py --targets-per-run 24
 
-      - name: Create AI review issue for new market matches
+      - name: Prepare bounded AI review issue batches
+        if: steps.market.outputs.new_count != '0'
+        run: python market_issue_batches.py
+
+      - name: Create AI review issues for new market matches
         if: steps.market.outputs.new_count != '0'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh issue create \
-            --title "$(cat runtime/market/issue-title.txt)" \
-            --body-file runtime/market/issue-body.md
+          set -euo pipefail
+          shopt -s nullglob
+          bodies=(runtime/market/issue-batches/*-body.md)
+          if [ "${#bodies[@]}" -eq 0 ]; then
+            echo "No issue batches were prepared despite non-zero new_count" >&2
+            exit 1
+          fi
+          for body in "${bodies[@]}"; do
+            prefix="${body%-body.md}"
+            gh issue create \
+              --title "$(cat "${prefix}-title.txt")" \
+              --body-file "$body"
+          done
 
       - name: Persist comprehensive market state
         if: steps.market.outputs.state_changed == 'true'
