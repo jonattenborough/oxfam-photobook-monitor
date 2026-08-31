@@ -1,11 +1,13 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-08-30T16:46:46Z",
+  "last_successful_fetch": "2026-08-31T11:51:51Z",
   "last_top_skus": [
+    "HD_304206194",
+    "HD_304205879",
+    "HD_304205872",
     "HD_304205730",
     "HD_304205194",
     "HD_304205117",
-    "HD_304205050",
     "HD_304205016",
     "HD_304204843",
     "HD_304204700",
@@ -29,9 +31,7 @@
     "HD_304202197",
     "HD_304201876",
     "HD_304201657",
-    "HD_304201400",
-    "HD_304197460",
-    "HD_304201032"
+    "HD_304201400"
   ],
   "products": {
     "HD_303805354": {
@@ -2798,8 +2798,56 @@
         "title": "Futurism & Photography"
       },
       "search_fingerprint": "58e53c2a473d5958"
+    },
+    "HD_304205872": {
+      "first_seen": "2026-08-31T11:51:51Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788167220000",
+        "description": "Hardback with very slight wear to corners of dust jacket, and otherwise like new.<br/><br/>This is the work of Jaroslav Rossler, one of the most important photographers of the Czech avant-garde of the first half of the twentieth century. Jaroslav Rossler (1902-1990) was one of the Czech avant-garde photographers of the first half of the twentieth century whose work has only recently become known outside Eastern Europe. Czech photography in the twenties and thirties produced radical modernist work that incorporated principles of abstract art and constructivism; Jaroslav Rossler was one of the most important and distinctive artists of the period. From 1927 to 1935 he lived and worked in Paris, producing work influenced by constructivism and new objectivity. He used the photographic techniques and compositional approaches of the avant-garde, including photograms, large details, diagonal composition, photomontage, and double exposures, and experimented with colour advertising photographs and still lifes produced with the carbro print process. After his return to Prague, he was relatively inactive until the late 1950s, when he reconnected with Czech artistic and photographic trends of that period, including informalism.;This book documents each stage of Rossler's career with a generous selection of duotone images, some of which have never been published before. The photographs are accompanied by texts by Vladimir Birgus, Jan Mlcoch, Robert Silverio, Karel Srp, and Matthew Witkovsky.",
+        "isbn": null,
+        "price_gbp": 30.0,
+        "product_id": "book-HD__304205872",
+        "publisher": null,
+        "route": "/jaroslav-r%C3%B6ssler-czech-avant-garde-photographer/product/HD_304205872",
+        "sku": "HD_304205872",
+        "title": "Jaroslav Rössler: Czech avant-garde photographer"
+      },
+      "search_fingerprint": "c832ca5f31bcc1f2"
+    },
+    "HD_304205879": {
+      "first_seen": "2026-08-31T11:51:51Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788167581000",
+        "description": "Hardback with very slight wear to corners and edges of dust jacket, and otherwise like new.<br/><br/>Representing the first history of avant-garde Soviet photography and photomontage, this book analyses the function of the photographic image in the Soviet Union between 1924 and 1937.",
+        "isbn": null,
+        "price_gbp": 15.0,
+        "product_id": "book-HD__304205879",
+        "publisher": null,
+        "route": "/the-soviet-photograph-1924-1937/product/HD_304205879",
+        "sku": "HD_304205879",
+        "title": "The Soviet Photograph, 1924-1937"
+      },
+      "search_fingerprint": "75aef00156766ac0"
+    },
+    "HD_304206194": {
+      "first_seen": "2026-08-31T11:51:51Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788172778000",
+        "description": "Captioned and with Glassine between each one. No date or text. Ragged edges to out cover.",
+        "isbn": null,
+        "price_gbp": 9.0,
+        "product_id": "book-HD__304206194",
+        "publisher": null,
+        "route": "/16-sepia-photographs-of-bruges-bound-undated/product/HD_304206194",
+        "sku": "HD_304206194",
+        "title": "16 sepia photographs of Bruges (bound, undated)"
+      },
+      "search_fingerprint": "15a010fdac407424"
     }
   },
-  "reported_category_count": 2789,
+  "reported_category_count": 2790,
   "version": 1
 }
