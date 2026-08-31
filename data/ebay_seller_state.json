@@ -1,13 +1,15 @@
 {
-  "last_failed_sellers": [],
-  "last_run": "2026-08-31T14:22:34Z",
-  "last_successful_sellers": 103,
+  "last_failed_sellers": [
+    "EBAY_US baybooks53217fwfbl: more than 1000 new results fell inside the incremental window"
+  ],
+  "last_run": "2026-08-31T20:20:58Z",
+  "last_successful_sellers": 102,
   "sellers": {
     "EBAY_GB:ageuk": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:116744243894": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -153,7 +155,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:257380408192": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -341,7 +343,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:236051790678": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -1549,7 +1551,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:227345284848": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -2757,7 +2759,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:386834903448": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -3041,7 +3043,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:800506369246": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -4363,7 +4365,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:156884683058": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -4538,8 +4540,8 @@
     "EBAY_GB:barnardos_charity": {
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
-      "last_result_count": 1,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_result_count": 0,
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:176795221202": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -4918,8 +4920,8 @@
     "EBAY_GB:bhf_shops": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 12,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_result_count": 5,
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:377405094645": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -5287,6 +5289,24 @@
           "title": "VINTAGE GREAT WESTERN RAILWAY Rule Book 1945 - CG E24",
           "url": "https://www.ebay.co.uk/itm/398343618454?hash=item5cbf213f96:g:JU8AAeSwRvdqlXlP"
         },
+        "ebay:398343961689": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "3X HARDBACK JEFFREY ARCHER BOOKS THIS WAS A MAN AND 2 OTHER BOOKS CG A19",
+          "url": "https://www.ebay.co.uk/itm/398343961689?hash=item5cbf267c59:g:5J0AAeSw9h1qcyE-"
+        },
+        "ebay:398343965133": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "5x DANIELLE STEEL BOOKS- PB- CG A19",
+          "url": "https://www.ebay.co.uk/itm/398343965133?hash=item5cbf2689cd:g:A5MAAeSwmaVqauhI"
+        },
+        "ebay:398343968698": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "JAMERS PATTERSON- FILTHY RICH- THE JEFFERY EPSTEIN STORY- HB- CG A19",
+          "url": "https://www.ebay.co.uk/itm/398343968698?hash=item5cbf2697ba:g:TCoAAeSw529qXw4k"
+        },
         "ebay:800472196613": {
           "first_seen": "2026-08-28T15:13:59Z",
           "last_seen": "2026-08-28T15:13:59Z",
@@ -5472,6 +5492,18 @@
           "last_seen": "2026-08-31T14:22:34Z",
           "title": "SAINTS - A NEW LEGENDARY OF HEROES, HUMANS AND MAGIC BY AMY JEFFS - HB - CG B36",
           "url": "https://www.ebay.co.uk/itm/800590615385?hash=itemba66eb5359:g:uIsAAeSwM6BqlVOa"
+        },
+        "ebay:800591646222": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "THE HITCHHIKERS GUIDE TO THE GALAXY- DOUGLAS ADAMS 5 BOOK SET- CG A19",
+          "url": "https://www.ebay.co.uk/itm/800591646222?hash=itemba66fb0e0e:g:CbgAAeSwOcNqfBP~"
+        },
+        "ebay:800591674546": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "NEW DAWN FRENCH 3 BOOK COLLECTION- PB- CG A19",
+          "url": "https://www.ebay.co.uk/itm/800591674546?hash=itemba66fb7cb2:g:d6UAAeSwZlJqY7K4"
         }
       }
     },
@@ -5479,7 +5511,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:298520197602": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -5589,7 +5621,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:257346438208": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -6083,7 +6115,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:366433055686": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -7303,7 +7335,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:820001618270": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -8511,7 +8543,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:137321753849": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -9719,7 +9751,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:155535433950": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -10927,7 +10959,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:188640395075": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -12134,8 +12166,8 @@
     "EBAY_GB:catchinglivesbookshop": {
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
-      "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_result_count": 6,
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:168221318880": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -13336,6 +13368,42 @@
           "last_seen": "2026-08-28T16:37:18Z",
           "title": "Ben Shahn (ed. John D. Morse). Secker & Warburg 1972",
           "url": "https://www.ebay.co.uk/itm/168635536210?hash=item2743761352:g:jW0AAeSwo8JqjA4b"
+        },
+        "ebay:168653140272": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "A Book of Teddy Bears: Brown Bears, White Bears, Gruff Bears, Kind Bears...",
+          "url": "https://www.ebay.co.uk/itm/168653140272?hash=item274482b130:g:em8AAeSwZERqlZox"
+        },
+        "ebay:168653153379": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "Scottish Athletics 1883-1983, The Official Centenary Publication",
+          "url": "https://www.ebay.co.uk/itm/168653153379?hash=item274482e463:g:b1wAAeSwVzdqlZzo"
+        },
+        "ebay:168653199696": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "Josef Albers: Formulation : Articulation with text by T.G. Rosenthal, 2006",
+          "url": "https://www.ebay.co.uk/itm/168653199696?hash=item2744839950:g:vUEAAeSw7dJqlaNj"
+        },
+        "ebay:168653211386": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "Cycling Climbs: Twenty Art Prints, by Nigel Peake and Claire Beaumont",
+          "url": "https://www.ebay.co.uk/itm/168653211386?hash=item274483c6fa:g:CHIAAeSwyTVqlabt"
+        },
+        "ebay:168653237127": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "Cornelia Parker, by Iwona Blazwick, with 360 illustrations",
+          "url": "https://www.ebay.co.uk/itm/168653237127?hash=item2744842b87:g:Nr4AAeSwMtZqlan9"
+        },
+        "ebay:168653658198": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "Strangers At The Door by Elinor Lyon, The Children's Book Club 1967",
+          "url": "https://www.ebay.co.uk/itm/168653658198?hash=item27448a9856:g:wzwAAeSwMiBqQqP4"
         }
       }
     },
@@ -13343,7 +13411,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:178284070199": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -14551,7 +14619,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:168210293506": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -14697,7 +14765,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:157421827000": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -14837,7 +14905,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:317559859714": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -16045,7 +16113,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:227061872231": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -17253,7 +17321,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:276557100684": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -17465,7 +17533,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:158221779813": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -18672,8 +18740,8 @@
     "EBAY_GB:edenvalleyhospice": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_result_count": 1,
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:198148660166": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -18914,6 +18982,12 @@
           "last_seen": "2026-08-28T15:13:59Z",
           "title": "The Puppet Show: M. W. Craven - 1st Edition Paperback Signed - Washington Poe",
           "url": "https://www.ebay.co.uk/itm/198596539421?hash=item2e3d46b41d:g:2boAAeSwbp5qjvhp"
+        },
+        "ebay:198608366308": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "20th Century Alcohol & Tobacco Ads - 40th Anniversary Edition Hardback",
+          "url": "https://www.ebay.co.uk/itm/198608366308?hash=item2e3dfb2ae4:g:sh8AAeSwUjRqlZ59"
         },
         "ebay:206074342561": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -19221,7 +19295,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:177903127581": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -19283,7 +19357,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:167860038974": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -20491,7 +20565,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:397259433104": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -20661,14 +20735,14 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {}
     },
     "EBAY_GB:emmausoxfordstore": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:257368311699": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -20868,14 +20942,14 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {}
     },
     "EBAY_GB:ferneanimalsanctuary123": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 1,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_result_count": 0,
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:127489764212": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -21525,7 +21599,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:327028849539": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -21725,7 +21799,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:254692191736": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -22009,7 +22083,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:267537999258": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -23217,7 +23291,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:315685425321": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -23855,7 +23929,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:196381934008": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -25063,7 +25137,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:257112274987": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -25239,7 +25313,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:203958209599": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -25733,7 +25807,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:358837830797": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -25903,7 +25977,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:206321491085": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -26727,7 +26801,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:318412010771": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -27130,8 +27204,8 @@
     "EBAY_GB:longfieldhospicecare": {
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
-      "last_result_count": 6,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_result_count": 0,
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:358586012369": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -28489,7 +28563,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:257466033856": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -28562,8 +28636,8 @@
     "EBAY_GB:lovefarashop": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 7,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_result_count": 0,
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:227440762054": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -29813,7 +29887,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:278112237039": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -29917,7 +29991,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:205394987921": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -30561,7 +30635,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:197689846057": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -30821,7 +30895,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:318085251273": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -31207,7 +31281,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:327065771738": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -31569,7 +31643,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:278194424951": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -31727,7 +31801,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:358882264045": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -35683,7 +35757,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:165898216896": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -36891,7 +36965,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:318558870673": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -37043,7 +37117,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:306553714199": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -37291,7 +37365,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:196569334633": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -37646,8 +37720,8 @@
     "EBAY_GB:rainbowshospice": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 2,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_result_count": 0,
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:236156138263": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -37769,7 +37843,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:206314473843": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -38977,14 +39051,14 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {}
     },
     "EBAY_GB:scope_charity_shop": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:287431780664": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -39004,7 +39078,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:204800033891": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -39371,8 +39445,8 @@
     "EBAY_GB:shopforshelter": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 1,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_result_count": 2,
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:358709807949": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -40603,6 +40677,18 @@
           "last_seen": "2026-08-31T14:22:34Z",
           "title": "Twenty-Four Portraits by William Rothenstein",
           "url": "https://www.ebay.co.uk/itm/820068217753?hash=itembeefdff399:g:2DQAAeSwLrNqlRwv"
+        },
+        "ebay:820069644765": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "Jigs Reels and Hornpipes For Violin and Piano Complete and Accompaniment",
+          "url": "https://www.ebay.co.uk/itm/820069644765?hash=itembeeff5b9dd:g:-zwAAeSwMf5qlZPW"
+        },
+        "ebay:820069738928": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "Soil Matters The Story of Science at Johnstown Castle Noel Culleton Brian Coulte",
+          "url": "https://www.ebay.co.uk/itm/820069738928?hash=itembeeff729b0:g:t6QAAeSwJfhqlaCK"
         }
       }
     },
@@ -40610,7 +40696,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:206153375556": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -40714,7 +40800,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:267699661462": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -40866,7 +40952,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:267566068697": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -41564,14 +41650,14 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {}
     },
     "EBAY_GB:st_vincents_shop": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:294482350020": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -41783,7 +41869,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:178269083596": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -41971,7 +42057,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:178147131996": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -43107,7 +43193,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:267592997241": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -43547,7 +43633,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:406970669382": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -44623,7 +44709,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:177991617085": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -44745,7 +44831,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:137141015288": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -45953,7 +46039,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:256737736218": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -46567,7 +46653,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:168407207127": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -46821,7 +46907,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:167693172715": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -46907,7 +46993,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:277309290982": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -47029,7 +47115,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:227359022569": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -47199,7 +47285,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:198529975623": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -48407,14 +48493,14 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {}
     },
     "EBAY_GB:sussexemmaus": {
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:205372974600": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -49574,7 +49660,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:297629696062": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -49852,14 +49938,14 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {}
     },
     "EBAY_GB:the_linen_hall_charity_bookshop": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:225778335749": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -49981,7 +50067,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:188545397045": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -50253,7 +50339,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:327025531164": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -51461,7 +51547,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:277644119832": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -52710,8 +52796,8 @@
     "EBAY_GB:wisdomhospiceshops": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_result_count": 1,
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:406965688269": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -52910,14 +52996,20 @@
           "last_seen": "2026-08-28T15:13:59Z",
           "title": "Pathfinder Roleplaying Game Beginner Box",
           "url": "https://www.ebay.co.uk/itm/407153713285?hash=item5ecc40a085:g:QNgAAeSw0jpqhHLB"
+        },
+        "ebay:407182779821": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "The Vintage Rolex Field Manual Chevalier Edition by Colin A White Hardback Book",
+          "url": "https://www.ebay.co.uk/itm/407182779821?hash=item5ecdfc25ad:g:~9QAAeSwPgVqlZTs"
         }
       }
     },
     "EBAY_GB:yorkshirecancerresearch": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 1,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_result_count": 0,
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:326808363031": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -55188,8 +55280,8 @@
     "EBAY_US:blountcofriendsoflibrary": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 2,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_result_count": 6,
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:278256311677": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -55844,6 +55936,30 @@
           "last_seen": "2026-08-31T14:22:34Z",
           "title": "Excellence Beyond Compliance 2014 SC James Gesualdi Ex Library",
           "url": "https://www.ebay.com/itm/278329131276?hash=item40cdb5810c:g:0I4AAeSwNoNqku9x"
+        },
+        "ebay:278329809343": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "Sharing the Prize HC DJ Gavin Wright 2013 Harvard University Press Civil Rights",
+          "url": "https://www.ebay.com/itm/278329809343?hash=item40cdbfd9bf:g:IDoAAeSwr3JqJGkH"
+        },
+        "ebay:278329813585": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "Hal Emerson The Lost Kingdom and The Ring of Eman Vath SC 2017 Lot of 2 VG",
+          "url": "https://www.ebay.com/itm/278329813585?hash=item40cdbfea51:g:3oAAAeSwO-hpvCVK"
+        },
+        "ebay:278329857606": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "Highland Romance PB Lot of 18 Conkle Jarecki Kennedy Mayhue Tarr Wolff Quinn",
+          "url": "https://www.ebay.com/itm/278329857606?hash=item40cdc09646:g:Np4AAeSwx2pqKKE-"
+        },
+        "ebay:278329881380": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "Unsocial Social Science Economics and Neighboring Disciplines HC 2010 Backhouse",
+          "url": "https://www.ebay.com/itm/278329881380?hash=item40cdc0f324:g:VmMAAeSwn~VqKDeb"
         },
         "ebay:287511057786": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -56576,14 +56692,26 @@
           "last_seen": "2026-08-31T14:22:34Z",
           "title": "Black Tulip by Alexandre Dumas 1911 Vintage JM Dent EP Dutton & Co HC",
           "url": "https://www.ebay.com/itm/287556198071?hash=item42f3af5eb7:g:jP0AAeSwcZxqkuaR"
+        },
+        "ebay:287556593079": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "Stephen Frey PB Lot of 11 Forced Out Hell's Gate Insider Successor Takeover",
+          "url": "https://www.ebay.com/itm/287556593079?hash=item42f3b565b7:g:LSYAAeSwQXdqKKUZ"
+        },
+        "ebay:287556595984": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "Julie Garwood PB Lot of 11 Fire and Ice Gift Heartbreaker Murder List Ransom",
+          "url": "https://www.ebay.com/itm/287556595984?hash=item42f3b57110:g:duQAAeSw1tJqKKLF"
         }
       }
     },
     "EBAY_US:brentwood_friends": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_result_count": 7,
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:398243493283": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -57880,14 +58008,56 @@
           "last_seen": "2026-08-30T23:47:48Z",
           "title": "Study Bible for Women Teal/Sage LeatherTouch Rhonda Harrington Kelley PB",
           "url": "https://www.ebay.com/itm/398341480946?hash=item5cbf00a1f2:g:iUUAAeSwvk9qlKgr"
+        },
+        "ebay:398344016797": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "Vintage 70s TV Shows Partridge Family Brady Bunch Grease (Lot of 3 PBs)",
+          "url": "https://www.ebay.com/itm/398344016797?hash=item5cbf27539d:g:PMMAAeSwafFpliWM"
+        },
+        "ebay:398344019702": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "SIGNED Helen: Mystery in a Small Town by Mary Jane Ayers (2016, Trade Paperback)",
+          "url": "https://www.ebay.com/itm/398344019702?hash=item5cbf275ef6:g:Vo4AAeSwWBxpliEQ"
+        },
+        "ebay:398344034212": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "SIGNED FIRST EDITION Winning by Suzy Welch and Jack Welch (2005, Hardcover)",
+          "url": "https://www.ebay.com/itm/398344034212?hash=item5cbf2797a4:g:DqsAAeSwkE1plhu9"
+        },
+        "ebay:398344045578": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "Cross Currency Swaps by Carl R. Beidleman (Hardcover)",
+          "url": "https://www.ebay.com/itm/398344045578?hash=item5cbf27c40a:g:BDYAAeSw2bpplhRJ"
+        },
+        "ebay:398344049296": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "Vintage Elizabeth Bowen Irish Death of Heart + Eva Trout Avon (Lot of 2 PBs)",
+          "url": "https://www.ebay.com/itm/398344049296?hash=item5cbf27d290:g:2fgAAeSwEjFplf5h"
+        },
+        "ebay:398344052424": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "Penguin Green Classic Crime Michael Innes Edmund Crispin (Lot 5 UK Paperbacks)",
+          "url": "https://www.ebay.com/itm/398344052424?hash=item5cbf27dec8:g:BOIAAeSwh79pmNtd"
+        },
+        "ebay:398344055414": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "Vintage THE VERSE BY THE SIDE OF THE ROAD by Frank Rowsome, Jr., HC/DJ 1965",
+          "url": "https://www.ebay.com/itm/398344055414?hash=item5cbf27ea76:g:NOAAAeSwl4xplevy"
         }
       }
     },
     "EBAY_US:chandlerpubliclibraryfriends": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_result_count": 2,
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:318249394768": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -59118,6 +59288,18 @@
           "last_seen": "2026-08-29T23:34:26Z",
           "title": "The Encyclopedia of Military History by R. Ernest Dupuy & Trevor Dupuy, HRD 1970",
           "url": "https://www.ebay.com/itm/318797609417?hash=item4a39d179c9:g:HXMAAeSw-qlqk10P"
+        },
+        "ebay:318805770247": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "The Stoic and Epicurean Philosophers, Hrd, Editor/Whitney Oates,  Modern Library",
+          "url": "https://www.ebay.com/itm/318805770247?hash=item4a3a4e0007:g:qQoAAeSwR8Jqlcrs"
+        },
+        "ebay:318805941223": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "Little Eyes : A Novel by Samanta Schweblin, Paperback, 2021 VG",
+          "url": "https://www.ebay.com/itm/318805941223?hash=item4a3a509be7:g:zf4AAeSwQUJqldy4"
         }
       }
     },
@@ -59125,7 +59307,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:278321278694": {
           "first_seen": "2026-08-29T00:40:06Z",
@@ -59150,8 +59332,8 @@
     "EBAY_US:fol.lubbock": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_result_count": 11,
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:298540090194": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -59824,6 +60006,54 @@
           "last_seen": "2026-08-29T17:51:44Z",
           "title": "How to Bld a Covert Off the Grid Safe House Hanson Spy Brief 2019 TPB VG 260829",
           "url": "https://www.ebay.com/itm/298627085977?hash=item45878fb699:g:CaUAAeSwdABqkxBa"
+        },
+        "ebay:298632767284": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "Life and Writings of John Dickinson Historical Society of Penn 1895 HB G 260831",
+          "url": "https://www.ebay.com/itm/298632767284?hash=item4587e66734:g:rocAAeSwHQBqlZ1n"
+        },
+        "ebay:298632787531": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "From th Hrt of Thund to the Col of Gra M Decker Bey the Wall 2003 TPB VG 260831",
+          "url": "https://www.ebay.com/itm/298632787531?hash=item4587e6b64b:g:65IAAeSwTclqlaEb"
+        },
+        "ebay:298632857898": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "Gustavus Adolphus C Fletcher Putnam's Sons 1909 HB G 260831",
+          "url": "https://www.ebay.com/itm/298632857898?hash=item4587e7c92a:g:--sAAeSwehZqlacL"
+        },
+        "ebay:298632907746": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "Eyeless in Gaza A Huxley Harper 1936 HB G 260831",
+          "url": "https://www.ebay.com/itm/298632907746?hash=item4587e88be2:g:cSwAAeSwau1qla2X"
+        },
+        "ebay:298632934498": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "Law in the Scriptures E White Thomas Law Book 1935 HB G 260831",
+          "url": "https://www.ebay.com/itm/298632934498?hash=item4587e8f462:g:~agAAeSw6wNqlbAY"
+        },
+        "ebay:298633193022": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "History in the United States, 1800-1860, George H. Callcott, 1970, HB,VG, 260831",
+          "url": "https://www.ebay.com/itm/298633193022?hash=item4587ece63e:g:QjwAAeSwl01qlc8d"
+        },
+        "ebay:298633223340": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "Domesday Re-Bound, UK Public Record Office, Medieval, Reprint 1960,PB,VG, 260831",
+          "url": "https://www.ebay.com/itm/298633223340?hash=item4587ed5cac:g:CtkAAeSwzbZqldH9"
+        },
+        "ebay:298633258287": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "Walk through Paradise (National Library of Poetry), Walstrum, 1995,HB,VG, 260831",
+          "url": "https://www.ebay.com/itm/298633258287?hash=item4587ede52f:g:EdsAAeSwJfhqldZk"
         },
         "ebay:307092161268": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -60514,6 +60744,24 @@
           "last_seen": "2026-08-29T17:51:44Z",
           "title": "Road Guide to the Geol of Big Bend Nat Pk K Nelson Big Bend Nat 1992 SP G 260829",
           "url": "https://www.ebay.com/itm/307152695968?hash=item4783ba32a0:g:LGgAAeSwuVhqkw1V"
+        },
+        "ebay:307155535388": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "Old Path Pulpit F Allen Guide Print 1886 HB A 260831",
+          "url": "https://www.ebay.com/itm/307155535388?hash=item4783e5861c:g:UcQAAeSwALdqlaph"
+        },
+        "ebay:307155694738": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "The Rise of Nazi Germany (Turning Points...History), Nardo, 1998, HB, VG, 260831",
+          "url": "https://www.ebay.com/itm/307155694738?hash=item4783e7f492:g:sOAAAeSwoxhqlc3A"
+        },
+        "ebay:307155719792": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "Callaloo, Vol.32, No.1, Black Lit., Texas Writers, Part 1, 2009, PB, NEW, 260831",
+          "url": "https://www.ebay.com/itm/307155719792?hash=item4783e85670:g:oLIAAeSwWg9qldQq"
         }
       }
     },
@@ -60521,7 +60769,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:137212370087": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -61771,21 +62019,21 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {}
     },
     "EBAY_US:goodwillminnesota": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {}
     },
     "EBAY_US:mtwyouth": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 1,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_result_count": 0,
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:128051215041": {
           "first_seen": "2026-08-29T23:34:26Z",
@@ -67792,8 +68040,8 @@
     "EBAY_US:sacramentobookden": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 17,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_result_count": 0,
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:178303216836": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -69163,7 +69411,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:357791215722": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -70124,8 +70372,8 @@
     "EBAY_US:southbutlerlibrary_friends_book_shop": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_result_count": 5,
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:236200434700": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -70769,6 +71017,30 @@
           "title": "My Championship Judo  HC  DJ  1966  Anton Geesink  Arco Publishers",
           "url": "https://www.ebay.com/itm/237031782656?hash=item373031f900:g:czwAAeSwWIxqjzL0"
         },
+        "ebay:237041210034": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "Moby Dick  or  The Whale By Herman Melville  HC Easton Press Collector's Edition",
+          "url": "https://www.ebay.com/itm/237041210034?hash=item3730c1d2b2:g:gGsAAeSwpLBqldLY"
+        },
+        "ebay:237041218260": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "Coach's Guide to Basketball's 1-4 Offense  HC  Harry L. Mike Harkins  1980",
+          "url": "https://www.ebay.com/itm/237041218260?hash=item3730c1f2d4:g:9zkAAeSwZsBqldSp"
+        },
+        "ebay:237041232873": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "Moby Dick  or  The Whale By Herman Melville  HC Easton Press New in Plastic",
+          "url": "https://www.ebay.com/itm/237041232873?hash=item3730c22be9:g:-pEAAeSwPdNqldhM"
+        },
+        "ebay:237041243709": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "Red-Headed Rash And Religious   W Don McLure   HC DJ   1954",
+          "url": "https://www.ebay.com/itm/237041243709?hash=item3730c2563d:g:QzMAAeSwDFZqldnq"
+        },
         "ebay:336051339400": {
           "first_seen": "2026-08-28T15:13:59Z",
           "last_seen": "2026-08-28T15:13:59Z",
@@ -71326,6 +71598,12 @@
           "last_seen": "2026-08-28T15:13:59Z",
           "title": "Lakes of Oil  PB 2006  Eileene Russell Huff  Signed by author",
           "url": "https://www.ebay.com/itm/336749011668?hash=item4e67ce22d4:g:WrwAAeSwYtNqhG0k"
+        },
+        "ebay:336771552840": {
+          "first_seen": "2026-08-31T20:20:58Z",
+          "last_seen": "2026-08-31T20:20:58Z",
+          "title": "John Silan's  Winning Edge Basketball Coaching  PB  1995  First Printing",
+          "url": "https://www.ebay.com/itm/336771552840?hash=item4e69261648:g:66QAAeSwRvdqldbM"
         }
       }
     },
@@ -71333,7 +71611,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-08-31T14:22:34Z",
+      "last_successful_fetch": "2026-08-31T20:20:58Z",
       "seen": {
         "ebay:357165678407": {
           "first_seen": "2026-08-28T15:13:59Z",
