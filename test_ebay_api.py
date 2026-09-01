@@ -95,6 +95,49 @@ class EbayApiTests(unittest.TestCase):
         )
         self.assertEqual(search_request.get_header("X-ebay-c-marketplace-id"), "EBAY_US")
 
+    @mock.patch("ebay_api.urllib.request.urlopen")
+    def test_browse_quota_returns_most_restrictive_daily_rate(self, urlopen):
+        urlopen.side_effect = [
+            FakeResponse({"access_token": "short-lived-token"}),
+            FakeResponse(
+                {
+                    "rateLimits": [
+                        {
+                            "apiContext": "buy",
+                            "apiName": "browse",
+                            "resources": [
+                                {
+                                    "name": "item_summary",
+                                    "rates": [
+                                        {
+                                            "limit": 5000,
+                                            "remaining": 731,
+                                            "count": 4269,
+                                            "reset": "2026-09-02T00:00:00.000Z",
+                                            "timeWindow": 86400,
+                                        }
+                                    ],
+                                },
+                                {
+                                    "name": "burst",
+                                    "rates": [
+                                        {"limit": 50, "remaining": 10, "count": 40, "timeWindow": 5}
+                                    ],
+                                },
+                            ],
+                        }
+                    ]
+                }
+            ),
+        ]
+        quota = ebay_api.EbayBrowseClient("app-id", "cert-id").browse_quota()
+        self.assertEqual(quota["resource"], "item_summary")
+        self.assertEqual(quota["remaining"], 731)
+        request = urlopen.call_args_list[1].args[0]
+        self.assertTrue(request.full_url.startswith(ebay_api.RATE_LIMIT_URL))
+        params = urllib.parse.parse_qs(urllib.parse.urlparse(request.full_url).query)
+        self.assertEqual(params, {"api_context": ["buy"], "api_name": ["browse"]})
+
     def test_search_requires_query_or_category(self):
         client = ebay_api.EbayBrowseClient("app-id", "cert-id")
         with self.assertRaisesRegex(ValueError, "query or category_ids"):

@@ -25,7 +25,7 @@ class PrivateSellerMonitorTests(unittest.TestCase):
             state,
             datetime(2026, 9, 1, 12, 0, tzinfo=timezone.utc),
         )
-        self.assertLessEqual(len(plan), 55)
+        self.assertLessEqual(len(plan), 36)
         lanes = {step["lane"] for step in plan}
         self.assertTrue(
             {"broad", "collection", "wrong_category", "hot_canon",
@@ -79,6 +79,48 @@ class PrivateSellerMonitorTests(unittest.TestCase):
     def test_state_has_pending_live_queue(self):
         state = monitor.load_state(Path("/path/that/does/not/exist.json"))
         self.assertEqual(state["pending_live"], {})
+
+    def test_quota_budget_preserves_reserve(self):
+        class QuotaClient:
+            def browse_quota(self):
+                return {"remaining": 470, "limit": 5000}
+
+        config = monitor.load_config(Path("data/ebay_private_searches.json"))
+        budget, quota, warning = monitor.api_call_budget(QuotaClient(), config)
+        self.assertEqual(budget, 20)
+        self.assertEqual(quota["remaining"], 470)
+        self.assertIsNone(warning)
+
+    def test_trim_search_plan_keeps_broad_and_hot_lanes_first(self):
+        plan = [
+            {"lane": "library_rotation", "query": "cold"},
+            {"lane": "hot_canon", "query": "hot"},
+            {"lane": "broad", "query": "broad"},
+            {"lane": "collection", "query": "collection"},
+        ]
+        selected = monitor.trim_search_plan(plan, 2)
+        self.assertEqual({step["lane"] for step in selected}, {"broad", "hot_canon"})
+
+    def test_live_detail_extracts_bibliographic_aspects(self):
+        merged = monitor._merge_live_detail(
+            {"title": "Example", "price_gbp": 10.0},
+            {
+                "localizedAspects": [
+                    {"name": "Author", "value": "Diane Arbus"},
+                    {"name": "Publisher", "value": "Aperture"},
+                    {"name": "Publication Year", "value": "2012"},
+                    {"name": "Edition", "value": "40th Anniversary Edition"},
+                    {"name": "ISBN-13", "value": "9781597111751"},
+                ],
+                "buyingOptions": ["FIXED_PRICE"],
+                "price": {"value": "20.00", "currency": "GBP"},
+            },
+        )
+        self.assertEqual(merged["author"], "Diane Arbus")
+        self.assertEqual(merged["publisher"], "Aperture")
+        self.assertEqual(merged["publication_year"], "2012")
+        self.assertEqual(merged["edition"], "40th Anniversary Edition")
+        self.assertEqual(merged["isbn"], "9781597111751")
 
 
 if __name__ == "__main__":

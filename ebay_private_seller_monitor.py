@@ -80,6 +80,8 @@ def load_config(path: Path) -> dict[str, Any]:
     payload.setdefault("contributor_queries_per_run", 4)
     payload.setdefault("auction_queries_per_run", 4)
     payload.setdefault("max_live_checks_per_run", 8)
+    payload.setdefault("max_api_calls_per_run", 42)
+    payload.setdefault("quota_reserve", 450)
     payload.setdefault("max_pending_live_checks", 100)
     payload.setdefault("issue_threshold", 72)
     payload.setdefault("urgent_threshold", 90)
@@ -259,6 +261,40 @@ def build_search_plan(config: dict[str, Any], state: dict[str, Any], now: dateti
     return unique
 
 
+def trim_search_plan(plan: list[dict[str, Any]], budget: int) -> list[dict[str, Any]]:
+    """Keep the most valuable search lanes when the shared API quota is tight."""
+    if budget <= 0:
+        return []
+    lane_priority = {
+        "broad": 0,
+        "hot_canon": 1,
+        "collection": 2,
+        "wrong_category": 3,
+        "auction_ending": 4,
+        "library_rotation": 5,
+        "contributor": 6,
+    }
+    ranked = sorted(
+        enumerate(plan),
+        key=lambda pair: (lane_priority.get(str(pair[1].get("lane") or ""), 99), pair[0]),
+    )
+    selected_positions = {position for position, _ in ranked[:budget]}
+    return [step for position, step in enumerate(plan) if position in selected_positions]
+
+
+def api_call_budget(
+    client: ebay_api.EbayBrowseClient,
+    config: dict[str, Any],
+) -> tuple[int, dict[str, Any] | None, str | None]:
+    configured_budget = max(1, int(config["max_api_calls_per_run"]))
+    try:
+        quota = client.browse_quota()
+    except Exception as exc:
+        return configured_budget, None, f"Browse quota lookup failed; using the conservative run cap: {exc}"
+    usable = max(0, int(quota.get("remaining") or 0) - int(config["quota_reserve"]))
+    return min(configured_budget, usable), quota, None
+
+
 def run_query(
     client: ebay_api.EbayBrowseClient,
     state: dict[str, Any],
@@ -376,6 +412,7 @@ def _merge_live_detail(item: dict[str, Any], detail: dict[str, Any]) -> dict[str
     buying = detail.get("buyingOptions") if isinstance(detail.get("buyingOptions"), list) else []
     price = detail.get("price") if isinstance(detail.get("price"), dict) else {}
     description = str(detail.get("description") or "").strip()
+    aspects = detail.get("localizedAspects") if isinstance(detail.get("localizedAspects"), list) else []
     if description:
         merged["description"] = description[:12000]
     if buying:
@@ -386,6 +423,34 @@ def _merge_live_detail(item: dict[str, Any], detail: dict[str, Any]) -> dict[str
         merged["seller_feedback_percentage"] = seller.get("feedbackPercentage", merged.get("seller_feedback_percentage"))
         merged["seller_feedback_score"] = seller.get("feedbackScore", merged.get("seller_feedback_score"))
         merged["seller_account_type"] = str(seller.get("sellerAccountType") or merged.get("seller_account_type") or "")
+
+    aspect_fields = {
+        "author": "author",
+        "authors": "author",
+        "edition": "edition",
+        "isbn": "isbn",
+        "isbn 10": "isbn",
+        "isbn 13": "isbn",
+        "publication year": "publication_year",
+        "published year": "publication_year",
+        "publisher": "publisher",
+        "year": "publication_year",
+    }
+    collected: dict[str, list[str]] = {}
+    for aspect in aspects:
+        if not isinstance(aspect, dict):
+            continue
+        name = pb.normalize(aspect.get("name"))
+        target = aspect_fields.get(name)
+        value = str(aspect.get("value") or "").strip()
+        if target and value:
+            collected.setdefault(target, []).append(value)
+    for target, values in collected.items():
+        merged[target] = " | ".join(dict.fromkeys(values))[:1000]
+
+    condition_description = str(detail.get("conditionDescription") or "").strip()
+    if condition_description:
+        merged["condition_description"] = condition_description[:4000]
     try:
         value = float(price.get("value"))
     except (TypeError, ValueError):
@@ -485,6 +550,22 @@ def make_issue_body(
             )
             if best.get("first_edition_notes"):
                 lines.append(f"- **Edition target note:** {best.get('first_edition_notes')}")
+            if best.get("edition_status"):
+                edition_detail = "; ".join(str(value) for value in best.get("edition_reasons") or [])
+                lines.append(
+                    f"- **Edition evidence:** {best.get('edition_status')}"
+                    + (f" | {edition_detail}" if edition_detail else "")
+                )
+        bibliographic = [
+            f"author: {item.get('author')}" if item.get("author") else "",
+            f"publisher: {item.get('publisher')}" if item.get("publisher") else "",
+            f"year: {item.get('publication_year')}" if item.get("publication_year") else "",
+            f"edition: {item.get('edition')}" if item.get("edition") else "",
+            f"ISBN: {item.get('isbn')}" if item.get("isbn") else "",
+        ]
+        bibliographic = [value for value in bibliographic if value]
+        if bibliographic:
+            lines.append(f"- **eBay bibliographic fields:** {', '.join(bibliographic)}")
         if item.get("image_url"):
             lines.append(f"- **Main image:** {item.get('image_url')}")
         if item.get("description"):
@@ -512,11 +593,37 @@ def main() -> int:
     detected_at = utc_now()
     now = _parse_stamp(detected_at) or datetime.now(timezone.utc)
     stats = recognition.library_stats()
-    search_plan = build_search_plan(config, state, now)
     client = ebay_api.EbayBrowseClient(marketplace=config["marketplace"])
+    full_search_plan = build_search_plan(config, state, now)
+    call_budget, quota, quota_warning = api_call_budget(client, config)
+    reserved_live_checks = min(int(config["max_live_checks_per_run"]), call_budget)
+    search_budget = max(0, call_budget - reserved_live_checks)
+    search_plan = trim_search_plan(full_search_plan, search_budget)
+
+    if not search_plan:
+        write_json(
+            runtime / "latest-snapshot.json",
+            {
+                "checked_at": detected_at,
+                "library_stats": stats,
+                "planned_queries": 0,
+                "quota": quota,
+                "quota_warning": quota_warning,
+                "skipped": "shared Browse API reserve protected",
+                "new_candidates": [],
+            },
+        )
+        set_output("new_count", 0)
+        set_output("state_changed", "false")
+        set_output("query_count", 0)
+        set_output("library_records", stats["records"])
+        print("eBay private seller scan skipped to protect the shared Browse API reserve.")
+        return 0
 
     raw_by_key: dict[str, dict[str, Any]] = {}
     failures: list[str] = []
+    if quota_warning:
+        failures.append(quota_warning)
     successful_queries = 0
     for step in search_plan:
         try:
@@ -586,7 +693,8 @@ def main() -> int:
         ),
         reverse=True,
     )
-    live_check_pool = live_eligible[: int(config["max_live_checks_per_run"])]
+    live_allowance = max(0, call_budget - len(search_plan))
+    live_check_pool = live_eligible[: min(int(config["max_live_checks_per_run"]), live_allowance)]
 
     live_checked: dict[str, dict[str, Any]] = {}
     for item in live_check_pool:
@@ -666,6 +774,8 @@ def main() -> int:
     state["last_successful_queries"] = successful_queries
     state["last_failure_count"] = len(failures)
     state["library_records"] = stats["records"]
+    state["last_api_call_budget"] = call_budget
+    state["last_browse_quota"] = quota
 
     write_json(runtime / "proposed-state.json", state)
     write_json(
@@ -673,6 +783,8 @@ def main() -> int:
         {
             "checked_at": detected_at,
             "library_stats": stats,
+            "quota": quota,
+            "api_call_budget": call_budget,
             "planned_queries": len(search_plan),
             "successful_queries": successful_queries,
             "failures": failures,

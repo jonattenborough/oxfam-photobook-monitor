@@ -10,6 +10,8 @@ The operational reference database lives in `data/parr_badger_master/` and curre
 
 A Parr / Badger match is a discovery signal only. Exact edition, printing, completeness, condition and market value still need verification before purchase.
 
+The private-seller discovery engine layers this canon with Roth 101, high-priority collector targets and a source-backed specialist-publisher snapshot. The combined recognition library currently contains about 4,250 unique books. Lower-confidence publisher-backlist records rotate more slowly and cannot overwrite or downgrade canonical tiers.
+
 ## Near-real-time monitors
 
 ### Oxfam Photography
@@ -45,13 +47,21 @@ Every hour, the workflow asks the eBay Browse API for the newest fixed-price UK 
 
 The same run searches eBay for 24 exact Parr / Badger contributor and title combinations. Together with the two broad searches, this uses about 624 API calls per day, comfortably below the production keyset's 5,000-call daily limit. Authentication uses short-lived application tokens generated at run time from the encrypted `EBAY_CLIENT_ID` and `EBAY_CLIENT_SECRET` repository secrets.
 
+### Private-seller mispricing discovery
+
+`ebay_private_seller_monitor.py` searches eBay UK individual accounts through the official `sellerAccountTypes:{INDIVIDUAL}` filter. It combines broad and job-lot searches, wrong-category searches, hot canonical targets, auctions ending soon and a rotating slice of the full recognition library. Search-in-description is used on high-recall lanes.
+
+Results are matched locally, scored for collectibility and possible seller under-description, then re-fetched through eBay's live item endpoint. Live detail supplies author, publisher, publication year, edition and ISBN aspects where available. A listing is never surfaced unless it is still purchasable, and a known later edition is prevented from becoming an urgent collectible alert.
+
+The workflow is capped at 42 Browse calls per hour, including up to six live checks. Before searching, it reads eBay's application quota through the Developer Analytics API and protects a 450-call reserve.
+
 ### Selected eBay charity sellers
 
-`ebay_seller_monitor.py` separately checks 75 selected charity and library sellers every 30 minutes: 61 on eBay UK and 14 on eBay US. Each seller gets an independent Books-category query, so a large seller cannot consume a shared 200-result page and hide stock from smaller shops. The US searches also require delivery availability to Great Britain.
+`ebay_seller_monitor.py` separately checks 103 selected charity and library sellers: 89 on eBay UK and 14 on eBay US. The twice-hourly workflow processes 52 sellers in a persistent round-robin batch, so every seller is normally revisited about once per hour while keeping API use sustainable. Each seller gets an independent Books-category query, so a large seller cannot consume a shared 200-result page and hide stock from smaller shops. The US searches also require delivery availability to Great Britain.
 
 The first successful search for each seller silently records its newest 200 fixed-price books. Later runs use that seller's last successful timestamp with a ten-minute overlap, then alert only on previously unseen listings that contain photography-book signals or match the combined Parr/Badger and Roth canon. Seller state is isolated, so one temporary seller failure does not turn existing stock into new alerts.
 
-At the normal cadence the 75 seller queries use about 3,600 Browse API calls per day. With the existing 624 daily broad and exact-title calls, expected usage is about 4,224 of the 5,000-call daily allowance. Extra pages are requested only when one seller has more than 200 books inside an incremental search window.
+At the normal cadence the batched seller monitor uses about 2,496 Browse calls per day. The existing market monitor uses about 624, the private-seller engine is capped at 1,008, and the temporary back-search is capped at 300. Expected maximum scheduled use is therefore about 4,428 of the default 5,000-call daily allowance. The seller batch reserves worst-case incremental-page headroom, the back-search reduces its own budget when necessary, and every monitor protects a shared 450-call reserve.
 
 ### Current-inventory seller back-search
 
@@ -108,7 +118,8 @@ The comprehensive market monitor deliberately uses `EXTERNAL_NEW:` so the existi
 - **Oxfam broad Art & Photography monitor:** minutes 6, 16, 26, 36, 46 and 56 of every hour.
 - **Comprehensive photobook market discovery:** minute 27 of every hour.
 - **Selected eBay charity sellers:** minutes 9 and 39 of every hour.
-- **Current-inventory eBay seller back-search:** daily at 02:17 UTC until complete.
+- **Current-inventory eBay seller back-search:** daily at 02:47 UTC until complete.
+- **eBay private-seller photobook discovery:** minute 17 of every hour.
 - **Photobook Wider Web Search:** hourly condition watch.
 - **Charity Photobook New Listings:** hourly condition watch for the GitHub issue-review and value-verification stage.
 

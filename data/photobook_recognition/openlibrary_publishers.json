@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "source": "Open Library search API, CC0 catalogue data",
+  "minimum_records": 2500,
+  "publishers": [
+    {"name": "MACK", "query": "MACK", "max_records": 210, "tier": "B", "priority": 4},
+    {"name": "Aperture", "query": "Aperture", "max_records": 650, "tier": "C", "priority": 4},
+    {"name": "Steidl", "query": "Steidl", "max_records": 850, "tier": "C", "priority": 4},
+    {"name": "Dewi Lewis", "query": "Dewi Lewis", "max_records": 100, "tier": "B", "priority": 4},
+    {"name": "Nazraeli Press", "query": "Nazraeli Press", "max_records": 210, "tier": "B", "priority": 4},
+    {"name": "Twin Palms", "query": "Twin Palms", "max_records": 125, "tier": "B", "priority": 4},
+    {"name": "Scalo", "query": "Scalo", "max_records": 125, "tier": "B", "priority": 4},
+    {"name": "Chris Boot", "query": "Chris Boot", "max_records": 20, "tier": "B", "priority": 4},
+    {"name": "GOST", "query": "GOST", "max_records": 50, "tier": "B", "priority": 4},
+    {"name": "TBW Books", "query": "TBW Books", "max_records": 30, "tier": "B", "priority": 4},
+    {"name": "Kehrer", "query": "Kehrer", "max_records": 350, "tier": "C", "priority": 5},
+    {"name": "Schirmer/Mosel", "query": "Schirmer/Mosel", "max_records": 225, "tier": "C", "priority": 5},
+    {"name": "powerHouse Books", "query": "powerHouse Books", "max_records": 200, "tier": "C", "priority": 5},
+    {"name": "Edition Patrick Frey", "query": "Edition Patrick Frey", "max_records": 35, "tier": "B", "priority": 4},
+    {"name": "L'Artiere", "query": "L'Artiere", "max_records": 25, "tier": "B", "priority": 4},
+    {"name": "Skinnerboox", "query": "Skinnerboox", "max_records": 45, "tier": "B", "priority": 4},
+    {"name": "Yoffy Press", "query": "Yoffy Press", "max_records": 35, "tier": "B", "priority": 4},
+    {"name": "Hoxton Mini Press", "query": "Hoxton Mini Press", "max_records": 60, "tier": "C", "priority": 5},
+    {"name": "Photoworks", "query": "Photoworks", "max_records": 35, "tier": "C", "priority": 5},
+    {"name": "Cornerhouse", "query": "Cornerhouse", "max_records": 50, "tier": "C", "priority": 5},
+    {"name": "Hatje Cantz", "query": "Hatje Cantz", "max_records": 150, "tier": "C", "priority": 5},
+    {"name": "Phaidon", "query": "Phaidon", "max_records": 120, "tier": "C", "priority": 5},
+    {"name": "Thames & Hudson", "query": "Thames & Hudson", "max_records": 120, "tier": "C", "priority": 5},
+    {"name": "Taschen", "query": "Taschen", "max_records": 100, "tier": "C", "priority": 5}
+  ]
+}
