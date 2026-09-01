@@ -44,14 +44,26 @@ jobs:
         id: monitor
         run: python canon_runner.py parent_monitor
 
-      - name: Create AI review issue for new parent-category listings
+      - name: Create AI review issues for new parent-category listings
         if: steps.monitor.outputs.new_count != '0'
         env:
           GH_TOKEN: ${{ github.token }}
+          EXPECTED_ISSUES: ${{ steps.monitor.outputs.issue_count }}
         run: |
-          gh issue create \
-            --title "$(cat runtime/parent_monitor/issue-title.txt)" \
-            --body-file runtime/parent_monitor/issue-body.md
+          set -euo pipefail
+          shopt -s nullglob
+          bodies=(runtime/parent_monitor/issues/*-body.md)
+          if [ "${#bodies[@]}" -ne "$EXPECTED_ISSUES" ]; then
+            echo "Expected $EXPECTED_ISSUES issue batches, found ${#bodies[@]}"
+            exit 1
+          fi
+          for body in "${bodies[@]}"; do
+            stem="${body%-body.md}"
+            title_file="${stem}-title.txt"
+            gh issue create \
+              --title "$(cat "$title_file")" \
+              --body-file "$body"
+          done
 
       - name: Persist broad-category monitor state
         if: steps.monitor.outputs.state_changed == 'true'
