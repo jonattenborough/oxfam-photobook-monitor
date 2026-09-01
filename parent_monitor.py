@@ -26,6 +26,7 @@ PAGE_SIZE = 90
 PAGES = 2  # newest 180 parent-category items per run
 MAX_ISSUE_BODY_CHARS = 28_000
 ISSUE_HEADER_RESERVE = 2_000
+# Manual workflow trigger requested on 2026-09-01.
 
 
 def load_json(path: Path, fallback: Any) -> Any:
