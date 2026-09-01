@@ -10,9 +10,11 @@ on:
       - "ebay_api.py"
       - "ebay_private_seller_monitor.py"
       - "photobook_recognition.py"
+      - "photobook_library_builder.py"
       - "test_ebay_api.py"
       - "test_ebay_private_api.py"
       - "test_photobook_recognition.py"
+      - "test_photobook_library_builder.py"
       - "test_ebay_private_seller_monitor.py"
       - "data/ebay_private_searches.json"
       - "data/photobook_recognition/**"
@@ -25,9 +27,11 @@ on:
       - "ebay_api.py"
       - "ebay_private_seller_monitor.py"
       - "photobook_recognition.py"
+      - "photobook_library_builder.py"
       - "test_ebay_api.py"
       - "test_ebay_private_api.py"
       - "test_photobook_recognition.py"
+      - "test_photobook_library_builder.py"
       - "test_ebay_private_seller_monitor.py"
       - "data/ebay_private_searches.json"
       - "data/photobook_recognition/**"
@@ -63,6 +67,7 @@ jobs:
           python -m unittest -v \
             test_ebay_api.py \
             test_ebay_private_api.py \
+            test_photobook_library_builder.py \
             test_photobook_recognition.py \
             test_ebay_private_seller_monitor.py
           python photobook_recognition.py

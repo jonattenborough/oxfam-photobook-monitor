@@ -41,6 +41,24 @@ class EbaySellerMonitorTests(unittest.TestCase):
         self.assertEqual(len({monitor.seller_key(s["marketplace"], s["id"]) for s in sellers}), 103)
         self.assertTrue(all(seller.get("delivery_country") == "GB" for seller in us))
 
+    def test_half_hour_batches_cover_every_seller_about_hourly(self):
+        sellers = monitor.load_config(Path("data/ebay_sellers.json"))
+        first, cursor = monitor.select_sellers(sellers, 0, monitor.DEFAULT_SELLERS_PER_RUN)
+        second, next_cursor = monitor.select_sellers(sellers, cursor, monitor.DEFAULT_SELLERS_PER_RUN)
+        covered = {
+            monitor.seller_key(seller["marketplace"], seller["id"])
+            for seller in first + second
+        }
+        self.assertEqual(len(first), 52)
+        self.assertEqual(len(second), 52)
+        self.assertEqual(len(covered), 103)
+        self.assertEqual(next_cursor, 1)
+
+    def test_quota_batch_allows_for_incremental_page_spillover(self):
+        self.assertEqual(monitor.quota_safe_seller_count(260, 52), 52)
+        self.assertEqual(monitor.quota_safe_seller_count(99, 52), 19)
+        self.assertEqual(monitor.quota_safe_seller_count(4, 52), 0)
+
     def test_first_success_silently_baselines_current_items(self):
         state, candidates, baseline = monitor.update_seller_state(
             None,

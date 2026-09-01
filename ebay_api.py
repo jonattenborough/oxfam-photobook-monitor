@@ -16,6 +16,7 @@ from typing import Any
 TOKEN_URL = "https://api.ebay.com/identity/v1/oauth2/token"
 SEARCH_URL = "https://api.ebay.com/buy/browse/v1/item_summary/search"
 ITEM_URL = "https://api.ebay.com/buy/browse/v1/item/{item_id}"
+RATE_LIMIT_URL = "https://api.ebay.com/developer/analytics/v1_beta/rate_limit/"
 API_SCOPE = "https://api.ebay.com/oauth/api_scope"
 DEFAULT_MARKETPLACE = "EBAY_GB"
 LEGACY_ITEM_ID = re.compile(r"^v1\|([^|]+)\|")
@@ -151,6 +152,55 @@ class EbayBrowseClient:
             "X-EBAY-C-MARKETPLACE-ID": self.marketplace,
             "User-Agent": "photobook-listing-monitor/2.0",
         }
+
+    def browse_quota(self) -> dict[str, Any]:
+        """Return the most restrictive current Browse API quota window.
+
+        The Developer Analytics call uses a separate developer-API allowance,
+        so it can be used once at the start of a monitor run to avoid blindly
+        exhausting the shared Browse API keyset.
+        """
+        params = urllib.parse.urlencode({"api_context": "buy", "api_name": "browse"})
+        request = urllib.request.Request(RATE_LIMIT_URL + "?" + params, headers=self._headers())
+        payload = self._json_request(request, "eBay Browse quota")
+        limits = payload.get("rateLimits")
+        if not isinstance(limits, list):
+            raise EbayApiError("eBay Browse quota returned an invalid rateLimits value")
+
+        rates: list[dict[str, Any]] = []
+        for limit_group in limits:
+            if not isinstance(limit_group, dict):
+                continue
+            resources = limit_group.get("resources")
+            if not isinstance(resources, list):
+                continue
+            for resource in resources:
+                if not isinstance(resource, dict):
+                    continue
+                for rate in resource.get("rates") or []:
+                    if not isinstance(rate, dict):
+                        continue
+                    try:
+                        remaining = int(rate.get("remaining"))
+                        limit = int(rate.get("limit"))
+                        window = int(rate.get("timeWindow") or 0)
+                    except (TypeError, ValueError):
+                        continue
+                    rates.append(
+                        {
+                            "resource": str(resource.get("name") or "browse"),
+                            "remaining": remaining,
+                            "limit": limit,
+                            "count": int(rate.get("count") or max(0, limit - remaining)),
+                            "reset": str(rate.get("reset") or ""),
+                            "time_window": window,
+                        }
+                    )
+        if not rates:
+            raise EbayApiError("eBay Browse quota response contained no usable rates")
+        daily = [rate for rate in rates if int(rate["time_window"]) >= 3600]
+        candidates = daily or rates
+        return min(candidates, key=lambda rate: int(rate["remaining"]))
 
     def search(
         self,

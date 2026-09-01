@@ -19,6 +19,7 @@ import external_monitor
 
 PAGE_SIZE = 200
 DEFAULT_CALL_BUDGET = 300
+QUOTA_RESERVE = 450
 MAX_OFFSET = 9800
 ISSUE_ITEM_LIMIT = 50
 EBAY_EPOCH = "1995-01-01T00:00:00Z"
@@ -46,6 +47,19 @@ def set_output(name: str, value: Any) -> None:
     if target:
         with open(target, "a", encoding="utf-8") as fh:
             fh.write(f"{name}={value}\n")
+
+
+def api_call_budget(
+    client: ebay_api.EbayBrowseClient,
+    configured_budget: int,
+) -> tuple[int, dict[str, Any] | None, str | None]:
+    requested = max(0, min(int(configured_budget), DEFAULT_CALL_BUDGET))
+    try:
+        quota = client.browse_quota()
+    except Exception as exc:
+        return requested, None, f"Browse quota lookup failed; using the configured back-search cap: {exc}"
+    usable = max(0, int(quota.get("remaining") or 0) - QUOTA_RESERVE)
+    return min(requested, usable), quota, None
 
 
 @lru_cache(maxsize=1)
@@ -447,15 +461,21 @@ def main() -> int:
         marketplace: ebay_api.EbayBrowseClient(marketplace=marketplace)
         for marketplace in sorted({seller["marketplace"] for seller in sellers})
     }
+    configured_budget = max(1, min(args.max_calls, DEFAULT_CALL_BUDGET))
+    call_budget, quota, quota_warning = api_call_budget(next(iter(clients.values())), configured_budget)
 
     result = run_backfill(
         sellers,
         state,
         findings,
         clients,
-        call_budget=max(1, min(args.max_calls, DEFAULT_CALL_BUDGET)),
+        call_budget=call_budget,
         detected_at=detected_at,
     )
+    result["quota"] = quota
+    result["api_call_budget"] = call_budget
+    if quota_warning:
+        result["failures"].append(quota_warning)
     result["removed_stale_candidates"] = removed_findings
     runtime = Path(args.runtime_dir)
     write_json(runtime / "proposed-state.json", state)

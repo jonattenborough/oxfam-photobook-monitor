@@ -19,6 +19,8 @@ PAGE_SIZE = 200
 MAX_INCREMENTAL_PAGES = 5
 OVERLAP_MINUTES = 10
 MAX_SEEN_PER_SELLER = 1000
+DEFAULT_SELLERS_PER_RUN = 52
+QUOTA_RESERVE = 450
 SUPPORTED_MARKETPLACES = {"EBAY_GB", "EBAY_US"}
 
 
@@ -93,15 +95,34 @@ def load_config(path: Path) -> list[dict[str, str]]:
 
 def load_state(path: Path) -> dict[str, Any]:
     if not path.exists():
-        return {"version": 1, "sellers": {}}
+        return {"version": 1, "sellers": {}, "seller_cursor": 0}
     payload = json.loads(path.read_text(encoding="utf-8"))
     if not isinstance(payload, dict):
         raise RuntimeError("eBay seller monitor state is not a JSON object")
     payload.setdefault("version", 1)
     payload.setdefault("sellers", {})
+    payload.setdefault("seller_cursor", 0)
     if not isinstance(payload["sellers"], dict):
         raise RuntimeError("eBay seller monitor sellers state is not an object")
     return payload
+
+
+def select_sellers(
+    sellers: list[dict[str, str]],
+    cursor: int,
+    count: int,
+) -> tuple[list[dict[str, str]], int]:
+    if not sellers or count <= 0:
+        return [], 0
+    start = max(0, int(cursor)) % len(sellers)
+    selected_count = min(len(sellers), int(count))
+    selected = [sellers[(start + offset) % len(sellers)] for offset in range(selected_count)]
+    return selected, (start + selected_count) % len(sellers)
+
+
+def quota_safe_seller_count(usable_calls: int, requested_count: int) -> int:
+    """Reserve enough headroom for the worst incremental page count."""
+    return min(max(0, int(requested_count)), max(0, int(usable_calls)) // MAX_INCREMENTAL_PAGES)
 
 
 def write_json(path: Path, value: Any) -> None:
@@ -317,6 +338,8 @@ def main() -> int:
     parser.add_argument("--config", default="data/ebay_sellers.json")
     parser.add_argument("--state", default="data/ebay_seller_state.json")
     parser.add_argument("--runtime-dir", default="runtime/ebay-sellers")
+    parser.add_argument("--sellers-per-run", type=int, default=DEFAULT_SELLERS_PER_RUN)
+    parser.add_argument("--all-sellers", action="store_true")
     args = parser.parse_args()
 
     sellers = load_config(Path(args.config))
@@ -330,12 +353,49 @@ def main() -> int:
         marketplace: ebay_api.EbayBrowseClient(marketplace=marketplace)
         for marketplace in sorted({seller["marketplace"] for seller in sellers})
     }
+    requested_count = len(sellers) if args.all_sellers else max(1, args.sellers_per_run)
+    cursor = int(state.get("seller_cursor") or 0)
+    selected_sellers, next_cursor = select_sellers(sellers, cursor, requested_count)
+    quota: dict[str, Any] | None = None
+    quota_warning: str | None = None
+    try:
+        quota = next(iter(clients.values())).browse_quota()
+        usable = max(0, int(quota.get("remaining") or 0) - QUOTA_RESERVE)
+        safe_count = quota_safe_seller_count(usable, len(selected_sellers))
+        if safe_count < len(selected_sellers):
+            selected_sellers = selected_sellers[:safe_count]
+            next_cursor = (cursor + len(selected_sellers)) % len(sellers)
+    except Exception as exc:
+        quota_warning = f"Browse quota lookup failed; using the scheduled seller batch cap: {exc}"
+
+    if not selected_sellers:
+        write_json(
+            runtime / "latest-snapshot.json",
+            {
+                "checked_at": detected_at,
+                "configured_sellers": len(sellers),
+                "selected_sellers": 0,
+                "quota": quota,
+                "quota_warning": quota_warning,
+                "skipped": "shared Browse API reserve protected",
+                "new_candidates": [],
+            },
+        )
+        set_output("new_count", 0)
+        set_output("state_changed", "false")
+        set_output("successful_requests", 0)
+        set_output("failed_requests", 0)
+        print("Seller sweep skipped to protect the shared Browse API reserve.")
+        return 0
+
     candidates: list[dict[str, Any]] = []
     failures: list[str] = []
+    if quota_warning:
+        failures.append(quota_warning)
     successes = 0
     baselines = 0
 
-    for seller in sellers:
+    for seller in selected_sellers:
         key = seller_key(seller["marketplace"], seller["id"])
         previous = sellers_state.get(key)
         if not isinstance(previous, dict):
@@ -365,6 +425,7 @@ def main() -> int:
         raise RuntimeError("All configured eBay seller searches failed; refusing to update state")
 
     state["sellers"] = sellers_state
+    state["seller_cursor"] = next_cursor
     state["last_run"] = detected_at
     state["last_successful_sellers"] = successes
     state["last_failed_sellers"] = failures
@@ -372,6 +433,8 @@ def main() -> int:
     write_json(runtime / "latest-snapshot.json", {
         "checked_at": detected_at,
         "configured_sellers": len(sellers),
+        "selected_sellers": len(selected_sellers),
+        "quota": quota,
         "successful_sellers": successes,
         "failed_sellers": failures,
         "baselines_seeded": baselines,
@@ -394,7 +457,8 @@ def main() -> int:
     set_output("successful_requests", successes)
     set_output("failed_requests", len(failures))
     print(
-        f"Seller sweep complete: {successes}/{len(sellers)} sellers succeeded; "
+        f"Seller sweep complete: {successes}/{len(selected_sellers)} selected sellers succeeded "
+        f"from {len(sellers)} configured; "
         f"{baselines} baselines seeded; {len(candidates)} candidates; {len(failures)} failures."
     )
     return 0

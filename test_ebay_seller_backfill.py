@@ -26,6 +26,16 @@ def raw_item(item_id: int, title: str) -> dict:
 
 
 class EbaySellerBackfillTests(unittest.TestCase):
+    def test_quota_budget_preserves_shared_reserve(self):
+        class QuotaClient:
+            def browse_quota(self):
+                return {"remaining": 620, "limit": 5000}
+
+        budget, quota, warning = backfill.api_call_budget(QuotaClient(), 300)
+        self.assertEqual(budget, 170)
+        self.assertEqual(quota["remaining"], 620)
+        self.assertIsNone(warning)
+
     def test_scan_page_uses_current_books_inventory_filters(self):
         client = FakeClient([[]])
         seller = {"id": "goodwillbks", "marketplace": "EBAY_US", "delivery_country": "GB"}
