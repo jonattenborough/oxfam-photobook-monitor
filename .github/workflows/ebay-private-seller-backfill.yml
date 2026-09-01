@@ -1,6 +1,8 @@
 name: eBay private seller historical backfill
 
 on:
+  schedule:
+    - cron: "37 7,19 * * *"
   workflow_dispatch:
     inputs:
       lookback_days:
@@ -68,14 +70,14 @@ jobs:
             test_ebay_private_seller_backfill.py
 
       - name: Run bounded historical search
-        if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
+        if: (github.event_name == 'workflow_dispatch' || github.event_name == 'schedule') && github.ref == 'refs/heads/main'
         id: backfill
         env:
           EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
-          LOOKBACK_DAYS: ${{ inputs.lookback_days }}
-          MAX_CALLS: ${{ inputs.max_calls }}
-          NEW_WINDOW: ${{ inputs.new_window }}
+          LOOKBACK_DAYS: ${{ github.event_name == 'workflow_dispatch' && inputs.lookback_days || '30' }}
+          MAX_CALLS: ${{ github.event_name == 'workflow_dispatch' && inputs.max_calls || '60' }}
+          NEW_WINDOW: ${{ github.event_name == 'workflow_dispatch' && inputs.new_window || 'false' }}
         run: |
           args=(
             --lookback-days "$LOOKBACK_DAYS"
@@ -87,7 +89,7 @@ jobs:
           python ebay_private_seller_backfill.py "${args[@]}"
 
       - name: Create isolated historical-stock review issue
-        if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && steps.backfill.outputs.new_count != '0'
+        if: (github.event_name == 'workflow_dispatch' || github.event_name == 'schedule') && github.ref == 'refs/heads/main' && steps.backfill.outputs.new_count != '0'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -96,7 +98,7 @@ jobs:
             --body-file runtime/ebay-private-backfill/issue-body.md
 
       - name: Persist backfill progress and findings
-        if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && steps.backfill.outputs.state_changed == 'true'
+        if: (github.event_name == 'workflow_dispatch' || github.event_name == 'schedule') && github.ref == 'refs/heads/main' && steps.backfill.outputs.state_changed == 'true'
         run: |
           set -euo pipefail
           cp runtime/ebay-private-backfill/proposed-state.json data/ebay_private_seller_backfill_state.json
