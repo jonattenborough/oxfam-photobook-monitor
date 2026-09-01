@@ -1,7 +1,10 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-01T11:59:55Z",
+  "last_successful_fetch": "2026-09-01T16:24:00Z",
   "last_top_skus": [
+    "HD_304209354",
+    "HD_304208887",
+    "HD_304209158",
     "HD_304208762",
     "HD_304208507",
     "HD_304208533",
@@ -28,10 +31,7 @@
     "HD_304205016",
     "HD_304204843",
     "HD_304204700",
-    "HD_304155879",
-    "HD_304155151",
-    "HD_304204208",
-    "HD_304204030"
+    "HD_304155879"
   ],
   "products": {
     "HD_303805354": {
@@ -3134,8 +3134,56 @@
         "title": "The Englishman's Room"
       },
       "search_fingerprint": "440602272c620def"
+    },
+    "HD_304208887": {
+      "first_seen": "2026-09-01T16:24:00Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788262300000",
+        "description": "Božidar Gjukić War Photographs 1991 - 1992 Ratne Fotografije<br/><br/>Rare art book in Very Good Condition - pages and inside spotless and exterior all clean except top edge which has slight foxing/marks.",
+        "isbn": null,
+        "price_gbp": 55.0,
+        "product_id": "book-HD__304208887",
+        "publisher": null,
+        "route": "/bo%C5%BEidar-gjuki%C4%87-war-photographs-1991-1992-ratne-fotografije/product/HD_304208887",
+        "sku": "HD_304208887",
+        "title": "Božidar Gjukić War Photographs 1991 - 1992 Ratne Fotografije"
+      },
+      "search_fingerprint": "41c733d88aaacd03"
+    },
+    "HD_304209158": {
+      "first_seen": "2026-09-01T16:24:00Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788261757000",
+        "description": "A presentation book featuring Riva boats published to celebrate the Millennium Meeting in September 2000.<br/>It is packed with colour photos of the company's boats with all text in parallel Italian and English.<br/>First edition published in 2000.<br/>The cloth-covered hardback is mounted with a glossy wood-effect plate on the front. The cover is in very good condition with minimal shelf-wear, but the front is slightly bowed, perhaps the effect of the plate.  The binding is tight but with a slight strain between the front and second endpaper. The pages are unmarked.<br/>",
+        "isbn": null,
+        "price_gbp": 195.0,
+        "product_id": "book-HD__304209158",
+        "publisher": null,
+        "route": "/riva-millennium-meeting-sarnico-7-10-september-2000-parallel-italian-english/product/HD_304209158",
+        "sku": "HD_304209158",
+        "title": "Riva: Millennium Meeting. Sarnico, 7 - 10 September 2000 (parallel Italian/English)"
+      },
+      "search_fingerprint": "35f47bb1f0569fd8"
+    },
+    "HD_304209354": {
+      "first_seen": "2026-09-01T16:24:00Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788262521000",
+        "description": "Ansel Adams (1902-1984) produced some of the 20th century's most iconic photographic images and helped nurture the art of photography through his creative innovations and peerless technical mastery.<br/>The Camera--the first volume in Adams' celebrated series of books on photographic techniques--has taught generations of photographers how to harness the camera's artistic potential. <br/>Along with visualization, image management, Adams' famous Zone System, and other keys to photographic artistry, The Camera covers 35mm, medium-format, and large-format view cameras, while offering detailed advice on camera components such as lenses, shutters, and light meters.",
+        "isbn": null,
+        "price_gbp": 14.99,
+        "product_id": "book-HD__304209354",
+        "publisher": null,
+        "route": "/the-camera-the-ansel-adams-photography-series-i/product/HD_304209354",
+        "sku": "HD_304209354",
+        "title": "The Camera. The Ansel Adams Photography Series I"
+      },
+      "search_fingerprint": "b2a619f9920f69a8"
     }
   },
-  "reported_category_count": 2799,
+  "reported_category_count": 2797,
   "version": 1
 }
