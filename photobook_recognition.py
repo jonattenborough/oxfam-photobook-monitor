@@ -60,6 +60,7 @@ COLLECTION_DISCOVERY_SIGNALS = {
     "collection of books",
     "books collection",
 }
+UNSIGNED_SIGNALS = {"not signed", "unsigned", "isnt signed", "isn't signed"}
 CONDITION_RISK_RULES = (
     ("ex-library or withdrawn copy", 22, {"ex library", "ex-library", "library copy", "withdrawn"}),
     (
@@ -797,6 +798,11 @@ def collectible_format_evidence(
     labels: list[str] = []
     score = 0
     for label, bonus, signals in COLLECTIBLE_FORMAT_RULES:
+        if label == "signed by the photographer" and any(
+            pb.contains_normalized_phrase(text, pb.normalize(signal))
+            for signal in UNSIGNED_SIGNALS
+        ):
+            continue
         if any(
             pb.contains_normalized_phrase(text, pb.normalize(signal))
             for signal in signals
