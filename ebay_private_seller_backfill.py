@@ -85,6 +85,19 @@ def live_check_reserve(
     return min(12, max(0, budget // 5))
 
 
+def effective_live_check_budget(
+    requested: int,
+    reserved: int,
+    available: int,
+    remaining_search_steps: int,
+) -> int:
+    """Move unused adaptive search allowance into verification."""
+    available = max(0, int(available))
+    if requested <= 0 and remaining_search_steps <= 0:
+        return available
+    return min(max(0, int(reserved)), available)
+
+
 def date_slices(start: datetime, end: datetime, slice_days: int) -> list[tuple[str, str]]:
     if end <= start:
         raise ValueError("Backfill window end must be after its start")
@@ -478,7 +491,13 @@ def run_backfill(
         reverse=True,
     )
     available_live_calls = max(0, int(call_budget) - search_calls)
-    live_pool = ranked_pending[: min(reserved_live, available_live_calls)]
+    effective_live_budget = effective_live_check_budget(
+        max_live_checks,
+        reserved_live,
+        available_live_calls,
+        len(queue),
+    )
+    live_pool = ranked_pending[:effective_live_budget]
     new_candidates: list[dict[str, Any]] = []
     for item in live_pool:
         key = str(item.get("key") or "")
@@ -533,7 +552,7 @@ def run_backfill(
         "calls": search_calls + live_calls,
         "search_calls": search_calls,
         "live_checks": live_calls,
-        "live_check_budget": reserved_live,
+        "live_check_budget": effective_live_budget,
         "successful_queries": successful_queries,
         "results_inspected": results_inspected,
         "unique_unseen_results": len(raw_by_key),

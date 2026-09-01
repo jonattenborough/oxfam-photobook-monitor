@@ -99,6 +99,9 @@ class PrivateSellerBackfillTests(unittest.TestCase):
         self.assertEqual(backfill.live_check_reserve(250, 61, 60, 0), 40)
         self.assertEqual(backfill.live_check_reserve(0, 61, 60, 0), 12)
         self.assertEqual(backfill.live_check_reserve(250, 61, 60, 6), 6)
+        self.assertEqual(backfill.effective_live_check_budget(0, 20, 49, 0), 49)
+        self.assertEqual(backfill.effective_live_check_budget(0, 20, 49, 1), 20)
+        self.assertEqual(backfill.effective_live_check_budget(6, 6, 49, 0), 6)
 
     def test_completed_window_is_not_restarted_without_explicit_flag(self):
         state = {"version": 1, "queue": [], "pending_live": {}, "complete": True}
