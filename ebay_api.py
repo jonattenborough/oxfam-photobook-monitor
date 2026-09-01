@@ -23,6 +23,36 @@ LEGACY_ITEM_ID = re.compile(r"^v1\|([^|]+)\|")
 ALLOWED_BUYING_OPTIONS = {"FIXED_PRICE", "AUCTION", "BEST_OFFER"}
 ALLOWED_SELLER_ACCOUNT_TYPES = {"INDIVIDUAL", "BUSINESS"}
 ALLOWED_CONDITIONS = {"NEW", "USED", "UNSPECIFIED"}
+MARKETPLACE_DOMAINS = {
+    "EBAY_AT": "www.ebay.at",
+    "EBAY_AU": "www.ebay.com.au",
+    "EBAY_BE": "www.ebay.com.be",
+    "EBAY_CA": "www.ebay.ca",
+    "EBAY_CH": "www.ebay.ch",
+    "EBAY_DE": "www.ebay.de",
+    "EBAY_ES": "www.ebay.es",
+    "EBAY_FR": "www.ebay.fr",
+    "EBAY_GB": "www.ebay.co.uk",
+    "EBAY_IE": "www.ebay.ie",
+    "EBAY_IT": "www.ebay.it",
+    "EBAY_PL": "www.ebay.pl",
+    "EBAY_US": "www.ebay.com",
+}
+MARKETPLACE_LANGUAGES = {
+    "EBAY_AT": "de-AT",
+    "EBAY_AU": "en-AU",
+    "EBAY_BE": "nl-BE",
+    "EBAY_CA": "en-CA",
+    "EBAY_CH": "de-CH",
+    "EBAY_DE": "de-DE",
+    "EBAY_ES": "es-ES",
+    "EBAY_FR": "fr-FR",
+    "EBAY_GB": "en-GB",
+    "EBAY_IE": "en-IE",
+    "EBAY_IT": "it-IT",
+    "EBAY_PL": "pl-PL",
+    "EBAY_US": "en-US",
+}
 
 
 class EbayApiError(RuntimeError):
@@ -148,7 +178,7 @@ class EbayBrowseClient:
         return {
             "Authorization": f"Bearer {self.access_token()}",
             "Accept": "application/json",
-            "Accept-Language": "en-GB",
+            "Accept-Language": MARKETPLACE_LANGUAGES.get(self.marketplace, "en-GB"),
             "X-EBAY-C-MARKETPLACE-ID": self.marketplace,
             "User-Agent": "photobook-listing-monitor/2.0",
         }
@@ -354,6 +384,7 @@ def listing_from_summary(item: dict[str, Any], source: dict[str, Any]) -> dict[s
     seller = item.get("seller") if isinstance(item.get("seller"), dict) else {}
     price = item.get("price") if isinstance(item.get("price"), dict) else {}
     image = item.get("image") if isinstance(item.get("image"), dict) else {}
+    shipping_options = item.get("shippingOptions") if isinstance(item.get("shippingOptions"), list) else []
     category_path = item.get("categoryPath") or ""
     categories = item.get("categories") if isinstance(item.get("categories"), list) else []
     try:
@@ -362,6 +393,28 @@ def listing_from_summary(item: dict[str, Any], source: dict[str, Any]) -> dict[s
         price_value = None
     price_currency = str(price.get("currency") or "").upper()
     price_gbp = price_value if price_currency == "GBP" else None
+    shipping_values: list[tuple[float, str]] = []
+    for option in shipping_options:
+        if not isinstance(option, dict):
+            continue
+        cost = option.get("shippingCost") if isinstance(option.get("shippingCost"), dict) else {}
+        try:
+            shipping_value = round(float(cost.get("value")), 2)
+        except (TypeError, ValueError):
+            continue
+        shipping_currency = str(cost.get("currency") or price_currency).upper()
+        shipping_values.append((shipping_value, shipping_currency))
+    matching_shipping = [
+        value
+        for value, currency in shipping_values
+        if not price_currency or currency == price_currency
+    ]
+    shipping_value = min(matching_shipping) if matching_shipping else None
+    landed_price_gbp = (
+        round(price_value + (shipping_value or 0.0), 2)
+        if price_value is not None and price_currency == "GBP"
+        else None
+    )
     buying_options = item.get("buyingOptions") if isinstance(item.get("buyingOptions"), list) else []
     context_parts = [
         str(item.get("shortDescription") or ""),
@@ -373,7 +426,7 @@ def listing_from_summary(item: dict[str, Any], source: dict[str, Any]) -> dict[s
     ]
     url = str(item.get("itemWebUrl") or "").strip()
     if not url and legacy_id.isdigit():
-        domain = "www.ebay.com" if source.get("marketplace") == "EBAY_US" else "www.ebay.co.uk"
+        domain = MARKETPLACE_DOMAINS.get(str(source.get("marketplace") or "").upper(), "www.ebay.com")
         url = f"https://{domain}/itm/{legacy_id}"
     category_id = ""
     if categories and isinstance(categories[0], dict):
@@ -389,6 +442,9 @@ def listing_from_summary(item: dict[str, Any], source: dict[str, Any]) -> dict[s
         "price_gbp": price_gbp,
         "price_value": price_value,
         "price_currency": price_currency,
+        "shipping_value": shipping_value,
+        "shipping_currency": price_currency if shipping_value is not None else "",
+        "landed_price_gbp": landed_price_gbp,
         "context": " | ".join(part.strip() for part in context_parts if part.strip())[:1800],
         "vendor": str(seller.get("username") or ""),
         "seller_feedback_percentage": seller.get("feedbackPercentage"),

@@ -196,6 +196,41 @@ class PhotobookRecognitionTests(unittest.TestCase):
         self.assertTrue(any(reason.startswith("collectible object:") for reason in reasons))
         self.assertGreaterEqual(score, 72)
 
+    def test_multilingual_signed_limited_print_edition_gets_object_bonus(self):
+        item = {
+            "title": "Rahim Fortune I can't stand to see you cry édition limitée",
+            "description": "Signé et numéroté 3/30 avec tirage photographique",
+            "publisher": "Loose Joints",
+            "publication_year": "2021",
+            "price_gbp": 90.0,
+            "private_seller": True,
+            "seller_account_type": "INDIVIDUAL",
+            "buying_options": ["FIXED_PRICE"],
+        }
+        match = recognition.match_listing(item)[0]
+        score, _ = recognition.opportunity_score(item, match)
+        self.assertGreaterEqual(match["collectible_format_bonus"], 18)
+        self.assertIn("signed by the photographer", match["collectible_format_evidence"])
+        self.assertIn("numbered copy", match["collectible_format_evidence"])
+        self.assertIn("book or edition with an original print", match["collectible_format_evidence"])
+        self.assertGreaterEqual(score, 72)
+
+    def test_multilingual_reissue_word_blocks_original_edition_alert(self):
+        item = {
+            "title": "Luigi Ghirri Kodachrome réédition MACK",
+            "description": "Réédition moderne du livre classique",
+            "publisher": "MACK",
+            "publication_year": "2012",
+            "price_gbp": 30.0,
+            "private_seller": True,
+            "seller_account_type": "INDIVIDUAL",
+            "buying_options": ["FIXED_PRICE"],
+        }
+        match = recognition.match_listing(item)[0]
+        score, _ = recognition.opportunity_score(item, match)
+        self.assertEqual(match["edition_status"], "mismatch")
+        self.assertLess(score, 72)
+
     def test_explicit_not_signed_text_blocks_signed_object_bonus(self):
         item = {
             "title": "Robert Frank The Americans hardcover",

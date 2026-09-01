@@ -33,6 +33,7 @@ PENDING_LIMIT = 250
 ISSUE_ITEM_LIMIT = 30
 INITIAL_PRIORITY_BATCH = 24
 PLAN_VERSION = 2
+REVIEWED_LIMIT = 5000
 
 
 def load_json(path: Path, default: dict[str, Any], label: str) -> dict[str, Any]:
@@ -301,6 +302,7 @@ def initialize_state(
     existing_queue = state.get("queue")
     if isinstance(existing_queue, list) and not new_window:
         state.setdefault("pending_live", {})
+        state.setdefault("reviewed", {})
         return migrate_legacy_plan(state, config)
 
     detected = live_monitor._parse_stamp(detected_at) or datetime.now(timezone.utc)
@@ -321,6 +323,7 @@ def initialize_state(
             "initial_plan_size": len(queue),
             "queue": queue,
             "pending_live": {},
+            "reviewed": {},
             "complete": False,
             "total_calls": 0,
             "total_search_calls": 0,
@@ -333,45 +336,114 @@ def initialize_state(
 
 def known_live_keys(live_state: dict[str, Any]) -> set[str]:
     keys: set[str] = set()
-    for field in ("seen", "pending_live"):
+    for field in ("seen", "pending_live", "items", "reviewed"):
         values = live_state.get(field)
         if isinstance(values, dict):
             keys.update(str(key) for key in values)
     return keys
 
 
+def _client_for_marketplace(
+    client: ebay_api.EbayBrowseClient | dict[str, ebay_api.EbayBrowseClient],
+    marketplace: str,
+) -> ebay_api.EbayBrowseClient:
+    if isinstance(client, dict):
+        selected = client.get(marketplace)
+        if selected is None:
+            raise RuntimeError(f"No eBay client configured for {marketplace}")
+        return selected
+    return client
+
+
+def _apply_gbp_estimate(item: dict[str, Any], rate: float | None) -> None:
+    if not rate or rate <= 0:
+        return
+    try:
+        price = float(item.get("price_value"))
+    except (TypeError, ValueError):
+        return
+    try:
+        shipping = float(item.get("shipping_value")) if item.get("shipping_value") is not None else 0.0
+    except (TypeError, ValueError):
+        shipping = 0.0
+    item["gbp_conversion_rate"] = float(rate)
+    item["price_gbp"] = round(price * float(rate), 2)
+    item["landed_price_gbp"] = round((price + shipping) * float(rate), 2)
+
+
+def _seller_is_eligible(item: dict[str, Any], config: dict[str, Any]) -> bool:
+    account_type = str(item.get("seller_account_type") or "").upper()
+    if account_type == "BUSINESS":
+        return False
+    mode = str(item.get("seller_filter_mode") or "individual").lower()
+    if mode == "individual":
+        return account_type == "INDIVIDUAL" or item.get("private_seller") is True
+    if account_type == "INDIVIDUAL":
+        return True
+    try:
+        feedback = int(item.get("seller_feedback_score"))
+    except (TypeError, ValueError):
+        return False
+    return feedback <= int(config.get("heuristic_seller_feedback_max") or 1000)
+
+
+def _trim_reviewed(reviewed: dict[str, Any]) -> dict[str, Any]:
+    if len(reviewed) <= REVIEWED_LIMIT:
+        return reviewed
+    ranked = sorted(
+        reviewed.items(),
+        key=lambda pair: str(pair[1].get("reviewed_at") or "") if isinstance(pair[1], dict) else "",
+        reverse=True,
+    )
+    return dict(ranked[:REVIEWED_LIMIT])
+
+
 def search_page(
-    client: ebay_api.EbayBrowseClient,
+    client: ebay_api.EbayBrowseClient | dict[str, ebay_api.EbayBrowseClient],
     config: dict[str, Any],
     step: dict[str, Any],
 ) -> tuple[list[dict[str, Any]], int]:
-    rows = client.search(
+    marketplace = str(step.get("marketplace") or config["marketplace"]).upper()
+    market_client = _client_for_marketplace(client, marketplace)
+    seller_filter_mode = str(step.get("seller_filter_mode") or "individual").lower()
+    rows = market_client.search(
         str(step["query"]),
         limit=PAGE_SIZE,
         offset=int(step.get("offset") or 0),
         category_ids=step.get("category_ids"),
         fixed_price_only=False,
         buying_options=step.get("buying_options") or live_monitor.FIXED_BUYING_OPTIONS,
-        seller_account_type="INDIVIDUAL",
-        delivery_country=str(config["delivery_country"]),
+        seller_account_type="INDIVIDUAL" if seller_filter_mode == "individual" else None,
+        delivery_country=str(step.get("delivery_country") or config["delivery_country"]),
         item_start_date=str(step["window_start"]),
         item_end_date=str(step["window_end"]),
         search_in_description=bool(step.get("search_in_description")),
-        price_max=float(config["max_price_gbp"]),
-        price_currency="GBP",
+        price_max=float(step.get("price_max") or config["max_price_gbp"]),
+        price_currency=str(step.get("price_currency") or "GBP"),
     )
     source = {
         "id": f"ebay_private_backfill_{step['lane']}",
-        "name": f"eBay UK private sellers historical - {step['lane']}",
-        "marketplace": config["marketplace"],
+        "name": f"{marketplace} historical seller discovery - {step['lane']}",
+        "marketplace": marketplace,
     }
     items: list[dict[str, Any]] = []
     for raw in rows:
         item = ebay_api.listing_from_summary(raw, source)
         if item is None:
             continue
-        item["private_seller"] = True
-        item["seller_account_type"] = item.get("seller_account_type") or "INDIVIDUAL"
+        if seller_filter_mode == "individual":
+            item["private_seller"] = True
+            item["seller_account_type"] = item.get("seller_account_type") or "INDIVIDUAL"
+            item["seller_type_confidence"] = "eBay individual-account filter"
+        else:
+            item["seller_type_confidence"] = "low-feedback seller heuristic"
+        item["seller_filter_mode"] = seller_filter_mode
+        item["marketplace"] = marketplace
+        item["market_country"] = str(step.get("market_country") or "")
+        item["market_issue_threshold"] = int(
+            step.get("issue_threshold") or config["issue_threshold"]
+        )
+        _apply_gbp_estimate(item, float(step.get("gbp_rate") or 0) or None)
         item["search_lane"] = str(step["lane"])
         item["search_query"] = str(step["query"])
         item["backfill_window_start"] = str(step["window_start"])
@@ -387,7 +459,7 @@ def _merge_discovery(current: dict[str, Any], incoming: dict[str, Any]) -> None:
 
 
 def run_backfill(
-    client: ebay_api.EbayBrowseClient,
+    client: ebay_api.EbayBrowseClient | dict[str, ebay_api.EbayBrowseClient],
     config: dict[str, Any],
     state: dict[str, Any],
     findings: dict[str, Any],
@@ -410,7 +482,10 @@ def run_backfill(
             findings_items.pop(key, None)
             continue
         refreshed = live_monitor.classify(item)
-        if int(refreshed.get("opportunity_score") or 0) < issue_threshold:
+        retained_threshold = int(
+            refreshed.get("market_issue_threshold") or issue_threshold
+        )
+        if int(refreshed.get("opportunity_score") or 0) < retained_threshold:
             findings_items.pop(key, None)
             continue
         findings_items[key] = refreshed
@@ -419,7 +494,15 @@ def run_backfill(
         raise RuntimeError("Private backfill pending_live is not an object")
 
     minimum_live_score = max(55, issue_threshold - 12)
-    known_keys = known_live_keys(live_state) | {str(key) for key in findings_items}
+    reviewed = state.setdefault("reviewed", {})
+    if not isinstance(reviewed, dict):
+        reviewed = {}
+        state["reviewed"] = reviewed
+    known_keys = (
+        known_live_keys(live_state)
+        | {str(key) for key in findings_items}
+        | {str(key) for key in reviewed}
+    )
     for key in list(pending):
         if str(key) in known_keys:
             pending.pop(key, None)
@@ -434,6 +517,7 @@ def run_backfill(
             continue
         refreshed["backfill_first_found"] = item.get("backfill_first_found") or detected_at
         pending[key] = refreshed
+    known_keys.update(str(key) for key in pending)
     reserved_live = live_check_reserve(
         len(pending),
         len(queue),
@@ -507,23 +591,33 @@ def run_backfill(
             continue
         live_calls += 1
         try:
-            is_live, _reason, detail = client.live_status(rest_item_id)
+            marketplace = str(item.get("marketplace") or config["marketplace"]).upper()
+            market_client = _client_for_marketplace(client, marketplace)
+            is_live, _reason, detail = market_client.live_status(rest_item_id)
         except Exception as exc:
             failures.append(f"live-check {item.get('external_id')}: {exc}")
             continue
         if not is_live:
             pending.pop(key, None)
+            reviewed[key] = {"reviewed_at": detected_at, "reason": "not live"}
             continue
         enriched = live_monitor._merge_live_detail(item, detail)
+        _apply_gbp_estimate(enriched, float(item.get("gbp_conversion_rate") or 0) or None)
         refreshed = live_monitor.classify(enriched)
         refreshed["live_verified"] = True
         refreshed["live_verified_at"] = detected_at
         refreshed["backfill_first_found"] = item.get("backfill_first_found") or detected_at
         pending.pop(key, None)
+        reviewed[key] = {
+            "reviewed_at": detected_at,
+            "title": refreshed.get("title"),
+            "marketplace": refreshed.get("marketplace"),
+            "score": refreshed.get("opportunity_score"),
+        }
+        required_score = int(refreshed.get("market_issue_threshold") or config["issue_threshold"])
         if (
-            int(refreshed.get("opportunity_score") or 0) >= int(config["issue_threshold"])
-            and refreshed.get("private_seller") is True
-            and str(refreshed.get("seller_account_type") or "").upper() != "BUSINESS"
+            int(refreshed.get("opportunity_score") or 0) >= required_score
+            and _seller_is_eligible(refreshed, config)
         ):
             findings_items[key] = refreshed
             new_candidates.append(refreshed)
@@ -534,6 +628,7 @@ def run_backfill(
         reverse=True,
     )[:PENDING_LIMIT]
     state["pending_live"] = dict(ranked_remaining)
+    state["reviewed"] = _trim_reviewed(reviewed)
     state["queue"] = queue
     state["complete"] = not queue and not state["pending_live"]
     state["last_run"] = detected_at
@@ -570,7 +665,11 @@ def _price(item: dict[str, Any]) -> str:
     currency = str(item.get("price_currency") or "")
     if not isinstance(value, (int, float)):
         return "Not supplied"
-    return f"£{value:.2f}" if currency == "GBP" else f"{currency} {value:.2f}".strip()
+    base = f"£{value:.2f}" if currency == "GBP" else f"{currency} {value:.2f}".strip()
+    landed = item.get("landed_price_gbp")
+    if currency != "GBP" and isinstance(landed, (int, float)):
+        base += f" (approximately £{float(landed):.2f} including returned delivery)"
+    return base
 
 
 def issue_body(result: dict[str, Any], state: dict[str, Any], total_findings: int) -> str:
@@ -605,6 +704,8 @@ def issue_body(result: dict[str, Any], state: dict[str, Any], total_findings: in
                 "",
                 f"- **Observed price:** {_price(item)}",
                 f"- **Seller:** {item.get('vendor') or 'eBay individual account'}",
+                f"- **Marketplace:** {item.get('marketplace') or 'EBAY_GB'}",
+                f"- **Seller-type evidence:** {item.get('seller_type_confidence') or 'eBay individual-account filter'}",
                 f"- **Collector lane:** {item.get('collecting_lane') or 'open discovery'}",
                 f"- **Opportunity type:** {item.get('opportunity_kind') or 'review lead'}",
                 f"- **Discovery lane:** {item.get('search_lane') or 'unknown'}",

@@ -1,0 +1,145 @@
+{
+  "version": 1,
+  "delivery_country": "GB",
+  "max_price_gbp": 750,
+  "issue_threshold": 72,
+  "heuristic_issue_threshold": 80,
+  "heuristic_seller_feedback_max": 1000,
+  "markets": [
+    {
+      "marketplace": "EBAY_DE",
+      "country": "DE",
+      "currency": "EUR",
+      "gbp_rate": 0.86,
+      "price_max": 875,
+      "seller_filter_mode": "individual",
+      "broad_queries": ["fotobuch", "fotografie bildband"],
+      "collectible_queries": ["signiertes fotobuch", "limitierte auflage fotografie"],
+      "collection_queries": ["fotobücher sammlung", "fotobücher konvolut"]
+    },
+    {
+      "marketplace": "EBAY_FR",
+      "country": "FR",
+      "currency": "EUR",
+      "gbp_rate": 0.86,
+      "price_max": 875,
+      "seller_filter_mode": "individual",
+      "broad_queries": ["livre photo", "livre photographie"],
+      "collectible_queries": ["livre photo signé", "édition limitée photographie"],
+      "collection_queries": ["lot livres photo", "collection livres photographie"]
+    },
+    {
+      "marketplace": "EBAY_IT",
+      "country": "IT",
+      "currency": "EUR",
+      "gbp_rate": 0.86,
+      "price_max": 875,
+      "seller_filter_mode": "individual",
+      "broad_queries": ["libro fotografico", "libro fotografia"],
+      "collectible_queries": ["libro fotografia firmato", "edizione limitata fotografia"],
+      "collection_queries": ["lotto libri fotografia", "collezione libri fotografici"]
+    },
+    {
+      "marketplace": "EBAY_ES",
+      "country": "ES",
+      "currency": "EUR",
+      "gbp_rate": 0.86,
+      "price_max": 875,
+      "seller_filter_mode": "individual",
+      "broad_queries": ["fotolibro", "libro fotografía"],
+      "collectible_queries": ["fotolibro firmado", "edición limitada fotografía"],
+      "collection_queries": ["lote libros fotografía", "colección fotolibros"]
+    },
+    {
+      "marketplace": "EBAY_IE",
+      "country": "IE",
+      "currency": "EUR",
+      "gbp_rate": 0.86,
+      "price_max": 875,
+      "seller_filter_mode": "individual",
+      "broad_queries": ["photobook", "photography book"],
+      "collectible_queries": ["signed photobook", "photography book with print"],
+      "collection_queries": ["photography books collection", "photography books job lot"]
+    },
+    {
+      "marketplace": "EBAY_BE",
+      "country": "BE",
+      "currency": "EUR",
+      "gbp_rate": 0.86,
+      "price_max": 875,
+      "seller_filter_mode": "individual",
+      "broad_queries": ["livre photo", "fotoboek"],
+      "collectible_queries": ["livre photo signé", "gesigneerd fotoboek"],
+      "collection_queries": ["lot livres photo", "fotoboeken verzameling"]
+    },
+    {
+      "marketplace": "EBAY_AT",
+      "country": "AT",
+      "currency": "EUR",
+      "gbp_rate": 0.86,
+      "price_max": 875,
+      "seller_filter_mode": "individual",
+      "broad_queries": ["fotobuch", "fotografie bildband"],
+      "collectible_queries": ["signiertes fotobuch", "limitierte auflage fotografie"],
+      "collection_queries": ["fotobücher sammlung", "fotobücher konvolut"]
+    },
+    {
+      "marketplace": "EBAY_CH",
+      "country": "CH",
+      "currency": "CHF",
+      "gbp_rate": 0.91,
+      "price_max": 825,
+      "seller_filter_mode": "individual",
+      "broad_queries": ["fotobuch", "livre photo"],
+      "collectible_queries": ["signiertes fotobuch", "livre photo signé"],
+      "collection_queries": ["fotobücher sammlung", "lot livres photo"]
+    },
+    {
+      "marketplace": "EBAY_PL",
+      "country": "PL",
+      "currency": "PLN",
+      "gbp_rate": 0.198,
+      "price_max": 3800,
+      "seller_filter_mode": "individual",
+      "broad_queries": ["fotoksiążka", "album fotograficzny"],
+      "collectible_queries": ["podpisana fotoksiążka", "limitowana edycja fotografia"],
+      "collection_queries": ["kolekcja fotoksiążek", "partia książek fotograficznych"]
+    },
+    {
+      "marketplace": "EBAY_US",
+      "country": "US",
+      "currency": "USD",
+      "gbp_rate": 0.75,
+      "price_max": 1000,
+      "seller_filter_mode": "heuristic",
+      "issue_threshold": 80,
+      "broad_queries": [],
+      "collectible_queries": ["signed photobook"],
+      "collection_queries": ["photography books lot"]
+    },
+    {
+      "marketplace": "EBAY_CA",
+      "country": "CA",
+      "currency": "CAD",
+      "gbp_rate": 0.556,
+      "price_max": 1350,
+      "seller_filter_mode": "heuristic",
+      "issue_threshold": 80,
+      "broad_queries": [],
+      "collectible_queries": ["signed photobook"],
+      "collection_queries": ["photography books lot"]
+    },
+    {
+      "marketplace": "EBAY_AU",
+      "country": "AU",
+      "currency": "AUD",
+      "gbp_rate": 0.5,
+      "price_max": 1500,
+      "seller_filter_mode": "heuristic",
+      "issue_threshold": 80,
+      "broad_queries": [],
+      "collectible_queries": ["signed photobook"],
+      "collection_queries": ["photography books lot"]
+    }
+  ]
+}

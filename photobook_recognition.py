@@ -59,8 +59,31 @@ COLLECTION_DISCOVERY_SIGNALS = {
     "lot of books",
     "collection of books",
     "books collection",
+    "bücher konvolut",
+    "fotobücher konvolut",
+    "fotobücher sammlung",
+    "lot de livres",
+    "lot livres photo",
+    "collection livres photo",
+    "lotto libri fotografia",
+    "collezione libri fotografici",
+    "lote libros fotografía",
+    "colección fotolibros",
+    "fotoboeken verzameling",
+    "partia książek fotograficznych",
 }
-UNSIGNED_SIGNALS = {"not signed", "unsigned", "isnt signed", "isn't signed"}
+UNSIGNED_SIGNALS = {
+    "not signed",
+    "unsigned",
+    "isnt signed",
+    "isn't signed",
+    "nicht signiert",
+    "non signé",
+    "non firmato",
+    "sin firmar",
+    "niet gesigneerd",
+    "niepodpisany",
+}
 CONDITION_RISK_RULES = (
     ("ex-library or withdrawn copy", 22, {"ex library", "ex-library", "library copy", "withdrawn"}),
     (
@@ -91,6 +114,13 @@ EXPERT_SIGNALS = {
     "fine/fine",
     "near fine",
     "bibliography",
+    "erstausgabe",
+    "erste ausgabe",
+    "première édition",
+    "prima edizione",
+    "primera edición",
+    "eerste druk",
+    "pierwsze wydanie",
 }
 COLLECTIBLE_FORMAT_RULES = (
     (
@@ -115,6 +145,15 @@ COLLECTIBLE_FORMAT_RULES = (
             "with a print",
             "with original print",
             "with print",
+            "mit originalabzug",
+            "mit print",
+            "avec tirage photographique",
+            "avec tirage",
+            "con stampa fotografica",
+            "con stampa",
+            "con copia fotográfica",
+            "met fotoafdruk",
+            "z odbitką fotograficzną",
         },
     ),
     (
@@ -130,13 +169,82 @@ COLLECTIBLE_FORMAT_RULES = (
             "original artwork",
             "original drawing",
             "unique print",
+            "épreuve d'artiste",
+            "prova d'artista",
+            "prueba de artista",
+            "künstlerexemplar",
         },
     ),
     ("association or presentation copy", 9, {"association copy", "presentation copy"}),
-    ("signed by the photographer", 6, {"hand signed", "signed", "signed by", "signed copy"}),
-    ("numbered copy", 5, {"hand numbered", "numbered", "numbered copy"}),
-    ("limited or special edition", 4, {"deluxe edition", "edition of", "limited edition", "special edition"}),
-    ("collector housing", 3, {"clamshell", "presentation box", "slipcase", "slipcased", "solander"}),
+    (
+        "signed by the photographer",
+        6,
+        {
+            "hand signed",
+            "signed",
+            "signed by",
+            "signed copy",
+            "handsigniert",
+            "signiert",
+            "signé",
+            "dédicacé",
+            "firmato",
+            "autografato",
+            "firmado",
+            "autografiado",
+            "gesigneerd",
+            "ondertekend",
+            "podpisany",
+        },
+    ),
+    (
+        "numbered copy",
+        5,
+        {
+            "hand numbered",
+            "numbered",
+            "numbered copy",
+            "nummeriert",
+            "numéroté",
+            "numerato",
+            "numerado",
+            "genummerd",
+            "numerowany",
+        },
+    ),
+    (
+        "limited or special edition",
+        4,
+        {
+            "deluxe edition",
+            "edition of",
+            "limited edition",
+            "special edition",
+            "limitierte auflage",
+            "édition limitée",
+            "edizione limitata",
+            "edición limitada",
+            "gelimiteerde oplage",
+            "edycja limitowana",
+        },
+    ),
+    (
+        "collector housing",
+        3,
+        {
+            "clamshell",
+            "presentation box",
+            "slipcase",
+            "slipcased",
+            "solander",
+            "schuber",
+            "coffret",
+            "étui",
+            "cofanetto",
+            "estuche",
+            "schuifdoos",
+        },
+    ),
 )
 EDITION_IDENTITY_FIELDS = {
     "Year",
@@ -197,6 +305,17 @@ LISTING_NOISE_TOKENS = {
     "vg",
     "vintage",
     "wrapper",
+    "bildband",
+    "buch",
+    "fotobuch",
+    "livre",
+    "photographie",
+    "libro",
+    "fotografico",
+    "fotografía",
+    "fotolibro",
+    "fotoboek",
+    "fotoksiążka",
 }
 PUBLISHER_NOISE_TOKENS = {
     "and",
@@ -224,6 +343,16 @@ REISSUE_SIGNALS = {
     "third edition",
     "third printing",
     "later printing",
+    "nachdruck",
+    "neuauflage",
+    "réédition",
+    "réimpression",
+    "riedizione",
+    "ristampa",
+    "reedición",
+    "reimpresión",
+    "herdruk",
+    "wznowienie",
 }
 FIRST_EDITION_SIGNALS = {
     "first edition",
@@ -232,6 +361,14 @@ FIRST_EDITION_SIGNALS = {
     "1st edition",
     "1st impression",
     "1st printing",
+    "erstausgabe",
+    "erste ausgabe",
+    "première édition",
+    "premier tirage",
+    "prima edizione",
+    "primera edición",
+    "eerste druk",
+    "pierwsze wydanie",
 }
 YEAR_RE = re.compile(r"(?<!\d)(18\d{2}|19\d{2}|20\d{2})(?!\d)")
 LIMITATION_RE = re.compile(
@@ -970,7 +1107,8 @@ def opportunity_score(item: dict[str, Any], match: dict[str, Any]) -> tuple[int,
     if _clean(match.get("first_monograph")).upper() == "YES":
         reasons.append("recognised first monograph")
 
-    price = item.get("price_gbp")
+    landed_price = item.get("landed_price_gbp")
+    price = landed_price if landed_price is not None else item.get("price_gbp")
     try:
         price_gbp = float(price) if price is not None else None
     except (TypeError, ValueError):
@@ -992,6 +1130,8 @@ def opportunity_score(item: dict[str, Any], match: dict[str, Any]) -> tuple[int,
             reasons.append("low asking price")
         elif price_gbp <= 120:
             score += 3
+        if landed_price is not None:
+            reasons.append("price scoring includes returned delivery cost")
 
     buying = {str(value).upper() for value in item.get("buying_options", []) if str(value)}
     if "FIXED_PRICE" in buying:
