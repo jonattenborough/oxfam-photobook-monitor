@@ -141,6 +141,23 @@ class PrivateSellerMonitorTests(unittest.TestCase):
         self.assertNotIn("collection or job-lot wording", classified["opportunity_reasons"])
         self.assertLess(classified["opportunity_score"], 72)
 
+    def test_instructional_book_bundle_is_not_a_collectible_alert(self):
+        item = {
+            "key": "ebay:3",
+            "title": "Bundle of 3 photography books",
+            "description": "Photography the smart way, photos that sell, and a Photofinish manual",
+            "price_gbp": 6.51,
+            "private_seller": True,
+            "search_lane": "collection",
+        }
+        classified = monitor.classify(item)
+        self.assertFalse(classified["recognized"])
+        self.assertLess(classified["opportunity_score"], 72)
+        self.assertIn(
+            "instructional, technical or local-history wording",
+            classified["opportunity_reasons"],
+        )
+
     def test_state_has_pending_live_queue(self):
         state = monitor.load_state(Path("/path/that/does/not/exist.json"))
         self.assertEqual(state["pending_live"], {})
