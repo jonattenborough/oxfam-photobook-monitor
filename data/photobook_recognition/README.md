@@ -4,13 +4,19 @@ This directory extends the live collectible-photobook canon without changing the
 
 ## Design goal
 
-The live snapshot currently contains roughly 4,250 unique recognition records, inside the operating target of 2,000 to 5,000. The aim is not to collect every photography title. A record belongs here when identifying it cheaply on eBay could plausibly matter to a collector.
+The live snapshot currently contains roughly 4,300 unique recognition records, inside the operating target of 2,000 to 5,000. The aim is not to collect every photography title. A record belongs here when identifying it cheaply on eBay could plausibly matter to a collector.
 
 The complete live library is assembled at runtime from:
 
 1. the existing Parr/Badger operational master;
 2. the existing Roth 101 overlay;
 3. supplemental CSV shards in this directory.
+
+`contemporary_documentary.csv` is the hand-curated collector layer. Its initial
+73 records are intentionally much smaller than the publisher snapshot and are
+restricted to recent books with strong award, institutional, publishing,
+documentary or physical-edition evidence. A publisher name alone is not enough
+for promotion into this layer.
 
 The largest supplemental shard is a checked-in snapshot of work-level records from the public-domain [Open Library catalogue](https://openlibrary.org/help/faq/using). It is limited to photography-subject records associated with selected specialist or historically important photography publishers. Every generated row links to its Open Library work record and is assigned a lower tier and slower search priority than the hand-curated canon.
 
@@ -35,6 +41,18 @@ Duplicate contributor and title pairs are merged, so a supplemental record can a
 - `Evidence confidence`: confidence in the record metadata.
 - `Source`: provenance for the metadata or prioritisation.
 - `Search tier`: normally `CORE`; uncertain records should remain `BROAD`.
+- `Collector profile`: the subject or tradition that makes the book relevant
+  to this collection, such as British social documentary or long-term family
+  documentary.
+- `Documentary relevance`: `HIGH`, `MEDIUM` or `LOW` fit for the documentary
+  emphasis of this collector profile.
+- `First monograph`: whether the record is a photographer's first monograph.
+- `Collectible variants`: known signed, numbered, boxed, print-included,
+  artist-proof or otherwise scarce physical issues worth recognising.
+- `Special edition priority`: how strongly the monitor should value a listing
+  that resembles one of those known variants.
+- `Awards and evidence`: concise evidence for respect and momentum, separate
+  from publisher marketing.
 
 ## Search priority
 
@@ -74,5 +92,17 @@ The live GitHub monitor never calls Open Library. It reads the stable checked-in
 `photobook_recognition.py` normalises punctuation and accents, reuses the contributor-aware fuzzy matching already proven by the Parr/Badger monitor, and adds title aliases and contributor aliases. A token index keeps matching fast at more than 4,000 records. Short and eponymous titles receive stricter conflict checks, preventing a photographer's biography from being mistaken for an identically named monograph.
 
 The opportunity score combines recognition confidence with collectibility tier, price, buying format, private-seller status, casual seller language, bibliographic detail and seller sophistication. Edition evidence is scored separately. A known reprint or conflicting publication year, publisher or ISBN cannot become an urgent first-edition alert, while missing metadata can still create a lower-confidence review candidate.
+
+Seller sophistication and object collectibility are also separate. Detailed
+dealer language can reduce the chance of mispricing, while a signed,
+numbered, print-included, monoprint, artist-proof, association or complete
+boxed copy independently raises the physical object's collector interest.
+Plain expensive copies of respected recent books remain below the alert
+threshold unless there is a price, special-edition or high-recall discovery
+signal.
+
+Lower-authority publisher-backlist data may not fill or overwrite the year,
+publisher, ISBN or edition notes of a canonical record. This prevents a
+current reissue from being mistaken for the original collectible edition.
 
 Recognition is only a discovery signal. Every purchase candidate must still be live-verified and then checked for exact edition, printing, completeness, condition, shipping and current market value before a buy recommendation.
