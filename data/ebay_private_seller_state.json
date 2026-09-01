@@ -1,382 +1,32 @@
 {
   "cursors": {
     "auctions": 10,
-    "classic_auctions": 5,
-    "classic_contributors": 5,
-    "classic_hot_records": 20,
-    "contemporary_auctions": 5,
-    "contemporary_contributors": 5,
-    "contemporary_hot_records": 20,
+    "classic_auctions": 6,
+    "classic_contributors": 6,
+    "classic_hot_records": 24,
+    "contemporary_auctions": 6,
+    "contemporary_contributors": 6,
+    "contemporary_hot_records": 24,
     "contributors": 10,
     "hot_records": 26,
-    "library_records": 88
+    "library_records": 92
   },
   "last_api_call_budget": 42,
   "last_browse_quota": {
-    "count": 1290,
+    "count": 1500,
     "limit": 5000,
-    "remaining": 3710,
+    "remaining": 3500,
     "reset": "2026-09-02T07:00:00.000Z",
     "resource": "buy.browse",
     "time_window": 86400
   },
   "last_failure_count": 0,
-  "last_live_checks": 12,
+  "last_live_checks": 4,
   "last_query_count": 30,
-  "last_run": "2026-09-01T19:45:15Z",
+  "last_run": "2026-09-01T21:03:26Z",
   "last_successful_queries": 30,
   "library_records": 4318,
-  "pending_live": {
-    "ebay:147542657002": {
-      "best_recognition": {
-        "awards_and_evidence": "",
-        "bargain_gbp": null,
-        "canon_sources": "Specialist photography publisher backlist: MACK",
-        "collectibility_tier": "B",
-        "collectible_format_bonus": 0,
-        "collectible_format_evidence": [],
-        "collectible_variants": "",
-        "collector_profile": "",
-        "contributor": "Michael Schmidt",
-        "documentary_relevance": "",
-        "edition_reasons": [
-          "exact collectible edition is not established by the listing metadata"
-        ],
-        "edition_status": "unknown",
-        "evidence_confidence": "Medium",
-        "first_edition_notes": "Work-level metadata only; verify the exact publisher edition and printing.",
-        "first_monograph": "",
-        "isbn": "",
-        "publisher": "MACK",
-        "reason": "exact title + contributor",
-        "record_id": "openlibrary:OL21283657W",
-        "score": 100,
-        "search_priority": "4",
-        "source": "https://openlibrary.org/works/OL21283657W",
-        "special_edition_priority": "",
-        "strong_buy_gbp": null,
-        "title": "Natur",
-        "year": "2014"
-      },
-      "buying_options": [
-        "FIXED_PRICE",
-        "AUCTION"
-      ],
-      "category_id": "261186",
-      "category_path": "",
-      "collecting_lane": "classic or established canon",
-      "condition": "Very Good",
-      "context": "Michael Schmidt NATUR Hardcover Photo Book in German Nature Photography Art | Very Good | 2026-09-01T18:44:05.000Z | 2026-09-08T18:44:05.000Z | FIXED_PRICE AUCTION",
-      "external_id": "147542657002",
-      "image_url": "https://i.ebayimg.com/images/g/PXUAAeSwwzRqVoKv/s-l225.jpg",
-      "item_creation_date": "2026-09-01T18:44:05.000Z",
-      "item_end_date": "2026-09-08T18:44:05.000Z",
-      "key": "ebay:147542657002",
-      "landed_price_gbp": 33.2,
-      "opportunity_kind": "collectible title or edition lead",
-      "opportunity_reasons": [
-        "recognition 100/100",
-        "collectibility tier B",
-        "low asking price",
-        "price scoring includes returned delivery cost",
-        "immediate fixed-price purchase possible",
-        "private individual seller",
-        "minimal bibliographic detail",
-        "low-volume seller account",
-        "edition evidence: unknown"
-      ],
-      "opportunity_score": 82,
-      "pending_since": "2026-09-01T19:45:15Z",
-      "price_currency": "GBP",
-      "price_gbp": 29.82,
-      "price_value": 29.82,
-      "private_seller": true,
-      "recognition_matches": [
-        {
-          "awards_and_evidence": "",
-          "bargain_gbp": null,
-          "canon_sources": "Specialist photography publisher backlist: MACK",
-          "collectibility_tier": "B",
-          "collectible_format_bonus": 0,
-          "collectible_format_evidence": [],
-          "collectible_variants": "",
-          "collector_profile": "",
-          "contributor": "Michael Schmidt",
-          "documentary_relevance": "",
-          "edition_reasons": [
-            "exact collectible edition is not established by the listing metadata"
-          ],
-          "edition_status": "unknown",
-          "evidence_confidence": "Medium",
-          "first_edition_notes": "Work-level metadata only; verify the exact publisher edition and printing.",
-          "first_monograph": "",
-          "isbn": "",
-          "publisher": "MACK",
-          "reason": "exact title + contributor",
-          "record_id": "openlibrary:OL21283657W",
-          "score": 100,
-          "search_priority": "4",
-          "source": "https://openlibrary.org/works/OL21283657W",
-          "special_edition_priority": "",
-          "strong_buy_gbp": null,
-          "title": "Natur",
-          "year": "2014"
-        }
-      ],
-      "recognized": true,
-      "rest_item_id": "v1|147542657002|0",
-      "search_in_description": true,
-      "search_lane": "broad",
-      "search_query": "photography book",
-      "seller_account_type": "INDIVIDUAL",
-      "seller_feedback_percentage": "0.0",
-      "seller_feedback_score": 67,
-      "shipping_currency": "GBP",
-      "shipping_value": 3.38,
-      "source_id": "ebay_private_broad",
-      "source_name": "eBay UK private sellers - broad",
-      "tags": "FIXED_PRICE AUCTION",
-      "title": "Michael Schmidt NATUR Hardcover Photo Book in German Nature Photography Art",
-      "url": "https://www.ebay.co.uk/itm/147542657002?_skw=photography+book&hash=item225a3a47ea:g:PXUAAeSwwzRqVoKv",
-      "vendor": "livingthedream24"
-    },
-    "ebay:147542760253": {
-      "best_recognition": {
-        "awards_and_evidence": "",
-        "bargain_gbp": null,
-        "canon_sources": "Specialist photography publisher backlist: MACK",
-        "collectibility_tier": "B",
-        "collectible_format_bonus": 6,
-        "collectible_format_evidence": [
-          "signed by the photographer"
-        ],
-        "collectible_variants": "",
-        "collector_profile": "",
-        "contributor": "Paul Graham",
-        "documentary_relevance": "",
-        "edition_reasons": [
-          "exact collectible edition is not established by the listing metadata"
-        ],
-        "edition_status": "unknown",
-        "evidence_confidence": "Medium",
-        "first_edition_notes": "Work-level metadata only; verify the exact publisher edition and printing.",
-        "first_monograph": "",
-        "isbn": "",
-        "publisher": "MACK",
-        "reason": "exact title + contributor",
-        "record_id": "openlibrary:OL20702955W",
-        "score": 100,
-        "search_priority": "4",
-        "source": "https://openlibrary.org/works/OL20702955W",
-        "special_edition_priority": "",
-        "strong_buy_gbp": null,
-        "title": "Does yellow run forever?",
-        "year": "2014"
-      },
-      "buying_options": [
-        "FIXED_PRICE",
-        "AUCTION"
-      ],
-      "category_id": "261186",
-      "category_path": "",
-      "collecting_lane": "classic or established canon",
-      "condition": "Very Good",
-      "context": "Rare First Edition signed by the master himself . In good condition with no marks on cover | Very Good | 2026-09-01T19:35:32.000Z | 2026-09-08T19:35:32.000Z | FIXED_PRICE AUCTION",
-      "external_id": "147542760253",
-      "image_url": "https://i.ebayimg.com/images/g/lA0AAeSwDTBqVo60/s-l225.jpg",
-      "item_creation_date": "2026-09-01T19:35:32.000Z",
-      "item_end_date": "2026-09-08T19:35:32.000Z",
-      "key": "ebay:147542760253",
-      "landed_price_gbp": 338.9,
-      "opportunity_kind": "special edition or collectible object",
-      "opportunity_reasons": [
-        "recognition 100/100",
-        "collectibility tier B",
-        "price scoring includes returned delivery cost",
-        "immediate fixed-price purchase possible",
-        "private individual seller",
-        "collectible object: signed by the photographer",
-        "minimal bibliographic detail",
-        "low-volume seller account",
-        "seller uses collector-aware language",
-        "edition evidence: unknown"
-      ],
-      "opportunity_score": 76,
-      "pending_since": "2026-09-01T19:45:15Z",
-      "price_currency": "GBP",
-      "price_gbp": 333.1,
-      "price_value": 333.1,
-      "private_seller": true,
-      "recognition_matches": [
-        {
-          "awards_and_evidence": "",
-          "bargain_gbp": null,
-          "canon_sources": "Specialist photography publisher backlist: MACK",
-          "collectibility_tier": "B",
-          "collectible_format_bonus": 6,
-          "collectible_format_evidence": [
-            "signed by the photographer"
-          ],
-          "collectible_variants": "",
-          "collector_profile": "",
-          "contributor": "Paul Graham",
-          "documentary_relevance": "",
-          "edition_reasons": [
-            "exact collectible edition is not established by the listing metadata"
-          ],
-          "edition_status": "unknown",
-          "evidence_confidence": "Medium",
-          "first_edition_notes": "Work-level metadata only; verify the exact publisher edition and printing.",
-          "first_monograph": "",
-          "isbn": "",
-          "publisher": "MACK",
-          "reason": "exact title + contributor",
-          "record_id": "openlibrary:OL20702955W",
-          "score": 100,
-          "search_priority": "4",
-          "source": "https://openlibrary.org/works/OL20702955W",
-          "special_edition_priority": "",
-          "strong_buy_gbp": null,
-          "title": "Does yellow run forever?",
-          "year": "2014"
-        }
-      ],
-      "recognized": true,
-      "rest_item_id": "v1|147542760253|0",
-      "search_in_description": true,
-      "search_lane": "broad+collectible_format+collectible_format",
-      "search_query": "photography book",
-      "seller_account_type": "INDIVIDUAL",
-      "seller_feedback_percentage": "0.0",
-      "seller_feedback_score": 67,
-      "shipping_currency": "GBP",
-      "shipping_value": 5.8,
-      "source_id": "ebay_private_broad",
-      "source_name": "eBay UK private sellers - broad",
-      "tags": "FIXED_PRICE AUCTION",
-      "title": "Paul Graham Does Yellow Run Forever? MACK Hardcover 1st Ed 2011 Signed Inscribed",
-      "url": "https://www.ebay.co.uk/itm/147542760253?_skw=photography+book&hash=item225a3bdb3d:g:lA0AAeSwDTBqVo60",
-      "vendor": "livingthedream24"
-    },
-    "ebay:178459488369": {
-      "best_recognition": {
-        "awards_and_evidence": "",
-        "bargain_gbp": null,
-        "canon_sources": "Specialist photography publisher backlist: MACK",
-        "collectibility_tier": "B",
-        "collectible_format_bonus": 6,
-        "collectible_format_evidence": [
-          "signed by the photographer"
-        ],
-        "collectible_variants": "",
-        "collector_profile": "",
-        "contributor": "Sam Contis",
-        "documentary_relevance": "",
-        "edition_reasons": [
-          "seller claims a first edition but target metadata is unconfirmed"
-        ],
-        "edition_status": "claimed",
-        "evidence_confidence": "Medium",
-        "first_edition_notes": "Work-level metadata only; verify the exact publisher edition and printing.",
-        "first_monograph": "",
-        "isbn": "",
-        "publisher": "MACK",
-        "reason": "exact title + contributor",
-        "record_id": "openlibrary:OL21322379W",
-        "score": 100,
-        "search_priority": "4",
-        "source": "https://openlibrary.org/works/OL21322379W",
-        "special_edition_priority": "",
-        "strong_buy_gbp": null,
-        "title": "Deep Springs",
-        "year": "2017"
-      },
-      "buying_options": [
-        "FIXED_PRICE",
-        "BEST_OFFER"
-      ],
-      "category_id": "261186",
-      "category_path": "",
-      "collecting_lane": "classic or established canon",
-      "condition": "Like New",
-      "context": "Excellent book, like new. | Like New | 2026-09-01T19:24:16.000Z | FIXED_PRICE BEST_OFFER",
-      "external_id": "178459488369",
-      "image_url": "https://i.ebayimg.com/images/g/F48AAeSwdy9qlyXM/s-l225.jpg",
-      "item_creation_date": "2026-09-01T19:24:16.000Z",
-      "item_end_date": "",
-      "key": "ebay:178459488369",
-      "landed_price_gbp": 218.7,
-      "opportunity_kind": "special edition or collectible object",
-      "opportunity_reasons": [
-        "recognition 100/100",
-        "collectibility tier B",
-        "price scoring includes returned delivery cost",
-        "immediate fixed-price purchase possible",
-        "Best Offer available",
-        "private individual seller",
-        "collectible object: signed by the photographer",
-        "minimal bibliographic detail",
-        "seller uses collector-aware language",
-        "edition evidence: claimed"
-      ],
-      "opportunity_score": 77,
-      "pending_since": "2026-09-01T19:45:15Z",
-      "price_currency": "GBP",
-      "price_gbp": 208.7,
-      "price_value": 208.7,
-      "private_seller": true,
-      "recognition_matches": [
-        {
-          "awards_and_evidence": "",
-          "bargain_gbp": null,
-          "canon_sources": "Specialist photography publisher backlist: MACK",
-          "collectibility_tier": "B",
-          "collectible_format_bonus": 6,
-          "collectible_format_evidence": [
-            "signed by the photographer"
-          ],
-          "collectible_variants": "",
-          "collector_profile": "",
-          "contributor": "Sam Contis",
-          "documentary_relevance": "",
-          "edition_reasons": [
-            "seller claims a first edition but target metadata is unconfirmed"
-          ],
-          "edition_status": "claimed",
-          "evidence_confidence": "Medium",
-          "first_edition_notes": "Work-level metadata only; verify the exact publisher edition and printing.",
-          "first_monograph": "",
-          "isbn": "",
-          "publisher": "MACK",
-          "reason": "exact title + contributor",
-          "record_id": "openlibrary:OL21322379W",
-          "score": 100,
-          "search_priority": "4",
-          "source": "https://openlibrary.org/works/OL21322379W",
-          "special_edition_priority": "",
-          "strong_buy_gbp": null,
-          "title": "Deep Springs",
-          "year": "2017"
-        }
-      ],
-      "recognized": true,
-      "rest_item_id": "v1|178459488369|0",
-      "search_in_description": true,
-      "search_lane": "broad+collectible_format",
-      "search_query": "photography book",
-      "seller_account_type": "INDIVIDUAL",
-      "seller_feedback_percentage": "100.0",
-      "seller_feedback_score": 323,
-      "shipping_currency": "GBP",
-      "shipping_value": 10.0,
-      "source_id": "ebay_private_broad",
-      "source_name": "eBay UK private sellers - broad",
-      "tags": "FIXED_PRICE BEST_OFFER",
-      "title": "Sam Contis Deep Springs Signed First Edition MACK Photography Book",
-      "url": "https://www.ebay.co.uk/itm/178459488369?_skw=photography+book&hash=item298d03b071:g:F48AAeSwdy9qlyXM",
-      "vendor": "abigailvhall"
-    }
-  },
+  "pending_live": {},
   "query_last_checked": {
     "auction_ending:AUCTION:alec soth niagara": "2026-09-01T12:57:22Z",
     "auction_ending:AUCTION:alec soth sleeping by the mississippi": "2026-09-01T12:57:22Z",
@@ -389,21 +39,23 @@
     "auction_ending:AUCTION:corinne day diary": "2026-09-01T15:15:42Z",
     "auction_ending:AUCTION:daido moriyama farewell photography": "2026-09-01T15:15:42Z",
     "broad:BEST_OFFER+FIXED_PRICE:art photography book": "2026-09-01T12:57:22Z",
-    "broad:BEST_OFFER+FIXED_PRICE:photo book": "2026-09-01T19:45:15Z",
-    "broad:BEST_OFFER+FIXED_PRICE:photographer book": "2026-09-01T19:45:15Z",
+    "broad:BEST_OFFER+FIXED_PRICE:photo book": "2026-09-01T21:03:26Z",
+    "broad:BEST_OFFER+FIXED_PRICE:photographer book": "2026-09-01T21:03:26Z",
     "broad:BEST_OFFER+FIXED_PRICE:photographs book": "2026-09-01T12:57:22Z",
-    "broad:BEST_OFFER+FIXED_PRICE:photography book": "2026-09-01T19:45:15Z",
-    "broad:BEST_OFFER+FIXED_PRICE:photography monograph": "2026-09-01T19:45:15Z",
+    "broad:BEST_OFFER+FIXED_PRICE:photography book": "2026-09-01T21:03:26Z",
+    "broad:BEST_OFFER+FIXED_PRICE:photography monograph": "2026-09-01T21:03:26Z",
     "classic_auction:AUCTION:alec soth niagara": "2026-09-01T17:16:36Z",
     "classic_auction:AUCTION:alec soth sleeping by the mississippi": "2026-09-01T17:20:07Z",
     "classic_auction:AUCTION:bernd and hilla becher anonyme skulpturen": "2026-09-01T17:24:57Z",
     "classic_auction:AUCTION:bruce weber bear pond": "2026-09-01T17:30:35Z",
     "classic_auction:AUCTION:bruce weber o rio de janeiro": "2026-09-01T19:45:15Z",
+    "classic_auction:AUCTION:chris killip in flagrante": "2026-09-01T21:03:26Z",
     "classic_contributor:BEST_OFFER+FIXED_PRICE:a j wilkinson": "2026-09-01T17:24:57Z",
     "classic_contributor:BEST_OFFER+FIXED_PRICE:a-chan": "2026-09-01T17:16:36Z",
     "classic_contributor:BEST_OFFER+FIXED_PRICE:a. d. coleman": "2026-09-01T17:20:07Z",
     "classic_contributor:BEST_OFFER+FIXED_PRICE:aapo huhta": "2026-09-01T17:30:35Z",
     "classic_contributor:BEST_OFFER+FIXED_PRICE:aaron rezny": "2026-09-01T19:45:15Z",
+    "classic_contributor:BEST_OFFER+FIXED_PRICE:aaron ruell": "2026-09-01T21:03:26Z",
     "classic_hot:BEST_OFFER+FIXED_PRICE:alec soth niagara": "2026-09-01T17:16:36Z",
     "classic_hot:BEST_OFFER+FIXED_PRICE:alec soth sleeping by the mississippi": "2026-09-01T17:16:36Z",
     "classic_hot:BEST_OFFER+FIXED_PRICE:bernd and hilla becher anonyme skulpturen": "2026-09-01T17:16:36Z",
@@ -424,26 +76,32 @@
     "classic_hot:BEST_OFFER+FIXED_PRICE:joel sternfeld american prospects": "2026-09-01T19:45:15Z",
     "classic_hot:BEST_OFFER+FIXED_PRICE:josef koudelka gypsies": "2026-09-01T19:45:15Z",
     "classic_hot:BEST_OFFER+FIXED_PRICE:juno calypso what to do with a million years": "2026-09-01T19:45:15Z",
-    "collectible_format:BEST_OFFER+FIXED_PRICE:limited edition photobook": "2026-09-01T19:45:15Z",
-    "collectible_format:BEST_OFFER+FIXED_PRICE:photography book with print": "2026-09-01T19:45:15Z",
-    "collectible_format:BEST_OFFER+FIXED_PRICE:signed numbered photobook": "2026-09-01T19:45:15Z",
-    "collectible_format:BEST_OFFER+FIXED_PRICE:signed photography book": "2026-09-01T19:45:15Z",
-    "collection:BEST_OFFER+FIXED_PRICE:old photography books": "2026-09-01T19:45:15Z",
+    "classic_hot:BEST_OFFER+FIXED_PRICE:larry clark tulsa": "2026-09-01T21:03:26Z",
+    "classic_hot:BEST_OFFER+FIXED_PRICE:larry sultan and mike mandel evidence": "2026-09-01T21:03:26Z",
+    "classic_hot:BEST_OFFER+FIXED_PRICE:lewis baltz the new industrial parks near irvine, california": "2026-09-01T21:03:26Z",
+    "classic_hot:BEST_OFFER+FIXED_PRICE:luigi ghirri kodachrome": "2026-09-01T21:03:26Z",
+    "collectible_format:BEST_OFFER+FIXED_PRICE:limited edition photobook": "2026-09-01T21:03:26Z",
+    "collectible_format:BEST_OFFER+FIXED_PRICE:photography book with print": "2026-09-01T21:03:26Z",
+    "collectible_format:BEST_OFFER+FIXED_PRICE:signed numbered photobook": "2026-09-01T21:03:26Z",
+    "collectible_format:BEST_OFFER+FIXED_PRICE:signed photography book": "2026-09-01T21:03:26Z",
+    "collection:BEST_OFFER+FIXED_PRICE:old photography books": "2026-09-01T21:03:26Z",
     "collection:BEST_OFFER+FIXED_PRICE:photo books job lot": "2026-09-01T12:57:22Z",
     "collection:BEST_OFFER+FIXED_PRICE:photographer books collection": "2026-09-01T12:57:22Z",
-    "collection:BEST_OFFER+FIXED_PRICE:photography book bundle": "2026-09-01T19:45:15Z",
-    "collection:BEST_OFFER+FIXED_PRICE:photography books collection": "2026-09-01T19:45:15Z",
-    "collection:BEST_OFFER+FIXED_PRICE:photography books job lot": "2026-09-01T19:45:15Z",
+    "collection:BEST_OFFER+FIXED_PRICE:photography book bundle": "2026-09-01T21:03:26Z",
+    "collection:BEST_OFFER+FIXED_PRICE:photography books collection": "2026-09-01T21:03:26Z",
+    "collection:BEST_OFFER+FIXED_PRICE:photography books job lot": "2026-09-01T21:03:26Z",
     "contemporary_auction:AUCTION:alejandro cartagena carpoolers": "2026-09-01T17:16:36Z",
     "contemporary_auction:AUCTION:andi galdi vinko sorry i gave birth i disappeared but now i'm back": "2026-09-01T17:20:07Z",
     "contemporary_auction:AUCTION:buck ellison living trust": "2026-09-01T17:24:57Z",
     "contemporary_auction:AUCTION:carla williams tender": "2026-09-01T17:30:35Z",
     "contemporary_auction:AUCTION:chloe dewe mathews thames log": "2026-09-01T19:45:15Z",
+    "contemporary_auction:AUCTION:chrystel lebas field studies: walking through landscapes and archives": "2026-09-01T21:03:26Z",
     "contemporary_contributor:BEST_OFFER+FIXED_PRICE:alejandro cartagena": "2026-09-01T17:16:36Z",
     "contemporary_contributor:BEST_OFFER+FIXED_PRICE:andi galdi vinko": "2026-09-01T17:20:07Z",
     "contemporary_contributor:BEST_OFFER+FIXED_PRICE:anne sophie merryman": "2026-09-01T17:24:57Z",
     "contemporary_contributor:BEST_OFFER+FIXED_PRICE:annett gröschner and arwed messmer": "2026-09-01T17:30:35Z",
     "contemporary_contributor:BEST_OFFER+FIXED_PRICE:buck ellison": "2026-09-01T19:45:15Z",
+    "contemporary_contributor:BEST_OFFER+FIXED_PRICE:carla williams": "2026-09-01T21:03:26Z",
     "contemporary_hot:BEST_OFFER+FIXED_PRICE:alejandro cartagena carpoolers": "2026-09-01T17:16:36Z",
     "contemporary_hot:BEST_OFFER+FIXED_PRICE:andi galdi vinko sorry i gave birth i disappeared but now i'm back": "2026-09-01T17:16:36Z",
     "contemporary_hot:BEST_OFFER+FIXED_PRICE:buck ellison living trust": "2026-09-01T17:16:36Z",
@@ -464,6 +122,10 @@
     "contemporary_hot:BEST_OFFER+FIXED_PRICE:eleonora agostini a study on waitressing": "2026-09-01T19:45:15Z",
     "contemporary_hot:BEST_OFFER+FIXED_PRICE:emmanuelle andrianjafy nothing's in vain": "2026-09-01T19:45:15Z",
     "contemporary_hot:BEST_OFFER+FIXED_PRICE:fazal sheikh the erasure trilogy": "2026-09-01T19:45:15Z",
+    "contemporary_hot:BEST_OFFER+FIXED_PRICE:gao shan the eighth day": "2026-09-01T21:03:26Z",
+    "contemporary_hot:BEST_OFFER+FIXED_PRICE:gloria oyarzabal woman go no'gree": "2026-09-01T21:03:26Z",
+    "contemporary_hot:BEST_OFFER+FIXED_PRICE:gregory halpern zzyzx": "2026-09-01T21:03:26Z",
+    "contemporary_hot:BEST_OFFER+FIXED_PRICE:hayahisa tomiyasu ttp": "2026-09-01T21:03:26Z",
     "contributor:BEST_OFFER+FIXED_PRICE:aaron rezny": "2026-09-01T15:09:30Z",
     "contributor:BEST_OFFER+FIXED_PRICE:aaron ruell": "2026-09-01T15:09:30Z",
     "contributor:BEST_OFFER+FIXED_PRICE:aaron schuman": "2026-09-01T15:15:42Z",
@@ -579,9 +241,13 @@
     "library_rotation:BEST_OFFER+FIXED_PRICE:moriyama, daido shashin yo sayonara": "2026-09-01T19:45:15Z",
     "library_rotation:BEST_OFFER+FIXED_PRICE:nobuyoshi araki sentimental journey": "2026-09-01T19:45:15Z",
     "library_rotation:BEST_OFFER+FIXED_PRICE:paul graham beyond caring": "2026-09-01T19:45:15Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:paul graham troubled land": "2026-09-01T21:03:26Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:paul salveson between the shell": "2026-09-01T21:03:26Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:paul strand camera work, number xlix, number l": "2026-09-01T21:03:26Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:peter hill beard the end of the game": "2026-09-01T21:03:26Z",
     "library_rotation:BEST_OFFER+FIXED_PRICE:éluard, paul facile": "2026-09-01T15:15:42Z",
-    "wrong_category:BEST_OFFER+FIXED_PRICE:photobook job lot": "2026-09-01T19:45:15Z",
-    "wrong_category:BEST_OFFER+FIXED_PRICE:photography book collection": "2026-09-01T19:45:15Z",
+    "wrong_category:BEST_OFFER+FIXED_PRICE:photobook job lot": "2026-09-01T21:03:26Z",
+    "wrong_category:BEST_OFFER+FIXED_PRICE:photography book collection": "2026-09-01T21:03:26Z",
     "wrong_category:BEST_OFFER+FIXED_PRICE:photography monograph": "2026-09-01T12:57:22Z"
   },
   "seen": {
@@ -991,6 +657,27 @@
       "title": "Levi's Vintage LVC Spring Summer '22 Fashion Look-book Rare Collectors Photobook",
       "url": "https://www.ebay.co.uk/itm/128056000153?_skw=photo+book&hash=item1dd0bb7e99:g:OEcAAeSw3ehqTNhY"
     },
+    "ebay:128056114278": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 18,
+      "title": "Viz Annual 2024: The Barbers Pole: A Heap of Clippings from Issues 302-311",
+      "url": "https://www.ebay.co.uk/itm/128056114278?_skw=photography+book&hash=item1dd0bd3c66:g:qOcAAeSwiLNqIFT6"
+    },
+    "ebay:128056190353": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 4,
+      "title": "David Hockney a Bigger Picture Art Book 2012 Royal Academy of Arts",
+      "url": "https://www.ebay.co.uk/itm/128056190353?_skw=photo+book&hash=item1dd0be6591:g:SIsAAeSwli9qLcJi"
+    },
+    "ebay:128056190661": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 18,
+      "title": "Vegetarian NOSH for Students: A Fun Student Cookbook - Photo with Every Recipe",
+      "url": "https://www.ebay.co.uk/itm/128056190661?_skw=photo+book&hash=item1dd0be66c5:g:ATUAAeSwF-ZqlzvG"
+    },
     "ebay:133792317103": {
       "first_seen": "2026-09-01T17:20:07Z",
       "last_seen": "2026-09-01T17:20:07Z",
@@ -1341,6 +1028,13 @@
       "title": "Gruffalo Granny: Gruffalo picture book adventure By Julia Donaldson 10 Sept 2026",
       "url": "https://www.ebay.co.uk/itm/147542274270?_skw=photo+book&hash=item225a3470de:g:tOkAAeSwu7Zqlurl"
     },
+    "ebay:147542657002": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 78,
+      "title": "Michael Schmidt NATUR Hardcover Photo Book in German Nature Photography Art",
+      "url": "https://www.ebay.co.uk/itm/147542657002?_skw=photography+book&hash=item225a3a47ea:g:PXUAAeSwwzRqVoKv"
+    },
     "ebay:147542666897": {
       "first_seen": "2026-09-01T19:45:15Z",
       "last_seen": "2026-09-01T19:45:15Z",
@@ -1396,6 +1090,48 @@
       "score": 30,
       "title": "4 Cross Stitch Book Bundle Animals, Picture It, Country & Project Hardbacks",
       "url": "https://www.ebay.co.uk/itm/147542752699?_skw=photo+book&hash=item225a3bbdbb:g:T~cAAOSwsExjOJRq"
+    },
+    "ebay:147542760253": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 66,
+      "title": "Paul Graham Does Yellow Run Forever? MACK Hardcover 1st Ed 2011 Signed Inscribed",
+      "url": "https://www.ebay.co.uk/itm/147542760253?_skw=photography+book&hash=item225a3bdb3d:g:lA0AAeSwDTBqVo60"
+    },
+    "ebay:147542784389": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 58,
+      "title": "Steidl Seydou Keïta Photographs Bamako Mali 1948-1963 Hardcover Slipcase",
+      "url": "https://www.ebay.co.uk/itm/147542784389?_skw=photography+book&hash=item225a3c3985:g:GA4AAeSwAY9qVpHz"
+    },
+    "ebay:147542800143": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 18,
+      "title": "Oliver Jeffers Lost and Found Hardcover Children's Picture Book Ages 4-8",
+      "url": "https://www.ebay.co.uk/itm/147542800143?_skw=photo+book&hash=item225a3c770f:g:hhYAAeSwS3Bqly5T"
+    },
+    "ebay:147542800761": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 4,
+      "title": "VIGO Spain 1950s Tourist Guide Map Photos Port History Spanish English French",
+      "url": "https://www.ebay.co.uk/itm/147542800761?_skw=photo+book&hash=item225a3c7979:g:fmUAAOSwRixiNOzM"
+    },
+    "ebay:147542802205": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 48,
+      "title": "Robert Adams Skogen Hardcover 2012 Yale University Press Nature Photography",
+      "url": "https://www.ebay.co.uk/itm/147542802205?_skw=photography+book&hash=item225a3c7f1d:g:qoQAAeSwZnFqVpS1"
+    },
+    "ebay:147542898227": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 18,
+      "title": "Vintage Used Typhoo Tea Photo Album",
+      "url": "https://www.ebay.co.uk/itm/147542898227?_skw=photo+book&hash=item225a3df633:g:B50AAOSwLoBn19og"
     },
     "ebay:156163858721": {
       "first_seen": "2026-09-01T15:09:30Z",
@@ -1543,6 +1279,20 @@
       "score": 40,
       "title": "The Sea Lions of Los Isolotes, Hardcover Book",
       "url": "https://www.ebay.co.uk/itm/158246670446?_skw=photography+book&hash=item24d83c906e:g:S~4AAeSwx4Bpizad"
+    },
+    "ebay:158247443868": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 26,
+      "title": "The Cat Lovers Photograph Photo Album Vintage",
+      "url": "https://www.ebay.co.uk/itm/158247443868?_skw=photo+book&hash=item24d8485d9c:g:hM8AAeSw0Q9qQYAo"
+    },
+    "ebay:158247509512": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 26,
+      "title": "Beautiful Lakes As Photographed by You",
+      "url": "https://www.ebay.co.uk/itm/158247509512?_skw=photographer+book&hash=item24d8495e08:g:CGQAAeSwUkpqhMUg"
     },
     "ebay:165863309459": {
       "first_seen": "2026-09-01T17:30:35Z",
@@ -1831,6 +1581,13 @@
       "title": "Martha's Vineyard Isle Of Dreams By Susan Branch First Edition 2016",
       "url": "https://www.ebay.co.uk/itm/168656216796?_skw=photographer+book&hash=item2744b1a2dc:g:ao8AAeSw77xp-kKw"
     },
+    "ebay:168656346510": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 4,
+      "title": "The Amazing Mary Millington ~ Millington & David Weldon, Futura Paperback - 1979",
+      "url": "https://www.ebay.co.uk/itm/168656346510?_skw=photography+book&hash=item2744b39d8e:g:eWMAAeSwrWpqlXXS"
+    },
     "ebay:177296076254": {
       "first_seen": "2026-09-01T15:15:42Z",
       "last_seen": "2026-09-01T15:15:42Z",
@@ -2027,6 +1784,20 @@
       "title": "York - A Picture History. Small History/Guide Book Written By Janette Ray.",
       "url": "https://www.ebay.co.uk/itm/178459487255?_skw=photo+book&hash=item298d03ac17:g:dbsAAeSwRUZqlx7d"
     },
+    "ebay:178459488369": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 77,
+      "title": "Sam Contis Deep Springs Signed First Edition MACK Photography Book",
+      "url": "https://www.ebay.co.uk/itm/178459488369?_skw=photography+book&hash=item298d03b071:g:F48AAeSwdy9qlyXM"
+    },
+    "ebay:178459668018": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 26,
+      "title": "Only in England : Photographs by Tony Ray-Jones National Media Museum 2014 Guide",
+      "url": "https://www.ebay.co.uk/itm/178459668018?_skw=photography+book&hash=item298d066e32:g:baMAAeSwzoppG1Xh"
+    },
     "ebay:186862500728": {
       "first_seen": "2026-09-01T16:52:33Z",
       "last_seen": "2026-09-01T16:52:33Z",
@@ -2194,6 +1965,13 @@
       "score": 18,
       "title": "Backyard Brighton: photos and memories of 1930s Brighton",
       "url": "https://www.ebay.co.uk/itm/188871940691?_skw=photo+book&hash=item2bf9a51a53:g:yzoAAeSwGgVqFH7L"
+    },
+    "ebay:188872430231": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 4,
+      "title": "Life with the Cowboys by Hugh B. Cave Hardcover Illustrated Picture Book",
+      "url": "https://www.ebay.co.uk/itm/188872430231?_skw=photo+book&hash=item2bf9ac9297:g:98MAAeSwvW9qiuks"
     },
     "ebay:198050574725": {
       "first_seen": "2026-09-01T15:09:30Z",
@@ -2384,6 +2162,20 @@
       "title": "Fazeley - Booklet containing 'Photographs of  Fazeley Past and Present'",
       "url": "https://www.ebay.co.uk/itm/198610742230?_skw=photo+book&hash=item2e3e1f6bd6:g:dywAAeSwjh5qlvUx"
     },
+    "ebay:198611232518": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 36,
+      "title": "Steven Berkoff East End Photography",
+      "url": "https://www.ebay.co.uk/itm/198611232518?_skw=photography+book&hash=item2e3e26e706:g:u2oAAeSwBD9qhLwv"
+    },
+    "ebay:198611249043": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 36,
+      "title": "Don Mccullin : The Impossible Peace: from War Photographs  Hardcover",
+      "url": "https://www.ebay.co.uk/itm/198611249043?_skw=photography+book&hash=item2e3e272793:g:xwoAAeSwWOBqhL4k"
+    },
     "ebay:205692931420": {
       "first_seen": "2026-09-01T15:15:42Z",
       "last_seen": "2026-09-01T15:15:42Z",
@@ -2537,6 +2329,34 @@
       "score": 18,
       "title": "The Tinder Box (Picture Books), Russell Punter, Used; Very Good Book",
       "url": "https://www.ebay.co.uk/itm/206529598021?_skw=photo+book&hash=item30161f9245:g:YaIAAeSwCONpt53x"
+    },
+    "ebay:206529689515": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 40,
+      "title": "Mastering Macro Photography by David Taylor (2017, Trade Paperback)",
+      "url": "https://www.ebay.co.uk/itm/206529689515?_skw=photography+book&hash=item301620f7ab:g:bacAAeSwsx9qly6P"
+    },
+    "ebay:206529693992": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 26,
+      "title": "The Focal Encyclopedia of Photography: Vol. II, Various, Focal-1965",
+      "url": "https://www.ebay.co.uk/itm/206529693992?_skw=photography+book&hash=item3016210928:g:Fp4AAeSwVJdocCn1"
+    },
+    "ebay:206529699332": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 45,
+      "title": "Bill Graham Presents U2 Zooropa '93 Hardcover Illustrated Photobook 1993",
+      "url": "https://www.ebay.co.uk/itm/206529699332?_skw=photo+book&hash=item3016211e04:g:0wIAAeSwe9ZqlzNR"
+    },
+    "ebay:206529702171": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 13,
+      "title": "Neal Slavin WHEN TWO OR MORE ARE GATHERED TOGETHER Vintage Wrestling Photograhy",
+      "url": "https://www.ebay.co.uk/itm/206529702171?_skw=photographer+book&hash=item301621291b:g:UDQAAeSwYtNqlzLA"
     },
     "ebay:226478974069": {
       "first_seen": "2026-09-01T15:09:30Z",
@@ -2825,6 +2645,20 @@
       "title": "Railway Photography & Video issue no 1 (June/July 1986) EMAP",
       "url": "https://www.ebay.co.uk/itm/227501268987?_skw=photography+book+collection&hash=item34f821dffb:g:7NAAAeSwdTVo8nuu"
     },
+    "ebay:227501408155": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 4,
+      "title": "Bundle of 4 Children's Picture Story Books - Animal Adventures Bedtime Stories",
+      "url": "https://www.ebay.co.uk/itm/227501408155?_skw=photo+book&hash=item34f823ff9b:g:PTEAAeSwpRhqNj15"
+    },
+    "ebay:227501410953": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 26,
+      "title": "Deutsche Borse Photography Prize 2008 - Rogers, Brett",
+      "url": "https://www.ebay.co.uk/itm/227501410953?_skw=photography+book&hash=item34f8240a89:g:IskAAeSwmvtqErGk"
+    },
     "ebay:236527898716": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
@@ -2964,6 +2798,34 @@
       "score": 4,
       "title": "Usborne Picture Books X  9",
       "url": "https://www.ebay.co.uk/itm/237043134633?_skw=photo+book&hash=item3730df30a9:g:LeUAAeSwMf5qlyMl"
+    },
+    "ebay:237043188480": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 4,
+      "title": "Insta Grammar Cats Book by Lannoo *new*. Cats Of Instagram Book",
+      "url": "https://www.ebay.co.uk/itm/237043188480?_skw=photography+book&hash=item3730e00300:g:TaUAAOSwKIhnVgnz"
+    },
+    "ebay:237043203791": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 18,
+      "title": "Meg and Mog by Helen Nicoll & Jan Pieńkowski | Classic Children’s Picture Book",
+      "url": "https://www.ebay.co.uk/itm/237043203791?_skw=photo+book&hash=item3730e03ecf:g:wxMAAeSwYUhqckcG"
+    },
+    "ebay:237043207015": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 26,
+      "title": "New Zealand: Aotearoa Book by Craig Potten. New Zealand Hardback Photography",
+      "url": "https://www.ebay.co.uk/itm/237043207015?_skw=photography+book&hash=item3730e04b67:g:Q2sAAOSwZ5pnhX7d"
+    },
+    "ebay:237043214030": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 4,
+      "title": "Eagle Picture Library comic no. 11 The assassins PB 1985",
+      "url": "https://www.ebay.co.uk/itm/237043214030?_skw=photo+book&hash=item3730e066ce:g:Q90AAeSweflqVpog"
     },
     "ebay:255569549785": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -3182,6 +3044,13 @@
       "title": "Burning With Desire Geoffrey Batchen Photography History MIT Press 1999 Book",
       "url": "https://www.ebay.co.uk/itm/257716823647?_skw=photography+book&hash=item3c011ea65f:g:JZwAAeSwX4xqlWxW"
     },
+    "ebay:257716883358": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 26,
+      "title": "'Cocktails' - A wide selection of Cocktail Ingredients and Photographs.",
+      "url": "https://www.ebay.co.uk/itm/257716883358?_skw=photo+book&hash=item3c011f8f9e:g:-ukAAOSwzVZnXuu-"
+    },
     "ebay:266391689277": {
       "first_seen": "2026-09-01T15:09:30Z",
       "last_seen": "2026-09-01T15:09:30Z",
@@ -3370,6 +3239,13 @@
       "score": 26,
       "title": "Twiggy: A Life in Photographs - National Portrait Gallery. Hardcover Book. 2009.",
       "url": "https://www.ebay.co.uk/itm/278333229628?_skw=photo+book&hash=item40cdf40a3c:g:~fcAAeSwbvBqTPqn"
+    },
+    "ebay:278333548077": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 26,
+      "title": "Jean Daniel Lorieux Coconuts Fashion Photography Brooke Shields Swimwear Models",
+      "url": "https://www.ebay.co.uk/itm/278333548077?_skw=photography+book&hash=item40cdf8e62d:g:nHQAAOSwqeBgHa4J"
     },
     "ebay:285998200865": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -3566,6 +3442,34 @@
       "score": 86,
       "title": "Robert Frank - The Americans - Hardcover Photography Book",
       "url": "https://www.ebay.co.uk/itm/287558704623?_skw=photography+book&hash=item42f3d59def:g:ImIAAeSwS3Bqlw~X"
+    },
+    "ebay:287558918540": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 36,
+      "title": "Collins Complete Photography Course by John Garrett Graeme Harris Hardback 2008",
+      "url": "https://www.ebay.co.uk/itm/287558918540?_skw=photography+book&hash=item42f3d8e18c:g:MScAAeSwVktqb2nK"
+    },
+    "ebay:287558920402": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 26,
+      "title": "Photocrafty: 75 Creative Camera Projects for Digital SLR by Sue Venables, 2012",
+      "url": "https://www.ebay.co.uk/itm/287558920402?_skw=photography+book&hash=item42f3d8e8d2:g:FX4AAeSwARRqb2wc"
+    },
+    "ebay:287558968560": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 18,
+      "title": "The Picture of Dorian Gray Oscar Wilde Hardcover English Classic Fiction Novel",
+      "url": "https://www.ebay.co.uk/itm/287558968560?_skw=photo+book&hash=item42f3d9a4f0:g:w4QAAeSwkhFqlzUw"
+    },
+    "ebay:287559003603": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 4,
+      "title": "Bf19 160+ A4 copies diagrams plans clippings DE HAVILLAND D H 9 & 10 NO PHOTOS",
+      "url": "https://www.ebay.co.uk/itm/287559003603?_skw=photo+book&hash=item42f3da2dd3:g:5m4AAeSwUkpqlzrA"
     },
     "ebay:296488934387": {
       "first_seen": "2026-09-01T17:16:36Z",
@@ -3798,6 +3702,20 @@
       "title": "Underwater Photography Book",
       "url": "https://www.ebay.co.uk/itm/307157364523?_skw=photography+book&hash=item4784016f2b:g:-BsAAeSwM2lqhJar"
     },
+    "ebay:307157552647": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 4,
+      "title": "The Babes in the Wood by Randolph Caldecott picture book hardback",
+      "url": "https://www.ebay.co.uk/itm/307157552647?_skw=photo+book&hash=item4784044e07:g:hxsAAOSwk4JlQl9d"
+    },
+    "ebay:307157590128": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 26,
+      "title": "pussy portaits 2 by frannie adams very erotic book",
+      "url": "https://www.ebay.co.uk/itm/307157590128?_skw=photography+book&hash=item478404e070:g:ChUAAeSw6AtpBfBX"
+    },
     "ebay:314498264545": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
@@ -3979,6 +3897,13 @@
       "score": 4,
       "title": "Presenting Australia Book - 1984 Hardback Edition - Mixture of Text & Photos",
       "url": "https://www.ebay.co.uk/itm/318811099421?_skw=photo+book&hash=item4a3a9f511d:g:TWAAAeSwe2RoF0cm"
+    },
+    "ebay:318811187412": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 26,
+      "title": "The Nude : Creative Photography Workshop - Paperback, by Bruce Pinkard - Good",
+      "url": "https://www.ebay.co.uk/itm/318811187412?_skw=photography+book&hash=item4a3aa0a8d4:g:jjYAAeSwO8tpBaRm"
     },
     "ebay:327293675838": {
       "first_seen": "2026-09-01T19:45:15Z",
@@ -4329,6 +4254,20 @@
       "score": 4,
       "title": "Aerofilms : A History of Britain from Above (2014, Hardcover)",
       "url": "https://www.ebay.co.uk/itm/336773332177?_skw=photography+book&hash=item4e69413cd1:g:FqMAAeSw~oJqXSJ~"
+    },
+    "ebay:336773408242": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 66,
+      "title": "Walker Evans and the Picture Postcard by Jeff Rosenheim. Hardback, 408 Pages",
+      "url": "https://www.ebay.co.uk/itm/336773408242?_skw=photo+book&hash=item4e694265f2:g:aN8AAeSw5D5pY5sx"
+    },
+    "ebay:336773427537": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 30,
+      "title": "Grand Interiors by Massimo Listri teNeues Hardcover 2015 Illustrated Photography",
+      "url": "https://www.ebay.co.uk/itm/336773427537?_skw=photography+book&hash=item4e6942b151:g:CTYAAeSwFHNqjgBh"
     },
     "ebay:356829224725": {
       "first_seen": "2026-09-01T15:09:30Z",
@@ -4722,6 +4661,13 @@
       "title": "Sheila Jeffries Timba Paperback English Picture Book Ages 4-8 Cats Fiction",
       "url": "https://www.ebay.co.uk/itm/377462925903?_skw=photo+book&hash=item57e28b2a4f:g:5xUAAeSwiOxqlw6y"
     },
+    "ebay:377463284465": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 18,
+      "title": "How to Babysit a Grandad by Jean Reagan Children's Picture Book good condition",
+      "url": "https://www.ebay.co.uk/itm/377463284465?_skw=photo+book&hash=item57e290a2f1:g:ovwAAeSwV4lpdRWS"
+    },
     "ebay:387763168493": {
       "first_seen": "2026-09-01T17:20:07Z",
       "last_seen": "2026-09-01T17:20:07Z",
@@ -4995,6 +4941,13 @@
       "title": "ADAM Geoffrey Holder 1986 Viking 1st Edition Photography Hardcover Dust Jacket",
       "url": "https://www.ebay.co.uk/itm/407185751653?_skw=photography+book&hash=item5ece297e65:g:c78AAeSw7dJqlyel"
     },
+    "ebay:407185811643": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 14,
+      "title": "The Past Picture 5 By Ron Sandford & L E Snellgrove 1982 1st Edition PB",
+      "url": "https://www.ebay.co.uk/itm/407185811643?_skw=photo+book&hash=item5ece2a68bb:g:gFUAAOSw0g1jWm1T"
+    },
     "ebay:800124185750": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
@@ -5169,6 +5122,13 @@
       "score": 26,
       "title": "Build Your Own Enlarger by  A C Stevenson, Fountain Press, 1952 home photography",
       "url": "https://www.ebay.co.uk/itm/800597502617?_skw=photography+book&hash=itemba67546a99:g:4QkAAeSw~4Zos1Iv"
+    },
+    "ebay:800598090369": {
+      "first_seen": "2026-09-01T21:03:26Z",
+      "last_seen": "2026-09-01T21:03:26Z",
+      "score": 18,
+      "title": "Richard Scarry Busiest People Ever Hardcover Picture Book Ages 4-8 1985",
+      "url": "https://www.ebay.co.uk/itm/800598090369?_skw=photo+book&hash=itemba675d6281:g:4bYAAeSwMf5qlzYH"
     },
     "ebay:820045683076": {
       "first_seen": "2026-09-01T12:57:22Z",
