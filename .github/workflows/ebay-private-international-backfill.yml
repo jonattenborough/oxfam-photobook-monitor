@@ -1,0 +1,137 @@
+name: eBay international private seller backfill
+
+on:
+  schedule:
+    - cron: "13 5 * * *"
+  push:
+    branches: [main]
+    paths:
+      - "ebay_api.py"
+      - "ebay_private_seller_monitor.py"
+      - "ebay_private_seller_backfill.py"
+      - "ebay_private_international_backfill.py"
+      - "photobook_recognition.py"
+      - "data/ebay_private_international_markets.json"
+      - "data/ebay_private_seller_review_history.json"
+      - ".github/workflows/ebay-private-international-backfill.yml"
+  workflow_dispatch:
+    inputs:
+      lookback_days:
+        description: Active listings created within this many days
+        required: true
+        default: "365"
+        type: string
+      max_calls:
+        description: Absolute Browse API call cap for this run
+        required: true
+        default: "60"
+        type: string
+      new_window:
+        description: Discard completed progress and create a fresh historical window
+        required: true
+        default: false
+        type: boolean
+  pull_request:
+    branches: [main]
+    paths:
+      - "ebay_api.py"
+      - "ebay_private_seller_monitor.py"
+      - "ebay_private_seller_backfill.py"
+      - "ebay_private_international_backfill.py"
+      - "photobook_recognition.py"
+      - "test_ebay_api.py"
+      - "test_ebay_private_seller_backfill.py"
+      - "test_ebay_private_international_backfill.py"
+      - "data/ebay_private_international_markets.json"
+      - "data/ebay_private_seller_review_history.json"
+      - "data/photobook_recognition/**"
+      - ".github/workflows/ebay-private-international-backfill.yml"
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: ebay-private-international-historical-backfill
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Synchronize latest main state
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git fetch origin main
+          git checkout --detach FETCH_HEAD
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+
+      - name: Validate international private-seller backfill
+        run: |
+          python -m unittest -v \
+            test_ebay_api.py \
+            test_ebay_private_api.py \
+            test_photobook_recognition.py \
+            test_ebay_private_seller_monitor.py \
+            test_ebay_private_seller_backfill.py \
+            test_ebay_private_international_backfill.py
+
+      - name: Run bounded international historical search
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        id: backfill
+        env:
+          EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
+          EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
+          LOOKBACK_DAYS: ${{ github.event_name == 'workflow_dispatch' && inputs.lookback_days || '365' }}
+          MAX_CALLS: ${{ github.event_name == 'workflow_dispatch' && inputs.max_calls || '60' }}
+          NEW_WINDOW: ${{ github.event_name == 'workflow_dispatch' && inputs.new_window || 'false' }}
+        run: |
+          args=(
+            --lookback-days "$LOOKBACK_DAYS"
+            --max-calls "$MAX_CALLS"
+          )
+          if [ "$NEW_WINDOW" = "true" ]; then
+            args+=(--new-window)
+          fi
+          python ebay_private_international_backfill.py "${args[@]}"
+
+      - name: Create isolated international review issue
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && steps.backfill.outputs.new_count != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create \
+            --title "$(cat runtime/ebay-private-international-backfill/issue-title.txt)" \
+            --body-file runtime/ebay-private-international-backfill/issue-body.md
+
+      - name: Persist international progress and findings
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && steps.backfill.outputs.state_changed == 'true'
+        run: |
+          set -euo pipefail
+          cp runtime/ebay-private-international-backfill/proposed-state.json data/ebay_private_international_backfill_state.json
+          cp runtime/ebay-private-international-backfill/proposed-findings.json data/ebay_private_international_backfill_findings.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data/ebay_private_international_backfill_state.json data/ebay_private_international_backfill_findings.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "Advance international private-seller backfill [skip ci]"
+          for attempt in 1 2 3 4; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then
+              break
+            fi
+            if [ "$attempt" = "4" ]; then
+              exit 1
+            fi
+          done
