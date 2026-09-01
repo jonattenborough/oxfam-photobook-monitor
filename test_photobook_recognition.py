@@ -28,6 +28,40 @@ class PhotobookRecognitionTests(unittest.TestCase):
         self.assertEqual(str(rows[0].get("Search priority")), "0")
         self.assertEqual(str(rows[0].get("Collectibility tier")), "S")
 
+    def test_canonical_edition_metadata_beats_publisher_reissue_metadata(self):
+        row = next(
+            row for row in recognition.load_library()
+            if pb.normalize(row.get("Contributor")) == pb.normalize("Paul Graham")
+            and pb.normalize(row.get("Title")) == pb.normalize("A1: The Great North Road")
+        )
+        self.assertEqual(row.get("Year"), "1983")
+        self.assertEqual(row.get("Publisher"), "Grey Editions")
+
+    def test_lower_authority_backlist_cannot_fill_canonical_edition_fields(self):
+        canonical = recognition._prepare(
+            {
+                "Record ID": "canon:test",
+                "Contributor": "Example Photographer",
+                "Title": "Example Book",
+                "Year": "",
+                "Publisher": "",
+                "Canon sources": "Parr/Badger Vol. III",
+            }
+        )
+        reissue = recognition._prepare(
+            {
+                "Record ID": "openlibrary:test",
+                "Contributor": "Example Photographer",
+                "Title": "Example Book",
+                "Year": "2025",
+                "Publisher": "Reissue Press",
+                "Canon sources": "Open Library publisher snapshot",
+            }
+        )
+        merged = recognition._merge_record(canonical, reissue)
+        self.assertEqual(merged.get("Year", ""), "")
+        self.assertEqual(merged.get("Publisher", ""), "")
+
     def test_name_order_variants_merge_into_one_record(self):
         rows = [
             row for row in recognition.load_library()
@@ -143,6 +177,82 @@ class PhotobookRecognitionTests(unittest.TestCase):
         score, _ = recognition.opportunity_score(item, match)
         self.assertEqual(match["edition_status"], "mismatch")
         self.assertLess(score, 72)
+
+    def test_signed_numbered_print_edition_gets_object_bonus(self):
+        item = {
+            "title": "Rahim Fortune I can't stand to see you cry special edition",
+            "description": "Signed and numbered copy with original 8x10 pigment print",
+            "publisher": "Loose Joints",
+            "publication_year": "2021",
+            "price_gbp": 220.0,
+            "private_seller": True,
+            "seller_account_type": "INDIVIDUAL",
+            "buying_options": ["FIXED_PRICE", "BEST_OFFER"],
+        }
+        match = recognition.match_listing(item)[0]
+        score, reasons = recognition.opportunity_score(item, match)
+        self.assertGreaterEqual(match["collectible_format_bonus"], 18)
+        self.assertIn("book or edition with an original print", match["collectible_format_evidence"])
+        self.assertTrue(any(reason.startswith("collectible object:") for reason in reasons))
+        self.assertGreaterEqual(score, 72)
+
+    def test_limitation_and_artist_proof_marks_are_recognized(self):
+        item = {
+            "title": "Chloe Dewe Mathews Thames Log special edition",
+            "description": "Signed copy no. 3/30 with pigment print A/P",
+        }
+        match = recognition.match_listing(item)[0]
+        bonus, reasons, labels = recognition.collectible_format_evidence(item, match)
+        self.assertGreaterEqual(bonus, 18)
+        self.assertIn("numbered copy", labels)
+        self.assertIn("unique work or artist proof", labels)
+        self.assertTrue(any(reason.startswith("collectible object:") for reason in reasons))
+
+    def test_british_documentary_print_edition_is_a_priority_object(self):
+        item = {
+            "title": "Craig Easton BANK TOP GOST special edition",
+            "description": "Signed and numbered 18/50 with original silver gelatin print",
+            "publisher": "GOST Books",
+            "publication_year": "2022",
+            "price_gbp": 140.0,
+            "private_seller": True,
+            "seller_account_type": "INDIVIDUAL",
+            "buying_options": ["FIXED_PRICE"],
+        }
+        match = recognition.match_listing(item)[0]
+        score, reasons = recognition.opportunity_score(item, match)
+        self.assertEqual(match["contributor"], "Craig Easton")
+        self.assertEqual(match["documentary_relevance"], "HIGH")
+        self.assertIn("silver gelatin print", match["collectible_variants"])
+        self.assertGreaterEqual(match["collectible_format_bonus"], 18)
+        self.assertTrue(any(reason.startswith("collectible object:") for reason in reasons))
+        self.assertGreaterEqual(score, 72)
+
+    def test_plain_expensive_recent_book_needs_market_signal(self):
+        item = {
+            "title": "Eleonora Agostini A Study on Waitressing photography book",
+            "publisher": "Witty Books",
+            "publication_year": "2025",
+            "price_gbp": 400.0,
+            "private_seller": True,
+            "seller_account_type": "INDIVIDUAL",
+            "buying_options": ["FIXED_PRICE"],
+        }
+        match = recognition.match_listing(item)[0]
+        score, reasons = recognition.opportunity_score(item, match)
+        self.assertLess(score, 72)
+        self.assertIn(
+            "respected recent title lacks a current bargain or special-edition signal",
+            reasons,
+        )
+
+    def test_first_monograph_metadata_is_exposed_by_matcher(self):
+        match = recognition.match_listing(
+            {"title": "Sabiha Cimen HAFIZ Red Hook Editions photobook"}
+        )[0]
+        self.assertEqual(match["first_monograph"], "YES")
+        self.assertEqual(match["documentary_relevance"], "HIGH")
+        self.assertIn("First PhotoBook winner 2022", match["awards_and_evidence"])
 
     def test_one_of_multiple_listing_isbns_can_confirm_target(self):
         status, reasons = recognition.assess_edition(
