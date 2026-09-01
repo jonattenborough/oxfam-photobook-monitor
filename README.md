@@ -10,7 +10,7 @@ The operational reference database lives in `data/parr_badger_master/` and curre
 
 A Parr / Badger match is a discovery signal only. Exact edition, printing, completeness, condition and market value still need verification before purchase.
 
-The private-seller discovery engine layers this canon with Roth 101, high-priority collector targets and a source-backed specialist-publisher snapshot. The combined recognition library currently contains about 4,250 unique books. Lower-confidence publisher-backlist records rotate more slowly and cannot overwrite or downgrade canonical tiers.
+The private-seller discovery engine layers this canon with Roth 101, high-priority collector targets, a curated contemporary-documentary layer and a source-backed specialist-publisher snapshot. The combined recognition library currently contains about 4,300 unique books. Lower-confidence publisher-backlist records rotate more slowly and cannot overwrite or downgrade canonical tiers or supply reissue metadata to an original-edition record.
 
 ## Near-real-time monitors
 
@@ -49,11 +49,15 @@ The same run searches eBay for 24 exact Parr / Badger contributor and title comb
 
 ### Private-seller mispricing discovery
 
-`ebay_private_seller_monitor.py` searches eBay UK individual accounts through the official `sellerAccountTypes:{INDIVIDUAL}` filter. It combines broad and job-lot searches, wrong-category searches, hot canonical targets, auctions ending soon and a rotating slice of the full recognition library. Search-in-description is used on high-recall lanes.
+`ebay_private_seller_monitor.py` searches eBay UK individual accounts through the official `sellerAccountTypes:{INDIVIDUAL}` filter. It combines broad and job-lot searches, collectible-format searches, wrong-category searches, hot canonical targets, auctions ending soon and a rotating slice of the full recognition library. Search-in-description is used on high-recall lanes. New queries inherit the monitor's previous-run timestamp, so adding a discovery lane does not turn old active stock into new alerts.
 
-Results are matched locally, scored for collectibility and possible seller under-description, then re-fetched through eBay's live item endpoint. Live detail supplies author, publisher, publication year, edition and ISBN aspects where available. A listing is never surfaced unless it is still purchasable, and a known later edition is prevented from becoming an urgent collectible alert.
+Results are matched locally, scored for collectibility and possible seller under-description, then re-fetched through eBay's live item endpoint. Object collectibility is assessed separately from seller sophistication: signed, numbered, artist-proof, association, monoprint, boxed and print-included editions can add collector interest without being misread as evidence of an ignorant seller. Live detail supplies author, publisher, publication year, edition and ISBN aspects where available. A listing is never surfaced unless it is still purchasable from an individual account, and a known later edition is prevented from becoming an urgent collectible alert.
+
+The hand-curated contemporary layer favours respected documentary practice, important first monographs, independently recognised recent books and verifiable scarce physical editions. A plain expensive copy of a recent award winner is not enough on its own: it needs a genuine price, edition or high-recall discovery signal before it can cross the alert threshold.
 
 The workflow is capped at 42 Browse calls per hour, including up to six live checks. Before searching, it reads eBay's application quota through the Developer Analytics API and protects a 450-call reserve.
+
+`ebay_private_seller_backfill.py` provides a separate manual historical search for active private-seller stock created before the live monitor's boundary. Its default 30-day plan searches collectible wording, collections, the curated contemporary layer and date-sliced broad queries. It is resumable, excludes listings already known to the live monitor, re-checks seller type and availability, and stores findings separately under `EBAY_PRIVATE_BACKFILL:`. A run is capped at 60 Browse calls and protects a larger 1,000-call reserve; if quota lookup fails, the cap falls to 20 calls.
 
 ### Selected eBay charity sellers
 
@@ -120,6 +124,7 @@ The comprehensive market monitor deliberately uses `EXTERNAL_NEW:` so the existi
 - **Selected eBay charity sellers:** minutes 9 and 39 of every hour.
 - **Current-inventory eBay seller back-search:** daily at 02:47 UTC until complete.
 - **eBay private-seller photobook discovery:** minute 17 of every hour.
+- **eBay private-seller historical backfill:** manual, bounded and resumable only.
 - **Photobook Wider Web Search:** hourly condition watch.
 - **Charity Photobook New Listings:** hourly condition watch for the GitHub issue-review and value-verification stage.
 
