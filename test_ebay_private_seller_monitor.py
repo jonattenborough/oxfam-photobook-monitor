@@ -25,12 +25,18 @@ class PrivateSellerMonitorTests(unittest.TestCase):
             state,
             datetime(2026, 9, 1, 12, 0, tzinfo=timezone.utc),
         )
-        self.assertLessEqual(len(plan), 36)
+        self.assertEqual(len(plan), 30)
         lanes = {step["lane"] for step in plan}
         self.assertTrue(
-            {"broad", "collectible_format", "collection", "wrong_category", "hot_canon",
-             "library_rotation", "contributor", "auction_ending"}.issubset(lanes)
+            {"broad", "collectible_format", "collection", "wrong_category",
+             "contemporary_hot", "classic_hot", "library_rotation",
+             "contemporary_contributor", "classic_contributor",
+             "contemporary_auction", "classic_auction"}.issubset(lanes)
         )
+        self.assertEqual(sum(step["lane"] == "contemporary_hot" for step in plan), 4)
+        self.assertEqual(sum(step["lane"] == "classic_hot" for step in plan), 4)
+        self.assertEqual(config["query_result_limit"], 200)
+        self.assertEqual(config["max_live_checks_per_run"], 12)
 
     def test_query_forces_individual_seller_filter(self):
         client = FakeClient()
@@ -121,6 +127,20 @@ class PrivateSellerMonitorTests(unittest.TestCase):
         self.assertFalse(classified["recognized"])
         self.assertGreaterEqual(classified["opportunity_score"], 50)
 
+    def test_collection_word_in_single_book_title_gets_no_job_lot_bonus(self):
+        item = {
+            "key": "ebay:2",
+            "title": "The Gourmand's Egg: A Collection of Stories and Recipes",
+            "context": "single hardback photography book",
+            "price_gbp": 20.0,
+            "private_seller": True,
+            "search_lane": "collection",
+        }
+        classified = monitor.classify(item)
+        self.assertFalse(classified["recognized"])
+        self.assertNotIn("collection or job-lot wording", classified["opportunity_reasons"])
+        self.assertLess(classified["opportunity_score"], 72)
+
     def test_state_has_pending_live_queue(self):
         state = monitor.load_state(Path("/path/that/does/not/exist.json"))
         self.assertEqual(state["pending_live"], {})
@@ -136,15 +156,19 @@ class PrivateSellerMonitorTests(unittest.TestCase):
         self.assertEqual(quota["remaining"], 470)
         self.assertIsNone(warning)
 
-    def test_trim_search_plan_keeps_broad_and_hot_lanes_first(self):
+    def test_trim_search_plan_keeps_broad_and_balanced_hot_lanes_first(self):
         plan = [
             {"lane": "library_rotation", "query": "cold"},
-            {"lane": "hot_canon", "query": "hot"},
+            {"lane": "contemporary_hot", "query": "recent"},
+            {"lane": "classic_hot", "query": "classic"},
             {"lane": "broad", "query": "broad"},
             {"lane": "collection", "query": "collection"},
         ]
-        selected = monitor.trim_search_plan(plan, 2)
-        self.assertEqual({step["lane"] for step in selected}, {"broad", "hot_canon"})
+        selected = monitor.trim_search_plan(plan, 3)
+        self.assertEqual(
+            {step["lane"] for step in selected},
+            {"broad", "contemporary_hot", "classic_hot"},
+        )
 
     def test_live_detail_extracts_bibliographic_aspects(self):
         merged = monitor._merge_live_detail(
