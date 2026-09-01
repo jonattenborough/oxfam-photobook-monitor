@@ -1,22 +1,22 @@
 {
   "cursors": {
-    "auctions": 6,
-    "contributors": 6,
-    "hot_records": 14,
-    "library_records": 40
+    "auctions": 8,
+    "contributors": 8,
+    "hot_records": 20,
+    "library_records": 56
   },
   "last_api_call_budget": 42,
   "last_browse_quota": {
-    "count": 370,
+    "count": 550,
     "limit": 5000,
-    "remaining": 4630,
+    "remaining": 4450,
     "reset": "2026-09-02T07:00:00.000Z",
     "resource": "buy.browse",
     "time_window": 86400
   },
   "last_failure_count": 0,
   "last_query_count": 36,
-  "last_run": "2026-09-01T15:09:30Z",
+  "last_run": "2026-09-01T15:15:42Z",
   "last_successful_queries": 36,
   "library_records": 4257,
   "pending_live": {
@@ -320,6 +320,95 @@
       "title": "JOB LOT OF PHOTOGRAPHIC MEMORIES BOOK OF LAKE DISTRICT, LONDON,  DEVON ETC",
       "url": "https://www.ebay.co.uk/itm/117388663350?_skw=photo+books+job+lot&hash=item1b54e8da36:g:XE8AAeSwU~lqld~W",
       "vendor": "chrishc123"
+    },
+    "ebay:128003370015": {
+      "best_recognition": {
+        "bargain_gbp": null,
+        "canon_sources": "Parr/Badger V1 | Priority seed",
+        "collectibility_tier": "S",
+        "contributor": "Eikoh Hosoe",
+        "edition_reasons": [
+          "exact collectible edition is not established by the listing metadata"
+        ],
+        "edition_status": "unknown",
+        "evidence_confidence": "High",
+        "first_edition_notes": "",
+        "isbn": "",
+        "publisher": "",
+        "reason": "exact title + contributor",
+        "record_id": "eikoh-hosoe-kamaitachi",
+        "score": 100,
+        "search_priority": "1",
+        "source": "Priority seed",
+        "strong_buy_gbp": null,
+        "title": "Kamaitachi",
+        "year": ""
+      },
+      "buying_options": [
+        "FIXED_PRICE"
+      ],
+      "category_id": "261186",
+      "category_path": "",
+      "condition": "Very Good",
+      "context": "Language: Japanese. | Very Good | 2026-07-31T09:24:36.000Z | FIXED_PRICE",
+      "external_id": "128003370015",
+      "image_url": "https://i.ebayimg.com/images/g/ibcAAeSw16pp~vIu/s-l225.jpg",
+      "item_creation_date": "2026-07-31T09:24:36.000Z",
+      "item_end_date": "",
+      "key": "ebay:128003370015",
+      "opportunity_reasons": [
+        "recognition 100/100",
+        "collectibility tier S",
+        "low asking price",
+        "immediate fixed-price purchase possible",
+        "private individual seller",
+        "minimal bibliographic detail",
+        "edition evidence: unknown"
+      ],
+      "opportunity_score": 86,
+      "pending_since": "2026-09-01T15:15:42Z",
+      "price_currency": "GBP",
+      "price_gbp": 40.05,
+      "price_value": 40.05,
+      "private_seller": true,
+      "recognition_matches": [
+        {
+          "bargain_gbp": null,
+          "canon_sources": "Parr/Badger V1 | Priority seed",
+          "collectibility_tier": "S",
+          "contributor": "Eikoh Hosoe",
+          "edition_reasons": [
+            "exact collectible edition is not established by the listing metadata"
+          ],
+          "edition_status": "unknown",
+          "evidence_confidence": "High",
+          "first_edition_notes": "",
+          "isbn": "",
+          "publisher": "",
+          "reason": "exact title + contributor",
+          "record_id": "eikoh-hosoe-kamaitachi",
+          "score": 100,
+          "search_priority": "1",
+          "source": "Priority seed",
+          "strong_buy_gbp": null,
+          "title": "Kamaitachi",
+          "year": ""
+        }
+      ],
+      "recognized": true,
+      "rest_item_id": "v1|128003370015|0",
+      "search_in_description": false,
+      "search_lane": "library_rotation",
+      "search_query": "Eikoh Hosoe Kamaitachi",
+      "seller_account_type": "INDIVIDUAL",
+      "seller_feedback_percentage": "100.0",
+      "seller_feedback_score": 6082,
+      "source_id": "ebay_private_library_rotation",
+      "source_name": "eBay UK private sellers - library_rotation",
+      "tags": "FIXED_PRICE",
+      "title": "Kamaitachi Tatsumi Hijikata by Eikoh Hosoe Japanese Photography Book",
+      "url": "https://www.ebay.co.uk/itm/128003370015?_skw=Eikoh+Hosoe+Kamaitachi&hash=item1dcd986c1f:g:ibcAAeSw16pp~vIu",
+      "vendor": "hopejapan"
     },
     "ebay:128007056570": {
       "buying_options": [
@@ -712,6 +801,97 @@
       "url": "https://www.ebay.co.uk/itm/137410683400?_skw=photography+monograph&hash=item1ffe50a208:g:RqIAAeSwrgxqLVbD",
       "vendor": "volcaremos"
     },
+    "ebay:137411124856": {
+      "best_recognition": {
+        "bargain_gbp": null,
+        "canon_sources": "Emerging watch",
+        "collectibility_tier": "A",
+        "contributor": "Jack Davison",
+        "edition_reasons": [
+          "seller claims a first edition but target metadata is unconfirmed"
+        ],
+        "edition_status": "claimed",
+        "evidence_confidence": "High",
+        "first_edition_notes": "",
+        "isbn": "",
+        "publisher": "",
+        "reason": "exact title + contributor",
+        "record_id": "jack-davison-photographs",
+        "score": 100,
+        "search_priority": "0",
+        "source": "Emerging watch",
+        "strong_buy_gbp": null,
+        "title": "Photographs",
+        "year": ""
+      },
+      "buying_options": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "category_id": "261186",
+      "category_path": "",
+      "condition": "Sehr gut",
+      "context": "In very good condition. First edition. | Sehr gut | 2026-06-13T15:34:27.000Z | FIXED_PRICE BEST_OFFER",
+      "external_id": "137411124856",
+      "image_url": "https://i.ebayimg.com/images/g/c8wAAeSwAdhqLXgK/s-l225.jpg",
+      "item_creation_date": "2026-06-13T15:34:27.000Z",
+      "item_end_date": "",
+      "key": "ebay:137411124856",
+      "opportunity_reasons": [
+        "recognition 100/100",
+        "collectibility tier A",
+        "immediate fixed-price purchase possible",
+        "Best Offer available",
+        "private individual seller",
+        "minimal bibliographic detail",
+        "seller uses collector-aware language",
+        "edition evidence: claimed"
+      ],
+      "opportunity_score": 77,
+      "pending_since": "2026-09-01T15:15:42Z",
+      "price_currency": "GBP",
+      "price_gbp": 214.37,
+      "price_value": 214.37,
+      "private_seller": true,
+      "recognition_matches": [
+        {
+          "bargain_gbp": null,
+          "canon_sources": "Emerging watch",
+          "collectibility_tier": "A",
+          "contributor": "Jack Davison",
+          "edition_reasons": [
+            "seller claims a first edition but target metadata is unconfirmed"
+          ],
+          "edition_status": "claimed",
+          "evidence_confidence": "High",
+          "first_edition_notes": "",
+          "isbn": "",
+          "publisher": "",
+          "reason": "exact title + contributor",
+          "record_id": "jack-davison-photographs",
+          "score": 100,
+          "search_priority": "0",
+          "source": "Emerging watch",
+          "strong_buy_gbp": null,
+          "title": "Photographs",
+          "year": ""
+        }
+      ],
+      "recognized": true,
+      "rest_item_id": "v1|137411124856|0",
+      "search_in_description": true,
+      "search_lane": "hot_canon",
+      "search_query": "Jack Davison Photographs",
+      "seller_account_type": "INDIVIDUAL",
+      "seller_feedback_percentage": "100.0",
+      "seller_feedback_score": 172,
+      "source_id": "ebay_private_hot_canon",
+      "source_name": "eBay UK private sellers - hot_canon",
+      "tags": "FIXED_PRICE BEST_OFFER",
+      "title": "PHOTOGRAPHS by Jack Davison 1st edition",
+      "url": "https://www.ebay.co.uk/itm/137411124856?_skw=Jack+Davison+Photographs&hash=item1ffe575e78:g:c8wAAeSwAdhqLXgK",
+      "vendor": "ludi9090"
+    },
     "ebay:137543500193": {
       "buying_options": [
         "FIXED_PRICE"
@@ -883,6 +1063,96 @@
       "url": "https://www.ebay.co.uk/itm/144964385290?_skw=photography+books+job+lot&hash=item21c08cfa0a:g:-94AAOSwIPNj-jDU",
       "vendor": "faith2540"
     },
+    "ebay:147386132856": {
+      "best_recognition": {
+        "bargain_gbp": null,
+        "canon_sources": "Parr/Badger V2 + Roth 101 | Specialist photography publisher backlist: Steidl | Priority seed",
+        "collectibility_tier": "S",
+        "contributor": "Joel Sternfeld",
+        "edition_reasons": [
+          "exact collectible edition is not established by the listing metadata"
+        ],
+        "edition_status": "unknown",
+        "evidence_confidence": "High",
+        "first_edition_notes": "Work-level metadata only; verify the exact publisher edition and printing.",
+        "isbn": "",
+        "publisher": "Times Books, New York, in association with the Museum of Fine Arts, Houston, Texas, 1987",
+        "reason": "exact title + contributor",
+        "record_id": "joel-sternfeld-american-prospects",
+        "score": 100,
+        "search_priority": "0",
+        "source": "Priority seed",
+        "strong_buy_gbp": null,
+        "title": "American Prospects",
+        "year": "1987"
+      },
+      "buying_options": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "category_id": "261186",
+      "category_path": "",
+      "condition": "Very Good",
+      "context": "Very Good | 2026-06-19T19:30:15.000Z | FIXED_PRICE BEST_OFFER",
+      "external_id": "147386132856",
+      "image_url": "https://i.ebayimg.com/images/g/UZ0AAeSwOUVqNZgG/s-l225.jpg",
+      "item_creation_date": "2026-06-19T19:30:15.000Z",
+      "item_end_date": "",
+      "key": "ebay:147386132856",
+      "opportunity_reasons": [
+        "recognition 100/100",
+        "collectibility tier S",
+        "immediate fixed-price purchase possible",
+        "Best Offer available",
+        "private individual seller",
+        "minimal bibliographic detail",
+        "edition evidence: unknown"
+      ],
+      "opportunity_score": 86,
+      "pending_since": "2026-09-01T15:15:42Z",
+      "price_currency": "GBP",
+      "price_gbp": 135.9,
+      "price_value": 135.9,
+      "private_seller": true,
+      "recognition_matches": [
+        {
+          "bargain_gbp": null,
+          "canon_sources": "Parr/Badger V2 + Roth 101 | Specialist photography publisher backlist: Steidl | Priority seed",
+          "collectibility_tier": "S",
+          "contributor": "Joel Sternfeld",
+          "edition_reasons": [
+            "exact collectible edition is not established by the listing metadata"
+          ],
+          "edition_status": "unknown",
+          "evidence_confidence": "High",
+          "first_edition_notes": "Work-level metadata only; verify the exact publisher edition and printing.",
+          "isbn": "",
+          "publisher": "Times Books, New York, in association with the Museum of Fine Arts, Houston, Texas, 1987",
+          "reason": "exact title + contributor",
+          "record_id": "joel-sternfeld-american-prospects",
+          "score": 100,
+          "search_priority": "0",
+          "source": "Priority seed",
+          "strong_buy_gbp": null,
+          "title": "American Prospects",
+          "year": "1987"
+        }
+      ],
+      "recognized": true,
+      "rest_item_id": "v1|147386132856|0",
+      "search_in_description": true,
+      "search_lane": "hot_canon",
+      "search_query": "Joel Sternfeld American Prospects",
+      "seller_account_type": "INDIVIDUAL",
+      "seller_feedback_percentage": "100.0",
+      "seller_feedback_score": 202,
+      "source_id": "ebay_private_hot_canon",
+      "source_name": "eBay UK private sellers - hot_canon",
+      "tags": "FIXED_PRICE BEST_OFFER",
+      "title": "Art book Joel Sternfeld : American Prospects by Kerry Brougher (2004, Hardcover)",
+      "url": "https://www.ebay.co.uk/itm/147386132856?_skw=Joel+Sternfeld+American+Prospects&hash=item2250e5e978:g:UZ0AAeSwOUVqNZgG",
+      "vendor": "keha.uk.uprjmmxjts"
+    },
     "ebay:147425530875": {
       "best_recognition": {
         "bargain_gbp": null,
@@ -1013,97 +1283,6 @@
       "url": "https://www.ebay.co.uk/itm/147535925136?_skw=photographer+books+collection&hash=item2259d38f90:g:pncAAeSw5rdqkvZc",
       "vendor": "lukeys"
     },
-    "ebay:157999935326": {
-      "best_recognition": {
-        "bargain_gbp": null,
-        "canon_sources": "Parr/Badger V2 + Roth 101 | Priority seed",
-        "collectibility_tier": "S",
-        "contributor": "Danny Lyon",
-        "edition_reasons": [
-          "exact collectible edition is not established by the listing metadata"
-        ],
-        "edition_status": "unknown",
-        "evidence_confidence": "High",
-        "first_edition_notes": "",
-        "isbn": "",
-        "publisher": "Holt, Rinehart and Winston, New York, 1971",
-        "reason": "exact title + contributor",
-        "record_id": "danny-lyon-conversations",
-        "score": 100,
-        "search_priority": "1",
-        "source": "Priority seed",
-        "strong_buy_gbp": null,
-        "title": "Conversations with the Dead",
-        "year": "1971"
-      },
-      "buying_options": [
-        "FIXED_PRICE",
-        "BEST_OFFER"
-      ],
-      "category_id": "261186",
-      "category_path": "",
-      "condition": "Like New",
-      "context": "Like new. Second edition (first was 1971, this is from 2015) | Like New | 2026-06-14T18:38:26.000Z | FIXED_PRICE BEST_OFFER",
-      "external_id": "157999935326",
-      "image_url": "https://i.ebayimg.com/images/g/UUMAAeSwOnVqJZ9W/s-l225.jpg",
-      "item_creation_date": "2026-06-14T18:38:26.000Z",
-      "item_end_date": "",
-      "key": "ebay:157999935326",
-      "opportunity_reasons": [
-        "recognition 100/100",
-        "collectibility tier S",
-        "low asking price",
-        "immediate fixed-price purchase possible",
-        "Best Offer available",
-        "private individual seller",
-        "minimal bibliographic detail",
-        "edition evidence: unknown"
-      ],
-      "opportunity_score": 86,
-      "pending_since": "2026-09-01T15:09:30Z",
-      "price_currency": "GBP",
-      "price_gbp": 31.89,
-      "price_value": 31.89,
-      "private_seller": true,
-      "recognition_matches": [
-        {
-          "bargain_gbp": null,
-          "canon_sources": "Parr/Badger V2 + Roth 101 | Priority seed",
-          "collectibility_tier": "S",
-          "contributor": "Danny Lyon",
-          "edition_reasons": [
-            "exact collectible edition is not established by the listing metadata"
-          ],
-          "edition_status": "unknown",
-          "evidence_confidence": "High",
-          "first_edition_notes": "",
-          "isbn": "",
-          "publisher": "Holt, Rinehart and Winston, New York, 1971",
-          "reason": "exact title + contributor",
-          "record_id": "danny-lyon-conversations",
-          "score": 100,
-          "search_priority": "1",
-          "source": "Priority seed",
-          "strong_buy_gbp": null,
-          "title": "Conversations with the Dead",
-          "year": "1971"
-        }
-      ],
-      "recognized": true,
-      "rest_item_id": "v1|157999935326|0",
-      "search_in_description": false,
-      "search_lane": "library_rotation",
-      "search_query": "Danny Lyon Conversations with the Dead",
-      "seller_account_type": "INDIVIDUAL",
-      "seller_feedback_percentage": "100.0",
-      "seller_feedback_score": 1365,
-      "source_id": "ebay_private_library_rotation",
-      "source_name": "eBay UK private sellers - library_rotation",
-      "tags": "FIXED_PRICE BEST_OFFER",
-      "title": "Conversations With The Dead - Danny Lyon - Phaidon Hardback",
-      "url": "https://www.ebay.co.uk/itm/157999935326?_skw=Danny+Lyon+Conversations+with+the+Dead&hash=item24c987af5e:g:UUMAAeSwOnVqJZ9W",
-      "vendor": "oh-alice!"
-    },
     "ebay:158042413816": {
       "buying_options": [
         "FIXED_PRICE",
@@ -1146,99 +1325,6 @@
       "title": "Sotheby's Belgravia Bundle x 2 - 1974 and 1975 Early Photographic images",
       "url": "https://www.ebay.co.uk/itm/158042413816?_skw=photography+book+bundle&hash=item24cc0fdaf8:g:PXYAAeSwKyFpLWMG",
       "vendor": "artypottery"
-    },
-    "ebay:158199332549": {
-      "best_recognition": {
-        "bargain_gbp": null,
-        "canon_sources": "Parr/Badger V1 + Roth 101 | Priority seed",
-        "collectibility_tier": "S",
-        "contributor": "Danny Lyon",
-        "edition_reasons": [
-          "exact collectible edition is not established by the listing metadata"
-        ],
-        "edition_status": "unknown",
-        "evidence_confidence": "High",
-        "first_edition_notes": "",
-        "isbn": "",
-        "publisher": "",
-        "reason": "exact title + contributor",
-        "record_id": "danny-lyon-bikeriders",
-        "score": 100,
-        "search_priority": "0",
-        "source": "Priority seed",
-        "strong_buy_gbp": null,
-        "title": "The Bikeriders",
-        "year": ""
-      },
-      "buying_options": [
-        "FIXED_PRICE",
-        "BEST_OFFER"
-      ],
-      "category_id": "261186",
-      "category_path": "",
-      "condition": "Like New",
-      "context": "Danny Lyon The Bikeriders Hardcover 2014 Aperture Photography Dust Jacket | Like New | 2026-08-17T18:17:27.000Z | FIXED_PRICE BEST_OFFER",
-      "external_id": "158199332549",
-      "image_url": "https://i.ebayimg.com/images/g/OgwAAeSwbLhqg1AH/s-l225.jpg",
-      "item_creation_date": "2026-08-17T18:17:27.000Z",
-      "item_end_date": "",
-      "key": "ebay:158199332549",
-      "opportunity_reasons": [
-        "recognition 100/100",
-        "collectibility tier S",
-        "very low asking price",
-        "immediate fixed-price purchase possible",
-        "Best Offer available",
-        "private individual seller",
-        "minimal bibliographic detail",
-        "low-volume seller account",
-        "seller uses collector-aware language",
-        "edition evidence: unknown"
-      ],
-      "opportunity_score": 86,
-      "pending_since": "2026-09-01T15:09:30Z",
-      "price_currency": "GBP",
-      "price_gbp": 21.5,
-      "price_value": 21.5,
-      "private_seller": true,
-      "recognition_matches": [
-        {
-          "bargain_gbp": null,
-          "canon_sources": "Parr/Badger V1 + Roth 101 | Priority seed",
-          "collectibility_tier": "S",
-          "contributor": "Danny Lyon",
-          "edition_reasons": [
-            "exact collectible edition is not established by the listing metadata"
-          ],
-          "edition_status": "unknown",
-          "evidence_confidence": "High",
-          "first_edition_notes": "",
-          "isbn": "",
-          "publisher": "",
-          "reason": "exact title + contributor",
-          "record_id": "danny-lyon-bikeriders",
-          "score": 100,
-          "search_priority": "0",
-          "source": "Priority seed",
-          "strong_buy_gbp": null,
-          "title": "The Bikeriders",
-          "year": ""
-        }
-      ],
-      "recognized": true,
-      "rest_item_id": "v1|158199332549|0",
-      "search_in_description": true,
-      "search_lane": "hot_canon",
-      "search_query": "Danny Lyon The Bikeriders",
-      "seller_account_type": "INDIVIDUAL",
-      "seller_feedback_percentage": "100.0",
-      "seller_feedback_score": 18,
-      "source_id": "ebay_private_hot_canon",
-      "source_name": "eBay UK private sellers - hot_canon",
-      "tags": "FIXED_PRICE BEST_OFFER",
-      "title": "Danny Lyon The Bikeriders Hardcover 2014 Aperture Photography Dust Jacket",
-      "url": "https://www.ebay.co.uk/itm/158199332549?_skw=Danny+Lyon+The+Bikeriders&hash=item24d56a3ec5:g:OgwAAeSwbLhqg1AH",
-      "vendor": "ferg-4882"
     },
     "ebay:158229590757": {
       "buying_options": [
@@ -1414,97 +1500,6 @@
       "url": "https://www.ebay.co.uk/itm/166412776896?_skw=David+LaChapelle+LaChapelle+Land&hash=item26bef975c0:g:6DsAAOSwn1plQ7ok",
       "vendor": "walky21"
     },
-    "ebay:167404004728": {
-      "best_recognition": {
-        "bargain_gbp": null,
-        "canon_sources": "Parr/Badger V1 + Roth 101 | Priority seed",
-        "collectibility_tier": "S",
-        "contributor": "Danny Lyon",
-        "edition_reasons": [
-          "exact collectible edition is not established by the listing metadata"
-        ],
-        "edition_status": "unknown",
-        "evidence_confidence": "High",
-        "first_edition_notes": "",
-        "isbn": "",
-        "publisher": "",
-        "reason": "exact title + contributor",
-        "record_id": "danny-lyon-bikeriders",
-        "score": 100,
-        "search_priority": "0",
-        "source": "Priority seed",
-        "strong_buy_gbp": null,
-        "title": "The Bikeriders",
-        "year": ""
-      },
-      "buying_options": [
-        "FIXED_PRICE",
-        "BEST_OFFER"
-      ],
-      "category_id": "261186",
-      "category_path": "",
-      "condition": "New",
-      "context": "First published in 1968, The Bikeriders explores firsthand the stories and characters of the Chicago Outlaws Motorcycle Club. | New | 2025-03-26T11:09:02.000Z | FIXED_PRICE BEST_OFFER",
-      "external_id": "167404004728",
-      "image_url": "https://i.ebayimg.com/images/g/YMIAAOSwTp9n49~g/s-l225.jpg",
-      "item_creation_date": "2025-03-26T11:09:02.000Z",
-      "item_end_date": "",
-      "key": "ebay:167404004728",
-      "opportunity_reasons": [
-        "recognition 100/100",
-        "collectibility tier S",
-        "low asking price",
-        "immediate fixed-price purchase possible",
-        "Best Offer available",
-        "private individual seller",
-        "brief listing title",
-        "edition evidence: unknown"
-      ],
-      "opportunity_score": 86,
-      "pending_since": "2026-09-01T15:09:30Z",
-      "price_currency": "GBP",
-      "price_gbp": 36.69,
-      "price_value": 36.69,
-      "private_seller": true,
-      "recognition_matches": [
-        {
-          "bargain_gbp": null,
-          "canon_sources": "Parr/Badger V1 + Roth 101 | Priority seed",
-          "collectibility_tier": "S",
-          "contributor": "Danny Lyon",
-          "edition_reasons": [
-            "exact collectible edition is not established by the listing metadata"
-          ],
-          "edition_status": "unknown",
-          "evidence_confidence": "High",
-          "first_edition_notes": "",
-          "isbn": "",
-          "publisher": "",
-          "reason": "exact title + contributor",
-          "record_id": "danny-lyon-bikeriders",
-          "score": 100,
-          "search_priority": "0",
-          "source": "Priority seed",
-          "strong_buy_gbp": null,
-          "title": "The Bikeriders",
-          "year": ""
-        }
-      ],
-      "recognized": true,
-      "rest_item_id": "v1|167404004728|0",
-      "search_in_description": true,
-      "search_lane": "hot_canon",
-      "search_query": "Danny Lyon The Bikeriders",
-      "seller_account_type": "INDIVIDUAL",
-      "seller_feedback_percentage": "98.7",
-      "seller_feedback_score": 1925,
-      "source_id": "ebay_private_hot_canon",
-      "source_name": "eBay UK private sellers - hot_canon",
-      "tags": "FIXED_PRICE BEST_OFFER",
-      "title": "Danny Lyon: the Bikeriders",
-      "url": "https://www.ebay.co.uk/itm/167404004728?_skw=Danny+Lyon+The+Bikeriders&hash=item26fa0e6578:g:YMIAAOSwTp9n49~g",
-      "vendor": "masha-megamart"
-    },
     "ebay:168624882724": {
       "buying_options": [
         "FIXED_PRICE"
@@ -1674,6 +1669,98 @@
       "title": "14 x Mills & Boon Romance Book Collection 3 X Double 11 X Single See Photographs",
       "url": "https://www.ebay.co.uk/itm/168653413339?_skw=photographer+books+collection&hash=item274486dbdb:g:zm0AAeSw3w1qEcL-",
       "vendor": "pawhit-172"
+    },
+    "ebay:178121048778": {
+      "best_recognition": {
+        "bargain_gbp": null,
+        "canon_sources": "Parr/Badger V2 + Roth 101 | Specialist photography publisher backlist: Steidl | Priority seed",
+        "collectibility_tier": "S",
+        "contributor": "Joel Sternfeld",
+        "edition_reasons": [
+          "exact collectible edition is not established by the listing metadata"
+        ],
+        "edition_status": "unknown",
+        "evidence_confidence": "High",
+        "first_edition_notes": "Work-level metadata only; verify the exact publisher edition and printing.",
+        "isbn": "",
+        "publisher": "Times Books, New York, in association with the Museum of Fine Arts, Houston, Texas, 1987",
+        "reason": "exact title + contributor",
+        "record_id": "joel-sternfeld-american-prospects",
+        "score": 100,
+        "search_priority": "0",
+        "source": "Priority seed",
+        "strong_buy_gbp": null,
+        "title": "American Prospects",
+        "year": "1987"
+      },
+      "buying_options": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "category_id": "261186",
+      "category_path": "",
+      "condition": "Like New",
+      "context": "Like New | 2026-05-10T07:59:39.000Z | FIXED_PRICE BEST_OFFER",
+      "external_id": "178121048778",
+      "image_url": "https://i.ebayimg.com/images/g/LOgAAeSwJVVqADnn/s-l225.jpg",
+      "item_creation_date": "2026-05-10T07:59:39.000Z",
+      "item_end_date": "",
+      "key": "ebay:178121048778",
+      "opportunity_reasons": [
+        "recognition 100/100",
+        "collectibility tier S",
+        "immediate fixed-price purchase possible",
+        "Best Offer available",
+        "private individual seller",
+        "brief listing title",
+        "minimal bibliographic detail",
+        "low-volume seller account",
+        "edition evidence: unknown"
+      ],
+      "opportunity_score": 86,
+      "pending_since": "2026-09-01T15:15:42Z",
+      "price_currency": "GBP",
+      "price_gbp": 350.0,
+      "price_value": 350.0,
+      "private_seller": true,
+      "recognition_matches": [
+        {
+          "bargain_gbp": null,
+          "canon_sources": "Parr/Badger V2 + Roth 101 | Specialist photography publisher backlist: Steidl | Priority seed",
+          "collectibility_tier": "S",
+          "contributor": "Joel Sternfeld",
+          "edition_reasons": [
+            "exact collectible edition is not established by the listing metadata"
+          ],
+          "edition_status": "unknown",
+          "evidence_confidence": "High",
+          "first_edition_notes": "Work-level metadata only; verify the exact publisher edition and printing.",
+          "isbn": "",
+          "publisher": "Times Books, New York, in association with the Museum of Fine Arts, Houston, Texas, 1987",
+          "reason": "exact title + contributor",
+          "record_id": "joel-sternfeld-american-prospects",
+          "score": 100,
+          "search_priority": "0",
+          "source": "Priority seed",
+          "strong_buy_gbp": null,
+          "title": "American Prospects",
+          "year": "1987"
+        }
+      ],
+      "recognized": true,
+      "rest_item_id": "v1|178121048778|0",
+      "search_in_description": true,
+      "search_lane": "hot_canon",
+      "search_query": "Joel Sternfeld American Prospects",
+      "seller_account_type": "INDIVIDUAL",
+      "seller_feedback_percentage": "100.0",
+      "seller_feedback_score": 77,
+      "source_id": "ebay_private_hot_canon",
+      "source_name": "eBay UK private sellers - hot_canon",
+      "tags": "FIXED_PRICE BEST_OFFER",
+      "title": "Joel Sternfeld: American Prospects",
+      "url": "https://www.ebay.co.uk/itm/178121048778?_skw=Joel+Sternfeld+American+Prospects&hash=item2978d782ca:g:LOgAAeSwJVVqADnn",
+      "vendor": "peterring"
     },
     "ebay:178361069330": {
       "buying_options": [
@@ -1891,6 +1978,97 @@
       "url": "https://www.ebay.co.uk/itm/178455977655?_skw=photography+book+bundle&hash=item298cce1eb7:g:z-YAAeSwsoRqlXvH",
       "vendor": "jadojewellery"
     },
+    "ebay:186862500728": {
+      "best_recognition": {
+        "bargain_gbp": null,
+        "canon_sources": "Roth 101",
+        "collectibility_tier": "S",
+        "contributor": "Jacques-Henri Lartigue",
+        "edition_reasons": [
+          "target year 1970 appears"
+        ],
+        "edition_status": "plausible",
+        "evidence_confidence": "Very high",
+        "first_edition_notes": "",
+        "isbn": "",
+        "publisher": "New York: The Viking Press, (1970).",
+        "reason": "exact title + contributor",
+        "record_id": "canon:jacques henri lartigue:diary of a century",
+        "score": 100,
+        "search_priority": "1",
+        "source": "Roth 101 p.200",
+        "strong_buy_gbp": null,
+        "title": "Diary of a Century",
+        "year": "1970"
+      },
+      "buying_options": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "category_id": "261186",
+      "category_path": "",
+      "condition": "Good",
+      "context": "Designed by Bea Feitler | Good | 2024-12-28T13:30:16.000Z | FIXED_PRICE BEST_OFFER",
+      "external_id": "186862500728",
+      "image_url": "https://i.ebayimg.com/images/g/PMwAAOSwHNBnb~ue/s-l225.jpg",
+      "item_creation_date": "2024-12-28T13:30:16.000Z",
+      "item_end_date": "",
+      "key": "ebay:186862500728",
+      "opportunity_reasons": [
+        "recognition 100/100",
+        "collectibility tier S",
+        "very low asking price",
+        "immediate fixed-price purchase possible",
+        "Best Offer available",
+        "private individual seller",
+        "minimal bibliographic detail",
+        "edition evidence: plausible"
+      ],
+      "opportunity_score": 96,
+      "pending_since": "2026-09-01T15:15:42Z",
+      "price_currency": "GBP",
+      "price_gbp": 12.94,
+      "price_value": 12.94,
+      "private_seller": true,
+      "recognition_matches": [
+        {
+          "bargain_gbp": null,
+          "canon_sources": "Roth 101",
+          "collectibility_tier": "S",
+          "contributor": "Jacques-Henri Lartigue",
+          "edition_reasons": [
+            "target year 1970 appears"
+          ],
+          "edition_status": "plausible",
+          "evidence_confidence": "Very high",
+          "first_edition_notes": "",
+          "isbn": "",
+          "publisher": "New York: The Viking Press, (1970).",
+          "reason": "exact title + contributor",
+          "record_id": "canon:jacques henri lartigue:diary of a century",
+          "score": 100,
+          "search_priority": "1",
+          "source": "Roth 101 p.200",
+          "strong_buy_gbp": null,
+          "title": "Diary of a Century",
+          "year": "1970"
+        }
+      ],
+      "recognized": true,
+      "rest_item_id": "v1|186862500728|0",
+      "search_in_description": false,
+      "search_lane": "library_rotation",
+      "search_query": "Jacques-Henri Lartigue Diary of a Century",
+      "seller_account_type": "INDIVIDUAL",
+      "seller_feedback_percentage": "100.0",
+      "seller_feedback_score": 1312,
+      "source_id": "ebay_private_library_rotation",
+      "source_name": "eBay UK private sellers - library_rotation",
+      "tags": "FIXED_PRICE BEST_OFFER",
+      "title": "Jacques Henri Lartigue. Diary Of A Century 1970 Paperback Penguin Books",
+      "url": "https://www.ebay.co.uk/itm/186862500728?_skw=Jacques-Henri+Lartigue+Diary+of+a+Century&hash=item2b81df7b78:g:PMwAAOSwHNBnb~ue",
+      "vendor": "carolscollectables1"
+    },
     "ebay:188686353886": {
       "buying_options": [
         "FIXED_PRICE",
@@ -2107,187 +2285,6 @@
       "title": "Beautiful Canada Hardcover Illustrated Travel Photography Picture Book 1987",
       "url": "https://www.ebay.co.uk/itm/198609930935?_skw=photography+book&hash=item2e3e130ab7:g:xOAAAeSwZPBqlpHf",
       "vendor": "janeisasquirrell"
-    },
-    "ebay:226732948403": {
-      "best_recognition": {
-        "bargain_gbp": null,
-        "canon_sources": "Roth 101",
-        "collectibility_tier": "S",
-        "contributor": "David LaChapelle",
-        "edition_reasons": [
-          "target year 1996 appears"
-        ],
-        "edition_status": "plausible",
-        "evidence_confidence": "Very high",
-        "first_edition_notes": "",
-        "isbn": "",
-        "publisher": "New York: Simon and Schuster in association with Callaway, 1996.",
-        "reason": "exact title + contributor",
-        "record_id": "canon:david lachapelle:lachapelle land",
-        "score": 100,
-        "search_priority": "1",
-        "source": "Roth 101 p.282",
-        "strong_buy_gbp": null,
-        "title": "LaChapelle Land",
-        "year": "1996"
-      },
-      "buying_options": [
-        "FIXED_PRICE",
-        "BEST_OFFER"
-      ],
-      "category_id": "261186",
-      "category_path": "",
-      "condition": "Very Good",
-      "context": "In its original box a LACHAPELLE LAND large photographic book photos by David lachapelle more than 160 of his best and most outrageous images. The book is in excellent condition for its age the outer box has some wear see pics as they form part of the description. Book measures approximately 37x30cms | Very Good | 2025-05-03T05:44:08.000Z | FIXED_PRICE BEST_OFFER",
-      "external_id": "226732948403",
-      "image_url": "https://i.ebayimg.com/images/g/Bk4AAeSwwDZoFMYK/s-l225.jpg",
-      "item_creation_date": "2025-05-03T05:44:08.000Z",
-      "item_end_date": "",
-      "key": "ebay:226732948403",
-      "opportunity_reasons": [
-        "recognition 100/100",
-        "collectibility tier S",
-        "low asking price",
-        "immediate fixed-price purchase possible",
-        "Best Offer available",
-        "private individual seller",
-        "edition evidence: plausible"
-      ],
-      "opportunity_score": 88,
-      "pending_since": "2026-09-01T15:09:30Z",
-      "price_currency": "GBP",
-      "price_gbp": 46.46,
-      "price_value": 46.46,
-      "private_seller": true,
-      "recognition_matches": [
-        {
-          "bargain_gbp": null,
-          "canon_sources": "Roth 101",
-          "collectibility_tier": "S",
-          "contributor": "David LaChapelle",
-          "edition_reasons": [
-            "target year 1996 appears"
-          ],
-          "edition_status": "plausible",
-          "evidence_confidence": "Very high",
-          "first_edition_notes": "",
-          "isbn": "",
-          "publisher": "New York: Simon and Schuster in association with Callaway, 1996.",
-          "reason": "exact title + contributor",
-          "record_id": "canon:david lachapelle:lachapelle land",
-          "score": 100,
-          "search_priority": "1",
-          "source": "Roth 101 p.282",
-          "strong_buy_gbp": null,
-          "title": "LaChapelle Land",
-          "year": "1996"
-        }
-      ],
-      "recognized": true,
-      "rest_item_id": "v1|226732948403|0",
-      "search_in_description": false,
-      "search_lane": "library_rotation",
-      "search_query": "David LaChapelle LaChapelle Land",
-      "seller_account_type": "INDIVIDUAL",
-      "seller_feedback_percentage": "99.4",
-      "seller_feedback_score": 1422,
-      "source_id": "ebay_private_library_rotation",
-      "source_name": "eBay UK private sellers - library_rotation",
-      "tags": "FIXED_PRICE BEST_OFFER",
-      "title": "Lachapelle Land: Photographs by David LaChapelle (Hardcover, 1996)",
-      "url": "https://www.ebay.co.uk/itm/226732948403?_skw=David+LaChapelle+LaChapelle+Land&hash=item34ca563bb3:g:Bk4AAeSwwDZoFMYK",
-      "vendor": "jamepag77"
-    },
-    "ebay:227383641308": {
-      "best_recognition": {
-        "bargain_gbp": null,
-        "canon_sources": "Roth 101",
-        "collectibility_tier": "S",
-        "contributor": "David LaChapelle",
-        "edition_reasons": [
-          "exact collectible edition is not established by the listing metadata"
-        ],
-        "edition_status": "unknown",
-        "evidence_confidence": "Very high",
-        "first_edition_notes": "",
-        "isbn": "",
-        "publisher": "New York: Simon and Schuster in association with Callaway, 1996.",
-        "reason": "exact title + contributor",
-        "record_id": "canon:david lachapelle:lachapelle land",
-        "score": 100,
-        "search_priority": "1",
-        "source": "Roth 101 p.282",
-        "strong_buy_gbp": null,
-        "title": "LaChapelle Land",
-        "year": "1996"
-      },
-      "buying_options": [
-        "FIXED_PRICE",
-        "BEST_OFFER"
-      ],
-      "category_id": "261186",
-      "category_path": "",
-      "condition": "Like New",
-      "context": "David LaChapelle LaChapelle Land Illustrated Photography Art Book HC (English) | Like New | 2026-06-11T11:14:34.000Z | FIXED_PRICE BEST_OFFER",
-      "external_id": "227383641308",
-      "image_url": "https://i.ebayimg.com/images/g/LGAAAeSw76lqKphX/s-l225.jpg",
-      "item_creation_date": "2026-06-11T11:14:34.000Z",
-      "item_end_date": "",
-      "key": "ebay:227383641308",
-      "opportunity_reasons": [
-        "recognition 100/100",
-        "collectibility tier S",
-        "low asking price",
-        "immediate fixed-price purchase possible",
-        "Best Offer available",
-        "private individual seller",
-        "minimal bibliographic detail",
-        "edition evidence: unknown"
-      ],
-      "opportunity_score": 86,
-      "pending_since": "2026-09-01T15:09:30Z",
-      "price_currency": "GBP",
-      "price_gbp": 52.68,
-      "price_value": 52.68,
-      "private_seller": true,
-      "recognition_matches": [
-        {
-          "bargain_gbp": null,
-          "canon_sources": "Roth 101",
-          "collectibility_tier": "S",
-          "contributor": "David LaChapelle",
-          "edition_reasons": [
-            "exact collectible edition is not established by the listing metadata"
-          ],
-          "edition_status": "unknown",
-          "evidence_confidence": "Very high",
-          "first_edition_notes": "",
-          "isbn": "",
-          "publisher": "New York: Simon and Schuster in association with Callaway, 1996.",
-          "reason": "exact title + contributor",
-          "record_id": "canon:david lachapelle:lachapelle land",
-          "score": 100,
-          "search_priority": "1",
-          "source": "Roth 101 p.282",
-          "strong_buy_gbp": null,
-          "title": "LaChapelle Land",
-          "year": "1996"
-        }
-      ],
-      "recognized": true,
-      "rest_item_id": "v1|227383641308|0",
-      "search_in_description": false,
-      "search_lane": "library_rotation",
-      "search_query": "David LaChapelle LaChapelle Land",
-      "seller_account_type": "INDIVIDUAL",
-      "seller_feedback_percentage": "100.0",
-      "seller_feedback_score": 509,
-      "source_id": "ebay_private_library_rotation",
-      "source_name": "eBay UK private sellers - library_rotation",
-      "tags": "FIXED_PRICE BEST_OFFER",
-      "title": "David LaChapelle LaChapelle Land Illustrated Photography Art Book HC (English)",
-      "url": "https://www.ebay.co.uk/itm/227383641308?_skw=David+LaChapelle+LaChapelle+Land&hash=item34f11f04dc:g:LGAAAeSw76lqKphX",
-      "vendor": "kerin-barry"
     },
     "ebay:227398275015": {
       "best_recognition": {
@@ -2815,96 +2812,6 @@
       "title": "Photographer's Guide Book - Bundle X 2 Handbook - Micheal Freeman Chris Gatcum",
       "url": "https://www.ebay.co.uk/itm/257671420971?_skw=photography+book+bundle&hash=item3bfe69dc2b:g:T0AAAeSw8TRqeN9B",
       "vendor": "4336terry"
-    },
-    "ebay:257707891713": {
-      "best_recognition": {
-        "bargain_gbp": null,
-        "canon_sources": "Roth 101",
-        "collectibility_tier": "S",
-        "contributor": "David LaChapelle",
-        "edition_reasons": [
-          "target year 1996 appears"
-        ],
-        "edition_status": "plausible",
-        "evidence_confidence": "Very high",
-        "first_edition_notes": "",
-        "isbn": "",
-        "publisher": "New York: Simon and Schuster in association with Callaway, 1996.",
-        "reason": "exact title + contributor",
-        "record_id": "canon:david lachapelle:lachapelle land",
-        "score": 100,
-        "search_priority": "1",
-        "source": "Roth 101 p.282",
-        "strong_buy_gbp": null,
-        "title": "LaChapelle Land",
-        "year": "1996"
-      },
-      "buying_options": [
-        "FIXED_PRICE",
-        "BEST_OFFER"
-      ],
-      "category_id": "261186",
-      "category_path": "",
-      "condition": "Like New",
-      "context": "Reluctant sale. Weight: 2kg. | Like New | 2026-08-28T10:09:57.000Z | FIXED_PRICE BEST_OFFER",
-      "external_id": "257707891713",
-      "image_url": "https://i.ebayimg.com/images/g/VSUAAeSwtFxqkVvW/s-l225.jpg",
-      "item_creation_date": "2026-08-28T10:09:57.000Z",
-      "item_end_date": "",
-      "key": "ebay:257707891713",
-      "opportunity_reasons": [
-        "recognition 100/100",
-        "collectibility tier S",
-        "immediate fixed-price purchase possible",
-        "Best Offer available",
-        "private individual seller",
-        "minimal bibliographic detail",
-        "edition evidence: plausible"
-      ],
-      "opportunity_score": 89,
-      "pending_since": "2026-09-01T15:09:30Z",
-      "price_currency": "GBP",
-      "price_gbp": 104.7,
-      "price_value": 104.7,
-      "private_seller": true,
-      "recognition_matches": [
-        {
-          "bargain_gbp": null,
-          "canon_sources": "Roth 101",
-          "collectibility_tier": "S",
-          "contributor": "David LaChapelle",
-          "edition_reasons": [
-            "target year 1996 appears"
-          ],
-          "edition_status": "plausible",
-          "evidence_confidence": "Very high",
-          "first_edition_notes": "",
-          "isbn": "",
-          "publisher": "New York: Simon and Schuster in association with Callaway, 1996.",
-          "reason": "exact title + contributor",
-          "record_id": "canon:david lachapelle:lachapelle land",
-          "score": 100,
-          "search_priority": "1",
-          "source": "Roth 101 p.282",
-          "strong_buy_gbp": null,
-          "title": "LaChapelle Land",
-          "year": "1996"
-        }
-      ],
-      "recognized": true,
-      "rest_item_id": "v1|257707891713|0",
-      "search_in_description": false,
-      "search_lane": "library_rotation",
-      "search_query": "David LaChapelle LaChapelle Land",
-      "seller_account_type": "INDIVIDUAL",
-      "seller_feedback_percentage": "100.0",
-      "seller_feedback_score": 1701,
-      "source_id": "ebay_private_library_rotation",
-      "source_name": "eBay UK private sellers - library_rotation",
-      "tags": "FIXED_PRICE BEST_OFFER",
-      "title": "LaChapelle Land : Photographs by David LaChapelle by Tadanori Yokoo (1996,...",
-      "url": "https://www.ebay.co.uk/itm/257707891713?_skw=David+LaChapelle+LaChapelle+Land&hash=item3c00965c01:g:VSUAAeSwtFxqkVvW",
-      "vendor": "captain_greybeard"
     },
     "ebay:267708317015": {
       "best_recognition": {
@@ -3839,6 +3746,95 @@
       "url": "https://www.ebay.co.uk/itm/287550976107?_skw=photography+books+collection&hash=item42f35fb06b:g:KjoAAeSw6xpqkZyY",
       "vendor": "drummeryjoejoe"
     },
+    "ebay:296488934387": {
+      "best_recognition": {
+        "bargain_gbp": null,
+        "canon_sources": "Parr/Badger V2 + Roth 101 | Specialist photography publisher backlist: Steidl | Priority seed",
+        "collectibility_tier": "S",
+        "contributor": "Joel Sternfeld",
+        "edition_reasons": [
+          "exact collectible edition is not established by the listing metadata"
+        ],
+        "edition_status": "unknown",
+        "evidence_confidence": "High",
+        "first_edition_notes": "Work-level metadata only; verify the exact publisher edition and printing.",
+        "isbn": "",
+        "publisher": "Times Books, New York, in association with the Museum of Fine Arts, Houston, Texas, 1987",
+        "reason": "exact title + contributor",
+        "record_id": "joel-sternfeld-american-prospects",
+        "score": 100,
+        "search_priority": "0",
+        "source": "Priority seed",
+        "strong_buy_gbp": null,
+        "title": "American Prospects",
+        "year": "1987"
+      },
+      "buying_options": [
+        "FIXED_PRICE"
+      ],
+      "category_id": "261186",
+      "category_path": "",
+      "condition": "Very Good",
+      "context": "Product details. Hardcover ‏ : ‎ 140 pages. | Very Good | 2024-06-08T22:21:11.000Z | FIXED_PRICE",
+      "external_id": "296488934387",
+      "image_url": "https://i.ebayimg.com/images/g/Ru8AAOxy7nNTSl2D/s-l225.jpg",
+      "item_creation_date": "2024-06-08T22:21:11.000Z",
+      "item_end_date": "",
+      "key": "ebay:296488934387",
+      "opportunity_reasons": [
+        "recognition 100/100",
+        "collectibility tier S",
+        "immediate fixed-price purchase possible",
+        "private individual seller",
+        "minimal bibliographic detail",
+        "low-volume seller account",
+        "edition evidence: unknown"
+      ],
+      "opportunity_score": 86,
+      "pending_since": "2026-09-01T15:15:42Z",
+      "price_currency": "GBP",
+      "price_gbp": 413.68,
+      "price_value": 413.68,
+      "private_seller": true,
+      "recognition_matches": [
+        {
+          "bargain_gbp": null,
+          "canon_sources": "Parr/Badger V2 + Roth 101 | Specialist photography publisher backlist: Steidl | Priority seed",
+          "collectibility_tier": "S",
+          "contributor": "Joel Sternfeld",
+          "edition_reasons": [
+            "exact collectible edition is not established by the listing metadata"
+          ],
+          "edition_status": "unknown",
+          "evidence_confidence": "High",
+          "first_edition_notes": "Work-level metadata only; verify the exact publisher edition and printing.",
+          "isbn": "",
+          "publisher": "Times Books, New York, in association with the Museum of Fine Arts, Houston, Texas, 1987",
+          "reason": "exact title + contributor",
+          "record_id": "joel-sternfeld-american-prospects",
+          "score": 100,
+          "search_priority": "0",
+          "source": "Priority seed",
+          "strong_buy_gbp": null,
+          "title": "American Prospects",
+          "year": "1987"
+        }
+      ],
+      "recognized": true,
+      "rest_item_id": "v1|296488934387|0",
+      "search_in_description": true,
+      "search_lane": "hot_canon",
+      "search_query": "Joel Sternfeld American Prospects",
+      "seller_account_type": "INDIVIDUAL",
+      "seller_feedback_percentage": "100.0",
+      "seller_feedback_score": 38,
+      "source_id": "ebay_private_hot_canon",
+      "source_name": "eBay UK private sellers - hot_canon",
+      "tags": "FIXED_PRICE",
+      "title": "Joel Sternfeld:American Prospects: American Prospects by Joel Sternfeld...",
+      "url": "https://www.ebay.co.uk/itm/296488934387?_skw=Joel+Sternfeld+American+Prospects&hash=item45081e1bf3:g:Ru8AAOxy7nNTSl2D",
+      "vendor": "the_bstore"
+    },
     "ebay:298215144087": {
       "buying_options": [
         "FIXED_PRICE"
@@ -4013,6 +4009,99 @@
       "url": "https://www.ebay.co.uk/itm/298554037326?_skw=photographer+books+collection&hash=item458335144e:g:WTIAAeSwc5lqaUSG",
       "vendor": "theyorkshirefox_central"
     },
+    "ebay:306772111876": {
+      "best_recognition": {
+        "bargain_gbp": null,
+        "canon_sources": "Parr/Badger V1 | Specialist photography publisher backlist: Aperture | Priority seed",
+        "collectibility_tier": "S",
+        "contributor": "Josef Koudelka",
+        "edition_reasons": [
+          "seller claims a first edition but target metadata is unconfirmed"
+        ],
+        "edition_status": "claimed",
+        "evidence_confidence": "High",
+        "first_edition_notes": "Work-level metadata only; verify the exact publisher edition and printing.",
+        "isbn": "",
+        "publisher": "Aperture",
+        "reason": "exact title + contributor",
+        "record_id": "josef-koudelka-gypsies",
+        "score": 100,
+        "search_priority": "0",
+        "source": "Priority seed",
+        "strong_buy_gbp": null,
+        "title": "Gypsies",
+        "year": "1975"
+      },
+      "buying_options": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "category_id": "261186",
+      "category_path": "",
+      "condition": "Like New",
+      "context": "Very good condition like new | Like New | 2026-02-15T14:53:25.000Z | FIXED_PRICE BEST_OFFER",
+      "external_id": "306772111876",
+      "image_url": "https://i.ebayimg.com/images/g/S0cAAeSwgs9pkd2K/s-l225.jpg",
+      "item_creation_date": "2026-02-15T14:53:25.000Z",
+      "item_end_date": "",
+      "key": "ebay:306772111876",
+      "opportunity_reasons": [
+        "recognition 100/100",
+        "collectibility tier S",
+        "immediate fixed-price purchase possible",
+        "Best Offer available",
+        "private individual seller",
+        "minimal bibliographic detail",
+        "photographer not fully identified in title",
+        "low-volume seller account",
+        "seller uses collector-aware language",
+        "edition evidence: claimed"
+      ],
+      "opportunity_score": 87,
+      "pending_since": "2026-09-01T15:15:42Z",
+      "price_currency": "GBP",
+      "price_gbp": 156.7,
+      "price_value": 156.7,
+      "private_seller": true,
+      "recognition_matches": [
+        {
+          "bargain_gbp": null,
+          "canon_sources": "Parr/Badger V1 | Specialist photography publisher backlist: Aperture | Priority seed",
+          "collectibility_tier": "S",
+          "contributor": "Josef Koudelka",
+          "edition_reasons": [
+            "seller claims a first edition but target metadata is unconfirmed"
+          ],
+          "edition_status": "claimed",
+          "evidence_confidence": "High",
+          "first_edition_notes": "Work-level metadata only; verify the exact publisher edition and printing.",
+          "isbn": "",
+          "publisher": "Aperture",
+          "reason": "exact title + contributor",
+          "record_id": "josef-koudelka-gypsies",
+          "score": 100,
+          "search_priority": "0",
+          "source": "Priority seed",
+          "strong_buy_gbp": null,
+          "title": "Gypsies",
+          "year": "1975"
+        }
+      ],
+      "recognized": true,
+      "rest_item_id": "v1|306772111876|0",
+      "search_in_description": true,
+      "search_lane": "hot_canon",
+      "search_query": "Josef Koudelka Gypsies",
+      "seller_account_type": "INDIVIDUAL",
+      "seller_feedback_percentage": "100.0",
+      "seller_feedback_score": 6,
+      "source_id": "ebay_private_hot_canon",
+      "source_name": "eBay UK private sellers - hot_canon",
+      "tags": "FIXED_PRICE BEST_OFFER",
+      "title": "Gypsies Koudelka, Josef Hardcover 2nd print First Edition Thames and Hudson 5005",
+      "url": "https://www.ebay.co.uk/itm/306772111876?_skw=Josef+Koudelka+Gypsies&hash=item476d0af204:g:S0cAAeSwgs9pkd2K",
+      "vendor": "alc8155"
+    },
     "ebay:306992346030": {
       "buying_options": [
         "FIXED_PRICE",
@@ -4141,6 +4230,97 @@
       "title": "Practical Photography. Let's Make Movies. Paperback. 2 Books Bundle.",
       "url": "https://www.ebay.co.uk/itm/327293675838?_skw=photography+book+bundle&hash=item4c3439293e:g:e8wAAeSwgblqcPYI",
       "vendor": "xj53c"
+    },
+    "ebay:327333598818": {
+      "best_recognition": {
+        "bargain_gbp": null,
+        "canon_sources": "Parr/Badger V2 + Roth 101 | Specialist photography publisher backlist: Steidl | Priority seed",
+        "collectibility_tier": "S",
+        "contributor": "Joel Sternfeld",
+        "edition_reasons": [
+          "exact collectible edition is not established by the listing metadata"
+        ],
+        "edition_status": "unknown",
+        "evidence_confidence": "High",
+        "first_edition_notes": "Work-level metadata only; verify the exact publisher edition and printing.",
+        "isbn": "",
+        "publisher": "Times Books, New York, in association with the Museum of Fine Arts, Houston, Texas, 1987",
+        "reason": "exact title + contributor",
+        "record_id": "joel-sternfeld-american-prospects",
+        "score": 100,
+        "search_priority": "0",
+        "source": "Priority seed",
+        "strong_buy_gbp": null,
+        "title": "American Prospects",
+        "year": "1987"
+      },
+      "buying_options": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "category_id": "261186",
+      "category_path": "",
+      "condition": "Very Good",
+      "context": "Photographer: Joel Sternfeld. Publisher: Chronicle Books. Publication Year: 1994. Format: Softcover / Paperback. | Very Good | 2026-08-30T15:28:19.000Z | FIXED_PRICE BEST_OFFER",
+      "external_id": "327333598818",
+      "image_url": "https://i.ebayimg.com/images/g/oOUAAeSwZnFqbuT~/s-l225.jpg",
+      "item_creation_date": "2026-08-30T15:28:19.000Z",
+      "item_end_date": "",
+      "key": "ebay:327333598818",
+      "opportunity_reasons": [
+        "recognition 100/100",
+        "collectibility tier S",
+        "low asking price",
+        "immediate fixed-price purchase possible",
+        "Best Offer available",
+        "private individual seller",
+        "minimal bibliographic detail",
+        "edition evidence: unknown"
+      ],
+      "opportunity_score": 86,
+      "pending_since": "2026-09-01T15:15:42Z",
+      "price_currency": "GBP",
+      "price_gbp": 59.96,
+      "price_value": 59.96,
+      "private_seller": true,
+      "recognition_matches": [
+        {
+          "bargain_gbp": null,
+          "canon_sources": "Parr/Badger V2 + Roth 101 | Specialist photography publisher backlist: Steidl | Priority seed",
+          "collectibility_tier": "S",
+          "contributor": "Joel Sternfeld",
+          "edition_reasons": [
+            "exact collectible edition is not established by the listing metadata"
+          ],
+          "edition_status": "unknown",
+          "evidence_confidence": "High",
+          "first_edition_notes": "Work-level metadata only; verify the exact publisher edition and printing.",
+          "isbn": "",
+          "publisher": "Times Books, New York, in association with the Museum of Fine Arts, Houston, Texas, 1987",
+          "reason": "exact title + contributor",
+          "record_id": "joel-sternfeld-american-prospects",
+          "score": 100,
+          "search_priority": "0",
+          "source": "Priority seed",
+          "strong_buy_gbp": null,
+          "title": "American Prospects",
+          "year": "1987"
+        }
+      ],
+      "recognized": true,
+      "rest_item_id": "v1|327333598818|0",
+      "search_in_description": true,
+      "search_lane": "hot_canon",
+      "search_query": "Joel Sternfeld American Prospects",
+      "seller_account_type": "INDIVIDUAL",
+      "seller_feedback_percentage": "100.0",
+      "seller_feedback_score": 2317,
+      "source_id": "ebay_private_hot_canon",
+      "source_name": "eBay UK private sellers - hot_canon",
+      "tags": "FIXED_PRICE BEST_OFFER",
+      "title": "American Prospects Joel Sternfeld Photography Book, First Paperback Edition 1994",
+      "url": "https://www.ebay.co.uk/itm/327333598818?_skw=Joel+Sternfeld+American+Prospects&hash=item4c369a5662:g:oOUAAeSwZnFqbuT~",
+      "vendor": "skyrunner.2012"
     },
     "ebay:336651387635": {
       "best_recognition": {
@@ -4502,6 +4682,96 @@
       "title": "O Rio de Janeiro by Bruce Weber",
       "url": "https://www.ebay.co.uk/itm/358143375798?_skw=Bruce+Weber+O+Rio+de+Janeiro&hash=item53630239b6:g:Z6oAAeSwAwBpcimD",
       "vendor": "julbr-367"
+    },
+    "ebay:365247482993": {
+      "best_recognition": {
+        "bargain_gbp": null,
+        "canon_sources": "Roth 101",
+        "collectibility_tier": "S",
+        "contributor": "Jacques-Henri Lartigue",
+        "edition_reasons": [
+          "exact collectible edition is not established by the listing metadata"
+        ],
+        "edition_status": "unknown",
+        "evidence_confidence": "Very high",
+        "first_edition_notes": "",
+        "isbn": "",
+        "publisher": "New York: The Viking Press, (1970).",
+        "reason": "exact title + contributor",
+        "record_id": "canon:jacques henri lartigue:diary of a century",
+        "score": 100,
+        "search_priority": "1",
+        "source": "Roth 101 p.200",
+        "strong_buy_gbp": null,
+        "title": "Diary of a Century",
+        "year": "1970"
+      },
+      "buying_options": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "category_id": "261186",
+      "category_path": "",
+      "condition": "Acceptable",
+      "context": "Beautiful book! Though the cover is aged, the inside images are untouched. Enjoy seeing what having wealth and joy of life combined in another time. Play, joy, and giggles! A wonderful journey through images. | Acceptable | 2024-11-23T12:35:30.000Z | FIXED_PRICE BEST_OFFER",
+      "external_id": "365247482993",
+      "image_url": "https://i.ebayimg.com/images/g/xVUAAOSwMxBnQcuQ/s-l225.jpg",
+      "item_creation_date": "2024-11-23T12:35:30.000Z",
+      "item_end_date": "",
+      "key": "ebay:365247482993",
+      "opportunity_reasons": [
+        "recognition 100/100",
+        "collectibility tier S",
+        "immediate fixed-price purchase possible",
+        "Best Offer available",
+        "private individual seller",
+        "low-volume seller account",
+        "edition evidence: unknown"
+      ],
+      "opportunity_score": 85,
+      "pending_since": "2026-09-01T15:15:42Z",
+      "price_currency": "GBP",
+      "price_gbp": 445.3,
+      "price_value": 445.3,
+      "private_seller": true,
+      "recognition_matches": [
+        {
+          "bargain_gbp": null,
+          "canon_sources": "Roth 101",
+          "collectibility_tier": "S",
+          "contributor": "Jacques-Henri Lartigue",
+          "edition_reasons": [
+            "exact collectible edition is not established by the listing metadata"
+          ],
+          "edition_status": "unknown",
+          "evidence_confidence": "Very high",
+          "first_edition_notes": "",
+          "isbn": "",
+          "publisher": "New York: The Viking Press, (1970).",
+          "reason": "exact title + contributor",
+          "record_id": "canon:jacques henri lartigue:diary of a century",
+          "score": 100,
+          "search_priority": "1",
+          "source": "Roth 101 p.200",
+          "strong_buy_gbp": null,
+          "title": "Diary of a Century",
+          "year": "1970"
+        }
+      ],
+      "recognized": true,
+      "rest_item_id": "v1|365247482993|0",
+      "search_in_description": false,
+      "search_lane": "library_rotation",
+      "search_query": "Jacques-Henri Lartigue Diary of a Century",
+      "seller_account_type": "INDIVIDUAL",
+      "seller_feedback_percentage": "100.0",
+      "seller_feedback_score": 39,
+      "source_id": "ebay_private_library_rotation",
+      "source_name": "eBay UK private sellers - library_rotation",
+      "tags": "FIXED_PRICE BEST_OFFER",
+      "title": "Diary Of A Century Jacques Henri Lartigue",
+      "url": "https://www.ebay.co.uk/itm/365247482993?_skw=Jacques-Henri+Lartigue+Diary+of+a+Century&hash=item550a724c71:g:xVUAAOSwMxBnQcuQ",
+      "vendor": "delph7770"
     },
     "ebay:365957096355": {
       "best_recognition": {
@@ -6169,20 +6439,24 @@
     "auction_ending:AUCTION:bruce weber bear pond": "2026-09-01T12:57:22Z",
     "auction_ending:AUCTION:bruce weber o rio de janeiro": "2026-09-01T15:09:30Z",
     "auction_ending:AUCTION:chris killip in flagrante": "2026-09-01T15:09:30Z",
+    "auction_ending:AUCTION:corinne day diary": "2026-09-01T15:15:42Z",
+    "auction_ending:AUCTION:daido moriyama farewell photography": "2026-09-01T15:15:42Z",
     "broad:BEST_OFFER+FIXED_PRICE:art photography book": "2026-09-01T12:57:22Z",
-    "broad:BEST_OFFER+FIXED_PRICE:photo book": "2026-09-01T15:09:30Z",
-    "broad:BEST_OFFER+FIXED_PRICE:photographer book": "2026-09-01T15:09:30Z",
+    "broad:BEST_OFFER+FIXED_PRICE:photo book": "2026-09-01T15:15:42Z",
+    "broad:BEST_OFFER+FIXED_PRICE:photographer book": "2026-09-01T15:15:42Z",
     "broad:BEST_OFFER+FIXED_PRICE:photographs book": "2026-09-01T12:57:22Z",
-    "broad:BEST_OFFER+FIXED_PRICE:photography book": "2026-09-01T15:09:30Z",
-    "broad:BEST_OFFER+FIXED_PRICE:photography monograph": "2026-09-01T15:09:30Z",
-    "collection:BEST_OFFER+FIXED_PRICE:old photography books": "2026-09-01T15:09:30Z",
+    "broad:BEST_OFFER+FIXED_PRICE:photography book": "2026-09-01T15:15:42Z",
+    "broad:BEST_OFFER+FIXED_PRICE:photography monograph": "2026-09-01T15:15:42Z",
+    "collection:BEST_OFFER+FIXED_PRICE:old photography books": "2026-09-01T15:15:42Z",
     "collection:BEST_OFFER+FIXED_PRICE:photo books job lot": "2026-09-01T12:57:22Z",
     "collection:BEST_OFFER+FIXED_PRICE:photographer books collection": "2026-09-01T12:57:22Z",
-    "collection:BEST_OFFER+FIXED_PRICE:photography book bundle": "2026-09-01T15:09:30Z",
-    "collection:BEST_OFFER+FIXED_PRICE:photography books collection": "2026-09-01T15:09:30Z",
-    "collection:BEST_OFFER+FIXED_PRICE:photography books job lot": "2026-09-01T15:09:30Z",
+    "collection:BEST_OFFER+FIXED_PRICE:photography book bundle": "2026-09-01T15:15:42Z",
+    "collection:BEST_OFFER+FIXED_PRICE:photography books collection": "2026-09-01T15:15:42Z",
+    "collection:BEST_OFFER+FIXED_PRICE:photography books job lot": "2026-09-01T15:15:42Z",
     "contributor:BEST_OFFER+FIXED_PRICE:aaron rezny": "2026-09-01T15:09:30Z",
     "contributor:BEST_OFFER+FIXED_PRICE:aaron ruell": "2026-09-01T15:09:30Z",
+    "contributor:BEST_OFFER+FIXED_PRICE:aaron schuman": "2026-09-01T15:15:42Z",
+    "contributor:BEST_OFFER+FIXED_PRICE:aaron siskind": "2026-09-01T15:15:42Z",
     "contributor:BEST_OFFER+FIXED_PRICE:abbott, berenice": "2026-09-01T12:57:22Z",
     "contributor:BEST_OFFER+FIXED_PRICE:abbott, berenice / atget, eugéne": "2026-09-01T12:57:22Z",
     "contributor:BEST_OFFER+FIXED_PRICE:agee, james / evans, walker": "2026-09-01T12:57:22Z",
@@ -6201,6 +6475,12 @@
     "hot_canon:BEST_OFFER+FIXED_PRICE:ed van der elsken love on the left bank": "2026-09-01T15:09:30Z",
     "hot_canon:BEST_OFFER+FIXED_PRICE:garry winogrand women are beautiful": "2026-09-01T15:09:30Z",
     "hot_canon:BEST_OFFER+FIXED_PRICE:irving penn moments preserved": "2026-09-01T15:09:30Z",
+    "hot_canon:BEST_OFFER+FIXED_PRICE:jack davison photographs": "2026-09-01T15:15:42Z",
+    "hot_canon:BEST_OFFER+FIXED_PRICE:james agee and walker evans let us now praise famous men": "2026-09-01T15:15:42Z",
+    "hot_canon:BEST_OFFER+FIXED_PRICE:jamie hawkesworth preston bus station": "2026-09-01T15:15:42Z",
+    "hot_canon:BEST_OFFER+FIXED_PRICE:jim goldberg raised by wolves": "2026-09-01T15:15:42Z",
+    "hot_canon:BEST_OFFER+FIXED_PRICE:joel sternfeld american prospects": "2026-09-01T15:15:42Z",
+    "hot_canon:BEST_OFFER+FIXED_PRICE:josef koudelka gypsies": "2026-09-01T15:15:42Z",
     "library_rotation:BEST_OFFER+FIXED_PRICE:abbott, berenice / atget, eugéne atget: photographe de paris": "2026-09-01T12:57:22Z",
     "library_rotation:BEST_OFFER+FIXED_PRICE:abbott, berenice changing new york": "2026-09-01T12:57:22Z",
     "library_rotation:BEST_OFFER+FIXED_PRICE:agee, james / evans, walker let us now praise famous men": "2026-09-01T12:57:22Z",
@@ -6241,8 +6521,24 @@
     "library_rotation:BEST_OFFER+FIXED_PRICE:edward (ed) ruscha every building on the sunset strip": "2026-09-01T15:09:30Z",
     "library_rotation:BEST_OFFER+FIXED_PRICE:edward steichen and carl sandburg steichen the photographer": "2026-09-01T15:09:30Z",
     "library_rotation:BEST_OFFER+FIXED_PRICE:edward weston fifty photographs": "2026-09-01T15:09:30Z",
-    "wrong_category:BEST_OFFER+FIXED_PRICE:photobook job lot": "2026-09-01T15:09:30Z",
-    "wrong_category:BEST_OFFER+FIXED_PRICE:photography book collection": "2026-09-01T15:09:30Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:eikoh hosoe barakei": "2026-09-01T15:15:42Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:eikoh hosoe kamaitachi": "2026-09-01T15:15:42Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:emmet gowin concerning america and alfred stieglitz, and myself": "2026-09-01T15:15:42Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:evans, walker many are called": "2026-09-01T15:15:42Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:frederick sommer frederick sommer 1939-1962 photographs": "2026-09-01T15:15:42Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:garry winogrand public relations": "2026-09-01T15:15:42Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:garry winogrand the animals": "2026-09-01T15:15:42Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:gilles peress telex persan": "2026-09-01T15:15:42Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:harry callahan harry callahan photographs": "2026-09-01T15:15:42Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:heisler, jindřich na jehlach těchto dní": "2026-09-01T15:15:42Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:helen levitt a way of seeing": "2026-09-01T15:15:42Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:hosoe, eikoh / mishima, yukio barakei": "2026-09-01T15:15:42Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:hugnet, georges la septième face du dé": "2026-09-01T15:15:42Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:jacques-henri lartigue diary of a century": "2026-09-01T15:15:42Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:jim goldberg rich and poor": "2026-09-01T15:15:42Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:éluard, paul facile": "2026-09-01T15:15:42Z",
+    "wrong_category:BEST_OFFER+FIXED_PRICE:photobook job lot": "2026-09-01T15:15:42Z",
+    "wrong_category:BEST_OFFER+FIXED_PRICE:photography book collection": "2026-09-01T15:15:42Z",
     "wrong_category:BEST_OFFER+FIXED_PRICE:photography monograph": "2026-09-01T12:57:22Z"
   },
   "seen": {
@@ -6526,6 +6822,34 @@
       "title": "D H LAWRENCE-KANGEROO-AS NEW 1932 HB-FREE POSTAGE-SEE ACTUAL PHOTOS",
       "url": "https://www.ebay.co.uk/itm/137686607422?_skw=photo+book&hash=item200ec2e63e:g:fY4AAeSwBVhqfGOb"
     },
+    "ebay:137686607503": {
+      "first_seen": "2026-09-01T15:15:42Z",
+      "last_seen": "2026-09-01T15:15:42Z",
+      "score": 4,
+      "title": "TURF JONATHAN ROSS-NEW SEALED TITAN HB -FREE POSTAGE-SEE ACTUAL PHOTOS",
+      "url": "https://www.ebay.co.uk/itm/137686607503?_skw=photo+book&hash=item200ec2e68f:g:TNkAAeSwZnFqbxT~"
+    },
+    "ebay:137686607512": {
+      "first_seen": "2026-09-01T15:15:42Z",
+      "last_seen": "2026-09-01T15:15:42Z",
+      "score": 4,
+      "title": "JOHN WAYNE ALBUM-DUKE-VGC 1979 LARGE PBK -FREE POSTAGE-SEE ACTUAL PHOTOS",
+      "url": "https://www.ebay.co.uk/itm/137686607512?_skw=photo+book&hash=item200ec2e698:g:Oi0AAeSwOPZqbxJR"
+    },
+    "ebay:137686607528": {
+      "first_seen": "2026-09-01T15:15:42Z",
+      "last_seen": "2026-09-01T15:15:42Z",
+      "score": 4,
+      "title": "SAUL BELLOW-BELLAROSA CONNECTION-AS NEW HB/DJ-FREE POSTAGE-SEE ACTUAL PHOTOS",
+      "url": "https://www.ebay.co.uk/itm/137686607528?_skw=photo+book&hash=item200ec2e6a8:g:6ZEAAeSwcXdqbxcF"
+    },
+    "ebay:137686607605": {
+      "first_seen": "2026-09-01T15:15:42Z",
+      "last_seen": "2026-09-01T15:15:42Z",
+      "score": 4,
+      "title": "HEIDI-VGC 1953 DENT  HB/DJ ILLUSTRATED V COHEN-FREE POSTAGE-SEE ACTUAL PHOTOS",
+      "url": "https://www.ebay.co.uk/itm/137686607605?_skw=photo+book&hash=item200ec2e6f5:g:klYAAeSwgm9qYdra"
+    },
     "ebay:144964386003": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
@@ -6645,12 +6969,26 @@
       "title": "The English at Home Bill Brandt Raymond Mortimer Hardcover Batsford First...",
       "url": "https://www.ebay.co.uk/itm/157145272465?_skw=Bill+Brandt+The+English+at+Home&hash=item2496969091:g:O1sAAeSw6Zln5-V8"
     },
+    "ebay:157999935326": {
+      "first_seen": "2026-09-01T15:15:42Z",
+      "last_seen": "2026-09-01T15:15:42Z",
+      "score": 60,
+      "title": "Conversations With The Dead - Danny Lyon - Phaidon Hardback",
+      "url": "https://www.ebay.co.uk/itm/157999935326?_skw=Danny+Lyon+Conversations+with+the+Dead&hash=item24c987af5e:g:UUMAAeSwOnVqJZ9W"
+    },
     "ebay:158197850596": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
       "score": 36,
       "title": "Chloe Sevigny Rizzoli Hardback Book 2015 Fashion Style Photography Monograph 90s",
       "url": "https://www.ebay.co.uk/itm/158197850596?_skw=photography+monograph&hash=item24d553a1e4:g:bUUAAeSwaONqguwo"
+    },
+    "ebay:158199332549": {
+      "first_seen": "2026-09-01T15:15:42Z",
+      "last_seen": "2026-09-01T15:15:42Z",
+      "score": 86,
+      "title": "Danny Lyon The Bikeriders Hardcover 2014 Aperture Photography Dust Jacket",
+      "url": "https://www.ebay.co.uk/itm/158199332549?_skw=Danny+Lyon+The+Bikeriders&hash=item24d56a3ec5:g:OgwAAeSwbLhqg1AH"
     },
     "ebay:158226438774": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -6736,6 +7074,20 @@
       "title": "Corinne Day Diary Photography Book (Hardcover, Kruse Verlag) 2000",
       "url": "https://www.ebay.co.uk/itm/167363161269?_skw=Corinne+Day+Diary&hash=item26f79f2cb5:g:~2wAAOSwvXVnliS7"
     },
+    "ebay:167404004728": {
+      "first_seen": "2026-09-01T15:15:42Z",
+      "last_seen": "2026-09-01T15:15:42Z",
+      "score": 86,
+      "title": "Danny Lyon: the Bikeriders",
+      "url": "https://www.ebay.co.uk/itm/167404004728?_skw=Danny+Lyon+The+Bikeriders&hash=item26fa0e6578:g:YMIAAOSwTp9n49~g"
+    },
+    "ebay:167699906636": {
+      "first_seen": "2026-09-01T15:15:42Z",
+      "last_seen": "2026-09-01T15:15:42Z",
+      "score": 8,
+      "title": "'The Street' by Harry Callahan (Hardcover, 2016)",
+      "url": "https://www.ebay.co.uk/itm/167699906636?_skw=Harry+Callahan+Harry+Callahan+Photographs&hash=item270bb1804c:g:sx4AAeSwqBholHR0"
+    },
     "ebay:167860893519": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
@@ -6749,6 +7101,13 @@
       "score": 50,
       "title": "6x Military & War Photo & documentary Book Bundle – SEALs Marines 82nd Airborne",
       "url": "https://www.ebay.co.uk/itm/168560300572?_skw=photography+book+bundle&hash=item273efa121c:g:cLkAAeSw8KNqY0fg"
+    },
+    "ebay:168590890702": {
+      "first_seen": "2026-09-01T15:15:42Z",
+      "last_seen": "2026-09-01T15:15:42Z",
+      "score": 35,
+      "title": "Aaron Schuman: Folk (2016) Art Photography Book Krakow Ethnographic Museum",
+      "url": "https://www.ebay.co.uk/itm/168590890702?_skw=Aaron+Schuman&hash=item2740ccd6ce:g:6DkAAeSwrhNqczpb"
     },
     "ebay:168610840971": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -6833,6 +7192,13 @@
       "score": 44,
       "title": "Jellycat Mitzi Reindeer’s Dream – Hardback Children’s Christmas Picture Book",
       "url": "https://www.ebay.co.uk/itm/168655530644?_skw=photo+book&hash=item2744a72a94:g:A9cAAeSwT-hqltB~"
+    },
+    "ebay:177296076254": {
+      "first_seen": "2026-09-01T15:15:42Z",
+      "last_seen": "2026-09-01T15:15:42Z",
+      "score": 52,
+      "title": "Slant by Aaron Schuman",
+      "url": "https://www.ebay.co.uk/itm/177296076254?_skw=Aaron+Schuman&hash=item2947ab6dde:g:5s4AAeSwz79ohey3"
     },
     "ebay:177462605861": {
       "first_seen": "2026-09-01T15:09:30Z",
@@ -7219,6 +7585,13 @@
       "title": "385. The Master Photographer's Lith Printing Course by Tim Rudman Pbk 1902538021",
       "url": "https://www.ebay.co.uk/itm/198610584344?_skw=photographer+book&hash=item2e3e1d0318:g:bt8AAeSwa4pqOsUQ"
     },
+    "ebay:205692931420": {
+      "first_seen": "2026-09-01T15:15:42Z",
+      "last_seen": "2026-09-01T15:15:42Z",
+      "score": 23,
+      "title": "Folk by Aaron Schuman (signed first edition)",
+      "url": "https://www.ebay.co.uk/itm/205692931420?_skw=Aaron+Schuman&hash=item2fe4410d5c:g:CtEAAeSwb-BorboN"
+    },
     "ebay:205715104572": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
@@ -7317,6 +7690,27 @@
       "title": "Let Us Now Praise Famous Men By James Agee and Walker Evans / Picador Edition",
       "url": "https://www.ebay.co.uk/itm/226478974069?_skw=Agee%2C+James+%2F+Evans%2C+Walker+Let+us+now+Praise+Famous+Men&hash=item34bb32e475:g:tD8AAOSw5XVnTwBU"
     },
+    "ebay:226732948403": {
+      "first_seen": "2026-09-01T15:15:42Z",
+      "last_seen": "2026-09-01T15:15:42Z",
+      "score": 56,
+      "title": "Lachapelle Land: Photographs by David LaChapelle (Hardcover, 1996)",
+      "url": "https://www.ebay.co.uk/itm/226732948403?_skw=David+LaChapelle+LaChapelle+Land&hash=item34ca563bb3:g:Bk4AAeSwwDZoFMYK"
+    },
+    "ebay:226800271323": {
+      "first_seen": "2026-09-01T15:15:42Z",
+      "last_seen": "2026-09-01T15:15:42Z",
+      "score": 18,
+      "title": "REMNANTS : Louise Nevelson & Aaron Siskind By Bruce Silverstein Exhibition 2013",
+      "url": "https://www.ebay.co.uk/itm/226800271323?_skw=Aaron+Siskind&hash=item34ce597fdb:g:9iUAAeSwWV9oP0-f"
+    },
+    "ebay:227383641308": {
+      "first_seen": "2026-09-01T15:15:42Z",
+      "last_seen": "2026-09-01T15:15:42Z",
+      "score": 86,
+      "title": "David LaChapelle LaChapelle Land Illustrated Photography Art Book HC (English)",
+      "url": "https://www.ebay.co.uk/itm/227383641308?_skw=David+LaChapelle+LaChapelle+Land&hash=item34f11f04dc:g:LGAAAeSw76lqKphX"
+    },
     "ebay:227470091094": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
@@ -7393,6 +7787,13 @@
       "score": 26,
       "title": "Grand Tourisme: Porsche Racing History in Photographs Part 1 1970-75",
       "url": "https://www.ebay.co.uk/itm/227500944670?_skw=photographer+book&hash=item34f81ced1e:g:9lwAAeSwCDpqSMiY"
+    },
+    "ebay:227500984283": {
+      "first_seen": "2026-09-01T15:15:42Z",
+      "last_seen": "2026-09-01T15:15:42Z",
+      "score": 44,
+      "title": "Picture You Dead. Peter James.",
+      "url": "https://www.ebay.co.uk/itm/227500984283?_skw=photo+book&hash=item34f81d87db:g:B30AAeSwHO1qluq3"
     },
     "ebay:236527898716": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -7485,6 +7886,13 @@
       "title": "P. H. Emerson (Aperture Monograph) Nancy Newhall Paperback Illustrated 1973",
       "url": "https://www.ebay.co.uk/itm/257606375965?_skw=photography+monograph&hash=item3bfa895a1d:g:aOoAAeSw8MZqSk6R"
     },
+    "ebay:257634950647": {
+      "first_seen": "2026-09-01T15:15:42Z",
+      "last_seen": "2026-09-01T15:15:42Z",
+      "score": 57,
+      "title": "Garry Winogrand The Animals MoMA Hardback Photography Book Second Edition 2004",
+      "url": "https://www.ebay.co.uk/itm/257634950647?_skw=Garry+Winogrand+The+Animals&hash=item3bfc3d5df7:g:flkAAeSwMm1qX9pm"
+    },
     "ebay:257652792048": {
       "first_seen": "2026-09-01T15:09:30Z",
       "last_seen": "2026-09-01T15:09:30Z",
@@ -7519,6 +7927,13 @@
       "score": 67,
       "title": "Photography book bundle - 7 books in very good condition",
       "url": "https://www.ebay.co.uk/itm/257690657222?_skw=photography+book+bundle&hash=item3bff8f61c6:g:OW8AAeSwva1qhbvN"
+    },
+    "ebay:257707891713": {
+      "first_seen": "2026-09-01T15:15:42Z",
+      "last_seen": "2026-09-01T15:15:42Z",
+      "score": 81,
+      "title": "LaChapelle Land : Photographs by David LaChapelle by Tadanori Yokoo (1996,...",
+      "url": "https://www.ebay.co.uk/itm/257707891713?_skw=David+LaChapelle+LaChapelle+Land&hash=item3c00965c01:g:VSUAAeSwtFxqkVvW"
     },
     "ebay:257708719147": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -7687,6 +8102,13 @@
       "score": 68,
       "title": "Saint Etienne Fan Job-Lot: Photo Book, CDs, LP, 7\" All New Never opened/played",
       "url": "https://www.ebay.co.uk/itm/286712183772?_skw=photobook+job+lot&hash=item42c160bbdc:g:yasAAOSwW8VnC-qk"
+    },
+    "ebay:287217220940": {
+      "first_seen": "2026-09-01T15:15:42Z",
+      "last_seen": "2026-09-01T15:15:42Z",
+      "score": 35,
+      "title": "Aaron Schuman: Folk (2016) Art Book Krakow Ethnographic Museum NEW & SEALED",
+      "url": "https://www.ebay.co.uk/itm/287217220940?_skw=Aaron+Schuman&hash=item42df7afd4c:g:HcIAAeSwprxpu-tB"
     },
     "ebay:287360289149": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -8548,6 +8970,13 @@
       "score": 50,
       "title": "40 Book Bundle. All In Good Condition. Multiple Aurhors. See Photos Joblot",
       "url": "https://www.ebay.co.uk/itm/407099842493?_skw=photo+books+job+lot&hash=item5ec90a9fbd:g:o5AAAeSwRo9qZjoy"
+    },
+    "ebay:407129591933": {
+      "first_seen": "2026-09-01T15:15:42Z",
+      "last_seen": "2026-09-01T15:15:42Z",
+      "score": 14,
+      "title": "Nikolay Bakharev Novokuznetsk 2016 1st Edition 1/1000 Stanley Barker + Booklet",
+      "url": "https://www.ebay.co.uk/itm/407129591933?_skw=Aaron+Schuman&hash=item5ecad0907d:g:uCMAAeSwMbhqd0FP"
     },
     "ebay:407184244972": {
       "first_seen": "2026-09-01T12:57:22Z",
