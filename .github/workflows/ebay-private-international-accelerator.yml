@@ -1,0 +1,193 @@
+name: eBay international backfill accelerator
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/ebay-private-international-accelerator.yml"
+  workflow_dispatch:
+    inputs:
+      total_call_cap:
+        description: Maximum Browse calls across all checkpointed batches
+        required: true
+        default: "2750"
+        type: string
+      batch_call_cap:
+        description: Maximum Browse calls before saving a checkpoint
+        required: true
+        default: "450"
+        type: string
+      quota_reserve:
+        description: Browse calls that must remain unused
+        required: true
+        default: "750"
+        type: string
+  pull_request:
+    branches: [main]
+    paths:
+      - "ebay_private_seller_backfill.py"
+      - "ebay_private_international_backfill.py"
+      - "test_ebay_private_seller_backfill.py"
+      - "test_ebay_private_international_backfill.py"
+      - ".github/workflows/ebay-private-international-accelerator.yml"
+
+permissions:
+  actions: write
+  contents: write
+  issues: write
+
+concurrency:
+  group: ebay-private-international-historical-backfill
+  cancel-in-progress: false
+
+jobs:
+  accelerate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Synchronize latest main state
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git fetch origin main
+          git checkout --detach FETCH_HEAD
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+
+      - name: Validate accelerated backfill
+        run: |
+          python -m unittest -v \
+            test_ebay_api.py \
+            test_ebay_private_api.py \
+            test_photobook_recognition.py \
+            test_ebay_private_seller_monitor.py \
+            test_ebay_private_seller_backfill.py \
+            test_ebay_private_international_backfill.py
+
+      - name: Pause competing eBay workflows
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          workflows=(
+            344709945 # ebay-seller-monitor.yml
+            347511676 # ebay-private-seller-monitor.yml
+            344716825 # ebay-seller-backfill.yml
+            347697301 # ebay-private-seller-backfill.yml
+            340064758 # market-monitor.yml
+          )
+          for workflow in "${workflows[@]}"; do
+            gh api --method PUT \
+              "repos/${GITHUB_REPOSITORY}/actions/workflows/${workflow}/disable"
+          done
+
+      - name: Run checkpointed accelerator
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        env:
+          EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
+          EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
+          GH_TOKEN: ${{ github.token }}
+          TOTAL_CALL_CAP: ${{ github.event_name == 'workflow_dispatch' && inputs.total_call_cap || '2750' }}
+          BATCH_CALL_CAP: ${{ github.event_name == 'workflow_dispatch' && inputs.batch_call_cap || '450' }}
+          QUOTA_RESERVE: ${{ github.event_name == 'workflow_dispatch' && inputs.quota_reserve || '750' }}
+        run: |
+          set -euo pipefail
+          remaining="$TOTAL_CALL_CAP"
+          batch=0
+          runtime="runtime/ebay-private-international-backfill"
+          state="data/ebay_private_international_backfill_state.json"
+          findings="data/ebay_private_international_backfill_findings.json"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          while [ "$remaining" -gt 0 ]; do
+            batch=$((batch + 1))
+            requested="$BATCH_CALL_CAP"
+            if [ "$remaining" -lt "$requested" ]; then
+              requested="$remaining"
+            fi
+
+            rm -f "$runtime/issue-title.txt" "$runtime/issue-body.md"
+            python ebay_private_international_backfill.py \
+              --max-calls "$requested" \
+              --hard-call-cap "$requested" \
+              --quota-reserve "$QUOTA_RESERVE"
+
+            used="$(jq -r '.calls' "$runtime/latest-snapshot.json")"
+            complete="$(jq -r '.complete' "$runtime/latest-snapshot.json")"
+            new_count="$(jq -r '.new_candidates | length' "$runtime/latest-snapshot.json")"
+            queue_count="$(jq -r '.remaining_steps' "$runtime/latest-snapshot.json")"
+            pending_count="$(jq -r '.pending_live' "$runtime/latest-snapshot.json")"
+            quota_remaining="$(jq -r '.quota.remaining // "unknown"' "$runtime/latest-snapshot.json")"
+            remaining=$((remaining - used))
+
+            cp "$runtime/proposed-state.json" "$state"
+            cp "$runtime/proposed-findings.json" "$findings"
+            git add -- "$state" "$findings"
+            if ! git diff --cached --quiet; then
+              git commit -m "Checkpoint international backfill batch ${batch} [skip ci]"
+              pushed=false
+              for attempt in 1 2 3 4; do
+                git pull --rebase origin main
+                if git push origin HEAD:main; then
+                  pushed=true
+                  break
+                fi
+                if [ "$attempt" = "4" ]; then
+                  exit 1
+                fi
+              done
+              if [ "$pushed" != "true" ]; then
+                exit 1
+              fi
+            fi
+
+            if [ "$new_count" -gt 0 ]; then
+              gh issue create \
+                --title "$(cat "$runtime/issue-title.txt")" \
+                --body-file "$runtime/issue-body.md"
+            fi
+
+            {
+              echo "### Batch ${batch}"
+              echo ""
+              echo "- Calls used: ${used}"
+              echo "- Quota before batch: ${quota_remaining}"
+              echo "- New candidates: ${new_count}"
+              echo "- Search steps remaining: ${queue_count}"
+              echo "- Live checks pending: ${pending_count}"
+              echo "- Accelerator allowance remaining: ${remaining}"
+            } >> "$GITHUB_STEP_SUMMARY"
+
+            if [ "$complete" = "true" ] || [ "$used" -eq 0 ]; then
+              break
+            fi
+          done
+
+      - name: Restore competing eBay workflows
+        if: always() && github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set +e
+          failed=0
+          workflows=(
+            344709945 # ebay-seller-monitor.yml
+            347511676 # ebay-private-seller-monitor.yml
+            344716825 # ebay-seller-backfill.yml
+            347697301 # ebay-private-seller-backfill.yml
+            340064758 # market-monitor.yml
+          )
+          for workflow in "${workflows[@]}"; do
+            gh api --method PUT \
+              "repos/${GITHUB_REPOSITORY}/actions/workflows/${workflow}/enable" || failed=1
+          done
+          exit "$failed"

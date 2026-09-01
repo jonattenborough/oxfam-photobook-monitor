@@ -77,6 +77,29 @@ class PrivateSellerBackfillTests(unittest.TestCase):
         self.assertIsNone(quota)
         self.assertIn("limiting this backfill", warning)
 
+    def test_accelerator_can_use_a_custom_cap_and_reserve(self):
+        class QuotaClient:
+            def browse_quota(self):
+                return {"remaining": 3500, "limit": 5000}
+
+        budget, quota, warning = backfill.api_call_budget(
+            QuotaClient(),
+            3000,
+            hard_cap=2750,
+            quota_reserve=750,
+        )
+        self.assertEqual(budget, 2750)
+        self.assertEqual(quota["remaining"], 3500)
+        self.assertIsNone(warning)
+
+        budget, _, _ = backfill.api_call_budget(
+            QuotaClient(),
+            450,
+            hard_cap=450,
+            quota_reserve=3250,
+        )
+        self.assertEqual(budget, 250)
+
     def test_plan_prioritizes_collectible_curated_and_broad_coverage(self):
         start = datetime(2026, 8, 2, 12, 0, tzinfo=timezone.utc)
         end = datetime(2026, 9, 1, 12, 0, tzinfo=timezone.utc)

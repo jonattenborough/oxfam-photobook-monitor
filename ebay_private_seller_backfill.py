@@ -48,14 +48,17 @@ def load_json(path: Path, default: dict[str, Any], label: str) -> dict[str, Any]
 def api_call_budget(
     client: ebay_api.EbayBrowseClient,
     requested_calls: int,
+    *,
+    hard_cap: int = MAX_CALLS,
+    quota_reserve: int = QUOTA_RESERVE,
 ) -> tuple[int, dict[str, Any] | None, str | None]:
-    requested = max(0, min(int(requested_calls), MAX_CALLS))
+    requested = max(0, min(int(requested_calls), max(0, int(hard_cap))))
     try:
         quota = client.browse_quota()
     except Exception as exc:
         fallback = min(requested, UNKNOWN_QUOTA_CAP)
         return fallback, None, f"Browse quota lookup failed; limiting this backfill to {fallback} calls: {exc}"
-    usable = max(0, int(quota.get("remaining") or 0) - QUOTA_RESERVE)
+    usable = max(0, int(quota.get("remaining") or 0) - max(0, int(quota_reserve)))
     return min(requested, usable), quota, None
 
 
