@@ -28,7 +28,7 @@ class PrivateSellerMonitorTests(unittest.TestCase):
         self.assertLessEqual(len(plan), 36)
         lanes = {step["lane"] for step in plan}
         self.assertTrue(
-            {"broad", "collection", "wrong_category", "hot_canon",
+            {"broad", "collectible_format", "collection", "wrong_category", "hot_canon",
              "library_rotation", "contributor", "auction_ending"}.issubset(lanes)
         )
 
@@ -62,6 +62,51 @@ class PrivateSellerMonitorTests(unittest.TestCase):
         self.assertTrue(call["search_in_description"])
         self.assertEqual(call["price_max"], 750)
         self.assertEqual(call["item_start_date"], "2026-09-01T10:48:00Z")
+
+    def test_new_query_starts_from_previous_monitor_run(self):
+        client = FakeClient()
+        state = {
+            "query_last_checked": {},
+            "last_run": "2026-09-01T11:30:00Z",
+        }
+        monitor.run_query(
+            client,
+            state,
+            lane="collectible_format",
+            query="photography book with print",
+            category_ids="261186",
+            buying_options=["FIXED_PRICE", "BEST_OFFER"],
+            search_in_description=True,
+            limit=30,
+            delivery_country="GB",
+            max_price_gbp=750,
+            detected_at="2026-09-01T12:00:00Z",
+            incremental=True,
+            ending_start_date=None,
+            ending_end_date=None,
+        )
+        self.assertEqual(client.calls[0]["item_start_date"], "2026-09-01T11:18:00Z")
+
+    def test_brand_new_state_uses_overlap_only_not_active_inventory(self):
+        client = FakeClient()
+        state = {"query_last_checked": {}}
+        monitor.run_query(
+            client,
+            state,
+            lane="collectible_format",
+            query="limited edition photobook",
+            category_ids="261186",
+            buying_options=["FIXED_PRICE", "BEST_OFFER"],
+            search_in_description=True,
+            limit=30,
+            delivery_country="GB",
+            max_price_gbp=750,
+            detected_at="2026-09-01T12:00:00Z",
+            incremental=True,
+            ending_start_date=None,
+            ending_end_date=None,
+        )
+        self.assertEqual(client.calls[0]["item_start_date"], "2026-09-01T11:48:00Z")
 
     def test_fallback_collection_listing_can_surface_for_review(self):
         item = {
@@ -121,6 +166,23 @@ class PrivateSellerMonitorTests(unittest.TestCase):
         self.assertEqual(merged["publication_year"], "2012")
         self.assertEqual(merged["edition"], "40th Anniversary Edition")
         self.assertEqual(merged["isbn"], "9781597111751")
+
+    def test_live_business_account_overrides_search_assumption(self):
+        merged = monitor._merge_live_detail(
+            {
+                "title": "Example",
+                "private_seller": True,
+                "seller_account_type": "INDIVIDUAL",
+            },
+            {
+                "seller": {
+                    "username": "bookdealer",
+                    "sellerAccountType": "BUSINESS",
+                }
+            },
+        )
+        self.assertEqual(merged["seller_account_type"], "BUSINESS")
+        self.assertFalse(merged["private_seller"])
 
 
 if __name__ == "__main__":
