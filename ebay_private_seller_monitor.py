@@ -461,7 +461,12 @@ def _fallback_score(item: dict[str, Any]) -> tuple[int, list[str]]:
         score += 6
         reasons.append("high-recall discovery lane")
     try:
-        price = float(item.get("price_gbp")) if item.get("price_gbp") is not None else None
+        raw_price = (
+            item.get("landed_price_gbp")
+            if item.get("landed_price_gbp") is not None
+            else item.get("price_gbp")
+        )
+        price = float(raw_price) if raw_price is not None else None
     except (TypeError, ValueError):
         price = None
     if price is not None and price <= 25:
@@ -525,6 +530,7 @@ def _merge_live_detail(item: dict[str, Any], detail: dict[str, Any]) -> dict[str
     seller = detail.get("seller") if isinstance(detail.get("seller"), dict) else {}
     buying = detail.get("buyingOptions") if isinstance(detail.get("buyingOptions"), list) else []
     price = detail.get("price") if isinstance(detail.get("price"), dict) else {}
+    shipping_options = detail.get("shippingOptions") if isinstance(detail.get("shippingOptions"), list) else []
     description = str(detail.get("description") or "").strip()
     aspects = detail.get("localizedAspects") if isinstance(detail.get("localizedAspects"), list) else []
     if description:
@@ -544,14 +550,40 @@ def _merge_live_detail(item: dict[str, Any], detail: dict[str, Any]) -> dict[str
     aspect_fields = {
         "author": "author",
         "authors": "author",
+        "autor": "author",
+        "autore": "author",
+        "auteur": "author",
         "edition": "edition",
+        "edicion": "edition",
+        "edizione": "edition",
+        "editie": "edition",
+        "auflage": "edition",
+        "wydanie": "edition",
         "isbn": "isbn",
         "isbn 10": "isbn",
         "isbn 13": "isbn",
         "publication year": "publication_year",
         "published year": "publication_year",
+        "annee de publication": "publication_year",
+        "anno di pubblicazione": "publication_year",
+        "ano de publicacion": "publication_year",
+        "erscheinungsjahr": "publication_year",
+        "publicatiejaar": "publication_year",
+        "rok wydania": "publication_year",
         "publisher": "publisher",
+        "editeur": "publisher",
+        "editore": "publisher",
+        "editorial": "publisher",
+        "uitgever": "publisher",
+        "verlag": "publisher",
+        "wydawnictwo": "publisher",
         "year": "publication_year",
+        "jahr": "publication_year",
+        "annee": "publication_year",
+        "anno": "publication_year",
+        "ano": "publication_year",
+        "jaar": "publication_year",
+        "rok": "publication_year",
     }
     collected: dict[str, list[str]] = {}
     for aspect in aspects:
@@ -577,6 +609,28 @@ def _merge_live_detail(item: dict[str, Any], detail: dict[str, Any]) -> dict[str
         merged["price_value"] = value
         merged["price_currency"] = currency
         merged["price_gbp"] = value if currency == "GBP" else merged.get("price_gbp")
+    shipping_values: list[float] = []
+    for option in shipping_options:
+        if not isinstance(option, dict):
+            continue
+        cost = option.get("shippingCost") if isinstance(option.get("shippingCost"), dict) else {}
+        cost_currency = str(cost.get("currency") or currency).upper()
+        if currency and cost_currency and cost_currency != currency:
+            continue
+        try:
+            shipping_values.append(float(cost.get("value")))
+        except (TypeError, ValueError):
+            continue
+    if shipping_values:
+        merged["shipping_value"] = min(shipping_values)
+        merged["shipping_currency"] = currency
+    shipping_value = merged.get("shipping_value")
+    try:
+        shipping_number = float(shipping_value) if shipping_value is not None else 0.0
+    except (TypeError, ValueError):
+        shipping_number = 0.0
+    if value is not None and currency == "GBP":
+        merged["landed_price_gbp"] = round(value + shipping_number, 2)
     merged["item_end_date"] = str(detail.get("itemEndDate") or merged.get("item_end_date") or "")
     merged["live_estimated_availability"] = str(detail.get("estimatedAvailabilityStatus") or "")
     return merged
