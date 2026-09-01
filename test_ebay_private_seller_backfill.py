@@ -242,6 +242,30 @@ class PrivateSellerBackfillTests(unittest.TestCase):
         self.assertEqual(result["live_checks"], 0)
         self.assertEqual(state["pending_live"], {})
 
+    def test_retained_findings_are_rescored_and_false_positive_is_removed(self):
+        false_item = {
+            "key": "ebay:999",
+            "title": "A single photography book",
+            "description": "An ideal addition to any photography book collection",
+            "price_gbp": 20.0,
+            "private_seller": True,
+            "search_lane": "collection",
+            "live_verified": True,
+        }
+        findings = {"version": 1, "items": {"ebay:999": false_item}}
+        state = {"version": 1, "queue": [], "pending_live": {}, "complete": False}
+        backfill.run_backfill(
+            FakeClient([]),
+            self.config,
+            state,
+            findings,
+            {"seen": {}, "pending_live": {}},
+            call_budget=0,
+            max_live_checks=0,
+            detected_at="2026-09-01T16:00:00Z",
+        )
+        self.assertEqual(findings["items"], {})
+
 
 if __name__ == "__main__":
     unittest.main()
