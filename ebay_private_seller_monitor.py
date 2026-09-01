@@ -20,6 +20,22 @@ OVERLAP_MINUTES = 12
 MAX_SEEN = 12000
 FIXED_BUYING_OPTIONS = ["FIXED_PRICE", "BEST_OFFER"]
 AUCTION_BUYING_OPTIONS = ["AUCTION"]
+NON_COLLECTIBLE_BOOK_TERMS = {
+    "camera manual",
+    "digital photography handbook",
+    "family history",
+    "how to photograph",
+    "how to take photographs",
+    "lightroom",
+    "local interest",
+    "photo editing",
+    "photofinish manual",
+    "photography handbook",
+    "photography manual",
+    "photography the smart way",
+    "photos that sell",
+    "photoshop",
+}
 
 
 def utc_now() -> str:
@@ -418,7 +434,12 @@ def run_query(
 
 
 def _fallback_score(item: dict[str, Any]) -> tuple[int, list[str]]:
-    text = pb.normalize(f"{item.get('title') or ''} {item.get('context') or ''}")
+    text = pb.normalize(
+        " ".join(
+            str(item.get(field) or "")
+            for field in ("title", "context", "description", "condition_description")
+        )
+    )
     score = 0
     reasons: list[str] = []
     photo_hits = [term for term in external_monitor.DIRECT_PHOTO_TERMS if pb.normalize(term) in text]
@@ -454,7 +475,13 @@ def _fallback_score(item: dict[str, Any]) -> tuple[int, list[str]]:
     if item.get("private_seller"):
         score += 4
         reasons.append("private individual seller")
-    return min(100, score), reasons
+    if any(
+        pb.contains_normalized_phrase(text, pb.normalize(term))
+        for term in NON_COLLECTIBLE_BOOK_TERMS
+    ):
+        score -= 25
+        reasons.append("instructional, technical or local-history wording")
+    return max(0, min(100, score)), reasons
 
 
 def classify(item: dict[str, Any]) -> dict[str, Any]:
