@@ -10,13 +10,18 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+from datetime import datetime, timezone
 from typing import Any
 
 TOKEN_URL = "https://api.ebay.com/identity/v1/oauth2/token"
 SEARCH_URL = "https://api.ebay.com/buy/browse/v1/item_summary/search"
+ITEM_URL = "https://api.ebay.com/buy/browse/v1/item/{item_id}"
 API_SCOPE = "https://api.ebay.com/oauth/api_scope"
 DEFAULT_MARKETPLACE = "EBAY_GB"
 LEGACY_ITEM_ID = re.compile(r"^v1\|([^|]+)\|")
+ALLOWED_BUYING_OPTIONS = {"FIXED_PRICE", "AUCTION", "BEST_OFFER"}
+ALLOWED_SELLER_ACCOUNT_TYPES = {"INDIVIDUAL", "BUSINESS"}
+ALLOWED_CONDITIONS = {"NEW", "USED", "UNSPECIFIED"}
 
 
 class EbayApiError(RuntimeError):
@@ -46,6 +51,32 @@ def _error_detail(raw: bytes) -> str:
         if isinstance(value, str):
             return value.strip()[:240]
     return ""
+
+
+def _clean_enum(values: list[str] | tuple[str, ...] | set[str] | None, allowed: set[str], label: str) -> list[str]:
+    cleaned: list[str] = []
+    for raw in values or []:
+        value = str(raw).strip().upper()
+        if not value:
+            continue
+        if value not in allowed:
+            raise ValueError(f"Unsupported {label}: {value}")
+        if value not in cleaned:
+            cleaned.append(value)
+    return cleaned
+
+
+def _parse_iso(value: Any) -> datetime | None:
+    text = str(value or "").strip()
+    if not text:
+        return None
+    try:
+        parsed = datetime.fromisoformat(text.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=timezone.utc)
+    return parsed.astimezone(timezone.utc)
 
 
 class EbayBrowseClient:
@@ -112,6 +143,15 @@ class EbayBrowseClient:
         self._access_token = token
         return token
 
+    def _headers(self) -> dict[str, str]:
+        return {
+            "Authorization": f"Bearer {self.access_token()}",
+            "Accept": "application/json",
+            "Accept-Language": "en-GB",
+            "X-EBAY-C-MARKETPLACE-ID": self.marketplace,
+            "User-Agent": "photobook-listing-monitor/2.0",
+        }
+
     def search(
         self,
         query: str | None = None,
@@ -119,10 +159,20 @@ class EbayBrowseClient:
         limit: int = 50,
         category_ids: str | None = None,
         fixed_price_only: bool = True,
+        buying_options: list[str] | tuple[str, ...] | None = None,
         seller_ids: list[str] | tuple[str, ...] | None = None,
+        exclude_seller_ids: list[str] | tuple[str, ...] | None = None,
+        seller_account_type: str | None = None,
         delivery_country: str | None = None,
         item_start_date: str | None = None,
         item_end_date: str | None = None,
+        ending_start_date: str | None = None,
+        ending_end_date: str | None = None,
+        search_in_description: bool = False,
+        price_min: float | None = None,
+        price_max: float | None = None,
+        price_currency: str | None = None,
+        conditions: list[str] | tuple[str, ...] | None = None,
         offset: int = 0,
     ) -> list[dict[str, Any]]:
         params: dict[str, str] = {
@@ -132,15 +182,23 @@ class EbayBrowseClient:
             "offset": str(max(0, min(int(offset), 9999))),
         }
         if query and query.strip():
-            params["q"] = query.strip()
+            params["q"] = query.strip()[:100]
         if category_ids:
             params["category_ids"] = category_ids
         if "q" not in params and "category_ids" not in params:
             raise ValueError("An eBay search requires a query or category_ids")
+        if search_in_description:
+            if len(params.get("q", "")) < 2:
+                raise ValueError("search_in_description requires a query of at least two characters")
+            params["searchInDescription"] = "true"
 
         filters: list[str] = []
-        if fixed_price_only:
+        requested_options = _clean_enum(buying_options, ALLOWED_BUYING_OPTIONS, "buying option")
+        if requested_options:
+            filters.append(f"buyingOptions:{{{'|'.join(requested_options)}}}")
+        elif fixed_price_only:
             filters.append("buyingOptions:{FIXED_PRICE}")
+
         if seller_ids:
             cleaned_sellers = [str(value).strip() for value in seller_ids if str(value).strip()]
             if len(cleaned_sellers) > 250:
@@ -149,6 +207,21 @@ class EbayBrowseClient:
                 raise ValueError("An eBay seller ID contains unsupported characters")
             if cleaned_sellers:
                 filters.append(f"sellers:{{{'|'.join(cleaned_sellers)}}}")
+        if exclude_seller_ids:
+            cleaned_excluded = [str(value).strip() for value in exclude_seller_ids if str(value).strip()]
+            if len(cleaned_excluded) > 250:
+                raise ValueError("eBay supports at most 250 excluded seller IDs per search")
+            if any(not re.fullmatch(r"[A-Za-z0-9_.-]+", seller) for seller in cleaned_excluded):
+                raise ValueError("An excluded eBay seller ID contains unsupported characters")
+            if cleaned_excluded:
+                filters.append(f"excludeSellers:{{{'|'.join(cleaned_excluded)}}}")
+
+        if seller_account_type:
+            account_type = str(seller_account_type).strip().upper()
+            if account_type not in ALLOWED_SELLER_ACCOUNT_TYPES:
+                raise ValueError(f"Unsupported seller account type: {account_type}")
+            filters.append(f"sellerAccountTypes:{{{account_type}}}")
+
         if delivery_country:
             country = delivery_country.strip().upper()
             if not re.fullmatch(r"[A-Z]{2}", country):
@@ -158,23 +231,63 @@ class EbayBrowseClient:
             start = item_start_date.strip() if item_start_date else ""
             end = item_end_date.strip() if item_end_date else ""
             filters.append(f"itemStartDate:[{start}..{end}]")
+        if ending_start_date or ending_end_date:
+            start = ending_start_date.strip() if ending_start_date else ""
+            end = ending_end_date.strip() if ending_end_date else ""
+            filters.append(f"itemEndDate:[{start}..{end}]")
+
+        if price_min is not None or price_max is not None:
+            currency = str(price_currency or "GBP").strip().upper()
+            if not re.fullmatch(r"[A-Z]{3}", currency):
+                raise ValueError("price_currency must be a three-letter currency code")
+            if price_min is None:
+                filters.append(f"price:[..{float(price_max):g}]")
+            elif price_max is None:
+                filters.append(f"price:[{float(price_min):g}..]")
+            else:
+                filters.append(f"price:[{float(price_min):g}..{float(price_max):g}]")
+            filters.append(f"priceCurrency:{currency}")
+
+        requested_conditions = _clean_enum(conditions, ALLOWED_CONDITIONS, "condition")
+        if requested_conditions:
+            filters.append(f"conditions:{{{'|'.join(requested_conditions)}}}")
+
         if filters:
             params["filter"] = ",".join(filters)
         request = urllib.request.Request(
             SEARCH_URL + "?" + urllib.parse.urlencode(params),
-            headers={
-                "Authorization": f"Bearer {self.access_token()}",
-                "Accept": "application/json",
-                "Accept-Language": "en-GB",
-                "X-EBAY-C-MARKETPLACE-ID": self.marketplace,
-                "User-Agent": "photobook-listing-monitor/1.0",
-            },
+            headers=self._headers(),
         )
         payload = self._json_request(request, "eBay Browse search")
         rows = payload.get("itemSummaries", [])
         if not isinstance(rows, list):
             raise EbayApiError("eBay Browse search returned an invalid itemSummaries value")
         return [row for row in rows if isinstance(row, dict)]
+
+    def get_item(self, item_id: str) -> dict[str, Any]:
+        """Fetch the live Browse item record used immediately before alerting."""
+        cleaned = str(item_id or "").strip()
+        if not cleaned:
+            raise ValueError("item_id is required")
+        request = urllib.request.Request(
+            ITEM_URL.format(item_id=urllib.parse.quote(cleaned, safe="")),
+            headers=self._headers(),
+        )
+        return self._json_request(request, "eBay Browse item")
+
+    def live_status(self, item_id: str) -> tuple[bool, str, dict[str, Any]]:
+        """Return whether a listing is currently available, plus the fetched item."""
+        item = self.get_item(item_id)
+        estimated = str(item.get("estimatedAvailabilityStatus") or "").upper()
+        if estimated in {"OUT_OF_STOCK", "UNAVAILABLE"}:
+            return False, estimated.lower().replace("_", " "), item
+        ended = _parse_iso(item.get("itemEndDate"))
+        if ended is not None and ended <= datetime.now(timezone.utc):
+            return False, "listing ended", item
+        buying_options = item.get("buyingOptions")
+        if isinstance(buying_options, list) and not buying_options:
+            return False, "no buying option returned", item
+        return True, "live", item
 
 
 def _legacy_id(item_id: str) -> str:
@@ -190,6 +303,9 @@ def listing_from_summary(item: dict[str, Any], source: dict[str, Any]) -> dict[s
     legacy_id = _legacy_id(item_id)
     seller = item.get("seller") if isinstance(item.get("seller"), dict) else {}
     price = item.get("price") if isinstance(item.get("price"), dict) else {}
+    image = item.get("image") if isinstance(item.get("image"), dict) else {}
+    category_path = item.get("categoryPath") or ""
+    categories = item.get("categories") if isinstance(item.get("categories"), list) else []
     try:
         price_value = round(float(price.get("value")), 2)
     except (TypeError, ValueError):
@@ -201,15 +317,21 @@ def listing_from_summary(item: dict[str, Any], source: dict[str, Any]) -> dict[s
         str(item.get("shortDescription") or ""),
         str(item.get("condition") or ""),
         str(item.get("itemCreationDate") or ""),
+        str(item.get("itemEndDate") or ""),
         " ".join(str(value) for value in buying_options),
+        str(category_path),
     ]
     url = str(item.get("itemWebUrl") or "").strip()
     if not url and legacy_id.isdigit():
         domain = "www.ebay.com" if source.get("marketplace") == "EBAY_US" else "www.ebay.co.uk"
         url = f"https://{domain}/itm/{legacy_id}"
+    category_id = ""
+    if categories and isinstance(categories[0], dict):
+        category_id = str(categories[0].get("categoryId") or "")
     return {
         "key": f"ebay:{legacy_id}",
         "external_id": legacy_id,
+        "rest_item_id": item_id,
         "source_id": source["id"],
         "source_name": source["name"],
         "title": title[:350],
@@ -219,7 +341,17 @@ def listing_from_summary(item: dict[str, Any], source: dict[str, Any]) -> dict[s
         "price_currency": price_currency,
         "context": " | ".join(part.strip() for part in context_parts if part.strip())[:1800],
         "vendor": str(seller.get("username") or ""),
+        "seller_feedback_percentage": seller.get("feedbackPercentage"),
+        "seller_feedback_score": seller.get("feedbackScore"),
+        "seller_account_type": str(seller.get("sellerAccountType") or item.get("sellerAccountType") or ""),
         "tags": " ".join(str(value) for value in buying_options),
+        "buying_options": [str(value) for value in buying_options],
+        "condition": str(item.get("condition") or ""),
+        "item_creation_date": str(item.get("itemCreationDate") or ""),
+        "item_end_date": str(item.get("itemEndDate") or ""),
+        "image_url": str(image.get("imageUrl") or ""),
+        "category_id": category_id,
+        "category_path": str(category_path),
     }
 
 
@@ -233,10 +365,20 @@ def search_listings(
     limit: int = 50,
     category_ids: str | None = None,
     fixed_price_only: bool = True,
+    buying_options: list[str] | tuple[str, ...] | None = None,
     seller_ids: list[str] | tuple[str, ...] | None = None,
+    exclude_seller_ids: list[str] | tuple[str, ...] | None = None,
+    seller_account_type: str | None = None,
     delivery_country: str | None = None,
     item_start_date: str | None = None,
     item_end_date: str | None = None,
+    ending_start_date: str | None = None,
+    ending_end_date: str | None = None,
+    search_in_description: bool = False,
+    price_min: float | None = None,
+    price_max: float | None = None,
+    price_currency: str | None = None,
+    conditions: list[str] | tuple[str, ...] | None = None,
     offset: int = 0,
 ) -> list[dict[str, Any]]:
     """Search newest-first and convert summaries to the monitor's row shape."""
@@ -248,10 +390,20 @@ def search_listings(
         limit=limit,
         category_ids=category_ids,
         fixed_price_only=fixed_price_only,
+        buying_options=buying_options,
         seller_ids=seller_ids,
+        exclude_seller_ids=exclude_seller_ids,
+        seller_account_type=seller_account_type,
         delivery_country=delivery_country,
         item_start_date=item_start_date,
         item_end_date=item_end_date,
+        ending_start_date=ending_start_date,
+        ending_end_date=ending_end_date,
+        search_in_description=search_in_description,
+        price_min=price_min,
+        price_max=price_max,
+        price_currency=price_currency,
+        conditions=conditions,
         offset=offset,
     )
     converted = [listing_from_summary(row, source) for row in rows]
