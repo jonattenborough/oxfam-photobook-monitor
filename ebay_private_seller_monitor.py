@@ -74,12 +74,15 @@ def load_config(path: Path) -> dict[str, Any]:
     payload["marketplace"] = marketplace
     payload.setdefault("delivery_country", "GB")
     payload.setdefault("category_ids", BOOKS_CATEGORY_ID)
-    payload.setdefault("query_result_limit", 30)
-    payload.setdefault("hot_records_per_run", 8)
-    payload.setdefault("rotating_records_per_run", 24)
-    payload.setdefault("contributor_queries_per_run", 4)
-    payload.setdefault("auction_queries_per_run", 4)
-    payload.setdefault("max_live_checks_per_run", 8)
+    payload.setdefault("query_result_limit", 200)
+    payload.setdefault("contemporary_records_per_run", 4)
+    payload.setdefault("classic_records_per_run", 4)
+    payload.setdefault("rotating_records_per_run", 4)
+    payload.setdefault("contemporary_contributor_queries_per_run", 1)
+    payload.setdefault("classic_contributor_queries_per_run", 1)
+    payload.setdefault("contemporary_auction_queries_per_run", 1)
+    payload.setdefault("classic_auction_queries_per_run", 1)
+    payload.setdefault("max_live_checks_per_run", 12)
     payload.setdefault("max_api_calls_per_run", 42)
     payload.setdefault("quota_reserve", 450)
     payload.setdefault("max_pending_live_checks", 100)
@@ -151,6 +154,19 @@ def _record_priority(row: dict[str, Any]) -> int:
     return int(value) if value.isdigit() else 9
 
 
+def _is_contemporary_record(row: dict[str, Any]) -> bool:
+    return "curated contemporary documentary" in str(row.get("Canon sources") or "").lower()
+
+
+def _record_identity(row: dict[str, Any]) -> tuple[str, str]:
+    return pb.normalize(row.get("Contributor")), pb.normalize(row.get("Title"))
+
+
+def _priority_records(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    hot = [row for row in rows if _record_priority(row) <= 0]
+    return hot or [row for row in rows if _record_priority(row) <= 1]
+
+
 def build_search_plan(config: dict[str, Any], state: dict[str, Any], now: datetime) -> list[dict[str, Any]]:
     records = list(recognition.load_library())
     cursors: dict[str, Any] = state["cursors"]
@@ -192,23 +208,41 @@ def build_search_plan(config: dict[str, Any], state: dict[str, Any], now: dateti
     for query in config["wrong_category_queries"]:
         add("wrong_category", query, category_ids=None, description=True)
 
-    hot_records = [row for row in records if _record_priority(row) <= 0]
-    if not hot_records:
-        hot_records = [row for row in records if _record_priority(row) <= 1]
-    hot_selected, next_hot = _cycle_slice(
-        hot_records,
-        int(cursors.get("hot_records", 0) or 0),
-        int(config["hot_records_per_run"]),
+    contemporary_records = [row for row in records if _is_contemporary_record(row)]
+    classic_records = [row for row in records if not _is_contemporary_record(row)]
+    contemporary_hot = _priority_records(contemporary_records)
+    classic_hot = _priority_records(classic_records)
+    contemporary_selected, next_contemporary = _cycle_slice(
+        contemporary_hot,
+        int(cursors.get("contemporary_hot_records", 0) or 0),
+        int(config["contemporary_records_per_run"]),
     )
-    cursors["hot_records"] = next_hot
-    for row in hot_selected:
-        add("hot_canon", recognition.search_query_for_record(row), description=True)
+    classic_selected, next_classic = _cycle_slice(
+        classic_hot,
+        int(cursors.get("classic_hot_records", 0) or 0),
+        int(config["classic_records_per_run"]),
+    )
+    cursors["contemporary_hot_records"] = next_contemporary
+    cursors["classic_hot_records"] = next_classic
+    for index in range(max(len(contemporary_selected), len(classic_selected))):
+        if index < len(contemporary_selected):
+            add(
+                "contemporary_hot",
+                recognition.search_query_for_record(contemporary_selected[index]),
+                description=True,
+            )
+        if index < len(classic_selected):
+            add(
+                "classic_hot",
+                recognition.search_query_for_record(classic_selected[index]),
+                description=True,
+            )
 
-    hot_keys = {(pb.normalize(row.get("Contributor")), pb.normalize(row.get("Title"))) for row in hot_records}
+    hot_keys = {_record_identity(row) for row in contemporary_hot + classic_hot}
     cold_records = [
         row
         for row in records
-        if (pb.normalize(row.get("Contributor")), pb.normalize(row.get("Title"))) not in hot_keys
+        if _record_identity(row) not in hot_keys
     ]
     rotating_selected, next_rotation = _cycle_slice(
         cold_records,
@@ -219,35 +253,61 @@ def build_search_plan(config: dict[str, Any], state: dict[str, Any], now: dateti
     for row in rotating_selected:
         add("library_rotation", recognition.search_query_for_record(row), description=False)
 
-    contributors = recognition.unique_contributors(records)
-    contributor_selected, next_contributor = _cycle_slice(
-        contributors,
-        int(cursors.get("contributors", 0) or 0),
-        int(config["contributor_queries_per_run"]),
+    contemporary_contributors = recognition.unique_contributors(contemporary_records)
+    classic_contributors = recognition.unique_contributors(classic_records)
+    contemporary_contributor_selected, next_contemporary_contributor = _cycle_slice(
+        contemporary_contributors,
+        int(cursors.get("contemporary_contributors", 0) or 0),
+        int(config["contemporary_contributor_queries_per_run"]),
     )
-    cursors["contributors"] = next_contributor
-    for contributor in contributor_selected:
-        add("contributor", contributor, description=True)
+    classic_contributor_selected, next_classic_contributor = _cycle_slice(
+        classic_contributors,
+        int(cursors.get("classic_contributors", 0) or 0),
+        int(config["classic_contributor_queries_per_run"]),
+    )
+    cursors["contemporary_contributors"] = next_contemporary_contributor
+    cursors["classic_contributors"] = next_classic_contributor
+    for index in range(max(len(contemporary_contributor_selected), len(classic_contributor_selected))):
+        if index < len(contemporary_contributor_selected):
+            add("contemporary_contributor", contemporary_contributor_selected[index], description=True)
+        if index < len(classic_contributor_selected):
+            add("classic_contributor", classic_contributor_selected[index], description=True)
 
-    auction_source = hot_records or records
-    auction_selected, next_auction = _cycle_slice(
-        auction_source,
-        int(cursors.get("auctions", 0) or 0),
-        int(config["auction_queries_per_run"]),
+    contemporary_auction_selected, next_contemporary_auction = _cycle_slice(
+        contemporary_hot or contemporary_records,
+        int(cursors.get("contemporary_auctions", 0) or 0),
+        int(config["contemporary_auction_queries_per_run"]),
     )
-    cursors["auctions"] = next_auction
+    classic_auction_selected, next_classic_auction = _cycle_slice(
+        classic_hot or classic_records,
+        int(cursors.get("classic_auctions", 0) or 0),
+        int(config["classic_auction_queries_per_run"]),
+    )
+    cursors["contemporary_auctions"] = next_contemporary_auction
+    cursors["classic_auctions"] = next_classic_auction
     ending_start = utc_stamp(now)
     ending_end = utc_stamp(now + timedelta(hours=int(config["auction_horizon_hours"])))
-    for row in auction_selected:
-        add(
-            "auction_ending",
-            recognition.search_query_for_record(row),
-            description=True,
-            options=AUCTION_BUYING_OPTIONS,
-            incremental=False,
-            ending_start=ending_start,
-            ending_end=ending_end,
-        )
+    for index in range(max(len(contemporary_auction_selected), len(classic_auction_selected))):
+        if index < len(contemporary_auction_selected):
+            add(
+                "contemporary_auction",
+                recognition.search_query_for_record(contemporary_auction_selected[index]),
+                description=True,
+                options=AUCTION_BUYING_OPTIONS,
+                incremental=False,
+                ending_start=ending_start,
+                ending_end=ending_end,
+            )
+        if index < len(classic_auction_selected):
+            add(
+                "classic_auction",
+                recognition.search_query_for_record(classic_auction_selected[index]),
+                description=True,
+                options=AUCTION_BUYING_OPTIONS,
+                incremental=False,
+                ending_start=ending_start,
+                ending_end=ending_end,
+            )
 
     unique: list[dict[str, Any]] = []
     seen: set[tuple[str, str, str]] = set()
@@ -270,13 +330,16 @@ def trim_search_plan(plan: list[dict[str, Any]], budget: int) -> list[dict[str, 
         return []
     lane_priority = {
         "broad": 0,
-        "hot_canon": 1,
+        "contemporary_hot": 1,
+        "classic_hot": 1,
         "collectible_format": 2,
         "collection": 3,
         "wrong_category": 4,
-        "auction_ending": 5,
+        "contemporary_auction": 5,
+        "classic_auction": 5,
         "library_rotation": 6,
-        "contributor": 7,
+        "contemporary_contributor": 7,
+        "classic_contributor": 7,
     }
     ranked = sorted(
         enumerate(plan),
@@ -362,8 +425,8 @@ def _fallback_score(item: dict[str, Any]) -> tuple[int, list[str]]:
     if photo_hits:
         score += 22
         reasons.append("photography-book wording")
-    collection_terms = ["job lot", "bundle", "collection", "books", "book lot", "house clearance"]
-    if any(pb.normalize(term) in text for term in collection_terms):
+    collection_evidence = recognition.collection_bundle_evidence(item)
+    if collection_evidence:
         score += 26
         reasons.append("collection or job-lot wording")
     if any(pb.normalize(term) in text for term in external_monitor.PUBLISHER_TERMS):
@@ -373,7 +436,7 @@ def _fallback_score(item: dict[str, Any]) -> tuple[int, list[str]]:
         score += 10
         reasons.append("collectible-edition wording")
     lane = str(item.get("search_lane") or "")
-    if "collection" in lane or "wrong_category" in lane:
+    if "wrong_category" in lane or ("collection" in lane and collection_evidence):
         score += 6
         reasons.append("high-recall discovery lane")
     try:
@@ -405,12 +468,28 @@ def classify(item: dict[str, Any]) -> dict[str, Any]:
         classified["opportunity_score"] = score
         classified["opportunity_reasons"] = reasons
         classified["recognized"] = True
+        canon_sources = str(best.get("canon_sources") or "").lower()
+        classified["collecting_lane"] = (
+            "recent documentary"
+            if "curated contemporary documentary" in canon_sources
+            else "classic or established canon"
+        )
+        if best.get("collectible_format_evidence"):
+            classified["opportunity_kind"] = "special edition or collectible object"
+        else:
+            classified["opportunity_kind"] = "collectible title or edition lead"
     else:
         score, reasons = _fallback_score(classified)
         classified["recognition_matches"] = []
         classified["opportunity_score"] = score
         classified["opportunity_reasons"] = reasons
         classified["recognized"] = False
+        classified["collecting_lane"] = "open discovery"
+        classified["opportunity_kind"] = (
+            "collection or job lot"
+            if recognition.collection_bundle_evidence(classified)
+            else "unrecognized collectible-format lead"
+        )
     return classified
 
 
@@ -543,6 +622,8 @@ def make_issue_body(
                 "",
                 f"- **Observed price:** {_price_line(item)}",
                 f"- **Private seller:** {item.get('vendor') or 'eBay individual account'}",
+                f"- **Collector lane:** {item.get('collecting_lane') or 'open discovery'}",
+                f"- **Opportunity type:** {item.get('opportunity_kind') or 'review lead'}",
                 f"- **Discovery lane:** {item.get('search_lane') or 'unknown'}",
                 f"- **Search:** `{item.get('search_query') or ''}`",
                 f"- **Buying format:** {', '.join(item.get('buying_options') or []) or 'not returned'}",
@@ -800,6 +881,7 @@ def main() -> int:
     state["last_run"] = detected_at
     state["last_query_count"] = len(search_plan)
     state["last_successful_queries"] = successful_queries
+    state["last_live_checks"] = len(live_checked)
     state["last_failure_count"] = len(failures)
     state["library_records"] = stats["records"]
     state["last_api_call_budget"] = call_budget
@@ -815,6 +897,7 @@ def main() -> int:
             "api_call_budget": call_budget,
             "planned_queries": len(search_plan),
             "successful_queries": successful_queries,
+            "live_checks": len(live_checked),
             "failures": failures,
             "unique_results": len(raw_by_key),
             "unseen_results": len(unseen_items),
