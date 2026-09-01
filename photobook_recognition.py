@@ -54,9 +54,6 @@ EXPERT_SIGNALS = {
     "first edition",
     "first printing",
     "first impression",
-    "signed",
-    "inscribed",
-    "association copy",
     "parr badger",
     "parr & badger",
     "roth 101",
@@ -64,14 +61,72 @@ EXPERT_SIGNALS = {
     "scarce",
     "collectable",
     "collectible",
-    "limited edition",
-    "edition of",
     "provenance",
     "dustwrapper",
     "dust jacket",
     "fine/fine",
     "near fine",
     "bibliography",
+}
+COLLECTIBLE_FORMAT_RULES = (
+    (
+        "book or edition with an original print",
+        12,
+        {
+            "book and print",
+            "book with a print",
+            "book with print",
+            "c type print",
+            "c-type print",
+            "gelatin silver print",
+            "includes a print",
+            "including a print",
+            "original photograph",
+            "original print",
+            "pigment print",
+            "print edition",
+            "silver gelatin print",
+            "silver print",
+            "with an archival print",
+            "with a print",
+            "with original print",
+            "with print",
+        },
+    ),
+    (
+        "unique work or artist proof",
+        9,
+        {
+            "a/p copy",
+            "artist proof",
+            "artist's proof",
+            "hand drawn",
+            "hors commerce",
+            "monoprint",
+            "original artwork",
+            "original drawing",
+            "unique print",
+        },
+    ),
+    ("association or presentation copy", 9, {"association copy", "presentation copy"}),
+    ("signed by the photographer", 6, {"hand signed", "signed", "signed by", "signed copy"}),
+    ("numbered copy", 5, {"hand numbered", "numbered", "numbered copy"}),
+    ("limited or special edition", 4, {"deluxe edition", "edition of", "limited edition", "special edition"}),
+    ("collector housing", 3, {"clamshell", "presentation box", "slipcase", "slipcased", "solander"}),
+)
+EDITION_IDENTITY_FIELDS = {
+    "Year",
+    "Publisher",
+    "ISBN",
+    "First edition notes",
+}
+PIPE_MERGE_FIELDS = {
+    "Awards and evidence",
+    "Canon sources",
+    "Collectible variants",
+    "Collector profile",
+    "Contributor aliases",
+    "Title aliases",
 }
 TIER_BONUS = {"S": 25, "A": 20, "B": 14, "C": 8, "D": 3}
 LISTING_NOISE_TOKENS = {
@@ -141,7 +196,10 @@ REISSUE_SIGNALS = {
     "reprint",
     "revised edition",
     "second edition",
+    "second printing",
     "third edition",
+    "third printing",
+    "later printing",
 }
 FIRST_EDITION_SIGNALS = {
     "first edition",
@@ -152,6 +210,10 @@ FIRST_EDITION_SIGNALS = {
     "1st printing",
 }
 YEAR_RE = re.compile(r"(?<!\d)(18\d{2}|19\d{2}|20\d{2})(?!\d)")
+LIMITATION_RE = re.compile(
+    r"(?i)\b(?:no\.?|number)?\s*\d{1,4}\s*(?:/|of)\s*\d{1,5}\b"
+)
+PROOF_MARK_RE = re.compile(r"(?i)(?<![a-z])(?:a\s*/\s*p|h\s*/\s*c)(?![a-z])")
 
 
 def _clean(value: Any) -> str:
@@ -266,7 +328,11 @@ def _load_supplement_file(path: Path) -> list[dict[str, Any]]:
 def _record_rank(row: dict[str, Any]) -> int:
     record_id = _clean(row.get("Record ID")).lower()
     source = f"{_clean(row.get('Canon sources'))} {_clean(row.get('Source'))}".lower()
-    if "priority seed" in source or "emerging watch" in source:
+    if (
+        "priority seed" in source
+        or "emerging watch" in source
+        or "curated contemporary documentary" in source
+    ):
         return 3
     if record_id.startswith("canon:") or "parr/badger" in source or "roth 101" in source:
         return 2
@@ -300,7 +366,7 @@ def _merge_record(base: dict[str, Any], extra: dict[str, Any]) -> dict[str, Any]
             continue
         if not _clean(value):
             continue
-        if key in {"Canon sources", "Contributor aliases", "Title aliases"}:
+        if key in PIPE_MERGE_FIELDS:
             merged[key] = _merge_pipe_values(merged.get(key), value)
         elif key == "Collectibility tier":
             merged[key] = _best_tier(merged.get(key), value)
@@ -312,6 +378,13 @@ def _merge_record(base: dict[str, Any], extra: dict[str, Any]) -> dict[str, Any]
         elif key == "Evidence confidence":
             confidence = {"HIGH": 3, "MEDIUM": 2, "LOW": 1, "": 0}
             if confidence.get(_clean(value).upper(), 0) > confidence.get(_clean(merged.get(key)).upper(), 0):
+                merged[key] = value
+        elif key in EDITION_IDENTITY_FIELDS:
+            # A publisher backlist often describes a current reissue rather
+            # than the original collectible edition. It may add aliases and
+            # provenance to a canonical work, but it cannot fill or replace
+            # edition-identifying metadata from a higher-authority record.
+            if extra_rank >= base_rank:
                 merged[key] = value
         elif not _clean(merged.get(key)) or extra_rank >= base_rank:
             merged[key] = value
@@ -536,6 +609,12 @@ def match_listing(item: dict[str, Any], *, limit: int = 5) -> list[dict[str, Any
                 "collectibility_tier": _clean(row.get("Collectibility tier")).upper(),
                 "search_priority": _clean(row.get("Search priority")),
                 "first_edition_notes": _clean(row.get("First edition notes")),
+                "collector_profile": _clean(row.get("Collector profile")),
+                "documentary_relevance": _clean(row.get("Documentary relevance")).upper(),
+                "first_monograph": _clean(row.get("First monograph")).upper(),
+                "collectible_variants": _clean(row.get("Collectible variants")),
+                "special_edition_priority": _clean(row.get("Special edition priority")).upper(),
+                "awards_and_evidence": _clean(row.get("Awards and evidence")),
                 "strong_buy_gbp": _float(row.get("Strong buy GBP")),
                 "bargain_gbp": _float(row.get("Bargain GBP")),
                 "evidence_confidence": _clean(row.get("Evidence confidence")),
@@ -596,10 +675,74 @@ def _listing_text(item: dict[str, Any]) -> str:
                 _clean(item.get("edition")),
                 _clean(item.get("isbn")),
                 _clean(item.get("condition")),
+                _clean(item.get("condition_description")),
                 _clean(item.get("category_path")),
+                _clean(item.get("tags")),
             ]
         )
     )
+
+
+def collectible_format_evidence(
+    item: dict[str, Any],
+    match: dict[str, Any],
+) -> tuple[int, list[str], list[str]]:
+    """Score physical-object features separately from seller sophistication.
+
+    A knowledgeable seller may describe a signed or numbered edition
+    accurately, but that language is also evidence that the object itself is
+    more collectible. Keeping these two judgements separate prevents the
+    monitor from penalising exactly the formats it is meant to find.
+    """
+    text = _listing_text(item)
+    raw_text = " ".join(
+        _clean(item.get(key))
+        for key in (
+            "title",
+            "context",
+            "description",
+            "edition",
+            "condition_description",
+        )
+    )
+    labels: list[str] = []
+    score = 0
+    for label, bonus, signals in COLLECTIBLE_FORMAT_RULES:
+        if any(
+            pb.contains_normalized_phrase(text, pb.normalize(signal))
+            for signal in signals
+        ):
+            labels.append(label)
+            score += bonus
+
+    if LIMITATION_RE.search(raw_text) and "numbered copy" not in labels:
+        labels.append("numbered copy")
+        score += 5
+    if PROOF_MARK_RE.search(raw_text) and "unique work or artist proof" not in labels:
+        labels.append("unique work or artist proof")
+        score += 9
+
+    reasons: list[str] = []
+    if labels:
+        score = min(18, score)
+        reasons.append("collectible object: " + ", ".join(labels))
+
+    known_variants = _clean(match.get("collectible_variants"))
+    priority = _clean(match.get("special_edition_priority")).upper()
+    if labels and known_variants:
+        score += 3 if priority == "HIGH" else 2
+        reasons.append("listing resembles a known collectible variant")
+
+    first_monograph = _clean(match.get("first_monograph")).upper() == "YES"
+    first_claim = any(
+        pb.contains_normalized_phrase(text, pb.normalize(signal))
+        for signal in FIRST_EDITION_SIGNALS
+    )
+    if first_monograph and first_claim:
+        score += 4
+        reasons.append("first-edition claim for a first monograph")
+
+    return min(22, score), reasons, labels
 
 
 def _isbn_key(value: Any) -> str:
@@ -722,6 +865,16 @@ def opportunity_score(item: dict[str, Any], match: dict[str, Any]) -> tuple[int,
     if tier_bonus:
         reasons.append(f"collectibility tier {tier}")
 
+    documentary_relevance = _clean(match.get("documentary_relevance")).upper()
+    if documentary_relevance == "HIGH":
+        score += 3
+        reasons.append("high fit for documentary collecting profile")
+    elif documentary_relevance == "MEDIUM":
+        score += 1
+        reasons.append("documentary-adjacent collector fit")
+    if _clean(match.get("first_monograph")).upper() == "YES":
+        reasons.append("recognised first monograph")
+
     price = item.get("price_gbp")
     try:
         price_gbp = float(price) if price is not None else None
@@ -759,6 +912,13 @@ def opportunity_score(item: dict[str, Any], match: dict[str, Any]) -> tuple[int,
         reasons.append("private individual seller")
 
     text = _listing_text(item)
+    format_bonus, format_reasons, format_labels = collectible_format_evidence(item, match)
+    if format_bonus:
+        score += format_bonus
+        reasons.extend(format_reasons)
+    match["collectible_format_evidence"] = format_labels
+    match["collectible_format_bonus"] = format_bonus
+
     casual = sorted(
         signal
         for signal in CASUAL_SIGNALS
@@ -836,6 +996,26 @@ def opportunity_score(item: dict[str, Any], match: dict[str, Any]) -> tuple[int,
     if backlist_only and tier in {"C", "D"} and bargain is None and strong_buy is None and not high_recall_context:
         score = min(score, 70)
         reasons.append("publisher-backlist record lacks independent value evidence")
+
+    # A respected recent book is not automatically a bargain. Plain copies
+    # above the user's normal discovery range stay below the issue threshold
+    # unless there is a curated price benchmark, a collectible-format signal,
+    # or genuine high-recall seller context.
+    curated_contemporary = (
+        record_id.startswith("contemporary:")
+        or "curated contemporary documentary" in _clean(match.get("canon_sources")).lower()
+    )
+    contemporary_market_signal = bool(
+        format_bonus
+        or casual
+        or bargain is not None
+        or strong_buy is not None
+        or (price_gbp is not None and price_gbp <= 150)
+        or discovery_lanes & {"collection", "wrong_category"}
+    )
+    if curated_contemporary and not contemporary_market_signal:
+        score = min(score, 70)
+        reasons.append("respected recent title lacks a current bargain or special-edition signal")
 
     return max(0, min(100, score)), reasons
 
