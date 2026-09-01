@@ -25,13 +25,14 @@ MAX_OFFSET = 9800
 DEFAULT_LOOKBACK_DAYS = 30
 DEFAULT_SLICE_DAYS = 7
 DEFAULT_MAX_CALLS = 60
-DEFAULT_LIVE_CHECKS = 6
+DEFAULT_LIVE_CHECKS = 0
 MAX_CALLS = 120
 QUOTA_RESERVE = 1000
 UNKNOWN_QUOTA_CAP = 20
 PENDING_LIMIT = 250
 ISSUE_ITEM_LIMIT = 30
-INITIAL_CURATED_BATCH = 24
+INITIAL_PRIORITY_BATCH = 24
+PLAN_VERSION = 2
 
 
 def load_json(path: Path, default: dict[str, Any], label: str) -> dict[str, Any]:
@@ -55,6 +56,33 @@ def api_call_budget(
         return fallback, None, f"Browse quota lookup failed; limiting this backfill to {fallback} calls: {exc}"
     usable = max(0, int(quota.get("remaining") or 0) - QUOTA_RESERVE)
     return min(requested, usable), quota, None
+
+
+def live_check_reserve(
+    pending_count: int,
+    queue_count: int,
+    call_budget: int,
+    requested: int,
+) -> int:
+    """Allocate backfill calls toward the current bottleneck.
+
+    A positive requested value remains an explicit cap. Zero enables the ROI
+    allocator, which spends more calls verifying a full candidate queue and
+    more calls searching when there is little waiting for verification.
+    """
+    budget = max(0, int(call_budget))
+    if requested > 0:
+        return min(int(requested), budget)
+    pending = max(0, int(pending_count))
+    if pending and queue_count <= 0:
+        return budget
+    if pending >= 200:
+        return min(40, budget)
+    if pending >= 100:
+        return min(30, budget)
+    if pending >= 40:
+        return min(20, budget)
+    return min(12, max(0, budget // 5))
 
 
 def date_slices(start: datetime, end: datetime, slice_days: int) -> list[tuple[str, str]]:
@@ -84,6 +112,27 @@ def _curated_sort_key(row: dict[str, Any]) -> tuple[Any, ...]:
         pb.normalize(row.get("Contributor")),
         pb.normalize(row.get("Title")),
     )
+
+
+def _classic_sort_key(row: dict[str, Any]) -> tuple[Any, ...]:
+    tier = str(row.get("Collectibility tier") or "").upper()
+    priority = str(row.get("Search priority") or "9")
+    return (
+        {"S": 0, "A": 1, "B": 2}.get(tier, 3),
+        int(priority) if priority.isdigit() else 9,
+        pb.normalize(row.get("Contributor")),
+        pb.normalize(row.get("Title")),
+    )
+
+
+def _interleave(left: list[dict[str, Any]], right: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    combined: list[dict[str, Any]] = []
+    for index in range(max(len(left), len(right))):
+        if index < len(left):
+            combined.append(left[index])
+        if index < len(right):
+            combined.append(right[index])
+    return combined
 
 
 def build_backfill_plan(
@@ -136,11 +185,20 @@ def build_backfill_plan(
         for row in recognition.load_library()
         if "curated contemporary documentary" in str(row.get("Canon sources") or "").lower()
     ]
+    classics = [
+        row
+        for row in recognition.load_library()
+        if "curated contemporary documentary" not in str(row.get("Canon sources") or "").lower()
+        and str(row.get("Search priority") or "9").strip() == "0"
+    ]
     curated.sort(key=_curated_sort_key)
-    first_batch = curated[:INITIAL_CURATED_BATCH]
-    remaining_curated = curated[INITIAL_CURATED_BATCH:]
+    classics.sort(key=_classic_sort_key)
+    priority_records = _interleave(curated, classics)
+    first_batch = priority_records[:INITIAL_PRIORITY_BATCH]
+    remaining_priority = priority_records[INITIAL_PRIORITY_BATCH:]
     for row in first_batch:
-        add("contemporary_exact", recognition.search_query_for_record(row))
+        lane = "contemporary_exact" if live_monitor._is_contemporary_record(row) else "classic_exact"
+        add(lane, recognition.search_query_for_record(row))
 
     # Broad queries are split into short creation-date windows so a busy query
     # cannot hide older results behind eBay's 200-result page limit.
@@ -148,10 +206,12 @@ def build_backfill_plan(
         for query in config["broad_queries"]:
             add("broad", query, start=start, end=end)
 
-    # The first bounded run reaches the strongest personal-fit titles and all
-    # broad slices. Remaining contemporary targets then resume in later runs.
-    for row in remaining_curated:
-        add("contemporary_exact", recognition.search_query_for_record(row))
+    # The first bounded run reaches both recent documentary priorities and
+    # classic must-haves before broad slices. The remaining two groups then
+    # continue in an interleaved rotation.
+    for row in remaining_priority:
+        lane = "contemporary_exact" if live_monitor._is_contemporary_record(row) else "classic_exact"
+        add(lane, recognition.search_query_for_record(row))
 
     unique: list[dict[str, Any]] = []
     seen: set[tuple[str, str, str, str, int]] = set()
@@ -170,6 +230,51 @@ def build_backfill_plan(
     return unique
 
 
+def migrate_legacy_plan(state: dict[str, Any], config: dict[str, Any]) -> bool:
+    """Add classic priority searches to a backfill created by plan version 1."""
+    if int(state.get("plan_version") or 1) >= PLAN_VERSION:
+        return False
+    queue = state.get("queue")
+    window_start = live_monitor._parse_stamp(state.get("window_start"))
+    window_end = live_monitor._parse_stamp(state.get("window_end"))
+    if not isinstance(queue, list) or window_start is None or window_end is None:
+        return False
+    existing = {
+        (
+            str(step.get("lane") or ""),
+            pb.normalize(step.get("query")),
+            str(step.get("window_start") or ""),
+            str(step.get("window_end") or ""),
+        )
+        for step in queue
+        if isinstance(step, dict)
+    }
+    classic_steps = [
+        step
+        for step in build_backfill_plan(
+            config,
+            window_start,
+            window_end,
+            slice_days=int(state.get("slice_days") or DEFAULT_SLICE_DAYS),
+        )
+        if step["lane"] == "classic_exact"
+        and (
+            str(step["lane"]),
+            pb.normalize(step["query"]),
+            str(step["window_start"]),
+            str(step["window_end"]),
+        ) not in existing
+    ]
+    state["plan_version"] = PLAN_VERSION
+    if not classic_steps:
+        return True
+    state["queue"] = classic_steps + queue
+    state["initial_plan_size"] = int(state.get("initial_plan_size") or len(queue)) + len(classic_steps)
+    state["complete"] = False
+    state["migration_note"] = f"Added {len(classic_steps)} classic priority searches without restarting the window"
+    return True
+
+
 def initialize_state(
     state: dict[str, Any],
     config: dict[str, Any],
@@ -183,7 +288,7 @@ def initialize_state(
     existing_queue = state.get("queue")
     if isinstance(existing_queue, list) and not new_window:
         state.setdefault("pending_live", {})
-        return False
+        return migrate_legacy_plan(state, config)
 
     detected = live_monitor._parse_stamp(detected_at) or datetime.now(timezone.utc)
     live_boundary = live_monitor._parse_stamp(live_state.get("last_run")) or detected
@@ -194,6 +299,7 @@ def initialize_state(
     state.update(
         {
             "version": 1,
+            "plan_version": PLAN_VERSION,
             "created_at": detected_at,
             "window_start": live_monitor.utc_stamp(window_start),
             "window_end": live_monitor.utc_stamp(window_end),
@@ -288,11 +394,28 @@ def run_backfill(
     if not isinstance(pending, dict):
         raise RuntimeError("Private backfill pending_live is not an object")
 
+    minimum_live_score = max(55, int(config["issue_threshold"]) - 12)
     known_keys = known_live_keys(live_state) | {str(key) for key in findings_items}
     for key in list(pending):
         if str(key) in known_keys:
             pending.pop(key, None)
-    reserved_live = min(max(0, int(max_live_checks)), max(0, int(call_budget)))
+            continue
+        item = pending.get(key)
+        if not isinstance(item, dict):
+            pending.pop(key, None)
+            continue
+        refreshed = live_monitor.classify(item)
+        if int(refreshed.get("opportunity_score") or 0) < minimum_live_score:
+            pending.pop(key, None)
+            continue
+        refreshed["backfill_first_found"] = item.get("backfill_first_found") or detected_at
+        pending[key] = refreshed
+    reserved_live = live_check_reserve(
+        len(pending),
+        len(queue),
+        call_budget,
+        max_live_checks,
+    )
     search_allowance = max(0, int(call_budget) - reserved_live)
     search_calls = 0
     live_calls = 0
@@ -332,7 +455,6 @@ def run_backfill(
     if search_calls and successful_queries == 0:
         raise RuntimeError("All attempted private-seller backfill searches failed; progress was not advanced")
 
-    minimum_live_score = max(55, int(config["issue_threshold"]) - 12)
     for item in raw_by_key.values():
         classified = live_monitor.classify(item)
         if int(classified.get("opportunity_score") or 0) >= minimum_live_score:
@@ -400,6 +522,7 @@ def run_backfill(
         "calls": search_calls + live_calls,
         "search_calls": search_calls,
         "live_checks": live_calls,
+        "live_check_budget": reserved_live,
         "successful_queries": successful_queries,
         "results_inspected": results_inspected,
         "unique_unseen_results": len(raw_by_key),
@@ -434,6 +557,8 @@ def issue_body(result: dict[str, Any], state: dict[str, Any], total_findings: in
         "",
         f"- Historical window: **{state.get('window_start')} to {state.get('window_end')}**",
         f"- Browse calls used: **{result['calls']}**",
+        f"- Search calls: **{result['search_calls']}**",
+        f"- Live-verification calls: **{result['live_checks']}**",
         f"- Search results inspected: **{result['results_inspected']}**",
         f"- Search steps still queued: **{result['remaining_steps']}**",
         f"- New live-verified candidates: **{len(candidates)}**",
@@ -450,6 +575,8 @@ def issue_body(result: dict[str, Any], state: dict[str, Any], total_findings: in
                 "",
                 f"- **Observed price:** {_price(item)}",
                 f"- **Seller:** {item.get('vendor') or 'eBay individual account'}",
+                f"- **Collector lane:** {item.get('collecting_lane') or 'open discovery'}",
+                f"- **Opportunity type:** {item.get('opportunity_kind') or 'review lead'}",
                 f"- **Discovery lane:** {item.get('search_lane') or 'unknown'}",
                 f"- **Why it surfaced:** {', '.join(item.get('opportunity_reasons') or [])}",
                 f"- **Listing:** {item.get('url')}",
