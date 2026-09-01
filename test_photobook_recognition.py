@@ -196,6 +196,17 @@ class PhotobookRecognitionTests(unittest.TestCase):
         self.assertTrue(any(reason.startswith("collectible object:") for reason in reasons))
         self.assertGreaterEqual(score, 72)
 
+    def test_explicit_not_signed_text_blocks_signed_object_bonus(self):
+        item = {
+            "title": "Robert Frank The Americans hardcover",
+            "description": "Fourth edition. The book is not signed.",
+        }
+        match = recognition.match_listing(item)[0]
+        bonus, reasons, labels = recognition.collectible_format_evidence(item, match)
+        self.assertNotIn("signed by the photographer", labels)
+        self.assertFalse(any("signed by the photographer" in reason for reason in reasons))
+        self.assertEqual(bonus, 0)
+
     def test_limitation_and_artist_proof_marks_are_recognized(self):
         item = {
             "title": "Chloe Dewe Mathews Thames Log special edition",
