@@ -81,14 +81,24 @@ class PrivateSellerBackfillTests(unittest.TestCase):
         start = datetime(2026, 8, 2, 12, 0, tzinfo=timezone.utc)
         end = datetime(2026, 9, 1, 12, 0, tzinfo=timezone.utc)
         plan = backfill.build_backfill_plan(self.config, start, end, slice_days=7)
-        self.assertGreaterEqual(len(plan), 100)
+        self.assertGreaterEqual(len(plan), 150)
         self.assertEqual(
             [step["lane"] for step in plan[:10]],
             ["collectible_format"] * 4 + ["collection"] * 4 + ["wrong_category"] * 2,
         )
-        self.assertTrue(all(step["lane"] == "contemporary_exact" for step in plan[10:34]))
+        self.assertEqual(
+            [step["lane"] for step in plan[10:34]],
+            ["contemporary_exact", "classic_exact"] * 12,
+        )
         self.assertTrue(all(step["lane"] == "broad" for step in plan[34:54]))
         self.assertEqual(len({(step["window_start"], step["window_end"]) for step in plan[34:54]}), 5)
+        self.assertEqual(sum(step["lane"] == "contemporary_exact" for step in plan), 73)
+        self.assertEqual(sum(step["lane"] == "classic_exact" for step in plan), 50)
+
+    def test_adaptive_allocator_favors_verification_when_queue_is_full(self):
+        self.assertEqual(backfill.live_check_reserve(250, 61, 60, 0), 40)
+        self.assertEqual(backfill.live_check_reserve(0, 61, 60, 0), 12)
+        self.assertEqual(backfill.live_check_reserve(250, 61, 60, 6), 6)
 
     def test_completed_window_is_not_restarted_without_explicit_flag(self):
         state = {"version": 1, "queue": [], "pending_live": {}, "complete": True}
@@ -104,6 +114,31 @@ class PrivateSellerBackfillTests(unittest.TestCase):
         self.assertFalse(changed)
         self.assertEqual(state["queue"], [])
         self.assertTrue(state["complete"])
+
+    def test_legacy_window_gets_classic_searches_without_restart(self):
+        state = {
+            "version": 1,
+            "window_start": "2026-08-02T12:00:00Z",
+            "window_end": "2026-09-01T12:00:00Z",
+            "slice_days": 7,
+            "initial_plan_size": 103,
+            "queue": [one_step()],
+            "pending_live": {},
+            "complete": False,
+        }
+        changed = backfill.initialize_state(
+            state,
+            self.config,
+            {"last_run": "2026-09-01T15:09:30Z"},
+            detected_at="2026-09-01T16:00:00Z",
+            lookback_days=30,
+            slice_days=7,
+            new_window=False,
+        )
+        self.assertTrue(changed)
+        self.assertEqual(state["plan_version"], backfill.PLAN_VERSION)
+        self.assertEqual(sum(step["lane"] == "classic_exact" for step in state["queue"]), 50)
+        self.assertEqual(state["queue"][-1], one_step())
 
     def test_search_page_uses_historical_private_seller_filters(self):
         client = FakeClient([[]])

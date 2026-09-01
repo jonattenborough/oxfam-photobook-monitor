@@ -262,6 +262,27 @@ class PhotobookRecognitionTests(unittest.TestCase):
         self.assertEqual(status, "confirmed")
         self.assertIn("target ISBN matches", reasons)
 
+    def test_year_and_publisher_alone_are_plausible_not_confirmed(self):
+        status, reasons = recognition.assess_edition(
+            {"publisher": "Aperture", "publication_year": "1972"},
+            {"isbn": "", "year": "1972", "publisher": "Aperture"},
+        )
+        self.assertEqual(status, "plausible")
+        self.assertIn("target publisher matches", reasons)
+        self.assertIn("target year 1972 appears", reasons)
+
+    def test_single_book_collection_subtitle_is_not_bundle_evidence(self):
+        self.assertFalse(
+            recognition.collection_bundle_evidence(
+                {"title": "The Gourmand's Egg: A Collection of Stories and Recipes"}
+            )
+        )
+        self.assertTrue(
+            recognition.collection_bundle_evidence(
+                {"title": "12 photography books collection from house clearance"}
+            )
+        )
+
     def test_conflicting_publisher_suppresses_famous_men_reprint(self):
         item = {
             "title": "Let Us Now Praise Famous Men by James Agee and Walker Evans Picador PB",

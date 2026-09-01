@@ -50,6 +50,18 @@ CASUAL_SIGNALS = {
     "don't know",
     "selling for",
 }
+COLLECTION_DISCOVERY_SIGNALS = {
+    "job lot",
+    "book bundle",
+    "books bundle",
+    "bundle of books",
+    "book lot",
+    "lot of books",
+    "collection of books",
+    "book collection",
+    "books collection",
+    "house clearance",
+}
 EXPERT_SIGNALS = {
     "first edition",
     "first printing",
@@ -214,6 +226,7 @@ LIMITATION_RE = re.compile(
     r"(?i)\b(?:no\.?|number)?\s*\d{1,4}\s*(?:/|of)\s*\d{1,5}\b"
 )
 PROOF_MARK_RE = re.compile(r"(?i)(?<![a-z])(?:a\s*/\s*p|h\s*/\s*c)(?![a-z])")
+MULTIPLE_BOOKS_RE = re.compile(r"(?i)\b(?:[2-9]|[1-9]\d{1,2})\s+(?:photography\s+|photo\s+|art\s+)?books\b")
 
 
 def _clean(value: Any) -> str:
@@ -683,6 +696,26 @@ def _listing_text(item: dict[str, Any]) -> str:
     )
 
 
+def collection_bundle_evidence(item: dict[str, Any]) -> bool:
+    """Return true only when the listing describes multiple physical books.
+
+    A bare word such as "collection" is common in individual book titles and
+    is not evidence of a job lot. This narrower test prevents those titles
+    from receiving the high-recall bundle boost.
+    """
+    text = _listing_text(item)
+    if any(
+        pb.contains_normalized_phrase(text, pb.normalize(signal))
+        for signal in COLLECTION_DISCOVERY_SIGNALS
+    ):
+        return True
+    raw_text = " ".join(
+        _clean(item.get(key))
+        for key in ("title", "context", "description", "condition_description")
+    )
+    return bool(MULTIPLE_BOOKS_RE.search(raw_text))
+
+
 def collectible_format_evidence(
     item: dict[str, Any],
     match: dict[str, Any],
@@ -833,10 +866,8 @@ def assess_edition(item: dict[str, Any], match: dict[str, Any]) -> tuple[str, li
 
     if conflicts:
         return "mismatch", conflicts
-    if any(reason == "target ISBN matches" for reason in evidence) or len(evidence) >= 2:
+    if any(reason == "target ISBN matches" for reason in evidence):
         return "confirmed", evidence
-    if evidence:
-        return "plausible", evidence
 
     first_claims = sorted(
         signal
@@ -844,7 +875,9 @@ def assess_edition(item: dict[str, Any], match: dict[str, Any]) -> tuple[str, li
         if pb.contains_normalized_phrase(bibliographic_text, pb.normalize(signal))
     )
     if first_claims:
-        return "claimed", ["seller claims a first edition but target metadata is unconfirmed"]
+        return "claimed", evidence + ["seller claims a first edition but target metadata is unconfirmed"]
+    if evidence:
+        return "plausible", evidence
     return "unknown", ["exact collectible edition is not established by the listing metadata"]
 
 
@@ -979,6 +1012,8 @@ def opportunity_score(item: dict[str, Any], match: dict[str, Any]) -> tuple[int,
     if edition_status == "mismatch":
         score -= 28 if sensitive else 10
         score = min(score, 62 if sensitive else 76)
+    elif sensitive and edition_status == "plausible":
+        score = min(score, 89)
     elif sensitive and edition_status == "unknown":
         score = min(score, 86)
     elif sensitive and edition_status == "claimed":
@@ -992,7 +1027,9 @@ def opportunity_score(item: dict[str, Any], match: dict[str, Any]) -> tuple[int,
     backlist_only = record_id.startswith("openlibrary:")
     discovery_lane = str(item.get("search_lane") or "")
     discovery_lanes = set(discovery_lane.split("+"))
-    high_recall_context = bool(casual) or bool(discovery_lanes & {"collection", "wrong_category"})
+    high_recall_context = bool(casual) or bool(discovery_lanes & {"wrong_category"})
+    if "collection" in discovery_lanes and collection_bundle_evidence(item):
+        high_recall_context = True
     if backlist_only and tier in {"C", "D"} and bargain is None and strong_buy is None and not high_recall_context:
         score = min(score, 70)
         reasons.append("publisher-backlist record lacks independent value evidence")
@@ -1011,7 +1048,8 @@ def opportunity_score(item: dict[str, Any], match: dict[str, Any]) -> tuple[int,
         or bargain is not None
         or strong_buy is not None
         or (price_gbp is not None and price_gbp <= 150)
-        or discovery_lanes & {"collection", "wrong_category"}
+        or discovery_lanes & {"wrong_category"}
+        or ("collection" in discovery_lanes and collection_bundle_evidence(item))
     )
     if curated_contemporary and not contemporary_market_signal:
         score = min(score, 70)
