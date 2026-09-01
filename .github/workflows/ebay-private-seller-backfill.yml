@@ -15,6 +15,16 @@ on:
         required: true
         default: "60"
         type: string
+      hard_call_cap:
+        description: Safety ceiling for a manually accelerated run
+        required: true
+        default: "120"
+        type: string
+      quota_reserve:
+        description: Browse calls that must remain unused
+        required: true
+        default: "1000"
+        type: string
       new_window:
         description: Discard completed progress and create a fresh historical window
         required: true
@@ -77,11 +87,15 @@ jobs:
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
           LOOKBACK_DAYS: ${{ github.event_name == 'workflow_dispatch' && inputs.lookback_days || '30' }}
           MAX_CALLS: ${{ github.event_name == 'workflow_dispatch' && inputs.max_calls || '60' }}
+          HARD_CALL_CAP: ${{ github.event_name == 'workflow_dispatch' && inputs.hard_call_cap || '120' }}
+          QUOTA_RESERVE: ${{ github.event_name == 'workflow_dispatch' && inputs.quota_reserve || '1000' }}
           NEW_WINDOW: ${{ github.event_name == 'workflow_dispatch' && inputs.new_window || 'false' }}
         run: |
           args=(
             --lookback-days "$LOOKBACK_DAYS"
             --max-calls "$MAX_CALLS"
+            --hard-call-cap "$HARD_CALL_CAP"
+            --quota-reserve "$QUOTA_RESERVE"
           )
           if [ "$NEW_WINDOW" = "true" ]; then
             args+=(--new-window)
