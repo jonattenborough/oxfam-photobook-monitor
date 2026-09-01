@@ -1,0 +1,104 @@
+name: eBay private seller photobook discovery
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - "ebay_api.py"
+      - "ebay_private_seller_monitor.py"
+      - "photobook_recognition.py"
+      - "test_ebay_api.py"
+      - "test_photobook_recognition.py"
+      - "test_ebay_private_seller_monitor.py"
+      - "data/ebay_private_searches.json"
+      - "data/photobook_recognition/**"
+      - "data/parr_badger_master/**"
+      - "data/roth_101_master.csv"
+      - ".github/workflows/ebay-private-seller-monitor.yml"
+  push:
+    branches: [main]
+    paths:
+      - "ebay_api.py"
+      - "ebay_private_seller_monitor.py"
+      - "photobook_recognition.py"
+      - "test_ebay_api.py"
+      - "test_photobook_recognition.py"
+      - "test_ebay_private_seller_monitor.py"
+      - "data/ebay_private_searches.json"
+      - "data/photobook_recognition/**"
+      - "data/ebay_private_seller_state.json"
+      - "data/parr_badger_master/**"
+      - "data/roth_101_master.csv"
+      - ".github/workflows/ebay-private-seller-monitor.yml"
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: ebay-private-seller-photobook-discovery
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+
+      - name: Validate eBay private seller discovery
+        run: |
+          python -m unittest -v \
+            test_ebay_api.py \
+            test_photobook_recognition.py \
+            test_ebay_private_seller_monitor.py
+          python photobook_recognition.py
+
+      - name: Search private eBay sellers
+        if: github.event_name != 'pull_request'
+        id: private
+        env:
+          EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
+          EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
+        run: python ebay_private_seller_monitor.py
+
+      - name: Create AI review issue for live private seller candidates
+        if: github.event_name != 'pull_request' && steps.private.outputs.new_count != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create \
+            --title "$(cat runtime/ebay-private/issue-title.txt)" \
+            --body-file runtime/ebay-private/issue-body.md
+
+      - name: Persist private seller monitor state
+        if: github.event_name != 'pull_request' && steps.private.outputs.state_changed == 'true'
+        run: |
+          set -euo pipefail
+          cp runtime/ebay-private/proposed-state.json data/ebay_private_seller_state.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data/ebay_private_seller_state.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "Update eBay private seller monitor state [skip ci]"
+          for attempt in 1 2 3 4; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then
+              break
+            fi
+            if [ "$attempt" = "4" ]; then
+              exit 1
+            fi
+          done
