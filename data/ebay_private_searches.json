@@ -12,7 +12,7 @@
   "quota_reserve": 450,
   "max_pending_live_checks": 100,
   "hot_records_per_run": 6,
-  "rotating_records_per_run": 16,
+  "rotating_records_per_run": 12,
   "contributor_queries_per_run": 2,
   "auction_queries_per_run": 2,
   "auction_horizon_hours": 36,
@@ -21,6 +21,12 @@
     "photo book",
     "photography monograph",
     "photographer book"
+  ],
+  "collectible_queries": [
+    "signed photography book",
+    "signed numbered photobook",
+    "limited edition photobook",
+    "photography book with print"
   ],
   "collection_queries": [
     "photography books collection",

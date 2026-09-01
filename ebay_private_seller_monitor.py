@@ -87,7 +87,8 @@ def load_config(path: Path) -> dict[str, Any]:
     payload.setdefault("urgent_threshold", 90)
     payload.setdefault("max_price_gbp", 750)
     payload.setdefault("auction_horizon_hours", 36)
-    for key in ("broad_queries", "collection_queries", "wrong_category_queries"):
+    payload.setdefault("collectible_queries", [])
+    for key in ("broad_queries", "collectible_queries", "collection_queries", "wrong_category_queries"):
         value = payload.get(key)
         if not isinstance(value, list):
             raise RuntimeError(f"{key} must be a list")
@@ -184,6 +185,8 @@ def build_search_plan(config: dict[str, Any], state: dict[str, Any], now: dateti
 
     for query in config["broad_queries"]:
         add("broad", query, description=True)
+    for query in config["collectible_queries"]:
+        add("collectible_format", query, description=True)
     for query in config["collection_queries"]:
         add("collection", query, description=True)
     for query in config["wrong_category_queries"]:
@@ -268,11 +271,12 @@ def trim_search_plan(plan: list[dict[str, Any]], budget: int) -> list[dict[str, 
     lane_priority = {
         "broad": 0,
         "hot_canon": 1,
-        "collection": 2,
-        "wrong_category": 3,
-        "auction_ending": 4,
-        "library_rotation": 5,
-        "contributor": 6,
+        "collectible_format": 2,
+        "collection": 3,
+        "wrong_category": 4,
+        "auction_ending": 5,
+        "library_rotation": 6,
+        "contributor": 7,
     }
     ranked = sorted(
         enumerate(plan),
@@ -314,7 +318,11 @@ def run_query(
 ) -> list[dict[str, Any]]:
     key = _query_key(lane, query, buying_options)
     last_checked = state["query_last_checked"].get(key)
-    item_start_date = incremental_start(last_checked) if incremental else None
+    # A newly introduced query must not backfill old active stock. Start it
+    # from the monitor's previous run, or just the overlap window on a truly
+    # fresh state, so every discovery lane remains new-listings-only.
+    incremental_baseline = last_checked or state.get("last_run") or detected_at
+    item_start_date = incremental_start(incremental_baseline) if incremental else None
     rows = client.search(
         query,
         limit=limit,
@@ -422,7 +430,10 @@ def _merge_live_detail(item: dict[str, Any], detail: dict[str, Any]) -> dict[str
         merged["vendor"] = str(seller.get("username") or merged.get("vendor") or "")
         merged["seller_feedback_percentage"] = seller.get("feedbackPercentage", merged.get("seller_feedback_percentage"))
         merged["seller_feedback_score"] = seller.get("feedbackScore", merged.get("seller_feedback_score"))
-        merged["seller_account_type"] = str(seller.get("sellerAccountType") or merged.get("seller_account_type") or "")
+        account_type = str(seller.get("sellerAccountType") or merged.get("seller_account_type") or "").upper()
+        merged["seller_account_type"] = account_type
+        if account_type:
+            merged["private_seller"] = account_type == "INDIVIDUAL"
 
     aspect_fields = {
         "author": "author",
@@ -550,6 +561,21 @@ def make_issue_body(
             )
             if best.get("first_edition_notes"):
                 lines.append(f"- **Edition target note:** {best.get('first_edition_notes')}")
+            collector_fit = [
+                str(best.get("collector_profile") or "").strip(),
+                "first monograph" if str(best.get("first_monograph") or "").upper() == "YES" else "",
+            ]
+            collector_fit = [value for value in collector_fit if value]
+            if collector_fit:
+                lines.append(f"- **Collector fit:** {' | '.join(collector_fit)}")
+            if best.get("awards_and_evidence"):
+                lines.append(f"- **Respect evidence:** {best.get('awards_and_evidence')}")
+            if best.get("collectible_variants"):
+                lines.append(f"- **Known collectible variants:** {best.get('collectible_variants')}")
+            if best.get("collectible_format_evidence"):
+                lines.append(
+                    f"- **Listing object evidence:** {', '.join(best.get('collectible_format_evidence') or [])}"
+                )
             if best.get("edition_status"):
                 edition_detail = "; ".join(str(value) for value in best.get("edition_reasons") or [])
                 lines.append(
@@ -736,6 +762,8 @@ def main() -> int:
         for item in final_classified
         if int(item.get("opportunity_score") or 0) >= issue_threshold
         and item.get("live_verified") is True
+        and item.get("private_seller") is True
+        and str(item.get("seller_account_type") or "").upper() != "BUSINESS"
     ]
     candidate_keys = {str(item.get("key") or "") for item in candidates}
 
