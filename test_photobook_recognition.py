@@ -282,6 +282,40 @@ class PhotobookRecognitionTests(unittest.TestCase):
                 {"title": "12 photography books collection from house clearance"}
             )
         )
+        self.assertFalse(
+            recognition.collection_bundle_evidence(
+                {"description": "An ideal addition to any photography book collection"}
+            )
+        )
+
+    def test_explicit_series_volume_selects_the_matching_record(self):
+        matches = recognition.match_listing(
+            {"title": "Good Morning, America Volume II - Mark Power - signed GOST 2019"}
+        )
+        self.assertTrue(matches)
+        self.assertEqual(pb.normalize(matches[0]["title"]), "good morning america volume two")
+
+    def test_longer_exact_title_wins_when_listing_mentions_two_known_titles(self):
+        matches = recognition.match_listing(
+            {"title": "Hiroshi Sugimoto Time Exposed Photo Book Theaters Seascapes"}
+        )
+        self.assertTrue(matches)
+        self.assertEqual(pb.normalize(matches[0]["title"]), "time exposed")
+
+    def test_serious_condition_risk_suppresses_reading_copy_alert(self):
+        item = {
+            "title": "The Family of Man Edward Steichen",
+            "description": "Ex-library paperback with withdrawn stamp",
+            "publisher": "Museum of Modern Art",
+            "price_gbp": 8.66,
+            "private_seller": True,
+            "seller_account_type": "INDIVIDUAL",
+            "buying_options": ["FIXED_PRICE", "BEST_OFFER"],
+        }
+        match = recognition.match_listing(item)[0]
+        score, reasons = recognition.opportunity_score(item, match)
+        self.assertLess(score, 72)
+        self.assertTrue(any(reason.startswith("condition risk:") for reason in reasons))
 
     def test_conflicting_publisher_suppresses_famous_men_reprint(self):
         item = {
