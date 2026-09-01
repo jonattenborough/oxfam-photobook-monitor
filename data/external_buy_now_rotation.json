@@ -1,210 +1,57 @@
 {
   "version": 1,
-  "last_updated": "2026-09-01T14:55:19Z",
+  "last_updated": "2026-09-01T15:47:44Z",
   "sources": {
-    "alibris_uk": {
-      "last_checked": "2026-09-01T14:55:19Z",
-      "check_count": 54
-    },
-    "abebooks_uk": {
-      "last_checked": "2026-09-01T14:55:19Z",
-      "check_count": 55
-    },
-    "vialibri": {
-      "last_checked": "2026-09-01T14:55:19Z",
-      "check_count": 55
-    },
-    "biblio": {
-      "last_checked": "2026-09-01T14:55:19Z",
-      "check_count": 54
-    },
-    "zvab": {
-      "last_checked": "2026-09-01T14:55:19Z",
-      "check_count": 55
-    },
-    "pbfa": {
-      "last_checked": "2026-09-01T14:55:19Z",
-      "check_count": 55
-    },
-    "boekwinkeltjes": {
-      "last_checked": "2026-09-01T14:55:19Z",
-      "check_count": 55
-    },
-    "maremagnum": {
-      "last_checked": "2026-09-01T14:55:19Z",
-      "check_count": 55
-    },
-    "harpers_books": {
-      "last_checked": "2026-09-01T13:44:47Z",
-      "check_count": 41
-    },
-    "dashwood_books": {
-      "last_checked": "2026-09-01T13:44:47Z",
-      "check_count": 41
-    },
-    "photoeye": {
-      "last_checked": "2026-09-01T13:44:47Z",
-      "check_count": 41
-    },
-    "cahan_books": {
-      "last_checked": "2026-09-01T13:44:47Z",
-      "check_count": 40
-    },
-    "placart_photo": {
-      "last_checked": "2026-09-01T13:44:47Z",
-      "check_count": 41
-    },
-    "librairie_213": {
-      "last_checked": "2026-09-01T13:44:47Z",
-      "check_count": 41
-    },
-    "komiyama_tokyo": {
-      "last_checked": "2026-09-01T13:44:47Z",
-      "check_count": 39
-    },
-    "shashasha_used": {
-      "last_checked": "2026-09-01T13:44:47Z",
-      "check_count": 40
-    },
-    "micamera": {
-      "last_checked": "2026-09-01T14:55:19Z",
-      "check_count": 13
-    },
-    "libreria_marini": {
-      "last_checked": "2026-09-01T13:44:47Z",
-      "check_count": 39
-    },
-    "obiettivolibri": {
-      "last_checked": "2026-09-01T13:44:47Z",
-      "check_count": 39
-    },
-    "tenderbooks": {
-      "last_checked": "2026-09-01T14:55:19Z",
-      "check_count": 13
-    },
-    "donlon_books": {
-      "last_checked": "2026-09-01T13:44:47Z",
-      "check_count": 40
-    },
-    "claire_de_rouen": {
-      "last_checked": "2026-09-01T13:44:47Z",
-      "check_count": 40
-    },
-    "printed_matter": {
-      "last_checked": "2026-09-01T11:58:48Z",
-      "check_count": 6
-    },
-    "idea_books": {
-      "last_checked": "2026-09-01T11:58:48Z",
-      "check_count": 6
-    },
-    "shapero": {
-      "last_checked": "2026-09-01T13:44:47Z",
-      "check_count": 40
-    },
-    "sims_reed": {
-      "last_checked": "2026-09-01T13:44:47Z",
-      "check_count": 40
-    },
-    "peter_harrington": {
-      "last_checked": "2026-09-01T14:55:19Z",
-      "check_count": 13
-    },
-    "maggs": {
-      "last_checked": "2026-09-01T14:55:19Z",
-      "check_count": 14
-    },
-    "quaritch": {
-      "last_checked": "2026-09-01T14:55:19Z",
-      "check_count": 13
-    },
-    "york_modern_books": {
-      "last_checked": "2026-09-01T14:55:19Z",
-      "check_count": 13
-    },
-    "between_the_covers": {
-      "last_checked": "2026-09-01T13:44:47Z",
-      "check_count": 40
-    },
-    "granary_books": {
-      "last_checked": "2026-09-01T13:44:47Z",
-      "check_count": 12
-    },
-    "royal_books": {
-      "last_checked": "2026-09-01T14:55:19Z",
-      "check_count": 12
-    },
-    "william_reese": {
-      "last_checked": "2026-09-01T09:33:33Z",
-      "check_count": 5
-    },
-    "burnside_rare_books": {
-      "last_checked": "2026-09-01T09:33:33Z",
-      "check_count": 5
-    },
-    "lorne_bair": {
-      "last_checked": "2026-09-01T09:33:33Z",
-      "check_count": 5
-    },
-    "ursus_books": {
-      "last_checked": "2026-09-01T14:55:19Z",
-      "check_count": 9
-    },
-    "ars_libri": {
-      "last_checked": "2026-09-01T14:55:19Z",
-      "check_count": 9
-    },
-    "lux_mentis": {
-      "last_checked": "2026-09-01T09:33:33Z",
-      "check_count": 5
-    },
-    "aba": {
-      "last_checked": "2026-09-01T14:55:19Z",
-      "check_count": 15
-    },
-    "ilab": {
-      "last_checked": "2026-09-01T14:55:19Z",
-      "check_count": 12
-    },
-    "bookfinder": {
-      "last_checked": "2026-09-01T14:55:19Z",
-      "check_count": 12
-    },
-    "addall": {
-      "last_checked": "2026-09-01T09:33:33Z",
-      "check_count": 5
-    },
-    "antiqbook": {
-      "last_checked": "2026-09-01T14:55:19Z",
-      "check_count": 13
-    },
-    "bibliopoly": {
-      "last_checked": "2026-09-01T09:33:33Z",
-      "check_count": 5
-    },
-    "antikvariat_net": {
-      "last_checked": "2026-09-01T14:55:19Z",
-      "check_count": 12
-    },
-    "uniliber": {
-      "last_checked": "2026-09-01T14:55:19Z",
-      "check_count": 11
-    },
-    "booklooker": {
-      "last_checked": "2026-09-01T12:44:07Z",
-      "check_count": 11
-    },
-    "iberlibro": {
-      "last_checked": "2026-09-01T09:33:33Z",
-      "check_count": 4
-    },
-    "livre_rare_book": {
-      "last_checked": "2026-09-01T14:55:19Z",
-      "check_count": 11
-    },
-    "ebay_uk_bin": {
-      "last_checked": "2026-09-01T11:58:48Z",
-      "check_count": 11
-    }
+    "alibris_uk": {"last_checked": "2026-09-01T15:47:44Z", "check_count": 55},
+    "abebooks_uk": {"last_checked": "2026-09-01T15:47:44Z", "check_count": 56},
+    "vialibri": {"last_checked": "2026-09-01T15:47:44Z", "check_count": 56},
+    "biblio": {"last_checked": "2026-09-01T15:47:44Z", "check_count": 55},
+    "zvab": {"last_checked": "2026-09-01T15:47:44Z", "check_count": 56},
+    "pbfa": {"last_checked": "2026-09-01T15:47:44Z", "check_count": 56},
+    "boekwinkeltjes": {"last_checked": "2026-09-01T15:47:44Z", "check_count": 56},
+    "maremagnum": {"last_checked": "2026-09-01T15:47:44Z", "check_count": 56},
+    "harpers_books": {"last_checked": "2026-09-01T15:47:44Z", "check_count": 42},
+    "dashwood_books": {"last_checked": "2026-09-01T15:47:44Z", "check_count": 42},
+    "photoeye": {"last_checked": "2026-09-01T15:47:44Z", "check_count": 42},
+    "cahan_books": {"last_checked": "2026-09-01T15:47:44Z", "check_count": 41},
+    "placart_photo": {"last_checked": "2026-09-01T15:47:44Z", "check_count": 42},
+    "librairie_213": {"last_checked": "2026-09-01T15:47:44Z", "check_count": 42},
+    "komiyama_tokyo": {"last_checked": "2026-09-01T15:47:44Z", "check_count": 40},
+    "shashasha_used": {"last_checked": "2026-09-01T15:47:44Z", "check_count": 41},
+    "micamera": {"last_checked": "2026-09-01T14:55:19Z", "check_count": 13},
+    "libreria_marini": {"last_checked": "2026-09-01T15:47:44Z", "check_count": 40},
+    "obiettivolibri": {"last_checked": "2026-09-01T15:47:44Z", "check_count": 40},
+    "tenderbooks": {"last_checked": "2026-09-01T14:55:19Z", "check_count": 13},
+    "donlon_books": {"last_checked": "2026-09-01T15:47:44Z", "check_count": 41},
+    "claire_de_rouen": {"last_checked": "2026-09-01T15:47:44Z", "check_count": 41},
+    "printed_matter": {"last_checked": "2026-09-01T11:58:48Z", "check_count": 6},
+    "idea_books": {"last_checked": "2026-09-01T11:58:48Z", "check_count": 6},
+    "shapero": {"last_checked": "2026-09-01T15:47:44Z", "check_count": 41},
+    "sims_reed": {"last_checked": "2026-09-01T15:47:44Z", "check_count": 41},
+    "peter_harrington": {"last_checked": "2026-09-01T14:55:19Z", "check_count": 13},
+    "maggs": {"last_checked": "2026-09-01T14:55:19Z", "check_count": 14},
+    "quaritch": {"last_checked": "2026-09-01T14:55:19Z", "check_count": 13},
+    "york_modern_books": {"last_checked": "2026-09-01T14:55:19Z", "check_count": 13},
+    "between_the_covers": {"last_checked": "2026-09-01T15:47:44Z", "check_count": 41},
+    "granary_books": {"last_checked": "2026-09-01T13:44:47Z", "check_count": 12},
+    "royal_books": {"last_checked": "2026-09-01T14:55:19Z", "check_count": 12},
+    "william_reese": {"last_checked": "2026-09-01T09:33:33Z", "check_count": 5},
+    "burnside_rare_books": {"last_checked": "2026-09-01T09:33:33Z", "check_count": 5},
+    "lorne_bair": {"last_checked": "2026-09-01T09:33:33Z", "check_count": 5},
+    "ursus_books": {"last_checked": "2026-09-01T14:55:19Z", "check_count": 9},
+    "ars_libri": {"last_checked": "2026-09-01T14:55:19Z", "check_count": 9},
+    "lux_mentis": {"last_checked": "2026-09-01T09:33:33Z", "check_count": 5},
+    "aba": {"last_checked": "2026-09-01T14:55:19Z", "check_count": 15},
+    "ilab": {"last_checked": "2026-09-01T14:55:19Z", "check_count": 12},
+    "bookfinder": {"last_checked": "2026-09-01T14:55:19Z", "check_count": 12},
+    "addall": {"last_checked": "2026-09-01T09:33:33Z", "check_count": 5},
+    "antiqbook": {"last_checked": "2026-09-01T14:55:19Z", "check_count": 13},
+    "bibliopoly": {"last_checked": "2026-09-01T09:33:33Z", "check_count": 5},
+    "antikvariat_net": {"last_checked": "2026-09-01T14:55:19Z", "check_count": 12},
+    "uniliber": {"last_checked": "2026-09-01T14:55:19Z", "check_count": 11},
+    "booklooker": {"last_checked": "2026-09-01T15:47:44Z", "check_count": 12},
+    "iberlibro": {"last_checked": "2026-09-01T09:33:33Z", "check_count": 4},
+    "livre_rare_book": {"last_checked": "2026-09-01T14:55:19Z", "check_count": 11},
+    "ebay_uk_bin": {"last_checked": "2026-09-01T11:58:48Z", "check_count": 11}
   }
 }
