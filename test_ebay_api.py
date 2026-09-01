@@ -202,6 +202,27 @@ class EbayApiTests(unittest.TestCase):
         self.assertIsNone(listing["price_gbp"])
         self.assertEqual(listing["url"], "https://www.ebay.com/itm/123456789012")
 
+    def test_international_summary_retains_shipping_and_market_domain(self):
+        source = {"id": "seller", "name": "German seller", "marketplace": "EBAY_DE"}
+        listing = ebay_api.listing_from_summary(
+            {
+                "itemId": "v1|123456789013|0",
+                "title": "Signiertes Fotobuch",
+                "price": {"value": "30.00", "currency": "EUR"},
+                "shippingOptions": [
+                    {"shippingCost": {"value": "12.00", "currency": "EUR"}},
+                    {"shippingCost": {"value": "8.00", "currency": "EUR"}},
+                ],
+            },
+            source,
+        )
+        self.assertIsNotNone(listing)
+        assert listing is not None
+        self.assertEqual(listing["shipping_value"], 8.0)
+        self.assertEqual(listing["shipping_currency"], "EUR")
+        self.assertIsNone(listing["landed_price_gbp"])
+        self.assertEqual(listing["url"], "https://www.ebay.de/itm/123456789013")
+
 
 if __name__ == "__main__":
     unittest.main()
