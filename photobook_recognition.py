@@ -58,10 +58,21 @@ COLLECTION_DISCOVERY_SIGNALS = {
     "book lot",
     "lot of books",
     "collection of books",
-    "book collection",
     "books collection",
-    "house clearance",
 }
+CONDITION_RISK_RULES = (
+    ("ex-library or withdrawn copy", 22, {"ex library", "ex-library", "library copy", "withdrawn"}),
+    (
+        "material damage",
+        14,
+        {"water damage", "water damaged", "mould", "mold", "mildew", "major foxing", "staining"},
+    ),
+    (
+        "incomplete or structurally compromised copy",
+        20,
+        {"incomplete", "missing page", "missing pages", "pages missing", "detached cover", "lacks dust jacket"},
+    ),
+)
 EXPERT_SIGNALS = {
     "first edition",
     "first printing",
@@ -227,10 +238,50 @@ LIMITATION_RE = re.compile(
 )
 PROOF_MARK_RE = re.compile(r"(?i)(?<![a-z])(?:a\s*/\s*p|h\s*/\s*c)(?![a-z])")
 MULTIPLE_BOOKS_RE = re.compile(r"(?i)\b(?:[2-9]|[1-9]\d{1,2})\s+(?:photography\s+|photo\s+|art\s+)?books\b")
+VOLUME_RE = re.compile(
+    r"(?i)\bvol(?:ume)?\.?\s*(one|two|three|four|five|six|seven|eight|nine|ten|\d+|[ivxlcdm]+)\b"
+)
+VOLUME_WORDS = {
+    "one": 1,
+    "two": 2,
+    "three": 3,
+    "four": 4,
+    "five": 5,
+    "six": 6,
+    "seven": 7,
+    "eight": 8,
+    "nine": 9,
+    "ten": 10,
+}
 
 
 def _clean(value: Any) -> str:
     return str(value or "").strip()
+
+
+def _roman_number(value: str) -> int | None:
+    values = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
+    total = 0
+    previous = 0
+    for character in reversed(value.upper()):
+        current = values.get(character)
+        if current is None:
+            return None
+        total += -current if current < previous else current
+        previous = max(previous, current)
+    return total or None
+
+
+def _series_volume(value: Any) -> int | None:
+    match = VOLUME_RE.search(_clean(value))
+    if not match:
+        return None
+    token = match.group(1).lower()
+    if token.isdigit():
+        return int(token)
+    if token in VOLUME_WORDS:
+        return VOLUME_WORDS[token]
+    return _roman_number(token)
 
 
 def _float(value: Any) -> float | None:
@@ -572,6 +623,7 @@ def match_listing(item: dict[str, Any], *, limit: int = 5) -> list[dict[str, Any
     tags = item.get("tags")
     tags_text = " ".join(str(value) for value in tags) if isinstance(tags, list) else _clean(tags)
     listing_title = pb.normalize(item.get("title"))
+    listing_volume = _series_volume(item.get("title"))
     listing_full = pb.normalize(
         " ".join(
             [
@@ -607,6 +659,9 @@ def match_listing(item: dict[str, Any], *, limit: int = 5) -> list[dict[str, Any
                 scored = alias_scored
         if scored is None:
             continue
+        target_volume = _series_volume(row.get("Title"))
+        if listing_volume is not None and target_volume is not None and listing_volume != target_volume:
+            continue
         score, reason = scored
         matches.append(
             {
@@ -638,6 +693,7 @@ def match_listing(item: dict[str, Any], *, limit: int = 5) -> list[dict[str, Any
     matches.sort(
         key=lambda match: (
             int(match["score"]),
+            len(pb.useful_tokens(match.get("title"))),
             TIER_BONUS.get(str(match.get("collectibility_tier") or "").upper(), 0),
             -int(str(match.get("search_priority") or "9") if str(match.get("search_priority") or "").isdigit() else 9),
         ),
@@ -1002,6 +1058,19 @@ def opportunity_score(item: dict[str, Any], match: dict[str, Any]) -> tuple[int,
         penalty = min(10, 2 + len(expert_hits) * 2)
         score -= penalty
         reasons.append("seller uses collector-aware language")
+
+    condition_penalty = 0
+    condition_labels: list[str] = []
+    for label, penalty, signals in CONDITION_RISK_RULES:
+        if any(
+            pb.contains_normalized_phrase(text, pb.normalize(signal))
+            for signal in signals
+        ):
+            condition_penalty += penalty
+            condition_labels.append(label)
+    if condition_penalty:
+        score -= min(30, condition_penalty)
+        reasons.append("condition risk: " + ", ".join(condition_labels))
 
     edition_status, edition_reasons = assess_edition(item, match)
     match["edition_status"] = edition_status
