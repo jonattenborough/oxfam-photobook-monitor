@@ -24,7 +24,7 @@ from oxfam_parent_common import (
 
 PAGE_SIZE = 90
 PAGES = 2  # newest 180 parent-category items per run
-MAX_ISSUE_BODY_CHARS = 48_000
+MAX_ISSUE_BODY_CHARS = 28_000
 ISSUE_HEADER_RESERVE = 2_000
 
 
