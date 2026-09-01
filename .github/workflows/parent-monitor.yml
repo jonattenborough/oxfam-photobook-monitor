@@ -44,6 +44,7 @@ jobs:
         id: monitor
         run: python canon_runner.py parent_monitor
 
+      # Create every generated batch before advancing the seen-listing state.
       - name: Create AI review issues for new parent-category listings
         if: steps.monitor.outputs.new_count != '0'
         env:
