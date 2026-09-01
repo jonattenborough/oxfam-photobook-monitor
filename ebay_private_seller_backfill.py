@@ -753,6 +753,8 @@ def main() -> int:
     parser.add_argument("--lookback-days", type=int, default=DEFAULT_LOOKBACK_DAYS)
     parser.add_argument("--slice-days", type=int, default=DEFAULT_SLICE_DAYS)
     parser.add_argument("--max-calls", type=int, default=DEFAULT_MAX_CALLS)
+    parser.add_argument("--hard-call-cap", type=int, default=MAX_CALLS)
+    parser.add_argument("--quota-reserve", type=int, default=QUOTA_RESERVE)
     parser.add_argument("--max-live-checks", type=int, default=DEFAULT_LIVE_CHECKS)
     parser.add_argument("--new-window", action="store_true")
     args = parser.parse_args()
@@ -761,6 +763,10 @@ def main() -> int:
         parser.error("--lookback-days must be between 1 and 365")
     if not 1 <= args.slice_days <= 30:
         parser.error("--slice-days must be between 1 and 30")
+    if args.hard_call_cap < 0:
+        parser.error("--hard-call-cap cannot be negative")
+    if args.quota_reserve < 0:
+        parser.error("--quota-reserve cannot be negative")
 
     config = live_monitor.load_config(Path(args.config))
     live_state = live_monitor.load_state(Path(args.live_state))
@@ -778,7 +784,12 @@ def main() -> int:
     )
 
     client = ebay_api.EbayBrowseClient(marketplace=config["marketplace"])
-    call_budget, quota, quota_warning = api_call_budget(client, args.max_calls)
+    call_budget, quota, quota_warning = api_call_budget(
+        client,
+        args.max_calls,
+        hard_cap=args.hard_call_cap,
+        quota_reserve=args.quota_reserve,
+    )
     result = run_backfill(
         client,
         config,
