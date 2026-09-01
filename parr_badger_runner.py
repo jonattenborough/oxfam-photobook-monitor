@@ -260,8 +260,13 @@ def patch_monitor(module: Any) -> None:
 def patch_parent_monitor(module: Any) -> None:
     original = module.make_issue
 
-    def wrapped(items: list[dict[str, Any]], detected_at: str) -> tuple[str, str]:
-        title, body = original(items, detected_at)
+    def wrapped(
+        items: list[dict[str, Any]],
+        detected_at: str,
+        *args: Any,
+        **kwargs: Any,
+    ) -> tuple[str, str]:
+        title, body = original(items, detected_at, *args, **kwargs)
         return title, append_match_section(body, items)
 
     module.make_issue = wrapped
