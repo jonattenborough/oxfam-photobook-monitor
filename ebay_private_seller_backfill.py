@@ -390,11 +390,22 @@ def run_backfill(
     findings_items = findings.setdefault("items", {})
     if not isinstance(findings_items, dict):
         raise RuntimeError("Private backfill findings items is not an object")
+    issue_threshold = int(config["issue_threshold"])
+    for key in list(findings_items):
+        item = findings_items.get(key)
+        if not isinstance(item, dict):
+            findings_items.pop(key, None)
+            continue
+        refreshed = live_monitor.classify(item)
+        if int(refreshed.get("opportunity_score") or 0) < issue_threshold:
+            findings_items.pop(key, None)
+            continue
+        findings_items[key] = refreshed
     pending = state.setdefault("pending_live", {})
     if not isinstance(pending, dict):
         raise RuntimeError("Private backfill pending_live is not an object")
 
-    minimum_live_score = max(55, int(config["issue_threshold"]) - 12)
+    minimum_live_score = max(55, issue_threshold - 12)
     known_keys = known_live_keys(live_state) | {str(key) for key in findings_items}
     for key in list(pending):
         if str(key) in known_keys:
