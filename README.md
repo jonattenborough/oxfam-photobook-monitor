@@ -59,13 +59,15 @@ The workflow is capped at 42 Browse calls per hour, including up to six live che
 
 `ebay_private_seller_backfill.py` provides a separate manual historical search for active private-seller stock created before the live monitor's boundary. Its default 30-day plan searches collectible wording, collections, the curated contemporary layer and date-sliced broad queries. It is resumable, excludes listings already known to the live monitor, re-checks seller type and availability, and stores findings separately under `EBAY_PRIVATE_BACKFILL:`. A run is capped at 60 Browse calls and protects a larger 1,000-call reserve; if quota lookup fails, the cap falls to 20 calls.
 
+`ebay_private_international_backfill.py` extends that historical audit across eBay Germany, France, Italy, Spain, Ireland, Belgium, Austria, Switzerland and Poland using each site's explicit individual-account filter and local-language discovery searches. A stricter exact-title pass also covers the US, Canada and Australia, where eBay does not expose the individual-account filter; those markets require a low-feedback seller heuristic and a higher review threshold. The international queue covers a fixed 365-day window, stores progress separately, deduplicates by eBay's underlying listing ID across markets and excludes anything already known to the UK monitor or UK backfill. Approximate GBP scoring includes the cheapest delivery charge returned by eBay, while final review still verifies the actual checkout total and current exchange rate.
+
 ### Selected eBay charity sellers
 
 `ebay_seller_monitor.py` separately checks 103 selected charity and library sellers: 89 on eBay UK and 14 on eBay US. The twice-hourly workflow processes 52 sellers in a persistent round-robin batch, so every seller is normally revisited about once per hour while keeping API use sustainable. Each seller gets an independent Books-category query, so a large seller cannot consume a shared 200-result page and hide stock from smaller shops. The US searches also require delivery availability to Great Britain.
 
 The first successful search for each seller silently records its newest 200 fixed-price books. Later runs use that seller's last successful timestamp with a ten-minute overlap, then alert only on previously unseen listings that contain photography-book signals or match the combined Parr/Badger and Roth canon. Seller state is isolated, so one temporary seller failure does not turn existing stock into new alerts.
 
-At the normal cadence the batched seller monitor uses about 2,496 Browse calls per day. The existing market monitor uses about 624, the private-seller engine is capped at 1,008, and the temporary back-search is capped at 300. Expected maximum scheduled use is therefore about 4,428 of the default 5,000-call daily allowance. The seller batch reserves worst-case incremental-page headroom, the back-search reduces its own budget when necessary, and every monitor protects a shared 450-call reserve.
+At the normal cadence the batched seller monitor uses about 2,496 Browse calls per day. The existing market monitor uses about 624, the private-seller engine is capped at 1,008, and the temporary selected-seller back-search is capped at 300. The UK private backfill can add at most 120 calls and the international pass at most 60 while they remain incomplete, for a theoretical maximum of about 4,608 of the default 5,000-call daily allowance. Both private backfills protect a larger 1,000-call reserve and automatically reduce or stop their work before routine monitors can exhaust the allowance.
 
 ### Current-inventory seller back-search
 
@@ -124,7 +126,8 @@ The comprehensive market monitor deliberately uses `EXTERNAL_NEW:` so the existi
 - **Selected eBay charity sellers:** minutes 9 and 39 of every hour.
 - **Current-inventory eBay seller back-search:** daily at 02:47 UTC until complete.
 - **eBay private-seller photobook discovery:** minute 17 of every hour.
-- **eBay private-seller historical backfill:** manual, bounded and resumable only.
+- **eBay private-seller historical backfill:** twice daily while its bounded queue remains incomplete.
+- **eBay international private-seller backfill:** daily while its bounded 365-day queue remains incomplete.
 - **Photobook Wider Web Search:** hourly condition watch.
 - **Charity Photobook New Listings:** hourly condition watch for the GitHub issue-review and value-verification stage.
 
