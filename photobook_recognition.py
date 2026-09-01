@@ -73,6 +73,17 @@ EXPERT_SIGNALS = {
     "near fine",
     "bibliography",
 }
+ANTHOLOGY_TITLE_SIGNALS = {
+    "with photos",
+    "photos from",
+    "photographs from",
+    "photographs by",
+    "featuring",
+    "including",
+    "and many more",
+    "various photographers",
+    "works by",
+}
 TIER_BONUS = {"S": 25, "A": 20, "B": 14, "C": 8, "D": 3}
 
 
@@ -231,6 +242,26 @@ def _score_alias(row: dict[str, Any], alias: str, listing_title: str, listing_fu
     return score, f"{reason} via title alias"
 
 
+def _name_only_candidate(row: dict[str, Any], candidate_title: str) -> bool:
+    """Return true when a candidate title is essentially just the creator name."""
+    title_tokens = pb.useful_tokens(candidate_title)
+    contributor_tokens = set(pb.contributor_tokens(row.get("Contributor")))
+    if not title_tokens or len(title_tokens) > 4 or not contributor_tokens:
+        return False
+    overlap = len(title_tokens & contributor_tokens) / len(title_tokens)
+    return overlap >= 0.80
+
+
+def _reject_anthology_name_mention(
+    row: dict[str, Any], candidate_title: str, raw_listing_title: Any
+) -> bool:
+    """Reject name-only matches when the listing clearly describes a multi-author book."""
+    if not _name_only_candidate(row, candidate_title):
+        return False
+    listing = pb.normalize(raw_listing_title)
+    return any(pb.normalize(signal) in listing for signal in ANTHOLOGY_TITLE_SIGNALS)
+
+
 def match_listing(item: dict[str, Any], *, limit: int = 5) -> list[dict[str, Any]]:
     """Fuzzy-match a listing against the complete recognition library."""
     tags = item.get("tags")
@@ -254,28 +285,31 @@ def match_listing(item: dict[str, Any], *, limit: int = 5) -> list[dict[str, Any
 
     matches: list[dict[str, Any]] = []
     for row in load_library():
+        matched_title = _clean(row.get("Title"))
         scored = pb.score_record(row, listing_title, listing_full)
         if scored is None:
             for alias in row.get("_title_aliases") or []:
                 scored = _score_alias(row, alias, listing_title, listing_full)
                 if scored is not None:
+                    matched_title = alias
                     break
         if scored is None:
+            continue
+        if _reject_anthology_name_mention(row, matched_title, item.get("title")):
             continue
         score, reason = scored
         matches.append(
             {
-                "record_id": _clean(row.get("Record ID")),
-                "score": int(score),
+                "score": score,
                 "reason": reason,
+                "record_id": _clean(row.get("Record ID")),
                 "contributor": _clean(row.get("Contributor")),
                 "title": _clean(row.get("Title")),
                 "year": _clean(row.get("Year")),
                 "publisher": _clean(row.get("Publisher")),
-                "isbn": _clean(row.get("ISBN")),
                 "canon_sources": _clean(row.get("Canon sources")),
-                "collectibility_tier": _clean(row.get("Collectibility tier")).upper(),
-                "search_priority": _clean(row.get("Search priority")),
+                "collectibility_tier": _clean(row.get("Collectibility tier")).upper() or "C",
+                "search_priority": int(_clean(row.get("Search priority")) or "9"),
                 "first_edition_notes": _clean(row.get("First edition notes")),
                 "strong_buy_gbp": _float(row.get("Strong buy GBP")),
                 "bargain_gbp": _float(row.get("Bargain GBP")),
@@ -288,7 +322,7 @@ def match_listing(item: dict[str, Any], *, limit: int = 5) -> list[dict[str, Any
         key=lambda match: (
             int(match["score"]),
             TIER_BONUS.get(str(match.get("collectibility_tier") or "").upper(), 0),
-            -int(str(match.get("search_priority") or "9") if str(match.get("search_priority") or "").isdigit() else 9),
+            -int(match.get("search_priority") or 9),
         ),
         reverse=True,
     )
@@ -306,22 +340,27 @@ def match_listing(item: dict[str, Any], *, limit: int = 5) -> list[dict[str, Any
 
 
 def search_query_for_record(row: dict[str, Any]) -> str:
-    """Build a compact eBay query that stays within the Browse API q limit."""
     contributor = _clean(row.get("Contributor"))
     title = _clean(row.get("Title"))
     query = " ".join(part for part in (contributor, title) if part).strip()
     return query[:100].strip()
 
 
-def unique_contributors(rows: list[dict[str, Any]] | tuple[dict[str, Any], ...] | None = None) -> list[str]:
-    source = rows if rows is not None else load_library()
-    names: dict[str, str] = {}
-    for row in source:
-        name = _clean(row.get("Contributor"))
-        norm = pb.normalize(name)
-        if name and norm and norm not in names:
-            names[norm] = name
-    return sorted(names.values(), key=pb.normalize)
+def prioritized_search_records() -> list[dict[str, Any]]:
+    return list(load_library())
+
+
+def unique_contributor_queries() -> list[str]:
+    result: list[str] = []
+    seen: set[str] = set()
+    for row in load_library():
+        contributor = _clean(row.get("Contributor"))
+        norm = pb.normalize(contributor)
+        if not contributor or not norm or norm in seen:
+            continue
+        seen.add(norm)
+        result.append(contributor)
+    return result
 
 
 def _listing_text(item: dict[str, Any]) -> str:
@@ -331,118 +370,144 @@ def _listing_text(item: dict[str, Any]) -> str:
                 _clean(item.get("title")),
                 _clean(item.get("context")),
                 _clean(item.get("description")),
-                _clean(item.get("condition")),
-                _clean(item.get("category_path")),
             ]
         )
     )
 
 
-def opportunity_score(item: dict[str, Any], match: dict[str, Any]) -> tuple[int, list[str]]:
-    """Score how interesting an identified private-seller listing looks.
-
-    Recognition strength and collectibility dominate. Low price and signs that
-    the seller has not bibliographically described the book add opportunity.
-    Expert seller language reduces the mispricing component but never cancels a
-    strong canonical match.
-    """
-    score = round(int(match.get("score") or 0) * 0.48)
-    reasons: list[str] = [f"recognition {int(match.get('score') or 0)}/100"]
-
-    tier = str(match.get("collectibility_tier") or "").upper()
-    tier_bonus = TIER_BONUS.get(tier, 0)
-    score += tier_bonus
-    if tier_bonus:
-        reasons.append(f"collectibility tier {tier}")
-
-    price = item.get("price_gbp")
-    try:
-        price_gbp = float(price) if price is not None else None
-    except (TypeError, ValueError):
-        price_gbp = None
-    strong_buy = match.get("strong_buy_gbp")
-    bargain = match.get("bargain_gbp")
-    if price_gbp is not None:
-        if bargain is not None and price_gbp <= float(bargain):
-            score += 18
-            reasons.append("at or below curated bargain benchmark")
-        elif strong_buy is not None and price_gbp <= float(strong_buy):
-            score += 12
-            reasons.append("below curated strong-buy benchmark")
-        elif price_gbp <= 25:
-            score += 10
-            reasons.append("very low asking price")
-        elif price_gbp <= 60:
-            score += 6
-            reasons.append("low asking price")
-        elif price_gbp <= 120:
-            score += 3
-
-    buying = {str(value).upper() for value in item.get("buying_options", []) if str(value)}
-    if "FIXED_PRICE" in buying:
-        score += 3
-        reasons.append("immediate fixed-price purchase possible")
-    if "BEST_OFFER" in buying:
-        score += 2
-        reasons.append("Best Offer available")
-
-    account_type = _clean(item.get("seller_account_type")).upper()
-    if account_type == "INDIVIDUAL" or item.get("private_seller") is True:
-        score += 4
-        reasons.append("private individual seller")
-
+def _knowledge_opportunity(item: dict[str, Any], match: dict[str, Any]) -> tuple[int, list[str]]:
     text = _listing_text(item)
-    casual = sorted(signal for signal in CASUAL_SIGNALS if pb.normalize(signal) in text)
-    if casual:
-        score += min(9, 3 + len(casual) * 2)
-        reasons.append("casual seller wording")
+    title = pb.normalize(item.get("title"))
+    points = 0
+    reasons: list[str] = []
 
-    title_norm = pb.normalize(item.get("title"))
-    if title_norm in {pb.normalize(term) for term in GENERIC_LISTING_TERMS}:
-        score += 7
-        reasons.append("generic listing title")
-    elif len(title_norm.split()) <= 5:
-        score += 3
-        reasons.append("brief listing title")
+    casual_hits = [term for term in CASUAL_SIGNALS if pb.normalize(term) in text]
+    if casual_hits:
+        points += min(8, 3 + len(casual_hits))
+        reasons.append(f"casual-seller wording: {', '.join(sorted(casual_hits)[:3])}")
+
+    expert_hits = [term for term in EXPERT_SIGNALS if pb.normalize(term) in text]
+    if expert_hits:
+        points -= min(12, 4 + len(expert_hits))
+        reasons.append(f"seller signals specialist knowledge: {', '.join(sorted(expert_hits)[:3])}")
+
+    if title in {pb.normalize(term) for term in GENERIC_LISTING_TERMS}:
+        points += 8
+        reasons.append("very generic listing title")
+    elif len(title.split()) <= 5:
+        points += 3
+        reasons.append("short or sparse listing title")
 
     context = _clean(item.get("context"))
     description = _clean(item.get("description"))
-    if len(context) + len(description) < 180:
-        score += 4
-        reasons.append("minimal bibliographic detail")
+    if len(context) + len(description) < 160:
+        points += 4
+        reasons.append("minimal listing detail")
 
     year = _clean(match.get("year"))
-    publisher = _clean(match.get("publisher"))
-    if year and pb.normalize(year) not in text:
-        score += 2
-        reasons.append("seller does not mention expected year")
-    if publisher and not any(token in text for token in pb.useful_tokens(publisher)):
-        score += 2
-        reasons.append("seller does not mention expected publisher")
+    if year and year not in text:
+        points += 2
+        reasons.append("important publication year not identified")
 
-    contributor = pb.normalize(match.get("contributor"))
-    title = pb.normalize(match.get("title"))
-    if contributor and contributor not in title_norm:
-        score += 2
-        reasons.append("photographer not fully identified in title")
-    if title and not pb.contains_normalized_phrase(title_norm, title):
-        score += 2
-        reasons.append("book title is incomplete or variant")
+    publisher = pb.normalize(match.get("publisher"))
+    if publisher and not pb.contains_normalized_phrase(text, publisher):
+        points += 2
+        reasons.append("publisher not identified")
 
-    feedback_score = item.get("seller_feedback_score")
+    if "fuzzy" in _clean(match.get("reason")).lower() or "partial" in _clean(match.get("reason")).lower():
+        points += 4
+        reasons.append("listing wording differs from canonical record")
+
+    feedback = item.get("seller_feedback_score")
     try:
-        feedback = int(feedback_score) if feedback_score is not None else None
+        feedback_value = int(feedback)
     except (TypeError, ValueError):
-        feedback = None
-    if feedback is not None and feedback < 100:
-        score += 3
+        feedback_value = None
+    if feedback_value is not None and feedback_value <= 100:
+        points += 3
         reasons.append("low-volume seller account")
+    elif feedback_value is not None and feedback_value <= 500:
+        points += 1
+    elif feedback_value is not None and feedback_value >= 5000:
+        points -= 6
+        reasons.append("very high-volume seller account")
+    elif feedback_value is not None and feedback_value >= 1000:
+        points -= 3
+        reasons.append("high-volume seller account")
 
-    expert_hits = sorted(signal for signal in EXPERT_SIGNALS if pb.normalize(signal) in text)
-    if expert_hits:
-        penalty = min(10, 2 + len(expert_hits) * 2)
-        score -= penalty
-        reasons.append("seller uses collector-aware language")
+    return points, reasons
+
+
+def opportunity_score(
+    item: dict[str, Any],
+    matches: list[dict[str, Any]],
+    *,
+    search_lane: str = "",
+) -> tuple[int, list[str]]:
+    """Score how urgently a private-seller listing deserves human review."""
+    if not matches:
+        return 0, []
+    best = matches[0]
+    score = round(int(best["score"]) * 0.48)
+    reasons = [
+        f"{best['score']}/100 recognition match to {best['contributor']} - {best['title']}"
+    ]
+
+    tier = str(best.get("collectibility_tier") or "C").upper()
+    tier_bonus = TIER_BONUS.get(tier, 5)
+    score += tier_bonus
+    reasons.append(f"collectibility tier {tier}")
+
+    price = item.get("price_gbp")
+    if price is None and _clean(item.get("price_currency")) == "GBP":
+        price = item.get("price_value")
+    try:
+        price_value = float(price) if price is not None else None
+    except (TypeError, ValueError):
+        price_value = None
+
+    strong_buy = best.get("strong_buy_gbp")
+    bargain = best.get("bargain_gbp")
+    if price_value is not None:
+        if strong_buy is not None and price_value <= float(strong_buy):
+            score += 20
+            reasons.append(f"price £{price_value:.2f} is below strong-buy benchmark £{float(strong_buy):.2f}")
+        elif bargain is not None and price_value <= float(bargain):
+            score += 14
+            reasons.append(f"price £{price_value:.2f} is below bargain benchmark £{float(bargain):.2f}")
+        elif price_value <= 20:
+            score += 10
+            reasons.append("very low asking price")
+        elif price_value <= 50:
+            score += 6
+            reasons.append("low asking price")
+        elif price_value <= 100:
+            score += 3
+
+    buying_options = item.get("buying_options")
+    if not isinstance(buying_options, list):
+        buying_options = _clean(item.get("tags")).split()
+    buying_options = [str(value).upper() for value in buying_options]
+    if "FIXED_PRICE" in buying_options:
+        score += 4
+        reasons.append("immediately purchasable")
+    if "BEST_OFFER" in buying_options:
+        score += 2
+        reasons.append("Best Offer available")
+    if "AUCTION" in buying_options:
+        score += 1
+
+    if _clean(item.get("seller_account_type")).upper() == "INDIVIDUAL":
+        score += 4
+        reasons.append("registered private seller")
+
+    knowledge_points, knowledge_reasons = _knowledge_opportunity(item, best)
+    score += knowledge_points
+    reasons.extend(knowledge_reasons)
+
+    if search_lane in {"broad", "collection", "wrong_category"}:
+        score += 3
+        reasons.append(f"found by {search_lane.replace('_', ' ')} discovery lane")
 
     return max(0, min(100, score)), reasons
 
@@ -467,7 +532,7 @@ def self_test() -> int:
     if not matches or pb.normalize(matches[0].get("title")) != pb.normalize("Ray's a Laugh"):
         print("ERROR: known Ray's a Laugh recognition test failed")
         return 1
-    score, reasons = opportunity_score(example, matches[0])
+    score, reasons = opportunity_score(example, matches)
     if score < 60:
         print(f"ERROR: opportunity scoring test unexpectedly low: {score}; {reasons}")
         return 1
