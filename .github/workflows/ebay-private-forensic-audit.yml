@@ -78,7 +78,7 @@ jobs:
         env:
           EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
-          QUOTA_RESERVE: "250"
+          QUOTA_RESERVE: "125"
         run: |
           python - <<'PY'
           import json
@@ -155,7 +155,7 @@ jobs:
             python ebay_private_full_library_scan.py \
               --max-calls 400 \
               --hard-call-cap 400 \
-              --quota-reserve 250
+              --quota-reserve 125
 
             used="$(jq -r '.calls' "$runtime/latest-snapshot.json")"
             complete="$(jq -r '.complete' "$runtime/latest-snapshot.json")"
