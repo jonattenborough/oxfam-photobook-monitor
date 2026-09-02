@@ -410,17 +410,82 @@ def issue_score_threshold(item: dict[str, Any], default: int) -> int:
         price = float(raw_price)
     except (TypeError, ValueError):
         return max(configured, 72)
+    best = item.get("best_recognition")
+    if not isinstance(best, dict):
+        best = {}
+    tier = str(best.get("collectibility_tier") or "").upper()
+    documentary = str(best.get("documentary_relevance") or "").upper()
+    reasons = {str(value).lower() for value in item.get("opportunity_reasons") or []}
+    exceptional_signal = bool(best.get("collectible_format_evidence")) or any(
+        signal in reason
+        for reason in reasons
+        for signal in (
+            "curated bargain benchmark",
+            "curated strong-buy benchmark",
+            "casual seller wording",
+        )
+    )
+
     if price <= 100:
-        return min(configured, 60)
+        if tier in {"S", "A"}:
+            target = 60
+        elif tier == "B":
+            target = 64 if exceptional_signal or documentary == "HIGH" else 68
+        else:
+            target = 68 if exceptional_signal else 72
+        return max(configured, target)
     if price <= 200:
-        return max(configured, 72)
+        if tier in {"S", "A"} or exceptional_signal:
+            target = 72
+        elif tier == "B":
+            target = 80
+        else:
+            target = 88
+        return max(configured, target)
     if price <= 300:
-        return max(configured, 84)
+        if tier == "S":
+            target = 84
+        elif tier == "A":
+            target = 84 if exceptional_signal else 88
+        elif tier == "B" and exceptional_signal:
+            target = 88
+        else:
+            target = 94
+        return max(configured, target)
     return 101
 
 
 def live_score_threshold(item: dict[str, Any], default: int) -> int:
-    return max(55, issue_score_threshold(item, default) - 12)
+    issue_threshold = issue_score_threshold(item, default)
+    if str(item.get("price_review_profile") or "") != "jon_hidden_gem":
+        return max(55, issue_threshold - 12)
+
+    best = item.get("best_recognition")
+    if not isinstance(best, dict):
+        best = {}
+    tier = str(best.get("collectibility_tier") or "").upper()
+    documentary = str(best.get("documentary_relevance") or "").upper()
+    reasons = {str(value).lower() for value in item.get("opportunity_reasons") or []}
+    exceptional_signal = bool(best.get("collectible_format_evidence")) or any(
+        signal in reason
+        for reason in reasons
+        for signal in (
+            "curated bargain benchmark",
+            "curated strong-buy benchmark",
+            "casual seller wording",
+        )
+    )
+    if tier in {"S", "A"}:
+        slack = 5
+    elif tier == "B" and (exceptional_signal or documentary == "HIGH"):
+        slack = 3
+    elif tier == "B":
+        slack = 1
+    elif exceptional_signal:
+        slack = 1
+    else:
+        slack = 0
+    return max(55, issue_threshold - slack)
 
 
 def _trim_reviewed(reviewed: dict[str, Any]) -> dict[str, Any]:
