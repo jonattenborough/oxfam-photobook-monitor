@@ -1,30 +1,30 @@
 {
   "cursors": {
     "auctions": 10,
-    "classic_auctions": 8,
-    "classic_contributors": 8,
-    "classic_hot_records": 32,
-    "contemporary_auctions": 8,
-    "contemporary_contributors": 8,
-    "contemporary_hot_records": 32,
+    "classic_auctions": 9,
+    "classic_contributors": 9,
+    "classic_hot_records": 36,
+    "contemporary_auctions": 9,
+    "contemporary_contributors": 9,
+    "contemporary_hot_records": 36,
     "contributors": 10,
     "hot_records": 26,
-    "library_records": 100
+    "library_records": 104
   },
-  "last_api_call_budget": 30,
+  "last_api_call_budget": 20,
   "last_browse_quota": {
-    "count": 4520,
+    "count": 4530,
     "limit": 5000,
-    "remaining": 480,
+    "remaining": 470,
     "reset": "2026-09-02T07:00:00.000Z",
     "resource": "buy.browse",
     "time_window": 86400
   },
   "last_failure_count": 0,
   "last_live_checks": 0,
-  "last_query_count": 18,
-  "last_run": "2026-09-02T05:52:04Z",
-  "last_successful_queries": 18,
+  "last_query_count": 8,
+  "last_run": "2026-09-02T06:47:48Z",
+  "last_successful_queries": 8,
   "library_records": 4318,
   "pending_live": {},
   "query_last_checked": {
@@ -39,11 +39,11 @@
     "auction_ending:AUCTION:corinne day diary": "2026-09-01T15:15:42Z",
     "auction_ending:AUCTION:daido moriyama farewell photography": "2026-09-01T15:15:42Z",
     "broad:BEST_OFFER+FIXED_PRICE:art photography book": "2026-09-01T12:57:22Z",
-    "broad:BEST_OFFER+FIXED_PRICE:photo book": "2026-09-02T05:52:04Z",
-    "broad:BEST_OFFER+FIXED_PRICE:photographer book": "2026-09-02T05:52:04Z",
+    "broad:BEST_OFFER+FIXED_PRICE:photo book": "2026-09-02T06:47:48Z",
+    "broad:BEST_OFFER+FIXED_PRICE:photographer book": "2026-09-02T06:47:48Z",
     "broad:BEST_OFFER+FIXED_PRICE:photographs book": "2026-09-01T12:57:22Z",
-    "broad:BEST_OFFER+FIXED_PRICE:photography book": "2026-09-02T05:52:04Z",
-    "broad:BEST_OFFER+FIXED_PRICE:photography monograph": "2026-09-02T05:52:04Z",
+    "broad:BEST_OFFER+FIXED_PRICE:photography book": "2026-09-02T06:47:48Z",
+    "broad:BEST_OFFER+FIXED_PRICE:photography monograph": "2026-09-02T06:47:48Z",
     "classic_auction:AUCTION:alec soth niagara": "2026-09-01T17:16:36Z",
     "classic_auction:AUCTION:alec soth sleeping by the mississippi": "2026-09-01T17:20:07Z",
     "classic_auction:AUCTION:bernd and hilla becher anonyme skulpturen": "2026-09-01T17:24:57Z",
@@ -90,6 +90,8 @@
     "classic_hot:BEST_OFFER+FIXED_PRICE:oscar monzon karma": "2026-09-02T05:52:04Z",
     "classic_hot:BEST_OFFER+FIXED_PRICE:paul graham a1: the great north road": "2026-09-02T05:52:04Z",
     "classic_hot:BEST_OFFER+FIXED_PRICE:peter beard the end of the game": "2026-09-02T05:52:04Z",
+    "classic_hot:BEST_OFFER+FIXED_PRICE:richard avedon in the american west": "2026-09-02T06:47:48Z",
+    "classic_hot:BEST_OFFER+FIXED_PRICE:richard avedon observations": "2026-09-02T06:47:48Z",
     "collectible_format:BEST_OFFER+FIXED_PRICE:limited edition photobook": "2026-09-02T05:52:04Z",
     "collectible_format:BEST_OFFER+FIXED_PRICE:photography book with print": "2026-09-02T05:52:04Z",
     "collectible_format:BEST_OFFER+FIXED_PRICE:signed numbered photobook": "2026-09-02T05:52:04Z",
@@ -146,6 +148,8 @@
     "contemporary_hot:BEST_OFFER+FIXED_PRICE:jeffrey silverthorne morgue": "2026-09-02T05:52:04Z",
     "contemporary_hot:BEST_OFFER+FIXED_PRICE:jerome ming oobanken": "2026-09-02T05:52:04Z",
     "contemporary_hot:BEST_OFFER+FIXED_PRICE:joanna piotrowska frowst": "2026-09-02T05:52:04Z",
+    "contemporary_hot:BEST_OFFER+FIXED_PRICE:keisha scarville passports": "2026-09-02T06:47:48Z",
+    "contemporary_hot:BEST_OFFER+FIXED_PRICE:kirsty mackay the magic money tree": "2026-09-02T06:47:48Z",
     "contributor:BEST_OFFER+FIXED_PRICE:aaron rezny": "2026-09-01T15:09:30Z",
     "contributor:BEST_OFFER+FIXED_PRICE:aaron ruell": "2026-09-01T15:09:30Z",
     "contributor:BEST_OFFER+FIXED_PRICE:aaron schuman": "2026-09-01T15:15:42Z",
@@ -723,6 +727,13 @@
       "title": "CURVES Ryosuke Handa Close Up Art Female Body Compilation Photo Book Koseisha",
       "url": "https://www.ebay.co.uk/itm/128056509660?_skw=photo+book&hash=item1dd0c344dc:g:1pcAAeSwau1ql6PZ"
     },
+    "ebay:128056874492": {
+      "first_seen": "2026-09-02T06:47:48Z",
+      "last_seen": "2026-09-02T06:47:48Z",
+      "score": 4,
+      "title": "Book The View From Planet Earth Vincent Cronin (See Photos)",
+      "url": "https://www.ebay.co.uk/itm/128056874492?_skw=photo+book&hash=item1dd0c8d5fc:g:af8AAOSwID1j8yAj"
+    },
     "ebay:133792317103": {
       "first_seen": "2026-09-01T17:20:07Z",
       "last_seen": "2026-09-01T17:20:07Z",
@@ -1184,6 +1195,13 @@
       "score": 40,
       "title": "Really, Really, Really Easy Step-by-Step Digital Photography G.Hoole & C.Smith",
       "url": "https://www.ebay.co.uk/itm/147542903355?_skw=photography+book&hash=item225a3e0a3b:g:ZdkAAOSwe9RiCoat"
+    },
+    "ebay:147543943545": {
+      "first_seen": "2026-09-02T06:47:48Z",
+      "last_seen": "2026-09-02T06:47:48Z",
+      "score": 36,
+      "title": "Martin Parr (55s),Martin Parr, Sandra Phillips",
+      "url": "https://www.ebay.co.uk/itm/147543943545?_skw=photography+book&hash=item225a4de979:g:1fAAAeSwHPlqTexS"
     },
     "ebay:156163858721": {
       "first_seen": "2026-09-01T15:09:30Z",
@@ -1647,6 +1665,13 @@
       "title": "The Amazing Mary Millington ~ Millington & David Weldon, Futura Paperback - 1979",
       "url": "https://www.ebay.co.uk/itm/168656346510?_skw=photography+book&hash=item2744b39d8e:g:eWMAAeSwrWpqlXXS"
     },
+    "ebay:168657323681": {
+      "first_seen": "2026-09-02T06:47:48Z",
+      "last_seen": "2026-09-02T06:47:48Z",
+      "score": 29,
+      "title": "Arakigraph Nobuyoshi Araki 1996 Photobook Softcover Japanese",
+      "url": "https://www.ebay.co.uk/itm/168657323681?_skw=photography+book&hash=item2744c286a1:g:7w8AAeSw6xpql7nY"
+    },
     "ebay:177296076254": {
       "first_seen": "2026-09-01T15:15:42Z",
       "last_seen": "2026-09-01T15:15:42Z",
@@ -1877,6 +1902,20 @@
       "score": 35,
       "title": "BILDBAND  \" DAVID VANCE - PHOTOGRAPHS \"",
       "url": "https://www.ebay.co.uk/itm/178460555888?_skw=photo+book&hash=item298d13fa70:g:wskAAeSwQe1ql6Cw"
+    },
+    "ebay:178460757712": {
+      "first_seen": "2026-09-02T06:47:48Z",
+      "last_seen": "2026-09-02T06:47:48Z",
+      "score": 14,
+      "title": "1967/68 Blue Peter Fourth Book - Annual Hardback Book Spine Intact VG see photos",
+      "url": "https://www.ebay.co.uk/itm/178460757712?_skw=photo+book&hash=item298d170ed0:g:S58AAeSwxeVoo2i9"
+    },
+    "ebay:178460776172": {
+      "first_seen": "2026-09-02T06:47:48Z",
+      "last_seen": "2026-09-02T06:47:48Z",
+      "score": 29,
+      "title": "Jill Posener Spray it loud & Louder books photography queer feminist graffiti",
+      "url": "https://www.ebay.co.uk/itm/178460776172?_skw=photography+book&hash=item298d1756ec:g:yCgAAeSw3C1qdLRO"
     },
     "ebay:186862500728": {
       "first_seen": "2026-09-01T16:52:33Z",
@@ -3985,6 +4024,13 @@
       "title": "pussy portaits 2 by frannie adams very erotic book",
       "url": "https://www.ebay.co.uk/itm/307157590128?_skw=photography+book&hash=item478404e070:g:ChUAAeSw6AtpBfBX"
     },
+    "ebay:307158195503": {
+      "first_seen": "2026-09-02T06:47:48Z",
+      "last_seen": "2026-09-02T06:47:48Z",
+      "score": 10,
+      "title": "Delicious Party Precure Smartphone-Style Talking Picture Book [Variety]",
+      "url": "https://www.ebay.co.uk/itm/307158195503?_skw=photo+book&hash=item47840e1d2f:g:HysAAeSwKVxql8I2"
+    },
     "ebay:314498264545": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
@@ -5553,6 +5599,13 @@
       "title": "Greatest of All Time. a Tribute to Muhammad Ali by Taschen (2010, Hardcover)",
       "url": "https://www.ebay.co.uk/itm/800598827495?_skw=photography+book&hash=itemba6768a1e7:g:JgQAAeSw2DJql2l2"
     },
+    "ebay:800600062017": {
+      "first_seen": "2026-09-02T06:47:48Z",
+      "last_seen": "2026-09-02T06:47:48Z",
+      "score": 54,
+      "title": "Serge Jacques by Gilles Neret (1998, Trade Paperback)",
+      "url": "https://www.ebay.co.uk/itm/800600062017?_skw=photography+book&hash=itemba677b7841:g:COcAAeSwxB9ql76Q"
+    },
     "ebay:820045683076": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
@@ -5734,6 +5787,13 @@
       "score": 8,
       "title": "Capsule Architecture by Kisho Kurokawa Art Book",
       "url": "https://www.ebay.co.uk/itm/820075730661?_skw=photography+book&hash=itembef05296e5:g:u6oAAeSwRqBql2Yu"
+    },
+    "ebay:820076880177": {
+      "first_seen": "2026-09-02T06:47:48Z",
+      "last_seen": "2026-09-02T06:47:48Z",
+      "score": 26,
+      "title": "MAX ARTHUR SIGNED ,PERSONALISED  ,EX LIBRIS There Shall be Wings SEE PHOTOS",
+      "url": "https://www.ebay.co.uk/itm/820076880177?_skw=photo+book&hash=itembef0642131:g:FDoAAeSwDIVpWpAx"
     }
   },
   "version": 1
