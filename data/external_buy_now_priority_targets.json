@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "purpose": "Active exact-title watches for the ChatGPT Photobook Wider Web Search task.",
+  "targets": [
+    {
+      "id": "william-klein-new-york-1954-55-dewi-lewis",
+      "active": true,
+      "cadence": "every_run",
+      "contributor": "William Klein",
+      "title": "New York 1954.55",
+      "title_aliases": [
+        "New York 1954-55",
+        "New York 1954 55",
+        "New York 1954/55",
+        "New York : 1954, 55"
+      ],
+      "target_edition": {
+        "publisher": "Dewi Lewis Publishing",
+        "place": "Manchester",
+        "year": 1995,
+        "language": "English",
+        "binding": "hardback",
+        "isbn_10": "1899235256",
+        "isbn_13": "9781899235254",
+        "required": [
+          "original dust jacket",
+          "sound binding with no loose or separating sections",
+          "complete pages",
+          "no damp, mould or smoke odour",
+          "collector-grade condition, approximately Very Good or better"
+        ],
+        "exclude": [
+          "1995 SFMOMA exhibition catalogue",
+          "2010 Errata Editions Books on Books volume",
+          "later softcover or paperback editions",
+          "later reprints",
+          "ex-library copies",
+          "missing dust jacket",
+          "loose, detached or separating sections",
+          "missing pages",
+          "damp, mould or smoke damage",
+          "severe sun fading"
+        ]
+      },
+      "budget": {
+        "currency": "GBP",
+        "max_landed_price": 100,
+        "include": [
+          "item price",
+          "shipping to Great Britain",
+          "mandatory buyer fees",
+          "tax"
+        ]
+      },
+      "alert_policy": {
+        "live_product_page_required": true,
+        "currently_purchasable_required": true,
+        "purchase_modes": [
+          "fixed price",
+          "Best Offer only when the current listed landed price is already within budget"
+        ],
+        "sold_ended_unavailable_or_stale_results": "exclude",
+        "search_snippets_and_cached_pages": "discovery evidence only",
+        "clear_condition_evidence_required": true,
+        "listing_photo_review_required": true,
+        "lawful_look_inside_link_when_available": true,
+        "alert_only_once_per_listing": true
+      }
+    }
+  ]
+}
