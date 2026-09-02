@@ -1,32 +1,32 @@
 {
   "cursors": {
-    "active_stock": 4,
+    "active_stock": 5,
     "auctions": 10,
-    "broad_priority": 3,
-    "classic_auctions": 13,
-    "classic_contributors": 13,
-    "classic_hot_records": 2,
-    "contemporary_auctions": 13,
-    "contemporary_contributors": 13,
-    "contemporary_hot_records": 52,
+    "broad_priority": 0,
+    "classic_auctions": 14,
+    "classic_contributors": 14,
+    "classic_hot_records": 6,
+    "contemporary_auctions": 14,
+    "contemporary_contributors": 14,
+    "contemporary_hot_records": 56,
     "contributors": 10,
     "hot_records": 26,
-    "library_records": 132
+    "library_records": 140
   },
-  "last_api_call_budget": 2,
+  "last_api_call_budget": 1,
   "last_browse_quota": {
-    "count": 4750,
+    "count": 4880,
     "limit": 5000,
-    "remaining": 250,
+    "remaining": 120,
     "reset": "2026-09-03T07:00:00.000Z",
     "resource": "buy.browse",
     "time_window": 86400
   },
   "last_failure_count": 0,
   "last_live_checks": 0,
-  "last_query_count": 2,
-  "last_run": "2026-09-02T10:21:46Z",
-  "last_successful_queries": 2,
+  "last_query_count": 1,
+  "last_run": "2026-09-02T13:04:07Z",
+  "last_successful_queries": 1,
   "library_records": 4318,
   "pending_live": {
     "ebay:117157495106": {
@@ -253,6 +253,123 @@
       "title": "MINAMATA Words and Photography W. Eugene Smith Aileen M. Smith Photo Book",
       "url": "https://www.ebay.co.uk/itm/117332248214?_skw=W.+Eugene+Smith+Minamata&hash=item1b518c0696:g:3~cAAOSwaCJmyu0W",
       "vendor": "hopejapan"
+    },
+    "ebay:117391716442": {
+      "best_recognition": {
+        "awards_and_evidence": "",
+        "bargain_gbp": null,
+        "canon_sources": "Parr/Badger V2 | Specialist photography publisher backlist: MACK | Specialist photography publisher backlist: Steidl | Priority seed",
+        "collectibility_tier": "S",
+        "collectible_format_bonus": 6,
+        "collectible_format_evidence": [
+          "signed by the photographer"
+        ],
+        "collectible_variants": "",
+        "collector_profile": "",
+        "contributor": "Alec Soth",
+        "documentary_relevance": "",
+        "edition_reasons": [
+          "exact collectible edition is not established by the listing metadata"
+        ],
+        "edition_status": "unknown",
+        "evidence_confidence": "High",
+        "first_edition_notes": "",
+        "first_monograph": "",
+        "isbn": "",
+        "publisher": "Alec Soth, Minneapolis, Minnesota, 2003 (two limited editions of 25) || Steidl, Göttingen, 2004",
+        "reason": "exact title in listing text + contributor",
+        "record_id": "alec-soth-sleeping",
+        "score": 98,
+        "search_priority": "0",
+        "source": "Priority seed",
+        "special_edition_priority": "",
+        "strong_buy_gbp": null,
+        "title": "Sleeping by the Mississippi",
+        "year": "2004"
+      },
+      "buying_options": [
+        "AUCTION",
+        "BEST_OFFER"
+      ],
+      "category_id": "261186",
+      "category_path": "",
+      "collecting_lane": "classic or established canon",
+      "condition": "Very Good",
+      "context": "Alec Soth (b. 1969) is a photographer born and based in Minnesota. In 2010, the Walker Art produced a large survey exhibition of Soth’s work entitled From Here To There. Alec Soth’s first monograph, Sleeping by the Mississippi, was published by Steidl in 2004 to critical acclaim. | Very Good | 2026-09-02T11:31:26.000Z | 2026-09-07T11:31:26.000Z | AUCTION BEST_OFFER",
+      "external_id": "117391716442",
+      "image_url": "https://i.ebayimg.com/images/g/wu4AAeSwwTBpVane/s-l225.jpg",
+      "item_creation_date": "2026-09-02T11:31:26.000Z",
+      "item_end_date": "2026-09-07T11:31:26.000Z",
+      "key": "ebay:117391716442",
+      "landed_price_gbp": null,
+      "opportunity_kind": "special edition or collectible object",
+      "opportunity_reasons": [
+        "recognition 98/100",
+        "collectibility tier S",
+        "Best Offer available",
+        "private individual seller",
+        "collectible object: signed by the photographer",
+        "book title is incomplete or variant",
+        "edition evidence: unknown"
+      ],
+      "opportunity_score": 78,
+      "pending_since": "2026-09-02T13:04:07Z",
+      "price_currency": "",
+      "price_gbp": null,
+      "price_value": null,
+      "private_seller": true,
+      "recognition_matches": [
+        {
+          "awards_and_evidence": "",
+          "bargain_gbp": null,
+          "canon_sources": "Parr/Badger V2 | Specialist photography publisher backlist: MACK | Specialist photography publisher backlist: Steidl | Priority seed",
+          "collectibility_tier": "S",
+          "collectible_format_bonus": 6,
+          "collectible_format_evidence": [
+            "signed by the photographer"
+          ],
+          "collectible_variants": "",
+          "collector_profile": "",
+          "contributor": "Alec Soth",
+          "documentary_relevance": "",
+          "edition_reasons": [
+            "exact collectible edition is not established by the listing metadata"
+          ],
+          "edition_status": "unknown",
+          "evidence_confidence": "High",
+          "first_edition_notes": "",
+          "first_monograph": "",
+          "isbn": "",
+          "publisher": "Alec Soth, Minneapolis, Minnesota, 2003 (two limited editions of 25) || Steidl, Göttingen, 2004",
+          "reason": "exact title in listing text + contributor",
+          "record_id": "alec-soth-sleeping",
+          "score": 98,
+          "search_priority": "0",
+          "source": "Priority seed",
+          "special_edition_priority": "",
+          "strong_buy_gbp": null,
+          "title": "Sleeping by the Mississippi",
+          "year": "2004"
+        }
+      ],
+      "recognized": true,
+      "rest_item_id": "v1|117391716442|0",
+      "score_band": "alert",
+      "scoring_version": 2,
+      "search_in_description": true,
+      "search_lane": "broad",
+      "search_query": "photographer book",
+      "seller_account_type": "INDIVIDUAL",
+      "seller_feedback_percentage": "100.0",
+      "seller_feedback_score": 936,
+      "shipping_currency": "",
+      "shipping_value": 0.0,
+      "source_id": "ebay_private_broad",
+      "source_name": "eBay UK private sellers - broad",
+      "tags": "AUCTION BEST_OFFER",
+      "title": "Alec Soth ADVICE FOR YOUNG ARTISTS 978-1915743763 Signed MACK Hardback Photobook",
+      "url": "https://www.ebay.co.uk/itm/117391716442?_skw=photographer+book&hash=item1b5517705a:g:wu4AAeSwwTBpVane",
+      "vendor": "macswegan2010"
     },
     "ebay:126657163374": {
       "best_recognition": {
@@ -3914,7 +4031,7 @@
     "auction_ending:AUCTION:daido moriyama farewell photography": "2026-09-01T15:15:42Z",
     "broad:BEST_OFFER+FIXED_PRICE:art photography book": "2026-09-01T12:57:22Z",
     "broad:BEST_OFFER+FIXED_PRICE:photo book": "2026-09-02T07:50:20Z",
-    "broad:BEST_OFFER+FIXED_PRICE:photographer book": "2026-09-02T10:21:46Z",
+    "broad:BEST_OFFER+FIXED_PRICE:photographer book": "2026-09-02T13:04:07Z",
     "broad:BEST_OFFER+FIXED_PRICE:photographs book": "2026-09-01T12:57:22Z",
     "broad:BEST_OFFER+FIXED_PRICE:photography book": "2026-09-02T07:50:20Z",
     "broad:BEST_OFFER+FIXED_PRICE:photography monograph": "2026-09-02T10:21:46Z",
@@ -4798,6 +4915,13 @@
       "title": "BLUE JEANS PHOTO STORY 1984 ANNUAL FOR GIRLS",
       "url": "https://www.ebay.co.uk/itm/128057123879?_skw=photographer+book&hash=item1dd0cca427:g:NdMAAOSwNARg8YaB"
     },
+    "ebay:128057320973": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 26,
+      "title": "RARE Uncorrected Proof Julia Margaret Cameron The Complete Photographs PAPERBACK",
+      "url": "https://www.ebay.co.uk/itm/128057320973?_skw=photographer+book&hash=item1dd0cfa60d:g:90cAAeSwdK5qmAVE"
+    },
     "ebay:133792317103": {
       "first_seen": "2026-09-01T17:20:07Z",
       "last_seen": "2026-09-01T17:20:07Z",
@@ -5414,6 +5538,13 @@
       "title": "BOOK – VICTORIAN NOTTINGHAM IN OLD PHOTOGRAPHS (1993)",
       "url": "https://www.ebay.co.uk/itm/147544216213?_skw=photographer+book&hash=item225a521295:g:snsAAeSwCAlokOEm"
     },
+    "ebay:147544581824": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 26,
+      "title": "Shanghai A History In Photographs 1842-today",
+      "url": "https://www.ebay.co.uk/itm/147544581824?_skw=photographer+book&hash=item225a57a6c0:g:4OcAAeSwVppqiui4"
+    },
     "ebay:152103791854": {
       "first_seen": "2026-09-02T07:50:20Z",
       "last_seen": "2026-09-02T07:50:20Z",
@@ -5686,6 +5817,13 @@
       "score": 14,
       "title": "Blinds And Shutters Genesis Publications 4348 / 5000",
       "url": "https://www.ebay.co.uk/itm/158249019245?_skw=photography+book&hash=item24d860676d:g:dEcAAeSwxC9n6nFm"
+    },
+    "ebay:158249708856": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 36,
+      "title": "The First World War - A Photographic History",
+      "url": "https://www.ebay.co.uk/itm/158249708856?_skw=photographer+book&hash=item24d86aed38:g:hYsAAeSwKuRqAg~b"
     },
     "ebay:165484497167": {
       "first_seen": "2026-09-02T07:50:20Z",
@@ -6044,6 +6182,13 @@
       "title": "Greetings from Lowestoft - A Picture Book of Old Postcards - Malcolm White 2001",
       "url": "https://www.ebay.co.uk/itm/168657510452?_skw=photo+book&hash=item2744c56034:g:h-4AAeSwARVqZMBl"
     },
+    "ebay:168658060708": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 32,
+      "title": "Steve Parish 50 Years Photographing Australia Hardback Photography Book 2010",
+      "url": "https://www.ebay.co.uk/itm/168658060708?_skw=photographer+book&hash=item2744cdc5a4:g:jTAAAeSwuVhqmBeL"
+    },
     "ebay:174401208978": {
       "first_seen": "2026-09-02T07:13:35Z",
       "last_seen": "2026-09-02T07:13:35Z",
@@ -6344,6 +6489,13 @@
       "score": 32,
       "title": "Photographic Medley Cork Midleton Band 1951-2011 Ireland Music Used Hardback",
       "url": "https://www.ebay.co.uk/itm/178460965205?_skw=photographer+book&hash=item298d1a3955:g:oFkAAOSwH5tk13AF"
+    },
+    "ebay:178461340545": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 14,
+      "title": "Semi Trucks Of The 1950 By Ron Adams A Photo Gallery Book",
+      "url": "https://www.ebay.co.uk/itm/178461340545?_skw=photographer+book&hash=item298d1ff381:g:I8UAAeSwuQVql~mR"
     },
     "ebay:184480666767": {
       "first_seen": "2026-09-02T07:50:20Z",
@@ -6891,6 +7043,20 @@
       "title": "South: The Endurance Expedition by Ernest Shackleton Paperback Photos",
       "url": "https://www.ebay.co.uk/itm/198612592640?_skw=photographer+book&hash=item2e3e3ba800:g:npoAAeSwmmZql-HZ"
     },
+    "ebay:198612771021": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 4,
+      "title": "Twenty Years On by John Swannell (1996, Hardcover)",
+      "url": "https://www.ebay.co.uk/itm/198612771021?_skw=photographer+book&hash=item2e3e3e60cd:g:eu4AAeSwhthqhEb3"
+    },
+    "ebay:198612957311": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 26,
+      "title": "RP News, Real Photographs Co. Ltd., Vol. 3 bound edition for  Jan-dec 1946 invgc",
+      "url": "https://www.ebay.co.uk/itm/198612957311?_skw=photographer+book&hash=item2e3e41387f:g:wj4AAeSwINNqSPcM"
+    },
     "ebay:201590266150": {
       "first_seen": "2026-09-02T07:50:20Z",
       "last_seen": "2026-09-02T07:50:20Z",
@@ -7198,6 +7364,97 @@
       "score": 26,
       "title": "Kids Larry Clark Book First Edition Harmony Korine Photo Book Film",
       "url": "https://www.ebay.co.uk/itm/206530853460?_skw=photographer+book&hash=item301632ba54:g:NI4AAeSw61Rql-iH"
+    },
+    "ebay:206530975735": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 14,
+      "title": "Vogue on Ralph Lauren by Kathleen Baird-Murray (2015, Hardcover)",
+      "url": "https://www.ebay.co.uk/itm/206530975735?_skw=photographer+book&hash=item30163497f7:g:l8oAAeSwzVlql~4H"
+    },
+    "ebay:206530996346": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 26,
+      "title": "Feline : Photographs by Tim Flach (2025, Hardcover),Gorgeous Photographs of Cats",
+      "url": "https://www.ebay.co.uk/itm/206530996346?_skw=photographer+book&hash=item301634e87a:g:R2AAAeSwgUdqc3vl"
+    },
+    "ebay:206530999528": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 14,
+      "title": "2x 2000ad Progs : 1423 & 1442 (2005)  FREE p&p.  Photo's are of actual progs!",
+      "url": "https://www.ebay.co.uk/itm/206530999528?_skw=photographer+book&hash=item301634f4e8:g:RWoAAeSwMWtqMP5H"
+    },
+    "ebay:206531000262": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 14,
+      "title": "4x 2000ad Progs : 1445 - 1448 (2005)  FREE p&p.  Photo's are of actual progs!",
+      "url": "https://www.ebay.co.uk/itm/206531000262?_skw=photographer+book&hash=item301634f7c6:g:YS4AAeSwp51qKUDJ"
+    },
+    "ebay:206531002007": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 0,
+      "title": "2x 2000ad Progs : 1524 - 1525 (2007)  FREE p&p.  Photo's are of actual progs!",
+      "url": "https://www.ebay.co.uk/itm/206531002007?_skw=photographer+book&hash=item301634fe97:g:ioUAAeSwtw9qKUMG"
+    },
+    "ebay:206531006004": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 14,
+      "title": "4x 2000ad Progs : 1616 - 1619 (2008)  FREE p&p.  Photo's are of actual progs!",
+      "url": "https://www.ebay.co.uk/itm/206531006004?_skw=photographer+book&hash=item3016350e34:g:gkcAAeSwsupqKUQz"
+    },
+    "ebay:206531007384": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 14,
+      "title": "4x 2000ad Progs : 1620 - 1623 (2009)  FREE p&p.  Photo's are of actual progs!",
+      "url": "https://www.ebay.co.uk/itm/206531007384?_skw=photographer+book&hash=item3016351398:g:iCYAAeSwsupqKUT0"
+    },
+    "ebay:206531027189": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 0,
+      "title": "9x 2000ad Progs : 1624 - 1632 (2009)  FREE p&p.  Photo's are of actual progs!",
+      "url": "https://www.ebay.co.uk/itm/206531027189?_skw=photographer+book&hash=item30163560f5:g:rvUAAeSwlDRqKUY0"
+    },
+    "ebay:206531032403": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 0,
+      "title": "9x 2000ad Progs : 1633 - 1641 (2009)  FREE p&p.  Photo's are of actual progs!",
+      "url": "https://www.ebay.co.uk/itm/206531032403?_skw=photographer+book&hash=item3016357553:g:ngcAAeSwZbpqKUeZ"
+    },
+    "ebay:206531035093": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 0,
+      "title": "8x 2000ad Progs : 1642 - 1649 (2009)  FREE p&p.  Photo's are of actual progs!",
+      "url": "https://www.ebay.co.uk/itm/206531035093?_skw=photographer+book&hash=item3016357fd5:g:wy8AAeSwvIJqKUid"
+    },
+    "ebay:206531037780": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 14,
+      "title": "10x 2000ad Progs : 1750 - 1759 (2011)  FREE p&p.  Photo's are of actual progs!",
+      "url": "https://www.ebay.co.uk/itm/206531037780?_skw=photographer+book&hash=item3016358a54:g:rXUAAeSwkhNqKUmh"
+    },
+    "ebay:206531069754": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 0,
+      "title": "5x 2000ad Progs : 1760 - 1764 (2012)  FREE p&p.  Photo's are of actual progs!",
+      "url": "https://www.ebay.co.uk/itm/206531069754?_skw=photographer+book&hash=item301636073a:g:pIkAAeSw97pqKUqc"
+    },
+    "ebay:206531095765": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 0,
+      "title": "4x 2000ad Progs : 1775, 1776, 1778 & 1781 (2012).  Photo's are of actual progs!",
+      "url": "https://www.ebay.co.uk/itm/206531095765?_skw=photographer+book&hash=item3016366cd5:g:5UYAAeSwduZqKU5-"
     },
     "ebay:226478974069": {
       "first_seen": "2026-09-01T15:09:30Z",
@@ -7591,6 +7848,13 @@
       "title": "Spirit: Garden Inspiration : By Dan Pearson by Dan Pearson (2011)",
       "url": "https://www.ebay.co.uk/itm/227502116161?_skw=photography+book&hash=item34f82ecd41:g:gvIAAeSw-1dqbjHv"
     },
+    "ebay:227502371878": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 4,
+      "title": "Special Forces The Worlds Most Significant And Elite Forces By Chris Chant",
+      "url": "https://www.ebay.co.uk/itm/227502371878?_skw=photographer+book&hash=item34f832b426:g:2dEAAOSwCntiekJQ"
+    },
     "ebay:236388891003": {
       "first_seen": "2026-09-02T07:50:20Z",
       "last_seen": "2026-09-02T07:50:20Z",
@@ -7821,6 +8085,13 @@
       "score": 16,
       "title": "Ali Hamidi's Carp Fishing Masterclass Signed Plus signed Photo",
       "url": "https://www.ebay.co.uk/itm/237044093214?_skw=photo+book&hash=item3730edd11e:g:eXsAAOSwQSZmsMwd"
+    },
+    "ebay:237044512286": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 4,
+      "title": "Creative Cooking Library The Balti Cookbook - Shehzad Husain Hardcover Photos",
+      "url": "https://www.ebay.co.uk/itm/237044512286?_skw=photographer+book&hash=item3730f4361e:g:RkAAAeSw-klqfFv5"
     },
     "ebay:255569549785": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -8276,6 +8547,13 @@
       "score": 26,
       "title": "Vista Dal Cielo s Seen From The Sky by Fabio Polosa Photo book",
       "url": "https://www.ebay.co.uk/itm/267773977025?_skw=photographer+book&hash=item3e5892a1c1:g:1u0AAeSwSdFpkLyf"
+    },
+    "ebay:267774016126": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 36,
+      "title": "Boudoir Photography By Mario Venticinque The Fantasy Exposed Paperback",
+      "url": "https://www.ebay.co.uk/itm/267774016126?_skw=photographer+book&hash=item3e58933a7e:g:g84AAeSwjPFql~49"
     },
     "ebay:274983687163": {
       "first_seen": "2026-09-02T07:50:20Z",
@@ -8942,6 +9220,13 @@
       "title": "Handbook Of Photography Edited By Keith Henley HB 1939 Whittlesey House",
       "url": "https://www.ebay.co.uk/itm/298636703917?_skw=photography+book&hash=item45882278ad:g:B6QAAOSwaXVmgp1U"
     },
+    "ebay:298638998286": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 36,
+      "title": "Lewis Carroll Photographs/Photographien Hardcover, ed. Karl Steinorth, Stemmle",
+      "url": "https://www.ebay.co.uk/itm/298638998286?_skw=photographer+book&hash=item4588457b0e:g:FGoAAeSwS7ZqmBnb"
+    },
     "ebay:306175334813": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
@@ -9102,6 +9387,20 @@
       "score": 10,
       "title": "Delicious Party Precure Smartphone-Style Talking Picture Book [Variety]",
       "url": "https://www.ebay.co.uk/itm/307158195503?_skw=photo+book&hash=item47840e1d2f:g:HysAAeSwKVxql8I2"
+    },
+    "ebay:307158589217": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 14,
+      "title": "Lorenzo Castore 2001-2007: Lack and Longing Trade Paperback 2023 Revised",
+      "url": "https://www.ebay.co.uk/itm/307158589217?_skw=photographer+book&hash=item4784141f21:g:ncMAAeSww99qmAM-"
+    },
+    "ebay:307158677715": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 26,
+      "title": "JOHN FRENCH, FASHION PHOTOGRAPHER: 14 NOVEMBER 1984-10",
+      "url": "https://www.ebay.co.uk/itm/307158677715?_skw=photographer+book&hash=item47841578d3:g:A8AAAeSw60pnsIVu"
     },
     "ebay:314170775288": {
       "first_seen": "2026-09-02T07:50:20Z",
@@ -9410,6 +9709,20 @@
       "score": 4,
       "title": "Bnib Lets Count Numbers Match And Learn Age3+ *Has Slight Box Damage See Pic*",
       "url": "https://www.ebay.co.uk/itm/318813514312?_skw=photo+book&hash=item4a3ac42a48:g:vwEAAOSw-vdflFg2"
+    },
+    "ebay:318814148489": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 32,
+      "title": "California Dreaming – Dawn Bowery – 2014 HB – Brits in LA Documentary Photograph",
+      "url": "https://www.ebay.co.uk/itm/318814148489?_skw=photographer+book&hash=item4a3acdd789:g:DcsAAeSwNoNql-yR"
+    },
+    "ebay:318814586883": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 22,
+      "title": "Paul Hogarth SIGNED Drawing on Life the autobiography Hardback",
+      "url": "https://www.ebay.co.uk/itm/318814586883?_skw=photographer+book&hash=item4a3ad48803:g:qmoAAeSw2ZtqmBI2"
     },
     "ebay:327293675838": {
       "first_seen": "2026-09-01T19:45:15Z",
@@ -10251,6 +10564,13 @@
       "title": "Pedro Virgil The Gods of Sport hardback book like new Gay interest",
       "url": "https://www.ebay.co.uk/itm/366643417974?_skw=photography+book&hash=item555da69376:g:GSoAAeSwpfRqaOJO"
     },
+    "ebay:366644242868": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 0,
+      "title": "Kento Yamazaki Photo Book Actor Japanese Paper Back Book",
+      "url": "https://www.ebay.co.uk/itm/366644242868?_skw=photographer+book&hash=item555db329b4:g:UoMAAeSwxZRqmBww"
+    },
     "ebay:373134310839": {
       "first_seen": "2026-09-02T07:50:20Z",
       "last_seen": "2026-09-02T07:50:20Z",
@@ -10404,6 +10724,20 @@
       "score": 4,
       "title": "Large Thick Bird Book Germany Full Of Photos Hühner vögel der Welt",
       "url": "https://www.ebay.co.uk/itm/377464421251?_skw=photo+book&hash=item57e2a1fb83:g:crAAAeSwTVFqN1L4"
+    },
+    "ebay:377464982857": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 26,
+      "title": "A Look at Old Tredegar in Photographs Vol 1    RARE",
+      "url": "https://www.ebay.co.uk/itm/377464982857?_skw=photographer+book&hash=item57e2aa8d49:g:UtIAAeSwgERpzN9I"
+    },
+    "ebay:377465126586": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 36,
+      "title": "Unseen Archives of Manchester United Photographic History Book Great Condition",
+      "url": "https://www.ebay.co.uk/itm/377465126586?_skw=photographer+book&hash=item57e2acbeba:g:sMcAAeSwcnFp7KyB"
     },
     "ebay:387763168493": {
       "first_seen": "2026-09-01T17:20:07Z",
@@ -10657,6 +10991,20 @@
       "title": "Michael Jackson Photo Coloring Book & Gifts",
       "url": "https://www.ebay.co.uk/itm/398350435967?_skw=photographer+book&hash=item5cbf89467f:g:EWoAAeSw4vlql-Sd"
     },
+    "ebay:398350827148": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 14,
+      "title": "GÜ Chocolate Cookbook | Hardback | First Edition",
+      "url": "https://www.ebay.co.uk/itm/398350827148?_skw=photographer+book&hash=item5cbf8f3e8c:g:VosAAeSwHO1ql~16"
+    },
+    "ebay:398351143083": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 32,
+      "title": "Lime Works (new edition) lime quarries, lime & concrete factories Photography",
+      "url": "https://www.ebay.co.uk/itm/398351143083?_skw=photographer+book&hash=item5cbf9410ab:g:pAwAAeSwXSZqmB12"
+    },
     "ebay:404879487928": {
       "first_seen": "2026-09-01T17:20:07Z",
       "last_seen": "2026-09-01T17:20:07Z",
@@ -10852,6 +11200,13 @@
       "score": 34,
       "title": "Mao Ishikawa Red Flower Women of Okinawa SEALED Photo Book Ltd 600 RARE",
       "url": "https://www.ebay.co.uk/itm/407187107287?_skw=photographer+book&hash=item5ece3e2dd7:g:TMEAAeSw3EVql-ix"
+    },
+    "ebay:407187527825": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 32,
+      "title": "Useful Photography #009 Erik Kessels KesselsKramer 2009 Photobook",
+      "url": "https://www.ebay.co.uk/itm/407187527825?_skw=photographer+book&hash=item5ece449891:g:1NwAAeSwQe1qmBQD"
     },
     "ebay:800124185750": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -11398,6 +11753,13 @@
       "score": 10,
       "title": "Ian McShane New Career Book + autographed photo",
       "url": "https://www.ebay.co.uk/itm/820077285703?_skw=photographer+book&hash=itembef06a5147:g:uzMAAeSw9KNqhxuk"
+    },
+    "ebay:820078014757": {
+      "first_seen": "2026-09-02T13:04:07Z",
+      "last_seen": "2026-09-02T13:04:07Z",
+      "score": 32,
+      "title": "Photo Book Japanese Classic Swimwear Portrait Visual Art Book 102p From Japan",
+      "url": "https://www.ebay.co.uk/itm/820078014757?_skw=photographer+book&hash=itembef0757125:g:J5YAAeSw8rhqmBUi"
     }
   },
   "version": 1
