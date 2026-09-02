@@ -91,9 +91,14 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          {
+            printf '%s\n\n' '@jonattenborough Immediate live private-seller photobook candidate alert. A deeper ChatGPT gem appraisal will follow separately.'
+            cat runtime/ebay-private/issue-body.md
+          } > runtime/ebay-private/notified-issue-body.md
           gh issue create \
+            --assignee jonattenborough \
             --title "$(cat runtime/ebay-private/issue-title.txt)" \
-            --body-file runtime/ebay-private/issue-body.md
+            --body-file runtime/ebay-private/notified-issue-body.md
 
       - name: Persist private seller monitor state
         if: github.event_name != 'pull_request' && steps.private.outputs.state_changed == 'true'
