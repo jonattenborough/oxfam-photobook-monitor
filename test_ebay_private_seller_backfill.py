@@ -177,6 +177,7 @@ class PrivateSellerBackfillTests(unittest.TestCase):
         self.assertEqual(call["item_end_date"], "2026-09-01T00:00:00Z")
         self.assertEqual(call["limit"], 200)
         self.assertEqual(call["offset"], 0)
+        self.assertEqual(call["sort"], "newlyListed")
 
     def test_backfill_live_verifies_and_stores_strong_candidate(self):
         item = raw_item(123456789012, "Richard Billingham Rays a Laugh old photography book")

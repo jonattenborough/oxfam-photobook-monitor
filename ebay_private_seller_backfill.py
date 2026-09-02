@@ -556,6 +556,7 @@ def search_page(
         search_in_description=bool(step.get("search_in_description")),
         price_max=float(step.get("price_max") or config["max_price_gbp"]),
         price_currency=str(step.get("price_currency") or "GBP"),
+        sort=str(step.get("sort") or "newlyListed"),
     )
     source = {
         "id": f"ebay_private_backfill_{step['lane']}",

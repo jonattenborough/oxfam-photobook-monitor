@@ -1,0 +1,365 @@
+name: One-time lossless eBay forensic audit
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "7 * * * *"
+  push:
+    branches: [main]
+    paths:
+      - "data/ebay_private_forensic_audit_trigger.txt"
+      - "ebay_api.py"
+      - "ebay_private_seller_backfill.py"
+      - "ebay_private_forensic_scan.py"
+      - "ebay_private_forensic_audit.py"
+      - "ebay_private_forensic_verify.py"
+      - "test_ebay_private_forensic_scan.py"
+      - "test_ebay_private_forensic_audit.py"
+      - "test_ebay_private_forensic_verify.py"
+      - ".github/workflows/ebay-private-forensic-audit.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "ebay_api.py"
+      - "ebay_private_seller_backfill.py"
+      - "ebay_private_forensic_scan.py"
+      - "ebay_private_forensic_audit.py"
+      - "ebay_private_forensic_verify.py"
+      - "test_ebay_private_forensic_scan.py"
+      - "test_ebay_private_forensic_audit.py"
+      - "test_ebay_private_forensic_verify.py"
+      - ".github/workflows/ebay-private-forensic-audit.yml"
+
+permissions:
+  actions: write
+  contents: write
+  issues: write
+
+concurrency:
+  group: ebay-private-forensic-audit
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Synchronize latest main state
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git fetch origin main
+          git checkout --detach FETCH_HEAD
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+
+      - name: Validate forensic audit
+        run: |
+          python -m unittest -v \
+            test_ebay_api.py \
+            test_ebay_private_api.py \
+            test_photobook_recognition.py \
+            test_ebay_private_seller_monitor.py \
+            test_ebay_private_seller_backfill.py \
+            test_ebay_private_full_library_scan.py \
+            test_ebay_private_forensic_scan.py \
+            test_ebay_private_forensic_audit.py \
+            test_ebay_private_forensic_verify.py
+
+      - name: Check current eBay allowance
+        id: quota
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        env:
+          EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
+          EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
+          QUOTA_RESERVE: "250"
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          import ebay_api
+
+          quota = ebay_api.EbayBrowseClient(marketplace="EBAY_GB").browse_quota()
+          reserve = int(os.environ["QUOTA_RESERVE"])
+          usable = max(0, int(quota.get("remaining") or 0) - reserve)
+          output = Path(os.environ["GITHUB_OUTPUT"])
+          with output.open("a", encoding="utf-8") as handle:
+              handle.write(f"usable={usable}\n")
+              handle.write(f"remaining={int(quota.get('remaining') or 0)}\n")
+              handle.write(f"reset={quota.get('reset') or 'unknown'}\n")
+          print(json.dumps({"remaining": quota.get("remaining"), "reserve": reserve, "usable": usable, "reset": quota.get("reset")}))
+          PY
+
+      - name: Pause competing eBay workflows
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && steps.quota.outputs.usable != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          workflows=(
+            ebay-seller-monitor.yml
+            ebay-private-seller-monitor.yml
+            ebay-seller-backfill.yml
+            ebay-private-seller-backfill.yml
+            ebay-private-international-backfill.yml
+            ebay-private-full-library-scan.yml
+            market-monitor.yml
+          )
+          for workflow in "${workflows[@]}"; do
+            gh api --method PUT "repos/${GITHUB_REPOSITORY}/actions/workflows/${workflow}/disable"
+          done
+
+      - name: Finish original 4,318-title scan
+        id: finish
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && steps.quota.outputs.usable != '0'
+        env:
+          EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
+          EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          runtime="runtime/ebay-private-full-library"
+          state="data/ebay_private_full_library_scan_state.json"
+          findings="data/ebay_private_full_library_scan_findings.json"
+          batch=0
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          while [ "$(jq -r '.complete // false' "$state")" != "true" ]; do
+            batch=$((batch + 1))
+            python ebay_private_full_library_scan.py \
+              --max-calls 400 \
+              --hard-call-cap 400 \
+              --quota-reserve 250
+
+            used="$(jq -r '.calls' "$runtime/latest-snapshot.json")"
+            complete="$(jq -r '.complete' "$runtime/latest-snapshot.json")"
+            new_count="$(jq -r '.new_candidates | length' "$runtime/latest-snapshot.json")"
+            cp "$runtime/proposed-state.json" "$state"
+            cp "$runtime/proposed-findings.json" "$findings"
+            git add -- "$state" "$findings"
+            if ! git diff --cached --quiet; then
+              git commit -m "Finish full-library scan checkpoint ${batch} [skip ci]"
+              for attempt in 1 2 3 4; do
+                git pull --rebase origin main
+                if git push origin HEAD:main; then
+                  break
+                fi
+                if [ "$attempt" = "4" ]; then
+                  exit 1
+                fi
+              done
+            fi
+
+            if [ "$new_count" -gt 0 ]; then
+              shopt -s nullglob
+              for body in "$runtime"/issues/*.md; do
+                stem="${body%.md}"
+                gh issue create \
+                  --assignee jonattenborough \
+                  --title "$(cat "${stem}.title")" \
+                  --body-file "$body"
+              done
+            fi
+            if [ "$complete" = "true" ] || [ "$used" -eq 0 ]; then
+              break
+            fi
+          done
+
+          complete="$(jq -r '.complete // false' "$state")"
+          echo "complete=$complete" >> "$GITHUB_OUTPUT"
+          echo "### Original scan completion" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Complete: **$complete**" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Title searches remaining: **$(jq -r '.queue | length' "$state")**" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Live checks remaining: **$(jq -r '.pending_live | length' "$state")**" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Capture every raw lowest-price search result
+        id: capture
+        if: steps.finish.outputs.complete == 'true'
+        env:
+          EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
+          EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
+        run: |
+          set -euo pipefail
+          runtime="runtime/ebay-private-forensic"
+          state="data/ebay_private_forensic_scan_state.json"
+          chunks="data/ebay_private_forensic_chunks"
+          batch=0
+          remaining=4318
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          mkdir -p "$chunks"
+
+          while [ "$remaining" -gt 0 ] && [ "$(jq -r '.complete // false' "$state")" != "true" ]; do
+            batch=$((batch + 1))
+            requested=400
+            if [ "$remaining" -lt "$requested" ]; then
+              requested="$remaining"
+            fi
+            python ebay_private_forensic_scan.py \
+              --max-calls "$requested" \
+              --hard-call-cap "$requested" \
+              --quota-reserve 250
+
+            used="$(jq -r '.calls' "$runtime/latest-snapshot.json")"
+            complete="$(jq -r '.complete' "$runtime/latest-snapshot.json")"
+            chunk_file="$(jq -r '.chunk_file' "$runtime/latest-snapshot.json")"
+            cp "$runtime/proposed-state.json" "$state"
+            if [ -n "$chunk_file" ] && [ "$chunk_file" != "null" ]; then
+              cp "$runtime/$chunk_file" "$chunks/$chunk_file"
+            fi
+            git add -- "$state" "$chunks"
+            if ! git diff --cached --quiet; then
+              git commit -m "Preserve forensic raw-search checkpoint ${batch} [skip ci]"
+              for attempt in 1 2 3 4; do
+                git pull --rebase origin main
+                if git push origin HEAD:main; then
+                  break
+                fi
+                if [ "$attempt" = "4" ]; then
+                  exit 1
+                fi
+              done
+            fi
+            remaining=$((remaining - used))
+            if [ "$complete" = "true" ] || [ "$used" -eq 0 ]; then
+              break
+            fi
+            if [ "$(jq -r '.quota == null' "$runtime/latest-snapshot.json")" = "true" ]; then
+              break
+            fi
+          done
+
+          complete="$(jq -r '.complete // false' "$state")"
+          echo "complete=$complete" >> "$GITHUB_OUTPUT"
+          echo "### Lossless forensic capture" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Complete: **$complete**" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Queries captured: **$(jq -r '.total_search_calls // 0' "$state")**" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Raw results preserved: **$(jq -r '.total_results_captured // 0' "$state")**" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Queries remaining: **$(jq -r '.queue | length' "$state")**" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Run independent offline audit
+        id: offline
+        if: steps.capture.outputs.complete == 'true'
+        run: |
+          set -euo pipefail
+          python ebay_private_forensic_audit.py
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- \
+            data/ebay_private_forensic_audit_summary.json \
+            data/ebay_private_forensic_audit_candidates.json \
+            data/ebay_private_forensic_audit_report.md
+          if ! git diff --cached --quiet; then
+            git commit -m "Build score-independent forensic audit [skip ci]"
+            for attempt in 1 2 3 4; do
+              git pull --rebase origin main
+              if git push origin HEAD:main; then
+                break
+              fi
+              if [ "$attempt" = "4" ]; then
+                exit 1
+              fi
+            done
+          fi
+          echo "ready=true" >> "$GITHUB_OUTPUT"
+          echo "### Independent offline audit" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Unique eBay items: **$(jq -r '.unique_items' data/ebay_private_forensic_audit_summary.json)**" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Possible false negatives: **$(jq -r '.independent_false_negative_candidates' data/ebay_private_forensic_audit_summary.json)**" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Queries capped at 200 results: **$(jq -r '.truncated_query_count' data/ebay_private_forensic_audit_summary.json)**" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Freshly verify the strongest independent candidates
+        id: verify
+        if: steps.offline.outputs.ready == 'true'
+        env:
+          EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
+          EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          runtime="runtime/ebay-private-forensic-verify"
+          state="data/ebay_private_forensic_verify_state.json"
+          findings="data/ebay_private_forensic_verified.json"
+          report="data/ebay_private_forensic_verified_report.md"
+
+          python ebay_private_forensic_verify.py \
+            --max-calls 200 \
+            --hard-call-cap 200 \
+            --quota-reserve 250 \
+            --candidate-limit 200
+
+          used="$(jq -r '.calls' "$runtime/latest-snapshot.json")"
+          complete="$(jq -r '.complete' "$runtime/latest-snapshot.json")"
+          completed_now="$(jq -r '.completed_now' "$runtime/latest-snapshot.json")"
+          cp "$runtime/proposed-state.json" "$state"
+          cp "$runtime/proposed-findings.json" "$findings"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "$state" "$findings" "$report"
+          if ! git diff --cached --quiet; then
+            git commit -m "Verify independent forensic candidates [skip ci]"
+            for attempt in 1 2 3 4; do
+              git pull --rebase origin main
+              if git push origin HEAD:main; then
+                break
+              fi
+              if [ "$attempt" = "4" ]; then
+                exit 1
+              fi
+            done
+          fi
+
+          if [ "$completed_now" = "true" ]; then
+            gh issue create \
+              --assignee jonattenborough \
+              --title "$(cat "$runtime/issues/issue-001.title")" \
+              --body-file "$runtime/issues/issue-001.md"
+          fi
+          echo "complete=$complete" >> "$GITHUB_OUTPUT"
+          echo "### Live verification" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Complete: **$complete**" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Calls this run: **$used**" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Still queued: **$(jq -r '.remaining' "$runtime/latest-snapshot.json")**" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Restore competing eBay workflows
+        if: always() && github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && steps.quota.outputs.usable != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set +e
+          failed=0
+          workflows=(
+            ebay-seller-monitor.yml
+            ebay-private-seller-monitor.yml
+            ebay-seller-backfill.yml
+            ebay-private-seller-backfill.yml
+            ebay-private-international-backfill.yml
+            ebay-private-full-library-scan.yml
+            market-monitor.yml
+          )
+          for workflow in "${workflows[@]}"; do
+            gh api --method PUT "repos/${GITHUB_REPOSITORY}/actions/workflows/${workflow}/enable" || failed=1
+          done
+          exit "$failed"
+
+      - name: Disable completed one-time audit schedule
+        if: steps.finish.outputs.complete == 'true' && steps.capture.outputs.complete == 'true' && steps.verify.outputs.complete == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api --method PUT \
+            "repos/${GITHUB_REPOSITORY}/actions/workflows/ebay-private-forensic-audit.yml/disable"

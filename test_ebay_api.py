@@ -144,6 +144,23 @@ class EbayApiTests(unittest.TestCase):
             client.search(None)
 
     @mock.patch("ebay_api.urllib.request.urlopen")
+    def test_search_can_sort_lowest_price_first(self, urlopen):
+        urlopen.side_effect = [
+            FakeResponse({"access_token": "short-lived-token"}),
+            FakeResponse({"itemSummaries": []}),
+        ]
+        client = ebay_api.EbayBrowseClient("app-id", "cert-id")
+        client.search("Alec Soth Songbook", sort="price")
+        request = urlopen.call_args_list[1].args[0]
+        params = urllib.parse.parse_qs(urllib.parse.urlparse(request.full_url).query)
+        self.assertEqual(params["sort"], ["price"])
+
+    def test_search_rejects_unknown_sort(self):
+        client = ebay_api.EbayBrowseClient("app-id", "cert-id")
+        with self.assertRaisesRegex(ValueError, "Unsupported eBay search sort"):
+            client.search("photobook", sort="random")
+
+    @mock.patch("ebay_api.urllib.request.urlopen")
     def test_closed_item_start_date_range(self, urlopen):
         urlopen.side_effect = [
             FakeResponse({"access_token": "short-lived-token"}),

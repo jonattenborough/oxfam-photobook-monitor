@@ -23,6 +23,7 @@ LEGACY_ITEM_ID = re.compile(r"^v1\|([^|]+)\|")
 ALLOWED_BUYING_OPTIONS = {"FIXED_PRICE", "AUCTION", "BEST_OFFER"}
 ALLOWED_SELLER_ACCOUNT_TYPES = {"INDIVIDUAL", "BUSINESS"}
 ALLOWED_CONDITIONS = {"NEW", "USED", "UNSPECIFIED"}
+ALLOWED_SORTS = {"newlyListed", "price", "-price"}
 MARKETPLACE_DOMAINS = {
     "EBAY_AT": "www.ebay.at",
     "EBAY_AU": "www.ebay.com.au",
@@ -254,10 +255,14 @@ class EbayBrowseClient:
         price_currency: str | None = None,
         conditions: list[str] | tuple[str, ...] | None = None,
         offset: int = 0,
+        sort: str = "newlyListed",
     ) -> list[dict[str, Any]]:
+        requested_sort = str(sort or "newlyListed").strip()
+        if requested_sort not in ALLOWED_SORTS:
+            raise ValueError(f"Unsupported eBay search sort: {requested_sort}")
         params: dict[str, str] = {
             "limit": str(max(1, min(int(limit), 200))),
-            "sort": "newlyListed",
+            "sort": requested_sort,
             "fieldgroups": "EXTENDED",
             "offset": str(max(0, min(int(offset), 9999))),
         }
@@ -486,6 +491,7 @@ def search_listings(
     price_currency: str | None = None,
     conditions: list[str] | tuple[str, ...] | None = None,
     offset: int = 0,
+    sort: str = "newlyListed",
 ) -> list[dict[str, Any]]:
     """Search newest-first and convert summaries to the monitor's row shape."""
     global _DEFAULT_CLIENT
@@ -511,6 +517,7 @@ def search_listings(
         price_currency=price_currency,
         conditions=conditions,
         offset=offset,
+        sort=sort,
     )
     converted = [listing_from_summary(row, source) for row in rows]
     return [row for row in converted if row is not None]
