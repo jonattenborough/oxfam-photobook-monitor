@@ -7,8 +7,8 @@
   "max_price_gbp": 750,
   "issue_threshold": 72,
   "urgent_threshold": 90,
-  "max_live_checks_per_run": 12,
-  "max_api_calls_per_run": 42,
+  "max_live_checks_per_run": 3,
+  "max_api_calls_per_run": 34,
   "quota_reserve": 450,
   "max_pending_live_checks": 100,
   "contemporary_records_per_run": 4,
@@ -18,6 +18,8 @@
   "classic_contributor_queries_per_run": 1,
   "contemporary_auction_queries_per_run": 1,
   "classic_auction_queries_per_run": 1,
+  "active_stock_queries_per_run": 1,
+  "active_stock_max_offset": 9800,
   "auction_horizon_hours": 72,
   "broad_queries": [
     "photography book",
@@ -40,5 +42,15 @@
   "wrong_category_queries": [
     "photography book collection",
     "photobook job lot"
+  ],
+  "active_stock_queries": [
+    "photography book",
+    "photo book",
+    "photography monograph",
+    "photographer book",
+    "signed photography book",
+    "limited edition photobook",
+    "photography books collection",
+    "old photography books"
   ]
 }

@@ -3,7 +3,6 @@ name: eBay charity seller photobook monitor
 on:
   schedule:
     - cron: "9 * * * *"
-    - cron: "39 * * * *"
   workflow_dispatch:
   push:
     branches: [main]
@@ -56,7 +55,7 @@ jobs:
         env:
           EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
-        run: python ebay_seller_monitor.py
+        run: python ebay_seller_monitor.py --sellers-per-run 51
 
       - name: Create AI review issue for new seller candidates
         if: steps.sellers.outputs.new_count != '0'
