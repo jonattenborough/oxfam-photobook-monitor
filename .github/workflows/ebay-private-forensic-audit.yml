@@ -3,7 +3,7 @@ name: One-time lossless eBay forensic audit
 on:
   workflow_dispatch:
   schedule:
-    - cron: "7 * * * *"
+    - cron: "57 * * * *"
   push:
     branches: [main]
     paths:
@@ -83,18 +83,35 @@ jobs:
           python - <<'PY'
           import json
           import os
+          import time
+          from datetime import datetime, timezone
           from pathlib import Path
           import ebay_api
 
           quota = ebay_api.EbayBrowseClient(marketplace="EBAY_GB").browse_quota()
           reserve = int(os.environ["QUOTA_RESERVE"])
           usable = max(0, int(quota.get("remaining") or 0) - reserve)
+          reset = quota.get("reset")
+
+          # The daily allowance resets at a provider-supplied instant. The
+          # :57 schedule lets this one-off audit wait across an imminent reset,
+          # then pause competing workflows before their first post-reset run.
+          if usable == 0 and reset:
+              reset_at = datetime.fromisoformat(str(reset).replace("Z", "+00:00"))
+              wait_seconds = (reset_at - datetime.now(timezone.utc)).total_seconds()
+              if 0 < wait_seconds <= 10 * 60:
+                  print(json.dumps({"waiting_for_reset_seconds": round(wait_seconds, 1), "reset": reset}))
+                  time.sleep(wait_seconds + 2)
+                  quota = ebay_api.EbayBrowseClient(marketplace="EBAY_GB").browse_quota()
+                  usable = max(0, int(quota.get("remaining") or 0) - reserve)
+                  reset = quota.get("reset")
+
           output = Path(os.environ["GITHUB_OUTPUT"])
           with output.open("a", encoding="utf-8") as handle:
               handle.write(f"usable={usable}\n")
               handle.write(f"remaining={int(quota.get('remaining') or 0)}\n")
-              handle.write(f"reset={quota.get('reset') or 'unknown'}\n")
-          print(json.dumps({"remaining": quota.get("remaining"), "reserve": reserve, "usable": usable, "reset": quota.get("reset")}))
+              handle.write(f"reset={reset or 'unknown'}\n")
+          print(json.dumps({"remaining": quota.get("remaining"), "reserve": reserve, "usable": usable, "reset": reset}))
           PY
 
       - name: Pause competing eBay workflows
