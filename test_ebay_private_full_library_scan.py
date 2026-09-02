@@ -25,12 +25,50 @@ class FullLibraryScanTests(unittest.TestCase):
         )
 
     def test_price_aware_threshold_prioritises_hidden_gems(self):
-        base = {"price_review_profile": "jon_hidden_gem", "market_issue_threshold": 60}
+        base = {
+            "price_review_profile": "jon_hidden_gem",
+            "market_issue_threshold": 60,
+            "best_recognition": {"collectibility_tier": "S"},
+        }
         self.assertEqual(backfill.issue_score_threshold({**base, "landed_price_gbp": 99}, 60), 60)
         self.assertEqual(backfill.issue_score_threshold({**base, "landed_price_gbp": 150}, 60), 72)
         self.assertEqual(backfill.issue_score_threshold({**base, "landed_price_gbp": 250}, 60), 84)
         self.assertEqual(backfill.issue_score_threshold({**base, "landed_price_gbp": 301}, 60), 101)
         self.assertEqual(backfill.live_score_threshold({**base, "landed_price_gbp": 99}, 60), 55)
+
+    def test_hidden_gem_gate_tightens_for_routine_lower_tiers(self):
+        base = {"price_review_profile": "jon_hidden_gem", "market_issue_threshold": 60}
+        tier_b = {**base, "best_recognition": {"collectibility_tier": "B"}}
+        tier_c = {**base, "best_recognition": {"collectibility_tier": "C"}}
+        self.assertEqual(backfill.issue_score_threshold({**tier_b, "landed_price_gbp": 45}, 60), 68)
+        self.assertEqual(backfill.live_score_threshold({**tier_b, "landed_price_gbp": 45}, 60), 67)
+        self.assertEqual(backfill.issue_score_threshold({**tier_c, "landed_price_gbp": 45}, 60), 72)
+        self.assertEqual(backfill.live_score_threshold({**tier_c, "landed_price_gbp": 45}, 60), 72)
+        self.assertEqual(backfill.issue_score_threshold({**tier_b, "landed_price_gbp": 150}, 60), 80)
+        self.assertEqual(backfill.issue_score_threshold({**tier_c, "landed_price_gbp": 250}, 60), 94)
+
+    def test_special_and_documentary_signals_keep_low_price_discovery_open(self):
+        base = {"price_review_profile": "jon_hidden_gem", "market_issue_threshold": 60}
+        special = {
+            **base,
+            "landed_price_gbp": 80,
+            "best_recognition": {
+                "collectibility_tier": "B",
+                "collectible_format_evidence": ["signed by the photographer"],
+            },
+        }
+        documentary = {
+            **base,
+            "landed_price_gbp": 80,
+            "best_recognition": {
+                "collectibility_tier": "B",
+                "documentary_relevance": "HIGH",
+            },
+        }
+        self.assertEqual(backfill.issue_score_threshold(special, 60), 64)
+        self.assertEqual(backfill.live_score_threshold(special, 60), 61)
+        self.assertEqual(backfill.issue_score_threshold(documentary, 60), 64)
+        self.assertEqual(backfill.live_score_threshold(documentary, 60), 61)
 
     def test_existing_backfills_keep_their_original_threshold(self):
         item = {"market_issue_threshold": 72, "landed_price_gbp": 20}
