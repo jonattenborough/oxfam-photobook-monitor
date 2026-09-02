@@ -106,16 +106,25 @@ def load_config(path: Path) -> dict[str, Any]:
     payload.setdefault("classic_contributor_queries_per_run", 1)
     payload.setdefault("contemporary_auction_queries_per_run", 1)
     payload.setdefault("classic_auction_queries_per_run", 1)
-    payload.setdefault("max_live_checks_per_run", 12)
-    payload.setdefault("max_api_calls_per_run", 42)
+    payload.setdefault("max_live_checks_per_run", 3)
+    payload.setdefault("max_api_calls_per_run", 34)
     payload.setdefault("quota_reserve", 450)
     payload.setdefault("max_pending_live_checks", 100)
     payload.setdefault("issue_threshold", 72)
     payload.setdefault("urgent_threshold", 90)
     payload.setdefault("max_price_gbp", 750)
     payload.setdefault("auction_horizon_hours", 36)
+    payload.setdefault("active_stock_queries_per_run", 1)
+    payload.setdefault("active_stock_max_offset", 9800)
     payload.setdefault("collectible_queries", [])
-    for key in ("broad_queries", "collectible_queries", "collection_queries", "wrong_category_queries"):
+    payload.setdefault("active_stock_queries", [])
+    for key in (
+        "broad_queries",
+        "collectible_queries",
+        "collection_queries",
+        "wrong_category_queries",
+        "active_stock_queries",
+    ):
         value = payload.get(key)
         if not isinstance(value, list):
             raise RuntimeError(f"{key} must be a list")
@@ -206,6 +215,7 @@ def build_search_plan(config: dict[str, Any], state: dict[str, Any], now: dateti
         incremental: bool = True,
         ending_start: str | None = None,
         ending_end: str | None = None,
+        offset: int = 0,
     ) -> None:
         query = str(query or "").strip()[:100]
         if not query:
@@ -220,6 +230,7 @@ def build_search_plan(config: dict[str, Any], state: dict[str, Any], now: dateti
                 "incremental": incremental,
                 "ending_start_date": ending_start,
                 "ending_end_date": ending_end,
+                "offset": max(0, min(int(offset), 9999)),
             }
         )
 
@@ -231,6 +242,27 @@ def build_search_plan(config: dict[str, Any], state: dict[str, Any], now: dateti
         add("collection", query, description=True)
     for query in config["wrong_category_queries"]:
         add("wrong_category", query, category_ids=None, description=True)
+
+    active_stock_queries = config["active_stock_queries"]
+    active_stock_per_run = max(0, int(config["active_stock_queries_per_run"]))
+    if active_stock_queries and active_stock_per_run:
+        page_size = max(1, min(200, int(config["query_result_limit"])))
+        max_offset = max(0, min(9999, int(config["active_stock_max_offset"])))
+        page_count = (max_offset // page_size) + 1
+        total_positions = len(active_stock_queries) * page_count
+        active_cursor = max(0, int(cursors.get("active_stock", 0) or 0)) % total_positions
+        for index in range(min(active_stock_per_run, total_positions)):
+            position = (active_cursor + index) % total_positions
+            query_index = position % len(active_stock_queries)
+            page_index = position // len(active_stock_queries)
+            add(
+                "active_stock",
+                active_stock_queries[query_index],
+                description=True,
+                incremental=False,
+                offset=page_index * page_size,
+            )
+        cursors["active_stock"] = (active_cursor + min(active_stock_per_run, total_positions)) % total_positions
 
     contemporary_records = [row for row in records if _is_contemporary_record(row)]
     classic_records = [row for row in records if not _is_contemporary_record(row)]
@@ -254,12 +286,14 @@ def build_search_plan(config: dict[str, Any], state: dict[str, Any], now: dateti
                 "contemporary_hot",
                 recognition.search_query_for_record(contemporary_selected[index]),
                 description=True,
+                incremental=False,
             )
         if index < len(classic_selected):
             add(
                 "classic_hot",
                 recognition.search_query_for_record(classic_selected[index]),
                 description=True,
+                incremental=False,
             )
 
     hot_keys = {_record_identity(row) for row in contemporary_hot + classic_hot}
@@ -275,7 +309,12 @@ def build_search_plan(config: dict[str, Any], state: dict[str, Any], now: dateti
     )
     cursors["library_records"] = next_rotation
     for row in rotating_selected:
-        add("library_rotation", recognition.search_query_for_record(row), description=False)
+        add(
+            "library_rotation",
+            recognition.search_query_for_record(row),
+            description=False,
+            incremental=False,
+        )
 
     contemporary_contributors = recognition.unique_contributors(contemporary_records)
     classic_contributors = recognition.unique_contributors(classic_records)
@@ -334,12 +373,13 @@ def build_search_plan(config: dict[str, Any], state: dict[str, Any], now: dateti
             )
 
     unique: list[dict[str, Any]] = []
-    seen: set[tuple[str, str, str]] = set()
+    seen: set[tuple[str, str, str, int]] = set()
     for step in plan:
         key = (
             step["lane"],
             " ".join(step["query"].lower().split()),
             "+".join(sorted(step["buying_options"])),
+            int(step.get("offset") or 0),
         )
         if key in seen:
             continue
@@ -358,12 +398,13 @@ def trim_search_plan(plan: list[dict[str, Any]], budget: int) -> list[dict[str, 
         "classic_hot": 1,
         "collectible_format": 2,
         "collection": 3,
-        "wrong_category": 4,
-        "contemporary_auction": 5,
-        "classic_auction": 5,
-        "library_rotation": 6,
-        "contemporary_contributor": 7,
-        "classic_contributor": 7,
+        "active_stock": 4,
+        "wrong_category": 5,
+        "contemporary_auction": 6,
+        "classic_auction": 6,
+        "library_rotation": 7,
+        "contemporary_contributor": 8,
+        "classic_contributor": 8,
     }
     ranked = sorted(
         enumerate(plan),
@@ -402,6 +443,7 @@ def run_query(
     incremental: bool,
     ending_start_date: str | None,
     ending_end_date: str | None,
+    offset: int = 0,
 ) -> list[dict[str, Any]]:
     key = _query_key(lane, query, buying_options)
     last_checked = state["query_last_checked"].get(key)
@@ -424,6 +466,7 @@ def run_query(
         search_in_description=search_in_description,
         price_max=max_price_gbp,
         price_currency="GBP",
+        offset=offset,
     )
     state["query_last_checked"][key] = detected_at
     source = _source(lane)
@@ -860,6 +903,7 @@ def main() -> int:
                 incremental=bool(step.get("incremental", True)),
                 ending_start_date=step.get("ending_start_date"),
                 ending_end_date=step.get("ending_end_date"),
+                offset=int(step.get("offset") or 0),
             )
             successful_queries += 1
         except Exception as exc:

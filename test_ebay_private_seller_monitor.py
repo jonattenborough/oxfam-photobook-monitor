@@ -25,18 +25,70 @@ class PrivateSellerMonitorTests(unittest.TestCase):
             state,
             datetime(2026, 9, 1, 12, 0, tzinfo=timezone.utc),
         )
-        self.assertEqual(len(plan), 30)
+        self.assertEqual(len(plan), 31)
         lanes = {step["lane"] for step in plan}
         self.assertTrue(
             {"broad", "collectible_format", "collection", "wrong_category",
              "contemporary_hot", "classic_hot", "library_rotation",
              "contemporary_contributor", "classic_contributor",
-             "contemporary_auction", "classic_auction"}.issubset(lanes)
+             "contemporary_auction", "classic_auction", "active_stock"}.issubset(lanes)
         )
         self.assertEqual(sum(step["lane"] == "contemporary_hot" for step in plan), 4)
         self.assertEqual(sum(step["lane"] == "classic_hot" for step in plan), 4)
         self.assertEqual(config["query_result_limit"], 200)
-        self.assertEqual(config["max_live_checks_per_run"], 12)
+        self.assertEqual(sum(step["lane"] == "active_stock" for step in plan), 1)
+        self.assertEqual(config["max_live_checks_per_run"], 3)
+        self.assertEqual(config["max_api_calls_per_run"], 34)
+        self.assertTrue(
+            all(
+                step["incremental"] is False
+                for step in plan
+                if step["lane"] in {"contemporary_hot", "classic_hot", "library_rotation", "active_stock"}
+            )
+        )
+
+    def test_daily_schedule_uses_allowance_without_crossing_reserve(self):
+        config = monitor.load_config(Path("data/ebay_private_searches.json"))
+        private_workflow = Path(".github/workflows/ebay-private-seller-monitor.yml").read_text(encoding="utf-8")
+        charity_workflow = Path(".github/workflows/ebay-seller-monitor.yml").read_text(encoding="utf-8")
+        self.assertIn('cron: "2,17,32,47 * * * *"', private_workflow)
+        self.assertEqual(charity_workflow.count('cron: "9 * * * *"'), 1)
+        self.assertIn("--sellers-per-run 51", charity_workflow)
+        daily_private_calls = 96 * int(config["max_api_calls_per_run"])
+        daily_charity_calls = 24 * 51
+        daily_market_calls = 24 * 2
+        daily_total = daily_private_calls + daily_charity_calls + daily_market_calls
+        self.assertEqual(daily_total, 4536)
+        self.assertLessEqual(daily_total, 5000 - int(config["quota_reserve"]))
+
+    def test_active_stock_rotation_walks_queries_then_pages(self):
+        config = monitor.load_config(Path("data/ebay_private_searches.json"))
+        config.update(
+            {
+                "broad_queries": [],
+                "collectible_queries": [],
+                "collection_queries": [],
+                "wrong_category_queries": [],
+                "active_stock_queries": ["first", "second"],
+                "active_stock_queries_per_run": 1,
+                "active_stock_max_offset": 400,
+                "contemporary_records_per_run": 0,
+                "classic_records_per_run": 0,
+                "rotating_records_per_run": 0,
+                "contemporary_contributor_queries_per_run": 0,
+                "classic_contributor_queries_per_run": 0,
+                "contemporary_auction_queries_per_run": 0,
+                "classic_auction_queries_per_run": 0,
+            }
+        )
+        state = monitor.load_state(Path("/path/that/does/not/exist.json"))
+        now = datetime(2026, 9, 1, 12, 0, tzinfo=timezone.utc)
+        first = monitor.build_search_plan(config, state, now)[0]
+        second = monitor.build_search_plan(config, state, now)[0]
+        third = monitor.build_search_plan(config, state, now)[0]
+        self.assertEqual((first["query"], first["offset"]), ("first", 0))
+        self.assertEqual((second["query"], second["offset"]), ("second", 0))
+        self.assertEqual((third["query"], third["offset"]), ("first", 200))
 
     def test_query_forces_individual_seller_filter(self):
         client = FakeClient()
@@ -67,6 +119,7 @@ class PrivateSellerMonitorTests(unittest.TestCase):
         self.assertEqual(call["delivery_country"], "GB")
         self.assertTrue(call["search_in_description"])
         self.assertEqual(call["price_max"], 750)
+        self.assertEqual(call["offset"], 0)
         self.assertEqual(call["item_start_date"], "2026-09-01T10:48:00Z")
 
     def test_new_query_starts_from_previous_monitor_run(self):
