@@ -1,30 +1,30 @@
 {
   "cursors": {
     "auctions": 10,
-    "classic_auctions": 7,
-    "classic_contributors": 7,
-    "classic_hot_records": 28,
-    "contemporary_auctions": 7,
-    "contemporary_contributors": 7,
-    "contemporary_hot_records": 28,
+    "classic_auctions": 8,
+    "classic_contributors": 8,
+    "classic_hot_records": 32,
+    "contemporary_auctions": 8,
+    "contemporary_contributors": 8,
+    "contemporary_hot_records": 32,
     "contributors": 10,
     "hot_records": 26,
-    "library_records": 96
+    "library_records": 100
   },
-  "last_api_call_budget": 42,
+  "last_api_call_budget": 30,
   "last_browse_quota": {
-    "count": 4390,
+    "count": 4520,
     "limit": 5000,
-    "remaining": 610,
+    "remaining": 480,
     "reset": "2026-09-02T07:00:00.000Z",
     "resource": "buy.browse",
     "time_window": 86400
   },
   "last_failure_count": 0,
-  "last_live_checks": 3,
-  "last_query_count": 30,
-  "last_run": "2026-09-02T00:17:37Z",
-  "last_successful_queries": 30,
+  "last_live_checks": 0,
+  "last_query_count": 18,
+  "last_run": "2026-09-02T05:52:04Z",
+  "last_successful_queries": 18,
   "library_records": 4318,
   "pending_live": {},
   "query_last_checked": {
@@ -39,11 +39,11 @@
     "auction_ending:AUCTION:corinne day diary": "2026-09-01T15:15:42Z",
     "auction_ending:AUCTION:daido moriyama farewell photography": "2026-09-01T15:15:42Z",
     "broad:BEST_OFFER+FIXED_PRICE:art photography book": "2026-09-01T12:57:22Z",
-    "broad:BEST_OFFER+FIXED_PRICE:photo book": "2026-09-02T00:17:37Z",
-    "broad:BEST_OFFER+FIXED_PRICE:photographer book": "2026-09-02T00:17:37Z",
+    "broad:BEST_OFFER+FIXED_PRICE:photo book": "2026-09-02T05:52:04Z",
+    "broad:BEST_OFFER+FIXED_PRICE:photographer book": "2026-09-02T05:52:04Z",
     "broad:BEST_OFFER+FIXED_PRICE:photographs book": "2026-09-01T12:57:22Z",
-    "broad:BEST_OFFER+FIXED_PRICE:photography book": "2026-09-02T00:17:37Z",
-    "broad:BEST_OFFER+FIXED_PRICE:photography monograph": "2026-09-02T00:17:37Z",
+    "broad:BEST_OFFER+FIXED_PRICE:photography book": "2026-09-02T05:52:04Z",
+    "broad:BEST_OFFER+FIXED_PRICE:photography monograph": "2026-09-02T05:52:04Z",
     "classic_auction:AUCTION:alec soth niagara": "2026-09-01T17:16:36Z",
     "classic_auction:AUCTION:alec soth sleeping by the mississippi": "2026-09-01T17:20:07Z",
     "classic_auction:AUCTION:bernd and hilla becher anonyme skulpturen": "2026-09-01T17:24:57Z",
@@ -86,16 +86,20 @@
     "classic_hot:BEST_OFFER+FIXED_PRICE:martin parr the last resort": "2026-09-02T00:17:37Z",
     "classic_hot:BEST_OFFER+FIXED_PRICE:mary ellen mark falkland road: prostitutes of bombay": "2026-09-02T00:17:37Z",
     "classic_hot:BEST_OFFER+FIXED_PRICE:mikhael subotzky and patrick waterhouse ponte city": "2026-09-02T00:17:37Z",
-    "collectible_format:BEST_OFFER+FIXED_PRICE:limited edition photobook": "2026-09-02T00:17:37Z",
-    "collectible_format:BEST_OFFER+FIXED_PRICE:photography book with print": "2026-09-02T00:17:37Z",
-    "collectible_format:BEST_OFFER+FIXED_PRICE:signed numbered photobook": "2026-09-02T00:17:37Z",
-    "collectible_format:BEST_OFFER+FIXED_PRICE:signed photography book": "2026-09-02T00:17:37Z",
+    "classic_hot:BEST_OFFER+FIXED_PRICE:nan goldin the ballad of sexual dependency": "2026-09-02T05:52:04Z",
+    "classic_hot:BEST_OFFER+FIXED_PRICE:oscar monzon karma": "2026-09-02T05:52:04Z",
+    "classic_hot:BEST_OFFER+FIXED_PRICE:paul graham a1: the great north road": "2026-09-02T05:52:04Z",
+    "classic_hot:BEST_OFFER+FIXED_PRICE:peter beard the end of the game": "2026-09-02T05:52:04Z",
+    "collectible_format:BEST_OFFER+FIXED_PRICE:limited edition photobook": "2026-09-02T05:52:04Z",
+    "collectible_format:BEST_OFFER+FIXED_PRICE:photography book with print": "2026-09-02T05:52:04Z",
+    "collectible_format:BEST_OFFER+FIXED_PRICE:signed numbered photobook": "2026-09-02T05:52:04Z",
+    "collectible_format:BEST_OFFER+FIXED_PRICE:signed photography book": "2026-09-02T05:52:04Z",
     "collection:BEST_OFFER+FIXED_PRICE:old photography books": "2026-09-02T00:17:37Z",
     "collection:BEST_OFFER+FIXED_PRICE:photo books job lot": "2026-09-01T12:57:22Z",
     "collection:BEST_OFFER+FIXED_PRICE:photographer books collection": "2026-09-01T12:57:22Z",
     "collection:BEST_OFFER+FIXED_PRICE:photography book bundle": "2026-09-02T00:17:37Z",
-    "collection:BEST_OFFER+FIXED_PRICE:photography books collection": "2026-09-02T00:17:37Z",
-    "collection:BEST_OFFER+FIXED_PRICE:photography books job lot": "2026-09-02T00:17:37Z",
+    "collection:BEST_OFFER+FIXED_PRICE:photography books collection": "2026-09-02T05:52:04Z",
+    "collection:BEST_OFFER+FIXED_PRICE:photography books job lot": "2026-09-02T05:52:04Z",
     "contemporary_auction:AUCTION:alejandro cartagena carpoolers": "2026-09-01T17:16:36Z",
     "contemporary_auction:AUCTION:andi galdi vinko sorry i gave birth i disappeared but now i'm back": "2026-09-01T17:20:07Z",
     "contemporary_auction:AUCTION:buck ellison living trust": "2026-09-01T17:24:57Z",
@@ -138,6 +142,10 @@
     "contemporary_hot:BEST_OFFER+FIXED_PRICE:hristina tasheva far away from home: the voices, the body and the periphery": "2026-09-02T00:17:37Z",
     "contemporary_hot:BEST_OFFER+FIXED_PRICE:jack davison photographs": "2026-09-02T00:17:37Z",
     "contemporary_hot:BEST_OFFER+FIXED_PRICE:jamie hawkesworth the british isles": "2026-09-02T00:17:37Z",
+    "contemporary_hot:BEST_OFFER+FIXED_PRICE:janine wiedel vulcan's forge": "2026-09-02T05:52:04Z",
+    "contemporary_hot:BEST_OFFER+FIXED_PRICE:jeffrey silverthorne morgue": "2026-09-02T05:52:04Z",
+    "contemporary_hot:BEST_OFFER+FIXED_PRICE:jerome ming oobanken": "2026-09-02T05:52:04Z",
+    "contemporary_hot:BEST_OFFER+FIXED_PRICE:joanna piotrowska frowst": "2026-09-02T05:52:04Z",
     "contributor:BEST_OFFER+FIXED_PRICE:aaron rezny": "2026-09-01T15:09:30Z",
     "contributor:BEST_OFFER+FIXED_PRICE:aaron ruell": "2026-09-01T15:09:30Z",
     "contributor:BEST_OFFER+FIXED_PRICE:aaron schuman": "2026-09-01T15:15:42Z",
@@ -463,6 +471,13 @@
       "title": "Hardback Book Victoria Glendinning's Hertfordshire  1989 Black & White Photos",
       "url": "https://www.ebay.co.uk/itm/117390483387?_skw=photo+book&hash=item1b55049fbb:g:7SAAAeSwgsVqCb9c"
     },
+    "ebay:117391208079": {
+      "first_seen": "2026-09-02T05:52:04Z",
+      "last_seen": "2026-09-02T05:52:04Z",
+      "score": 40,
+      "title": "Collecting Photographic Antiques by Permutt, Cyril Hardback Book",
+      "url": "https://www.ebay.co.uk/itm/117391208079?_skw=photography+book&hash=item1b550fae8f:g:rJQAAeSwIf9qhobl"
+    },
     "ebay:126642998838": {
       "first_seen": "2026-09-01T15:09:30Z",
       "last_seen": "2026-09-01T15:09:30Z",
@@ -700,6 +715,13 @@
       "score": 40,
       "title": "The 100 Greatest Rock 'n' Roll Photographs Illustrated (Q)",
       "url": "https://www.ebay.co.uk/itm/128056450412?_skw=photo+book&hash=item1dd0c25d6c:g:yLcAAeSwkN9qcn8W"
+    },
+    "ebay:128056509660": {
+      "first_seen": "2026-09-02T05:52:04Z",
+      "last_seen": "2026-09-02T05:52:04Z",
+      "score": 30,
+      "title": "CURVES Ryosuke Handa Close Up Art Female Body Compilation Photo Book Koseisha",
+      "url": "https://www.ebay.co.uk/itm/128056509660?_skw=photo+book&hash=item1dd0c344dc:g:1pcAAeSwau1ql6PZ"
     },
     "ebay:133792317103": {
       "first_seen": "2026-09-01T17:20:07Z",
@@ -1849,6 +1871,13 @@
       "title": "Addicted to Anxiety by Owen O'Kane Paperback Please Ckeck Photos",
       "url": "https://www.ebay.co.uk/itm/178460023993?_skw=photo+book&hash=item298d0bdcb9:g:4awAAeSwndxql2lK"
     },
+    "ebay:178460555888": {
+      "first_seen": "2026-09-02T05:52:04Z",
+      "last_seen": "2026-09-02T05:52:04Z",
+      "score": 35,
+      "title": "BILDBAND  \" DAVID VANCE - PHOTOGRAPHS \"",
+      "url": "https://www.ebay.co.uk/itm/178460555888?_skw=photo+book&hash=item298d13fa70:g:wskAAeSwQe1ql6Cw"
+    },
     "ebay:186862500728": {
       "first_seen": "2026-09-01T16:52:33Z",
       "last_seen": "2026-09-01T16:52:33Z",
@@ -2030,6 +2059,13 @@
       "score": 26,
       "title": "'The Cutting Edge' - C.J Heatley III. F-14 Tomcat pilot Photographic Book",
       "url": "https://www.ebay.co.uk/itm/188872794371?_skw=photography+book&hash=item2bf9b22103:g:Lb0AAeSw0D9n2IvU"
+    },
+    "ebay:188874077144": {
+      "first_seen": "2026-09-02T05:52:04Z",
+      "last_seen": "2026-09-02T05:52:04Z",
+      "score": 36,
+      "title": "Kate Bush - rare out of print book CATHY RARE John Carder Bush slip case 2014",
+      "url": "https://www.ebay.co.uk/itm/188874077144?_skw=photography+book&hash=item2bf9c5b3d8:g:WuwAAeSwTM9qQ78y"
     },
     "ebay:198050574725": {
       "first_seen": "2026-09-01T15:09:30Z",
@@ -2450,6 +2486,48 @@
       "score": 26,
       "title": "Daido Moriyama NAGISA Yoko Nagisa Photo Book 2010 /Akio Nagasawa Used from Japan",
       "url": "https://www.ebay.co.uk/itm/206529956897?_skw=photo+book&hash=item3016250c21:g:YqwAAeSwk1Jql12R"
+    },
+    "ebay:206530081051": {
+      "first_seen": "2026-09-02T05:52:04Z",
+      "last_seen": "2026-09-02T05:52:04Z",
+      "score": 35,
+      "title": "Erika Ozaki Photo Book japan",
+      "url": "https://www.ebay.co.uk/itm/206530081051?_skw=photo+book&hash=item301626f11b:g:GLoAAeSwpEtql3JL"
+    },
+    "ebay:206530084506": {
+      "first_seen": "2026-09-02T05:52:04Z",
+      "last_seen": "2026-09-02T05:52:04Z",
+      "score": 30,
+      "title": "Ryo Harusaki Photo Book japan",
+      "url": "https://www.ebay.co.uk/itm/206530084506?_skw=photo+book&hash=item301626fe9a:g:eacAAeSwo5Fql3KN"
+    },
+    "ebay:206530086729": {
+      "first_seen": "2026-09-02T05:52:04Z",
+      "last_seen": "2026-09-02T05:52:04Z",
+      "score": 30,
+      "title": "Sato Haruki Photo Book japan",
+      "url": "https://www.ebay.co.uk/itm/206530086729?_skw=photo+book&hash=item3016270749:g:j20AAeSwqX5ql3ND"
+    },
+    "ebay:206530090318": {
+      "first_seen": "2026-09-02T05:52:04Z",
+      "last_seen": "2026-09-02T05:52:04Z",
+      "score": 30,
+      "title": "Saki Yanase Photo Book japan",
+      "url": "https://www.ebay.co.uk/itm/206530090318?_skw=photo+book&hash=item301627154e:g:~VUAAeSwja9ql3OP"
+    },
+    "ebay:206530105711": {
+      "first_seen": "2026-09-02T05:52:04Z",
+      "last_seen": "2026-09-02T05:52:04Z",
+      "score": 30,
+      "title": "Maria Ozawa Photo Book japan",
+      "url": "https://www.ebay.co.uk/itm/206530105711?_skw=photo+book&hash=item301627516f:g:oScAAeSwt3xql3Qe"
+    },
+    "ebay:206530110486": {
+      "first_seen": "2026-09-02T05:52:04Z",
+      "last_seen": "2026-09-02T05:52:04Z",
+      "score": 30,
+      "title": "Ria Horisaki HardCover Photo Book japan",
+      "url": "https://www.ebay.co.uk/itm/206530110486?_skw=photo+book&hash=item3016276416:g:Co4AAeSwFJZql3Rf"
     },
     "ebay:226478974069": {
       "first_seen": "2026-09-01T15:09:30Z",
@@ -2941,6 +3019,13 @@
       "title": "Eagle Picture Library comic no. 11 The assassins PB 1985",
       "url": "https://www.ebay.co.uk/itm/237043214030?_skw=photo+book&hash=item3730e066ce:g:Q90AAeSweflqVpog"
     },
+    "ebay:237043601040": {
+      "first_seen": "2026-09-02T05:52:04Z",
+      "last_seen": "2026-09-02T05:52:04Z",
+      "score": 13,
+      "title": "SoHo Society Bernie Katz Hardback Book Photos New York Illustrated stephen fry",
+      "url": "https://www.ebay.co.uk/itm/237043601040?_skw=photography+book&hash=item3730e64e90:g:1bkAAeSwieZql3pB"
+    },
     "ebay:255569549785": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
@@ -3255,6 +3340,41 @@
       "score": 18,
       "title": "My Picture Book of MOTORS by R. W. Jobson. Hardback 1961.",
       "url": "https://www.ebay.co.uk/itm/267773618565?_skw=photo+book&hash=item3e588d2985:g:EsEAAeSw2HRpEW2Y"
+    },
+    "ebay:267773738317": {
+      "first_seen": "2026-09-02T05:52:04Z",
+      "last_seen": "2026-09-02T05:52:04Z",
+      "score": 28,
+      "title": "Time to Get Up Illustrated Gill McLean Tamarind Picture Book Ages 4-8",
+      "url": "https://www.ebay.co.uk/itm/267773738317?_skw=photo+book&hash=item3e588efd4d:g:XN8AAeSwu7ZqhQn0"
+    },
+    "ebay:267773740228": {
+      "first_seen": "2026-09-02T05:52:04Z",
+      "last_seen": "2026-09-02T05:52:04Z",
+      "score": 18,
+      "title": "I Don't Eat Toothpaste Anymore! PB Picture Book Karen King Illus Lynne Willey",
+      "url": "https://www.ebay.co.uk/itm/267773740228?_skw=photo+book&hash=item3e588f04c4:g:ehYAAeSw69pqhQzi"
+    },
+    "ebay:267773754138": {
+      "first_seen": "2026-09-02T05:52:04Z",
+      "last_seen": "2026-09-02T05:52:04Z",
+      "score": 18,
+      "title": "Mi wn am hen wreigan a lyncodd bry Child's Play PB Picture Book Welsh Ages 4-8",
+      "url": "https://www.ebay.co.uk/itm/267773754138?_skw=photo+book&hash=item3e588f3b1a:g:D7cAAeSwVZ5qhP96"
+    },
+    "ebay:267773756446": {
+      "first_seen": "2026-09-02T05:52:04Z",
+      "last_seen": "2026-09-02T05:52:04Z",
+      "score": 18,
+      "title": "Child's Play This Old Man Paperback Picture Book Illustrated Pam Adams",
+      "url": "https://www.ebay.co.uk/itm/267773756446?_skw=photo+book&hash=item3e588f441e:g:MPoAAeSwjspqhQOR"
+    },
+    "ebay:267773818282": {
+      "first_seen": "2026-09-02T05:52:04Z",
+      "last_seen": "2026-09-02T05:52:04Z",
+      "score": 4,
+      "title": "Jaguars For The Road  Hardback Book By Henry Rasmussen. In VGC  Small Tear Cover",
+      "url": "https://www.ebay.co.uk/itm/267773818282?_skw=photo+book&hash=item3e589035aa:g:gTEAAOSwo6BmJpbX"
     },
     "ebay:275859389646": {
       "first_seen": "2026-09-01T17:16:36Z",
@@ -4795,6 +4915,20 @@
       "score": 40,
       "title": "2011 1ST EDITION BONSAI RYO OHWADA FORM SCENERY SEEN THROUGH BONSAI JAPAN BOOK",
       "url": "https://www.ebay.co.uk/itm/366642994249?_skw=photography+book&hash=item555da01c49:g:lFIAAeSw-8lql1gN"
+    },
+    "ebay:366643190676": {
+      "first_seen": "2026-09-02T05:52:04Z",
+      "last_seen": "2026-09-02T05:52:04Z",
+      "score": 40,
+      "title": "Muhammad Ali A 30 Year Journey Hardback Photography Book Howard Bingham",
+      "url": "https://www.ebay.co.uk/itm/366643190676?_skw=photography+book&hash=item555da31b94:g:6RIAAeSwWOBql3lj"
+    },
+    "ebay:366643417974": {
+      "first_seen": "2026-09-02T05:52:04Z",
+      "last_seen": "2026-09-02T05:52:04Z",
+      "score": 13,
+      "title": "Pedro Virgil The Gods of Sport hardback book like new Gay interest",
+      "url": "https://www.ebay.co.uk/itm/366643417974?_skw=photography+book&hash=item555da69376:g:GSoAAeSwpfRqaOJO"
     },
     "ebay:376030470218": {
       "first_seen": "2026-09-01T17:24:57Z",
