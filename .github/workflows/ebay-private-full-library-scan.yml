@@ -1,0 +1,215 @@
+name: One-time eBay private full-library scan
+
+on:
+  workflow_dispatch:
+    inputs:
+      total_call_cap:
+        description: Maximum Browse calls across the complete checkpointed run
+        required: true
+        default: "4750"
+        type: string
+      batch_call_cap:
+        description: Maximum Browse calls before each saved checkpoint
+        required: true
+        default: "400"
+        type: string
+      quota_reserve:
+        description: Browse calls retained for safety and live monitoring
+        required: true
+        default: "250"
+        type: string
+      restart:
+        description: Discard saved progress and restart all 4,318 searches
+        required: true
+        default: false
+        type: boolean
+  push:
+    branches: [main]
+    paths:
+      - "data/ebay_private_full_library_scan_trigger.txt"
+      - "ebay_private_full_library_scan.py"
+      - "test_ebay_private_full_library_scan.py"
+      - ".github/workflows/ebay-private-full-library-scan.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "ebay_api.py"
+      - "ebay_private_seller_monitor.py"
+      - "ebay_private_seller_backfill.py"
+      - "ebay_private_full_library_scan.py"
+      - "photobook_recognition.py"
+      - "test_ebay_private_full_library_scan.py"
+      - "data/photobook_recognition/**"
+      - ".github/workflows/ebay-private-full-library-scan.yml"
+
+permissions:
+  actions: write
+  contents: write
+  issues: write
+
+concurrency:
+  group: ebay-private-full-library-scan
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Synchronize latest main state
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git fetch origin main
+          git checkout --detach FETCH_HEAD
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+
+      - name: Validate full-library scan
+        run: |
+          python -m unittest -v \
+            test_ebay_api.py \
+            test_ebay_private_api.py \
+            test_photobook_recognition.py \
+            test_ebay_private_seller_monitor.py \
+            test_ebay_private_seller_backfill.py \
+            test_ebay_private_full_library_scan.py
+
+      - name: Pause competing eBay workflows
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          workflows=(
+            ebay-seller-monitor.yml
+            ebay-private-seller-monitor.yml
+            ebay-seller-backfill.yml
+            ebay-private-seller-backfill.yml
+            ebay-private-international-backfill.yml
+            market-monitor.yml
+          )
+          for workflow in "${workflows[@]}"; do
+            gh api --method PUT \
+              "repos/${GITHUB_REPOSITORY}/actions/workflows/${workflow}/disable"
+          done
+
+      - name: Run complete checkpointed scan
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        env:
+          EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
+          EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
+          GH_TOKEN: ${{ github.token }}
+          TOTAL_CALL_CAP: ${{ github.event_name == 'workflow_dispatch' && inputs.total_call_cap || '4750' }}
+          BATCH_CALL_CAP: ${{ github.event_name == 'workflow_dispatch' && inputs.batch_call_cap || '400' }}
+          QUOTA_RESERVE: ${{ github.event_name == 'workflow_dispatch' && inputs.quota_reserve || '250' }}
+          RESTART: ${{ github.event_name == 'workflow_dispatch' && inputs.restart || 'false' }}
+        run: |
+          set -euo pipefail
+          remaining="$TOTAL_CALL_CAP"
+          batch=0
+          runtime="runtime/ebay-private-full-library"
+          state="data/ebay_private_full_library_scan_state.json"
+          findings="data/ebay_private_full_library_scan_findings.json"
+          first_batch=true
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          while [ "$remaining" -gt 0 ]; do
+            batch=$((batch + 1))
+            requested="$BATCH_CALL_CAP"
+            if [ "$remaining" -lt "$requested" ]; then
+              requested="$remaining"
+            fi
+
+            args=(
+              --max-calls "$requested"
+              --hard-call-cap "$requested"
+              --quota-reserve "$QUOTA_RESERVE"
+            )
+            if [ "$RESTART" = "true" ] && [ "$first_batch" = "true" ]; then
+              args+=(--restart)
+            fi
+            first_batch=false
+
+            python ebay_private_full_library_scan.py "${args[@]}"
+
+            used="$(jq -r '.calls' "$runtime/latest-snapshot.json")"
+            complete="$(jq -r '.complete' "$runtime/latest-snapshot.json")"
+            new_count="$(jq -r '.new_candidates | length' "$runtime/latest-snapshot.json")"
+            queue_count="$(jq -r '.remaining_steps' "$runtime/latest-snapshot.json")"
+            pending_count="$(jq -r '.pending_live' "$runtime/latest-snapshot.json")"
+            inspected="$(jq -r '.results_inspected' "$runtime/latest-snapshot.json")"
+            quota_remaining="$(jq -r '.quota.remaining // "unknown"' "$runtime/latest-snapshot.json")"
+            remaining=$((remaining - used))
+
+            cp "$runtime/proposed-state.json" "$state"
+            cp "$runtime/proposed-findings.json" "$findings"
+            git add -- "$state" "$findings"
+            if ! git diff --cached --quiet; then
+              git commit -m "Checkpoint full-library eBay scan batch ${batch} [skip ci]"
+              for attempt in 1 2 3 4; do
+                git pull --rebase origin main
+                if git push origin HEAD:main; then
+                  break
+                fi
+                if [ "$attempt" = "4" ]; then
+                  exit 1
+                fi
+              done
+            fi
+
+            if [ "$new_count" -gt 0 ]; then
+              for body in "$runtime"/issues/*.md; do
+                stem="${body%.md}"
+                gh issue create \
+                  --assignee jonattenborough \
+                  --title "$(cat "${stem}.title")" \
+                  --body-file "$body"
+              done
+            fi
+
+            {
+              echo "### Batch ${batch}"
+              echo ""
+              echo "- Calls used: ${used}"
+              echo "- Quota before batch: ${quota_remaining}"
+              echo "- Results inspected: ${inspected}"
+              echo "- Live review candidates: ${new_count}"
+              echo "- Title searches remaining: ${queue_count}"
+              echo "- Live checks pending: ${pending_count}"
+              echo "- Run allowance remaining: ${remaining}"
+            } >> "$GITHUB_STEP_SUMMARY"
+
+            if [ "$complete" = "true" ] || [ "$used" -eq 0 ]; then
+              break
+            fi
+          done
+
+      - name: Restore competing eBay workflows
+        if: always() && github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set +e
+          failed=0
+          workflows=(
+            ebay-seller-monitor.yml
+            ebay-private-seller-monitor.yml
+            ebay-seller-backfill.yml
+            ebay-private-seller-backfill.yml
+            ebay-private-international-backfill.yml
+            market-monitor.yml
+          )
+          for workflow in "${workflows[@]}"; do
+            gh api --method PUT \
+              "repos/${GITHUB_REPOSITORY}/actions/workflows/${workflow}/enable" || failed=1
+          done
+          exit "$failed"

@@ -390,6 +390,39 @@ def _seller_is_eligible(item: dict[str, Any], config: dict[str, Any]) -> bool:
     return feedback <= int(config.get("heuristic_seller_feedback_max") or 1000)
 
 
+def issue_score_threshold(item: dict[str, Any], default: int) -> int:
+    """Return the final review threshold for an individual listing.
+
+    Normal monitors retain their configured threshold.  The one-off full
+    library sweep opts into a price-aware profile so inexpensive hidden-gem
+    leads receive broad coverage while £100+ books need progressively stronger
+    evidence before they consume human-review time.
+    """
+    configured = int(item.get("market_issue_threshold") or default)
+    if str(item.get("price_review_profile") or "") != "jon_hidden_gem":
+        return configured
+    raw_price = (
+        item.get("landed_price_gbp")
+        if item.get("landed_price_gbp") is not None
+        else item.get("price_gbp")
+    )
+    try:
+        price = float(raw_price)
+    except (TypeError, ValueError):
+        return max(configured, 72)
+    if price <= 100:
+        return min(configured, 60)
+    if price <= 200:
+        return max(configured, 72)
+    if price <= 300:
+        return max(configured, 84)
+    return 101
+
+
+def live_score_threshold(item: dict[str, Any], default: int) -> int:
+    return max(55, issue_score_threshold(item, default) - 12)
+
+
 def _trim_reviewed(reviewed: dict[str, Any]) -> dict[str, Any]:
     if len(reviewed) <= REVIEWED_LIMIT:
         return reviewed
@@ -418,9 +451,7 @@ def reclassify_retained_findings(
             changed += 1
             continue
         refreshed = live_monitor.classify(item)
-        retained_threshold = int(
-            refreshed.get("market_issue_threshold") or issue_threshold
-        )
+        retained_threshold = issue_score_threshold(refreshed, issue_threshold)
         if int(refreshed.get("opportunity_score") or 0) < retained_threshold:
             findings_items.pop(key, None)
             changed += 1
@@ -444,6 +475,8 @@ def search_page(
     marketplace = str(step.get("marketplace") or config["marketplace"]).upper()
     market_client = _client_for_marketplace(client, marketplace)
     seller_filter_mode = str(step.get("seller_filter_mode") or "individual").lower()
+    window_start = str(step.get("window_start") or "").strip() or None
+    window_end = str(step.get("window_end") or "").strip() or None
     rows = market_client.search(
         str(step["query"]),
         limit=PAGE_SIZE,
@@ -453,8 +486,8 @@ def search_page(
         buying_options=step.get("buying_options") or live_monitor.FIXED_BUYING_OPTIONS,
         seller_account_type="INDIVIDUAL" if seller_filter_mode == "individual" else None,
         delivery_country=str(step.get("delivery_country") or config["delivery_country"]),
-        item_start_date=str(step["window_start"]),
-        item_end_date=str(step["window_end"]),
+        item_start_date=window_start,
+        item_end_date=window_end,
         search_in_description=bool(step.get("search_in_description")),
         price_max=float(step.get("price_max") or config["max_price_gbp"]),
         price_currency=str(step.get("price_currency") or "GBP"),
@@ -481,11 +514,13 @@ def search_page(
         item["market_issue_threshold"] = int(
             step.get("issue_threshold") or config["issue_threshold"]
         )
+        if step.get("price_review_profile"):
+            item["price_review_profile"] = str(step["price_review_profile"])
         _apply_gbp_estimate(item, float(step.get("gbp_rate") or 0) or None)
         item["search_lane"] = str(step["lane"])
         item["search_query"] = str(step["query"])
-        item["backfill_window_start"] = str(step["window_start"])
-        item["backfill_window_end"] = str(step["window_end"])
+        item["backfill_window_start"] = str(step.get("window_start") or "")
+        item["backfill_window_end"] = str(step.get("window_end") or "")
         items.append(item)
     return items, len(rows)
 
@@ -517,7 +552,6 @@ def run_backfill(
     if not isinstance(pending, dict):
         raise RuntimeError("Private backfill pending_live is not an object")
 
-    minimum_live_score = max(55, issue_threshold - 12)
     reviewed = state.setdefault("reviewed", {})
     if not isinstance(reviewed, dict):
         reviewed = {}
@@ -536,7 +570,9 @@ def run_backfill(
             pending.pop(key, None)
             continue
         refreshed = live_monitor.classify(item)
-        if int(refreshed.get("opportunity_score") or 0) < minimum_live_score:
+        if int(refreshed.get("opportunity_score") or 0) < live_score_threshold(
+            refreshed, issue_threshold
+        ):
             pending.pop(key, None)
             continue
         refreshed["backfill_first_found"] = item.get("backfill_first_found") or detected_at
@@ -578,7 +614,8 @@ def run_backfill(
                 raw_by_key[key] = item
 
         offset = int(step.get("offset") or 0)
-        if raw_count == PAGE_SIZE and offset < MAX_OFFSET:
+        step_max_offset = max(0, min(int(step.get("max_offset", MAX_OFFSET)), MAX_OFFSET))
+        if raw_count == PAGE_SIZE and offset < step_max_offset:
             continuation = dict(step)
             continuation["offset"] = offset + PAGE_SIZE
             queue.append(continuation)
@@ -589,7 +626,9 @@ def run_backfill(
 
     for item in raw_by_key.values():
         classified = live_monitor.classify(item)
-        if int(classified.get("opportunity_score") or 0) >= minimum_live_score:
+        if int(classified.get("opportunity_score") or 0) >= live_score_threshold(
+            classified, issue_threshold
+        ):
             classified["backfill_first_found"] = detected_at
             pending[str(classified["key"])] = classified
 
@@ -638,7 +677,7 @@ def run_backfill(
             "marketplace": refreshed.get("marketplace"),
             "score": refreshed.get("opportunity_score"),
         }
-        required_score = int(refreshed.get("market_issue_threshold") or config["issue_threshold"])
+        required_score = issue_score_threshold(refreshed, issue_threshold)
         if (
             int(refreshed.get("opportunity_score") or 0) >= required_score
             and _seller_is_eligible(refreshed, config)
@@ -646,11 +685,12 @@ def run_backfill(
             findings_items[key] = refreshed
             new_candidates.append(refreshed)
 
+    pending_limit = max(1, min(int(config.get("pending_limit") or PENDING_LIMIT), 10000))
     ranked_remaining = sorted(
         ((str(key), item) for key, item in pending.items() if isinstance(item, dict)),
         key=lambda pair: int(pair[1].get("opportunity_score") or 0),
         reverse=True,
-    )[:PENDING_LIMIT]
+    )[:pending_limit]
     state["pending_live"] = dict(ranked_remaining)
     state["reviewed"] = _trim_reviewed(reviewed)
     state["queue"] = queue
