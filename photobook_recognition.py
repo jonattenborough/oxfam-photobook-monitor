@@ -34,21 +34,25 @@ GENERIC_LISTING_TERMS = {
 CASUAL_SIGNALS = {
     "job lot",
     "bundle",
-    "collection of books",
-    "book collection",
     "house clearance",
-    "clearance",
+    "clearance sale",
     "loft",
     "attic",
-    "estate",
+    "estate sale",
+    "estate clearance",
+    "from an estate",
     "inherited",
-    "found",
+    "found in loft",
+    "found in attic",
     "old book",
     "old books",
     "not sure",
     "dont know",
     "don't know",
-    "selling for",
+    "clearing out",
+    "selling my books",
+    "selling my collection",
+    "selling off",
 }
 COLLECTION_DISCOVERY_SIGNALS = {
     "job lot",
@@ -94,7 +98,23 @@ CONDITION_RISK_RULES = (
     (
         "incomplete or structurally compromised copy",
         20,
-        {"incomplete", "missing page", "missing pages", "pages missing", "detached cover", "lacks dust jacket"},
+        {
+            "incomplete",
+            "missing page",
+            "missing pages",
+            "pages missing",
+            "detached cover",
+            "lacks dust jacket",
+            "part of isbn",
+            "part of a set",
+            "one volume only",
+            "missing volume",
+            "missing volumes",
+            "without slipcase",
+            "lacks slipcase",
+            "without the box",
+            "box missing",
+        },
     ),
 )
 EXPERT_SIGNALS = {
@@ -217,7 +237,6 @@ COLLECTIBLE_FORMAT_RULES = (
         4,
         {
             "deluxe edition",
-            "edition of",
             "limited edition",
             "special edition",
             "limitierte auflage",
@@ -374,8 +393,18 @@ YEAR_RE = re.compile(r"(?<!\d)(18\d{2}|19\d{2}|20\d{2})(?!\d)")
 LIMITATION_RE = re.compile(
     r"(?i)\b(?:no\.?|number)?\s*\d{1,4}\s*(?:/|of)\s*\d{1,5}\b"
 )
+EDITION_SIZE_RE = re.compile(r"(?i)\bedition\s+of\s+(?:only\s+)?\d{1,5}(?:\s+copies)?\b")
 PROOF_MARK_RE = re.compile(r"(?i)(?<![a-z])(?:a\s*/\s*p|h\s*/\s*c)(?![a-z])")
 MULTIPLE_BOOKS_RE = re.compile(r"(?i)\b(?:[2-9]|[1-9]\d{1,2})\s+(?:photography\s+|photo\s+|art\s+)?books\b")
+COMBINED_VOLUME_RE = re.compile(r"(?i)\b(?:[2-9]|[1-9]\d{1,2})\s+books?\s+in\s+(?:one|1)\b")
+COLLECTION_BOILERPLATE_RE = re.compile(
+    r"(?i)\b(?:a\s+)?(?:valuable|ideal|great|perfect|must[- ]have)?\s*"
+    r"addition\s+to\s+any\s+(?:photography\s+)?collection(?:\s+of\s+books)?\b"
+)
+CURRENT_EDITION_MARKER_RE = re.compile(
+    r"(?i)\b(?:this\s+)?new(?:\s+[a-z0-9&'-]+){0,2}\s+edition\b|"
+    r"\b(?:this\s+)?(?:modern\s+)?(?:reissue|reprint|facsimile edition)\b"
+)
 VOLUME_RE = re.compile(
     r"(?i)\bvol(?:ume)?\.?\s*(one|two|three|four|five|six|seven|eight|nine|ten|\d+|[ivxlcdm]+)\b"
 )
@@ -898,6 +927,7 @@ def collection_bundle_evidence(item: dict[str, Any]) -> bool:
     from receiving the high-recall bundle boost.
     """
     text = _listing_text(item)
+    text = pb.normalize(COLLECTION_BOILERPLATE_RE.sub(" ", text))
     if any(
         pb.contains_normalized_phrase(text, pb.normalize(signal))
         for signal in COLLECTION_DISCOVERY_SIGNALS
@@ -907,7 +937,29 @@ def collection_bundle_evidence(item: dict[str, Any]) -> bool:
         _clean(item.get(key))
         for key in ("title", "context", "description", "condition_description")
     )
+    if COMBINED_VOLUME_RE.search(raw_text):
+        return False
     return bool(MULTIPLE_BOOKS_RE.search(raw_text))
+
+
+def _object_claim_text(item: dict[str, Any]) -> tuple[str, str]:
+    """Return text that describes the copy for sale, not an earlier edition.
+
+    Sellers often paste publisher copy describing a historically limited
+    original before saying that the listed book is a new trade reissue. When
+    that explicit transition exists, claims before it cannot establish the
+    format of the current copy.
+    """
+    direct = " ".join(
+        _clean(item.get(key))
+        for key in ("title", "context", "edition", "condition_description")
+    )
+    description = _clean(item.get("description"))
+    marker = CURRENT_EDITION_MARKER_RE.search(description)
+    if marker:
+        description = description[marker.start():]
+    raw_text = " ".join(part for part in (direct, description) if part)
+    return pb.normalize(raw_text), raw_text
 
 
 def collectible_format_evidence(
@@ -921,17 +973,7 @@ def collectible_format_evidence(
     more collectible. Keeping these two judgements separate prevents the
     monitor from penalising exactly the formats it is meant to find.
     """
-    text = _listing_text(item)
-    raw_text = " ".join(
-        _clean(item.get(key))
-        for key in (
-            "title",
-            "context",
-            "description",
-            "edition",
-            "condition_description",
-        )
-    )
+    text, raw_text = _object_claim_text(item)
     labels: list[str] = []
     score = 0
     for label, bonus, signals in COLLECTIBLE_FORMAT_RULES:
@@ -950,6 +992,9 @@ def collectible_format_evidence(
     if LIMITATION_RE.search(raw_text) and "numbered copy" not in labels:
         labels.append("numbered copy")
         score += 5
+    if EDITION_SIZE_RE.search(raw_text) and "limited or special edition" not in labels:
+        labels.append("limited or special edition")
+        score += 4
     if PROOF_MARK_RE.search(raw_text) and "unique work or artist proof" not in labels:
         labels.append("unique work or artist proof")
         score += 9
@@ -1060,6 +1105,8 @@ def assess_edition(item: dict[str, Any], match: dict[str, Any]) -> tuple[str, li
         for signal in REISSUE_SIGNALS
         if pb.contains_normalized_phrase(bibliographic_text, pb.normalize(signal))
     )
+    if CURRENT_EDITION_MARKER_RE.search(bibliographic_text):
+        reissue_hits.append("listing identifies the current copy as a new edition or reissue")
     if reissue_hits and not (expected_isbns & listing_isbns):
         conflicts.append("listing explicitly describes a reissue or later edition")
 
@@ -1205,15 +1252,7 @@ def opportunity_score(item: dict[str, Any], match: dict[str, Any]) -> tuple[int,
         score -= penalty
         reasons.append("seller uses collector-aware language")
 
-    condition_penalty = 0
-    condition_labels: list[str] = []
-    for label, penalty, signals in CONDITION_RISK_RULES:
-        if any(
-            pb.contains_normalized_phrase(text, pb.normalize(signal))
-            for signal in signals
-        ):
-            condition_penalty += penalty
-            condition_labels.append(label)
+    condition_penalty, condition_labels = condition_risk_evidence(item)
     if condition_penalty:
         score -= min(30, condition_penalty)
         reasons.append("condition risk: " + ", ".join(condition_labels))
@@ -1228,11 +1267,11 @@ def opportunity_score(item: dict[str, Any], match: dict[str, Any]) -> tuple[int,
         score -= 28 if sensitive else 10
         score = min(score, 62 if sensitive else 76)
     elif sensitive and edition_status == "plausible":
-        score = min(score, 89)
+        score = min(score, 84)
     elif sensitive and edition_status == "unknown":
-        score = min(score, 86)
+        score = min(score, 78)
     elif sensitive and edition_status == "claimed":
-        score = min(score, 88)
+        score = min(score, 82)
 
     # Open Library publisher-backlist records broaden recognition, but they do
     # not by themselves establish collectibility or a valuable edition. Keep a
@@ -1248,6 +1287,35 @@ def opportunity_score(item: dict[str, Any], match: dict[str, Any]) -> tuple[int,
     if backlist_only and tier in {"C", "D"} and bargain is None and strong_buy is None and not high_recall_context:
         score = min(score, 70)
         reasons.append("publisher-backlist record lacks independent value evidence")
+
+    # A work-level publisher record is useful recognition, but exact title,
+    # low price and a respected imprint still do not prove valuable edition or
+    # resale value. Keep a routine B-tier trade copy in the review band unless
+    # there is real object, market or seller-ignorance evidence.
+    if (
+        backlist_only
+        and tier == "B"
+        and bargain is None
+        and strong_buy is None
+        and not format_bonus
+        and not high_recall_context
+    ):
+        score = min(score, 70)
+        reasons.append("publisher-backlist match lacks independent edition or market evidence")
+
+    # A partial title can identify the underlying work while still pointing at
+    # an exhibition catalogue, abridgement or later study edition. For B-tier
+    # and lower records, do not alert until the exact object is established.
+    if (
+        str(match.get("reason") or "").startswith("partial title")
+        and tier in {"B", "C", "D"}
+        and edition_status in {"unknown", "claimed"}
+        and bargain is None
+        and strong_buy is None
+        and not format_bonus
+    ):
+        score = min(score, 68)
+        reasons.append("partial work match lacks exact-edition evidence")
 
     # A respected recent book is not automatically a bargain. Plain copies
     # above the user's normal discovery range stay below the issue threshold
@@ -1271,6 +1339,21 @@ def opportunity_score(item: dict[str, Any], match: dict[str, Any]) -> tuple[int,
         reasons.append("respected recent title lacks a current bargain or special-edition signal")
 
     return max(0, min(100, score)), reasons
+
+
+def condition_risk_evidence(item: dict[str, Any]) -> tuple[int, list[str]]:
+    """Return the condition and completeness penalty for a listing."""
+    text = _listing_text(item)
+    penalty_total = 0
+    labels: list[str] = []
+    for label, penalty, signals in CONDITION_RISK_RULES:
+        if any(
+            pb.contains_normalized_phrase(text, pb.normalize(signal))
+            for signal in signals
+        ):
+            penalty_total += penalty
+            labels.append(label)
+    return min(30, penalty_total), labels
 
 
 def self_test() -> int:

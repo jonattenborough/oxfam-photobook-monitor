@@ -292,6 +292,34 @@ class PrivateSellerBackfillTests(unittest.TestCase):
         )
         self.assertEqual(findings["items"], {})
 
+    def test_reclassify_helper_needs_no_api_and_removes_false_positive(self):
+        findings = {
+            "version": 1,
+            "items": {
+                "ebay:false": {
+                    "key": "ebay:false",
+                    "title": "Digital Photography for Kids Handbook 2 books in 1",
+                    "description": "First Edition with tips and techniques",
+                    "price_gbp": 4.10,
+                    "private_seller": True,
+                    "search_lane": "broad",
+                },
+                "ebay:strong": {
+                    "key": "ebay:strong",
+                    "title": "Richard Billingham Ray's a Laugh old photography book",
+                    "context": "Used book from house clearance",
+                    "price_gbp": 20.0,
+                    "private_seller": True,
+                    "seller_account_type": "INDIVIDUAL",
+                    "buying_options": ["FIXED_PRICE"],
+                },
+            },
+        }
+        result = backfill.reclassify_retained_findings(findings, 72)
+        self.assertEqual(result, {"before": 2, "retained": 1, "removed": 1})
+        self.assertNotIn("ebay:false", findings["items"])
+        self.assertIn("ebay:strong", findings["items"])
+
 
 if __name__ == "__main__":
     unittest.main()
