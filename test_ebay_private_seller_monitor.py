@@ -25,7 +25,7 @@ class PrivateSellerMonitorTests(unittest.TestCase):
             state,
             datetime(2026, 9, 1, 12, 0, tzinfo=timezone.utc),
         )
-        self.assertEqual(len(plan), 31)
+        self.assertEqual(len(plan), 35)
         lanes = {step["lane"] for step in plan}
         self.assertTrue(
             {"broad", "collectible_format", "collection", "wrong_category",
@@ -38,7 +38,8 @@ class PrivateSellerMonitorTests(unittest.TestCase):
         self.assertEqual(config["query_result_limit"], 200)
         self.assertEqual(sum(step["lane"] == "active_stock" for step in plan), 1)
         self.assertEqual(config["max_live_checks_per_run"], 3)
-        self.assertEqual(config["max_api_calls_per_run"], 34)
+        self.assertEqual(sum(step["lane"] == "library_rotation" for step in plan), 8)
+        self.assertEqual(config["max_api_calls_per_run"], 38)
         self.assertTrue(
             all(
                 step["incremental"] is False
@@ -58,8 +59,39 @@ class PrivateSellerMonitorTests(unittest.TestCase):
         daily_charity_calls = 24 * 51
         daily_market_calls = 24 * 2
         daily_total = daily_private_calls + daily_charity_calls + daily_market_calls
-        self.assertEqual(daily_total, 4536)
+        self.assertEqual(daily_total, 4920)
         self.assertLessEqual(daily_total, 5000 - int(config["quota_reserve"]))
+
+    def test_depleted_allowance_is_paced_across_remaining_runs(self):
+        class QuotaClient:
+            def browse_quota(self):
+                return {
+                    "remaining": 450,
+                    "limit": 5000,
+                    "reset": "2026-09-03T07:00:00Z",
+                }
+
+        config = monitor.load_config(Path("data/ebay_private_searches.json"))
+        now = datetime(2026, 9, 2, 7, 0, tzinfo=timezone.utc)
+        budget, quota, warning = monitor.api_call_budget(QuotaClient(), config, now)
+        self.assertEqual(budget, 4)
+        self.assertEqual(quota["remaining"], 450)
+        self.assertIsNone(warning)
+        self.assertEqual(monitor.split_run_budget(budget, config), (4, 0))
+        self.assertEqual(monitor.split_run_budget(38, config), (35, 3))
+
+    def test_low_quota_rotates_the_highest_priority_broad_queries(self):
+        config = monitor.load_config(Path("data/ebay_private_searches.json"))
+        state = monitor.load_state(Path("/path/that/does/not/exist.json"))
+        now = datetime(2026, 9, 2, 7, 0, tzinfo=timezone.utc)
+        first = monitor.trim_search_plan(monitor.build_search_plan(config, state, now), 3)
+        second = monitor.trim_search_plan(monitor.build_search_plan(config, state, now), 3)
+        self.assertEqual(first[0]["query"], "photography book")
+        self.assertEqual(second[0]["query"], "photo book")
+        self.assertNotEqual(
+            {step["query"] for step in first},
+            {step["query"] for step in second},
+        )
 
     def test_active_stock_rotation_walks_queries_then_pages(self):
         config = monitor.load_config(Path("data/ebay_private_searches.json"))
@@ -311,6 +343,7 @@ class PrivateSellerMonitorTests(unittest.TestCase):
                 return {"remaining": 470, "limit": 5000}
 
         config = monitor.load_config(Path("data/ebay_private_searches.json"))
+        config["quota_reserve"] = 450
         budget, quota, warning = monitor.api_call_budget(QuotaClient(), config)
         self.assertEqual(budget, 20)
         self.assertEqual(quota["remaining"], 470)

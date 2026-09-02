@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import os
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -101,14 +102,17 @@ def load_config(path: Path) -> dict[str, Any]:
     payload.setdefault("query_result_limit", 200)
     payload.setdefault("contemporary_records_per_run", 4)
     payload.setdefault("classic_records_per_run", 4)
-    payload.setdefault("rotating_records_per_run", 4)
+    payload.setdefault("rotating_records_per_run", 8)
     payload.setdefault("contemporary_contributor_queries_per_run", 1)
     payload.setdefault("classic_contributor_queries_per_run", 1)
     payload.setdefault("contemporary_auction_queries_per_run", 1)
     payload.setdefault("classic_auction_queries_per_run", 1)
     payload.setdefault("max_live_checks_per_run", 3)
-    payload.setdefault("max_api_calls_per_run", 34)
-    payload.setdefault("quota_reserve", 450)
+    payload.setdefault("max_api_calls_per_run", 38)
+    payload.setdefault("quota_reserve", 80)
+    payload.setdefault("schedule_interval_minutes", 15)
+    payload.setdefault("projected_shared_calls_per_hour", 2)
+    payload.setdefault("minimum_search_calls_per_run", 4)
     payload.setdefault("max_pending_live_checks", 100)
     payload.setdefault("issue_threshold", 72)
     payload.setdefault("urgent_threshold", 90)
@@ -234,7 +238,13 @@ def build_search_plan(config: dict[str, Any], state: dict[str, Any], now: dateti
             }
         )
 
-    for query in config["broad_queries"]:
+    broad_queries = config["broad_queries"]
+    broad_cursor = max(0, int(cursors.get("broad_priority", 0) or 0))
+    if broad_queries:
+        broad_cursor %= len(broad_queries)
+        broad_queries = broad_queries[broad_cursor:] + broad_queries[:broad_cursor]
+        cursors["broad_priority"] = (broad_cursor + 1) % len(broad_queries)
+    for query in broad_queries:
         add("broad", query, description=True)
     for query in config["collectible_queries"]:
         add("collectible_format", query, description=True)
@@ -417,14 +427,43 @@ def trim_search_plan(plan: list[dict[str, Any]], budget: int) -> list[dict[str, 
 def api_call_budget(
     client: ebay_api.EbayBrowseClient,
     config: dict[str, Any],
+    now: datetime | None = None,
 ) -> tuple[int, dict[str, Any] | None, str | None]:
     configured_budget = max(1, int(config["max_api_calls_per_run"]))
     try:
         quota = client.browse_quota()
     except Exception as exc:
         return configured_budget, None, f"Browse quota lookup failed; using the conservative run cap: {exc}"
-    usable = max(0, int(quota.get("remaining") or 0) - int(config["quota_reserve"]))
+    remaining = max(0, int(quota.get("remaining") or 0))
+    usable = max(0, remaining - int(config["quota_reserve"]))
+    reset = _parse_stamp(quota.get("reset"))
+    current = now or datetime.now(timezone.utc)
+    if reset is not None and reset > current and usable:
+        seconds_left = max(1.0, (reset - current).total_seconds())
+        interval_seconds = max(60, int(config["schedule_interval_minutes"]) * 60)
+        runs_left = max(1, math.ceil(seconds_left / interval_seconds))
+        shared_hours_left = max(1, math.ceil(seconds_left / 3600))
+        projected_shared_calls = shared_hours_left * max(
+            0,
+            int(config["projected_shared_calls_per_hour"]),
+        )
+        paced_usable = max(0, usable - projected_shared_calls)
+        paced_budget = math.ceil(paced_usable / runs_left) if paced_usable else 0
+        usable = min(usable, paced_budget)
     return min(configured_budget, usable), quota, None
+
+
+def split_run_budget(call_budget: int, config: dict[str, Any]) -> tuple[int, int]:
+    """Protect broad discovery when only a small paced allowance is available."""
+    minimum_searches = min(
+        max(0, int(config["minimum_search_calls_per_run"])),
+        max(0, call_budget),
+    )
+    reserved_live_checks = min(
+        int(config["max_live_checks_per_run"]),
+        max(0, call_budget - minimum_searches),
+    )
+    return max(0, call_budget - reserved_live_checks), reserved_live_checks
 
 
 def run_query(
@@ -856,9 +895,8 @@ def main() -> int:
     stats = recognition.library_stats()
     client = ebay_api.EbayBrowseClient(marketplace=config["marketplace"])
     full_search_plan = build_search_plan(config, state, now)
-    call_budget, quota, quota_warning = api_call_budget(client, config)
-    reserved_live_checks = min(int(config["max_live_checks_per_run"]), call_budget)
-    search_budget = max(0, call_budget - reserved_live_checks)
+    call_budget, quota, quota_warning = api_call_budget(client, config, now)
+    search_budget, reserved_live_checks = split_run_budget(call_budget, config)
     search_plan = trim_search_plan(full_search_plan, search_budget)
 
     if not search_plan:
