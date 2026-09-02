@@ -154,8 +154,98 @@ class PrivateSellerMonitorTests(unittest.TestCase):
         self.assertFalse(classified["recognized"])
         self.assertLess(classified["opportunity_score"], 72)
         self.assertIn(
-            "instructional, technical or local-history wording",
+            "instructional, technical, celebrity or local-history wording",
             classified["opportunity_reasons"],
+        )
+
+    def test_two_books_in_one_handbook_is_not_treated_as_a_job_lot(self):
+        item = {
+            "key": "ebay:handbook",
+            "title": "Digital Photography for Kids Handbook 2 books in 1",
+            "description": "First Edition Special Edition with tips and techniques",
+            "price_gbp": 4.10,
+            "private_seller": True,
+            "search_lane": "broad",
+        }
+        classified = monitor.classify(item)
+        self.assertFalse(classified["recognized"])
+        self.assertNotIn("collection or job-lot wording", classified["opportunity_reasons"])
+        self.assertLess(classified["opportunity_score"], 55)
+
+    def test_not_signed_does_not_become_collectible_format_evidence(self):
+        item = {
+            "key": "ebay:unsigned",
+            "title": "Elvis hardback with photographs",
+            "description": "The book is not signed and is in very good condition.",
+            "price_gbp": 19.53,
+            "private_seller": True,
+            "search_lane": "broad",
+        }
+        classified = monitor.classify(item)
+        self.assertFalse(classified["recognized"])
+        self.assertFalse(
+            any(reason.startswith("evidenced collectible object:") for reason in classified["opportunity_reasons"])
+        )
+        self.assertLess(classified["opportunity_score"], 55)
+
+    def test_respected_publisher_and_routine_first_edition_do_not_make_a_gem(self):
+        item = {
+            "key": "ebay:celebrity",
+            "title": "John Wayne The Legend and the Man photography book",
+            "description": "First edition trade book for fans of the performing arts.",
+            "publisher": "powerHouse Books",
+            "price_gbp": 11.73,
+            "private_seller": True,
+            "search_lane": "broad",
+        }
+        classified = monitor.classify(item)
+        self.assertFalse(classified["recognized"])
+        self.assertLess(classified["opportunity_score"], 55)
+
+    def test_book_collection_boilerplate_is_not_seller_ignorance(self):
+        item = {
+            "key": "ebay:boilerplate",
+            "title": "White Women Helmut Newton third printing",
+            "description": "A valuable addition to any book collection.",
+            "price_gbp": 20.0,
+            "private_seller": True,
+            "search_lane": "broad",
+        }
+        classified = monitor.classify(item)
+        self.assertNotIn("casual seller wording", classified["opportunity_reasons"])
+
+    def test_incomplete_component_is_penalized(self):
+        item = {
+            "key": "ebay:component",
+            "title": "A Work in Progress Snapshots photography book",
+            "description": "ISBN 9780714867007, part of ISBN 9780714866918.",
+            "publisher": "Phaidon",
+            "price_gbp": 13.45,
+            "private_seller": True,
+            "search_lane": "broad",
+        }
+        classified = monitor.classify(item)
+        self.assertFalse(classified["recognized"])
+        self.assertLess(classified["opportunity_score"], 55)
+        self.assertTrue(
+            any(reason.startswith("condition risk: incomplete") for reason in classified["opportunity_reasons"])
+        )
+
+    def test_unrecognized_print_edition_can_still_surface(self):
+        item = {
+            "key": "ebay:print-edition",
+            "title": "Unknown documentary photobook limited edition with original print",
+            "description": "Signed and numbered 3/30 with original pigment print.",
+            "publisher": "MACK",
+            "price_gbp": 50.0,
+            "private_seller": True,
+            "search_lane": "wrong_category",
+        }
+        classified = monitor.classify(item)
+        self.assertFalse(classified["recognized"])
+        self.assertGreaterEqual(classified["opportunity_score"], 72)
+        self.assertTrue(
+            any(reason.startswith("evidenced collectible object:") for reason in classified["opportunity_reasons"])
         )
 
     def test_state_has_pending_live_queue(self):

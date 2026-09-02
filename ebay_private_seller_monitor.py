@@ -18,6 +18,7 @@ BOOKS_CATEGORY_ID = "261186"
 SUPPORTED_MARKETPLACE = "EBAY_GB"
 OVERLAP_MINUTES = 12
 MAX_SEEN = 12000
+SCORING_VERSION = 2
 FIXED_BUYING_OPTIONS = ["FIXED_PRICE", "BEST_OFFER"]
 AUCTION_BUYING_OPTIONS = ["AUCTION"]
 NON_COLLECTIBLE_BOOK_TERMS = {
@@ -35,6 +36,13 @@ NON_COLLECTIBLE_BOOK_TERMS = {
     "photography the smart way",
     "photos that sell",
     "photoshop",
+    "for kids",
+    "tips and techniques",
+    "improving their photography skills",
+    "must-have for fans",
+    "music memorabilia",
+    "performing arts",
+    "photographic biography",
 }
 
 
@@ -448,14 +456,18 @@ def _fallback_score(item: dict[str, Any]) -> tuple[int, list[str]]:
         reasons.append("photography-book wording")
     collection_evidence = recognition.collection_bundle_evidence(item)
     if collection_evidence:
-        score += 26
+        score += 30
         reasons.append("collection or job-lot wording")
-    if any(pb.normalize(term) in text for term in external_monitor.PUBLISHER_TERMS):
-        score += 22
-        reasons.append("specialist photobook publisher")
-    if any(pb.normalize(term) in text for term in external_monitor.EDITION_TERMS):
+    if any(
+        pb.contains_normalized_phrase(text, pb.normalize(term))
+        for term in external_monitor.PUBLISHER_TERMS
+    ):
         score += 10
-        reasons.append("collectible-edition wording")
+        reasons.append("specialist photobook publisher")
+    format_bonus, _, format_labels = recognition.collectible_format_evidence(item, {})
+    if format_bonus:
+        score += min(36, format_bonus * 2)
+        reasons.append("evidenced collectible object: " + ", ".join(format_labels))
     lane = str(item.get("search_lane") or "")
     if "wrong_category" in lane or ("collection" in lane and collection_evidence):
         score += 6
@@ -470,13 +482,13 @@ def _fallback_score(item: dict[str, Any]) -> tuple[int, list[str]]:
     except (TypeError, ValueError):
         price = None
     if price is not None and price <= 25:
-        score += 14
+        score += 10
         reasons.append("very low asking price")
     elif price is not None and price <= 60:
-        score += 9
+        score += 6
         reasons.append("low asking price")
     elif price is not None and price <= 120:
-        score += 4
+        score += 3
     if item.get("private_seller"):
         score += 4
         reasons.append("private individual seller")
@@ -484,8 +496,15 @@ def _fallback_score(item: dict[str, Any]) -> tuple[int, list[str]]:
         pb.contains_normalized_phrase(text, pb.normalize(term))
         for term in NON_COLLECTIBLE_BOOK_TERMS
     ):
-        score -= 25
-        reasons.append("instructional, technical or local-history wording")
+        score -= 35
+        reasons.append("instructional, technical, celebrity or local-history wording")
+    condition_penalty, condition_labels = recognition.condition_risk_evidence(item)
+    if condition_penalty:
+        score -= condition_penalty
+        reasons.append("condition risk: " + ", ".join(condition_labels))
+    if not collection_evidence and not format_bonus:
+        score = min(score, 68)
+        reasons.append("unrecognized routine single-book listing capped below alert threshold")
     return max(0, min(100, score)), reasons
 
 
@@ -522,6 +541,17 @@ def classify(item: dict[str, Any]) -> dict[str, Any]:
             if recognition.collection_bundle_evidence(classified)
             else "unrecognized collectible-format lead"
         )
+    classified["scoring_version"] = SCORING_VERSION
+    score = int(classified.get("opportunity_score") or 0)
+    classified["score_band"] = (
+        "urgent"
+        if score >= 90
+        else "alert"
+        if score >= 72
+        else "review"
+        if score >= 55
+        else "reject"
+    )
     return classified
 
 

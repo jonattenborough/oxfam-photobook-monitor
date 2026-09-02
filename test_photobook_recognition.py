@@ -178,6 +178,117 @@ class PhotobookRecognitionTests(unittest.TestCase):
         self.assertEqual(match["edition_status"], "mismatch")
         self.assertLess(score, 72)
 
+    def test_historical_limited_edition_copy_does_not_describe_trade_reissue(self):
+        item = {
+            "title": "William Eggleston Election Eve Steidl 2017",
+            "description": (
+                "The original was published in 1977 in an edition of only five. "
+                "This new Steidl edition recreates the sequence in a single volume."
+            ),
+            "publisher": "Steidl",
+            "publication_year": "2017",
+            "price_gbp": 63.70,
+            "private_seller": True,
+            "seller_account_type": "INDIVIDUAL",
+            "buying_options": ["AUCTION", "BEST_OFFER"],
+        }
+        match = recognition.match_listing(item)[0]
+        score, _ = recognition.opportunity_score(item, match)
+        self.assertNotIn("limited or special edition", match["collectible_format_evidence"])
+        self.assertEqual(match["edition_status"], "mismatch")
+        self.assertLess(score, 72)
+
+    def test_edition_of_a_classic_is_not_a_limitation_statement(self):
+        item = {
+            "title": "Bruce Gilden Haiti first edition",
+            "description": "This is the English edition of a classic street photography book.",
+        }
+        match = recognition.match_listing(item)[0]
+        bonus, _, labels = recognition.collectible_format_evidence(item, match)
+        self.assertNotIn("limited or special edition", labels)
+        self.assertEqual(bonus, 0)
+
+    def test_numeric_edition_size_is_still_collectible_evidence(self):
+        item = {
+            "title": "Unknown documentary photobook",
+            "description": "Published in an edition of only 75 copies.",
+        }
+        bonus, _, labels = recognition.collectible_format_evidence(item, {})
+        self.assertIn("limited or special edition", labels)
+        self.assertEqual(bonus, 4)
+
+    def test_unknown_sensitive_edition_cannot_score_in_high_eighties(self):
+        item = {
+            "title": "Luigi Ghirri Kodachrome",
+            "price_gbp": 30.0,
+            "private_seller": True,
+            "seller_account_type": "INDIVIDUAL",
+            "buying_options": ["FIXED_PRICE", "BEST_OFFER"],
+        }
+        match = recognition.match_listing(item)[0]
+        score, _ = recognition.opportunity_score(item, match)
+        self.assertEqual(match["edition_status"], "unknown")
+        self.assertLessEqual(score, 78)
+
+    def test_routine_publisher_backlist_match_stays_in_review_band(self):
+        item = {
+            "title": "Zebrato by Michael Levin 2009 Hardcover",
+            "publisher": "Dewi Lewis",
+            "publication_year": "2009",
+            "description": "A very good copy.",
+            "price_gbp": 12.93,
+            "private_seller": True,
+            "seller_account_type": "INDIVIDUAL",
+            "buying_options": ["AUCTION", "BEST_OFFER"],
+            "search_lane": "broad",
+        }
+        match = recognition.match_listing(item)[0]
+        score, reasons = recognition.opportunity_score(item, match)
+        self.assertGreaterEqual(score, 55)
+        self.assertLess(score, 72)
+        self.assertIn(
+            "publisher-backlist match lacks independent edition or market evidence",
+            reasons,
+        )
+
+    def test_partial_canon_match_without_exact_edition_stays_below_alert(self):
+        item = {
+            "title": "China and Its People photographs John Thomson",
+            "description": "British Council softback exhibition publication.",
+            "publisher": "British Council",
+            "price_gbp": 13.49,
+            "private_seller": True,
+            "seller_account_type": "INDIVIDUAL",
+            "buying_options": ["AUCTION", "BEST_OFFER"],
+            "search_lane": "broad",
+        }
+        match = recognition.match_listing(item)[0]
+        self.assertTrue(str(match["reason"]).startswith("partial title"))
+        score, reasons = recognition.opportunity_score(item, match)
+        self.assertLess(score, 72)
+        self.assertIn("partial work match lacks exact-edition evidence", reasons)
+
+    def test_real_collector_housing_keeps_gathered_leaves_alertable(self):
+        item = {
+            "title": "Gathered Leaves by Alec Soth First Edition MACK",
+            "description": (
+                "Complete with 29 postcards and four mini facsimile books, "
+                "all housed in the original clamshell box."
+            ),
+            "publisher": "MACK",
+            "publication_year": "2015",
+            "price_gbp": 115.0,
+            "private_seller": True,
+            "seller_account_type": "INDIVIDUAL",
+            "seller_feedback_score": 42,
+            "buying_options": ["FIXED_PRICE", "BEST_OFFER"],
+            "search_lane": "broad",
+        }
+        match = recognition.match_listing(item)[0]
+        score, _ = recognition.opportunity_score(item, match)
+        self.assertIn("collector housing", match["collectible_format_evidence"])
+        self.assertGreaterEqual(score, 72)
+
     def test_signed_numbered_print_edition_gets_object_bonus(self):
         item = {
             "title": "Rahim Fortune I can't stand to see you cry special edition",

@@ -401,6 +401,35 @@ def _trim_reviewed(reviewed: dict[str, Any]) -> dict[str, Any]:
     return dict(ranked[:REVIEWED_LIMIT])
 
 
+def reclassify_retained_findings(
+    findings: dict[str, Any],
+    issue_threshold: int,
+) -> dict[str, int]:
+    """Apply the current scorer to retained findings without using the API."""
+    findings_items = findings.setdefault("items", {})
+    if not isinstance(findings_items, dict):
+        raise RuntimeError("Private backfill findings items is not an object")
+    before = len(findings_items)
+    for key in list(findings_items):
+        item = findings_items.get(key)
+        if not isinstance(item, dict):
+            findings_items.pop(key, None)
+            continue
+        refreshed = live_monitor.classify(item)
+        retained_threshold = int(
+            refreshed.get("market_issue_threshold") or issue_threshold
+        )
+        if int(refreshed.get("opportunity_score") or 0) < retained_threshold:
+            findings_items.pop(key, None)
+            continue
+        findings_items[key] = refreshed
+    return {
+        "before": before,
+        "retained": len(findings_items),
+        "removed": before - len(findings_items),
+    }
+
+
 def search_page(
     client: ebay_api.EbayBrowseClient | dict[str, ebay_api.EbayBrowseClient],
     config: dict[str, Any],
@@ -475,23 +504,9 @@ def run_backfill(
     queue = state.get("queue")
     if not isinstance(queue, list):
         raise RuntimeError("Private backfill queue is not a list")
-    findings_items = findings.setdefault("items", {})
-    if not isinstance(findings_items, dict):
-        raise RuntimeError("Private backfill findings items is not an object")
     issue_threshold = int(config["issue_threshold"])
-    for key in list(findings_items):
-        item = findings_items.get(key)
-        if not isinstance(item, dict):
-            findings_items.pop(key, None)
-            continue
-        refreshed = live_monitor.classify(item)
-        retained_threshold = int(
-            refreshed.get("market_issue_threshold") or issue_threshold
-        )
-        if int(refreshed.get("opportunity_score") or 0) < retained_threshold:
-            findings_items.pop(key, None)
-            continue
-        findings_items[key] = refreshed
+    reclassify_retained_findings(findings, issue_threshold)
+    findings_items = findings["items"]
     pending = state.setdefault("pending_live", {})
     if not isinstance(pending, dict):
         raise RuntimeError("Private backfill pending_live is not an object")
@@ -757,6 +772,11 @@ def main() -> int:
     parser.add_argument("--quota-reserve", type=int, default=QUOTA_RESERVE)
     parser.add_argument("--max-live-checks", type=int, default=DEFAULT_LIVE_CHECKS)
     parser.add_argument("--new-window", action="store_true")
+    parser.add_argument(
+        "--reclassify-only",
+        action="store_true",
+        help="rescore retained findings with no eBay API calls",
+    )
     args = parser.parse_args()
 
     if not 1 <= args.lookback_days <= 365:
@@ -773,6 +793,15 @@ def main() -> int:
     state = load_json(Path(args.state), {"version": 1}, "Private backfill state")
     findings = load_json(Path(args.findings), {"version": 1, "items": {}}, "Private backfill findings")
     detected_at = live_monitor.utc_now()
+    if args.reclassify_only:
+        result = reclassify_retained_findings(findings, int(config["issue_threshold"]))
+        findings["last_updated"] = detected_at
+        live_monitor.write_json(Path(args.findings), findings)
+        print(
+            f"Reclassified retained findings with no API calls: {result['retained']} retained, "
+            f"{result['removed']} removed."
+        )
+        return 0
     initialized = initialize_state(
         state,
         config,
