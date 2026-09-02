@@ -410,10 +410,12 @@ def reclassify_retained_findings(
     if not isinstance(findings_items, dict):
         raise RuntimeError("Private backfill findings items is not an object")
     before = len(findings_items)
+    changed = 0
     for key in list(findings_items):
         item = findings_items.get(key)
         if not isinstance(item, dict):
             findings_items.pop(key, None)
+            changed += 1
             continue
         refreshed = live_monitor.classify(item)
         retained_threshold = int(
@@ -421,12 +423,16 @@ def reclassify_retained_findings(
         )
         if int(refreshed.get("opportunity_score") or 0) < retained_threshold:
             findings_items.pop(key, None)
+            changed += 1
             continue
+        if refreshed != item:
+            changed += 1
         findings_items[key] = refreshed
     return {
         "before": before,
         "retained": len(findings_items),
         "removed": before - len(findings_items),
+        "changed": changed,
     }
 
 
@@ -505,7 +511,7 @@ def run_backfill(
     if not isinstance(queue, list):
         raise RuntimeError("Private backfill queue is not a list")
     issue_threshold = int(config["issue_threshold"])
-    reclassify_retained_findings(findings, issue_threshold)
+    reclassification = reclassify_retained_findings(findings, issue_threshold)
     findings_items = findings["items"]
     pending = state.setdefault("pending_live", {})
     if not isinstance(pending, dict):
@@ -675,6 +681,7 @@ def run_backfill(
         "complete": bool(state["complete"]),
         "truncated_pages_requeued": truncated_pages,
         "failures": failures,
+        "reclassification": reclassification,
     }
 
 
@@ -852,7 +859,11 @@ def main() -> int:
         )
 
     live_monitor.set_output("new_count", len(result["new_candidates"]))
-    live_monitor.set_output("state_changed", "true" if initialized or result["calls"] else "false")
+    findings_changed = int(result["reclassification"].get("changed") or 0) > 0
+    live_monitor.set_output(
+        "state_changed",
+        "true" if initialized or result["calls"] or findings_changed else "false",
+    )
     live_monitor.set_output("remaining_steps", result["remaining_steps"])
     live_monitor.set_output("complete", "true" if result["complete"] else "false")
     live_monitor.set_output("calls", result["calls"])
