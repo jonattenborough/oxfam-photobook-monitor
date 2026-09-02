@@ -1,8 +1,10 @@
 {
-  "last_failed_sellers": [],
-  "last_run": "2026-09-02T05:02:09Z",
-  "last_successful_sellers": 8,
-  "seller_cursor": 88,
+  "last_failed_sellers": [
+    "EBAY_US mtwyouth: more than 1000 new results fell inside the incremental window"
+  ],
+  "last_run": "2026-09-02T07:04:42Z",
+  "last_successful_sellers": 1,
+  "seller_cursor": 90,
   "sellers": {
     "EBAY_GB:ageuk": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
@@ -32080,7 +32082,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-01T19:45:09Z",
+      "last_successful_fetch": "2026-09-02T07:04:42Z",
       "seen": {
         "ebay:278194424951": {
           "first_seen": "2026-08-28T16:37:18Z",
