@@ -6,6 +6,7 @@ from pathlib import Path
 
 import ebay_private_seller_backfill as backfill
 import ebay_private_seller_monitor as live_monitor
+import photobook_recognition as recognition
 
 
 def raw_item(item_id: int, title: str, price: float = 20.0) -> dict:
@@ -51,6 +52,22 @@ def one_step() -> dict:
         "buying_options": ["FIXED_PRICE", "BEST_OFFER"],
         "offset": 0,
     }
+
+
+def expected_priority_counts() -> tuple[int, int]:
+    rows = recognition.load_library()
+    contemporary = sum(
+        1
+        for row in rows
+        if "curated contemporary documentary" in str(row.get("Canon sources") or "").lower()
+    )
+    classics = sum(
+        1
+        for row in rows
+        if "curated contemporary documentary" not in str(row.get("Canon sources") or "").lower()
+        and str(row.get("Search priority") or "9").strip() == "0"
+    )
+    return contemporary, classics
 
 
 class PrivateSellerBackfillTests(unittest.TestCase):
@@ -104,6 +121,7 @@ class PrivateSellerBackfillTests(unittest.TestCase):
         start = datetime(2026, 8, 2, 12, 0, tzinfo=timezone.utc)
         end = datetime(2026, 9, 1, 12, 0, tzinfo=timezone.utc)
         plan = backfill.build_backfill_plan(self.config, start, end, slice_days=7)
+        expected_contemporary, expected_classics = expected_priority_counts()
         self.assertGreaterEqual(len(plan), 150)
         self.assertEqual(
             [step["lane"] for step in plan[:10]],
@@ -115,8 +133,8 @@ class PrivateSellerBackfillTests(unittest.TestCase):
         )
         self.assertTrue(all(step["lane"] == "broad" for step in plan[34:54]))
         self.assertEqual(len({(step["window_start"], step["window_end"]) for step in plan[34:54]}), 5)
-        self.assertEqual(sum(step["lane"] == "contemporary_exact" for step in plan), 73)
-        self.assertEqual(sum(step["lane"] == "classic_exact" for step in plan), 50)
+        self.assertEqual(sum(step["lane"] == "contemporary_exact" for step in plan), expected_contemporary)
+        self.assertEqual(sum(step["lane"] == "classic_exact" for step in plan), expected_classics)
 
     def test_adaptive_allocator_favors_verification_when_queue_is_full(self):
         self.assertEqual(backfill.live_check_reserve(250, 61, 60, 0), 40)
@@ -161,9 +179,10 @@ class PrivateSellerBackfillTests(unittest.TestCase):
             slice_days=7,
             new_window=False,
         )
+        _, expected_classics = expected_priority_counts()
         self.assertTrue(changed)
         self.assertEqual(state["plan_version"], backfill.PLAN_VERSION)
-        self.assertEqual(sum(step["lane"] == "classic_exact" for step in state["queue"]), 50)
+        self.assertEqual(sum(step["lane"] == "classic_exact" for step in state["queue"]), expected_classics)
         self.assertEqual(state["queue"][-1], one_step())
 
     def test_search_page_uses_historical_private_seller_filters(self):

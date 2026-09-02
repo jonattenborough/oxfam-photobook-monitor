@@ -2,6 +2,22 @@
 
 This layer is the persistent source universe for the ChatGPT `Photobook Wider Web Search` task.
 
+## Priority target watches
+
+Every run must load `data/external_buy_now_priority_targets.json` before general discovery and search every active target first.
+
+For each active target:
+
+- search all eight always-on discovery sources on every run;
+- search the current rotating specialist and antiquarian source batch;
+- verify the live product page, exact target edition, current availability, landed Great Britain price, condition and completeness;
+- alert only when the listing satisfies the target's stated budget and condition rules;
+- reject sold, ended, cached, snippet-only, out-of-stock, auction-format and stale listings;
+- include a lawful official look-inside or page-through link when available;
+- deduplicate alerts by stable listing ID or canonical product URL.
+
+A search result, marketplace index or aggregator record is discovery evidence only. It cannot trigger an alert unless the underlying live listing is currently purchasable.
+
 ## Policy
 
 - Purchase opportunities must be available now at a fixed price, through a dealer inquiry, or through Best Offer.
