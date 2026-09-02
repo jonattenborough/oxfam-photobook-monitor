@@ -1,17 +1,17 @@
 {
   "cursors": {
-    "active_stock": 5,
+    "active_stock": 6,
     "auctions": 10,
-    "broad_priority": 0,
-    "classic_auctions": 14,
-    "classic_contributors": 14,
-    "classic_hot_records": 6,
-    "contemporary_auctions": 14,
-    "contemporary_contributors": 14,
-    "contemporary_hot_records": 56,
+    "broad_priority": 1,
+    "classic_auctions": 15,
+    "classic_contributors": 15,
+    "classic_hot_records": 10,
+    "contemporary_auctions": 15,
+    "contemporary_contributors": 15,
+    "contemporary_hot_records": 60,
     "contributors": 10,
     "hot_records": 26,
-    "library_records": 140
+    "library_records": 148
   },
   "last_api_call_budget": 1,
   "last_browse_quota": {
@@ -25,7 +25,7 @@
   "last_failure_count": 0,
   "last_live_checks": 0,
   "last_query_count": 1,
-  "last_run": "2026-09-02T13:04:07Z",
+  "last_run": "2026-09-02T14:44:21Z",
   "last_successful_queries": 1,
   "library_records": 4318,
   "pending_live": {
@@ -4033,7 +4033,7 @@
     "broad:BEST_OFFER+FIXED_PRICE:photo book": "2026-09-02T07:50:20Z",
     "broad:BEST_OFFER+FIXED_PRICE:photographer book": "2026-09-02T13:04:07Z",
     "broad:BEST_OFFER+FIXED_PRICE:photographs book": "2026-09-01T12:57:22Z",
-    "broad:BEST_OFFER+FIXED_PRICE:photography book": "2026-09-02T07:50:20Z",
+    "broad:BEST_OFFER+FIXED_PRICE:photography book": "2026-09-02T14:44:21Z",
     "broad:BEST_OFFER+FIXED_PRICE:photography monograph": "2026-09-02T10:21:46Z",
     "classic_auction:AUCTION:alec soth niagara": "2026-09-01T17:16:36Z",
     "classic_auction:AUCTION:alec soth sleeping by the mississippi": "2026-09-01T17:20:07Z",
@@ -4558,6 +4558,20 @@
       "title": "Vintage The Pictorial Encyclopedia Of Birds Hardcover Book 1970 over 1000 Photos",
       "url": "https://www.ebay.co.uk/itm/117391323870?_skw=photo+book&hash=item1b551172de:g:ss8AAeSwajBp1574"
     },
+    "ebay:117391434080": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 20,
+      "title": "Roy Stuart Volume 1 (1998 edition). Hardback. Taschen",
+      "url": "https://www.ebay.co.uk/itm/117391434080?_skw=photography+book&hash=item1b55132160:g:qZkAAeSwTclql9zh"
+    },
+    "ebay:117391437269": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 10,
+      "title": "Exhibit A : Guy Bourdin by Luc Sante, Michel Guerrin, Samuel Bourdin and...",
+      "url": "https://www.ebay.co.uk/itm/117391437269?_skw=photography+book&hash=item1b55132dd5:g:y0wAAeSwRRNqcvPI"
+    },
     "ebay:117391452071": {
       "first_seen": "2026-09-02T10:21:46Z",
       "last_seen": "2026-09-02T10:21:46Z",
@@ -4599,6 +4613,34 @@
       "score": 26,
       "title": "Tom Henderson Shetland from Old Photographs Hardcover Illustrated History Book",
       "url": "https://www.ebay.co.uk/itm/117391563483?_skw=photographer+book&hash=item1b55151adb:g:5AoAAeSwo5Fql~IQ"
+    },
+    "ebay:117391716448": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 26,
+      "title": "MIST MOUNTAIN WATER WIND John Davies - UK Landscape photos  1986 1st Edition",
+      "url": "https://www.ebay.co.uk/itm/117391716448?_skw=photography+book&hash=item1b55177060:g:v-QAAOSwQ-RnK68u"
+    },
+    "ebay:117391769567": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 14,
+      "title": "Haworth Through Time by Ian Palmer and Steven Wood (2009, Trade Paperback)",
+      "url": "https://www.ebay.co.uk/itm/117391769567?_skw=photography+book&hash=item1b55183fdf:g:90YAAeSw6xpqmBGq"
+    },
+    "ebay:117391921540": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 46,
+      "title": "Scholastic 24/7 Forensics Shot and Framed Crime Scene Photography Diane Webber",
+      "url": "https://www.ebay.co.uk/itm/117391921540?_skw=photography+book&hash=item1b551a9184:g:Rt4AAeSwjspqhbaJ"
+    },
+    "ebay:117391922985": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 36,
+      "title": "Master Photography Michael Busselle HBack Photography Guide Book ISBN 0855331259",
+      "url": "https://www.ebay.co.uk/itm/117391922985?_skw=photography+book&hash=item1b551a9729:g:JQ0AAeSwKVhqmCye"
     },
     "ebay:125687751071": {
       "first_seen": "2026-09-02T07:13:35Z",
@@ -4915,12 +4957,47 @@
       "title": "BLUE JEANS PHOTO STORY 1984 ANNUAL FOR GIRLS",
       "url": "https://www.ebay.co.uk/itm/128057123879?_skw=photographer+book&hash=item1dd0cca427:g:NdMAAOSwNARg8YaB"
     },
+    "ebay:128057284361": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 26,
+      "title": "THE GIVENCHY STYLE FASHION ART PHOTOGRAPHY BOOK INTERIOR DESIGN HARDBACK",
+      "url": "https://www.ebay.co.uk/itm/128057284361?_skw=photography+book&hash=item1dd0cf1709:g:8scAAeSwzbZqmAXl"
+    },
+    "ebay:128057297847": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 26,
+      "title": "Stage 7L Hedi Slimane PHOTOGRAPHY FASHION HB Book Rock Music Beck white stripes",
+      "url": "https://www.ebay.co.uk/itm/128057297847?_skw=photography+book&hash=item1dd0cf4bb7:g:peAAAeSwjFZqmBCc"
+    },
+    "ebay:128057316434": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 36,
+      "title": "Dog Save the Queen : The Tails of Britain by Jeff Selis (2004, Hardcover)",
+      "url": "https://www.ebay.co.uk/itm/128057316434?_skw=photography+book&hash=item1dd0cf9452:g:QPwAAeSwPgVqjtdL"
+    },
     "ebay:128057320973": {
       "first_seen": "2026-09-02T13:04:07Z",
       "last_seen": "2026-09-02T13:04:07Z",
       "score": 26,
       "title": "RARE Uncorrected Proof Julia Margaret Cameron The Complete Photographs PAPERBACK",
       "url": "https://www.ebay.co.uk/itm/128057320973?_skw=photographer+book&hash=item1dd0cfa60d:g:90cAAeSwdK5qmAVE"
+    },
+    "ebay:128057347025": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 26,
+      "title": "NEW Laszlo Moholy-Nagy The Photograms A Catalogue Raisonne PHOTOGRAPHY ART BOOK",
+      "url": "https://www.ebay.co.uk/itm/128057347025?_skw=photography+book&hash=item1dd0d00bd1:g:EIAAAeSwKX9qmBPy"
+    },
+    "ebay:128057685695": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 36,
+      "title": "Henry Carroll Photographers on Photography Masters See Think Shoot HC",
+      "url": "https://www.ebay.co.uk/itm/128057685695?_skw=photography+book&hash=item1dd0d536bf:g:yFcAAeSw64ZqfIJX"
     },
     "ebay:133792317103": {
       "first_seen": "2026-09-01T17:20:07Z",
@@ -5209,12 +5286,33 @@
       "title": "Unseen Eric Morecambe : The Lost Diaries, Jokes and Photographs by William (Ed)",
       "url": "https://www.ebay.co.uk/itm/137689523229?_skw=photographer+book&hash=item200eef641d:g:jkIAAeSwjdlpifeJ"
     },
+    "ebay:137689524585": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 36,
+      "title": "How To Live An Artful Life by Katy Hessel (Hardcover 2025) First Edition",
+      "url": "https://www.ebay.co.uk/itm/137689524585?_skw=photography+book&hash=item200eef6969:g:yMsAAeSwa1Bql9~C"
+    },
     "ebay:137689686841": {
       "first_seen": "2026-09-02T10:21:46Z",
       "last_seen": "2026-09-02T10:21:46Z",
       "score": 26,
       "title": "How To Paint From Your Color Slides And Photographs - Walter T. Foster - Undated",
       "url": "https://www.ebay.co.uk/itm/137689686841?_skw=photographer+book&hash=item200ef1e339:g:tvgAAOSwGeZmvfpu"
+    },
+    "ebay:137690422970": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 26,
+      "title": "Michael Jackson Dancing the Dream Hardcover English Book Poetry Essays Photos",
+      "url": "https://www.ebay.co.uk/itm/137690422970?_skw=photography+book&hash=item200efd1eba:g:GMwAAeSwW8NqmCL9"
+    },
+    "ebay:137690659963": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 26,
+      "title": "Vice Photo Book by Vice Magazine - Hard Back 340mm x 265mm",
+      "url": "https://www.ebay.co.uk/itm/137690659963?_skw=photography+book&hash=item200f00bc7b:g:L5UAAeSwRTtqcy89"
     },
     "ebay:144095110872": {
       "first_seen": "2026-09-02T07:50:20Z",
@@ -5545,6 +5643,20 @@
       "title": "Shanghai A History In Photographs 1842-today",
       "url": "https://www.ebay.co.uk/itm/147544581824?_skw=photographer+book&hash=item225a57a6c0:g:4OcAAeSwVppqiui4"
     },
+    "ebay:147544714428": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 32,
+      "title": "Louis Vuitton The Book #9 Virgil Abloh includes stickers",
+      "url": "https://www.ebay.co.uk/itm/147544714428?_skw=photography+book&hash=item225a59acbc:g:iAQAAeSw1PxqmCKV"
+    },
+    "ebay:147544716502": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 4,
+      "title": "hard back book calendar book",
+      "url": "https://www.ebay.co.uk/itm/147544716502?_skw=photography+book&hash=item225a59b4d6:g:mskAAeSwhZ9qaf3e"
+    },
     "ebay:152103791854": {
       "first_seen": "2026-09-02T07:50:20Z",
       "last_seen": "2026-09-02T07:50:20Z",
@@ -5818,12 +5930,33 @@
       "title": "Blinds And Shutters Genesis Publications 4348 / 5000",
       "url": "https://www.ebay.co.uk/itm/158249019245?_skw=photography+book&hash=item24d860676d:g:dEcAAeSwxC9n6nFm"
     },
+    "ebay:158249398486": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 4,
+      "title": "Art In A Multipolar World Mi You Paperback Contemporary Art Theory Book",
+      "url": "https://www.ebay.co.uk/itm/158249398486?_skw=photography+book&hash=item24d86630d6:g:BbwAAeSwNN9o07eG"
+    },
     "ebay:158249708856": {
       "first_seen": "2026-09-02T13:04:07Z",
       "last_seen": "2026-09-02T13:04:07Z",
       "score": 36,
       "title": "The First World War - A Photographic History",
       "url": "https://www.ebay.co.uk/itm/158249708856?_skw=photographer+book&hash=item24d86aed38:g:hYsAAeSwKuRqAg~b"
+    },
+    "ebay:158249956245": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 14,
+      "title": "The Secrets of Britain by Andy Williams & Dennis Hardley Hardcover Book",
+      "url": "https://www.ebay.co.uk/itm/158249956245?_skw=photography+book&hash=item24d86eb395:g:57oAAeSwzadqmCHg"
+    },
+    "ebay:158250178199": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 36,
+      "title": "Images of Elvis Parragon Hardcover Picture Book English Non-Fiction Photography",
+      "url": "https://www.ebay.co.uk/itm/158250178199?_skw=photography+book&hash=item24d8721697:g:hKgAAeSwVzdqmDL2"
     },
     "ebay:165484497167": {
       "first_seen": "2026-09-02T07:50:20Z",
@@ -6182,12 +6315,40 @@
       "title": "Greetings from Lowestoft - A Picture Book of Old Postcards - Malcolm White 2001",
       "url": "https://www.ebay.co.uk/itm/168657510452?_skw=photo+book&hash=item2744c56034:g:h-4AAeSwARVqZMBl"
     },
+    "ebay:168657518841": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 62,
+      "title": "The Pin-Up: A Modest History By Mark Gabor. Paperback. 1972.",
+      "url": "https://www.ebay.co.uk/itm/168657518841?_skw=photography+book&hash=item2744c580f9:g:MsgAAeSwJ2dpghWw"
+    },
+    "ebay:168657797676": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 14,
+      "title": "Castelatto Colors Collection hardback book, architecture & design, Spain 2019",
+      "url": "https://www.ebay.co.uk/itm/168657797676?_skw=photography+book&hash=item2744c9c22c:g:DL4AAeSwmX1ql~g7"
+    },
     "ebay:168658060708": {
       "first_seen": "2026-09-02T13:04:07Z",
       "last_seen": "2026-09-02T13:04:07Z",
       "score": 32,
       "title": "Steve Parish 50 Years Photographing Australia Hardback Photography Book 2010",
       "url": "https://www.ebay.co.uk/itm/168658060708?_skw=photographer+book&hash=item2744cdc5a4:g:jTAAAeSwuVhqmBeL"
+    },
+    "ebay:168658107948": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 36,
+      "title": "Great British Seaside : Photography from the 1960s to the Present hardcover",
+      "url": "https://www.ebay.co.uk/itm/168658107948?_skw=photography+book&hash=item2744ce7e2c:g:aG0AAeSww-FqmB55"
+    },
+    "ebay:168658161914": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 10,
+      "title": "Arquitectura - Gonzalez & Jacobson large hardback book, architecture design, 3kg",
+      "url": "https://www.ebay.co.uk/itm/168658161914?_skw=photography+book&hash=item2744cf50fa:g:drUAAeSw0jpqmCKG"
     },
     "ebay:174401208978": {
       "first_seen": "2026-09-02T07:13:35Z",
@@ -6777,6 +6938,34 @@
       "title": "Manchester Since 1900 - 90 years in photographs - Hardback book",
       "url": "https://www.ebay.co.uk/itm/188874780038?_skw=photographer+book&hash=item2bf9d06d86:g:90oAAeSwAj9pvs7e"
     },
+    "ebay:188874841787": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 36,
+      "title": "The Art of Photography at National Geographic by Livingston, Jane Hardback 2005.",
+      "url": "https://www.ebay.co.uk/itm/188874841787?_skw=photography+book&hash=item2bf9d15ebb:g:nK0AAeSwQUxpIwe3"
+    },
+    "ebay:188875448235": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 36,
+      "title": "Painterly Photography : Awakening the Artist Within by Elizabeth Murray 1993",
+      "url": "https://www.ebay.co.uk/itm/188875448235?_skw=photography+book&hash=item2bf9da9fab:g:mPYAAeSwgetp07W8"
+    },
+    "ebay:188875723644": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 36,
+      "title": "Photography in the Modern Era European Documents and Critical Writings 1913-1940",
+      "url": "https://www.ebay.co.uk/itm/188875723644?_skw=photography+book&hash=item2bf9ded37c:g:oVUAAeSwguZqmCYW"
+    },
+    "ebay:188875793848": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 10,
+      "title": "The Watch Book Gisbert Brunner Hardback Luxury Watch Guide Book teNeues",
+      "url": "https://www.ebay.co.uk/itm/188875793848?_skw=photography+book&hash=item2bf9dfe5b8:g:BR8AAeSwGflqmCql"
+    },
     "ebay:194716512208": {
       "first_seen": "2026-09-02T07:50:20Z",
       "last_seen": "2026-09-02T07:50:20Z",
@@ -7050,12 +7239,33 @@
       "title": "Twenty Years On by John Swannell (1996, Hardcover)",
       "url": "https://www.ebay.co.uk/itm/198612771021?_skw=photographer+book&hash=item2e3e3e60cd:g:eu4AAeSwhthqhEb3"
     },
+    "ebay:198612827336": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 26,
+      "title": "1931 GERMANY PHOTOGRAPHY - DEUTSCHLAND by Hielscher, Kurt - inside VG/cover worn",
+      "url": "https://www.ebay.co.uk/itm/198612827336?_skw=photography+book&hash=item2e3e3f3cc8:g:71IAAOSwgKBasSVn"
+    },
+    "ebay:198612865834": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 10,
+      "title": "Classic Pirelli Calendar Album 1988",
+      "url": "https://www.ebay.co.uk/itm/198612865834?_skw=photography+book&hash=item2e3e3fd32a:g:79MAAeSwU7xqad4a"
+    },
     "ebay:198612957311": {
       "first_seen": "2026-09-02T13:04:07Z",
       "last_seen": "2026-09-02T13:04:07Z",
       "score": 26,
       "title": "RP News, Real Photographs Co. Ltd., Vol. 3 bound edition for  Jan-dec 1946 invgc",
       "url": "https://www.ebay.co.uk/itm/198612957311?_skw=photographer+book&hash=item2e3e41387f:g:wj4AAeSwINNqSPcM"
+    },
+    "ebay:198613262510": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 26,
+      "title": "Pictures On a Page: Photojournalism, Graphics, and Photography by Harold Evans",
+      "url": "https://www.ebay.co.uk/itm/198613262510?_skw=photography+book&hash=item2e3e45e0ae:g:4~gAAeSw~gZqY3Zk"
     },
     "ebay:201590266150": {
       "first_seen": "2026-09-02T07:50:20Z",
@@ -7365,6 +7575,13 @@
       "title": "Kids Larry Clark Book First Edition Harmony Korine Photo Book Film",
       "url": "https://www.ebay.co.uk/itm/206530853460?_skw=photographer+book&hash=item301632ba54:g:NI4AAeSw61Rql-iH"
     },
+    "ebay:206530881827": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 32,
+      "title": "The Dream Collector by Arthur Tress John Minahan 1973",
+      "url": "https://www.ebay.co.uk/itm/206530881827?_skw=photography+book&hash=item3016332923:g:EX4AAeSwV-hpB05P"
+    },
     "ebay:206530975735": {
       "first_seen": "2026-09-02T13:04:07Z",
       "last_seen": "2026-09-02T13:04:07Z",
@@ -7455,6 +7672,41 @@
       "score": 0,
       "title": "4x 2000ad Progs : 1775, 1776, 1778 & 1781 (2012).  Photo's are of actual progs!",
       "url": "https://www.ebay.co.uk/itm/206531095765?_skw=photographer+book&hash=item3016366cd5:g:5UYAAeSwduZqKU5-"
+    },
+    "ebay:206531309139": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 26,
+      "title": "Leroy Grannis , Surf photography of the 1960s and 1970s. First Edition 2007. VGC",
+      "url": "https://www.ebay.co.uk/itm/206531309139?_skw=photography+book&hash=item301639ae53:g:mmAAAeSwMk1qmCD1"
+    },
+    "ebay:206531454634": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 26,
+      "title": "Trunk Show Swimwear Inspires Art Book",
+      "url": "https://www.ebay.co.uk/itm/206531454634?_skw=photography+book&hash=item30163be6aa:g:7oIAAeSwBO5qjvHc"
+    },
+    "ebay:206531457523": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 26,
+      "title": "Turnon Tattoos Book",
+      "url": "https://www.ebay.co.uk/itm/206531457523?_skw=photography+book&hash=item30163bf1f3:g:X7AAAeSw2bhqjvKK"
+    },
+    "ebay:206531491061": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 26,
+      "title": "Pieter Hugo: This Must Be The Place: Selected Works - Prestel Rare Photo Book",
+      "url": "https://www.ebay.co.uk/itm/206531491061?_skw=photography+book&hash=item30163c74f5:g:f-8AAeSwcqdqQ-Vh"
+    },
+    "ebay:206531491065": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 58,
+      "title": "Karlheinz Weinberger: Swiss Rebels - Steidl Rare Hardback Photo Book 1st Edition",
+      "url": "https://www.ebay.co.uk/itm/206531491065?_skw=photography+book&hash=item30163c74f9:g:iyoAAeSwB1xqQ4Lv"
     },
     "ebay:226478974069": {
       "first_seen": "2026-09-01T15:09:30Z",
@@ -7848,12 +8100,33 @@
       "title": "Spirit: Garden Inspiration : By Dan Pearson by Dan Pearson (2011)",
       "url": "https://www.ebay.co.uk/itm/227502116161?_skw=photography+book&hash=item34f82ecd41:g:gvIAAeSw-1dqbjHv"
     },
+    "ebay:227502206893": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 4,
+      "title": "More Romantic Pieces for Piano Book 3",
+      "url": "https://www.ebay.co.uk/itm/227502206893?_skw=photography+book&hash=item34f8302fad:g:~9MAAeSw4DRpxQ9b"
+    },
+    "ebay:227502361394": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 26,
+      "title": "Peter Slater PHOTOGRAPHING AUSTRALIA’S BIRDS 1995 PB Wildlife Nature Photography",
+      "url": "https://www.ebay.co.uk/itm/227502361394?_skw=photography+book&hash=item34f8328b32:g:cF0AAOSw9sliUXoE"
+    },
     "ebay:227502371878": {
       "first_seen": "2026-09-02T13:04:07Z",
       "last_seen": "2026-09-02T13:04:07Z",
       "score": 4,
       "title": "Special Forces The Worlds Most Significant And Elite Forces By Chris Chant",
       "url": "https://www.ebay.co.uk/itm/227502371878?_skw=photographer+book&hash=item34f832b426:g:2dEAAOSwCntiekJQ"
+    },
+    "ebay:227502391352": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 54,
+      "title": "Isle Of Wight Festival 1970 - Six Days That Changed The World - Bob Aylott - H/b",
+      "url": "https://www.ebay.co.uk/itm/227502391352?_skw=photography+book&hash=item34f8330038:g:1cYAAeSw5NJqmAJu"
     },
     "ebay:236388891003": {
       "first_seen": "2026-09-02T07:50:20Z",
@@ -8092,6 +8365,34 @@
       "score": 4,
       "title": "Creative Cooking Library The Balti Cookbook - Shehzad Husain Hardcover Photos",
       "url": "https://www.ebay.co.uk/itm/237044512286?_skw=photographer+book&hash=item3730f4361e:g:RkAAAeSw-klqfFv5"
+    },
+    "ebay:237044544073": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 36,
+      "title": "ANSEL ADAMS AND HIS CAMERA - children's picture book",
+      "url": "https://www.ebay.co.uk/itm/237044544073?_skw=photography+book&hash=item3730f4b249:g:P-8AAeSwOCtqmBAP"
+    },
+    "ebay:237044655887": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 26,
+      "title": "Popular Photography October 1958 UK Edition",
+      "url": "https://www.ebay.co.uk/itm/237044655887?_skw=photography+book&hash=item3730f6670f:g:n60AAOSwkKBkfw-5"
+    },
+    "ebay:237044687845": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 65,
+      "title": "Mapplethorpe",
+      "url": "https://www.ebay.co.uk/itm/237044687845?_skw=photography+book&hash=item3730f6e3e5:g:Q6kAAeSwJ9tqiv9N"
+    },
+    "ebay:237044706763": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 14,
+      "title": "New York From the Air",
+      "url": "https://www.ebay.co.uk/itm/237044706763?_skw=photography+book&hash=item3730f72dcb:g:JRkAAeSwKVxqivsp"
     },
     "ebay:255569549785": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -8338,6 +8639,13 @@
       "title": "'Cocktails' - A wide selection of Cocktail Ingredients and Photographs.",
       "url": "https://www.ebay.co.uk/itm/257716883358?_skw=photo+book&hash=item3c011f8f9e:g:-ukAAOSwzVZnXuu-"
     },
+    "ebay:257717989777": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 4,
+      "title": "Playboy The Complete Centerfolds 1953-2007 Briefcase Edition Folio Chronicle",
+      "url": "https://www.ebay.co.uk/itm/257717989777?_skw=photography+book&hash=item3c01307191:g:noIAAeSwYspqhVRf"
+    },
     "ebay:257718127472": {
       "first_seen": "2026-09-02T10:21:46Z",
       "last_seen": "2026-09-02T10:21:46Z",
@@ -8541,6 +8849,13 @@
       "title": "Family Christmas Photo Card Prop Book NEW",
       "url": "https://www.ebay.co.uk/itm/267773929750?_skw=photographer+book&hash=item3e5891e916:g:uxcAAOSwvOtnKeuT"
     },
+    "ebay:267773973282": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 36,
+      "title": "I Am Football : Zlatan Ibrahimovic by Zlatan Ibrahimovic Hardcover 2018",
+      "url": "https://www.ebay.co.uk/itm/267773973282?_skw=photography+book&hash=item3e58929322:g:wccAAeSwlK5pzAo-"
+    },
     "ebay:267773977025": {
       "first_seen": "2026-09-02T10:21:46Z",
       "last_seen": "2026-09-02T10:21:46Z",
@@ -8554,6 +8869,13 @@
       "score": 36,
       "title": "Boudoir Photography By Mario Venticinque The Fantasy Exposed Paperback",
       "url": "https://www.ebay.co.uk/itm/267774016126?_skw=photographer+book&hash=item3e58933a7e:g:g84AAeSwjPFql~49"
+    },
+    "ebay:267774080398": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 26,
+      "title": "Journey Through the Allgäu by Katrin Lindner (2011, Hardcover)",
+      "url": "https://www.ebay.co.uk/itm/267774080398?_skw=photography+book&hash=item3e5894358e:g:GwEAAeSwR-1qjttp"
     },
     "ebay:274983687163": {
       "first_seen": "2026-09-02T07:50:20Z",
@@ -9066,6 +9388,55 @@
       "title": "6x Harry and the Dinosaurs Picture Books Bundle Ian Whybrow Bedtime Stories Pack",
       "url": "https://www.ebay.co.uk/itm/287559087823?_skw=photo+book&hash=item42f3db76cf:g:1vEAAeSwpEtql0HY"
     },
+    "ebay:287560245836": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 14,
+      "title": "Lewis Hine's Empire State Building",
+      "url": "https://www.ebay.co.uk/itm/287560245836?_skw=photography+book&hash=item42f3ed224c:g:C7gAAeSwO5Nn-rHM"
+    },
+    "ebay:287560559599": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 32,
+      "title": "Aircraft The Jet As Art  Jeffrey Milstein Airplane Photography Coffee Table Book",
+      "url": "https://www.ebay.co.uk/itm/287560559599?_skw=photography+book&hash=item42f3f1ebef:g:M5YAAeSwcJ1ql~mL"
+    },
+    "ebay:287560621141": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 44,
+      "title": "HAND SIGNED - DAVID BAILEY - LOOK AGAIN - NEW HARDBACK FIRST PRINT PHOTOGRAPHY",
+      "url": "https://www.ebay.co.uk/itm/287560621141?_skw=photography+book&hash=item42f3f2dc55:g:T5gAAeSw0E9oF6TO"
+    },
+    "ebay:287560621157": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 44,
+      "title": "SIGNED - BRYAN FERRY - LYRICS - NEW HARDCOVER - ROXY MUSIC",
+      "url": "https://www.ebay.co.uk/itm/287560621157?_skw=photography+book&hash=item42f3f2dc65:g:g6kAAOSwAaVlEd5Y"
+    },
+    "ebay:287560658018": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 36,
+      "title": "Photography Year Book - 1980 Good Condition Free Postage",
+      "url": "https://www.ebay.co.uk/itm/287560658018?_skw=photography+book&hash=item42f3f36c62:g:6H0AAeSwq2JqmAaF"
+    },
+    "ebay:287560694608": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 7,
+      "title": "Michael Jackson The King of Style Dressing Michael Jackson Michael Bush Sealed",
+      "url": "https://www.ebay.co.uk/itm/287560694608?_skw=photography+book&hash=item42f3f3fb50:g:XGYAAeSwYspqmAxz"
+    },
+    "ebay:287560704451": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 4,
+      "title": "Ducati - Rule All Roads Hardback book new sealed. Ducati Multistrada",
+      "url": "https://www.ebay.co.uk/itm/287560704451?_skw=photography+book&hash=item42f3f421c3:g:5S4AAeSw02BqHwHM"
+    },
     "ebay:296488934387": {
       "first_seen": "2026-09-01T17:16:36Z",
       "last_seen": "2026-09-01T17:16:36Z",
@@ -9220,12 +9591,61 @@
       "title": "Handbook Of Photography Edited By Keith Henley HB 1939 Whittlesey House",
       "url": "https://www.ebay.co.uk/itm/298636703917?_skw=photography+book&hash=item45882278ad:g:B6QAAOSwaXVmgp1U"
     },
+    "ebay:298638878937": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 26,
+      "title": "St Ives - The Modern Movement - Davies, Peter; Photography by David Brown",
+      "url": "https://www.ebay.co.uk/itm/298638878937?_skw=photography+book&hash=item458843a8d9:g:8DsAAeSw58JpJtzH"
+    },
+    "ebay:298638923914": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 14,
+      "title": "(1990) Clive Barker's The Night Breed Chronicles Titan Books 1st edition",
+      "url": "https://www.ebay.co.uk/itm/298638923914?_skw=photography+book&hash=item458844588a:g:4cEAAeSwzkRqmBEJ"
+    },
     "ebay:298638998286": {
       "first_seen": "2026-09-02T13:04:07Z",
       "last_seen": "2026-09-02T13:04:07Z",
       "score": 36,
       "title": "Lewis Carroll Photographs/Photographien Hardcover, ed. Karl Steinorth, Stemmle",
       "url": "https://www.ebay.co.uk/itm/298638998286?_skw=photographer+book&hash=item4588457b0e:g:FGoAAeSwS7ZqmBnb"
+    },
+    "ebay:298639043589": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 26,
+      "title": "Dawlish And Teignmouth From Old Photographs",
+      "url": "https://www.ebay.co.uk/itm/298639043589?_skw=photography+book&hash=item4588462c05:g:6bgAAeSwsZdqfG-O"
+    },
+    "ebay:298639097862": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 26,
+      "title": "Art and Photography by Aaron Scharf (1974, Trade Paperback)",
+      "url": "https://www.ebay.co.uk/itm/298639097862?_skw=photography+book&hash=item4588470006:g:6J4AAeSwr1xofmPv"
+    },
+    "ebay:298639186373": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 10,
+      "title": "In the American West 40th Anniversary Edition, Avedon, Avedon, 9781419783609^*",
+      "url": "https://www.ebay.co.uk/itm/298639186373?_skw=photography+book&hash=item45884859c5:g:ZwAAAeSwWihqmDBZ"
+    },
+    "ebay:298639201518": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 10,
+      "title": "Dear Marilyn by Sam Shaw, Melissa Stevens - 9781788843331",
+      "url": "https://www.ebay.co.uk/itm/298639201518?_skw=photography+book&hash=item45884894ee:g:Yl8AAeSw7RNqmDKZ"
+    },
+    "ebay:298639220315": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 10,
+      "title": "Feline by Tim Flach, Jonathan Losos - 9781419773648",
+      "url": "https://www.ebay.co.uk/itm/298639220315?_skw=photography+book&hash=item458848de5b:g:jAAAAeSw2bhqmDPr"
     },
     "ebay:306175334813": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -9387,6 +9807,13 @@
       "score": 10,
       "title": "Delicious Party Precure Smartphone-Style Talking Picture Book [Variety]",
       "url": "https://www.ebay.co.uk/itm/307158195503?_skw=photo+book&hash=item47840e1d2f:g:HysAAeSwKVxql8I2"
+    },
+    "ebay:307158571401": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 0,
+      "title": "The Digital Photography Handbook - Doug Harman",
+      "url": "https://www.ebay.co.uk/itm/307158571401?_skw=photography+book&hash=item478413d989:g:k5QAAeSw~iNpIwYq"
     },
     "ebay:307158589217": {
       "first_seen": "2026-09-02T13:04:07Z",
@@ -9717,6 +10144,13 @@
       "title": "California Dreaming – Dawn Bowery – 2014 HB – Brits in LA Documentary Photograph",
       "url": "https://www.ebay.co.uk/itm/318814148489?_skw=photographer+book&hash=item4a3acdd789:g:DcsAAeSwNoNql-yR"
     },
+    "ebay:318814219845": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 26,
+      "title": "200 Women Hardcover Book by Geoff Blackwell & Ruth Hobday Portrait Photography",
+      "url": "https://www.ebay.co.uk/itm/318814219845?_skw=photography+book&hash=item4a3aceee45:g:VPEAAeSw5rdqhYVV"
+    },
     "ebay:318814586883": {
       "first_seen": "2026-09-02T13:04:07Z",
       "last_seen": "2026-09-02T13:04:07Z",
@@ -9912,6 +10346,27 @@
       "score": 4,
       "title": "Winnie The Pooh Picture House Rainbow Designs . Disney",
       "url": "https://www.ebay.co.uk/itm/327337335438?_skw=photo+book&hash=item4c36d35a8e:g:axAAAeSwpedoszVy"
+    },
+    "ebay:327338218708": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 36,
+      "title": "David Busch's Nikon Z50 Guide to Digital Photography by David D. Busch (2020)",
+      "url": "https://www.ebay.co.uk/itm/327338218708?_skw=photography+book&hash=item4c36e0d4d4:g:0Y0AAeSw2G9qmALl"
+    },
+    "ebay:327338430299": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 36,
+      "title": "Werner Pawlok Photography Paintings",
+      "url": "https://www.ebay.co.uk/itm/327338430299?_skw=photography+book&hash=item4c36e40f5b:g:vYUAAeSwOa9qlYyB"
+    },
+    "ebay:327338464882": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 4,
+      "title": "Whitney Houston: The Greatest Love of All by Carolyn Mc Hugh | Hardcover | 2022",
+      "url": "https://www.ebay.co.uk/itm/327338464882?_skw=photography+book&hash=item4c36e49672:g:uI0AAeSwTmRoZUzc"
     },
     "ebay:336499635451": {
       "first_seen": "2026-09-02T07:50:20Z",
@@ -10185,6 +10640,20 @@
       "score": 48,
       "title": "The Pin-Up by Louis Meisel Hardcover English Art Photography Book. Taschen",
       "url": "https://www.ebay.co.uk/itm/336773438119?_skw=photography+book&hash=item4e6942daa7:g:HQoAAeSwiipqjgMh"
+    },
+    "ebay:336774417837": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 26,
+      "title": "The North By John Bulmer. Amazing Photobook. As New. Bluecoat. Photography.",
+      "url": "https://www.ebay.co.uk/itm/336774417837?_skw=photography+book&hash=item4e6951cdad:g:3A4AAeSwrmRqCvM5"
+    },
+    "ebay:336774529866": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 20,
+      "title": "Annie Leibovitz: Portraits 2005-2016( Hardcover with slipcase, Phaidon 2017)",
+      "url": "https://www.ebay.co.uk/itm/336774529866?_skw=photography+book&hash=item4e6953834a:g:45cAAeSw1clqfFa9"
     },
     "ebay:356829224725": {
       "first_seen": "2026-09-01T15:09:30Z",
@@ -10563,6 +11032,20 @@
       "score": 13,
       "title": "Pedro Virgil The Gods of Sport hardback book like new Gay interest",
       "url": "https://www.ebay.co.uk/itm/366643417974?_skw=photography+book&hash=item555da69376:g:GSoAAeSwpfRqaOJO"
+    },
+    "ebay:366643974812": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 26,
+      "title": "Floods Of Light. Flash Photography 1851-1981",
+      "url": "https://www.ebay.co.uk/itm/366643974812?_skw=photography+book&hash=item555daf129c:g:EjYAAeSwxthqfEU4"
+    },
+    "ebay:366644126437": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 14,
+      "title": "2x Tattoo Art Books - The Mammoth Book Of Tattoos - Tattoo Art - Over 700 Photos",
+      "url": "https://www.ebay.co.uk/itm/366644126437?_skw=photography+book&hash=item555db162e5:g:bU8AAeSwe9ZqmAj7"
     },
     "ebay:366644242868": {
       "first_seen": "2026-09-02T13:04:07Z",
@@ -10991,12 +11474,26 @@
       "title": "Michael Jackson Photo Coloring Book & Gifts",
       "url": "https://www.ebay.co.uk/itm/398350435967?_skw=photographer+book&hash=item5cbf89467f:g:EWoAAeSw4vlql-Sd"
     },
+    "ebay:398350624199": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 32,
+      "title": "Nadav Kander - Bodies 6 Women 1 Man - Hardcover Photography Art Book Hatje Cantz",
+      "url": "https://www.ebay.co.uk/itm/398350624199?_skw=photography+book&hash=item5cbf8c25c7:g:bloAAeSw~85qKAk1"
+    },
     "ebay:398350827148": {
       "first_seen": "2026-09-02T13:04:07Z",
       "last_seen": "2026-09-02T13:04:07Z",
       "score": 14,
       "title": "GÜ Chocolate Cookbook | Hardback | First Edition",
       "url": "https://www.ebay.co.uk/itm/398350827148?_skw=photographer+book&hash=item5cbf8f3e8c:g:VosAAeSwHO1ql~16"
+    },
+    "ebay:398351007653": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 32,
+      "title": "Stereoscopy The Poor Man's Picture Gallery by Brian May - Hardcover Book - VGC",
+      "url": "https://www.ebay.co.uk/itm/398351007653?_skw=photography+book&hash=item5cbf91ffa5:g:kG0AAeSwGFpqmBE-"
     },
     "ebay:398351143083": {
       "first_seen": "2026-09-02T13:04:07Z",
@@ -11200,6 +11697,13 @@
       "score": 34,
       "title": "Mao Ishikawa Red Flower Women of Okinawa SEALED Photo Book Ltd 600 RARE",
       "url": "https://www.ebay.co.uk/itm/407187107287?_skw=photographer+book&hash=item5ece3e2dd7:g:TMEAAeSw3EVql-ix"
+    },
+    "ebay:407187365927": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 14,
+      "title": "Stour Valley Railway Through Time By Andy T. Wallis. Very good condition",
+      "url": "https://www.ebay.co.uk/itm/407187365927?_skw=photography+book&hash=item5ece422027:g:tMEAAeSwJaRqccKD"
     },
     "ebay:407187527825": {
       "first_seen": "2026-09-02T13:04:07Z",
@@ -11746,6 +12250,13 @@
       "score": 26,
       "title": "MAX ARTHUR SIGNED ,PERSONALISED  ,EX LIBRIS There Shall be Wings SEE PHOTOS",
       "url": "https://www.ebay.co.uk/itm/820076880177?_skw=photo+book&hash=itembef0642131:g:FDoAAeSwDIVpWpAx"
+    },
+    "ebay:820077232811": {
+      "first_seen": "2026-09-02T14:44:21Z",
+      "last_seen": "2026-09-02T14:44:21Z",
+      "score": 14,
+      "title": "Microcosmos : Discovering the World Through Microscopic Images",
+      "url": "https://www.ebay.co.uk/itm/820077232811?_skw=photography+book&hash=itembef06982ab:g:laEAAeSwptdql9nH"
     },
     "ebay:820077285703": {
       "first_seen": "2026-09-02T10:21:46Z",
