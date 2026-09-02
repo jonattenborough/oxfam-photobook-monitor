@@ -1,44 +1,45 @@
 {
   "cursors": {
-    "active_stock": 1,
+    "active_stock": 2,
     "auctions": 10,
-    "classic_auctions": 10,
-    "classic_contributors": 10,
-    "classic_hot_records": 40,
-    "contemporary_auctions": 10,
-    "contemporary_contributors": 10,
-    "contemporary_hot_records": 40,
+    "broad_priority": 1,
+    "classic_auctions": 11,
+    "classic_contributors": 11,
+    "classic_hot_records": 44,
+    "contemporary_auctions": 11,
+    "contemporary_contributors": 11,
+    "contemporary_hot_records": 44,
     "contributors": 10,
     "hot_records": 26,
-    "library_records": 108
+    "library_records": 116
   },
-  "last_api_call_budget": 10,
+  "last_api_call_budget": 38,
   "last_browse_quota": {
-    "count": 4540,
+    "count": 0,
     "limit": 5000,
-    "remaining": 460,
+    "remaining": 5000,
     "reset": "2026-09-03T07:00:00.000Z",
     "resource": "buy.browse",
     "time_window": 86400
   },
   "last_failure_count": 0,
   "last_live_checks": 3,
-  "last_query_count": 7,
-  "last_run": "2026-09-02T07:04:50Z",
-  "last_successful_queries": 7,
+  "last_query_count": 35,
+  "last_run": "2026-09-02T07:13:35Z",
+  "last_successful_queries": 35,
   "library_records": 4318,
   "pending_live": {
-    "ebay:135680430891": {
+    "ebay:127125938117": {
       "best_recognition": {
         "awards_and_evidence": "",
         "bargain_gbp": null,
-        "canon_sources": "Parr/Badger V1 + Roth 101 | Priority seed",
-        "collectibility_tier": "S",
+        "canon_sources": "Parr/Badger V2 | Priority seed",
+        "collectibility_tier": "A",
         "collectible_format_bonus": 0,
         "collectible_format_evidence": [],
         "collectible_variants": "",
         "collector_profile": "",
-        "contributor": "Robert Frank",
+        "contributor": "Stephen Shore",
         "documentary_relevance": "",
         "edition_reasons": [
           "exact collectible edition is not established by the listing metadata"
@@ -48,16 +49,16 @@
         "first_edition_notes": "",
         "first_monograph": "",
         "isbn": "",
-        "publisher": "",
+        "publisher": "Phaidon Press, London, 2005",
         "reason": "exact title + contributor",
-        "record_id": "robert-frank-americans",
+        "record_id": "stephen-shore-american-surfaces",
         "score": 100,
-        "search_priority": "0",
+        "search_priority": "1",
         "source": "Priority seed",
         "special_edition_priority": "",
         "strong_buy_gbp": null,
-        "title": "The Americans",
-        "year": ""
+        "title": "American Surfaces",
+        "year": "2005"
       },
       "buying_options": [
         "FIXED_PRICE",
@@ -67,13 +68,127 @@
       "category_path": "",
       "collecting_lane": "classic or established canon",
       "condition": "Like New",
-      "context": "Explore the compelling world of American photography with \"Robert Frank: the Americans,\" a seminal work from the viewpoint of Jack Kerouac. Published by Steidl Publishers in 2008, this hardcover edition offers a deep dive into the picturesque and poignant landscapes that define the essence of the American experience. With 180 pages of rich visuals, this monograph is a must-have for enthusiasts of art and photography. The book measures 184mm in height and 209mm in width, making it a substantial addition to any collection. Printed in Germany, it includes a dust jacket and is illustrated, enhancing the reading and viewing experience. As a first edition, it holds a special place for collectors and admirers of Kerouac's literary genius. | Like New | 2025-04-07T18:30:01.000Z | FIXED_PRICE BEST_OFFER",
-      "external_id": "135680430891",
-      "image_url": "https://i.ebayimg.com/images/g/kP8AAeSwghVn896I/s-l225.jpg",
-      "item_creation_date": "2025-04-07T18:30:01.000Z",
+      "context": "Delve into the captivating world of photography with Stephen Shore's \"American Surfaces,\" a revised and extended edition that takes you on an intimate journey across the United States. Published by Phaidon Press LTD in 2020, this hardcover masterpiece spans 254 pages and is a must-have for enthusiasts of the genre. Exploring a diverse range of topics within photography, the book is presented in English and offers a unique glimpse into Shore's artistic vision. Without a signature, the focus remains purely on the visuals and the narrative of the work itself, inviting readers to appreciate the craft and dedication of one of photography's notable figures. | Like New | 2025-05-21T13:15:19.000Z | FIXED_PRICE BEST_OFFER",
+      "external_id": "127125938117",
+      "image_url": "https://i.ebayimg.com/images/g/npwAAeSwBb1oLdDa/s-l225.jpg",
+      "item_creation_date": "2025-05-21T13:15:19.000Z",
       "item_end_date": "",
-      "key": "ebay:135680430891",
-      "landed_price_gbp": 132.58,
+      "key": "ebay:127125938117",
+      "landed_price_gbp": 82.41,
+      "opportunity_kind": "collectible title or edition lead",
+      "opportunity_reasons": [
+        "recognition 100/100",
+        "collectibility tier A",
+        "price scoring includes returned delivery cost",
+        "immediate fixed-price purchase possible",
+        "Best Offer available",
+        "private individual seller",
+        "low-volume seller account",
+        "edition evidence: unknown"
+      ],
+      "opportunity_score": 78,
+      "pending_since": "2026-09-02T07:13:35Z",
+      "price_currency": "GBP",
+      "price_gbp": 78.7,
+      "price_value": 78.7,
+      "private_seller": true,
+      "recognition_matches": [
+        {
+          "awards_and_evidence": "",
+          "bargain_gbp": null,
+          "canon_sources": "Parr/Badger V2 | Priority seed",
+          "collectibility_tier": "A",
+          "collectible_format_bonus": 0,
+          "collectible_format_evidence": [],
+          "collectible_variants": "",
+          "collector_profile": "",
+          "contributor": "Stephen Shore",
+          "documentary_relevance": "",
+          "edition_reasons": [
+            "exact collectible edition is not established by the listing metadata"
+          ],
+          "edition_status": "unknown",
+          "evidence_confidence": "High",
+          "first_edition_notes": "",
+          "first_monograph": "",
+          "isbn": "",
+          "publisher": "Phaidon Press, London, 2005",
+          "reason": "exact title + contributor",
+          "record_id": "stephen-shore-american-surfaces",
+          "score": 100,
+          "search_priority": "1",
+          "source": "Priority seed",
+          "special_edition_priority": "",
+          "strong_buy_gbp": null,
+          "title": "American Surfaces",
+          "year": "2005"
+        }
+      ],
+      "recognized": true,
+      "rest_item_id": "v1|127125938117|0",
+      "score_band": "alert",
+      "scoring_version": 2,
+      "search_in_description": false,
+      "search_lane": "library_rotation",
+      "search_query": "Stephen Shore American Surfaces",
+      "seller_account_type": "INDIVIDUAL",
+      "seller_feedback_percentage": "100.0",
+      "seller_feedback_score": 20,
+      "shipping_currency": "GBP",
+      "shipping_value": 3.71,
+      "source_id": "ebay_private_library_rotation",
+      "source_name": "eBay UK private sellers - library_rotation",
+      "tags": "FIXED_PRICE BEST_OFFER",
+      "title": "Stephen Shore: American Surfaces, 1972 by Stephen Shore Revised And Extended",
+      "url": "https://www.ebay.co.uk/itm/127125938117?_skw=Stephen+Shore+American+Surfaces&hash=item1d994bdfc5:g:npwAAeSwBb1oLdDa",
+      "vendor": "miksi4"
+    },
+    "ebay:147386111370": {
+      "best_recognition": {
+        "awards_and_evidence": "",
+        "bargain_gbp": null,
+        "canon_sources": "Parr/Badger V2 | Specialist photography publisher backlist: Schirmer/Mosel | Specialist photography publisher backlist: Aperture | Priority seed",
+        "collectibility_tier": "S",
+        "collectible_format_bonus": 0,
+        "collectible_format_evidence": [],
+        "collectible_variants": "",
+        "collector_profile": "",
+        "contributor": "Stephen Shore",
+        "documentary_relevance": "",
+        "edition_reasons": [
+          "exact collectible edition is not established by the listing metadata"
+        ],
+        "edition_status": "unknown",
+        "evidence_confidence": "High",
+        "first_edition_notes": "",
+        "first_monograph": "",
+        "isbn": "",
+        "publisher": "Aperture, Millerton, New York, 1982",
+        "reason": "exact title + contributor",
+        "record_id": "stephen-shore-uncommon-places",
+        "score": 100,
+        "search_priority": "0",
+        "source": "Priority seed",
+        "special_edition_priority": "",
+        "strong_buy_gbp": null,
+        "title": "Uncommon Places",
+        "year": "1982"
+      },
+      "buying_options": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "category_id": "261186",
+      "category_path": "",
+      "collecting_lane": "classic or established canon",
+      "condition": "Very Good",
+      "context": "For sale is the definitive, landmark 188-page monograph Uncommon Places: The Complete Works by pioneer color photographer Stephen Shore. Pages & Plates: Internally near-fine. The page block is crisp and white. | Very Good | 2026-06-19T19:12:53.000Z | FIXED_PRICE BEST_OFFER",
+      "external_id": "147386111370",
+      "image_url": "https://i.ebayimg.com/images/g/JaQAAeSwFSBqNZNX/s-l225.jpg",
+      "item_creation_date": "2026-06-19T19:12:53.000Z",
+      "item_end_date": "",
+      "key": "ebay:147386111370",
+      "landed_price_gbp": 80.69,
       "opportunity_kind": "collectible title or edition lead",
       "opportunity_reasons": [
         "recognition 100/100",
@@ -85,23 +200,23 @@
         "seller uses collector-aware language",
         "edition evidence: unknown"
       ],
-      "opportunity_score": 76,
-      "pending_since": "2026-09-02T07:04:50Z",
+      "opportunity_score": 78,
+      "pending_since": "2026-09-02T07:13:35Z",
       "price_currency": "GBP",
-      "price_gbp": 125.5,
-      "price_value": 125.5,
+      "price_gbp": 73.5,
+      "price_value": 73.5,
       "private_seller": true,
       "recognition_matches": [
         {
           "awards_and_evidence": "",
           "bargain_gbp": null,
-          "canon_sources": "Parr/Badger V1 + Roth 101 | Priority seed",
+          "canon_sources": "Parr/Badger V2 | Specialist photography publisher backlist: Schirmer/Mosel | Specialist photography publisher backlist: Aperture | Priority seed",
           "collectibility_tier": "S",
           "collectible_format_bonus": 0,
           "collectible_format_evidence": [],
           "collectible_variants": "",
           "collector_profile": "",
-          "contributor": "Robert Frank",
+          "contributor": "Stephen Shore",
           "documentary_relevance": "",
           "edition_reasons": [
             "exact collectible edition is not established by the listing metadata"
@@ -111,67 +226,92 @@
           "first_edition_notes": "",
           "first_monograph": "",
           "isbn": "",
-          "publisher": "",
+          "publisher": "Aperture, Millerton, New York, 1982",
           "reason": "exact title + contributor",
-          "record_id": "robert-frank-americans",
+          "record_id": "stephen-shore-uncommon-places",
           "score": 100,
           "search_priority": "0",
           "source": "Priority seed",
           "special_edition_priority": "",
           "strong_buy_gbp": null,
-          "title": "The Americans",
-          "year": ""
+          "title": "Uncommon Places",
+          "year": "1982"
+        },
+        {
+          "awards_and_evidence": "",
+          "bargain_gbp": null,
+          "canon_sources": "Specialist photography publisher backlist: Aperture",
+          "collectibility_tier": "C",
+          "collectible_variants": "",
+          "collector_profile": "",
+          "contributor": "Stephen Sh",
+          "documentary_relevance": "",
+          "evidence_confidence": "Medium",
+          "first_edition_notes": "Work-level metadata only; verify the exact publisher edition and printing.",
+          "first_monograph": "",
+          "isbn": "",
+          "publisher": "Aperture",
+          "reason": "partial title + contributor",
+          "record_id": "openlibrary:OL21546968W",
+          "score": 86,
+          "search_priority": "4",
+          "source": "https://openlibrary.org/works/OL21546968W",
+          "special_edition_priority": "",
+          "strong_buy_gbp": null,
+          "title": "Stephen Shore - Uncommon Places",
+          "year": "2014"
         }
       ],
       "recognized": true,
-      "rest_item_id": "v1|135680430891|0",
+      "rest_item_id": "v1|147386111370|0",
       "score_band": "alert",
       "scoring_version": 2,
       "search_in_description": true,
       "search_lane": "classic_hot",
-      "search_query": "Robert Frank The Americans",
+      "search_query": "Stephen Shore Uncommon Places",
       "seller_account_type": "INDIVIDUAL",
       "seller_feedback_percentage": "100.0",
-      "seller_feedback_score": 2033,
+      "seller_feedback_score": 202,
       "shipping_currency": "GBP",
-      "shipping_value": 7.08,
+      "shipping_value": 7.19,
       "source_id": "ebay_private_classic_hot",
       "source_name": "eBay UK private sellers - classic_hot",
       "tags": "FIXED_PRICE BEST_OFFER",
-      "title": "Robert Frank The Americans Jack Kerouac First Print Steidl 2008 HC DJ Tritone",
-      "url": "https://www.ebay.co.uk/itm/135680430891?_skw=Robert+Frank+The+Americans&hash=item1f972f132b:g:kP8AAeSwghVn896I",
-      "vendor": "wardrobeangel"
+      "title": "UNCOMMON PLACES STEPHEN SHORE 2004 First Aperture Edition (ISBN: 1-931788-34-2).",
+      "url": "https://www.ebay.co.uk/itm/147386111370?_skw=Stephen+Shore+Uncommon+Places&hash=item2250e5958a:g:JaQAAeSwFSBqNZNX",
+      "vendor": "keha.uk.uprjmmxjts"
     },
-    "ebay:296948968677": {
+    "ebay:177332868040": {
       "best_recognition": {
         "awards_and_evidence": "",
         "bargain_gbp": null,
-        "canon_sources": "Parr/Badger V1 + Roth 101 | Priority seed",
-        "collectibility_tier": "S",
+        "canon_sources": "Parr/Badger V2 | Priority seed",
+        "collectibility_tier": "A",
         "collectible_format_bonus": 0,
         "collectible_format_evidence": [],
         "collectible_variants": "",
         "collector_profile": "",
-        "contributor": "Robert Frank",
+        "contributor": "Stephen Shore",
         "documentary_relevance": "",
         "edition_reasons": [
-          "exact collectible edition is not established by the listing metadata"
+          "target year 2005 appears",
+          "seller claims a first edition but target metadata is unconfirmed"
         ],
-        "edition_status": "unknown",
+        "edition_status": "claimed",
         "evidence_confidence": "High",
         "first_edition_notes": "",
         "first_monograph": "",
         "isbn": "",
-        "publisher": "",
+        "publisher": "Phaidon Press, London, 2005",
         "reason": "exact title + contributor",
-        "record_id": "robert-frank-americans",
+        "record_id": "stephen-shore-american-surfaces",
         "score": 100,
-        "search_priority": "0",
+        "search_priority": "1",
         "source": "Priority seed",
         "special_edition_priority": "",
         "strong_buy_gbp": null,
-        "title": "The Americans",
-        "year": ""
+        "title": "American Surfaces",
+        "year": "2005"
       },
       "buying_options": [
         "FIXED_PRICE",
@@ -181,13 +321,244 @@
       "category_path": "",
       "collecting_lane": "classic or established canon",
       "condition": "Very Good",
-      "context": "THE AMERICANS ROBERT FRANK Photo Album | Very Good | 2025-01-17T17:48:13.000Z | FIXED_PRICE BEST_OFFER",
-      "external_id": "296948968677",
-      "image_url": "https://i.ebayimg.com/images/g/qmwAAOSw8hxnipeN/s-l225.jpg",
-      "item_creation_date": "2025-01-17T17:48:13.000Z",
+      "context": "Very Good | 2025-08-12T10:31:30.000Z | FIXED_PRICE BEST_OFFER",
+      "external_id": "177332868040",
+      "image_url": "https://i.ebayimg.com/images/g/T30AAOSw91Zmuktl/s-l225.jpg",
+      "item_creation_date": "2025-08-12T10:31:30.000Z",
       "item_end_date": "",
-      "key": "ebay:296948968677",
-      "landed_price_gbp": 200.1,
+      "key": "ebay:177332868040",
+      "landed_price_gbp": 171.55,
+      "opportunity_kind": "collectible title or edition lead",
+      "opportunity_reasons": [
+        "recognition 100/100",
+        "collectibility tier A",
+        "price scoring includes returned delivery cost",
+        "immediate fixed-price purchase possible",
+        "Best Offer available",
+        "private individual seller",
+        "minimal bibliographic detail",
+        "seller uses collector-aware language",
+        "edition evidence: claimed"
+      ],
+      "opportunity_score": 77,
+      "pending_since": "2026-09-02T07:13:35Z",
+      "price_currency": "GBP",
+      "price_gbp": 128.66,
+      "price_value": 128.66,
+      "private_seller": true,
+      "recognition_matches": [
+        {
+          "awards_and_evidence": "",
+          "bargain_gbp": null,
+          "canon_sources": "Parr/Badger V2 | Priority seed",
+          "collectibility_tier": "A",
+          "collectible_format_bonus": 0,
+          "collectible_format_evidence": [],
+          "collectible_variants": "",
+          "collector_profile": "",
+          "contributor": "Stephen Shore",
+          "documentary_relevance": "",
+          "edition_reasons": [
+            "target year 2005 appears",
+            "seller claims a first edition but target metadata is unconfirmed"
+          ],
+          "edition_status": "claimed",
+          "evidence_confidence": "High",
+          "first_edition_notes": "",
+          "first_monograph": "",
+          "isbn": "",
+          "publisher": "Phaidon Press, London, 2005",
+          "reason": "exact title + contributor",
+          "record_id": "stephen-shore-american-surfaces",
+          "score": 100,
+          "search_priority": "1",
+          "source": "Priority seed",
+          "special_edition_priority": "",
+          "strong_buy_gbp": null,
+          "title": "American Surfaces",
+          "year": "2005"
+        }
+      ],
+      "recognized": true,
+      "rest_item_id": "v1|177332868040|0",
+      "score_band": "alert",
+      "scoring_version": 2,
+      "search_in_description": false,
+      "search_lane": "library_rotation",
+      "search_query": "Stephen Shore American Surfaces",
+      "seller_account_type": "INDIVIDUAL",
+      "seller_feedback_percentage": "100.0",
+      "seller_feedback_score": 105,
+      "shipping_currency": "GBP",
+      "shipping_value": 42.89,
+      "source_id": "ebay_private_library_rotation",
+      "source_name": "eBay UK private sellers - library_rotation",
+      "tags": "FIXED_PRICE BEST_OFFER",
+      "title": "Stephen Shore “American Surfaces”, Phaidon 2005 Hardcover First Edition",
+      "url": "https://www.ebay.co.uk/itm/177332868040?_skw=Stephen+Shore+American+Surfaces&hash=item2949dcd3c8:g:T30AAOSw91Zmuktl",
+      "vendor": "g.arnold.5"
+    },
+    "ebay:198525328895": {
+      "best_recognition": {
+        "awards_and_evidence": "",
+        "bargain_gbp": null,
+        "canon_sources": "Parr/Badger V1 + Roth 101",
+        "collectibility_tier": "S",
+        "collectible_format_bonus": 0,
+        "collectible_format_evidence": [],
+        "collectible_variants": "",
+        "collector_profile": "",
+        "contributor": "Stieglitz, Alfred",
+        "documentary_relevance": "",
+        "edition_reasons": [
+          "exact collectible edition is not established by the listing metadata"
+        ],
+        "edition_status": "unknown",
+        "evidence_confidence": "Medium provisional",
+        "first_edition_notes": "",
+        "first_monograph": "",
+        "isbn": "",
+        "publisher": "",
+        "reason": "exact title + contributor",
+        "record_id": "canon:stieglitz alfred:camera work",
+        "score": 100,
+        "search_priority": "1",
+        "source": "V1: 8 | Roth 101 p.40",
+        "special_edition_priority": "",
+        "strong_buy_gbp": null,
+        "title": "Camera Work",
+        "year": ""
+      },
+      "buying_options": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "category_id": "261186",
+      "category_path": "",
+      "collecting_lane": "classic or established canon",
+      "condition": "Like New",
+      "context": "This is a stunning collection of the camera work of the great pioneer of photography Alfred Stieglitz . It is in nearly new condition. | Like New | 2026-07-26T12:01:32.000Z | FIXED_PRICE BEST_OFFER",
+      "external_id": "198525328895",
+      "image_url": "https://i.ebayimg.com/images/g/6FEAAeSwzM5qZfYj/s-l225.jpg",
+      "item_creation_date": "2026-07-26T12:01:32.000Z",
+      "item_end_date": "",
+      "key": "ebay:198525328895",
+      "landed_price_gbp": 15.88,
+      "opportunity_kind": "collectible title or edition lead",
+      "opportunity_reasons": [
+        "recognition 100/100",
+        "collectibility tier S",
+        "very low asking price",
+        "price scoring includes returned delivery cost",
+        "immediate fixed-price purchase possible",
+        "Best Offer available",
+        "private individual seller",
+        "photographer not fully identified in title",
+        "edition evidence: unknown"
+      ],
+      "opportunity_score": 78,
+      "pending_since": "2026-09-02T07:13:35Z",
+      "price_currency": "GBP",
+      "price_gbp": 12.94,
+      "price_value": 12.94,
+      "private_seller": true,
+      "recognition_matches": [
+        {
+          "awards_and_evidence": "",
+          "bargain_gbp": null,
+          "canon_sources": "Parr/Badger V1 + Roth 101",
+          "collectibility_tier": "S",
+          "collectible_format_bonus": 0,
+          "collectible_format_evidence": [],
+          "collectible_variants": "",
+          "collector_profile": "",
+          "contributor": "Stieglitz, Alfred",
+          "documentary_relevance": "",
+          "edition_reasons": [
+            "exact collectible edition is not established by the listing metadata"
+          ],
+          "edition_status": "unknown",
+          "evidence_confidence": "Medium provisional",
+          "first_edition_notes": "",
+          "first_monograph": "",
+          "isbn": "",
+          "publisher": "",
+          "reason": "exact title + contributor",
+          "record_id": "canon:stieglitz alfred:camera work",
+          "score": 100,
+          "search_priority": "1",
+          "source": "V1: 8 | Roth 101 p.40",
+          "special_edition_priority": "",
+          "strong_buy_gbp": null,
+          "title": "Camera Work",
+          "year": ""
+        }
+      ],
+      "recognized": true,
+      "rest_item_id": "v1|198525328895|0",
+      "score_band": "alert",
+      "scoring_version": 2,
+      "search_in_description": false,
+      "search_lane": "library_rotation",
+      "search_query": "Stieglitz, Alfred Camera Work",
+      "seller_account_type": "INDIVIDUAL",
+      "seller_feedback_percentage": "100.0",
+      "seller_feedback_score": 481,
+      "shipping_currency": "GBP",
+      "shipping_value": 2.94,
+      "source_id": "ebay_private_library_rotation",
+      "source_name": "eBay UK private sellers - library_rotation",
+      "tags": "FIXED_PRICE BEST_OFFER",
+      "title": "Alfred Stieglitz Camera Work, The Complete Works, Excellent Condition",
+      "url": "https://www.ebay.co.uk/itm/198525328895?_skw=Stieglitz%2C+Alfred+Camera+Work&hash=item2e39081dff:g:6FEAAeSwzM5qZfYj",
+      "vendor": "lordnestor"
+    },
+    "ebay:203520688572": {
+      "best_recognition": {
+        "awards_and_evidence": "",
+        "bargain_gbp": null,
+        "canon_sources": "Parr/Badger V2 | Specialist photography publisher backlist: Schirmer/Mosel | Specialist photography publisher backlist: Aperture | Priority seed",
+        "collectibility_tier": "S",
+        "collectible_format_bonus": 0,
+        "collectible_format_evidence": [],
+        "collectible_variants": "",
+        "collector_profile": "",
+        "contributor": "Stephen Shore",
+        "documentary_relevance": "",
+        "edition_reasons": [
+          "exact collectible edition is not established by the listing metadata"
+        ],
+        "edition_status": "unknown",
+        "evidence_confidence": "High",
+        "first_edition_notes": "",
+        "first_monograph": "",
+        "isbn": "",
+        "publisher": "Aperture, Millerton, New York, 1982",
+        "reason": "exact title + contributor",
+        "record_id": "stephen-shore-uncommon-places",
+        "score": 100,
+        "search_priority": "0",
+        "source": "Priority seed",
+        "special_edition_priority": "",
+        "strong_buy_gbp": null,
+        "title": "Uncommon Places",
+        "year": "1982"
+      },
+      "buying_options": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "category_id": "261186",
+      "category_path": "",
+      "collecting_lane": "classic or established canon",
+      "condition": "New",
+      "context": "New | 2021-07-10T08:40:51.000Z | FIXED_PRICE BEST_OFFER",
+      "external_id": "203520688572",
+      "image_url": "https://i.ebayimg.com/images/g/8sEAAOSwSqxe9xRI/s-l225.jpg",
+      "item_creation_date": "2021-07-10T08:40:51.000Z",
+      "item_end_date": "",
+      "key": "ebay:203520688572",
+      "landed_price_gbp": 204.68,
       "opportunity_kind": "collectible title or edition lead",
       "opportunity_reasons": [
         "recognition 100/100",
@@ -197,25 +568,26 @@
         "Best Offer available",
         "private individual seller",
         "minimal bibliographic detail",
+        "seller uses collector-aware language",
         "edition evidence: unknown"
       ],
       "opportunity_score": 78,
-      "pending_since": "2026-09-02T07:04:50Z",
+      "pending_since": "2026-09-02T07:13:35Z",
       "price_currency": "GBP",
-      "price_gbp": 193.1,
-      "price_value": 193.1,
+      "price_gbp": 195.18,
+      "price_value": 195.18,
       "private_seller": true,
       "recognition_matches": [
         {
           "awards_and_evidence": "",
           "bargain_gbp": null,
-          "canon_sources": "Parr/Badger V1 + Roth 101 | Priority seed",
+          "canon_sources": "Parr/Badger V2 | Specialist photography publisher backlist: Schirmer/Mosel | Specialist photography publisher backlist: Aperture | Priority seed",
           "collectibility_tier": "S",
           "collectible_format_bonus": 0,
           "collectible_format_evidence": [],
           "collectible_variants": "",
           "collector_profile": "",
-          "contributor": "Robert Frank",
+          "contributor": "Stephen Shore",
           "documentary_relevance": "",
           "edition_reasons": [
             "exact collectible edition is not established by the listing metadata"
@@ -225,48 +597,673 @@
           "first_edition_notes": "",
           "first_monograph": "",
           "isbn": "",
-          "publisher": "",
+          "publisher": "Aperture, Millerton, New York, 1982",
           "reason": "exact title + contributor",
-          "record_id": "robert-frank-americans",
+          "record_id": "stephen-shore-uncommon-places",
           "score": 100,
           "search_priority": "0",
           "source": "Priority seed",
           "special_edition_priority": "",
           "strong_buy_gbp": null,
-          "title": "The Americans",
-          "year": ""
+          "title": "Uncommon Places",
+          "year": "1982"
+        },
+        {
+          "awards_and_evidence": "",
+          "bargain_gbp": null,
+          "canon_sources": "Specialist photography publisher backlist: Aperture",
+          "collectibility_tier": "C",
+          "collectible_variants": "",
+          "collector_profile": "",
+          "contributor": "Stephen Sh",
+          "documentary_relevance": "",
+          "evidence_confidence": "Medium",
+          "first_edition_notes": "Work-level metadata only; verify the exact publisher edition and printing.",
+          "first_monograph": "",
+          "isbn": "",
+          "publisher": "Aperture",
+          "reason": "partial title + contributor",
+          "record_id": "openlibrary:OL21546968W",
+          "score": 86,
+          "search_priority": "4",
+          "source": "https://openlibrary.org/works/OL21546968W",
+          "special_edition_priority": "",
+          "strong_buy_gbp": null,
+          "title": "Stephen Shore - Uncommon Places",
+          "year": "2014"
         }
       ],
       "recognized": true,
-      "rest_item_id": "v1|296948968677|0",
+      "rest_item_id": "v1|203520688572|0",
       "score_band": "alert",
       "scoring_version": 2,
       "search_in_description": true,
       "search_lane": "classic_hot",
-      "search_query": "Robert Frank The Americans",
+      "search_query": "Stephen Shore Uncommon Places",
       "seller_account_type": "INDIVIDUAL",
       "seller_feedback_percentage": "100.0",
-      "seller_feedback_score": 142,
+      "seller_feedback_score": 1469,
       "shipping_currency": "GBP",
-      "shipping_value": 7.0,
+      "shipping_value": 9.5,
       "source_id": "ebay_private_classic_hot",
       "source_name": "eBay UK private sellers - classic_hot",
       "tags": "FIXED_PRICE BEST_OFFER",
-      "title": "THE AMERICANS ROBERT FRANK Photo Album",
-      "url": "https://www.ebay.co.uk/itm/296948968677?_skw=Robert+Frank+The+Americans&hash=item452389ace5:g:qmwAAOSw8hxnipeN",
-      "vendor": "thisnewfuture"
+      "title": "Uncommon Places Stephen Shore.Hardback Rare Thames And Hudson Edition.New.",
+      "url": "https://www.ebay.co.uk/itm/203520688572?_skw=Stephen+Shore+Uncommon+Places&hash=item2f62c741bc:g:8sEAAOSwSqxe9xRI",
+      "vendor": "geoffgefh"
     },
-    "ebay:405088779485": {
+    "ebay:236970526410": {
+      "best_recognition": {
+        "awards_and_evidence": "Magnum documentary project made across 46 states over five years",
+        "bargain_gbp": null,
+        "canon_sources": "Curated contemporary documentary",
+        "collectibility_tier": "A",
+        "collectible_format_bonus": 0,
+        "collectible_format_evidence": [],
+        "collectible_variants": "Signed copies and publisher or artist editions may occur",
+        "collector_profile": "American social documentary | poverty | landscape | inequality",
+        "contributor": "Matt Black",
+        "documentary_relevance": "HIGH",
+        "edition_reasons": [
+          "target year 2021 appears"
+        ],
+        "edition_status": "plausible",
+        "evidence_confidence": "HIGH",
+        "first_edition_notes": "Original 2021 monograph; verify printing and any signed or special issue.",
+        "first_monograph": "YES",
+        "isbn": "",
+        "publisher": "Thames & Hudson",
+        "reason": "exact title + contributor",
+        "record_id": "contemporary:matt-black-american-geography",
+        "score": 100,
+        "search_priority": "0",
+        "source": "https://www.thamesandhudson.com/products/american-geography",
+        "special_edition_priority": "MEDIUM",
+        "strong_buy_gbp": null,
+        "title": "American Geography",
+        "year": "2021"
+      },
+      "buying_options": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "category_id": "261186",
+      "category_path": "",
+      "collecting_lane": "recent documentary",
+      "condition": "Very Good",
+      "context": "Very good condition indeed Please study the pictures as they formed the bulk of the description. | Very Good | 2026-07-29T09:16:55.000Z | FIXED_PRICE BEST_OFFER",
+      "external_id": "236970526410",
+      "image_url": "https://i.ebayimg.com/images/g/N7MAAeSw3CxqacQb/s-l225.jpg",
+      "item_creation_date": "2026-07-29T09:16:55.000Z",
+      "item_end_date": "",
+      "key": "ebay:236970526410",
+      "landed_price_gbp": 35.28,
+      "opportunity_kind": "collectible title or edition lead",
+      "opportunity_reasons": [
+        "recognition 100/100",
+        "collectibility tier A",
+        "high fit for documentary collecting profile",
+        "recognised first monograph",
+        "low asking price",
+        "price scoring includes returned delivery cost",
+        "immediate fixed-price purchase possible",
+        "Best Offer available",
+        "private individual seller",
+        "minimal bibliographic detail",
+        "edition evidence: plausible"
+      ],
+      "opportunity_score": 84,
+      "pending_since": "2026-09-02T07:13:35Z",
+      "price_currency": "GBP",
+      "price_gbp": 31.9,
+      "price_value": 31.9,
+      "private_seller": true,
+      "recognition_matches": [
+        {
+          "awards_and_evidence": "Magnum documentary project made across 46 states over five years",
+          "bargain_gbp": null,
+          "canon_sources": "Curated contemporary documentary",
+          "collectibility_tier": "A",
+          "collectible_format_bonus": 0,
+          "collectible_format_evidence": [],
+          "collectible_variants": "Signed copies and publisher or artist editions may occur",
+          "collector_profile": "American social documentary | poverty | landscape | inequality",
+          "contributor": "Matt Black",
+          "documentary_relevance": "HIGH",
+          "edition_reasons": [
+            "target year 2021 appears"
+          ],
+          "edition_status": "plausible",
+          "evidence_confidence": "HIGH",
+          "first_edition_notes": "Original 2021 monograph; verify printing and any signed or special issue.",
+          "first_monograph": "YES",
+          "isbn": "",
+          "publisher": "Thames & Hudson",
+          "reason": "exact title + contributor",
+          "record_id": "contemporary:matt-black-american-geography",
+          "score": 100,
+          "search_priority": "0",
+          "source": "https://www.thamesandhudson.com/products/american-geography",
+          "special_edition_priority": "MEDIUM",
+          "strong_buy_gbp": null,
+          "title": "American Geography",
+          "year": "2021"
+        }
+      ],
+      "recognized": true,
+      "rest_item_id": "v1|236970526410|0",
+      "score_band": "alert",
+      "scoring_version": 2,
+      "search_in_description": true,
+      "search_lane": "contemporary_hot",
+      "search_query": "Matt Black American Geography",
+      "seller_account_type": "INDIVIDUAL",
+      "seller_feedback_percentage": "100.0",
+      "seller_feedback_score": 926,
+      "shipping_currency": "GBP",
+      "shipping_value": 3.38,
+      "source_id": "ebay_private_contemporary_hot",
+      "source_name": "eBay UK private sellers - contemporary_hot",
+      "tags": "FIXED_PRICE BEST_OFFER",
+      "title": "American Geography : A Reckoning with a Dream by Matt Black (2021, Hardcover)",
+      "url": "https://www.ebay.co.uk/itm/236970526410?_skw=Matt+Black+American+Geography&hash=item372c8b46ca:g:N7MAAeSw3CxqacQb",
+      "vendor": "blackbooks"
+    },
+    "ebay:255683043622": {
       "best_recognition": {
         "awards_and_evidence": "",
         "bargain_gbp": null,
-        "canon_sources": "Parr/Badger V1 + Roth 101 | Priority seed",
+        "canon_sources": "Parr/Badger V2 | Specialist photography publisher backlist: Dewi Lewis | Priority seed",
+        "collectibility_tier": "A",
+        "collectible_format_bonus": 0,
+        "collectible_format_evidence": [],
+        "collectible_variants": "",
+        "collector_profile": "",
+        "contributor": "Tom Wood",
+        "documentary_relevance": "",
+        "edition_reasons": [
+          "target year 1998 appears"
+        ],
+        "edition_status": "plausible",
+        "evidence_confidence": "High",
+        "first_edition_notes": "",
+        "first_monograph": "",
+        "isbn": "",
+        "publisher": "Dewi Lewis Publishing, Stockport, 1998",
+        "reason": "exact title + contributor",
+        "record_id": "tom-wood-all-zones",
+        "score": 100,
+        "search_priority": "1",
+        "source": "Priority seed",
+        "special_edition_priority": "",
+        "strong_buy_gbp": null,
+        "title": "All Zones Off Peak",
+        "year": "1998"
+      },
+      "buying_options": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "category_id": "261186",
+      "category_path": "",
+      "collecting_lane": "classic or established canon",
+      "condition": "Very Good",
+      "context": "Art photography book called All Zones Off Peak by Tom Wood, 1st edition from 1998. Very good condition. | Very Good | 2022-08-18T18:02:08.000Z | FIXED_PRICE BEST_OFFER",
+      "external_id": "255683043622",
+      "image_url": "https://i.ebayimg.com/images/g/oEcAAOSwlY9i~ii8/s-l225.jpg",
+      "item_creation_date": "2022-08-18T18:02:08.000Z",
+      "item_end_date": "",
+      "key": "ebay:255683043622",
+      "landed_price_gbp": 193.7,
+      "opportunity_kind": "collectible title or edition lead",
+      "opportunity_reasons": [
+        "recognition 100/100",
+        "collectibility tier A",
+        "price scoring includes returned delivery cost",
+        "immediate fixed-price purchase possible",
+        "Best Offer available",
+        "private individual seller",
+        "minimal bibliographic detail",
+        "low-volume seller account",
+        "edition evidence: plausible"
+      ],
+      "opportunity_score": 84,
+      "pending_since": "2026-09-02T07:13:35Z",
+      "price_currency": "GBP",
+      "price_gbp": 187.9,
+      "price_value": 187.9,
+      "private_seller": true,
+      "recognition_matches": [
+        {
+          "awards_and_evidence": "",
+          "bargain_gbp": null,
+          "canon_sources": "Parr/Badger V2 | Specialist photography publisher backlist: Dewi Lewis | Priority seed",
+          "collectibility_tier": "A",
+          "collectible_format_bonus": 0,
+          "collectible_format_evidence": [],
+          "collectible_variants": "",
+          "collector_profile": "",
+          "contributor": "Tom Wood",
+          "documentary_relevance": "",
+          "edition_reasons": [
+            "target year 1998 appears"
+          ],
+          "edition_status": "plausible",
+          "evidence_confidence": "High",
+          "first_edition_notes": "",
+          "first_monograph": "",
+          "isbn": "",
+          "publisher": "Dewi Lewis Publishing, Stockport, 1998",
+          "reason": "exact title + contributor",
+          "record_id": "tom-wood-all-zones",
+          "score": 100,
+          "search_priority": "1",
+          "source": "Priority seed",
+          "special_edition_priority": "",
+          "strong_buy_gbp": null,
+          "title": "All Zones Off Peak",
+          "year": "1998"
+        }
+      ],
+      "recognized": true,
+      "rest_item_id": "v1|255683043622|0",
+      "score_band": "alert",
+      "scoring_version": 2,
+      "search_in_description": false,
+      "search_lane": "library_rotation",
+      "search_query": "Tom Wood All Zones Off Peak",
+      "seller_account_type": "INDIVIDUAL",
+      "seller_feedback_percentage": "0.0",
+      "seller_feedback_score": 16,
+      "shipping_currency": "GBP",
+      "shipping_value": 5.8,
+      "source_id": "ebay_private_library_rotation",
+      "source_name": "eBay UK private sellers - library_rotation",
+      "tags": "FIXED_PRICE BEST_OFFER",
+      "title": "Art photography book called All Zones Off peak by Tom Wood, 1st Ed from 1998",
+      "url": "https://www.ebay.co.uk/itm/255683043622?_skw=Tom+Wood+All+Zones+Off+Peak&hash=item3b87e5a126:g:oEcAAOSwlY9i~ii8",
+      "vendor": "crw098"
+    },
+    "ebay:276597822779": {
+      "best_recognition": {
+        "awards_and_evidence": "Acclaimed London street-photography title by an internationally recognised British photographer",
+        "bargain_gbp": null,
+        "canon_sources": "Curated contemporary documentary",
+        "collectibility_tier": "A",
+        "collectible_format_bonus": 9,
+        "collectible_format_evidence": [
+          "signed by the photographer"
+        ],
+        "collectible_variants": "Third-edition special issue with signed book and a choice of four signed 10 x 8 inch archival pigment prints | complete four-print set",
+        "collector_profile": "British street documentary | London | everyday life | colour",
+        "contributor": "Matt Stuart",
+        "documentary_relevance": "HIGH",
+        "edition_reasons": [
+          "exact collectible edition is not established by the listing metadata"
+        ],
+        "edition_status": "unknown",
+        "evidence_confidence": "HIGH",
+        "first_edition_notes": "The current Bluecoat issue is a redesigned third edition; do not confuse it with the earlier collectible first edition.",
+        "first_monograph": "NO",
+        "isbn": "",
+        "publisher": "Bluecoat Press",
+        "reason": "exact title + contributor",
+        "record_id": "contemporary:matt-stuart-all-that-life",
+        "score": 100,
+        "search_priority": "0",
+        "source": "https://bluecoatpress.co.uk/product/all-that-life-can-afford-special-print-edition/",
+        "special_edition_priority": "HIGH",
+        "strong_buy_gbp": null,
+        "title": "All That Life Can Afford",
+        "year": ""
+      },
+      "buying_options": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "category_id": "261186",
+      "category_path": "",
+      "collecting_lane": "recent documentary",
+      "condition": "Like New",
+      "context": "Signed by Matt at two different points in his career, before and during MAGNUM period. | Like New | 2024-08-16T18:03:00.000Z | FIXED_PRICE BEST_OFFER",
+      "external_id": "276597822779",
+      "image_url": "https://i.ebayimg.com/images/g/zXEAAOSwqptmv5Qm/s-l225.jpg",
+      "item_creation_date": "2024-08-16T18:03:00.000Z",
+      "item_end_date": "",
+      "key": "ebay:276597822779",
+      "landed_price_gbp": 240.5,
+      "opportunity_kind": "special edition or collectible object",
+      "opportunity_reasons": [
+        "recognition 100/100",
+        "collectibility tier A",
+        "high fit for documentary collecting profile",
+        "price scoring includes returned delivery cost",
+        "immediate fixed-price purchase possible",
+        "Best Offer available",
+        "private individual seller",
+        "collectible object: signed by the photographer",
+        "listing resembles a known collectible variant",
+        "minimal bibliographic detail",
+        "edition evidence: unknown"
+      ],
+      "opportunity_score": 78,
+      "pending_since": "2026-09-02T07:13:35Z",
+      "price_currency": "GBP",
+      "price_gbp": 234.7,
+      "price_value": 234.7,
+      "private_seller": true,
+      "recognition_matches": [
+        {
+          "awards_and_evidence": "Acclaimed London street-photography title by an internationally recognised British photographer",
+          "bargain_gbp": null,
+          "canon_sources": "Curated contemporary documentary",
+          "collectibility_tier": "A",
+          "collectible_format_bonus": 9,
+          "collectible_format_evidence": [
+            "signed by the photographer"
+          ],
+          "collectible_variants": "Third-edition special issue with signed book and a choice of four signed 10 x 8 inch archival pigment prints | complete four-print set",
+          "collector_profile": "British street documentary | London | everyday life | colour",
+          "contributor": "Matt Stuart",
+          "documentary_relevance": "HIGH",
+          "edition_reasons": [
+            "exact collectible edition is not established by the listing metadata"
+          ],
+          "edition_status": "unknown",
+          "evidence_confidence": "HIGH",
+          "first_edition_notes": "The current Bluecoat issue is a redesigned third edition; do not confuse it with the earlier collectible first edition.",
+          "first_monograph": "NO",
+          "isbn": "",
+          "publisher": "Bluecoat Press",
+          "reason": "exact title + contributor",
+          "record_id": "contemporary:matt-stuart-all-that-life",
+          "score": 100,
+          "search_priority": "0",
+          "source": "https://bluecoatpress.co.uk/product/all-that-life-can-afford-special-print-edition/",
+          "special_edition_priority": "HIGH",
+          "strong_buy_gbp": null,
+          "title": "All That Life Can Afford",
+          "year": ""
+        }
+      ],
+      "recognized": true,
+      "rest_item_id": "v1|276597822779|0",
+      "score_band": "alert",
+      "scoring_version": 2,
+      "search_in_description": true,
+      "search_lane": "contemporary_hot",
+      "search_query": "Matt Stuart All That Life Can Afford",
+      "seller_account_type": "INDIVIDUAL",
+      "seller_feedback_percentage": "100.0",
+      "seller_feedback_score": 695,
+      "shipping_currency": "GBP",
+      "shipping_value": 5.8,
+      "source_id": "ebay_private_contemporary_hot",
+      "source_name": "eBay UK private sellers - contemporary_hot",
+      "tags": "FIXED_PRICE BEST_OFFER",
+      "title": "All That Life Can Afford Signed By Matt Stuart",
+      "url": "https://www.ebay.co.uk/itm/276597822779?_skw=Matt+Stuart+All+That+Life+Can+Afford&hash=item406683d53b:g:zXEAAOSwqptmv5Qm",
+      "vendor": "meletus2005"
+    },
+    "ebay:335758756045": {
+      "best_recognition": {
+        "awards_and_evidence": "",
+        "bargain_gbp": null,
+        "canon_sources": "Parr/Badger V2 | Specialist photography publisher backlist: Schirmer/Mosel | Specialist photography publisher backlist: Aperture | Priority seed",
         "collectibility_tier": "S",
         "collectible_format_bonus": 0,
         "collectible_format_evidence": [],
         "collectible_variants": "",
         "collector_profile": "",
-        "contributor": "Robert Frank",
+        "contributor": "Stephen Shore",
+        "documentary_relevance": "",
+        "edition_reasons": [
+          "exact collectible edition is not established by the listing metadata"
+        ],
+        "edition_status": "unknown",
+        "evidence_confidence": "High",
+        "first_edition_notes": "",
+        "first_monograph": "",
+        "isbn": "",
+        "publisher": "Aperture, Millerton, New York, 1982",
+        "reason": "exact title + contributor",
+        "record_id": "stephen-shore-uncommon-places",
+        "score": 100,
+        "search_priority": "0",
+        "source": "Priority seed",
+        "special_edition_priority": "",
+        "strong_buy_gbp": null,
+        "title": "Uncommon Places",
+        "year": "1982"
+      },
+      "buying_options": [
+        "FIXED_PRICE"
+      ],
+      "category_id": "261186",
+      "category_path": "",
+      "collecting_lane": "classic or established canon",
+      "condition": "Very Good",
+      "context": "Delve into the captivating world of photography with Stephen Shore's \"Uncommon Places,\" a compendium of his complete works that showcases his distinctive flair for capturing the essence of landscapes and everyday scenes. Published by Thames & Hudson, this book is an exploration of light and form, offering readers an immersive visual experience. Language is no barrier as this edition is presented in English, allowing a broad audience to appreciate Shore's artistic vision. Whether you're an avid photographer or simply an admirer of visual artistry, \"Uncommon Places\" is a seminal addition to any collection, inviting you to see the world through Shore's discerning lens. | Very Good | 2025-01-05T22:59:30.000Z | FIXED_PRICE",
+      "external_id": "335758756045",
+      "image_url": "https://i.ebayimg.com/images/g/CQwAAOSw6PRnew6G/s-l225.jpg",
+      "item_creation_date": "2025-01-05T22:59:30.000Z",
+      "item_end_date": "",
+      "key": "ebay:335758756045",
+      "landed_price_gbp": 41.26,
+      "opportunity_kind": "collectible title or edition lead",
+      "opportunity_reasons": [
+        "recognition 100/100",
+        "collectibility tier S",
+        "low asking price",
+        "price scoring includes returned delivery cost",
+        "immediate fixed-price purchase possible",
+        "private individual seller",
+        "low-volume seller account",
+        "edition evidence: unknown"
+      ],
+      "opportunity_score": 78,
+      "pending_since": "2026-09-02T07:13:35Z",
+      "price_currency": "GBP",
+      "price_gbp": 41.26,
+      "price_value": 41.26,
+      "private_seller": true,
+      "recognition_matches": [
+        {
+          "awards_and_evidence": "",
+          "bargain_gbp": null,
+          "canon_sources": "Parr/Badger V2 | Specialist photography publisher backlist: Schirmer/Mosel | Specialist photography publisher backlist: Aperture | Priority seed",
+          "collectibility_tier": "S",
+          "collectible_format_bonus": 0,
+          "collectible_format_evidence": [],
+          "collectible_variants": "",
+          "collector_profile": "",
+          "contributor": "Stephen Shore",
+          "documentary_relevance": "",
+          "edition_reasons": [
+            "exact collectible edition is not established by the listing metadata"
+          ],
+          "edition_status": "unknown",
+          "evidence_confidence": "High",
+          "first_edition_notes": "",
+          "first_monograph": "",
+          "isbn": "",
+          "publisher": "Aperture, Millerton, New York, 1982",
+          "reason": "exact title + contributor",
+          "record_id": "stephen-shore-uncommon-places",
+          "score": 100,
+          "search_priority": "0",
+          "source": "Priority seed",
+          "special_edition_priority": "",
+          "strong_buy_gbp": null,
+          "title": "Uncommon Places",
+          "year": "1982"
+        },
+        {
+          "awards_and_evidence": "",
+          "bargain_gbp": null,
+          "canon_sources": "Specialist photography publisher backlist: Aperture",
+          "collectibility_tier": "C",
+          "collectible_variants": "",
+          "collector_profile": "",
+          "contributor": "Stephen Sh",
+          "documentary_relevance": "",
+          "evidence_confidence": "Medium",
+          "first_edition_notes": "Work-level metadata only; verify the exact publisher edition and printing.",
+          "first_monograph": "",
+          "isbn": "",
+          "publisher": "Aperture",
+          "reason": "partial title + contributor",
+          "record_id": "openlibrary:OL21546968W",
+          "score": 86,
+          "search_priority": "4",
+          "source": "https://openlibrary.org/works/OL21546968W",
+          "special_edition_priority": "",
+          "strong_buy_gbp": null,
+          "title": "Stephen Shore - Uncommon Places",
+          "year": "2014"
+        }
+      ],
+      "recognized": true,
+      "rest_item_id": "v1|335758756045|0",
+      "score_band": "alert",
+      "scoring_version": 2,
+      "search_in_description": true,
+      "search_lane": "classic_hot",
+      "search_query": "Stephen Shore Uncommon Places",
+      "seller_account_type": "INDIVIDUAL",
+      "seller_feedback_percentage": "100.0",
+      "seller_feedback_score": 68,
+      "shipping_currency": "GBP",
+      "shipping_value": 0.0,
+      "source_id": "ebay_private_classic_hot",
+      "source_name": "eBay UK private sellers - classic_hot",
+      "tags": "FIXED_PRICE",
+      "title": "UNCOMMON PLACES STEPHEN SHORE THE COMPLETE WORKS THAMES & HUDSON",
+      "url": "https://www.ebay.co.uk/itm/335758756045?_skw=Stephen+Shore+Uncommon+Places&hash=item4e2cc808cd:g:CQwAAOSw6PRnew6G",
+      "vendor": "houseofmonsteracouk"
+    },
+    "ebay:366625309787": {
+      "best_recognition": {
+        "awards_and_evidence": "",
+        "bargain_gbp": null,
+        "canon_sources": "Parr/Badger V2 | Priority seed",
+        "collectibility_tier": "A",
+        "collectible_format_bonus": 0,
+        "collectible_format_evidence": [],
+        "collectible_variants": "",
+        "collector_profile": "",
+        "contributor": "Takashi Homma",
+        "documentary_relevance": "",
+        "edition_reasons": [
+          "exact collectible edition is not established by the listing metadata"
+        ],
+        "edition_status": "unknown",
+        "evidence_confidence": "High",
+        "first_edition_notes": "",
+        "first_monograph": "",
+        "isbn": "",
+        "publisher": "Korinsha Press, Kyoto, 1998",
+        "reason": "exact title + contributor",
+        "record_id": "takashi-homma-tokyo-suburbia",
+        "score": 100,
+        "search_priority": "1",
+        "source": "Priority seed",
+        "special_edition_priority": "",
+        "strong_buy_gbp": null,
+        "title": "Tokyo Suburbia",
+        "year": "1998"
+      },
+      "buying_options": [
+        "FIXED_PRICE"
+      ],
+      "category_id": "261186",
+      "category_path": "",
+      "collecting_lane": "classic or established canon",
+      "condition": "Very Good",
+      "context": "This is a representative photography book by photographer Takashi Homma, featuring Japanese suburban landscapes captured from his unique perspective. The book features a substantial feel, with thick board paper used consistently from the cover to the inner pages. | Very Good | 2026-08-24T08:49:47.000Z | FIXED_PRICE",
+      "external_id": "366625309787",
+      "image_url": "https://i.ebayimg.com/images/g/xGAAAeSwiCJqjAbb/s-l225.jpg",
+      "item_creation_date": "2026-08-24T08:49:47.000Z",
+      "item_end_date": "",
+      "key": "ebay:366625309787",
+      "landed_price_gbp": 553.21,
+      "opportunity_kind": "collectible title or edition lead",
+      "opportunity_reasons": [
+        "recognition 100/100",
+        "collectibility tier A",
+        "price scoring includes returned delivery cost",
+        "immediate fixed-price purchase possible",
+        "private individual seller",
+        "edition evidence: unknown"
+      ],
+      "opportunity_score": 75,
+      "pending_since": "2026-09-02T07:13:35Z",
+      "price_currency": "GBP",
+      "price_gbp": 553.21,
+      "price_value": 553.21,
+      "private_seller": true,
+      "recognition_matches": [
+        {
+          "awards_and_evidence": "",
+          "bargain_gbp": null,
+          "canon_sources": "Parr/Badger V2 | Priority seed",
+          "collectibility_tier": "A",
+          "collectible_format_bonus": 0,
+          "collectible_format_evidence": [],
+          "collectible_variants": "",
+          "collector_profile": "",
+          "contributor": "Takashi Homma",
+          "documentary_relevance": "",
+          "edition_reasons": [
+            "exact collectible edition is not established by the listing metadata"
+          ],
+          "edition_status": "unknown",
+          "evidence_confidence": "High",
+          "first_edition_notes": "",
+          "first_monograph": "",
+          "isbn": "",
+          "publisher": "Korinsha Press, Kyoto, 1998",
+          "reason": "exact title + contributor",
+          "record_id": "takashi-homma-tokyo-suburbia",
+          "score": 100,
+          "search_priority": "1",
+          "source": "Priority seed",
+          "special_edition_priority": "",
+          "strong_buy_gbp": null,
+          "title": "Tokyo Suburbia",
+          "year": "1998"
+        }
+      ],
+      "recognized": true,
+      "rest_item_id": "v1|366625309787|0",
+      "score_band": "alert",
+      "scoring_version": 2,
+      "search_in_description": false,
+      "search_lane": "library_rotation",
+      "search_query": "Takashi Homma Tokyo Suburbia",
+      "seller_account_type": "INDIVIDUAL",
+      "seller_feedback_percentage": "100.0",
+      "seller_feedback_score": 1343,
+      "shipping_currency": "GBP",
+      "shipping_value": 0.0,
+      "source_id": "ebay_private_library_rotation",
+      "source_name": "eBay UK private sellers - library_rotation",
+      "tags": "FIXED_PRICE",
+      "title": "TOKYO SUBURBIA Takashi Homma Photography Book Japanese Suburban Landscapes",
+      "url": "https://www.ebay.co.uk/itm/366625309787?_skw=Takashi+Homma+Tokyo+Suburbia&hash=item555c92445b:g:xGAAAeSwiCJqjAbb",
+      "vendor": "jpshownin81"
+    },
+    "ebay:376553111522": {
+      "best_recognition": {
+        "awards_and_evidence": "",
+        "bargain_gbp": null,
+        "canon_sources": "Parr/Badger V1 | Priority seed",
+        "collectibility_tier": "S",
+        "collectible_format_bonus": 0,
+        "collectible_format_evidence": [],
+        "collectible_variants": "",
+        "collector_profile": "",
+        "contributor": "Shomei Tomatsu",
         "documentary_relevance": "",
         "edition_reasons": [
           "exact collectible edition is not established by the listing metadata"
@@ -277,14 +1274,14 @@
         "first_monograph": "",
         "isbn": "",
         "publisher": "",
-        "reason": "exact title + contributor",
-        "record_id": "robert-frank-americans",
-        "score": 100,
+        "reason": "partial title + contributor",
+        "record_id": "shomei-tomatsu-nagasaki",
+        "score": 86,
         "search_priority": "0",
         "source": "Priority seed",
         "special_edition_priority": "",
         "strong_buy_gbp": null,
-        "title": "The Americans",
+        "title": "11:02 Nagasaki",
         "year": ""
       },
       "buying_options": [
@@ -293,40 +1290,43 @@
       "category_id": "261186",
       "category_path": "",
       "collecting_lane": "classic or established canon",
-      "condition": "Very Good",
-      "context": "(2012) Introduction by Jack Kerouac. From the occasion of the 50th anniversary of the book's original publication (15 May 2008), a new edition was published by Steidl. Frank was involved in the design and production, which used modern scanning of Frank's original prints, and tritone printing. | Very Good | 2024-07-09T20:44:58.000Z | FIXED_PRICE",
-      "external_id": "405088779485",
-      "image_url": "https://i.ebayimg.com/images/g/dxgAAOSwPMZmjUmv/s-l225.jpg",
-      "item_creation_date": "2024-07-09T20:44:58.000Z",
+      "condition": "Good",
+      "context": "Viel Spaß beim Einkaufen. | Good | 2025-09-16T01:57:24.000Z | FIXED_PRICE",
+      "external_id": "376553111522",
+      "image_url": "https://i.ebayimg.com/images/g/PiMAAOSwvf5nibTZ/s-l225.jpg",
+      "item_creation_date": "2025-09-16T01:57:24.000Z",
       "item_end_date": "",
-      "key": "ebay:405088779485",
-      "landed_price_gbp": 158.87,
+      "key": "ebay:376553111522",
+      "landed_price_gbp": 501.53,
       "opportunity_kind": "collectible title or edition lead",
       "opportunity_reasons": [
-        "recognition 100/100",
+        "recognition 86/100",
         "collectibility tier S",
         "price scoring includes returned delivery cost",
         "immediate fixed-price purchase possible",
         "private individual seller",
+        "minimal bibliographic detail",
+        "book title is incomplete or variant",
+        "seller uses collector-aware language",
         "edition evidence: unknown"
       ],
-      "opportunity_score": 78,
-      "pending_since": "2026-09-02T07:04:50Z",
+      "opportunity_score": 75,
+      "pending_since": "2026-09-02T07:13:35Z",
       "price_currency": "GBP",
-      "price_gbp": 153.57,
-      "price_value": 153.57,
+      "price_gbp": 501.53,
+      "price_value": 501.53,
       "private_seller": true,
       "recognition_matches": [
         {
           "awards_and_evidence": "",
           "bargain_gbp": null,
-          "canon_sources": "Parr/Badger V1 + Roth 101 | Priority seed",
+          "canon_sources": "Parr/Badger V1 | Priority seed",
           "collectibility_tier": "S",
           "collectible_format_bonus": 0,
           "collectible_format_evidence": [],
           "collectible_variants": "",
           "collector_profile": "",
-          "contributor": "Robert Frank",
+          "contributor": "Shomei Tomatsu",
           "documentary_relevance": "",
           "edition_reasons": [
             "exact collectible edition is not established by the listing metadata"
@@ -337,38 +1337,265 @@
           "first_monograph": "",
           "isbn": "",
           "publisher": "",
-          "reason": "exact title + contributor",
-          "record_id": "robert-frank-americans",
-          "score": 100,
+          "reason": "partial title + contributor",
+          "record_id": "shomei-tomatsu-nagasaki",
+          "score": 86,
           "search_priority": "0",
           "source": "Priority seed",
           "special_edition_priority": "",
           "strong_buy_gbp": null,
-          "title": "The Americans",
+          "title": "11:02 Nagasaki",
           "year": ""
         }
       ],
       "recognized": true,
-      "rest_item_id": "v1|405088779485|0",
+      "rest_item_id": "v1|376553111522|0",
       "score_band": "alert",
       "scoring_version": 2,
       "search_in_description": true,
       "search_lane": "classic_hot",
-      "search_query": "Robert Frank The Americans",
+      "search_query": "Shomei Tomatsu 11:02 Nagasaki",
       "seller_account_type": "INDIVIDUAL",
-      "seller_feedback_percentage": "100.0",
-      "seller_feedback_score": 107,
+      "seller_feedback_percentage": "99.7",
+      "seller_feedback_score": 658,
       "shipping_currency": "GBP",
-      "shipping_value": 5.3,
+      "shipping_value": 0.0,
       "source_id": "ebay_private_classic_hot",
       "source_name": "eBay UK private sellers - classic_hot",
       "tags": "FIXED_PRICE",
-      "title": "Robert Frank: The Americans (Hardcover, 2012) Introduction by Jack Kerouac",
-      "url": "https://www.ebay.co.uk/itm/405088779485?_skw=Robert+Frank+The+Americans&hash=item5e512c3cdd:g:dxgAAOSwPMZmjUmv",
-      "vendor": "merlin_317"
+      "title": "Japanese book - NAGASAKI 11:02 - Shomei Tomatsu photo book 1968 From Japan Rare",
+      "url": "https://www.ebay.co.uk/itm/376553111522?_skw=Shomei+Tomatsu+11%3A02+Nagasaki&hash=item57ac507fe2:g:PiMAAOSwvf5nibTZ",
+      "vendor": "geeklink-jpn"
+    },
+    "ebay:820057308814": {
+      "best_recognition": {
+        "awards_and_evidence": "",
+        "bargain_gbp": null,
+        "canon_sources": "Parr/Badger V2 | Priority seed",
+        "collectibility_tier": "A",
+        "collectible_format_bonus": 0,
+        "collectible_format_evidence": [],
+        "collectible_variants": "",
+        "collector_profile": "",
+        "contributor": "Stephen Shore",
+        "documentary_relevance": "",
+        "edition_reasons": [
+          "target year 2005 appears"
+        ],
+        "edition_status": "plausible",
+        "evidence_confidence": "High",
+        "first_edition_notes": "",
+        "first_monograph": "",
+        "isbn": "",
+        "publisher": "Phaidon Press, London, 2005",
+        "reason": "exact title + contributor",
+        "record_id": "stephen-shore-american-surfaces",
+        "score": 100,
+        "search_priority": "1",
+        "source": "Priority seed",
+        "special_edition_priority": "",
+        "strong_buy_gbp": null,
+        "title": "American Surfaces",
+        "year": "2005"
+      },
+      "buying_options": [
+        "FIXED_PRICE"
+      ],
+      "category_id": "261186",
+      "category_path": "",
+      "collecting_lane": "classic or established canon",
+      "condition": "Like New",
+      "context": "Serial numbers/tamper labels and item photos are recorded. Any alteration or parts removal voids eligibility. | Like New | 2026-08-28T07:53:51.000Z | FIXED_PRICE",
+      "external_id": "820057308814",
+      "image_url": "https://i.ebayimg.com/images/g/5HIAAeSwVppqkT7R/s-l225.jpg",
+      "item_creation_date": "2026-08-28T07:53:51.000Z",
+      "item_end_date": "",
+      "key": "ebay:820057308814",
+      "landed_price_gbp": 198.64,
+      "opportunity_kind": "collectible title or edition lead",
+      "opportunity_reasons": [
+        "recognition 100/100",
+        "collectibility tier A",
+        "price scoring includes returned delivery cost",
+        "immediate fixed-price purchase possible",
+        "private individual seller",
+        "minimal bibliographic detail",
+        "seller uses collector-aware language",
+        "edition evidence: plausible"
+      ],
+      "opportunity_score": 75,
+      "pending_since": "2026-09-02T07:13:35Z",
+      "price_currency": "GBP",
+      "price_gbp": 183.97,
+      "price_value": 183.97,
+      "private_seller": true,
+      "recognition_matches": [
+        {
+          "awards_and_evidence": "",
+          "bargain_gbp": null,
+          "canon_sources": "Parr/Badger V2 | Priority seed",
+          "collectibility_tier": "A",
+          "collectible_format_bonus": 0,
+          "collectible_format_evidence": [],
+          "collectible_variants": "",
+          "collector_profile": "",
+          "contributor": "Stephen Shore",
+          "documentary_relevance": "",
+          "edition_reasons": [
+            "target year 2005 appears"
+          ],
+          "edition_status": "plausible",
+          "evidence_confidence": "High",
+          "first_edition_notes": "",
+          "first_monograph": "",
+          "isbn": "",
+          "publisher": "Phaidon Press, London, 2005",
+          "reason": "exact title + contributor",
+          "record_id": "stephen-shore-american-surfaces",
+          "score": 100,
+          "search_priority": "1",
+          "source": "Priority seed",
+          "special_edition_priority": "",
+          "strong_buy_gbp": null,
+          "title": "American Surfaces",
+          "year": "2005"
+        }
+      ],
+      "recognized": true,
+      "rest_item_id": "v1|820057308814|0",
+      "score_band": "alert",
+      "scoring_version": 2,
+      "search_in_description": false,
+      "search_lane": "library_rotation",
+      "search_query": "Stephen Shore American Surfaces",
+      "seller_account_type": "INDIVIDUAL",
+      "seller_feedback_percentage": "100.0",
+      "seller_feedback_score": 327,
+      "shipping_currency": "GBP",
+      "shipping_value": 14.67,
+      "source_id": "ebay_private_library_rotation",
+      "source_name": "eBay UK private sellers - library_rotation",
+      "tags": "FIXED_PRICE",
+      "title": "Stephen Shore American Surfaces Phaidon 2005 Hardcover Photobook Rare Edition",
+      "url": "https://www.ebay.co.uk/itm/820057308814?_skw=Stephen+Shore+American+Surfaces&hash=itembeef397e8e:g:5HIAAeSwVppqkT7R",
+      "vendor": "tokyogal"
+    },
+    "ebay:820057308968": {
+      "best_recognition": {
+        "awards_and_evidence": "",
+        "bargain_gbp": null,
+        "canon_sources": "Parr/Badger V2 | Priority seed",
+        "collectibility_tier": "A",
+        "collectible_format_bonus": 0,
+        "collectible_format_evidence": [],
+        "collectible_variants": "",
+        "collector_profile": "",
+        "contributor": "Stephen Shore",
+        "documentary_relevance": "",
+        "edition_reasons": [
+          "seller claims a first edition but target metadata is unconfirmed"
+        ],
+        "edition_status": "claimed",
+        "evidence_confidence": "High",
+        "first_edition_notes": "",
+        "first_monograph": "",
+        "isbn": "",
+        "publisher": "Phaidon Press, London, 2005",
+        "reason": "exact title + contributor",
+        "record_id": "stephen-shore-american-surfaces",
+        "score": 100,
+        "search_priority": "1",
+        "source": "Priority seed",
+        "special_edition_priority": "",
+        "strong_buy_gbp": null,
+        "title": "American Surfaces",
+        "year": "2005"
+      },
+      "buying_options": [
+        "FIXED_PRICE"
+      ],
+      "category_id": "261186",
+      "category_path": "",
+      "collecting_lane": "classic or established canon",
+      "condition": "Like New",
+      "context": "Serial numbers/tamper labels and item photos are recorded. Any alteration or parts removal voids eligibility. | Like New | 2026-08-28T07:53:55.000Z | FIXED_PRICE",
+      "external_id": "820057308968",
+      "image_url": "https://i.ebayimg.com/images/g/600AAeSwEu1qkT-M/s-l225.jpg",
+      "item_creation_date": "2026-08-28T07:53:55.000Z",
+      "item_end_date": "",
+      "key": "ebay:820057308968",
+      "landed_price_gbp": 348.1,
+      "opportunity_kind": "collectible title or edition lead",
+      "opportunity_reasons": [
+        "recognition 100/100",
+        "collectibility tier A",
+        "price scoring includes returned delivery cost",
+        "immediate fixed-price purchase possible",
+        "private individual seller",
+        "minimal bibliographic detail",
+        "seller uses collector-aware language",
+        "edition evidence: claimed"
+      ],
+      "opportunity_score": 73,
+      "pending_since": "2026-09-02T07:13:35Z",
+      "price_currency": "GBP",
+      "price_gbp": 333.43,
+      "price_value": 333.43,
+      "private_seller": true,
+      "recognition_matches": [
+        {
+          "awards_and_evidence": "",
+          "bargain_gbp": null,
+          "canon_sources": "Parr/Badger V2 | Priority seed",
+          "collectibility_tier": "A",
+          "collectible_format_bonus": 0,
+          "collectible_format_evidence": [],
+          "collectible_variants": "",
+          "collector_profile": "",
+          "contributor": "Stephen Shore",
+          "documentary_relevance": "",
+          "edition_reasons": [
+            "seller claims a first edition but target metadata is unconfirmed"
+          ],
+          "edition_status": "claimed",
+          "evidence_confidence": "High",
+          "first_edition_notes": "",
+          "first_monograph": "",
+          "isbn": "",
+          "publisher": "Phaidon Press, London, 2005",
+          "reason": "exact title + contributor",
+          "record_id": "stephen-shore-american-surfaces",
+          "score": 100,
+          "search_priority": "1",
+          "source": "Priority seed",
+          "special_edition_priority": "",
+          "strong_buy_gbp": null,
+          "title": "American Surfaces",
+          "year": "2005"
+        }
+      ],
+      "recognized": true,
+      "rest_item_id": "v1|820057308968|0",
+      "score_band": "alert",
+      "scoring_version": 2,
+      "search_in_description": false,
+      "search_lane": "library_rotation",
+      "search_query": "Stephen Shore American Surfaces",
+      "seller_account_type": "INDIVIDUAL",
+      "seller_feedback_percentage": "100.0",
+      "seller_feedback_score": 327,
+      "shipping_currency": "GBP",
+      "shipping_value": 14.67,
+      "source_id": "ebay_private_library_rotation",
+      "source_name": "eBay UK private sellers - library_rotation",
+      "tags": "FIXED_PRICE",
+      "title": "Stephen Shore American Surfaces 1999 First Edition Schirmer Mosel Photobook Rare",
+      "url": "https://www.ebay.co.uk/itm/820057308968?_skw=Stephen+Shore+American+Surfaces&hash=itembeef397f28:g:600AAeSwEu1qkT-M",
+      "vendor": "tokyogal"
     }
   },
   "query_last_checked": {
+    "active_stock:BEST_OFFER+FIXED_PRICE:photo book": "2026-09-02T07:13:35Z",
     "auction_ending:AUCTION:alec soth niagara": "2026-09-01T12:57:22Z",
     "auction_ending:AUCTION:alec soth sleeping by the mississippi": "2026-09-01T12:57:22Z",
     "auction_ending:AUCTION:bernd and hilla becher anonyme skulpturen": "2026-09-01T12:57:22Z",
@@ -380,11 +1607,11 @@
     "auction_ending:AUCTION:corinne day diary": "2026-09-01T15:15:42Z",
     "auction_ending:AUCTION:daido moriyama farewell photography": "2026-09-01T15:15:42Z",
     "broad:BEST_OFFER+FIXED_PRICE:art photography book": "2026-09-01T12:57:22Z",
-    "broad:BEST_OFFER+FIXED_PRICE:photo book": "2026-09-02T07:04:50Z",
-    "broad:BEST_OFFER+FIXED_PRICE:photographer book": "2026-09-02T07:04:50Z",
+    "broad:BEST_OFFER+FIXED_PRICE:photo book": "2026-09-02T07:13:35Z",
+    "broad:BEST_OFFER+FIXED_PRICE:photographer book": "2026-09-02T07:13:35Z",
     "broad:BEST_OFFER+FIXED_PRICE:photographs book": "2026-09-01T12:57:22Z",
-    "broad:BEST_OFFER+FIXED_PRICE:photography book": "2026-09-02T07:04:50Z",
-    "broad:BEST_OFFER+FIXED_PRICE:photography monograph": "2026-09-02T07:04:50Z",
+    "broad:BEST_OFFER+FIXED_PRICE:photography book": "2026-09-02T07:13:35Z",
+    "broad:BEST_OFFER+FIXED_PRICE:photography monograph": "2026-09-02T07:13:35Z",
     "classic_auction:AUCTION:alec soth niagara": "2026-09-01T17:16:36Z",
     "classic_auction:AUCTION:alec soth sleeping by the mississippi": "2026-09-01T17:20:07Z",
     "classic_auction:AUCTION:bernd and hilla becher anonyme skulpturen": "2026-09-01T17:24:57Z",
@@ -392,6 +1619,7 @@
     "classic_auction:AUCTION:bruce weber o rio de janeiro": "2026-09-01T19:45:15Z",
     "classic_auction:AUCTION:chris killip in flagrante": "2026-09-01T21:03:26Z",
     "classic_auction:AUCTION:corinne day diary": "2026-09-02T00:17:37Z",
+    "classic_auction:AUCTION:ed ruscha twentysix gasoline stations": "2026-09-02T07:13:35Z",
     "classic_contributor:BEST_OFFER+FIXED_PRICE:a j wilkinson": "2026-09-01T17:24:57Z",
     "classic_contributor:BEST_OFFER+FIXED_PRICE:a-chan": "2026-09-01T17:16:36Z",
     "classic_contributor:BEST_OFFER+FIXED_PRICE:a. d. coleman": "2026-09-01T17:20:07Z",
@@ -399,6 +1627,7 @@
     "classic_contributor:BEST_OFFER+FIXED_PRICE:aaron rezny": "2026-09-01T19:45:15Z",
     "classic_contributor:BEST_OFFER+FIXED_PRICE:aaron ruell": "2026-09-01T21:03:26Z",
     "classic_contributor:BEST_OFFER+FIXED_PRICE:aaron schuman": "2026-09-02T00:17:37Z",
+    "classic_contributor:BEST_OFFER+FIXED_PRICE:abbott, berenice / atget, eugéne": "2026-09-02T07:13:35Z",
     "classic_hot:BEST_OFFER+FIXED_PRICE:alec soth niagara": "2026-09-01T17:16:36Z",
     "classic_hot:BEST_OFFER+FIXED_PRICE:alec soth sleeping by the mississippi": "2026-09-01T17:16:36Z",
     "classic_hot:BEST_OFFER+FIXED_PRICE:bernd and hilla becher anonyme skulpturen": "2026-09-01T17:16:36Z",
@@ -434,16 +1663,20 @@
     "classic_hot:BEST_OFFER+FIXED_PRICE:richard avedon in the american west": "2026-09-02T06:47:48Z",
     "classic_hot:BEST_OFFER+FIXED_PRICE:richard avedon observations": "2026-09-02T06:47:48Z",
     "classic_hot:BEST_OFFER+FIXED_PRICE:robert frank the americans": "2026-09-02T07:04:50Z",
-    "collectible_format:BEST_OFFER+FIXED_PRICE:limited edition photobook": "2026-09-02T05:52:04Z",
-    "collectible_format:BEST_OFFER+FIXED_PRICE:photography book with print": "2026-09-02T05:52:04Z",
-    "collectible_format:BEST_OFFER+FIXED_PRICE:signed numbered photobook": "2026-09-02T05:52:04Z",
-    "collectible_format:BEST_OFFER+FIXED_PRICE:signed photography book": "2026-09-02T05:52:04Z",
-    "collection:BEST_OFFER+FIXED_PRICE:old photography books": "2026-09-02T00:17:37Z",
+    "classic_hot:BEST_OFFER+FIXED_PRICE:shomei tomatsu 11:02 nagasaki": "2026-09-02T07:13:35Z",
+    "classic_hot:BEST_OFFER+FIXED_PRICE:sian davey looking for alice": "2026-09-02T07:13:35Z",
+    "classic_hot:BEST_OFFER+FIXED_PRICE:stephen shore uncommon places": "2026-09-02T07:13:35Z",
+    "classic_hot:BEST_OFFER+FIXED_PRICE:susan meiselas carnival strippers": "2026-09-02T07:13:35Z",
+    "collectible_format:BEST_OFFER+FIXED_PRICE:limited edition photobook": "2026-09-02T07:13:35Z",
+    "collectible_format:BEST_OFFER+FIXED_PRICE:photography book with print": "2026-09-02T07:13:35Z",
+    "collectible_format:BEST_OFFER+FIXED_PRICE:signed numbered photobook": "2026-09-02T07:13:35Z",
+    "collectible_format:BEST_OFFER+FIXED_PRICE:signed photography book": "2026-09-02T07:13:35Z",
+    "collection:BEST_OFFER+FIXED_PRICE:old photography books": "2026-09-02T07:13:35Z",
     "collection:BEST_OFFER+FIXED_PRICE:photo books job lot": "2026-09-01T12:57:22Z",
     "collection:BEST_OFFER+FIXED_PRICE:photographer books collection": "2026-09-01T12:57:22Z",
-    "collection:BEST_OFFER+FIXED_PRICE:photography book bundle": "2026-09-02T00:17:37Z",
-    "collection:BEST_OFFER+FIXED_PRICE:photography books collection": "2026-09-02T05:52:04Z",
-    "collection:BEST_OFFER+FIXED_PRICE:photography books job lot": "2026-09-02T05:52:04Z",
+    "collection:BEST_OFFER+FIXED_PRICE:photography book bundle": "2026-09-02T07:13:35Z",
+    "collection:BEST_OFFER+FIXED_PRICE:photography books collection": "2026-09-02T07:13:35Z",
+    "collection:BEST_OFFER+FIXED_PRICE:photography books job lot": "2026-09-02T07:13:35Z",
     "contemporary_auction:AUCTION:alejandro cartagena carpoolers": "2026-09-01T17:16:36Z",
     "contemporary_auction:AUCTION:andi galdi vinko sorry i gave birth i disappeared but now i'm back": "2026-09-01T17:20:07Z",
     "contemporary_auction:AUCTION:buck ellison living trust": "2026-09-01T17:24:57Z",
@@ -451,6 +1684,7 @@
     "contemporary_auction:AUCTION:chloe dewe mathews thames log": "2026-09-01T19:45:15Z",
     "contemporary_auction:AUCTION:chrystel lebas field studies: walking through landscapes and archives": "2026-09-01T21:03:26Z",
     "contemporary_auction:AUCTION:ciarán óg arnold i went to the worst of bars hoping to get killed, but all i could do was get drunk": "2026-09-02T00:17:37Z",
+    "contemporary_auction:AUCTION:daniel arnold you are what you do": "2026-09-02T07:13:35Z",
     "contemporary_contributor:BEST_OFFER+FIXED_PRICE:alejandro cartagena": "2026-09-01T17:16:36Z",
     "contemporary_contributor:BEST_OFFER+FIXED_PRICE:andi galdi vinko": "2026-09-01T17:20:07Z",
     "contemporary_contributor:BEST_OFFER+FIXED_PRICE:anne sophie merryman": "2026-09-01T17:24:57Z",
@@ -458,6 +1692,7 @@
     "contemporary_contributor:BEST_OFFER+FIXED_PRICE:buck ellison": "2026-09-01T19:45:15Z",
     "contemporary_contributor:BEST_OFFER+FIXED_PRICE:carla williams": "2026-09-01T21:03:26Z",
     "contemporary_contributor:BEST_OFFER+FIXED_PRICE:carlos spottorno and guillermo abril": "2026-09-02T00:17:37Z",
+    "contemporary_contributor:BEST_OFFER+FIXED_PRICE:craig easton": "2026-09-02T07:13:35Z",
     "contemporary_hot:BEST_OFFER+FIXED_PRICE:alejandro cartagena carpoolers": "2026-09-01T17:16:36Z",
     "contemporary_hot:BEST_OFFER+FIXED_PRICE:andi galdi vinko sorry i gave birth i disappeared but now i'm back": "2026-09-01T17:16:36Z",
     "contemporary_hot:BEST_OFFER+FIXED_PRICE:buck ellison living trust": "2026-09-01T17:16:36Z",
@@ -494,6 +1729,10 @@
     "contemporary_hot:BEST_OFFER+FIXED_PRICE:kirsty mackay the magic money tree": "2026-09-02T06:47:48Z",
     "contemporary_hot:BEST_OFFER+FIXED_PRICE:lúa ribeira noises in the blood": "2026-09-02T07:04:50Z",
     "contemporary_hot:BEST_OFFER+FIXED_PRICE:mahmoud khattab the dog sat where we parted": "2026-09-02T07:04:50Z",
+    "contemporary_hot:BEST_OFFER+FIXED_PRICE:marvel harris marvel": "2026-09-02T07:13:35Z",
+    "contemporary_hot:BEST_OFFER+FIXED_PRICE:mathieu asselin monsanto: a photographic investigation": "2026-09-02T07:13:35Z",
+    "contemporary_hot:BEST_OFFER+FIXED_PRICE:matt black american geography": "2026-09-02T07:13:35Z",
+    "contemporary_hot:BEST_OFFER+FIXED_PRICE:matt stuart all that life can afford": "2026-09-02T07:13:35Z",
     "contributor:BEST_OFFER+FIXED_PRICE:aaron rezny": "2026-09-01T15:09:30Z",
     "contributor:BEST_OFFER+FIXED_PRICE:aaron ruell": "2026-09-01T15:09:30Z",
     "contributor:BEST_OFFER+FIXED_PRICE:aaron schuman": "2026-09-01T15:15:42Z",
@@ -617,9 +1856,17 @@
     "library_rotation:BEST_OFFER+FIXED_PRICE:pierre molinier and peter gorsen pierre molinier, lui-même": "2026-09-02T00:17:37Z",
     "library_rotation:BEST_OFFER+FIXED_PRICE:pixy liao experimental relationship vol. 1": "2026-09-02T00:17:37Z",
     "library_rotation:BEST_OFFER+FIXED_PRICE:ralph eugene meatyard the family album of lucybelle crater": "2026-09-02T00:17:37Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:sofia borges the swamp": "2026-09-02T07:13:35Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:sophie green dented pride": "2026-09-02T07:13:35Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:stephen shore american surfaces": "2026-09-02T07:13:35Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:stieglitz, alfred camera work": "2026-09-02T07:13:35Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:takashi homma tokyo suburbia": "2026-09-02T07:13:35Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:tal’, b m industriya sotzializma": "2026-09-02T07:13:35Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:tom wood all zones off peak": "2026-09-02T07:13:35Z",
     "library_rotation:BEST_OFFER+FIXED_PRICE:éluard, paul facile": "2026-09-01T15:15:42Z",
-    "wrong_category:BEST_OFFER+FIXED_PRICE:photobook job lot": "2026-09-02T00:17:37Z",
-    "wrong_category:BEST_OFFER+FIXED_PRICE:photography book collection": "2026-09-02T00:17:37Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:štyrský, jindřich na jehlach téchto dni": "2026-09-02T07:13:35Z",
+    "wrong_category:BEST_OFFER+FIXED_PRICE:photobook job lot": "2026-09-02T07:13:35Z",
+    "wrong_category:BEST_OFFER+FIXED_PRICE:photography book collection": "2026-09-02T07:13:35Z",
     "wrong_category:BEST_OFFER+FIXED_PRICE:photography monograph": "2026-09-01T12:57:22Z"
   },
   "seen": {
@@ -630,12 +1877,26 @@
       "title": "La Foto Sociale V3 , with photos from Ernst Hass. Diane Arbus, Paul Strand",
       "url": "https://www.ebay.co.uk/itm/114338327364?_skw=Diane+Arbus+Diane+Arbus&hash=item1a9f186b44:g:T1oAAOSwS41fKUvD"
     },
+    "ebay:115729971411": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "A paperback book 'Hammy the Wonder Hamster '  by Poppy Harris",
+      "url": "https://www.ebay.co.uk/itm/115729971411?_skw=Marvel+Harris+MARVEL&hash=item1af20b38d3:g:F8AAAOSwO-JkD0np"
+    },
     "ebay:117078746168": {
       "first_seen": "2026-09-01T16:52:33Z",
       "last_seen": "2026-09-01T16:52:33Z",
       "score": 86,
       "title": "The Bikeriders by Danny Lyon (2003, Trade Paperback). VGC",
       "url": "https://www.ebay.co.uk/itm/117078746168?_skw=Danny+Lyon+The+Bikeriders&hash=item1b426fe438:g:ZooAAeSwQlpnxM3J"
+    },
+    "ebay:117160856952": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "The Wonder Book of The Navy - Harry Golding - Ward, Lock & Co",
+      "url": "https://www.ebay.co.uk/itm/117160856952?_skw=Marvel+Harris+MARVEL&hash=item1b4754cd78:g:TGgAAeSwm7lp67kc"
     },
     "ebay:117314330305": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -756,6 +2017,20 @@
       "title": "JOB LOT OF PHOTOGRAPHIC MEMORIES BOOK OF LAKE DISTRICT, LONDON,  DEVON ETC",
       "url": "https://www.ebay.co.uk/itm/117388663350?_skw=photo+books+job+lot&hash=item1b54e8da36:g:XE8AAeSwU~lqld~W"
     },
+    "ebay:117388673700": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Paddington's Suitcase 8 Picture Book Set Michael Bond Paddington Bear",
+      "url": "https://www.ebay.co.uk/itm/117388673700?_skw=photo+book&hash=item1b54e902a4:g:1VoAAeSwvUBpWlj6"
+    },
+    "ebay:117388968847": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 44,
+      "title": "The Face of Sweden Book Hardcover Gullers Ehrenmark 1972 First Edition Photobook",
+      "url": "https://www.ebay.co.uk/itm/117388968847?_skw=photo+book&hash=item1b54ed838f:g:N5UAAOSw8HRnUx3Q"
+    },
     "ebay:117389687332": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
@@ -833,6 +2108,13 @@
       "title": "Vintage The Pictorial Encyclopedia Of Birds Hardcover Book 1970 over 1000 Photos",
       "url": "https://www.ebay.co.uk/itm/117391323870?_skw=photo+book&hash=item1b551172de:g:ss8AAeSwajBp1574"
     },
+    "ebay:125687751071": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Harley-Davidson: The Milwaukee Marvel by Harry V. Sucher Hardback 1988",
+      "url": "https://www.ebay.co.uk/itm/125687751071?_skw=Marvel+Harris+MARVEL&hash=item1d4392e19f:g:yFsAAOSwnfZjrdY6"
+    },
     "ebay:126642998838": {
       "first_seen": "2026-09-01T15:09:30Z",
       "last_seen": "2026-09-01T15:09:30Z",
@@ -860,6 +2142,13 @@
       "score": 94,
       "title": "Diane Arbus : Portrait of a Photographer by Arthur Lubow (Hardback)",
       "url": "https://www.ebay.co.uk/itm/127581495832?_skw=Arbus%2C+Diane+Diane+Arbus&hash=item1db4732218:g:E4oAAeSwulxpS9IR"
+    },
+    "ebay:127842631047": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Wonder Book of Tell Me Why? Harry Golding 1939 Illustrated Children's Ward Lock",
+      "url": "https://www.ebay.co.uk/itm/127842631047?_skw=Marvel+Harris+MARVEL&hash=item1dc403bd87:g:xtoAAeSwrURp9lcj"
     },
     "ebay:128003213726": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -945,6 +2234,13 @@
       "title": "Signed Perique Photographs Charles Martin Historic New Orleans Collection Book",
       "url": "https://www.ebay.co.uk/itm/128045916894?_skw=photography+monograph&hash=item1dd021a2de:g:uNAAAeSwS3BqjxEA"
     },
+    "ebay:128050807048": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 68,
+      "title": "Stephen Shore Uncommon Places The Complete Works PHOTOGRAPHY ART BOOK THAMES",
+      "url": "https://www.ebay.co.uk/itm/128050807048?_skw=Stephen+Shore+Uncommon+Places&hash=item1dd06c4108:g:LsYAAOSwTY9i7Vkr"
+    },
     "ebay:128051697826": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
@@ -965,6 +2261,27 @@
       "score": 42,
       "title": "Nick Knight Photobook monograph 1st Edition Hardback 2009 Hardcover FASHION HB",
       "url": "https://www.ebay.co.uk/itm/128054190022?_skw=photography+monograph&hash=item1dd09fdfc6:g:usQAAeSwINxqWjNb"
+    },
+    "ebay:128054190023": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 69,
+      "title": "Saul Leiter Early Black and White Photographs Interiors VOLUME 1 photography HB",
+      "url": "https://www.ebay.co.uk/itm/128054190023?_skw=photo+book&hash=item1dd09fdfc7:g:jp0AAeSwRqBqg0qk"
+    },
+    "ebay:128054347903": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Return to the Isle of the Lost (Descendants) Paperback, 8 Magical Photo Pages",
+      "url": "https://www.ebay.co.uk/itm/128054347903?_skw=photo+book&hash=item1dd0a2487f:g:zHwAAeSwp05qlfPW"
+    },
+    "ebay:128054353569": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "The Picture House Murders Fiona Veitch Smith Paperback Cozy Mystery 2023",
+      "url": "https://www.ebay.co.uk/itm/128054353569?_skw=photo+book&hash=item1dd0a25ea1:g:WnIAAeSwzMRqlfUm"
     },
     "ebay:128055124968": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -1099,6 +2416,13 @@
       "title": "Untitled: Diane Arbus. 1st Edition. 1st Printing. Hardcover, 1995. Pristine. New",
       "url": "https://www.ebay.co.uk/itm/135195061077?_skw=Diane+Arbus+Diane+Arbus&hash=item1f7a40eb55:g:6o0AAOSwZG9mvmDu"
     },
+    "ebay:135680430891": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 76,
+      "title": "Robert Frank The Americans Jack Kerouac First Print Steidl 2008 HC DJ Tritone",
+      "url": "https://www.ebay.co.uk/itm/135680430891?_skw=Robert+Frank+The+Americans&hash=item1f972f132b:g:kP8AAeSwghVn896I"
+    },
     "ebay:137410683400": {
       "first_seen": "2026-09-01T17:24:57Z",
       "last_seen": "2026-09-01T17:24:57Z",
@@ -1140,6 +2464,20 @@
       "score": 58,
       "title": "Daily Telegraph 'How to Photograph Absolutely Everything' 7 book bundle 2007 DK",
       "url": "https://www.ebay.co.uk/itm/137679553388?_skw=photography+book+bundle&hash=item200e57436c:g:WJ8AAeSwc5lqboGu"
+    },
+    "ebay:137683737502": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Healthy Habits: Kangaroos Guide to Keeping Fit Paperback Picture Book Ages 4-8",
+      "url": "https://www.ebay.co.uk/itm/137683737502?_skw=photo+book&hash=item200e971b9e:g:-14AAeSwcXFqleut"
+    },
+    "ebay:137685103686": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 44,
+      "title": "Quentin Blake 10 Book Set in Folder Illustrated Picture Books UNREAD",
+      "url": "https://www.ebay.co.uk/itm/137685103686?_skw=photo+book&hash=item200eabf446:g:qosAAeSw02Jqlmdw"
     },
     "ebay:137685145095": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -1372,6 +2710,13 @@
       "title": "Raven : Cuervo Limited Edition Artist's Monograph Photobook",
       "url": "https://www.ebay.co.uk/itm/147434237425?_skw=photography+monograph&hash=item2253c3edf1:g:aq0AAeSw24RqVS1h"
     },
+    "ebay:147456327969": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 0,
+      "title": "Hammy the Wonder Hamster! by Harris, Poppy Paperback 4 book set bundle vgc",
+      "url": "https://www.ebay.co.uk/itm/147456327969?_skw=Marvel+Harris+MARVEL&hash=item2255150121:g:sUIAAeSwU7xqYjDb"
+    },
     "ebay:147504855904": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
@@ -1399,6 +2744,13 @@
       "score": 58,
       "title": "Collection Of Photography Books",
       "url": "https://www.ebay.co.uk/itm/147540015777?_skw=photography+books+collection&hash=item225a11faa1:g:ddAAAeSwS3BqlYVU"
+    },
+    "ebay:147541227035": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Usborne Pop Up Ocean 3D Flap English Picture Book Child Baby Educational Reading",
+      "url": "https://www.ebay.co.uk/itm/147541227035?_skw=photo+book&hash=item225a24761b:g:lHEAAeSwkAlqlkyB"
     },
     "ebay:147541809010": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -1568,6 +2920,13 @@
       "title": "Let Us Now Praise Famous Men By James Agee and Walker Evans Violette Editions",
       "url": "https://www.ebay.co.uk/itm/156163858721?_skw=Agee%2C+James+%2F+Evans%2C+Walker+Let+us+now+Praise+Famous+Men&hash=item245c176121:g:OrcAAOSwr3pmBwX3"
     },
+    "ebay:156665090281": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Wayne Rooney The Story Of Football's Wonder Kid - Harry Harris & Danny Fullbrook",
+      "url": "https://www.ebay.co.uk/itm/156665090281?_skw=Marvel+Harris+MARVEL&hash=item2479f790e9:g:ufAAAOSwLMZnnPZD"
+    },
     "ebay:156942617708": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
@@ -1589,6 +2948,13 @@
       "title": "The English at Home Bill Brandt Raymond Mortimer Hardcover Batsford First...",
       "url": "https://www.ebay.co.uk/itm/157145272465?_skw=Bill+Brandt+The+English+at+Home&hash=item2496969091:g:O1sAAeSw6Zln5-V8"
     },
+    "ebay:157855134261": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "The Wonder Book Of Do You Know?, By Harry Golding -",
+      "url": "https://www.ebay.co.uk/itm/157855134261?_skw=Marvel+Harris+MARVEL&hash=item24c0e63235:g:acQAAeSw4u1p6gah"
+    },
     "ebay:157999935326": {
       "first_seen": "2026-09-01T15:15:42Z",
       "last_seen": "2026-09-01T15:15:42Z",
@@ -1602,6 +2968,13 @@
       "score": 40,
       "title": "Sotheby's Belgravia Bundle x 2 - 1974 and 1975 Early Photographic images",
       "url": "https://www.ebay.co.uk/itm/158042413816?_skw=photography+book+bundle&hash=item24cc0fdaf8:g:PXYAAeSwKyFpLWMG"
+    },
+    "ebay:158089686193": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Marvel Comics Xmen Novel Liberty and Justice For All - Carrie Harris - New",
+      "url": "https://www.ebay.co.uk/itm/158089686193?_skw=Marvel+Harris+MARVEL&hash=item24cee12cb1:g:~swAAeSwmA5qWS0R"
     },
     "ebay:158197850596": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -1658,6 +3031,20 @@
       "score": 40,
       "title": "Goddess of Victory NIKKE Official Setting Materials Collection Art Works Book",
       "url": "https://www.ebay.co.uk/itm/158238468169?_skw=photography+book+collection&hash=item24d7bf6849:g:27AAAeSwjh5qk8Yq"
+    },
+    "ebay:158244009932": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Big Picture Code Cards Lower Case (Letterland) by Lyn Wendon | 2006",
+      "url": "https://www.ebay.co.uk/itm/158244009932?_skw=photo+book&hash=item24d813f7cc:g:NVoAAeSwmX1qlqCc"
+    },
+    "ebay:158244034602": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Big Picture Code Cards (Uppercase) Letterland",
+      "url": "https://www.ebay.co.uk/itm/158244034602?_skw=photo+book&hash=item24d814582a:g:UoYAAeSwS3BqlfeS"
     },
     "ebay:158245708402": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -1735,6 +3122,13 @@
       "score": 72,
       "title": "Czechoslovakia Czech Republic Guides Dictionary Job Lot Essential A Photographic",
       "url": "https://www.ebay.co.uk/itm/165863309459?_skw=photography+books+job+lot&hash=item269e394093:g:K9cAAOSwrsxjseTd"
+    },
+    "ebay:165912136885": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Vintage  The Wonder Book Of Nature Harry Golding 1954 10th Edition Nice Cond",
+      "url": "https://www.ebay.co.uk/itm/165912136885?_skw=Marvel+Harris+MARVEL&hash=item26a1224cb5:g:xcQAAOSwk8Bj1nfF"
     },
     "ebay:166412776896": {
       "first_seen": "2026-09-01T17:16:36Z",
@@ -1819,6 +3213,13 @@
       "score": 45,
       "title": "Big Bundle 35 Children’s Picture Books Gruffalo Mermaid Queen’s Knickers Job Lot",
       "url": "https://www.ebay.co.uk/itm/168631041189?_skw=photo+books+job+lot&hash=item2743317ca5:g:DMkAAeSw~gJqiG6e"
+    },
+    "ebay:168636144323": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 44,
+      "title": "Kids' Book Bundle Marvel Avengers LEGO Harry Potter & Superheroes + 2minifigures",
+      "url": "https://www.ebay.co.uk/itm/168636144323?_skw=Marvel+Harris+MARVEL&hash=item27437f5ac3:g:mFIAAeSwCjpqjF60"
     },
     "ebay:168643588728": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -2030,6 +3431,13 @@
       "title": "Arakigraph Nobuyoshi Araki 1996 Photobook Softcover Japanese",
       "url": "https://www.ebay.co.uk/itm/168657323681?_skw=photography+book&hash=item2744c286a1:g:7w8AAeSw6xpql7nY"
     },
+    "ebay:174401208978": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "The Wonder Book Of Nature For Boys And Girls Edited By Harry Golding",
+      "url": "https://www.ebay.co.uk/itm/174401208978?_skw=Marvel+Harris+MARVEL&hash=item289b1f4292:g:QhwAAOSwDIZfPVOf"
+    },
     "ebay:177296076254": {
       "first_seen": "2026-09-01T15:15:42Z",
       "last_seen": "2026-09-01T15:15:42Z",
@@ -2043,6 +3451,13 @@
       "score": 86,
       "title": "LET US NOW PRAISE FAMOUS MEN JAMES AGEE & WALKER EVANS",
       "url": "https://www.ebay.co.uk/itm/177462605861?_skw=Agee%2C+James+%2F+Evans%2C+Walker+Let+us+now+Praise+Famous+Men&hash=item2951987825:g:1noAAeSwRqVo4OpY"
+    },
+    "ebay:178035579072": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 26,
+      "title": "Harry Stafford: Manchester United's First Captain Marvel - Ean Gardiner",
+      "url": "https://www.ebay.co.uk/itm/178035579072?_skw=Marvel+Harris+MARVEL&hash=item2973bf58c0:g:uH8AAeSwzp1p185j"
     },
     "ebay:178121048778": {
       "first_seen": "2026-09-01T17:16:36Z",
@@ -2163,6 +3578,13 @@
       "title": "The Eye Fotografiska Photography Book teNeues 2018 Hardcover Coffee Table Art",
       "url": "https://www.ebay.co.uk/itm/178456267244?_skw=art+photography+book&hash=item298cd289ec:g:AsoAAeSwhPJqlaQe"
     },
+    "ebay:178456859980": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Usborne Farm Picture Puzzle Book Usborne Look & Find In The Forest Hardback New",
+      "url": "https://www.ebay.co.uk/itm/178456859980?_skw=photo+book&hash=item298cdb954c:g:u54AAOSwi6plME3y"
+    },
     "ebay:178458324905": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
@@ -2282,6 +3704,13 @@
       "title": "Jill Posener Spray it loud & Louder books photography queer feminist graffiti",
       "url": "https://www.ebay.co.uk/itm/178460776172?_skw=photography+book&hash=item298d1756ec:g:yCgAAeSw3C1qdLRO"
     },
+    "ebay:178460850564": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 0,
+      "title": "Firefly A Celebration Anniversary First Edition Book 2012 includes Picture Cards",
+      "url": "https://www.ebay.co.uk/itm/178460850564?_skw=photo+book&hash=item298d187984:g:k7gAAeSwYspql8qy"
+    },
     "ebay:186862500728": {
       "first_seen": "2026-09-01T16:52:33Z",
       "last_seen": "2026-09-01T16:52:33Z",
@@ -2352,6 +3781,13 @@
       "title": "ALLEN GINSBERG |  THE LATE GREAT : Photo Biography | Christopher Felver, 1st Ed.",
       "url": "https://www.ebay.co.uk/itm/188848333632?_skw=Allen+Ginsberg+Allen+Ginsberg+Photographs&hash=item2bf83ce340:g:LIcAAOSwpzlndCvT"
     },
+    "ebay:188857240956": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 4,
+      "title": "The Wonder Book of Children - Harry (ed) Golding 1924-01-01   Ward, Lock & Co.,",
+      "url": "https://www.ebay.co.uk/itm/188857240956?_skw=Marvel+Harris+MARVEL&hash=item2bf8c4cd7c:g:fjcAAOSwHQhkNw2I"
+    },
     "ebay:188862145921": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
@@ -2365,6 +3801,13 @@
       "score": 46,
       "title": "Nottinghamshire Pictorial Memories  (The Francis Frith Collection) (13)",
       "url": "https://www.ebay.co.uk/itm/188864992952?_skw=photography+books+collection&hash=item2bf93b16b8:g:z~oAAeSwtFxqlRm5"
+    },
+    "ebay:188867705934": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 36,
+      "title": "Elvis In Canada- Book 1957 Canadian Tour Photographs Rock and Roll Memorabilia",
+      "url": "https://www.ebay.co.uk/itm/188867705934?_skw=photo+book&hash=item2bf9647c4e:g:ExAAAeSwaXJpKbqx"
     },
     "ebay:188870117109": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -2478,6 +3921,13 @@
       "title": "Diane Arbus: An Aperture Monograph, 1997",
       "url": "https://www.ebay.co.uk/itm/198050574725?_skw=Diane+Arbus+Diane+Arbus&hash=item2e1cbbf185:g:AAgAAeSwJRlpdEgK"
     },
+    "ebay:198464150720": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "The Wonder Book of Nature Vintage 1923 hardback Harry Golding Butler & Tanner Ld",
+      "url": "https://www.ebay.co.uk/itm/198464150720?_skw=Marvel+Harris+MARVEL&hash=item2e35629cc0:g:PhsAAOSwZHhlyTit"
+    },
     "ebay:198545206178": {
       "first_seen": "2026-09-01T17:16:36Z",
       "last_seen": "2026-09-01T17:16:36Z",
@@ -2498,6 +3948,13 @@
       "score": 32,
       "title": "Jeanloup Sieff Derrieres Photo Monograph 1994 Kyoto Shoin Hardcover Japan -FS",
       "url": "https://www.ebay.co.uk/itm/198593881771?_skw=photography+monograph&hash=item2e3d1e26ab:g:7bEAAeSwk1JqjYEK"
+    },
+    "ebay:198608716248": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 36,
+      "title": "Eastern Front : The Unpublished Photographs, 1941-1945 by William Fowler",
+      "url": "https://www.ebay.co.uk/itm/198608716248?_skw=photo+book&hash=item2e3e0081d8:g:rsYAAeSwYEVqewQ3"
     },
     "ebay:198608725975": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -2597,6 +4054,20 @@
       "title": "SIGNED Entropic Kingdom By Tom Chambers ART PHOTOGRAPHY BOOK 2012",
       "url": "https://www.ebay.co.uk/itm/198608725996?_skw=art+photography+book&hash=item2e3e00a7ec:g:fakAAOSwe3Zl0Q5l"
     },
+    "ebay:198608788596": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "PC Photo Digital SLR Handbook By Rob Sheppard",
+      "url": "https://www.ebay.co.uk/itm/198608788596?_skw=photo+book&hash=item2e3e019c74:g:GGUAAeSwIMRqleRp"
+    },
+    "ebay:198609076312": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 44,
+      "title": "9 Children’s Illustrated Picture Books Bundle Paperback Ages 4-8",
+      "url": "https://www.ebay.co.uk/itm/198609076312?_skw=photo+book&hash=item2e3e060058:g:xoMAAeSwzf9qlg3d"
+    },
     "ebay:198609930935": {
       "first_seen": "2026-09-01T17:16:36Z",
       "last_seen": "2026-09-01T17:16:36Z",
@@ -2688,6 +4159,13 @@
       "title": "Eric Morecambe Unseen : The Lost Diaries Jokes & Photographs edited William Cook",
       "url": "https://www.ebay.co.uk/itm/198611369588?_skw=photo+book&hash=item2e3e28fe74:g:o4oAAeSwfVNqaSFk"
     },
+    "ebay:205064818799": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "The Wonder Book Of Do You Know?, By Harry Golding - 1930's VGC For Age",
+      "url": "https://www.ebay.co.uk/itm/205064818799?_skw=Marvel+Harris+MARVEL&hash=item2fbed0d06f:g:L~wAAOSwTnpmczOG"
+    },
     "ebay:205692931420": {
       "first_seen": "2026-09-01T15:15:42Z",
       "last_seen": "2026-09-01T15:15:42Z",
@@ -2764,6 +4242,20 @@
       "score": 36,
       "title": "Behind The Blinds BTB Limited Bundle Ash Alex Luca",
       "url": "https://www.ebay.co.uk/itm/206523078699?_skw=photography+book+bundle&hash=item3015bc182b:g:LD4AAeSwfoNqd0I0"
+    },
+    "ebay:206527408093": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "ROYAL NAVY WARSHIPS 1939-45 BY W.D.G.BLUNDELL  1971   NAVAL PHOTOS & PLANS",
+      "url": "https://www.ebay.co.uk/itm/206527408093?_skw=photo+book&hash=item3015fe27dd:g:9OwAAeSwq2Jqlb5q"
+    },
+    "ebay:206527430813": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "BATTLE CLASS DESTROYERS  BY P.HODGES   1971  SB   NAVAL PHOTOS & PLANS",
+      "url": "https://www.ebay.co.uk/itm/206527430813?_skw=photo+book&hash=item3015fe809d:g:qRMAAeSwVDBqldIu"
     },
     "ebay:206528694377": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -2905,6 +4397,13 @@
       "title": "Ryo Harusaki Photo Book japan",
       "url": "https://www.ebay.co.uk/itm/206530084506?_skw=photo+book&hash=item301626fe9a:g:eacAAeSwo5Fql3KN"
     },
+    "ebay:206530084702": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 38,
+      "title": "Ella Freya 1st Photo Book Hyakka Ryoran Japan Kodansha",
+      "url": "https://www.ebay.co.uk/itm/206530084702?_skw=photography+book+collection&hash=item301626ff5e:g:fN8AAeSwKVxql3LV"
+    },
     "ebay:206530086729": {
       "first_seen": "2026-09-02T05:52:04Z",
       "last_seen": "2026-09-02T05:52:04Z",
@@ -2946,6 +4445,13 @@
       "score": 56,
       "title": "Lachapelle Land: Photographs by David LaChapelle (Hardcover, 1996)",
       "url": "https://www.ebay.co.uk/itm/226732948403?_skw=David+LaChapelle+LaChapelle+Land&hash=item34ca563bb3:g:Bk4AAeSwwDZoFMYK"
+    },
+    "ebay:226797987327": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Harry Golding The Wonder Book Of Science Large Hardback 1935",
+      "url": "https://www.ebay.co.uk/itm/226797987327?_skw=Marvel+Harris+MARVEL&hash=item34ce36a5ff:g:P5sAAeSwhS1oOCCd"
     },
     "ebay:226800271323": {
       "first_seen": "2026-09-01T15:15:42Z",
@@ -3002,6 +4508,62 @@
       "score": 36,
       "title": "Job Lot Hard Cover Books From 1980’s. Good Condition See Photos. 19 Books Total",
       "url": "https://www.ebay.co.uk/itm/227499489602?_skw=photo+books+job+lot&hash=item34f806b942:g:qUMAAeSwfVNqVQjq"
+    },
+    "ebay:227499728460": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 38,
+      "title": "Martin Parr: Think of Scotland SIGNED First Edition New Damiani Photobook",
+      "url": "https://www.ebay.co.uk/itm/227499728460?_skw=photo+book&hash=item34f80a5e4c:g:bYUAAeSwislqleL2"
+    },
+    "ebay:227499785633": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Once Upon a Journey A funny new illustrated children’s picture book about Percy",
+      "url": "https://www.ebay.co.uk/itm/227499785633?_skw=photo+book&hash=item34f80b3da1:g:5isAAeSwiipqlfO2"
+    },
+    "ebay:227499785715": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Activity Book For 5-6 Year Olds Mazes Spot the Difference Math Puzzles Picture",
+      "url": "https://www.ebay.co.uk/itm/227499785715?_skw=photo+book&hash=item34f80b3df3:g:eVkAAeSw9IdqlfP3"
+    },
+    "ebay:227499790163": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Elmer Beloved classic bestselling picture book celebrating the things that make",
+      "url": "https://www.ebay.co.uk/itm/227499790163?_skw=photo+book&hash=item34f80b4f53:g:4PUAAeSwJmhqlfV5"
+    },
+    "ebay:227499834283": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Elmer Board Book (Elmer Picture Books)",
+      "url": "https://www.ebay.co.uk/itm/227499834283?_skw=photo+book&hash=item34f80bfbab:g:K-MAAeSwijdqlgAd"
+    },
+    "ebay:227499834370": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Dragons Love Underpants A hilarious picture book adventure to make the whole",
+      "url": "https://www.ebay.co.uk/itm/227499834370?_skw=photo+book&hash=item34f80bfc02:g:PMgAAeSwGflqlf-s"
+    },
+    "ebay:227499834382": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Follow the Swallow A brilliantly funny illustrated children’s picture book about",
+      "url": "https://www.ebay.co.uk/itm/227499834382?_skw=photo+book&hash=item34f80bfc0e:g:OdcAAeSwQKZqlgAi"
+    },
+    "ebay:227499834407": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Can't You Sleep Little Bear A beloved classic picture book about night time",
+      "url": "https://www.ebay.co.uk/itm/227499834407?_skw=photo+book&hash=item34f80bfc27:g:PVAAAeSwPgVqlf~m"
     },
     "ebay:227500457837": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -3290,6 +4852,13 @@
       "title": "Recollections by Philip Jones Griffiths – High-Quality Photography Monograph",
       "url": "https://www.ebay.co.uk/itm/236890420444?_skw=photography+monograph&hash=item3727c4f4dc:g:abwAAeSwwlRqODRv"
     },
+    "ebay:236894323011": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "The Wonder Book of Aircraft - GOLDING, Harry (ed)",
+      "url": "https://www.ebay.co.uk/itm/236894323011?_skw=Marvel+Harris+MARVEL&hash=item3728008143:g:qXIAAeSwBZ1qOr3i"
+    },
     "ebay:236969085528": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
@@ -3317,6 +4886,27 @@
       "score": 4,
       "title": "Looking in: Robert Frank's the Americans. Expanded 1st ED. Near fine condition.",
       "url": "https://www.ebay.co.uk/itm/236993862902?_skw=Robert+Frank+The+Americans&hash=item372def5cf6:g:LAgAAeSwe41qb7Nm"
+    },
+    "ebay:236998127760": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Marvel Xavier's Institute Liberty & Justice For All by Carrie Harris PB",
+      "url": "https://www.ebay.co.uk/itm/236998127760?_skw=Marvel+Harris+MARVEL&hash=item372e307090:g:XvAAAeSwEx9qejR5"
+    },
+    "ebay:237041325063": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "[Name] Helps the Gingerbread Boy Personalised Christmas Picture Book Hardback.",
+      "url": "https://www.ebay.co.uk/itm/237041325063?_skw=photo+book&hash=item3730c39407:g:9v0AAeSwMf5qjMHF"
+    },
+    "ebay:237041346345": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Countries Of The World Kenya by Michael Dahl Paperback book  & Picture Postcard.",
+      "url": "https://www.ebay.co.uk/itm/237041346345?_skw=photo+book&hash=item3730c3e729:g:KRAAAOSwIaZm~8QE"
     },
     "ebay:237042224106": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -3457,6 +5047,13 @@
       "score": 58,
       "title": "Job lot: x 100 copies Fanatics photo Book - James Marcus Hanley - New & Wrapped",
       "url": "https://www.ebay.co.uk/itm/257144938406?_skw=photobook+job+lot&hash=item3bdf085fa6:g:ypEAAeSwFPNo08sv"
+    },
+    "ebay:257347758758": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 70,
+      "title": "Stephen Shore: Uncommon Places Hardcover",
+      "url": "https://www.ebay.co.uk/itm/257347758758?_skw=Stephen+Shore+Uncommon+Places&hash=item3beb1f2aa6:g:O50AAeSwQ1BpheHC"
     },
     "ebay:257534838109": {
       "first_seen": "2026-09-01T17:16:36Z",
@@ -3668,6 +5265,13 @@
       "title": "DIANE ARBUS: A Biography by Patricia Bosworth (Paperback, 1995)",
       "url": "https://www.ebay.co.uk/itm/266391689277?_skw=Diane+Arbus+Diane+Arbus&hash=item3e062e983d:g:HcoAAOSwviBk7aFB"
     },
+    "ebay:267680270590": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "The Wonder Book Of Railways - Harry Golding - Ward Lock & Co Ltd 21st Edition",
+      "url": "https://www.ebay.co.uk/itm/267680270590?_skw=Marvel+Harris+MARVEL&hash=item3e52fcc8fe:g:OGYAAeSwoyNqJFGs"
+    },
     "ebay:267708317015": {
       "first_seen": "2026-09-01T17:16:36Z",
       "last_seen": "2026-09-01T17:16:36Z",
@@ -3702,6 +5306,41 @@
       "score": 46,
       "title": "Cycling Book Rouleur Photography Annual 2009 Over 300 Pages!",
       "url": "https://www.ebay.co.uk/itm/267771220240?_skw=photography+book+collection&hash=item3e58689110:g:l5EAAeSw3pVpmaIR"
+    },
+    "ebay:267772396094": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Underground By Uijung Kim Hardcover Picture Book, English",
+      "url": "https://www.ebay.co.uk/itm/267772396094?_skw=photo+book&hash=item3e587a823e:g:HAIAAeSw3h9qldjH"
+    },
+    "ebay:267772461746": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 4,
+      "title": "Little Book of Spitfire David Curnock Hardcover Picture Book Aviation WWII",
+      "url": "https://www.ebay.co.uk/itm/267772461746?_skw=photo+book&hash=item3e587b82b2:g:lJoAAeSw1PxqlfJJ"
+    },
+    "ebay:267772881822": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Counting on Katherine — Helaine Becker, Hardcover Picture Book, Ages 4-8, NASA",
+      "url": "https://www.ebay.co.uk/itm/267772881822?_skw=photo+book&hash=item3e5881eb9e:g:mYgAAeSw-95qlocR"
+    },
+    "ebay:267772883258": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Bloom — Anne Booth, illustrated by Robyn Wilson-Owen, PB Picture Book, 4-8",
+      "url": "https://www.ebay.co.uk/itm/267772883258?_skw=photo+book&hash=item3e5881f13a:g:wCgAAeSwvEZqloda"
+    },
+    "ebay:267772921843": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Ernest Nister Golden Hours Illustrated Children's Picture Book Hardback (1897)",
+      "url": "https://www.ebay.co.uk/itm/267772921843?_skw=photo+book&hash=item3e588287f3:g:pg0AAeSwMcdqlpFa"
     },
     "ebay:267772945361": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -3794,6 +5433,13 @@
       "title": "Jaguars For The Road  Hardback Book By Henry Rasmussen. In VGC  Small Tear Cover",
       "url": "https://www.ebay.co.uk/itm/267773818282?_skw=photo+book&hash=item3e589035aa:g:gTEAAOSwo6BmJpbX"
     },
+    "ebay:275240029022": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Harley-Davidson: The Milwaukee Marvel - Harry V Sucher  Hardback Book",
+      "url": "https://www.ebay.co.uk/itm/275240029022?_skw=Marvel+Harris+MARVEL&hash=item4015958b5e:g:q0oAAOSwZaRiQs96"
+    },
     "ebay:275859389646": {
       "first_seen": "2026-09-01T17:16:36Z",
       "last_seen": "2026-09-01T17:16:36Z",
@@ -3842,6 +5488,20 @@
       "score": 60,
       "title": "David LaChapelle - LaChapelle Land Hardcover (Deluxe Edition, Boxed & Map - Mint",
       "url": "https://www.ebay.co.uk/itm/278325914082?_skw=David+LaChapelle+LaChapelle+Land&hash=item40cd8469e2:g:GHcAAeSwiTNqlCV4"
+    },
+    "ebay:278330075540": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 44,
+      "title": "Peppa Pig Ladybird Picture Book Bundle: 9 Paperbacks & hardbacks.  Ages 4-8",
+      "url": "https://www.ebay.co.uk/itm/278330075540?_skw=photo+book&hash=item40cdc3e994:g:uo4AAeSw04tqld9Z"
+    },
+    "ebay:278330146204": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 36,
+      "title": "Aerial Photographs of Britain From The Air Hardback Large Size Reference Book",
+      "url": "https://www.ebay.co.uk/itm/278330146204?_skw=photo+book&hash=item40cdc4fd9c:g:k5cAAeSwislqleeH"
     },
     "ebay:278332117098": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -3948,6 +5608,13 @@
       "title": "David Lynch Images Hardcover Photo Book Photography Art Monograph English",
       "url": "https://www.ebay.co.uk/itm/287360289149?_skw=photography+monograph&hash=item42e802097d:g:L5YAAeSwIzRpnP8u"
     },
+    "ebay:287498447702": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 70,
+      "title": "All That Life Can Afford Matt Stuart First Edition",
+      "url": "https://www.ebay.co.uk/itm/287498447702?_skw=Matt+Stuart+All+That+Life+Can+Afford&hash=item42f03e2b56:g:79MAAeSw1vZqbw7J"
+    },
     "ebay:287507811691": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
@@ -3982,6 +5649,76 @@
       "score": 67,
       "title": "Erotic Art Photography - Private Collections by Alexandre Dupouy",
       "url": "https://www.ebay.co.uk/itm/287554647713?_skw=photography+books+collection&hash=item42f397b6a1:g:UGYAAeSwcXFqlGxH"
+    },
+    "ebay:287556638259": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 4,
+      "title": "明天出版社 幼幼饮食小绘本 4册 陈长海 中文 Chinese Picture Books On Food. For 2 Plus",
+      "url": "https://www.ebay.co.uk/itm/287556638259?_skw=photo+book&hash=item42f3b61633:g:rMwAAeSwMtZqlc71"
+    },
+    "ebay:287556680393": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 36,
+      "title": "New Discover Germany Deutschland Entdecken The German Fedreral States Photo's",
+      "url": "https://www.ebay.co.uk/itm/287556680393?_skw=photo+book&hash=item42f3b6bac9:g:ffoAAeSwp2Jp8QKE"
+    },
+    "ebay:287556777737": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "The Queen's Hat (Paperback Picture Book) by Steve Antony, Illus, Ages 4-8",
+      "url": "https://www.ebay.co.uk/itm/287556777737?_skw=photo+book&hash=item42f3b83709:g:X0wAAeSwJFFqleQt"
+    },
+    "ebay:287556785815": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Keith the Cat with the Magic Hat (Paperback Picture Book) Sue Hendra Illus",
+      "url": "https://www.ebay.co.uk/itm/287556785815?_skw=photo+book&hash=item42f3b85697:g:c5cAAeSw8NRqleWA"
+    },
+    "ebay:287556791633": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Barry the Fish with Fingers (Paperback Picture Book) by Sue Hendra, Ages 4-8",
+      "url": "https://www.ebay.co.uk/itm/287556791633?_skw=photo+book&hash=item42f3b86d51:g:Kn0AAeSwBD9qlecr"
+    },
+    "ebay:287556799797": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "There's a Snake in My School! (Hardcover Picture Book) by David Walliams, Illus",
+      "url": "https://www.ebay.co.uk/itm/287556799797?_skw=photo+book&hash=item42f3b88d35:g:GhoAAeSwvEZqlefN"
+    },
+    "ebay:287556802445": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Mad About Minibeasts! (Paperback Picture Book) by Giles Andreae, Ages 2-3",
+      "url": "https://www.ebay.co.uk/itm/287556802445?_skw=photo+book&hash=item42f3b8978d:g:PC0AAeSwpEtqlege"
+    },
+    "ebay:287556803745": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Poo in the Zoo: The Great Poo Mystery (Paperback Picture Book) Ages 4-8",
+      "url": "https://www.ebay.co.uk/itm/287556803745?_skw=photo+book&hash=item42f3b89ca1:g:fZMAAeSwaclqlei5"
+    },
+    "ebay:287557267157": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 4,
+      "title": "BF10 VICKERS GUNBUS FE2 FE8. 94 A4 PAGES & 2 PHOTOS",
+      "url": "https://www.ebay.co.uk/itm/287557267157?_skw=photo+book&hash=item42f3bfaed5:g:iwkAAeSwzbZqlj8U"
+    },
+    "ebay:287557277650": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 4,
+      "title": "BF11 the spad &  NIEUPORT 150 A4 PAGES COPIES CLIPPINGS LOTS OF PLANS + 2 photo",
+      "url": "https://www.ebay.co.uk/itm/287557277650?_skw=photo+book&hash=item42f3bfd7d2:g:mBYAAeSwjPFqlkKI"
     },
     "ebay:287557296014": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -4165,6 +5902,27 @@
       "title": "Joel Sternfeld:American Prospects: American Prospects by Joel Sternfeld...",
       "url": "https://www.ebay.co.uk/itm/296488934387?_skw=Joel+Sternfeld+American+Prospects&hash=item45081e1bf3:g:Ru8AAOxy7nNTSl2D"
     },
+    "ebay:296948968677": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 78,
+      "title": "THE AMERICANS ROBERT FRANK Photo Album",
+      "url": "https://www.ebay.co.uk/itm/296948968677?_skw=Robert+Frank+The+Americans&hash=item452389ace5:g:qmwAAOSw8hxnipeN"
+    },
+    "ebay:297349740780": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "I Wonder by Annaka Harris (Hardback Illustrated Book)",
+      "url": "https://www.ebay.co.uk/itm/297349740780?_skw=Marvel+Harris+MARVEL&hash=item453b6cf8ec:g:-KoAAOSwb01oNffw"
+    },
+    "ebay:297656353916": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "THE WONDER BOOK  OF WONDERS , Harry Golding, Ward Lock     1929",
+      "url": "https://www.ebay.co.uk/itm/297656353916?_skw=Marvel+Harris+MARVEL&hash=item454db3847c:g:GZsAAeSwJDZo4Af2"
+    },
     "ebay:298215144087": {
       "first_seen": "2026-09-01T19:45:15Z",
       "last_seen": "2026-09-01T19:45:15Z",
@@ -4206,6 +5964,13 @@
       "score": 32,
       "title": "Lympne Airport in Old Photographs Britain in Old Photographs PB 1992 Illus",
       "url": "https://www.ebay.co.uk/itm/298629944704?_skw=old+photography+books&hash=item4587bb5580:g:IhEAAeSw2HNqizTL"
+    },
+    "ebay:298633926533": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 36,
+      "title": "Scott Matthews What The Night Delivers UK Tour Photobook Programme 2010",
+      "url": "https://www.ebay.co.uk/itm/298633926533?_skw=photo+book&hash=item4587f81785:g:TRYAAeSww99qkxnO"
     },
     "ebay:298635345256": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -4291,6 +6056,13 @@
       "title": "Gypsies Koudelka, Josef Hardcover 2nd print First Edition Thames and Hudson 5005",
       "url": "https://www.ebay.co.uk/itm/306772111876?_skw=Josef+Koudelka+Gypsies&hash=item476d0af204:g:S0cAAeSwgs9pkd2K"
     },
+    "ebay:306792400255": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 70,
+      "title": "Stephen Shore - Uncommon Places - The Complete Works",
+      "url": "https://www.ebay.co.uk/itm/306792400255?_skw=Stephen+Shore+Uncommon+Places&hash=item476e40857f:g:aikAAeSw7~dpoNgr"
+    },
     "ebay:306842240883": {
       "first_seen": "2026-09-01T15:09:30Z",
       "last_seen": "2026-09-01T15:09:30Z",
@@ -4332,6 +6104,20 @@
       "score": 58,
       "title": "Vintage Party Supplies Bundle Joblot Cards Wrapping Paper Balloon Pump Photobook",
       "url": "https://www.ebay.co.uk/itm/307150025633?_skw=photobook+job+lot&hash=item47839173a1:g:xKcAAeSw2~5qWU~B"
+    },
+    "ebay:307155706969": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "The KISKADEE QUEEN Collection of BLACK NURSERY VERSE 1991 Book Picture Puffins",
+      "url": "https://www.ebay.co.uk/itm/307155706969?_skw=photo+book&hash=item4783e82459:g:YFAAAeSwqmpqVPKz"
+    },
+    "ebay:307155747984": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Little People, BIG DREAMS: Taylor Swift Hardcover Picture Book (2019)",
+      "url": "https://www.ebay.co.uk/itm/307155747984?_skw=photo+book&hash=item4783e8c490:g:Qr4AAeSw5NJqld06"
     },
     "ebay:307156919158": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -4424,6 +6210,13 @@
       "title": "American Witness: The Art and Life of Robert Frank by RJ Smith (Hardcover, 2017)",
       "url": "https://www.ebay.co.uk/itm/316647273589?_skw=Robert+Frank+The+Americans&hash=item49b9a5f475:g:c2AAAOSwJTRhLiB0"
     },
+    "ebay:316683342821": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "The Wonder Book of Railways by Harry Golding, Eighth Edition For Boys And Girls",
+      "url": "https://www.ebay.co.uk/itm/316683342821?_skw=Marvel+Harris+MARVEL&hash=item49bbcc53e5:g:omkAAOSwWF9nLQMB"
+    },
     "ebay:317723053363": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
@@ -4486,6 +6279,48 @@
       "score": 57,
       "title": "The Gourmands Lemon by The Gourmand Hardcover Book",
       "url": "https://www.ebay.co.uk/itm/318804315487?_skw=photography+book&hash=item4a3a37cd5f:g:d8wAAeSwe-pqlWZp"
+    },
+    "ebay:318805149789": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 16,
+      "title": "Big Top Benn David McKee Hardback Book - Signed By Author & Dated 2011 + Picture",
+      "url": "https://www.ebay.co.uk/itm/318805149789?_skw=photo+book&hash=item4a3a44885d:g:VgUAAeSw2HNqlaGM"
+    },
+    "ebay:318806073258": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Starting School The timeless picture book for new school starters",
+      "url": "https://www.ebay.co.uk/itm/318806073258?_skw=photo+book&hash=item4a3a529faa:g:3ZcAAeSw7zhqlelL"
+    },
+    "ebay:318806073815": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "NOSH for Students A Fun Student Cookbook Photo with Every Recipe",
+      "url": "https://www.ebay.co.uk/itm/318806073815?_skw=photo+book&hash=item4a3a52a1d7:g:mHIAAeSwTclqleil"
+    },
+    "ebay:318806074117": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "The Baddies the wickedly funny picture book from the bestselling creators of Zog",
+      "url": "https://www.ebay.co.uk/itm/318806074117?_skw=photo+book&hash=item4a3a52a305:g:RXIAAeSwpEtqlekl"
+    },
+    "ebay:318806325695": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "We're Going on a Bear Hunt The bestselling classic family favourite picture book",
+      "url": "https://www.ebay.co.uk/itm/318806325695?_skw=photo+book&hash=item4a3a5679bf:g:AGMAAeSwRAVqlfl9"
+    },
+    "ebay:318806401794": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "The Gruffalo The classic rhyming picture book adventure and must read bedtime",
+      "url": "https://www.ebay.co.uk/itm/318806401794?_skw=photo+book&hash=item4a3a57a302:g:nTgAAeSw69pqlf~O"
     },
     "ebay:318808948046": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -4648,6 +6483,13 @@
       "title": "Things I Have Learned in My Life So Stefan Sagmeister Box Set of Chapbooks 2005",
       "url": "https://www.ebay.co.uk/itm/318811626121?_skw=photography+book&hash=item4a3aa75a89:g:N4UAAeSwiTNql0yM"
     },
+    "ebay:318813453169": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 34,
+      "title": "The Osborne Picture Dictionary French + 3 more",
+      "url": "https://www.ebay.co.uk/itm/318813453169?_skw=photo+book&hash=item4a3ac33b71:g:iiUAAeSw~OdnxtZC"
+    },
     "ebay:327293675838": {
       "first_seen": "2026-09-01T19:45:15Z",
       "last_seen": "2026-09-01T19:45:15Z",
@@ -4675,6 +6517,27 @@
       "score": 32,
       "title": "Led Zeppelin Japanese Photobook of European Tour 1980 plus MORE Joblot",
       "url": "https://www.ebay.co.uk/itm/327335113186?_skw=photobook+job+lot&hash=item4c36b171e2:g:2MYAAeSwMcpqfdP6"
+    },
+    "ebay:327335383540": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 36,
+      "title": "LAST YEARS OF STEAM AROUND NORTH WALES PHOTOGRAPHIC ARCHIVE MICHAEL CLEMENS 2021",
+      "url": "https://www.ebay.co.uk/itm/327335383540?_skw=photo+book&hash=item4c36b591f4:g:2FAAAeSwJ9tqlcBt"
+    },
+    "ebay:327335543482": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 36,
+      "title": "Cycling & Motoring From Old Photographs Book Victorian & Edwardian",
+      "url": "https://www.ebay.co.uk/itm/327335543482?_skw=photo+book&hash=item4c36b802ba:g:KWsAAOSwGQBg9BtM"
+    },
+    "ebay:327335550788": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 36,
+      "title": "The Illustrated Encyclopedia Of Motorcycles Book 2010 Stunning Photographs",
+      "url": "https://www.ebay.co.uk/itm/327335550788?_skw=photo+book&hash=item4c36b81f44:g:KNEAAOSwuM5irvIu"
     },
     "ebay:327336338039": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -4823,6 +6686,13 @@
       "title": "Herb Ritts Photography Monograph / 1999 EXHIBITION CATALOG FOLIO",
       "url": "https://www.ebay.co.uk/itm/336613214465?_skw=photography+monograph&hash=item4e5fb60901:g:2LMAAeSw8g5qHWZm"
     },
+    "ebay:336621497931": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 71,
+      "title": "Stephen Shore: American Surfaces 1972 First Edition Schirmer/Mosel 1999 PB Rare",
+      "url": "https://www.ebay.co.uk/itm/336621497931?_skw=Stephen+Shore+American+Surfaces&hash=item4e60346e4b:g:vkIAAeSwFrRqIFrv"
+    },
     "ebay:336651387635": {
       "first_seen": "2026-09-01T17:16:36Z",
       "last_seen": "2026-09-01T17:16:36Z",
@@ -4858,6 +6728,27 @@
       "title": "Harmen de Hoop Photography First Edition Hardcover 2011 Conceptual Art Monograph",
       "url": "https://www.ebay.co.uk/itm/336765826557?_skw=photography+monograph&hash=item4e68ceb5fd:g:CuoAAeSwmFhoOsX8"
     },
+    "ebay:336767651831": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "The Wonder Book of the Navy - Harry Golding, Ward Lock & Co. HC, Illustrated",
+      "url": "https://www.ebay.co.uk/itm/336767651831?_skw=Marvel+Harris+MARVEL&hash=item4e68ea8ff7:g:nMIAAeSwh3NqjYzX"
+    },
+    "ebay:336767665054": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Ward, Lock & Co. The Wonder Book of Engineering Wonders - Harry Golding 1928 HC",
+      "url": "https://www.ebay.co.uk/itm/336767665054?_skw=Marvel+Harris+MARVEL&hash=item4e68eac39e:g:5CgAAeSwiOxqjYxw"
+    },
+    "ebay:336767667503": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "The Wonder Book: Do You Know? - Harry Golding, Illustrated HC, Inscribed",
+      "url": "https://www.ebay.co.uk/itm/336767667503?_skw=Marvel+Harris+MARVEL&hash=item4e68eacd2f:g:4ncAAeSwj6Bqja5T"
+    },
     "ebay:336769401126": {
       "first_seen": "2026-09-01T17:24:57Z",
       "last_seen": "2026-09-01T17:24:57Z",
@@ -4892,6 +6783,13 @@
       "score": 66,
       "title": "Carlton Books Erotique PB 1993 Picture Book Erotic Photography Non-Fiction",
       "url": "https://www.ebay.co.uk/itm/336771499759?_skw=art+photography+book&hash=item4e692546ef:g:NcIAAeSw0jpqlcvu"
+    },
+    "ebay:336772319581": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Funnybones Janet & Allan Ahlberg Puffin Children’s Picture Book Paperback",
+      "url": "https://www.ebay.co.uk/itm/336772319581?_skw=photo+book&hash=item4e6931c95d:g:798AAeSw7BNqlovr"
     },
     "ebay:336772575735": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -5306,6 +7204,20 @@
       "title": "CAR STYLING VOL.46 1/2 : Special Edition - Luigi Colani Part 3 Art Photo Book",
       "url": "https://www.ebay.co.uk/itm/366641393305?_skw=photographs+book&hash=item555d87ae99:g:7OMAAeSwFJZqloOC"
     },
+    "ebay:366641475943": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 10,
+      "title": "Hen-sparrow Turns Purple by Gita Wolf Scroll Picture Book Illustrated English",
+      "url": "https://www.ebay.co.uk/itm/366641475943?_skw=photo+book&hash=item555d88f167:g:arEAAeSwALdqlo42"
+    },
+    "ebay:366641579653": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "The Wonder Book of Motors ; edited by Harry Golding ; 4th Edition ~ 1940’s📘",
+      "url": "https://www.ebay.co.uk/itm/366641579653?_skw=Marvel+Harris+MARVEL&hash=item555d8a8685:g:rkIAAeSwS7ZqlpzN"
+    },
     "ebay:366641855179": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
@@ -5369,12 +7281,33 @@
       "title": "Pedro Virgil The Gods of Sport hardback book like new Gay interest",
       "url": "https://www.ebay.co.uk/itm/366643417974?_skw=photography+book&hash=item555da69376:g:GSoAAeSwpfRqaOJO"
     },
+    "ebay:375881027679": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 70,
+      "title": "Stephen Shore Uncommon Places The Complete Works PHOTOGRAPHY ART BOOK THAMES",
+      "url": "https://www.ebay.co.uk/itm/375881027679?_skw=Stephen+Shore+Uncommon+Places&hash=item578441505f:g:vjsAAOSwcbNnaEvr"
+    },
+    "ebay:375979843315": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 62,
+      "title": "All that life can afford by Matt Stuart. Signed second edition with print",
+      "url": "https://www.ebay.co.uk/itm/375979843315?_skw=Matt+Stuart+All+That+Life+Can+Afford&hash=item578a251ef3:g:8~gAAOSwxD5npoUG"
+    },
     "ebay:376030470218": {
       "first_seen": "2026-09-01T17:24:57Z",
       "last_seen": "2026-09-01T17:24:57Z",
       "score": 56,
       "title": "Lachapelle Land: Photographs by David LaChapelle",
       "url": "https://www.ebay.co.uk/itm/376030470218?_skw=David+LaChapelle+LaChapelle+Land&hash=item578d29a04a:g:1IsAAOSwvK5nwYd~"
+    },
+    "ebay:376304535949": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Harley-Davidson: The Milwaukee Marvel, Sucher, Harry V., Haynes P",
+      "url": "https://www.ebay.co.uk/itm/376304535949?_skw=Marvel+Harris+MARVEL&hash=item579d7f898d:g:vmkAAeSw1LRoP15B"
     },
     "ebay:376964648100": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -5396,6 +7329,13 @@
       "score": 62,
       "title": "Lachapelle Land: Photographs by David LaChapelle First Edition in Box 1999 New",
       "url": "https://www.ebay.co.uk/itm/377257122194?_skw=David+LaChapelle+LaChapelle+Land&hash=item57d646d992:g:N34AAeSw77hqLBQc"
+    },
+    "ebay:377328100206": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "The Wonder Book of Aircraft 3rd Ed Illustrated Hardcover by Harry Golding",
+      "url": "https://www.ebay.co.uk/itm/377328100206?_skw=Marvel+Harris+MARVEL&hash=item57da81e36e:g:3sMAAeSwyk1qTiQ9"
     },
     "ebay:377418169229": {
       "first_seen": "2026-09-01T17:20:07Z",
@@ -5502,6 +7442,20 @@
       "title": "Joblot of Four (4) Books on Ships, Submarines and Photography Afloat.",
       "url": "https://www.ebay.co.uk/itm/392886346991?_skw=photography+books+job+lot&hash=item5b79d9e4ef:g:DhMAAOSw-LtfHYpb"
     },
+    "ebay:393869609353": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Hammy the Wonder Hamster by Poppy Harris Margaret Mc Allister",
+      "url": "https://www.ebay.co.uk/itm/393869609353?_skw=Marvel+Harris+MARVEL&hash=item5bb4754989:g:0ncAAOSwzFVgjpx-"
+    },
+    "ebay:398089851334": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "The Wonder Book of Children of All Nations 1919 edited by Harry Golding",
+      "url": "https://www.ebay.co.uk/itm/398089851334?_skw=Marvel+Harris+MARVEL&hash=item5cb00111c6:g:VqQAAeSwlmBqN54n"
+    },
     "ebay:398132639199": {
       "first_seen": "2026-09-01T19:45:15Z",
       "last_seen": "2026-09-01T19:45:15Z",
@@ -5586,6 +7540,13 @@
       "title": "Sailing Fishermen In Old Photographs By Colin Elliott. 1978",
       "url": "https://www.ebay.co.uk/itm/398326823549?_skw=old+photography+books&hash=item5cbe20fa7d:g:1b8AAeSw~gJqjwAJ"
     },
+    "ebay:398340621299": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 26,
+      "title": "HARLEY-DAVIDSON, The Milwaukee Marvel. Harry V. Sucher.1985 Hardback. Haynes.",
+      "url": "https://www.ebay.co.uk/itm/398340621299?_skw=Marvel+Harris+MARVEL&hash=item5cbef383f3:g:R-AAAOSwUoZmfaKR"
+    },
     "ebay:398341317500": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
@@ -5600,6 +7561,20 @@
       "title": "Rally, A Photographic Journal Of The Rallies",
       "url": "https://www.ebay.co.uk/itm/398344686449?_skw=photographs+book&hash=item5cbf318b71:g:e7wAAeSwWhdqldu7"
     },
+    "ebay:398344698537": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 36,
+      "title": "The Game Console 2.0: A Photographic Hist..., Evan Amos",
+      "url": "https://www.ebay.co.uk/itm/398344698537?_skw=photo+book&hash=item5cbf31baa9:g:1A0AAeSwF-Zqld4c"
+    },
+    "ebay:398344730428": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 36,
+      "title": "Images of Movie Stars Hardcover Daily Mail Parragon Illustrated Picture Book",
+      "url": "https://www.ebay.co.uk/itm/398344730428?_skw=photo+book&hash=item5cbf32373c:g:gKoAAeSwptdqleJI"
+    },
     "ebay:398346950780": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
@@ -5613,6 +7588,13 @@
       "score": 40,
       "title": "BARD BREIVIK WAR PAINT SELF PORTRAITS HARDBACK BOOK NORWEGIAN ART PHOTOGRAPHY",
       "url": "https://www.ebay.co.uk/itm/398347009762?_skw=photography+book&hash=item5cbf54fee2:g:CowAAeSwukxooK4C"
+    },
+    "ebay:398347173546": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 0,
+      "title": "Shadow Avengers : A Marvel: Crisis Protocol Novel Paperback Carrie Harris",
+      "url": "https://www.ebay.co.uk/itm/398347173546?_skw=Marvel+Harris+MARVEL&hash=item5cbf577eaa:g:PqoAAeSw7Slqlr6v"
     },
     "ebay:398347181821": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -5670,6 +7652,13 @@
       "title": "Sleeping by the Mississippi by Alec Soth 9781910164891 | Brand New",
       "url": "https://www.ebay.co.uk/itm/404879487928?_skw=Alec+Soth+Sleeping+by+the+Mississippi&hash=item5e44b2b3b8:g:KJkAAOSw3Ahl~wAN"
     },
+    "ebay:405088779485": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 52,
+      "title": "Robert Frank: The Americans (Hardcover, 2012) Introduction by Jack Kerouac",
+      "url": "https://www.ebay.co.uk/itm/405088779485?_skw=Robert+Frank+The+Americans&hash=item5e512c3cdd:g:dxgAAOSwPMZmjUmv"
+    },
     "ebay:406747500150": {
       "first_seen": "2026-09-01T17:20:07Z",
       "last_seen": "2026-09-01T17:20:07Z",
@@ -5697,6 +7686,34 @@
       "score": 14,
       "title": "Nikolay Bakharev Novokuznetsk 2016 1st Edition 1/1000 Stanley Barker + Booklet",
       "url": "https://www.ebay.co.uk/itm/407129591933?_skw=Aaron+Schuman&hash=item5ecad0907d:g:uCMAAeSwMbhqd0FP"
+    },
+    "ebay:407183624322": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "SUNDAY FOOTBALL / EAST LONDON PHOTO STORIES WITH POSTER HOXTON MINI PRESS 2016",
+      "url": "https://www.ebay.co.uk/itm/407183624322?_skw=photo+book&hash=item5ece090882:g:tUEAAeSwbp5qlhab"
+    },
+    "ebay:407184117554": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 44,
+      "title": "Bluey Daddy Dropoff Picture Storybook Kids Paperback Book Ladybird Penguin⁠",
+      "url": "https://www.ebay.co.uk/itm/407184117554?_skw=photo+book&hash=item5ece108f32:g:tiMAAeSw7BNqlc1J"
+    },
+    "ebay:407184117791": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 24,
+      "title": "Bluey Mum School Picture Storybook - Paperback Childrens Reading Book",
+      "url": "https://www.ebay.co.uk/itm/407184117791?_skw=photo+book&hash=item5ece10901f:g:cXAAAeSwUxNqldB4"
+    },
+    "ebay:407184176798": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 26,
+      "title": "Yurie Nagashima SWISS Photobook 2024 Akaaka Japanese Photography NEW SEALED",
+      "url": "https://www.ebay.co.uk/itm/407184176798?_skw=photo+book&hash=item5ece11769e:g:HTEAAeSwWOBqlnGu"
     },
     "ebay:407184244972": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -5796,12 +7813,40 @@
       "title": "Fragile Beauty:Photographs from the Sir Elton John and Collection hardback book",
       "url": "https://www.ebay.co.uk/itm/800420381290?_skw=photographer+books+collection&hash=itemba5cc5c26a:g:ab0AAeSwlyJpLtO5"
     },
+    "ebay:800466622068": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 0,
+      "title": "I WONDER . RONNIE HARRIS . Rare vintage sheet music . Fast Free shipping",
+      "url": "https://www.ebay.co.uk/itm/800466622068?_skw=Marvel+Harris+MARVEL&hash=itemba5f875674:g:wukAAeSwmaVqc2KC"
+    },
+    "ebay:800466623570": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 0,
+      "title": "I WONDER . RONNIE HARRIS . Rare vintage sheet music . Fast Free shipping",
+      "url": "https://www.ebay.co.uk/itm/800466623570?_skw=Marvel+Harris+MARVEL&hash=itemba5f875c52:g:yf0AAeSwaTJqc2LL"
+    },
+    "ebay:800467203155": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 0,
+      "title": "I WONDER WHY . HARRY LEADER . Rare vintage sheet music . Fast Free shipping",
+      "url": "https://www.ebay.co.uk/itm/800467203155?_skw=Marvel+Harris+MARVEL&hash=itemba5f903453:g:wiMAAeSwSFFqc45E"
+    },
     "ebay:800548368240": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
       "score": 24,
       "title": "Old Rosemount by Patricia Newman (Paperback, 2015) 9781840337198 VGC",
       "url": "https://www.ebay.co.uk/itm/800548368240?_skw=old+photography+books&hash=itemba6466af70:g:ypYAAeSwxZRqiZTA"
+    },
+    "ebay:800550870937": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "The Wonder Book of Aircraft Harry Golding 4th Edition Hardcover Illustrated",
+      "url": "https://www.ebay.co.uk/itm/800550870937?_skw=Marvel+Harris+MARVEL&hash=itemba648cdf99:g:lAoAAeSwpfhqisMd"
     },
     "ebay:800556106041": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -5838,12 +7883,54 @@
       "title": "This is a Fake! A Collection of Unr..., Thompson, Andre",
       "url": "https://www.ebay.co.uk/itm/800585301934?_skw=photography+books+collection&hash=itemba669a3fae:g:WQ0AAeSwWihqk~UC"
     },
+    "ebay:800586807851": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "THE WONDER BOOK  OF WONDERS , Harry Golding, Ward Lock     1929",
+      "url": "https://www.ebay.co.uk/itm/800586807851?_skw=Marvel+Harris+MARVEL&hash=itemba66b13a2b:g:duEAAeSwVppqlFlW"
+    },
     "ebay:800592930512": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
       "score": 35,
       "title": "Paul Hobson The Art of Fungi Photography Hardback Book",
       "url": "https://www.ebay.co.uk/itm/800592930512?_skw=art+photography+book&hash=itemba670ea6d0:g:dgQAAeSwyIRqle2s"
+    },
+    "ebay:800592932051": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 36,
+      "title": "Andrew Marshall Photographing Wildlife in the UK Photo-Location Guidebook",
+      "url": "https://www.ebay.co.uk/itm/800592932051?_skw=photo+book&hash=itemba670eacd3:g:3E4AAeSwM2lqle4I"
+    },
+    "ebay:800593157409": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 44,
+      "title": "Julia Donaldson Hardcover Illustrated Picture Book Bundle x 6 Ages 2-8",
+      "url": "https://www.ebay.co.uk/itm/800593157409?_skw=photo+book&hash=itemba67121d21:g:BHUAAeSwjhxqlglw"
+    },
+    "ebay:800593168776": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "All My Goodnight Hugs - A ready-for-bed story (Picture Storybooks) By Imagine T",
+      "url": "https://www.ebay.co.uk/itm/800593168776?_skw=photo+book&hash=itemba67124988:g:k3wAAeSwfPFqlJgW"
+    },
+    "ebay:800593173873": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Great Fairies Of The World (Picture Flats) By Igloo Books. 9781800226432",
+      "url": "https://www.ebay.co.uk/itm/800593173873?_skw=photo+book&hash=itemba67125d71:g:qK8AAeSwMf5qkRhn"
+    },
+    "ebay:800593181064": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 44,
+      "title": "Julia Donaldson Paperback Illustrated Picture Book 5-Book Bundle Ages 2-8",
+      "url": "https://www.ebay.co.uk/itm/800593181064?_skw=photo+book&hash=itemba67127988:g:CyAAAeSw92lqlgnu"
     },
     "ebay:800593912120": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -5879,6 +7966,20 @@
       "score": 13,
       "title": "DOROTHEUM Modern and Contemporary Art December 17, 2014",
       "url": "https://www.ebay.co.uk/itm/800593934453?_skw=art+photography+book&hash=itemba671df875:g:LSYAAeSwXyxqlkK~"
+    },
+    "ebay:800595022198": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "Little Classics Fairy Tales Illustrated Hardback Picture Books Ages 4-8",
+      "url": "https://www.ebay.co.uk/itm/800595022198?_skw=photo+book&hash=itemba672e9176:g:IG0AAeSwG9FqloQW"
+    },
+    "ebay:800595288134": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 26,
+      "title": "Yukio Mishima Embrace Eikoh Hosoe First Edition Photobook Box Collectible Jp Art",
+      "url": "https://www.ebay.co.uk/itm/800595288134?_skw=photo+book&hash=itemba6732a046:g:2lYAAeSwQUJqlpN5"
     },
     "ebay:800595417376": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -6027,6 +8128,13 @@
       "title": "Yohji Yamamoto pour Homme 17AW Photo Book Leslie Kee Collection",
       "url": "https://www.ebay.co.uk/itm/820057308809?_skw=photographer+books+collection&hash=itembeef397e89:g:WI4AAeSwiOxqkT-E"
     },
+    "ebay:820057309095": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 67,
+      "title": "Stephen Shore Uncommon Places 50 Unpublished Photographs 1973–1978 Photobook",
+      "url": "https://www.ebay.co.uk/itm/820057309095?_skw=Stephen+Shore+Uncommon+Places&hash=itembeef397fa7:g:524AAeSwGEZqkT-N"
+    },
     "ebay:820057309330": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
@@ -6110,6 +8218,13 @@
       "score": 18,
       "title": "Art Work : On the Creative Life by Sally Mann (2025, Hardcover)",
       "url": "https://www.ebay.co.uk/itm/820069594586?_skw=art+photography+book&hash=itembeeff4f5da:g:CaIAAeSwc8FqlZFH"
+    },
+    "ebay:820072966986": {
+      "first_seen": "2026-09-02T07:13:35Z",
+      "last_seen": "2026-09-02T07:13:35Z",
+      "score": 14,
+      "title": "The Picture of Dorian Gray (Penguin Clothbound C, Oscar Wilde 2008",
+      "url": "https://www.ebay.co.uk/itm/820072966986?_skw=photo+book&hash=itembef0286b4a:g:qeAAAeSwWihqlpp-"
     },
     "ebay:820073311529": {
       "first_seen": "2026-09-01T12:57:22Z",
