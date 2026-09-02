@@ -316,7 +316,10 @@ class PrivateSellerBackfillTests(unittest.TestCase):
             },
         }
         result = backfill.reclassify_retained_findings(findings, 72)
-        self.assertEqual(result, {"before": 2, "retained": 1, "removed": 1})
+        self.assertEqual(
+            result,
+            {"before": 2, "retained": 1, "removed": 1, "changed": 2},
+        )
         self.assertNotIn("ebay:false", findings["items"])
         self.assertIn("ebay:strong", findings["items"])
 
