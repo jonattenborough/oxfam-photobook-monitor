@@ -1,23 +1,23 @@
 {
   "cursors": {
-    "active_stock": 9,
+    "active_stock": 10,
     "auctions": 10,
-    "broad_priority": 0,
-    "classic_auctions": 18,
-    "classic_contributors": 18,
-    "classic_hot_records": 22,
-    "contemporary_auctions": 18,
-    "contemporary_contributors": 18,
-    "contemporary_hot_records": 11,
+    "broad_priority": 1,
+    "classic_auctions": 19,
+    "classic_contributors": 19,
+    "classic_hot_records": 26,
+    "contemporary_auctions": 19,
+    "contemporary_contributors": 19,
+    "contemporary_hot_records": 15,
     "contributors": 10,
     "hot_records": 26,
-    "library_records": 172
+    "library_records": 180
   },
   "last_api_call_budget": 5,
   "last_browse_quota": {
-    "count": 4690,
+    "count": 4720,
     "limit": 5000,
-    "remaining": 310,
+    "remaining": 280,
     "reset": "2026-09-04T07:00:00.000Z",
     "resource": "buy.browse",
     "time_window": 86400
@@ -25,148 +25,10 @@
   "last_failure_count": 0,
   "last_live_checks": 1,
   "last_query_count": 4,
-  "last_run": "2026-09-03T19:28:37Z",
+  "last_run": "2026-09-03T21:51:53Z",
   "last_successful_queries": 4,
   "library_records": 4318,
   "pending_live": {
-    "ebay:147386111370": {
-      "best_recognition": {
-        "awards_and_evidence": "",
-        "bargain_gbp": null,
-        "canon_sources": "Parr/Badger V2 | Specialist photography publisher backlist: Schirmer/Mosel | Specialist photography publisher backlist: Aperture | Priority seed",
-        "collectibility_tier": "S",
-        "collectible_format_bonus": 0,
-        "collectible_format_evidence": [],
-        "collectible_variants": "",
-        "collector_profile": "",
-        "contributor": "Stephen Shore",
-        "documentary_relevance": "",
-        "edition_reasons": [
-          "exact collectible edition is not established by the listing metadata"
-        ],
-        "edition_status": "unknown",
-        "evidence_confidence": "High",
-        "first_edition_notes": "",
-        "first_monograph": "",
-        "isbn": "",
-        "publisher": "Aperture, Millerton, New York, 1982",
-        "reason": "exact title + contributor",
-        "record_id": "stephen-shore-uncommon-places",
-        "score": 100,
-        "search_priority": "0",
-        "source": "Priority seed",
-        "special_edition_priority": "",
-        "strong_buy_gbp": null,
-        "title": "Uncommon Places",
-        "year": "1982"
-      },
-      "buying_options": [
-        "FIXED_PRICE",
-        "BEST_OFFER"
-      ],
-      "category_id": "261186",
-      "category_path": "",
-      "collecting_lane": "classic or established canon",
-      "condition": "Very Good",
-      "context": "For sale is the definitive, landmark 188-page monograph Uncommon Places: The Complete Works by pioneer color photographer Stephen Shore. Pages & Plates: Internally near-fine. The page block is crisp and white. | Very Good | 2026-06-19T19:12:53.000Z | FIXED_PRICE BEST_OFFER",
-      "external_id": "147386111370",
-      "image_url": "https://i.ebayimg.com/images/g/JaQAAeSwFSBqNZNX/s-l225.jpg",
-      "item_creation_date": "2026-06-19T19:12:53.000Z",
-      "item_end_date": "",
-      "key": "ebay:147386111370",
-      "landed_price_gbp": 80.69,
-      "opportunity_kind": "collectible title or edition lead",
-      "opportunity_reasons": [
-        "recognition 100/100",
-        "collectibility tier S",
-        "price scoring includes returned delivery cost",
-        "immediate fixed-price purchase possible",
-        "Best Offer available",
-        "private individual seller",
-        "seller uses collector-aware language",
-        "edition evidence: unknown"
-      ],
-      "opportunity_score": 78,
-      "pending_since": "2026-09-02T07:13:35Z",
-      "price_currency": "GBP",
-      "price_gbp": 73.5,
-      "price_value": 73.5,
-      "private_seller": true,
-      "recognition_matches": [
-        {
-          "awards_and_evidence": "",
-          "bargain_gbp": null,
-          "canon_sources": "Parr/Badger V2 | Specialist photography publisher backlist: Schirmer/Mosel | Specialist photography publisher backlist: Aperture | Priority seed",
-          "collectibility_tier": "S",
-          "collectible_format_bonus": 0,
-          "collectible_format_evidence": [],
-          "collectible_variants": "",
-          "collector_profile": "",
-          "contributor": "Stephen Shore",
-          "documentary_relevance": "",
-          "edition_reasons": [
-            "exact collectible edition is not established by the listing metadata"
-          ],
-          "edition_status": "unknown",
-          "evidence_confidence": "High",
-          "first_edition_notes": "",
-          "first_monograph": "",
-          "isbn": "",
-          "publisher": "Aperture, Millerton, New York, 1982",
-          "reason": "exact title + contributor",
-          "record_id": "stephen-shore-uncommon-places",
-          "score": 100,
-          "search_priority": "0",
-          "source": "Priority seed",
-          "special_edition_priority": "",
-          "strong_buy_gbp": null,
-          "title": "Uncommon Places",
-          "year": "1982"
-        },
-        {
-          "awards_and_evidence": "",
-          "bargain_gbp": null,
-          "canon_sources": "Specialist photography publisher backlist: Aperture",
-          "collectibility_tier": "C",
-          "collectible_variants": "",
-          "collector_profile": "",
-          "contributor": "Stephen Sh",
-          "documentary_relevance": "",
-          "evidence_confidence": "Medium",
-          "first_edition_notes": "Work-level metadata only; verify the exact publisher edition and printing.",
-          "first_monograph": "",
-          "isbn": "",
-          "publisher": "Aperture",
-          "reason": "partial title + contributor",
-          "record_id": "openlibrary:OL21546968W",
-          "score": 86,
-          "search_priority": "4",
-          "source": "https://openlibrary.org/works/OL21546968W",
-          "special_edition_priority": "",
-          "strong_buy_gbp": null,
-          "title": "Stephen Shore - Uncommon Places",
-          "year": "2014"
-        }
-      ],
-      "recognized": true,
-      "rest_item_id": "v1|147386111370|0",
-      "score_band": "alert",
-      "scoring_version": 2,
-      "search_in_description": true,
-      "search_lane": "classic_hot",
-      "search_query": "Stephen Shore Uncommon Places",
-      "seller_account_type": "INDIVIDUAL",
-      "seller_feedback_percentage": "100.0",
-      "seller_feedback_score": 202,
-      "shipping_currency": "GBP",
-      "shipping_value": 7.19,
-      "source_id": "ebay_private_classic_hot",
-      "source_name": "eBay UK private sellers - classic_hot",
-      "tags": "FIXED_PRICE BEST_OFFER",
-      "title": "UNCOMMON PLACES STEPHEN SHORE 2004 First Aperture Edition (ISBN: 1-931788-34-2).",
-      "url": "https://www.ebay.co.uk/itm/147386111370?_skw=Stephen+Shore+Uncommon+Places&hash=item2250e5958a:g:JaQAAeSwFSBqNZNX",
-      "vendor": "keha.uk.uprjmmxjts"
-    },
     "ebay:147388192940": {
       "best_recognition": {
         "awards_and_evidence": "",
@@ -3921,11 +3783,11 @@
     "auction_ending:AUCTION:corinne day diary": "2026-09-01T15:15:42Z",
     "auction_ending:AUCTION:daido moriyama farewell photography": "2026-09-01T15:15:42Z",
     "broad:BEST_OFFER+FIXED_PRICE:art photography book": "2026-09-01T12:57:22Z",
-    "broad:BEST_OFFER+FIXED_PRICE:photo book": "2026-09-03T19:28:37Z",
-    "broad:BEST_OFFER+FIXED_PRICE:photographer book": "2026-09-03T19:28:37Z",
+    "broad:BEST_OFFER+FIXED_PRICE:photo book": "2026-09-03T21:51:53Z",
+    "broad:BEST_OFFER+FIXED_PRICE:photographer book": "2026-09-03T21:51:53Z",
     "broad:BEST_OFFER+FIXED_PRICE:photographs book": "2026-09-01T12:57:22Z",
-    "broad:BEST_OFFER+FIXED_PRICE:photography book": "2026-09-03T19:28:37Z",
-    "broad:BEST_OFFER+FIXED_PRICE:photography monograph": "2026-09-03T19:28:37Z",
+    "broad:BEST_OFFER+FIXED_PRICE:photography book": "2026-09-03T21:51:53Z",
+    "broad:BEST_OFFER+FIXED_PRICE:photography monograph": "2026-09-03T21:51:53Z",
     "classic_auction:AUCTION:alec soth niagara": "2026-09-01T17:16:36Z",
     "classic_auction:AUCTION:alec soth sleeping by the mississippi": "2026-09-01T17:20:07Z",
     "classic_auction:AUCTION:bernd and hilla becher anonyme skulpturen": "2026-09-01T17:24:57Z",
@@ -4959,6 +4821,20 @@
       "title": "LES ANNEE BLUE NOTE XL BOOK FRANCIS WOLFF PHOTOS Jazz musicians music THE YEARS",
       "url": "https://www.ebay.co.uk/itm/117394037797?_skw=photography+book&hash=item1b553adc25:g:OHcAAOSwGNlktsPl"
     },
+    "ebay:117394105840": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 26,
+      "title": "Memories of Gloucester – Local History Photo Book",
+      "url": "https://www.ebay.co.uk/itm/117394105840?_skw=photo+book&hash=item1b553be5f0:g:km4AAeSwMk1qh1Zs"
+    },
+    "ebay:117394191689": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 26,
+      "title": "RYTON,CRAWCROOK & GREENSIDE THROUGH TIME BY JOHN BOOTHROYD WITH NICK NEAVE 1st",
+      "url": "https://www.ebay.co.uk/itm/117394191689?_skw=photography+book&hash=item1b553d3549:g:SpkAAeSwjJxqfiys"
+    },
     "ebay:125687751071": {
       "first_seen": "2026-09-02T07:13:35Z",
       "last_seen": "2026-09-02T07:13:35Z",
@@ -5623,6 +5499,13 @@
       "score": 4,
       "title": "After You Mr. Lear: In the Wake of Edward Lear in Italy by Drummond, Maldwin",
       "url": "https://www.ebay.co.uk/itm/128060144596?_skw=photographer+book&hash=item1dd0fabbd4:g:D~gAAOSwidZf0q7j"
+    },
+    "ebay:128060341003": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 14,
+      "title": "Daily Mail The Rolling Stones: Unseen Archives Hardcover Illustrated",
+      "url": "https://www.ebay.co.uk/itm/128060341003?_skw=photo+book&hash=item1dd0fdbb0b:g:XDEAAeSwF-ZqmeZ8"
     },
     "ebay:133792317103": {
       "first_seen": "2026-09-01T17:20:07Z",
@@ -6366,6 +6249,34 @@
       "title": "tpau special  new hb colour photos-free postage-",
       "url": "https://www.ebay.co.uk/itm/137695383657?_skw=photo+book&hash=item200f48d069:g:s9EAAOSww5NoSviV"
     },
+    "ebay:137695478232": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 38,
+      "title": "James Herriot's Yorkshire - Signed Copy with photographs by Derry Brabbs 1980",
+      "url": "https://www.ebay.co.uk/itm/137695478232?_skw=photo+book&hash=item200f4a41d8:g:nlUAAOSwwSRjTVbF"
+    },
+    "ebay:137695698089": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 26,
+      "title": "London from the Air - Ian Hay Lisa Pritchard :Stunning Aerial Photographs London",
+      "url": "https://www.ebay.co.uk/itm/137695698089?_skw=photo+book&hash=item200f4d9ca9:g:S0cAAOxyoExSB6dX"
+    },
+    "ebay:137695793244": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 34,
+      "title": "LEGO DC Comics Super Heroes DK Paperback Picture Book Bundle Ages 4-8",
+      "url": "https://www.ebay.co.uk/itm/137695793244?_skw=photo+book&hash=item200f4f105c:g:PnIAAeSwZjdqUBUo"
+    },
+    "ebay:137695801074": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 34,
+      "title": "Puffin Paperback Picture Book Bundle Are We There Yet? Albert Supersize Ages 4-8",
+      "url": "https://www.ebay.co.uk/itm/137695801074?_skw=photo+book&hash=item200f4f2ef2:g:PLMAAeSwmaVqUBZC"
+    },
     "ebay:144095110872": {
       "first_seen": "2026-09-02T07:50:20Z",
       "last_seen": "2026-09-02T07:50:20Z",
@@ -6449,6 +6360,13 @@
       "score": 30,
       "title": "Art book Diane Arbus: Revelations 2003 Very Good Photography Art 1st HB",
       "url": "https://www.ebay.co.uk/itm/147385143422?_skw=Diane+Arbus+Diane+Arbus&hash=item2250d6d07e:g:8oAAAeSwrrZqNOtR"
+    },
+    "ebay:147386111370": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 47,
+      "title": "UNCOMMON PLACES STEPHEN SHORE 2004 First Aperture Edition (ISBN: 1-931788-34-2).",
+      "url": "https://www.ebay.co.uk/itm/147386111370?_skw=Stephen+Shore+Uncommon+Places&hash=item2250e5958a:g:JaQAAeSwFSBqNZNX"
     },
     "ebay:147386132856": {
       "first_seen": "2026-09-01T16:52:33Z",
@@ -6869,6 +6787,27 @@
       "score": 26,
       "title": "Birkenhead Through Time - Paper back Collard, Ian 2012 1st edition",
       "url": "https://www.ebay.co.uk/itm/147547598073?_skw=photography+book&hash=item225a85acf9:g:YaMAAeSw94NqgulL"
+    },
+    "ebay:147547778739": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 4,
+      "title": "The Toothy Tale Children's Illustrated Picture Book By Michael Everest",
+      "url": "https://www.ebay.co.uk/itm/147547778739?_skw=photo+book&hash=item225a886eb3:g:vUwAAeSwuxZqJHlu"
+    },
+    "ebay:147547816514": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 4,
+      "title": "Annabella’s Pet Goat Picture Book Paperback English Illus Ages 4-8 Acceptable",
+      "url": "https://www.ebay.co.uk/itm/147547816514?_skw=photo+book&hash=item225a890242:g:UIYAAeSw1qNqh2Lw"
+    },
+    "ebay:147547855343": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 4,
+      "title": "The History Press: Nottingham in the 1960s & 70s (Britain in Old Photos) PB",
+      "url": "https://www.ebay.co.uk/itm/147547855343?_skw=photo+book&hash=item225a8999ef:g:yxIAAeSwi0pqh2lr"
     },
     "ebay:152103791854": {
       "first_seen": "2026-09-02T07:50:20Z",
@@ -7366,6 +7305,34 @@
       "score": 10,
       "title": "Gymnocalycium recounted  John Pilbeam  Colour photo album",
       "url": "https://www.ebay.co.uk/itm/158254374323?_skw=photographer+book&hash=item24d8b21db3:g:gP0AAeSwgG1o478K"
+    },
+    "ebay:158254540552": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 4,
+      "title": "The Splendour of steam by Hamilton Ellis - please see pics",
+      "url": "https://www.ebay.co.uk/itm/158254540552?_skw=photography+book&hash=item24d8b4a708:g:xxsAAeSwcWdp-zMU"
+    },
+    "ebay:158254672191": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 14,
+      "title": "Theatre Cinderella Pop-Up Picture Book Hardcover, Fowler & Wood  1994  Book",
+      "url": "https://www.ebay.co.uk/itm/158254672191?_skw=photo+book&hash=item24d8b6a93f:g:n0IAAeSwuQVqmdSu"
+    },
+    "ebay:158254715272": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 14,
+      "title": "Janet & Allan Ahlberg Jolly Christmas Postman Illustrated HC Picture Early Book",
+      "url": "https://www.ebay.co.uk/itm/158254715272?_skw=photo+book&hash=item24d8b75188:g:bU8AAeSw7F9qmdlK"
+    },
+    "ebay:158254758233": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 14,
+      "title": "Brimax Books Time for Christmas Illustrated Hardcover Picture Book 1995",
+      "url": "https://www.ebay.co.uk/itm/158254758233?_skw=photo+book&hash=item24d8b7f959:g:PpwAAeSwkhFqmd4U"
     },
     "ebay:165484497167": {
       "first_seen": "2026-09-02T07:50:20Z",
@@ -7990,6 +7957,90 @@
       "title": "Graphicswallah: Graphics in India - Keith Lovegrove - Softcover / Design / Asia",
       "url": "https://www.ebay.co.uk/itm/168661445838?_skw=photography+book&hash=item2745016cce:g:G80AAeSw7cFqBzTY"
     },
+    "ebay:168661491464": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 36,
+      "title": "Great British Seaside : Photography from the 1960s to the Present hardcover",
+      "url": "https://www.ebay.co.uk/itm/168661491464?_skw=photography+book&hash=item2745021f08:g:aG0AAeSww-FqmB55"
+    },
+    "ebay:168661523133": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 36,
+      "title": "SOUTHPORT IN OLD PHOTOGRAPHS - LANCASHIRE",
+      "url": "https://www.ebay.co.uk/itm/168661523133?_skw=photo+book&hash=item2745029abd:g:m0EAAeSwmH9p27I1"
+    },
+    "ebay:168661526975": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 36,
+      "title": "LANCASHIRE IN OLD PHOTOGRAPHS - LANCASHIRE",
+      "url": "https://www.ebay.co.uk/itm/168661526975?_skw=photo+book&hash=item274502a9bf:g:xxsAAeSwKyFpLgY9"
+    },
+    "ebay:168661531886": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 36,
+      "title": "BLACKPOOL IN OLD PHOTOGRAPHS - LANCASHIRE",
+      "url": "https://www.ebay.co.uk/itm/168661531886?_skw=photo+book&hash=item274502bcee:g:YpoAAOSwNu5nxJIt"
+    },
+    "ebay:168661534308": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 36,
+      "title": "LYTHAM ST ANNE\"S IN OLD PHOTOGRAPHS - LANCASHIRE",
+      "url": "https://www.ebay.co.uk/itm/168661534308?_skw=photo+book&hash=item274502c664:g:6CwAAOSwtvdnxJN2"
+    },
+    "ebay:168661544848": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 36,
+      "title": "BLACKPOOL THE PEOPLE\"S PLAYGROUND -  LANCASHIRE",
+      "url": "https://www.ebay.co.uk/itm/168661544848?_skw=photo+book&hash=item274502ef90:g:HrkAAeSwto1p3U9D"
+    },
+    "ebay:168661579430": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 36,
+      "title": "NORTH FYLDE IN OLD PHOTOGRAPHS - LANCASHIRE",
+      "url": "https://www.ebay.co.uk/itm/168661579430?_skw=photo+book&hash=item27450376a6:g:3xcAAOSw5u1jQs~0"
+    },
+    "ebay:168661581975": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 36,
+      "title": "AROUND KIRKHAM IN OLD PHOTOGRAPHS - LANCASHIRE",
+      "url": "https://www.ebay.co.uk/itm/168661581975?_skw=photo+book&hash=item2745038097:g:AlsAAeSwlyJpLfJW"
+    },
+    "ebay:168661584350": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 26,
+      "title": "AROUND WALLASEY & NEW BRIGHTON- ARCHIVE PHOTO SERIES - CHESHIRE -SIGNED",
+      "url": "https://www.ebay.co.uk/itm/168661584350?_skw=photo+book&hash=item27450389de:g:edQAAOSwQ-hgBefR"
+    },
+    "ebay:168661584965": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 14,
+      "title": "WELWYN GARDEN CITY- ARCHIVE PHOTO SERIES - HERTFORDSHIRE",
+      "url": "https://www.ebay.co.uk/itm/168661584965?_skw=photo+book&hash=item2745038c45:g:tAkAAOSwN7hgBenZ"
+    },
+    "ebay:168661586102": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 36,
+      "title": "THE LANCASHIRE COAST  IN OLD PHOTOGRAPHS - LANCASHIRE",
+      "url": "https://www.ebay.co.uk/itm/168661586102?_skw=photo+book&hash=item27450390b6:g:iJoAAOSwYshny1ow"
+    },
+    "ebay:168661588180": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 36,
+      "title": "LANCASHIRE  NORTH OF THE SANDS IN OLD PHOTOGRAPHS - LANCASHIRE",
+      "url": "https://www.ebay.co.uk/itm/168661588180?_skw=photo+book&hash=item27450398d4:g:iPUAAeSw4cVpLgd8"
+    },
     "ebay:174401208978": {
       "first_seen": "2026-09-02T07:13:35Z",
       "last_seen": "2026-09-02T07:13:35Z",
@@ -8543,6 +8594,27 @@
       "title": "Uwe Ommer Photography Book Vintage 1990 Paperback Book Taschen Good Condition",
       "url": "https://www.ebay.co.uk/itm/178465061184?_skw=photography+book&hash=item298d58b940:g:1UMAAeSw10tqO~X-"
     },
+    "ebay:178465277541": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 24,
+      "title": "Austin Roberts Our South African Birds 1941 Cigarette Card Album 119/150",
+      "url": "https://www.ebay.co.uk/itm/178465277541?_skw=photography+book&hash=item298d5c0665:g:gv8AAeSwtmtqmdd3"
+    },
+    "ebay:178465432354": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 10,
+      "title": "Elvis in Canada (BIll Burk) Photo mit Autogramm- Heft rare",
+      "url": "https://www.ebay.co.uk/itm/178465432354?_skw=photo+book&hash=item298d5e6322:g:lYsAAeSwWvdpQXwx"
+    },
+    "ebay:178465437962": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 29,
+      "title": "elvis: SteamRolling Over Texas- Photo -rare  BOOK.",
+      "url": "https://www.ebay.co.uk/itm/178465437962?_skw=photo+book&hash=item298d5e790a:g:uDwAAeSwZfRoi3xv"
+    },
     "ebay:184480666767": {
       "first_seen": "2026-09-02T07:50:20Z",
       "last_seen": "2026-09-02T07:50:20Z",
@@ -9095,6 +9167,20 @@
       "score": 46,
       "title": "Portsmouth, an Images of England photographic collection by John Sadden",
       "url": "https://www.ebay.co.uk/itm/188881136751?_skw=photographer+book&hash=item2bfa316c6f:g:83MAAeSwDO5qfff-"
+    },
+    "ebay:188881511156": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 26,
+      "title": "Erotic Print Society Catalogue Six. Catalogue of Erotic Art, Photography, books",
+      "url": "https://www.ebay.co.uk/itm/188881511156?_skw=photography+book&hash=item2bfa3722f4:g:lXsAAeSw02JqmZRj"
+    },
+    "ebay:188881511764": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 26,
+      "title": "Erotic Print Society Catalogue Five. Catalogue of Erotic Art, Photography, books",
+      "url": "https://www.ebay.co.uk/itm/188881511764?_skw=photography+book&hash=item2bfa372554:g:2OgAAeSwXeFqmZU2"
     },
     "ebay:194716512208": {
       "first_seen": "2026-09-02T07:50:20Z",
@@ -10944,6 +11030,27 @@
       "title": "Father Browne's Titanic Album : A Passenger's Photographs and Personal Memoir by",
       "url": "https://www.ebay.co.uk/itm/227504347605?_skw=photographer+book&hash=item34f850d9d5:g:WLYAAeSwvxlqmber"
     },
+    "ebay:227504502975": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 26,
+      "title": "OLD PORT TALBOT & District in Photographs, volumes I and 2",
+      "url": "https://www.ebay.co.uk/itm/227504502975?_skw=photo+book&hash=item34f85338bf:g:cgsAAeSwBDpqWT4I"
+    },
+    "ebay:227504570673": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 26,
+      "title": "Jeux de Dames Cruelles 1850-1960 by Serge Nazarieff (Paperback, 1992) - Fetish",
+      "url": "https://www.ebay.co.uk/itm/227504570673?_skw=photography+book&hash=item34f8544131:g:-IAAAeSwC-FqfbYu"
+    },
+    "ebay:227504579556": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 26,
+      "title": "Jean-Louis del Valle Photographies \" Secret\" Fetish Photos Hardback 2001 112pp",
+      "url": "https://www.ebay.co.uk/itm/227504579556?_skw=photography+book&hash=item34f85463e4:g:~XcAAeSw8TRqfa2e"
+    },
     "ebay:236388891003": {
       "first_seen": "2026-09-02T07:50:20Z",
       "last_seen": "2026-09-02T07:50:20Z",
@@ -11763,6 +11870,34 @@
       "title": "1000 Nudes. a History of Erotic Photography From 1839-1939 by Uwe Scheid",
       "url": "https://www.ebay.co.uk/itm/257721079668?_skw=photography+book&hash=item3c015f9774:g:ubwAAeSwLC9pwEUg"
     },
+    "ebay:257721287993": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 26,
+      "title": "The Competition Bicycle: A Photographic History Jan Heine Hardcover beautiful",
+      "url": "https://www.ebay.co.uk/itm/257721287993?_skw=photo+book&hash=item3c0162c539:g:Mm0AAeSwSFFqa6XE"
+    },
+    "ebay:257721316468": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 4,
+      "title": "SACRED SPACES : Awe-Inspiring Architecture of Churches & Cathedrals - 2018- HB",
+      "url": "https://www.ebay.co.uk/itm/257721316468?_skw=photography+book&hash=item3c01633474:g:wsMAAeSwcGlqcj~G"
+    },
+    "ebay:257721340574": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 4,
+      "title": "Eye of the Storm: The Album Graphics of Storm Thorgerson by Storm Thorgerson...",
+      "url": "https://www.ebay.co.uk/itm/257721340574?_skw=photography+book&hash=item3c0163929e:g:EugAAOSwF7JnJL1S"
+    },
+    "ebay:257721501374": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 4,
+      "title": "John Coltrane's Giant Steps by Chris Raschka (2002, Picture Book)",
+      "url": "https://www.ebay.co.uk/itm/257721501374?_skw=photo+book&hash=item3c016606be:g:WfgAAeSwRZlqBjrx"
+    },
     "ebay:266391689277": {
       "first_seen": "2026-09-01T15:09:30Z",
       "last_seen": "2026-09-01T15:09:30Z",
@@ -12218,6 +12353,27 @@
       "title": "Signed Maisie Cousins Book - Rubbish, Dipping Sauce Grass Peonie Bum",
       "url": "https://www.ebay.co.uk/itm/267775258652?_skw=photography+book&hash=item3e58a6301c:g:~CEAAeSwBD9qmcfJ"
     },
+    "ebay:267775291735": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 36,
+      "title": "Norman Parkinson Life Work  1986",
+      "url": "https://www.ebay.co.uk/itm/267775291735?_skw=photography+book&hash=item3e58a6b157:g:96UAAeSw-qlqmcwO"
+    },
+    "ebay:267775339987": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 4,
+      "title": "Picture it in Cross Stitch by Jo Verso (new)",
+      "url": "https://www.ebay.co.uk/itm/267775339987?_skw=photo+book&hash=item3e58a76dd3:g:ijYAAeSwqg1oaM~O"
+    },
+    "ebay:267775343393": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 4,
+      "title": "Before They Pass Away, Large Format Edition by Jimmy Nelson (Hardcover)  Sealed",
+      "url": "https://www.ebay.co.uk/itm/267775343393?_skw=photography+book&hash=item3e58a77b21:g:swsAAeSwyV5piiKS"
+    },
     "ebay:274983687163": {
       "first_seen": "2026-09-02T07:50:20Z",
       "last_seen": "2026-09-02T07:50:20Z",
@@ -12574,6 +12730,20 @@
       "score": 48,
       "title": "POST-WAR SCUNTHORPE and DISTRICT. Memories in photos. SIGNED.Pbk",
       "url": "https://www.ebay.co.uk/itm/278340085545?_skw=photo+book&hash=item40ce5ca729:g:FokAAeSwbsZqmcIn"
+    },
+    "ebay:278340158864": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 4,
+      "title": "Hardback Book. The Jungle Book. Vintage Late  1960’s. See All Photos",
+      "url": "https://www.ebay.co.uk/itm/278340158864?_skw=photo+book&hash=item40ce5dc590:g:7xIAAeSwtmpqDgaX"
+    },
+    "ebay:278340159525": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 4,
+      "title": "Hardback Book. Bambi. Vintage Late  1960’s. See All Photos",
+      "url": "https://www.ebay.co.uk/itm/278340159525?_skw=photo+book&hash=item40ce5dc825:g:mMUAAeSw8P5qDgc1"
     },
     "ebay:285998200865": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -13177,6 +13347,13 @@
       "title": "Duane Michals. Eros and Thanatos. Cloth bound hardback. Photography and poetry",
       "url": "https://www.ebay.co.uk/itm/287563497416?_skw=photography+book&hash=item42f41ebfc8:g:GFwAAOSw9N9leMdy"
     },
+    "ebay:287563643744": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 4,
+      "title": "True Norwegian Black Metal by Johan Kugelberg (2008, Hardcover)",
+      "url": "https://www.ebay.co.uk/itm/287563643744?_skw=photography+book&hash=item42f420fb60:g:zlAAAeSwS7Zqmdf7"
+    },
     "ebay:296488934387": {
       "first_seen": "2026-09-01T17:16:36Z",
       "last_seen": "2026-09-01T17:16:36Z",
@@ -13673,6 +13850,27 @@
       "score": 36,
       "title": "The Times War: A History in Photographs Anthony Loyd & Anderson HB 2003 192pp",
       "url": "https://www.ebay.co.uk/itm/298642495847?_skw=photographer+book&hash=item45887ad967:g:~rcAAeSwXMVqmb2j"
+    },
+    "ebay:298642687486": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 32,
+      "title": "Pieter Hugo, This Must Be The Place (2012) Photography Book Prestel",
+      "url": "https://www.ebay.co.uk/itm/298642687486?_skw=photography+book&hash=item45887dc5fe:g:o2wAAeSwM89qmdPm"
+    },
+    "ebay:298642746472": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 4,
+      "title": "The Magic & Mystery of England",
+      "url": "https://www.ebay.co.uk/itm/298642746472?_skw=photography+book&hash=item45887eac68:g:cwMAAOSwpRZnqhN5"
+    },
+    "ebay:298642754967": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 26,
+      "title": "Sally Mann, 'Deep South' Photography Book Hardcover (2005000227) *NO DUST COVER!",
+      "url": "https://www.ebay.co.uk/itm/298642754967?_skw=photography+book&hash=item45887ecd97:g:eGEAAeSwS8tqmdvA"
     },
     "ebay:306175334813": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -14177,6 +14375,13 @@
       "score": 4,
       "title": "Hardcover Book My First Disney Picture Dictionary",
       "url": "https://www.ebay.co.uk/itm/307161042429?_skw=photo+book&hash=item4784398dfd:g:1QsAAeSwjT9pZ5Ae"
+    },
+    "ebay:307161257169": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 34,
+      "title": "Julia Donaldson & Axel Scheffler Paperback Picture Book Bundle 5 Titles",
+      "url": "https://www.ebay.co.uk/itm/307161257169?_skw=photo+book&hash=item47843cd4d1:g:EwwAAeSwWihqmd7X"
     },
     "ebay:314170775288": {
       "first_seen": "2026-09-02T07:50:20Z",
@@ -15529,6 +15734,27 @@
       "title": "American Blood by Danny Lyon Selected Writings 1961–2020 Karma Books 2020",
       "url": "https://www.ebay.co.uk/itm/336776811043?_skw=photographer+book&hash=item4e69765223:g:YIEAAeSwncRpY2~u"
     },
+    "ebay:336776823575": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 4,
+      "title": "Private Moments: Bel Ami by Howard Roffman by Howard Roffman (Hardcover, 2009)",
+      "url": "https://www.ebay.co.uk/itm/336776823575?_skw=photography+book&hash=item4e69768317:g:vzwAAeSwHkZqT~FK"
+    },
+    "ebay:336776839632": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 14,
+      "title": "Harry and the Dinosaurs Go to School by Ian Whybrow (2006, Picture Book)",
+      "url": "https://www.ebay.co.uk/itm/336776839632?_skw=photo+book&hash=item4e6976c1d0:g:E08AAeSw8IZpAysK"
+    },
+    "ebay:336776850620": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 14,
+      "title": "God's Big Picture: Tracing the Story-Line of the Bible Vaugh",
+      "url": "https://www.ebay.co.uk/itm/336776850620?_skw=photo+book&hash=item4e6976ecbc:g:KnoAAeSwnndqmc3y"
+    },
     "ebay:356829224725": {
       "first_seen": "2026-09-01T15:09:30Z",
       "last_seen": "2026-09-01T15:09:30Z",
@@ -16572,6 +16798,34 @@
       "title": "iPhone 12 Pro Max Complete Photography Guide (Paperback) - Vincent Black",
       "url": "https://www.ebay.co.uk/itm/377468579769?_skw=photography+book&hash=item57e2e16fb9:g:3fIAAeSwdy9qmbRt"
     },
+    "ebay:377468735166": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 26,
+      "title": "35mm. Cameraman by Kevin MacDonnell photography book.",
+      "url": "https://www.ebay.co.uk/itm/377468735166?_skw=photography+book&hash=item57e2e3cebe:g:ymYAAOSwR3Jlaz80"
+    },
+    "ebay:377468760007": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 26,
+      "title": "SHOTS OF STYLE - FASHION PHOTOGRAPHS - CHOOSEN BY DAIVID BAILEY - 1986 - PB  VGC",
+      "url": "https://www.ebay.co.uk/itm/377468760007?_skw=photography+book&hash=item57e2e42fc7:g:LWQAAeSwBDpqckMr"
+    },
+    "ebay:377468769975": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 14,
+      "title": "RICH IN ALL BUT MONEY- LIFE IN HUNGATE 1900-1938, VAN WILSON NEW york history",
+      "url": "https://www.ebay.co.uk/itm/377468769975?_skw=photography+book&hash=item57e2e456b7:g:fWYAAeSwmKhqmdHU"
+    },
+    "ebay:377468818843": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 4,
+      "title": "Pharrell: Places and Spaces I’ve Been (Rizzoli, Hardback",
+      "url": "https://www.ebay.co.uk/itm/377468818843?_skw=photography+book&hash=item57e2e5159b:g:D9gAAeSwygVqYnoZ"
+    },
     "ebay:387763168493": {
       "first_seen": "2026-09-01T17:20:07Z",
       "last_seen": "2026-09-01T17:20:07Z",
@@ -17131,6 +17385,27 @@
       "score": 0,
       "title": "Hotel Lachapelle By David Lachapelle Hardback Book In Presentation Box As New",
       "url": "https://www.ebay.co.uk/itm/398355838729?_skw=photography+book&hash=item5cbfdbb709:g:T8EAAeSwWihqhz1z"
+    },
+    "ebay:398356022687": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 14,
+      "title": "The Wisdom of the Ages by Textile Machine Works. Hardback first edition (1467)",
+      "url": "https://www.ebay.co.uk/itm/398356022687?_skw=photography+book&hash=item5cbfde859f:g:zvYAAeSw-dlqmdPH"
+    },
+    "ebay:398356039967": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 36,
+      "title": "Conway's The War at Sea in Photographs by Stuart Robertson & Stephen Dent. HBK",
+      "url": "https://www.ebay.co.uk/itm/398356039967?_skw=photo+book&hash=item5cbfdec91f:g:JjUAAeSwR7pqmdXU"
+    },
+    "ebay:398356104881": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 36,
+      "title": "Chicago at the Turn of the Century in Photographs by Larry A. Viskochil. PBK",
+      "url": "https://www.ebay.co.uk/itm/398356104881?_skw=photo+book&hash=item5cbfdfc6b1:g:Xi8AAeSwijdqmd1f"
     },
     "ebay:404879487928": {
       "first_seen": "2026-09-01T17:20:07Z",
@@ -17867,6 +18142,13 @@
       "title": "Photographic Memories, A Special Collection of... Scotland",
       "url": "https://www.ebay.co.uk/itm/800600410736?_skw=photographer+book&hash=itemba6780ca70:g:VUEAAeSw7zhql9bQ"
     },
+    "ebay:800600631065": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 14,
+      "title": "Świat w obrazkach: Zwierzęta - Wydawnictwo Olesiejuk 2022 Picture Book",
+      "url": "https://www.ebay.co.uk/itm/800600631065?_skw=photo+book&hash=itemba67842719:g:Gh8AAeSwyTVql-YT"
+    },
     "ebay:800600637080": {
       "first_seen": "2026-09-02T10:21:46Z",
       "last_seen": "2026-09-02T10:21:46Z",
@@ -18391,6 +18673,20 @@
       "score": 14,
       "title": "2008 THE PICTURE OF DORIAN GRAY OSCAR WILDE HARDBACK PENGUIN CLASSICS",
       "url": "https://www.ebay.co.uk/itm/820083701006?_skw=photo+book&hash=itembef0cc350e:g:yKQAAeSwIMRqmcOA"
+    },
+    "ebay:820083971266": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 4,
+      "title": "A History of European Picture Frames - Paul Mitchell / Lynn Roberts - H/B",
+      "url": "https://www.ebay.co.uk/itm/820083971266?_skw=photo+book&hash=itembef0d054c2:g:kCsAAeSwM-RqSrlz"
+    },
+    "ebay:820084096795": {
+      "first_seen": "2026-09-03T21:51:53Z",
+      "last_seen": "2026-09-03T21:51:53Z",
+      "score": 44,
+      "title": "Michael Rosen & Quentin Blake 8 Picture Books Collection Set - Age 5-7 - PB",
+      "url": "https://www.ebay.co.uk/itm/820084096795?_skw=photo+book&hash=itembef0d23f1b:g:DgkAAeSwdK5qmdsH"
     }
   },
   "version": 1
