@@ -1,9 +1,8 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-02T18:43:04Z",
+  "last_successful_fetch": "2026-09-03T01:13:18Z",
   "last_top_skus": [
     "HD_304214570",
-    "HD_304214447",
     "HD_304214341",
     "HD_304214167",
     "HD_304203614",
@@ -31,7 +30,8 @@
     "HD_304208944",
     "HD_304211313",
     "HD_304210781",
-    "HD_304210186"
+    "HD_304210186",
+    "HD_304210792"
   ],
   "products": {
     "HD_303805354": {
@@ -1417,19 +1417,20 @@
     },
     "HD_304187758": {
       "first_seen": "2026-09-02T15:12:58Z",
+      "last_changed": "2026-09-03T01:13:18Z",
       "last_snapshot": {
         "condition": null,
         "creation_date": "1788349549000",
         "description": "Scarce book of photographs by Julian Honer, illustrations in colour and in black & white. Paperback book, large format.",
         "isbn": null,
-        "price_gbp": null,
+        "price_gbp": 19.99,
         "product_id": "book-HD__304187758",
         "publisher": null,
         "route": "/journey-photographs-by-julian-honer/product/HD_304187758",
         "sku": "HD_304187758",
         "title": "Journey: Photographs by Julian Honer"
       },
-      "search_fingerprint": "3bcd62dad96e8643"
+      "search_fingerprint": "03492fef061d4719"
     },
     "HD_304187766": {
       "first_seen": "2026-08-25T12:48:15Z",
@@ -3991,6 +3992,6 @@
       "search_fingerprint": "aacea77fef7d06d5"
     }
   },
-  "reported_category_count": 2827,
+  "reported_category_count": 2825,
   "version": 1
 }
