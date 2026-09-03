@@ -1,7 +1,8 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-03T01:13:18Z",
+  "last_successful_fetch": "2026-09-03T10:48:22Z",
   "last_top_skus": [
+    "HD_304215350",
     "HD_304214570",
     "HD_304214341",
     "HD_304214167",
@@ -30,8 +31,7 @@
     "HD_304208944",
     "HD_304211313",
     "HD_304210781",
-    "HD_304210186",
-    "HD_304210792"
+    "HD_304210186"
   ],
   "products": {
     "HD_303805354": {
@@ -3990,8 +3990,24 @@
         "title": "The Ride - New Custom Motorcycles and Their Builders"
       },
       "search_fingerprint": "aacea77fef7d06d5"
+    },
+    "HD_304215350": {
+      "first_seen": "2026-09-03T10:48:22Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788428868000",
+        "description": "Limited 75 copies<br/>Acclaimed portrait and documentary photographer Peter Zelewski has spent the past three years capturing the people and faces of the streets of London. His images, which have be seen in the National Portrait gallery and throughout the press, are both intimate and considered and as such are closer to art photography than snapshots. The images are accompanied by arresting quotes that reveal the inner lives of the strangers that make this the world's most colourful city.",
+        "isbn": null,
+        "price_gbp": 50.0,
+        "product_id": "book-HD__304215350",
+        "publisher": null,
+        "route": "/people-of-london-peter-zelewski/product/HD_304215350",
+        "sku": "HD_304215350",
+        "title": "People of London - Peter Zelewski"
+      },
+      "search_fingerprint": "a162cf735f9954aa"
     }
   },
-  "reported_category_count": 2825,
+  "reported_category_count": 2821,
   "version": 1
 }
