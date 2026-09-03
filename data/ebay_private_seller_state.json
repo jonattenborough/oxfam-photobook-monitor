@@ -1,31 +1,31 @@
 {
   "cursors": {
-    "active_stock": 10,
+    "active_stock": 11,
     "auctions": 10,
-    "broad_priority": 1,
-    "classic_auctions": 19,
-    "classic_contributors": 19,
-    "classic_hot_records": 26,
-    "contemporary_auctions": 19,
-    "contemporary_contributors": 19,
-    "contemporary_hot_records": 15,
+    "broad_priority": 2,
+    "classic_auctions": 20,
+    "classic_contributors": 20,
+    "classic_hot_records": 30,
+    "contemporary_auctions": 20,
+    "contemporary_contributors": 20,
+    "contemporary_hot_records": 19,
     "contributors": 10,
     "hot_records": 26,
-    "library_records": 180
+    "library_records": 188
   },
-  "last_api_call_budget": 5,
+  "last_api_call_budget": 6,
   "last_browse_quota": {
-    "count": 4720,
+    "count": 4750,
     "limit": 5000,
-    "remaining": 280,
+    "remaining": 250,
     "reset": "2026-09-04T07:00:00.000Z",
     "resource": "buy.browse",
     "time_window": 86400
   },
   "last_failure_count": 0,
-  "last_live_checks": 1,
+  "last_live_checks": 2,
   "last_query_count": 4,
-  "last_run": "2026-09-03T21:51:53Z",
+  "last_run": "2026-09-03T23:56:41Z",
   "last_successful_queries": 4,
   "library_records": 4318,
   "pending_live": {
@@ -256,234 +256,6 @@
       "title": "William Eggleston: Los Alamos: First Scalo Edition 2003",
       "url": "https://www.ebay.co.uk/itm/157158595509?_skw=William+Eggleston+Los+Alamos&hash=item249761dbb5:g:GQEAAeSwA~xobpun",
       "vendor": "ebae_rapido"
-    },
-    "ebay:168599856906": {
-      "best_recognition": {
-        "awards_and_evidence": "",
-        "bargain_gbp": null,
-        "canon_sources": "Priority seed",
-        "collectibility_tier": "A",
-        "collectible_format_bonus": 0,
-        "collectible_format_evidence": [],
-        "collectible_variants": "",
-        "collector_profile": "",
-        "contributor": "William Eggleston",
-        "documentary_relevance": "",
-        "edition_reasons": [
-          "exact collectible edition is not established by the listing metadata"
-        ],
-        "edition_status": "unknown",
-        "evidence_confidence": "High",
-        "first_edition_notes": "",
-        "first_monograph": "",
-        "isbn": "",
-        "publisher": "",
-        "reason": "exact title + contributor",
-        "record_id": "william-eggleston-los-alamos",
-        "score": 100,
-        "search_priority": "1",
-        "source": "Priority seed",
-        "special_edition_priority": "",
-        "strong_buy_gbp": null,
-        "title": "Los Alamos",
-        "year": ""
-      },
-      "buying_options": [
-        "FIXED_PRICE",
-        "BEST_OFFER"
-      ],
-      "category_id": "261186",
-      "category_path": "",
-      "collecting_lane": "classic or established canon",
-      "condition": "Acceptable",
-      "context": "Acceptable | 2026-08-09T05:59:30.000Z | FIXED_PRICE BEST_OFFER",
-      "external_id": "168599856906",
-      "image_url": "https://i.ebayimg.com/images/g/WX4AAeSwWXtqeBYC/s-l225.jpg",
-      "item_creation_date": "2026-08-09T05:59:30.000Z",
-      "item_end_date": "",
-      "key": "ebay:168599856906",
-      "landed_price_gbp": 163.47,
-      "opportunity_kind": "collectible title or edition lead",
-      "opportunity_reasons": [
-        "recognition 100/100",
-        "collectibility tier A",
-        "price scoring includes returned delivery cost",
-        "immediate fixed-price purchase possible",
-        "Best Offer available",
-        "private individual seller",
-        "brief listing title",
-        "minimal bibliographic detail",
-        "low-volume seller account",
-        "edition evidence: unknown"
-      ],
-      "opportunity_score": 78,
-      "pending_since": "2026-09-02T07:50:20Z",
-      "price_currency": "GBP",
-      "price_gbp": 156.7,
-      "price_value": 156.7,
-      "private_seller": true,
-      "recognition_matches": [
-        {
-          "awards_and_evidence": "",
-          "bargain_gbp": null,
-          "canon_sources": "Priority seed",
-          "collectibility_tier": "A",
-          "collectible_format_bonus": 0,
-          "collectible_format_evidence": [],
-          "collectible_variants": "",
-          "collector_profile": "",
-          "contributor": "William Eggleston",
-          "documentary_relevance": "",
-          "edition_reasons": [
-            "exact collectible edition is not established by the listing metadata"
-          ],
-          "edition_status": "unknown",
-          "evidence_confidence": "High",
-          "first_edition_notes": "",
-          "first_monograph": "",
-          "isbn": "",
-          "publisher": "",
-          "reason": "exact title + contributor",
-          "record_id": "william-eggleston-los-alamos",
-          "score": 100,
-          "search_priority": "1",
-          "source": "Priority seed",
-          "special_edition_priority": "",
-          "strong_buy_gbp": null,
-          "title": "Los Alamos",
-          "year": ""
-        }
-      ],
-      "recognized": true,
-      "rest_item_id": "v1|168599856906|0",
-      "score_band": "alert",
-      "scoring_version": 2,
-      "search_in_description": false,
-      "search_lane": "library_rotation",
-      "search_query": "William Eggleston Los Alamos",
-      "seller_account_type": "INDIVIDUAL",
-      "seller_feedback_percentage": "100.0",
-      "seller_feedback_score": 71,
-      "shipping_currency": "GBP",
-      "shipping_value": 6.77,
-      "source_id": "ebay_private_library_rotation",
-      "source_name": "eBay UK private sellers - library_rotation",
-      "tags": "FIXED_PRICE BEST_OFFER",
-      "title": "Los Alamos William Eggleston",
-      "url": "https://www.ebay.co.uk/itm/168599856906?_skw=William+Eggleston+Los+Alamos&hash=item274155a70a:g:WX4AAeSwWXtqeBYC",
-      "vendor": "mar_8041"
-    },
-    "ebay:168624946760": {
-      "best_recognition": {
-        "awards_and_evidence": "",
-        "bargain_gbp": null,
-        "canon_sources": "Parr/Badger V1 + Roth 101 | Priority seed",
-        "collectibility_tier": "S",
-        "collectible_format_bonus": 0,
-        "collectible_format_evidence": [],
-        "collectible_variants": "",
-        "collector_profile": "",
-        "contributor": "William Eggleston",
-        "documentary_relevance": "",
-        "edition_reasons": [
-          "exact collectible edition is not established by the listing metadata"
-        ],
-        "edition_status": "unknown",
-        "evidence_confidence": "High",
-        "first_edition_notes": "",
-        "first_monograph": "",
-        "isbn": "",
-        "publisher": "",
-        "reason": "exact title + contributor",
-        "record_id": "william-eggleston-guide",
-        "score": 100,
-        "search_priority": "0",
-        "source": "Priority seed",
-        "special_edition_priority": "",
-        "strong_buy_gbp": null,
-        "title": "William Eggleston's Guide",
-        "year": "1976"
-      },
-      "buying_options": [
-        "FIXED_PRICE"
-      ],
-      "category_id": "261186",
-      "category_path": "",
-      "collecting_lane": "classic or established canon",
-      "condition": "New",
-      "context": "William Eggleston's Guide, with an introduction by John Szarkowski. This copy remains sealed in the original publisher's shrinkwrap; the wrap has light shelf scuffing and small rubbed areas, but the book itself has not been opened. | New | 2026-08-19T08:25:58.000Z | FIXED_PRICE",
-      "external_id": "168624946760",
-      "image_url": "https://i.ebayimg.com/images/g/lBcAAeSw3EVqhWbu/s-l225.jpg",
-      "item_creation_date": "2026-08-19T08:25:58.000Z",
-      "item_end_date": "",
-      "key": "ebay:168624946760",
-      "landed_price_gbp": 26.52,
-      "opportunity_kind": "collectible title or edition lead",
-      "opportunity_reasons": [
-        "recognition 100/100",
-        "collectibility tier S",
-        "low asking price",
-        "price scoring includes returned delivery cost",
-        "immediate fixed-price purchase possible",
-        "private individual seller",
-        "edition evidence: unknown"
-      ],
-      "opportunity_score": 78,
-      "pending_since": "2026-09-02T07:50:20Z",
-      "price_currency": "GBP",
-      "price_gbp": 23.58,
-      "price_value": 23.58,
-      "private_seller": true,
-      "recognition_matches": [
-        {
-          "awards_and_evidence": "",
-          "bargain_gbp": null,
-          "canon_sources": "Parr/Badger V1 + Roth 101 | Priority seed",
-          "collectibility_tier": "S",
-          "collectible_format_bonus": 0,
-          "collectible_format_evidence": [],
-          "collectible_variants": "",
-          "collector_profile": "",
-          "contributor": "William Eggleston",
-          "documentary_relevance": "",
-          "edition_reasons": [
-            "exact collectible edition is not established by the listing metadata"
-          ],
-          "edition_status": "unknown",
-          "evidence_confidence": "High",
-          "first_edition_notes": "",
-          "first_monograph": "",
-          "isbn": "",
-          "publisher": "",
-          "reason": "exact title + contributor",
-          "record_id": "william-eggleston-guide",
-          "score": 100,
-          "search_priority": "0",
-          "source": "Priority seed",
-          "special_edition_priority": "",
-          "strong_buy_gbp": null,
-          "title": "William Eggleston's Guide",
-          "year": "1976"
-        }
-      ],
-      "recognized": true,
-      "rest_item_id": "v1|168624946760|0",
-      "score_band": "alert",
-      "scoring_version": 2,
-      "search_in_description": true,
-      "search_lane": "classic_hot",
-      "search_query": "William Eggleston William Eggleston's Guide",
-      "seller_account_type": "INDIVIDUAL",
-      "seller_feedback_percentage": "100.0",
-      "seller_feedback_score": 1496,
-      "shipping_currency": "GBP",
-      "shipping_value": 2.94,
-      "source_id": "ebay_private_classic_hot",
-      "source_name": "eBay UK private sellers - classic_hot",
-      "tags": "FIXED_PRICE",
-      "title": "William Eggleston's Guide William Eggleston; introduction by John Szarkowski",
-      "url": "https://www.ebay.co.uk/itm/168624946760?_skw=William+Eggleston+William+Eggleston%27s+Guide&hash=item2742d47e48:g:lBcAAeSw3EVqhWbu",
-      "vendor": "platform-3"
     },
     "ebay:168658615043": {
       "best_recognition": {
@@ -3783,11 +3555,11 @@
     "auction_ending:AUCTION:corinne day diary": "2026-09-01T15:15:42Z",
     "auction_ending:AUCTION:daido moriyama farewell photography": "2026-09-01T15:15:42Z",
     "broad:BEST_OFFER+FIXED_PRICE:art photography book": "2026-09-01T12:57:22Z",
-    "broad:BEST_OFFER+FIXED_PRICE:photo book": "2026-09-03T21:51:53Z",
-    "broad:BEST_OFFER+FIXED_PRICE:photographer book": "2026-09-03T21:51:53Z",
+    "broad:BEST_OFFER+FIXED_PRICE:photo book": "2026-09-03T23:56:41Z",
+    "broad:BEST_OFFER+FIXED_PRICE:photographer book": "2026-09-03T23:56:41Z",
     "broad:BEST_OFFER+FIXED_PRICE:photographs book": "2026-09-01T12:57:22Z",
-    "broad:BEST_OFFER+FIXED_PRICE:photography book": "2026-09-03T21:51:53Z",
-    "broad:BEST_OFFER+FIXED_PRICE:photography monograph": "2026-09-03T21:51:53Z",
+    "broad:BEST_OFFER+FIXED_PRICE:photography book": "2026-09-03T23:56:41Z",
+    "broad:BEST_OFFER+FIXED_PRICE:photography monograph": "2026-09-03T23:56:41Z",
     "classic_auction:AUCTION:alec soth niagara": "2026-09-01T17:16:36Z",
     "classic_auction:AUCTION:alec soth sleeping by the mississippi": "2026-09-01T17:20:07Z",
     "classic_auction:AUCTION:bernd and hilla becher anonyme skulpturen": "2026-09-01T17:24:57Z",
@@ -5506,6 +5278,13 @@
       "score": 14,
       "title": "Daily Mail The Rolling Stones: Unseen Archives Hardcover Illustrated",
       "url": "https://www.ebay.co.uk/itm/128060341003?_skw=photo+book&hash=item1dd0fdbb0b:g:XDEAAeSwF-ZqmeZ8"
+    },
+    "ebay:128060452063": {
+      "first_seen": "2026-09-03T23:56:41Z",
+      "last_seen": "2026-09-03T23:56:41Z",
+      "score": 36,
+      "title": "Bonechi San Francisco English Edition Paperback Illustrated Photo Book 1989",
+      "url": "https://www.ebay.co.uk/itm/128060452063?_skw=photo+book&hash=item1dd0ff6cdf:g:KzcAAeSw4vlqmf1K"
     },
     "ebay:133792317103": {
       "first_seen": "2026-09-01T17:20:07Z",
@@ -7334,6 +7113,20 @@
       "title": "Brimax Books Time for Christmas Illustrated Hardcover Picture Book 1995",
       "url": "https://www.ebay.co.uk/itm/158254758233?_skw=photo+book&hash=item24d8b7f959:g:PpwAAeSwkhFqmd4U"
     },
+    "ebay:158254911063": {
+      "first_seen": "2026-09-03T23:56:41Z",
+      "last_seen": "2026-09-03T23:56:41Z",
+      "score": 14,
+      "title": "People Who Changed the World (Picture This) Hardback Book The Cheap Fast Free",
+      "url": "https://www.ebay.co.uk/itm/158254911063?_skw=photo+book&hash=item24d8ba4e57:g:oz0AAeSwmOBqme37"
+    },
+    "ebay:158254944365": {
+      "first_seen": "2026-09-03T23:56:41Z",
+      "last_seen": "2026-09-03T23:56:41Z",
+      "score": 34,
+      "title": "10 x Childrens/Boys/Girls Picture Book Bundle - Tom Fletcher, Dinosaurs, Dragons",
+      "url": "https://www.ebay.co.uk/itm/158254944365?_skw=photo+book&hash=item24d8bad06d:g:auEAAeSwHWVqTjHD"
+    },
     "ebay:165484497167": {
       "first_seen": "2026-09-02T07:50:20Z",
       "last_seen": "2026-09-02T07:50:20Z",
@@ -7432,6 +7225,13 @@
       "title": "Aaron Schuman: Folk (2016) Art Photography Book Krakow Ethnographic Museum",
       "url": "https://www.ebay.co.uk/itm/168590890702?_skw=Aaron+Schuman&hash=item2740ccd6ce:g:6DkAAeSwrhNqczpb"
     },
+    "ebay:168599856906": {
+      "first_seen": "2026-09-03T23:56:41Z",
+      "last_seen": "2026-09-03T23:56:41Z",
+      "score": 78,
+      "title": "Los Alamos William Eggleston",
+      "url": "https://www.ebay.co.uk/itm/168599856906?_skw=William+Eggleston+Los+Alamos&hash=item274155a70a:g:WX4AAeSwWXtqeBYC"
+    },
     "ebay:168607736281": {
       "first_seen": "2026-09-03T11:38:48Z",
       "last_seen": "2026-09-03T11:38:48Z",
@@ -7466,6 +7266,13 @@
       "score": 72,
       "title": "Jamie Oliver Cook Books Job Lot Entertaining Food Photography Hardbacks Four (4)",
       "url": "https://www.ebay.co.uk/itm/168624882724?_skw=photography+books+job+lot&hash=item2742d38424:g:mCkAAeSwstBqZywd"
+    },
+    "ebay:168624946760": {
+      "first_seen": "2026-09-03T23:56:41Z",
+      "last_seen": "2026-09-03T23:56:41Z",
+      "score": 58,
+      "title": "William Eggleston's Guide William Eggleston; introduction by John Szarkowski",
+      "url": "https://www.ebay.co.uk/itm/168624946760?_skw=William+Eggleston+William+Eggleston%27s+Guide&hash=item2742d47e48:g:lBcAAeSw3EVqhWbu"
     },
     "ebay:168631041189": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -8615,6 +8422,13 @@
       "title": "elvis: SteamRolling Over Texas- Photo -rare  BOOK.",
       "url": "https://www.ebay.co.uk/itm/178465437962?_skw=photo+book&hash=item298d5e790a:g:uDwAAeSwZfRoi3xv"
     },
+    "ebay:178465562512": {
+      "first_seen": "2026-09-03T23:56:41Z",
+      "last_seen": "2026-09-03T23:56:41Z",
+      "score": 0,
+      "title": "Crawford Art Gallery Cork Photography Used 6x Lot Local Interest Bundle",
+      "url": "https://www.ebay.co.uk/itm/178465562512?_skw=photography+book&hash=item298d605f90:g:5LYAAOSwJv1mG8zh"
+    },
     "ebay:184480666767": {
       "first_seen": "2026-09-02T07:50:20Z",
       "last_seen": "2026-09-02T07:50:20Z",
@@ -9182,6 +8996,13 @@
       "title": "Erotic Print Society Catalogue Five. Catalogue of Erotic Art, Photography, books",
       "url": "https://www.ebay.co.uk/itm/188881511764?_skw=photography+book&hash=item2bfa372554:g:2OgAAeSwXeFqmZU2"
     },
+    "ebay:188882080096": {
+      "first_seen": "2026-09-03T23:56:41Z",
+      "last_seen": "2026-09-03T23:56:41Z",
+      "score": 4,
+      "title": "ROMA - Aimee Thurlo Illustrated Hardcover Picture Book Travel Rome Non-Fiction",
+      "url": "https://www.ebay.co.uk/itm/188882080096?_skw=photo+book&hash=item2bfa3fd160:g:g-EAAeSwUXpqkMDc"
+    },
     "ebay:194716512208": {
       "first_seen": "2026-09-02T07:50:20Z",
       "last_seen": "2026-09-02T07:50:20Z",
@@ -9678,6 +9499,55 @@
       "score": 26,
       "title": "KITTEL, GERD The final cut : Route 66 / Gerd Kittel, Alexander Bloom, Freddy Lan",
       "url": "https://www.ebay.co.uk/itm/198616040238?_skw=photography+book&hash=item2e3e70432e:g:GIcAAeSw129p93OY"
+    },
+    "ebay:198616291353": {
+      "first_seen": "2026-09-03T23:56:41Z",
+      "last_seen": "2026-09-03T23:56:41Z",
+      "score": 14,
+      "title": "Creole Stephen Cosgrove Hardcover Illustrated Robin James Ages 4-8 Picture Book",
+      "url": "https://www.ebay.co.uk/itm/198616291353?_skw=photo+book&hash=item2e3e741819:g:5j0AAeSwzadqmesl"
+    },
+    "ebay:198616296882": {
+      "first_seen": "2026-09-03T23:56:41Z",
+      "last_seen": "2026-09-03T23:56:41Z",
+      "score": 26,
+      "title": "DDR by Kurt Hager Hardcover Illustrated First Edition 1986 320pp",
+      "url": "https://www.ebay.co.uk/itm/198616296882?_skw=photography+book&hash=item2e3e742db2:g:htEAAeSwwtVqmetx"
+    },
+    "ebay:198616300739": {
+      "first_seen": "2026-09-03T23:56:41Z",
+      "last_seen": "2026-09-03T23:56:41Z",
+      "score": 14,
+      "title": "Stephen Cosgrove Bangalee Hardcover Illustrated Picture Book Ages 4-8",
+      "url": "https://www.ebay.co.uk/itm/198616300739?_skw=photo+book&hash=item2e3e743cc3:g:2oYAAeSw0Hxqmexr"
+    },
+    "ebay:198616331835": {
+      "first_seen": "2026-09-03T23:56:41Z",
+      "last_seen": "2026-09-03T23:56:41Z",
+      "score": 44,
+      "title": "Mo Willems The Pigeon 6 Book Bundle Collection Set Children Picture Books Joblot",
+      "url": "https://www.ebay.co.uk/itm/198616331835?_skw=photo+book&hash=item2e3e74b63b:g:mBEAAeSww99qme~r"
+    },
+    "ebay:198616337880": {
+      "first_seen": "2026-09-03T23:56:41Z",
+      "last_seen": "2026-09-03T23:56:41Z",
+      "score": 14,
+      "title": "Nitter Pitter Thomas J. Cuthbertson Hardcover Illustrated Picture Book Ages 4-8",
+      "url": "https://www.ebay.co.uk/itm/198616337880?_skw=photo+book&hash=item2e3e74cdd8:g:5uYAAeSw61hqmfDZ"
+    },
+    "ebay:198616339370": {
+      "first_seen": "2026-09-03T23:56:41Z",
+      "last_seen": "2026-09-03T23:56:41Z",
+      "score": 7,
+      "title": "Assouline Maxim's Mirror of Parisian Life Hardcover Illustrated",
+      "url": "https://www.ebay.co.uk/itm/198616339370?_skw=photography+book&hash=item2e3e74d3aa:g:1ZEAAeSw69pqmfDt"
+    },
+    "ebay:198616388951": {
+      "first_seen": "2026-09-03T23:56:41Z",
+      "last_seen": "2026-09-03T23:56:41Z",
+      "score": 14,
+      "title": "Stephen Cosgrove Bremen-Town Hardcover Illustrated Picture Book Ages 4-8",
+      "url": "https://www.ebay.co.uk/itm/198616388951?_skw=photo+book&hash=item2e3e759557:g:6LAAAeSwxKZqmfSR"
     },
     "ebay:201590266150": {
       "first_seen": "2026-09-02T07:50:20Z",
@@ -11051,6 +10921,13 @@
       "title": "Jean-Louis del Valle Photographies \" Secret\" Fetish Photos Hardback 2001 112pp",
       "url": "https://www.ebay.co.uk/itm/227504579556?_skw=photography+book&hash=item34f85463e4:g:~XcAAeSw8TRqfa2e"
     },
+    "ebay:227504725070": {
+      "first_seen": "2026-09-03T23:56:41Z",
+      "last_seen": "2026-09-03T23:56:41Z",
+      "score": 10,
+      "title": "The Boy, the Mole, the Fox and the Horse hard back picture story book Charlie M.",
+      "url": "https://www.ebay.co.uk/itm/227504725070?_skw=photo+book&hash=item34f8569c4e:g:nq0AAeSwULxpILDN"
+    },
     "ebay:236388891003": {
       "first_seen": "2026-09-02T07:50:20Z",
       "last_seen": "2026-09-02T07:50:20Z",
@@ -11449,6 +11326,13 @@
       "score": 4,
       "title": "THE BIG PICTURE PAINTING IN PARIS GDE GALERIE DES PEINTURES (ANGLAISE): MUSEE DU",
       "url": "https://www.ebay.co.uk/itm/237046979889?_skw=photo+book&hash=item373119dd31:g:wdEAAeSwZPNoxVyb"
+    },
+    "ebay:237047461659": {
+      "first_seen": "2026-09-03T23:56:41Z",
+      "last_seen": "2026-09-03T23:56:41Z",
+      "score": 0,
+      "title": "MIROSLAV TICHY (FOTOTORST) By Miroslav Tichy RARE Sealed Mint.",
+      "url": "https://www.ebay.co.uk/itm/237047461659?_skw=photographer+book&hash=item373121371b:g:sHAAAeSwCjpqme68"
     },
     "ebay:255569549785": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -12373,6 +12257,13 @@
       "score": 4,
       "title": "Before They Pass Away, Large Format Edition by Jimmy Nelson (Hardcover)  Sealed",
       "url": "https://www.ebay.co.uk/itm/267775343393?_skw=photography+book&hash=item3e58a77b21:g:swsAAeSwyV5piiKS"
+    },
+    "ebay:267775421170": {
+      "first_seen": "2026-09-03T23:56:41Z",
+      "last_seen": "2026-09-03T23:56:41Z",
+      "score": 14,
+      "title": "vintage children's picture book titled Little Pink Rabbit",
+      "url": "https://www.ebay.co.uk/itm/267775421170?_skw=photo+book&hash=item3e58a8aaf2:g:SFMAAeSwzf9qk2ET"
     },
     "ebay:274983687163": {
       "first_seen": "2026-09-02T07:50:20Z",
@@ -13872,6 +13763,13 @@
       "title": "Sally Mann, 'Deep South' Photography Book Hardcover (2005000227) *NO DUST COVER!",
       "url": "https://www.ebay.co.uk/itm/298642754967?_skw=photography+book&hash=item45887ecd97:g:eGEAAeSwS8tqmdvA"
     },
+    "ebay:298642963591": {
+      "first_seen": "2026-09-03T23:56:41Z",
+      "last_seen": "2026-09-03T23:56:41Z",
+      "score": 10,
+      "title": "Yves Saint Laurent Inside Out Hardcover Illustrated Carlos Muñoz-Yagüe 2002",
+      "url": "https://www.ebay.co.uk/itm/298642963591?_skw=photography+book&hash=item458881fc87:g:AI0AAeSwXm5qmfW7"
+    },
     "ebay:306175334813": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
@@ -14383,6 +14281,20 @@
       "title": "Julia Donaldson & Axel Scheffler Paperback Picture Book Bundle 5 Titles",
       "url": "https://www.ebay.co.uk/itm/307161257169?_skw=photo+book&hash=item47843cd4d1:g:EwwAAeSwWihqmd7X"
     },
+    "ebay:307161362736": {
+      "first_seen": "2026-09-03T23:56:41Z",
+      "last_seen": "2026-09-03T23:56:41Z",
+      "score": 26,
+      "title": "Digital Photography By Nigel Atherton",
+      "url": "https://www.ebay.co.uk/itm/307161362736?_skw=photography+book&hash=item47843e7130:g:ELMAAOSwECVlChan"
+    },
+    "ebay:307161370974": {
+      "first_seen": "2026-09-03T23:56:41Z",
+      "last_seen": "2026-09-03T23:56:41Z",
+      "score": 4,
+      "title": "World War 2. Ivor Matanle. Large Book.  Black And White Photos. Good Condition",
+      "url": "https://www.ebay.co.uk/itm/307161370974?_skw=photo+book&hash=item47843e915e:g:PYMAAeSwbG9qWVyY"
+    },
     "ebay:314170775288": {
       "first_seen": "2026-09-02T07:50:20Z",
       "last_seen": "2026-09-02T07:50:20Z",
@@ -14886,6 +14798,13 @@
       "score": 4,
       "title": "Michael Jackson : Making of Thriller by Kirkland (2011, Hardcover)",
       "url": "https://www.ebay.co.uk/itm/318820997306?_skw=photography+book&hash=item4a3b3658ba:g:sI0AAeSwVCZqmanz"
+    },
+    "ebay:318821919539": {
+      "first_seen": "2026-09-03T23:56:41Z",
+      "last_seen": "2026-09-03T23:56:41Z",
+      "score": 14,
+      "title": "My Father and Edward Ardizzone: A Lasting Friendship - Booth Clibborn, Edward",
+      "url": "https://www.ebay.co.uk/itm/318821919539?_skw=photographer+book&hash=item4a3b446b33:g:kFIAAeSwVsxqmesT"
     },
     "ebay:327293675838": {
       "first_seen": "2026-09-01T19:45:15Z",
@@ -15755,6 +15674,27 @@
       "title": "God's Big Picture: Tracing the Story-Line of the Bible Vaugh",
       "url": "https://www.ebay.co.uk/itm/336776850620?_skw=photo+book&hash=item4e6976ecbc:g:KnoAAeSwnndqmc3y"
     },
+    "ebay:336777032880": {
+      "first_seen": "2026-09-03T23:56:41Z",
+      "last_seen": "2026-09-03T23:56:41Z",
+      "score": 32,
+      "title": "AFRICA by Michael Poliza Hardcover English Photography Picture Book teNeues",
+      "url": "https://www.ebay.co.uk/itm/336777032880?_skw=photo+book&hash=item4e6979b4b0:g:1jQAAeSw9XJqkLTw"
+    },
+    "ebay:336777068134": {
+      "first_seen": "2026-09-03T23:56:41Z",
+      "last_seen": "2026-09-03T23:56:41Z",
+      "score": 36,
+      "title": "World Press Photo 1985",
+      "url": "https://www.ebay.co.uk/itm/336777068134?_skw=photo+book&hash=item4e697a3e66:g:Yi8AAeSwGEZqmfYo"
+    },
+    "ebay:336777071293": {
+      "first_seen": "2026-09-03T23:56:41Z",
+      "last_seen": "2026-09-03T23:56:41Z",
+      "score": 36,
+      "title": "World Press Photo 1978",
+      "url": "https://www.ebay.co.uk/itm/336777071293?_skw=photo+book&hash=item4e697a4abd:g:~wwAAeSwWg9qmfcS"
+    },
     "ebay:356829224725": {
       "first_seen": "2026-09-01T15:09:30Z",
       "last_seen": "2026-09-01T15:09:30Z",
@@ -16482,6 +16422,13 @@
       "score": 26,
       "title": "History In Photographs 1900-1950 II PB NEP",
       "url": "https://www.ebay.co.uk/itm/366647196957?_skw=photographer+book&hash=item555de03d1d:g:rswAAOSwUl9mqPcX"
+    },
+    "ebay:366647421314": {
+      "first_seen": "2026-09-03T23:56:41Z",
+      "last_seen": "2026-09-03T23:56:41Z",
+      "score": 14,
+      "title": "Puffin Extraordinary Lives: Mary Seacole Paperback Picture Book Ages 4-8",
+      "url": "https://www.ebay.co.uk/itm/366647421314?_skw=photo+book&hash=item555de3a982:g:XywAAeSwzmFqamhc"
     },
     "ebay:373134310839": {
       "first_seen": "2026-09-02T07:50:20Z",
@@ -17407,6 +17354,13 @@
       "title": "Chicago at the Turn of the Century in Photographs by Larry A. Viskochil. PBK",
       "url": "https://www.ebay.co.uk/itm/398356104881?_skw=photo+book&hash=item5cbfdfc6b1:g:Xi8AAeSwijdqmd1f"
     },
+    "ebay:398356460052": {
+      "first_seen": "2026-09-03T23:56:41Z",
+      "last_seen": "2026-09-03T23:56:41Z",
+      "score": 4,
+      "title": "DISCOVERING THE CALIFORNIAN COAST: A Sunset Pictorial VINTAGE book 1975 HB 1st",
+      "url": "https://www.ebay.co.uk/itm/398356460052?_skw=photographer+book&hash=item5cbfe53214:g:XLYAAeSwdZ1pVxcv"
+    },
     "ebay:404879487928": {
       "first_seen": "2026-09-01T17:20:07Z",
       "last_seen": "2026-09-01T17:20:07Z",
@@ -17791,6 +17745,20 @@
       "score": 0,
       "title": "Oasis Definitely Hardback Tim Abbott, Noel Gallagher, Liam Gallagher (1996)",
       "url": "https://www.ebay.co.uk/itm/407190613314?_skw=photography+book&hash=item5ece73ad42:g:T4QAAOSw7kBnG2HM"
+    },
+    "ebay:407191140968": {
+      "first_seen": "2026-09-03T23:56:41Z",
+      "last_seen": "2026-09-03T23:56:41Z",
+      "score": 26,
+      "title": "Photographic field guide: Birds of Britain and Europe by Jim Flegg|David",
+      "url": "https://www.ebay.co.uk/itm/407191140968?_skw=photo+book&hash=item5ece7bba68:g:BxcAAOSwxkFcCnz1"
+    },
+    "ebay:407191274654": {
+      "first_seen": "2026-09-03T23:56:41Z",
+      "last_seen": "2026-09-03T23:56:41Z",
+      "score": 14,
+      "title": "LEE MILLER'S WAR / BEYOND D-DAY / PHTOGRAPHIC DIARY / PBK THAMES & HUDSON 2024",
+      "url": "https://www.ebay.co.uk/itm/407191274654?_skw=photography+book&hash=item5ece7dc49e:g:tXsAAeSwHUpqmf~L"
     },
     "ebay:800124185750": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -18302,6 +18270,13 @@
       "score": 14,
       "title": "Bluey: MY DAD IS AWESOME - Bluey Story Book - Bedtime Picture... - BBC Studios",
       "url": "https://www.ebay.co.uk/itm/800607962734?_skw=photo+book&hash=itemba67f4066e:g:FHgAAeSwa1Bqmccw"
+    },
+    "ebay:800608551880": {
+      "first_seen": "2026-09-03T23:56:41Z",
+      "last_seen": "2026-09-03T23:56:41Z",
+      "score": 14,
+      "title": "Bluey: MY DAD IS AWESOME - Bluey Story Book - Bedtime Picture... - BBC Studios",
+      "url": "https://www.ebay.co.uk/itm/800608551880?_skw=photo+book&hash=itemba67fd03c8:g:a8EAAeSwR8JqmeyK"
     },
     "ebay:820026400422": {
       "first_seen": "2026-09-03T11:38:48Z",
