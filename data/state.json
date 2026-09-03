@@ -1,7 +1,10 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-03T10:48:22Z",
+  "last_successful_fetch": "2026-09-03T14:44:31Z",
   "last_top_skus": [
+    "HD_304217186",
+    "HD_304217189",
+    "HD_304216419",
     "HD_304215350",
     "HD_304214570",
     "HD_304214341",
@@ -28,10 +31,7 @@
     "HD_304212195",
     "HD_304211801",
     "HD_304211613",
-    "HD_304208944",
-    "HD_304211313",
-    "HD_304210781",
-    "HD_304210186"
+    "HD_304208944"
   ],
   "products": {
     "HD_303805354": {
@@ -4006,8 +4006,56 @@
         "title": "People of London - Peter Zelewski"
       },
       "search_fingerprint": "a162cf735f9954aa"
+    },
+    "HD_304216419": {
+      "first_seen": "2026-09-03T14:44:31Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788437323000",
+        "description": "Hardback with dust jacket, unclipped. Very slight shelf wear. A very good, clean copy.<br/>Anecdotes, explanations, and intriguing glimpses behind the scenes reveal the evolution-picture by picture and thought by thought-of some of the world's most interesting and recognized images and many never-before seen photographs as well.",
+        "isbn": null,
+        "price_gbp": 44.99,
+        "product_id": "book-HD__304216419",
+        "publisher": null,
+        "route": "/the-life-of-a-photograph/product/HD_304216419",
+        "sku": "HD_304216419",
+        "title": "The Life of a Photograph"
+      },
+      "search_fingerprint": "47a262b0aa033fe3"
+    },
+    "HD_304217186": {
+      "first_seen": "2026-09-03T14:44:31Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788442349000",
+        "description": "Collection of photographs on everyday life in East Berlin. Accompanying parallel text in English and German.",
+        "isbn": null,
+        "price_gbp": 4.99,
+        "product_id": "book-HD__304217186",
+        "publisher": null,
+        "route": "/ost-berlin/product/HD_304217186",
+        "sku": "HD_304217186",
+        "title": "Ost-Berlin"
+      },
+      "search_fingerprint": "a979f396db8672f6"
+    },
+    "HD_304217189": {
+      "first_seen": "2026-09-03T14:44:31Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788442160000",
+        "description": "Undercliffe cemetery, in Bradford, is one of the finest of northern cemeteries. Featuring the b&w photographs of Ian Beesley.<br/><br/>Shading to the cover. Spine not creased.",
+        "isbn": null,
+        "price_gbp": 9.99,
+        "product_id": "book-HD__304217189",
+        "publisher": null,
+        "route": "/undercliffe-bradfords-historic-victorian-cemetery-ian-beesley/product/HD_304217189",
+        "sku": "HD_304217189",
+        "title": "Undercliffe : Bradford's Historic Victorian Cemetery - Ian Beesley"
+      },
+      "search_fingerprint": "40233623a5b99d98"
     }
   },
-  "reported_category_count": 2821,
+  "reported_category_count": 2823,
   "version": 1
 }
