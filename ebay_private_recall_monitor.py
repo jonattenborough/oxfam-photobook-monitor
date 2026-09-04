@@ -6,8 +6,8 @@ This wrapper keeps the proven query planning and scoring machinery from
 
 * all available per-run Browse calls are spent on discovery, not mandatory
   item-detail rechecks;
-* active-stock coverage receives the three calls previously reserved for live
-  checks;
+* paced searches protect library, active-stock and photographer coverage, with
+  a larger opportunistic plan when shared quota is available;
 * strong search results are handed straight to the recall-first alert builder;
 * cheap unrecognised photobooks can reach AI triage instead of being capped
   below the normal alert threshold;
@@ -29,6 +29,33 @@ import photobook_recognition as recognition
 
 RECALL_ACTIVE_STOCK_QUERIES_PER_RUN = 4
 RECALL_PENDING_LIMIT = 500
+# At the normal ~44-call allowance, keep every discovery family alive while
+# spending most calls on the long-tail library and deeper active inventory.
+# Order breaks ties (and keeps a broad query first under extreme scarcity).
+PACED_LANE_CALLS = {
+    "broad": 2,
+    "contemporary_hot": 2,
+    "classic_hot": 2,
+    "contemporary_contributor": 2,
+    "classic_contributor": 2,
+    "collectible_format": 1,
+    "collection": 1,
+    "wrong_category": 2,
+    "contemporary_auction": 1,
+    "classic_auction": 1,
+    "active_stock": 10,
+    "library_rotation": 16,
+}
+LANE_CURSORS = {
+    "broad": "broad_priority",
+    "contemporary_hot": "contemporary_hot_records",
+    "classic_hot": "classic_hot_records",
+    "contemporary_contributor": "contemporary_contributors",
+    "classic_contributor": "classic_contributors",
+    "contemporary_auction": "contemporary_auctions",
+    "classic_auction": "classic_auctions",
+    "library_rotation": "library_records",
+}
 CHEAP_UNKNOWN_HARD_LIMIT_GBP = 30.0
 CHEAP_UNKNOWN_SOFT_LIMIT_GBP = 50.0
 PRICE_DROP_PERCENT = 0.20
@@ -111,6 +138,38 @@ def recall_config(config: dict[str, Any]) -> dict[str, Any]:
         int(adjusted.get("max_pending_live_checks") or 0),
     )
     return adjusted
+
+
+def build_budgeted_search_plan(
+    config: dict[str, Any], state: dict[str, Any], now: datetime, budget: int,
+) -> list[dict[str, Any]]:
+    """Choose balanced lane prefixes; never advance over quota-trimmed queries."""
+    if budget <= 0:
+        return []
+    # The legacy planner advances every cursor as it builds its full plan.
+    # Use a scratch copy, then advance only the prefixes we actually select.
+    scratch = {**state, "cursors": dict(state["cursors"])}
+    full_plan = legacy.build_search_plan(config, scratch, now)
+    lanes = {
+        lane: [step for step in full_plan if step["lane"] == lane]
+        for lane in PACED_LANE_CALLS
+    }
+    selected = {lane: 0 for lane in lanes}
+    plan = []
+    for _ in range(min(budget, len(full_plan))):
+        available = [lane for lane, steps in lanes.items() if selected[lane] < len(steps)]
+        if not available:
+            break
+        lane = min(available, key=lambda name: selected[name] / PACED_LANE_CALLS[name])
+        plan.append(lanes[lane][selected[lane]])
+        selected[lane] += 1
+    for lane, count in selected.items():
+        if count:
+            cursor = LANE_CURSORS.get(lane, lane)
+            # Broad-query order shifts once, even if every broad query fits.
+            advance = 1 if lane == "broad" else count
+            state["cursors"][cursor] = int(state["cursors"].get(cursor, 0) or 0) + advance
+    return plan
 
 
 def _landed_price(item: dict[str, Any]) -> float | None:
@@ -366,7 +425,7 @@ def _candidate_priority(pair: tuple[str, dict[str, Any]]) -> tuple[Any, ...]:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--config", default="data/ebay_private_searches.json")
+    parser.add_argument("--config", default="data/ebay_private_recall_searches.json")
     parser.add_argument("--state", default="data/ebay_private_seller_state.json")
     parser.add_argument("--runtime-dir", default="runtime/ebay-private")
     args = parser.parse_args()
@@ -380,9 +439,9 @@ def main() -> int:
     stats = recognition.library_stats()
     client = legacy.ebay_api.EbayBrowseClient(marketplace=config["marketplace"])
 
-    full_search_plan = legacy.build_search_plan(config, state, now)
     call_budget, quota, quota_warning = legacy.api_call_budget(client, config, now)
-    search_plan = legacy.trim_search_plan(full_search_plan, call_budget)
+    initial_cursors = dict(state["cursors"])
+    search_plan = build_budgeted_search_plan(config, state, now, call_budget)
 
     if not search_plan:
         legacy.write_json(
@@ -410,6 +469,8 @@ def main() -> int:
     if quota_warning:
         failures.append(quota_warning)
     successful_queries = 0
+    successful_prefixes: dict[str, int] = {}
+    failed_lanes: set[str] = set()
 
     for step in search_plan:
         try:
@@ -431,8 +492,19 @@ def main() -> int:
                 offset=int(step.get("offset") or 0),
             )
             successful_queries += 1
+            if step["lane"] not in failed_lanes:
+                successful_prefixes[step["lane"]] = successful_prefixes.get(step["lane"], 0) + 1
         except Exception as exc:
             failures.append(f"{step['lane']} `{step['query']}`: {exc}")
+            if step["lane"] not in failed_lanes:
+                # Retry from the first failed query in this lane next run;
+                # later successes must not advance the cursor past the gap.
+                lane = step["lane"]
+                cursor = LANE_CURSORS.get(lane, lane)
+                prefix = successful_prefixes.get(lane, 0)
+                advance = min(1, prefix) if lane == "broad" else prefix
+                state["cursors"][cursor] = int(initial_cursors.get(cursor, 0) or 0) + advance
+                failed_lanes.add(lane)
             continue
         for item in items:
             key = str(item.get("key") or "")

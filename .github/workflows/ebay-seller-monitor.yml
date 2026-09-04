@@ -55,7 +55,7 @@ jobs:
         env:
           EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
-        run: python ebay_seller_monitor.py --sellers-per-run 51
+        run: python ebay_seller_monitor.py --sellers-per-run 26
 
       - name: Create AI review issue for new seller candidates
         if: steps.sellers.outputs.new_count != '0'

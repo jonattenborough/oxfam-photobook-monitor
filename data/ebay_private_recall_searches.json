@@ -8,20 +8,37 @@
   "issue_threshold": 72,
   "urgent_threshold": 90,
   "max_live_checks_per_run": 0,
-  "max_api_calls_per_run": 38,
+  "max_api_calls_per_run": 70,
+  "quota_fallback_api_calls_per_run": 20,
   "quota_reserve": 80,
   "schedule_interval_minutes": 15,
-  "projected_shared_calls_per_hour": 2,
+  "projected_shared_calls_per_hour": 28,
   "minimum_search_calls_per_run": 4,
   "max_pending_live_checks": 500,
-  "contemporary_records_per_run": 4,
-  "classic_records_per_run": 4,
-  "rotating_records_per_run": 8,
-  "contemporary_contributor_queries_per_run": 0,
-  "classic_contributor_queries_per_run": 0,
+  "contemporary_records_per_run": 6,
+  "classic_records_per_run": 6,
+  "rotating_records_per_run": 16,
+  "contemporary_contributor_queries_per_run": 2,
+  "classic_contributor_queries_per_run": 2,
+  "priority_contributors": [
+    "Alec Soth",
+    "Jim Goldberg",
+    "Mark Steinmetz",
+    "Paul Graham",
+    "Chris Killip",
+    "Martin Parr",
+    "Nan Goldin",
+    "Mary Ellen Mark",
+    "Richard Billingham",
+    "Sirkka-Liisa Konttinen",
+    "William Eggleston",
+    "Stephen Shore",
+    "Robert Frank",
+    "Roy DeCarava"
+  ],
   "contemporary_auction_queries_per_run": 2,
   "classic_auction_queries_per_run": 2,
-  "active_stock_queries_per_run": 4,
+  "active_stock_queries_per_run": 12,
   "active_stock_max_offset": 9800,
   "auction_horizon_hours": 72,
   "broad_queries": [
@@ -38,13 +55,21 @@
   ],
   "collection_queries": [
     "photography books collection",
-    "photography books job lot"
+    "photography books job lot",
+    "photography book bundle",
+    "old photography books"
   ],
   "wrong_category_queries": [
     "photography book collection",
     "photobook job lot",
     "photobook",
-    "photography monograph"
+    "photography monograph",
+    "photo book",
+    "photography collection",
+    "signed photographer book",
+    "photo books job lot",
+    "old photo books",
+    "photography books house clearance"
   ],
   "active_stock_queries": [
     "photography book",
@@ -54,6 +79,8 @@
     "signed photography book",
     "limited edition photobook",
     "photography books collection",
-    "old photography books"
+    "old photography books",
+    "photobook",
+    "photo books job lot"
   ]
 }

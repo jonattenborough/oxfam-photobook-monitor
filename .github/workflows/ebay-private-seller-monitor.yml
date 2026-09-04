@@ -10,6 +10,8 @@ on:
       - "ebay_api.py"
       - "ebay_private_seller_monitor.py"
       - "ebay_private_recall_monitor.py"
+      - "ebay_seller_monitor.py"
+      - "market_monitor_safe.py"
       - "ebay_private_alert_builder.py"
       - "photobook_recognition.py"
       - "photobook_library_builder.py"
@@ -19,6 +21,7 @@ on:
       - "test_photobook_library_builder.py"
       - "test_ebay_private_seller_monitor.py"
       - "test_ebay_private_recall_monitor.py"
+      - "test_ebay_seller_monitor.py"
       - "test_ebay_private_alert_builder.py"
       - "data/ebay_private_searches.json"
       - "data/ebay_private_recall_searches.json"
@@ -26,12 +29,15 @@ on:
       - "data/parr_badger_master/**"
       - "data/roth_101_master.csv"
       - ".github/workflows/ebay-private-seller-monitor.yml"
+      - ".github/workflows/ebay-seller-monitor.yml"
   push:
     branches: [main]
     paths:
       - "ebay_api.py"
       - "ebay_private_seller_monitor.py"
       - "ebay_private_recall_monitor.py"
+      - "ebay_seller_monitor.py"
+      - "market_monitor_safe.py"
       - "ebay_private_alert_builder.py"
       - "photobook_recognition.py"
       - "photobook_library_builder.py"
@@ -41,6 +47,7 @@ on:
       - "test_photobook_library_builder.py"
       - "test_ebay_private_seller_monitor.py"
       - "test_ebay_private_recall_monitor.py"
+      - "test_ebay_seller_monitor.py"
       - "test_ebay_private_alert_builder.py"
       - "data/ebay_private_searches.json"
       - "data/ebay_private_recall_searches.json"
@@ -49,6 +56,7 @@ on:
       - "data/parr_badger_master/**"
       - "data/roth_101_master.csv"
       - ".github/workflows/ebay-private-seller-monitor.yml"
+      - ".github/workflows/ebay-seller-monitor.yml"
 
 permissions:
   contents: write
@@ -87,6 +95,7 @@ jobs:
             test_photobook_recognition.py \
             test_ebay_private_seller_monitor.py \
             test_ebay_private_recall_monitor.py \
+            test_ebay_seller_monitor.py \
             test_ebay_private_alert_builder.py
           python photobook_recognition.py
 

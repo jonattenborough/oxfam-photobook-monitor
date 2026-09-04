@@ -39,7 +39,9 @@ if ebay_api.configured():
             "fixed_price_only": True,
         },
     ]
-    monitor.TARGET_MARKETS = ("ebay_api", "abebooks")
+    # Exact-title eBay quota now belongs to private-seller library discovery;
+    # retain the two broad all-seller feeds and non-eBay targeted searches.
+    monitor.TARGET_MARKETS = ("abebooks",)
 else:
     print(
         "WARNING: eBay API disabled until EBAY_CLIENT_ID and EBAY_CLIENT_SECRET are configured",
