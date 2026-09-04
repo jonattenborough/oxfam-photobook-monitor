@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "max_live_checks_per_run": 0,
+  "active_stock_queries_per_run": 4,
+  "max_pending_candidates": 1000,
+  "unknown_bargain_max_price_gbp": 30.0,
+  "unknown_bargain_min_score": 35,
+  "unknown_bargain_alert_score": 74,
+  "material_price_drop_min_percent": 0.12,
+  "material_price_drop_min_gbp": 5.0,
+  "material_change_max_price_gbp": 300.0,
+  "material_change_alert_score": 74,
+  "alert_threshold": 72,
+  "urgent_threshold": 90
+}
