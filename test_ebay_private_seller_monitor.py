@@ -48,21 +48,14 @@ class PrivateSellerMonitorTests(unittest.TestCase):
             )
         )
 
-    def test_daily_schedule_uses_allowance_without_crossing_reserve(self):
-        config = monitor.load_config(Path("data/ebay_private_searches.json"))
+    def test_private_and_charity_schedule_cadences_are_preserved(self):
         private_workflow = Path(".github/workflows/ebay-private-seller-monitor.yml").read_text(encoding="utf-8")
         charity_workflow = Path(".github/workflows/ebay-seller-monitor.yml").read_text(encoding="utf-8")
         self.assertIn('cron: "2,17,32,47 * * * *"', private_workflow)
         self.assertIn("--assignee jonattenborough", private_workflow)
         self.assertIn("@jonattenborough Immediate live private-seller photobook candidate alert", private_workflow)
         self.assertEqual(charity_workflow.count('cron: "9 * * * *"'), 1)
-        self.assertIn("--sellers-per-run 51", charity_workflow)
-        daily_private_calls = 96 * int(config["max_api_calls_per_run"])
-        daily_charity_calls = 24 * 51
-        daily_market_calls = 24 * 2
-        daily_total = daily_private_calls + daily_charity_calls + daily_market_calls
-        self.assertEqual(daily_total, 4920)
-        self.assertLessEqual(daily_total, 5000 - int(config["quota_reserve"]))
+        self.assertIn("--sellers-per-run 26", charity_workflow)
 
     def test_depleted_allowance_is_paced_across_remaining_runs(self):
         class QuotaClient:

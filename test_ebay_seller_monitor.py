@@ -41,18 +41,24 @@ class EbaySellerMonitorTests(unittest.TestCase):
         self.assertEqual(len({monitor.seller_key(s["marketplace"], s["id"]) for s in sellers}), 103)
         self.assertTrue(all(seller.get("delivery_country") == "GB" for seller in us))
 
-    def test_half_hour_batches_cover_every_seller_about_hourly(self):
+    def test_hourly_batches_cover_every_seller_in_four_runs(self):
         sellers = monitor.load_config(Path("data/ebay_sellers.json"))
-        first, cursor = monitor.select_sellers(sellers, 0, monitor.DEFAULT_SELLERS_PER_RUN)
-        second, next_cursor = monitor.select_sellers(sellers, cursor, monitor.DEFAULT_SELLERS_PER_RUN)
+        cursor = 0
+        batches = []
+        for _ in range(4):
+            batch, cursor = monitor.select_sellers(sellers, cursor, monitor.DEFAULT_SELLERS_PER_RUN)
+            batches.append(batch)
         covered = {
             monitor.seller_key(seller["marketplace"], seller["id"])
-            for seller in first + second
+            for batch in batches for seller in batch
         }
-        self.assertEqual(len(first), 52)
-        self.assertEqual(len(second), 52)
+        self.assertEqual([len(batch) for batch in batches], [26] * 4)
         self.assertEqual(len(covered), 103)
-        self.assertEqual(next_cursor, 1)
+        self.assertEqual(cursor, 1)
+
+    def test_scheduled_seller_allocation_matches_default(self):
+        workflow = Path(".github/workflows/ebay-seller-monitor.yml").read_text(encoding="utf-8")
+        self.assertIn(f"--sellers-per-run {monitor.DEFAULT_SELLERS_PER_RUN}", workflow)
 
     def test_quota_batch_allows_for_incremental_page_spillover(self):
         self.assertEqual(monitor.quota_safe_seller_count(260, 52), 52)

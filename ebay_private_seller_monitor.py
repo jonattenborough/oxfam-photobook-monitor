@@ -246,12 +246,19 @@ def build_search_plan(config: dict[str, Any], state: dict[str, Any], now: dateti
         cursors["broad_priority"] = (broad_cursor + 1) % len(broad_queries)
     for query in broad_queries:
         add("broad", query, description=True)
-    for query in config["collectible_queries"]:
-        add("collectible_format", query, description=True)
-    for query in config["collection_queries"]:
-        add("collection", query, description=True)
-    for query in config["wrong_category_queries"]:
-        add("wrong_category", query, category_ids=None, description=True)
+    for lane, config_key in (
+        ("collectible_format", "collectible_queries"),
+        ("collection", "collection_queries"),
+        ("wrong_category", "wrong_category_queries"),
+    ):
+        queries = config[config_key]
+        selected, _ = _cycle_slice(queries, int(cursors.get(lane, 0) or 0), len(queries))
+        for query in selected:
+            add(
+                lane, query,
+                category_ids=None if lane == "wrong_category" else BOOKS_CATEGORY_ID,
+                description=True,
+            )
 
     active_stock_queries = config["active_stock_queries"]
     active_stock_per_run = max(0, int(config["active_stock_queries_per_run"]))
@@ -326,8 +333,16 @@ def build_search_plan(config: dict[str, Any], state: dict[str, Any], now: dateti
             incremental=False,
         )
 
-    contemporary_contributors = recognition.unique_contributors(contemporary_records)
-    classic_contributors = recognition.unique_contributors(classic_records)
+    priority_names = {pb.normalize(name) for name in config.get("priority_contributors", [])}
+
+    def contributor_pool(rows: list[dict[str, Any]]) -> list[str]:
+        if priority_names:
+            preferred = [row for row in rows if pb.normalize(row.get("Contributor")) in priority_names]
+            rows = preferred or _priority_records(rows)
+        return recognition.unique_contributors(rows)
+
+    contemporary_contributors = contributor_pool(contemporary_records)
+    classic_contributors = contributor_pool(classic_records)
     contemporary_contributor_selected, next_contemporary_contributor = _cycle_slice(
         contemporary_contributors,
         int(cursors.get("contemporary_contributors", 0) or 0),
@@ -342,9 +357,15 @@ def build_search_plan(config: dict[str, Any], state: dict[str, Any], now: dateti
     cursors["classic_contributors"] = next_classic_contributor
     for index in range(max(len(contemporary_contributor_selected), len(classic_contributor_selected))):
         if index < len(contemporary_contributor_selected):
-            add("contemporary_contributor", contemporary_contributor_selected[index], description=True)
+            add(
+                "contemporary_contributor", contemporary_contributor_selected[index],
+                description=True, incremental=not bool(priority_names),
+            )
         if index < len(classic_contributor_selected):
-            add("classic_contributor", classic_contributor_selected[index], description=True)
+            add(
+                "classic_contributor", classic_contributor_selected[index],
+                description=True, incremental=not bool(priority_names),
+            )
 
     contemporary_auction_selected, next_contemporary_auction = _cycle_slice(
         contemporary_hot or contemporary_records,
@@ -430,10 +451,13 @@ def api_call_budget(
     now: datetime | None = None,
 ) -> tuple[int, dict[str, Any] | None, str | None]:
     configured_budget = max(1, int(config["max_api_calls_per_run"]))
+    fallback_budget = min(
+        configured_budget, max(0, int(config.get("quota_fallback_api_calls_per_run", 38)))
+    )
     try:
         quota = client.browse_quota()
     except Exception as exc:
-        return configured_budget, None, f"Browse quota lookup failed; using the conservative run cap: {exc}"
+        return fallback_budget, None, f"Browse quota lookup failed; using the conservative run cap: {exc}"
     remaining = max(0, int(quota.get("remaining") or 0))
     usable = max(0, remaining - int(config["quota_reserve"]))
     reset = _parse_stamp(quota.get("reset"))
@@ -450,6 +474,9 @@ def api_call_budget(
         paced_usable = max(0, usable - projected_shared_calls)
         paced_budget = math.ceil(paced_usable / runs_left) if paced_usable else 0
         usable = min(usable, paced_budget)
+    elif reset is None or reset <= current:
+        # A missing/stale reset must not unlock the larger opportunistic cap.
+        usable = min(usable, fallback_budget)
     return min(configured_budget, usable), quota, None
 
 
