@@ -1,0 +1,59 @@
+{
+  "version": 2,
+  "marketplace": "EBAY_GB",
+  "delivery_country": "GB",
+  "category_ids": "261186",
+  "query_result_limit": 200,
+  "max_price_gbp": 750,
+  "issue_threshold": 72,
+  "urgent_threshold": 90,
+  "max_live_checks_per_run": 0,
+  "max_api_calls_per_run": 38,
+  "quota_reserve": 80,
+  "schedule_interval_minutes": 15,
+  "projected_shared_calls_per_hour": 2,
+  "minimum_search_calls_per_run": 4,
+  "max_pending_live_checks": 500,
+  "contemporary_records_per_run": 4,
+  "classic_records_per_run": 4,
+  "rotating_records_per_run": 8,
+  "contemporary_contributor_queries_per_run": 0,
+  "classic_contributor_queries_per_run": 0,
+  "contemporary_auction_queries_per_run": 2,
+  "classic_auction_queries_per_run": 2,
+  "active_stock_queries_per_run": 4,
+  "active_stock_max_offset": 9800,
+  "auction_horizon_hours": 72,
+  "broad_queries": [
+    "photography book",
+    "photo book",
+    "photography monograph",
+    "photographer book"
+  ],
+  "collectible_queries": [
+    "signed photography book",
+    "signed numbered photobook",
+    "limited edition photobook",
+    "photography book with print"
+  ],
+  "collection_queries": [
+    "photography books collection",
+    "photography books job lot"
+  ],
+  "wrong_category_queries": [
+    "photography book collection",
+    "photobook job lot",
+    "photobook",
+    "photography monograph"
+  ],
+  "active_stock_queries": [
+    "photography book",
+    "photo book",
+    "photography monograph",
+    "photographer book",
+    "signed photography book",
+    "limited edition photobook",
+    "photography books collection",
+    "old photography books"
+  ]
+}
