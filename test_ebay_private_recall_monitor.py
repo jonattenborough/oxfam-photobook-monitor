@@ -22,6 +22,30 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
         self.assertEqual(len(plan), 38)
         self.assertEqual(sum(step["lane"] == "active_stock" for step in plan), 4)
 
+    def test_balanced_recall_config_uses_full_38_search_budget(self):
+        config = recall.recall_config(
+            legacy.load_config(Path("data/ebay_private_recall_searches.json"))
+        )
+        state = legacy.load_state(Path("/path/that/does/not/exist.json"))
+        plan = legacy.build_search_plan(
+            config,
+            state,
+            datetime(2026, 9, 4, 8, 0, tzinfo=timezone.utc),
+        )
+        self.assertEqual(len(plan), 38)
+        self.assertEqual(sum(step["lane"] == "active_stock" for step in plan), 4)
+        self.assertEqual(sum(step["lane"] == "wrong_category" for step in plan), 4)
+        self.assertEqual(
+            sum(step["lane"] in {"contemporary_auction", "classic_auction"} for step in plan),
+            4,
+        )
+        self.assertEqual(
+            sum(step["lane"] in {"contemporary_contributor", "classic_contributor"} for step in plan),
+            0,
+        )
+        self.assertEqual(sum(step["lane"] == "collection" for step in plan), 2)
+        self.assertEqual(config["max_live_checks_per_run"], 0)
+
     def test_cheap_unknown_photobook_can_cross_alert_threshold(self):
         item = {
             "key": "ebay:cheap-unknown",
