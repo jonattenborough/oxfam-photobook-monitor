@@ -38,6 +38,8 @@ class RecallFirstAlertBuilderTests(unittest.TestCase):
             "private_seller": True,
             "seller_account_type": "INDIVIDUAL",
             "alert_verification": "SEARCH RESULT ONLY",
+            "price_gbp": 42.0,
+            "buying_options": ["FIXED_PRICE", "BEST_OFFER"],
         }
         state = {"seen": {}, "pending_live": {"ebay:2": dict(candidate)}}
         alerts.mark_search_only_alerted(
@@ -48,6 +50,8 @@ class RecallFirstAlertBuilderTests(unittest.TestCase):
         )
         self.assertNotIn("ebay:2", state["pending_live"])
         self.assertIn("ebay:2", state["seen"])
+        self.assertEqual(state["seen"]["ebay:2"]["observed_price_gbp"], 42.0)
+        self.assertIn("BEST_OFFER", state["seen"]["ebay:2"]["buying_options"])
 
     def test_live_verified_and_search_only_candidates_are_both_kept(self):
         snapshot = {
@@ -116,6 +120,31 @@ class RecallFirstAlertBuilderTests(unittest.TestCase):
         self.assertIn("SEARCH RESULT ONLY", body)
         self.assertIn("availability was not rechecked", body)
         self.assertNotIn("Every surfaced listing has been re-fetched", body)
+
+    def test_issue_body_explains_material_change_and_unknown_lane(self):
+        body = alerts.make_issue_body(
+            [
+                {
+                    "key": "ebay:4",
+                    "title": "Unknown signed photobook",
+                    "opportunity_score": 80,
+                    "private_seller": True,
+                    "seller_account_type": "INDIVIDUAL",
+                    "alert_verification": "SEARCH RESULT ONLY",
+                    "material_change": True,
+                    "material_change_reasons": ["price dropped from £120.00 to £40.00"],
+                    "recall_first_unknown": True,
+                    "url": "https://www.ebay.co.uk/itm/4",
+                }
+            ],
+            detected_at="2026-09-04T08:00:00Z",
+            stats={"records": 4318},
+            failures=[],
+            urgent_threshold=90,
+        )
+        self.assertIn("Material change", body)
+        self.assertIn("£120.00 to £40.00", body)
+        self.assertIn("Cheap unrecognised photobook", body)
 
 
 if __name__ == "__main__":
