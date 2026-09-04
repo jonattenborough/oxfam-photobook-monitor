@@ -35,6 +35,46 @@ PRICE_DROP_PERCENT = 0.20
 PRICE_DROP_ABSOLUTE_GBP = 15.0
 PRICE_CROSSINGS_GBP = (100.0, 60.0, 30.0)
 
+# The cheap-unknown lane is deliberately permissive, but it still needs direct
+# evidence that the object is actually photographic. Generic "picture book"
+# results from a broad ``photo book`` query are not useful enough to consume AI
+# review capacity.
+STRICT_UNKNOWN_PHOTO_TERMS = {
+    "photobook",
+    "photo book",
+    "photo-book",
+    "photography book",
+    "photographic book",
+    "photographic monograph",
+    "photographs by",
+    "photography by",
+    "photos by",
+    "photojournalism",
+    "documentary photography",
+    "street photography",
+    "contact sheets",
+}
+
+UNKNOWN_NOISE_TERMS = {
+    "children's picture book",
+    "childrens picture book",
+    "picture book for",
+    "ages 3-",
+    "ages 4-",
+    "ages 5-",
+    "colouring book",
+    "coloring book",
+    "activity book",
+    "sticker book",
+    "cookbook",
+    "recipe book",
+    "how to photograph",
+    "photography handbook",
+    "photography manual",
+    "camera manual",
+    "photography for beginners",
+}
+
 COLLECTIBLE_SIGNAL_TERMS = {
     "signed": "signed",
     "autograph": "signed",
@@ -133,9 +173,13 @@ def recall_classify(item: dict[str, Any], issue_threshold: int) -> dict[str, Any
         return classified
 
     price = _landed_price(classified)
+    text = _normalized_text(classified)
     reasons = [str(value) for value in classified.get("opportunity_reasons") or []]
     reason_text = " | ".join(reasons).lower()
-    obvious_noise = "instructional, technical, celebrity or local-history wording" in reason_text
+    obvious_noise = (
+        "instructional, technical, celebrity or local-history wording" in reason_text
+        or any(term in text for term in UNKNOWN_NOISE_TERMS)
+    )
     serious_condition = any(
         marker in reason_text
         for marker in (
@@ -144,21 +188,20 @@ def recall_classify(item: dict[str, Any], issue_threshold: int) -> dict[str, Any
             "condition risk: detached",
         )
     )
-    photo_or_publisher_signal = any(
-        marker in reason_text
-        for marker in (
-            "photography-book wording",
-            "specialist photobook publisher",
-            "high-recall discovery lane",
-        )
-    )
+    strict_photo_signal = any(term in text for term in STRICT_UNKNOWN_PHOTO_TERMS)
+    publisher_signal = "specialist photobook publisher" in reason_text
+    high_recall_signal = "high-recall discovery lane" in reason_text
 
     recall_eligible = False
     if price is not None and not obvious_noise and not serious_condition:
         if price <= CHEAP_UNKNOWN_HARD_LIMIT_GBP:
-            recall_eligible = True
-        elif price <= CHEAP_UNKNOWN_SOFT_LIMIT_GBP and photo_or_publisher_signal:
-            recall_eligible = True
+            recall_eligible = strict_photo_signal or publisher_signal or high_recall_signal
+        elif price <= CHEAP_UNKNOWN_SOFT_LIMIT_GBP:
+            # At the higher price band require stronger object evidence rather
+            # than merely inheriting a generic photography search context.
+            recall_eligible = publisher_signal or (
+                strict_photo_signal and high_recall_signal
+            )
 
     if recall_eligible:
         score = max(int(classified.get("opportunity_score") or 0), int(issue_threshold))
