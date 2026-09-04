@@ -9,6 +9,7 @@ on:
     paths:
       - "ebay_api.py"
       - "ebay_private_seller_monitor.py"
+      - "ebay_private_alert_builder.py"
       - "photobook_recognition.py"
       - "photobook_library_builder.py"
       - "test_ebay_api.py"
@@ -16,6 +17,7 @@ on:
       - "test_photobook_recognition.py"
       - "test_photobook_library_builder.py"
       - "test_ebay_private_seller_monitor.py"
+      - "test_ebay_private_alert_builder.py"
       - "data/ebay_private_searches.json"
       - "data/photobook_recognition/**"
       - "data/parr_badger_master/**"
@@ -26,6 +28,7 @@ on:
     paths:
       - "ebay_api.py"
       - "ebay_private_seller_monitor.py"
+      - "ebay_private_alert_builder.py"
       - "photobook_recognition.py"
       - "photobook_library_builder.py"
       - "test_ebay_api.py"
@@ -33,6 +36,7 @@ on:
       - "test_photobook_recognition.py"
       - "test_photobook_library_builder.py"
       - "test_ebay_private_seller_monitor.py"
+      - "test_ebay_private_alert_builder.py"
       - "data/ebay_private_searches.json"
       - "data/photobook_recognition/**"
       - "data/ebay_private_seller_state.json"
@@ -75,7 +79,8 @@ jobs:
             test_ebay_private_api.py \
             test_photobook_library_builder.py \
             test_photobook_recognition.py \
-            test_ebay_private_seller_monitor.py
+            test_ebay_private_seller_monitor.py \
+            test_ebay_private_alert_builder.py
           python photobook_recognition.py
 
       - name: Search private eBay sellers
@@ -86,19 +91,28 @@ jobs:
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
         run: python ebay_private_seller_monitor.py
 
-      - name: Create AI review issue for live private seller candidates
-        if: github.event_name != 'pull_request' && steps.private.outputs.new_count != '0'
+      - name: Build recall-first alert packets
+        if: github.event_name != 'pull_request'
+        id: alerts
+        run: python ebay_private_alert_builder.py
+
+      - name: Create AI review issues for private seller candidates
+        if: github.event_name != 'pull_request' && steps.alerts.outputs.alert_count != '0'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          {
-            printf '%s\n\n' '@jonattenborough Immediate live private-seller photobook candidate alert. A deeper ChatGPT gem appraisal will follow separately.'
-            cat runtime/ebay-private/issue-body.md
-          } > runtime/ebay-private/notified-issue-body.md
-          gh issue create \
-            --assignee jonattenborough \
-            --title "$(cat runtime/ebay-private/issue-title.txt)" \
-            --body-file runtime/ebay-private/notified-issue-body.md
+          set -euo pipefail
+          for body in runtime/ebay-private/alerts/*.md; do
+            stem="${body%.md}"
+            {
+              printf '%s\n\n' '@jonattenborough Immediate private-seller photobook candidate alert. Search-result-only leads are intentionally included so limited live checks cannot hide a fast-moving bargain. A deeper ChatGPT gem appraisal will follow separately.'
+              cat "$body"
+            } > "${stem}.notified.md"
+            gh issue create \
+              --assignee jonattenborough \
+              --title "$(cat "${stem}.title")" \
+              --body-file "${stem}.notified.md"
+          done
 
       - name: Persist private seller monitor state
         if: github.event_name != 'pull_request' && steps.private.outputs.state_changed == 'true'
