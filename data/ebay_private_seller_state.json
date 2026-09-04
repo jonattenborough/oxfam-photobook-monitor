@@ -1,23 +1,23 @@
 {
   "cursors": {
-    "active_stock": 13,
+    "active_stock": 14,
     "auctions": 10,
-    "broad_priority": 0,
-    "classic_auctions": 22,
-    "classic_contributors": 22,
-    "classic_hot_records": 38,
-    "contemporary_auctions": 22,
-    "contemporary_contributors": 22,
-    "contemporary_hot_records": 27,
+    "broad_priority": 1,
+    "classic_auctions": 23,
+    "classic_contributors": 23,
+    "classic_hot_records": 42,
+    "contemporary_auctions": 23,
+    "contemporary_contributors": 23,
+    "contemporary_hot_records": 31,
     "contributors": 10,
     "hot_records": 26,
-    "library_records": 204
+    "library_records": 212
   },
   "last_api_call_budget": 38,
   "last_browse_quota": {
-    "count": 0,
+    "count": 30,
     "limit": 5000,
-    "remaining": 5000,
+    "remaining": 4970,
     "reset": "2026-09-05T07:00:00.000Z",
     "resource": "buy.browse",
     "time_window": 86400
@@ -25,11 +25,12 @@
   "last_failure_count": 0,
   "last_live_checks": 3,
   "last_query_count": 35,
-  "last_run": "2026-09-04T07:53:56Z",
+  "last_run": "2026-09-04T08:08:12Z",
   "last_successful_queries": 35,
   "library_records": 4318,
   "pending_live": {},
   "query_last_checked": {
+    "active_stock:BEST_OFFER+FIXED_PRICE:limited edition photobook": "2026-09-04T08:08:12Z",
     "active_stock:BEST_OFFER+FIXED_PRICE:photo book": "2026-09-02T07:13:35Z",
     "active_stock:BEST_OFFER+FIXED_PRICE:photography books collection": "2026-09-03T11:38:48Z",
     "active_stock:BEST_OFFER+FIXED_PRICE:photography monograph": "2026-09-02T07:50:20Z",
@@ -45,11 +46,11 @@
     "auction_ending:AUCTION:corinne day diary": "2026-09-01T15:15:42Z",
     "auction_ending:AUCTION:daido moriyama farewell photography": "2026-09-01T15:15:42Z",
     "broad:BEST_OFFER+FIXED_PRICE:art photography book": "2026-09-01T12:57:22Z",
-    "broad:BEST_OFFER+FIXED_PRICE:photo book": "2026-09-04T07:53:56Z",
-    "broad:BEST_OFFER+FIXED_PRICE:photographer book": "2026-09-04T07:53:56Z",
+    "broad:BEST_OFFER+FIXED_PRICE:photo book": "2026-09-04T08:08:12Z",
+    "broad:BEST_OFFER+FIXED_PRICE:photographer book": "2026-09-04T08:08:12Z",
     "broad:BEST_OFFER+FIXED_PRICE:photographs book": "2026-09-01T12:57:22Z",
-    "broad:BEST_OFFER+FIXED_PRICE:photography book": "2026-09-04T07:53:56Z",
-    "broad:BEST_OFFER+FIXED_PRICE:photography monograph": "2026-09-04T07:53:56Z",
+    "broad:BEST_OFFER+FIXED_PRICE:photography book": "2026-09-04T08:08:12Z",
+    "broad:BEST_OFFER+FIXED_PRICE:photography monograph": "2026-09-04T08:08:12Z",
     "classic_auction:AUCTION:alec soth niagara": "2026-09-01T17:16:36Z",
     "classic_auction:AUCTION:alec soth sleeping by the mississippi": "2026-09-01T17:20:07Z",
     "classic_auction:AUCTION:bernd and hilla becher anonyme skulpturen": "2026-09-01T17:24:57Z",
@@ -61,6 +62,7 @@
     "classic_auction:AUCTION:ed van der elsken love on the left bank": "2026-09-02T07:50:20Z",
     "classic_auction:AUCTION:jamie hawkesworth preston bus station": "2026-09-03T11:38:48Z",
     "classic_auction:AUCTION:larry sultan and mike mandel evidence": "2026-09-04T07:53:56Z",
+    "classic_auction:AUCTION:lewis baltz the new industrial parks near irvine, california": "2026-09-04T08:08:12Z",
     "classic_contributor:BEST_OFFER+FIXED_PRICE:a j wilkinson": "2026-09-01T17:24:57Z",
     "classic_contributor:BEST_OFFER+FIXED_PRICE:a-chan": "2026-09-01T17:16:36Z",
     "classic_contributor:BEST_OFFER+FIXED_PRICE:a. d. coleman": "2026-09-01T17:20:07Z",
@@ -72,6 +74,7 @@
     "classic_contributor:BEST_OFFER+FIXED_PRICE:abe frajndlich": "2026-09-02T07:50:20Z",
     "classic_contributor:BEST_OFFER+FIXED_PRICE:achim heine": "2026-09-03T11:38:48Z",
     "classic_contributor:BEST_OFFER+FIXED_PRICE:adam fuss": "2026-09-04T07:53:56Z",
+    "classic_contributor:BEST_OFFER+FIXED_PRICE:adam pape": "2026-09-04T08:08:12Z",
     "classic_hot:BEST_OFFER+FIXED_PRICE:alec soth niagara": "2026-09-01T17:16:36Z",
     "classic_hot:BEST_OFFER+FIXED_PRICE:alec soth sleeping by the mississippi": "2026-09-01T17:16:36Z",
     "classic_hot:BEST_OFFER+FIXED_PRICE:bernd and hilla becher anonyme skulpturen": "2026-09-01T17:16:36Z",
@@ -110,24 +113,26 @@
     "classic_hot:BEST_OFFER+FIXED_PRICE:robert adams the new west": "2026-09-04T07:53:56Z",
     "classic_hot:BEST_OFFER+FIXED_PRICE:robert frank the americans": "2026-09-04T07:53:56Z",
     "classic_hot:BEST_OFFER+FIXED_PRICE:robert mapplethorpe black book": "2026-09-04T07:53:56Z",
-    "classic_hot:BEST_OFFER+FIXED_PRICE:shomei tomatsu 11:02 nagasaki": "2026-09-02T07:13:35Z",
-    "classic_hot:BEST_OFFER+FIXED_PRICE:sian davey looking for alice": "2026-09-02T07:13:35Z",
+    "classic_hot:BEST_OFFER+FIXED_PRICE:roy decarava the sweet flypaper of life": "2026-09-04T08:08:12Z",
+    "classic_hot:BEST_OFFER+FIXED_PRICE:sally mann immediate family": "2026-09-04T08:08:12Z",
+    "classic_hot:BEST_OFFER+FIXED_PRICE:shomei tomatsu 11:02 nagasaki": "2026-09-04T08:08:12Z",
+    "classic_hot:BEST_OFFER+FIXED_PRICE:sian davey looking for alice": "2026-09-04T08:08:12Z",
     "classic_hot:BEST_OFFER+FIXED_PRICE:stephen shore uncommon places": "2026-09-02T07:13:35Z",
     "classic_hot:BEST_OFFER+FIXED_PRICE:susan meiselas carnival strippers": "2026-09-02T07:13:35Z",
     "classic_hot:BEST_OFFER+FIXED_PRICE:tyler mitchell i can make you feel good": "2026-09-02T07:50:20Z",
     "classic_hot:BEST_OFFER+FIXED_PRICE:walker evans american photographs": "2026-09-02T07:50:20Z",
     "classic_hot:BEST_OFFER+FIXED_PRICE:william eggleston election eve": "2026-09-02T07:50:20Z",
     "classic_hot:BEST_OFFER+FIXED_PRICE:william eggleston william eggleston's guide": "2026-09-02T07:50:20Z",
-    "collectible_format:BEST_OFFER+FIXED_PRICE:limited edition photobook": "2026-09-04T07:53:56Z",
-    "collectible_format:BEST_OFFER+FIXED_PRICE:photography book with print": "2026-09-04T07:53:56Z",
-    "collectible_format:BEST_OFFER+FIXED_PRICE:signed numbered photobook": "2026-09-04T07:53:56Z",
-    "collectible_format:BEST_OFFER+FIXED_PRICE:signed photography book": "2026-09-04T07:53:56Z",
-    "collection:BEST_OFFER+FIXED_PRICE:old photography books": "2026-09-04T07:53:56Z",
+    "collectible_format:BEST_OFFER+FIXED_PRICE:limited edition photobook": "2026-09-04T08:08:12Z",
+    "collectible_format:BEST_OFFER+FIXED_PRICE:photography book with print": "2026-09-04T08:08:12Z",
+    "collectible_format:BEST_OFFER+FIXED_PRICE:signed numbered photobook": "2026-09-04T08:08:12Z",
+    "collectible_format:BEST_OFFER+FIXED_PRICE:signed photography book": "2026-09-04T08:08:12Z",
+    "collection:BEST_OFFER+FIXED_PRICE:old photography books": "2026-09-04T08:08:12Z",
     "collection:BEST_OFFER+FIXED_PRICE:photo books job lot": "2026-09-01T12:57:22Z",
     "collection:BEST_OFFER+FIXED_PRICE:photographer books collection": "2026-09-01T12:57:22Z",
-    "collection:BEST_OFFER+FIXED_PRICE:photography book bundle": "2026-09-04T07:53:56Z",
-    "collection:BEST_OFFER+FIXED_PRICE:photography books collection": "2026-09-04T07:53:56Z",
-    "collection:BEST_OFFER+FIXED_PRICE:photography books job lot": "2026-09-04T07:53:56Z",
+    "collection:BEST_OFFER+FIXED_PRICE:photography book bundle": "2026-09-04T08:08:12Z",
+    "collection:BEST_OFFER+FIXED_PRICE:photography books collection": "2026-09-04T08:08:12Z",
+    "collection:BEST_OFFER+FIXED_PRICE:photography books job lot": "2026-09-04T08:08:12Z",
     "contemporary_auction:AUCTION:alejandro cartagena carpoolers": "2026-09-01T17:16:36Z",
     "contemporary_auction:AUCTION:andi galdi vinko sorry i gave birth i disappeared but now i'm back": "2026-09-01T17:20:07Z",
     "contemporary_auction:AUCTION:buck ellison living trust": "2026-09-01T17:24:57Z",
@@ -139,6 +144,7 @@
     "contemporary_auction:AUCTION:daniel meadows book of the road": "2026-09-02T07:50:20Z",
     "contemporary_auction:AUCTION:don mccullin life, death and everything in between": "2026-09-03T11:38:48Z",
     "contemporary_auction:AUCTION:gloria oyarzabal woman go no'gree": "2026-09-04T07:53:56Z",
+    "contemporary_auction:AUCTION:gregory halpern zzyzx": "2026-09-04T08:08:12Z",
     "contemporary_contributor:BEST_OFFER+FIXED_PRICE:alejandro cartagena": "2026-09-01T17:16:36Z",
     "contemporary_contributor:BEST_OFFER+FIXED_PRICE:andi galdi vinko": "2026-09-01T17:20:07Z",
     "contemporary_contributor:BEST_OFFER+FIXED_PRICE:anne sophie merryman": "2026-09-01T17:24:57Z",
@@ -150,6 +156,7 @@
     "contemporary_contributor:BEST_OFFER+FIXED_PRICE:cristina de middel": "2026-09-02T07:50:20Z",
     "contemporary_contributor:BEST_OFFER+FIXED_PRICE:daniel meadows": "2026-09-03T11:38:48Z",
     "contemporary_contributor:BEST_OFFER+FIXED_PRICE:emmanuelle andrianjafy": "2026-09-04T07:53:56Z",
+    "contemporary_contributor:BEST_OFFER+FIXED_PRICE:fazal sheikh": "2026-09-04T08:08:12Z",
     "contemporary_hot:BEST_OFFER+FIXED_PRICE:alejandro cartagena carpoolers": "2026-09-03T11:38:48Z",
     "contemporary_hot:BEST_OFFER+FIXED_PRICE:andi galdi vinko sorry i gave birth i disappeared but now i'm back": "2026-09-03T11:38:48Z",
     "contemporary_hot:BEST_OFFER+FIXED_PRICE:buck ellison living trust": "2026-09-03T11:38:48Z",
@@ -177,10 +184,10 @@
     "contemporary_hot:BEST_OFFER+FIXED_PRICE:hicham benohoud the classroom": "2026-09-04T07:53:56Z",
     "contemporary_hot:BEST_OFFER+FIXED_PRICE:hristina tasheva far away from home: the voices, the body and the periphery": "2026-09-04T07:53:56Z",
     "contemporary_hot:BEST_OFFER+FIXED_PRICE:jack davison photographs": "2026-09-04T07:53:56Z",
-    "contemporary_hot:BEST_OFFER+FIXED_PRICE:jamie hawkesworth the british isles": "2026-09-02T00:17:37Z",
-    "contemporary_hot:BEST_OFFER+FIXED_PRICE:janine wiedel vulcan's forge": "2026-09-02T05:52:04Z",
-    "contemporary_hot:BEST_OFFER+FIXED_PRICE:jeffrey silverthorne morgue": "2026-09-02T05:52:04Z",
-    "contemporary_hot:BEST_OFFER+FIXED_PRICE:jerome ming oobanken": "2026-09-02T05:52:04Z",
+    "contemporary_hot:BEST_OFFER+FIXED_PRICE:jamie hawkesworth the british isles": "2026-09-04T08:08:12Z",
+    "contemporary_hot:BEST_OFFER+FIXED_PRICE:janine wiedel vulcan's forge": "2026-09-04T08:08:12Z",
+    "contemporary_hot:BEST_OFFER+FIXED_PRICE:jeffrey silverthorne morgue": "2026-09-04T08:08:12Z",
+    "contemporary_hot:BEST_OFFER+FIXED_PRICE:jerome ming oobanken": "2026-09-04T08:08:12Z",
     "contemporary_hot:BEST_OFFER+FIXED_PRICE:joanna piotrowska frowst": "2026-09-02T05:52:04Z",
     "contemporary_hot:BEST_OFFER+FIXED_PRICE:keisha scarville passports": "2026-09-02T06:47:48Z",
     "contemporary_hot:BEST_OFFER+FIXED_PRICE:kirsty mackay the magic money tree": "2026-09-02T06:47:48Z",
@@ -272,9 +279,17 @@
     "library_rotation:BEST_OFFER+FIXED_PRICE:clercq, louis de voyage en orient": "2026-09-04T07:53:56Z",
     "library_rotation:BEST_OFFER+FIXED_PRICE:clergue, lucien toros muertos": "2026-09-04T07:53:56Z",
     "library_rotation:BEST_OFFER+FIXED_PRICE:coburn, alvin langdon london": "2026-09-01T15:09:30Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:coburn, alvin langdon new york": "2026-09-04T08:08:12Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:cocteau, jean / jahan, pierre la mort et les statues": "2026-09-04T08:08:12Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:coppens, martien impressies 1945": "2026-09-04T08:08:12Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:cristina faesler bremer, ed abcdf: diccionario gráfico de la ciudad de méxico (abcdf: graphic dictio": "2026-09-04T08:08:12Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:cuny janssen macedonia": "2026-09-04T08:08:12Z",
     "library_rotation:BEST_OFFER+FIXED_PRICE:curtis, edward s the north american indian": "2026-09-01T15:09:30Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:dag alveng asylum": "2026-09-04T08:08:12Z",
     "library_rotation:BEST_OFFER+FIXED_PRICE:daido moriyama japan: a photo theater": "2026-09-01T15:09:30Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:daniela rossell ricas y famosas": "2026-09-04T08:08:12Z",
     "library_rotation:BEST_OFFER+FIXED_PRICE:danny lyon conversations with the dead": "2026-09-01T15:09:30Z",
+    "library_rotation:BEST_OFFER+FIXED_PRICE:dave heath a dialogue with solitude": "2026-09-04T08:08:12Z",
     "library_rotation:BEST_OFFER+FIXED_PRICE:david lachapelle lachapelle land": "2026-09-01T15:09:30Z",
     "library_rotation:BEST_OFFER+FIXED_PRICE:decarava, roy / hughes, langston the sweet flypaper of life": "2026-09-01T15:09:30Z",
     "library_rotation:BEST_OFFER+FIXED_PRICE:drtikol, frantisek žena ve světle": "2026-09-01T15:09:30Z",
@@ -351,8 +366,8 @@
     "library_rotation:BEST_OFFER+FIXED_PRICE:william eggleston los alamos": "2026-09-02T07:50:20Z",
     "library_rotation:BEST_OFFER+FIXED_PRICE:éluard, paul facile": "2026-09-01T15:15:42Z",
     "library_rotation:BEST_OFFER+FIXED_PRICE:štyrský, jindřich na jehlach téchto dni": "2026-09-02T07:13:35Z",
-    "wrong_category:BEST_OFFER+FIXED_PRICE:photobook job lot": "2026-09-04T07:53:56Z",
-    "wrong_category:BEST_OFFER+FIXED_PRICE:photography book collection": "2026-09-04T07:53:56Z",
+    "wrong_category:BEST_OFFER+FIXED_PRICE:photobook job lot": "2026-09-04T08:08:12Z",
+    "wrong_category:BEST_OFFER+FIXED_PRICE:photography book collection": "2026-09-04T08:08:12Z",
     "wrong_category:BEST_OFFER+FIXED_PRICE:photography monograph": "2026-09-01T12:57:22Z"
   },
   "seen": {
@@ -383,6 +398,20 @@
       "score": 36,
       "title": "A Due Voci. The Photography of Rita Hammond. Hardback. First Edition, 2003",
       "url": "https://www.ebay.co.uk/itm/115801685636?_skw=photography+monograph&hash=item1af6517e84:g:FKIAAOSwZihkWsPi"
+    },
+    "ebay:116767369129": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 32,
+      "title": "Hanabie SPECIAL ARTIST BOOK First Photo Book LIVE PHOTO Interviews 9784845643073",
+      "url": "https://www.ebay.co.uk/itm/116767369129?_skw=limited+edition+photobook&hash=item1b2fe0a7a9:g:P-EAAeSwRglo8PAw"
+    },
+    "ebay:117002899893": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 32,
+      "title": "Aya Kawasaki - 1st Photobook, Hardcover, Japanese",
+      "url": "https://www.ebay.co.uk/itm/117002899893?_skw=limited+edition+photobook&hash=item1b3dea91b5:g:~WEAAeSwoPdpd8-d"
     },
     "ebay:117078746168": {
       "first_seen": "2026-09-01T16:52:33Z",
@@ -425,6 +454,13 @@
       "score": 44,
       "title": "Jack Fritsche Mapplethorpe: Assault with a Deadly Camera Signed Hb 1/1st 1994",
       "url": "https://www.ebay.co.uk/itm/117228180120?_skw=signed+photography+book&hash=item1b4b581298:g:KEQAAeSwj1JqHt1c"
+    },
+    "ebay:117268412559": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 40,
+      "title": "Phantom Siita Horror Queen CD Photobook 24P Limited Edition TYCT-39330",
+      "url": "https://www.ebay.co.uk/itm/117268412559?_skw=limited+edition+photobook&hash=item1b4dbdf88f:g:fLUAAeSwvnVqPyJ6"
     },
     "ebay:117279072684": {
       "first_seen": "2026-09-03T11:38:48Z",
@@ -552,6 +588,13 @@
       "title": "Lotus 72 1970-72 Joe Honda Racing Pictorial series by HIRO",
       "url": "https://www.ebay.co.uk/itm/117332307012?_skw=photography+books+collection&hash=item1b518cec44:g:iCkAAeSwe6toN7p3"
     },
+    "ebay:117332308263": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 36,
+      "title": "Yuzuru Hanyu Photo Book Shin AERA Special Edit",
+      "url": "https://www.ebay.co.uk/itm/117332308263?_skw=limited+edition+photobook&hash=item1b518cf127:g:Uf4AAeSwS1VooZfk"
+    },
     "ebay:117332312493": {
       "first_seen": "2026-09-03T11:38:48Z",
       "last_seen": "2026-09-03T11:38:48Z",
@@ -580,6 +623,13 @@
       "title": "Ari Marcopoulos - Directory - Collectible Photo-Book with Signed Xerox Print",
       "url": "https://www.ebay.co.uk/itm/117342219296?_skw=photography+books+collection&hash=item1b52242c20:g:s70AAeSwrptqc0Ue"
     },
+    "ebay:117347793817": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 32,
+      "title": "Kewpie Local Costume Complete Catalog 700 Photobook All-color book",
+      "url": "https://www.ebay.co.uk/itm/117347793817?_skw=limited+edition+photobook&hash=item1b52793b99:g:LYcAAOSwDuBmgmG0"
+    },
     "ebay:117351156001": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
@@ -593,6 +643,13 @@
       "score": 10,
       "title": "Tanizaki Junichiro In-ei Raisan In praise of shadows visual book from Japan",
       "url": "https://www.ebay.co.uk/itm/117358651213?_skw=photography+books+collection&hash=item1b531ee74d:g:PB8AAeSwFJJpLYVR"
+    },
+    "ebay:117363857505": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 42,
+      "title": "Takeshi Kaneshiro Ryu Kenichi Photo Book from Japan",
+      "url": "https://www.ebay.co.uk/itm/117363857505?_skw=limited+edition+photobook&hash=item1b536e5861:g:PZsAAOSwkxFkvizd"
     },
     "ebay:117372090940": {
       "first_seen": "2026-09-04T07:53:56Z",
@@ -1196,6 +1253,13 @@
       "title": "3 Gardening Vegetable Growing Books Job Lot All In Good Condition See Photos",
       "url": "https://www.ebay.co.uk/itm/117394864395?_skw=photo+book&hash=item1b5547790b:g:E6gAAeSwEChqbEXB"
     },
+    "ebay:125664357610": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 59,
+      "title": "Aviation Photobook, Antonov 8 and Antonov 12 turbo prop transport types.",
+      "url": "https://www.ebay.co.uk/itm/125664357610?_skw=limited+edition+photobook&hash=item1d422decea:g:avkAAOSwFchjmjgf"
+    },
     "ebay:125687751071": {
       "first_seen": "2026-09-02T07:13:35Z",
       "last_seen": "2026-09-02T07:13:35Z",
@@ -1217,12 +1281,47 @@
       "title": "William Eggleston's Guide, Hardcover by Eggleston, William; Szarkowski, John,...",
       "url": "https://www.ebay.co.uk/itm/126657163374?_skw=William+Eggleston+William+Eggleston%27s+Guide&hash=item1d7d5af06e:g:1zgAAOSwO3Bm13QW"
     },
+    "ebay:126767029064": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 32,
+      "title": "Worldwide Hybrid Colour schemed Airliners in full colour  - Photobook",
+      "url": "https://www.ebay.co.uk/itm/126767029064?_skw=limited+edition+photobook&hash=item1d83e75b48:g:4wQAAOSw09xnLhoI"
+    },
+    "ebay:126979697056": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 32,
+      "title": "European & UK Hybrid Colour schemes & Airliners in full colour  - Photobook",
+      "url": "https://www.ebay.co.uk/itm/126979697056?_skw=limited+edition+photobook&hash=item1d909469a0:g:KecAAeSw2vVnyr2Z"
+    },
+    "ebay:127048620433": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 36,
+      "title": "Poetic Sexploration Photo Book adult burlesque nude photos/Poetry/Prose LGBTQ+",
+      "url": "https://www.ebay.co.uk/itm/127048620433?_skw=limited+edition+photobook&hash=item1d94b01991:g:BfcAAOSwDkZn-nKt"
+    },
     "ebay:127125938117": {
       "first_seen": "2026-09-02T07:50:20Z",
       "last_seen": "2026-09-02T07:50:20Z",
       "score": 55,
       "title": "Stephen Shore: American Surfaces, 1972 by Stephen Shore Revised And Extended",
       "url": "https://www.ebay.co.uk/itm/127125938117?_skw=Stephen+Shore+American+Surfaces&hash=item1d994bdfc5:g:npwAAeSwBb1oLdDa"
+    },
+    "ebay:127249330849": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 49,
+      "title": "ASGER CARLSEN - WRONG - SIGNED PHOTO BOOK - RARE - 2010 LIMITED EDITION",
+      "url": "https://www.ebay.co.uk/itm/127249330849?_skw=limited+edition+photobook&hash=item1da0a6b2a1:g:~xwAAeSwuVNofR0x"
+    },
+    "ebay:127302602000": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 32,
+      "title": "Kai Tak HongKong Airport photobook, non-Asian Airlines, bestseller (reprinted)",
+      "url": "https://www.ebay.co.uk/itm/127302602000?_skw=limited+edition+photobook&hash=item1da3d38d10:g:EZsAAeSwbJBomh2H"
     },
     "ebay:127362467239": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -1251,6 +1350,13 @@
       "score": 94,
       "title": "Diane Arbus : Portrait of a Photographer by Arthur Lubow (Hardback)",
       "url": "https://www.ebay.co.uk/itm/127581495832?_skw=Arbus%2C+Diane+Diane+Arbus&hash=item1db4732218:g:E4oAAeSwulxpS9IR"
+    },
+    "ebay:127776744921": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 10,
+      "title": "More! Monchhichi 50th Anniversary Book (G-MOOK) Japanese NEW",
+      "url": "https://www.ebay.co.uk/itm/127776744921?_skw=limited+edition+photobook&hash=item1dc01665d9:g:9X0AAeSw6HJpx8Wg"
     },
     "ebay:127806434998": {
       "first_seen": "2026-09-02T07:50:20Z",
@@ -1371,6 +1477,13 @@
       "title": "Shigeichi Nagano Photo book Tokyo 1950s from Japan",
       "url": "https://www.ebay.co.uk/itm/128003329313?_skw=photography+books+collection&hash=item1dcd97cd21:g:DqUAAOSwhlVmoabw"
     },
+    "ebay:128003329538": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 32,
+      "title": "Grand Prix 1975 Part 2 Joe Honda Racing Photo book James Hunt Emerson Fittipaldi",
+      "url": "https://www.ebay.co.uk/itm/128003329538?_skw=limited+edition+photobook&hash=item1dcd97ce02:g:7G4AAeSwQCRpoXTV"
+    },
     "ebay:128003335356": {
       "first_seen": "2026-09-03T11:38:48Z",
       "last_seen": "2026-09-03T11:38:48Z",
@@ -1384,6 +1497,13 @@
       "score": 10,
       "title": "Osaka FANTASY Collection of Works Illustration Art Book",
       "url": "https://www.ebay.co.uk/itm/128003336087?_skw=photography+books+collection&hash=item1dcd97e797:g:JaMAAeSwoO5o5c9a"
+    },
+    "ebay:128003336216": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 44,
+      "title": "Daido Moriyama TOKYO Photo Book Tokyo Japan Art Limited Edition",
+      "url": "https://www.ebay.co.uk/itm/128003336216?_skw=limited+edition+photobook&hash=item1dcd97e818:g:I0oAAOSwEC5h~NyB"
     },
     "ebay:128003349508": {
       "first_seen": "2026-09-03T11:38:48Z",
@@ -1987,12 +2107,40 @@
       "title": "Robert Frank The Americans Jack Kerouac First Print Steidl 2008 HC DJ Tritone",
       "url": "https://www.ebay.co.uk/itm/135680430891?_skw=Robert+Frank+The+Americans&hash=item1f972f132b:g:kP8AAeSwghVn896I"
     },
+    "ebay:136574328876": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 15,
+      "title": "Kaiyodo ARTPLA Official Guid Hobby Japan MOOK  Evangelion limited edition ArtPla",
+      "url": "https://www.ebay.co.uk/itm/136574328876?_skw=limited+edition+photobook&hash=item1fcc76e02c:g:BtsAAeSwl31o6NBT"
+    },
+    "ebay:136580434296": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 32,
+      "title": "Daido Moriyama Tales of Tono Monogatari Photo Book Art Book from Japan New",
+      "url": "https://www.ebay.co.uk/itm/136580434296?_skw=limited+edition+photobook&hash=item1fccd40978:g:LaoAAeSw6M9o3zsY"
+    },
+    "ebay:137220580692": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 26,
+      "title": "Malice Mizer Photo Book Cathedrale de la Rose Livre Rose w/cross pendant",
+      "url": "https://www.ebay.co.uk/itm/137220580692?_skw=limited+edition+photobook&hash=item1ff2fbe554:g:VPIAAeSwNaFp3Pf1"
+    },
     "ebay:137269369999": {
       "first_seen": "2026-09-02T07:50:20Z",
       "last_seen": "2026-09-02T07:50:20Z",
       "score": 43,
       "title": "Guy Bourdin by Alison M. Gingeras ~ HB+DJ 2006 Fashion Photography Art Monograph",
       "url": "https://www.ebay.co.uk/itm/137269369999?_skw=photography+monograph&hash=item1ff5e45c8f:g:mBIAAeSwU0pp82ub"
+    },
+    "ebay:137271209902": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 32,
+      "title": "Kowloon Walled City Exploration City of Darkness Japanese Photo Book B5 2004",
+      "url": "https://www.ebay.co.uk/itm/137271209902?_skw=limited+edition+photobook&hash=item1ff6006fae:g:rIYAAeSwisJp9DKc"
     },
     "ebay:137280794567": {
       "first_seen": "2026-09-04T07:53:56Z",
@@ -2827,6 +2975,13 @@
       "title": "Let Us Now Praise Famous Men By James Agee and Walker Evans / Picador PB",
       "url": "https://www.ebay.co.uk/itm/147197609558?_skw=Agee%2C+James+%2F+Evans%2C+Walker+Let+us+now+Praise+Famous+Men&hash=item2245a94656:g:2roAAOSwuMJng8q~"
     },
+    "ebay:147257064330": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 44,
+      "title": "Sleeping Through An Earthquake Brendan Baker And Daniel Evans Rare Photo Book",
+      "url": "https://www.ebay.co.uk/itm/147257064330?_skw=limited+edition+photobook&hash=item2249347b8a:g:C6EAAeSwr75p3PTa"
+    },
     "ebay:147288338912": {
       "first_seen": "2026-09-04T07:53:56Z",
       "last_seen": "2026-09-04T07:53:56Z",
@@ -2840,6 +2995,20 @@
       "score": 36,
       "title": "Sign Here - Anne Ward. Photobook, Photography",
       "url": "https://www.ebay.co.uk/itm/147295098839?_skw=signed+photography+book&hash=item224b78d7d7:g:h4IAAeSwnSNp-cj5"
+    },
+    "ebay:147300128633": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 32,
+      "title": "Yuzuru Hanyu Photo Book The Real Beautiful Practice Form Figure Skating",
+      "url": "https://www.ebay.co.uk/itm/147300128633?_skw=limited+edition+photobook&hash=item224bc59779:g:0SIAAeSwPL5p~Rpw"
+    },
+    "ebay:147300478444": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 32,
+      "title": "Local Costume Kewpie Complete Catalog 700 Photo Book Japanese",
+      "url": "https://www.ebay.co.uk/itm/147300478444?_skw=limited+edition+photobook&hash=item224bcaedec:g:xxIAAeSwHQBp~Ro4"
     },
     "ebay:147305673626": {
       "first_seen": "2026-09-04T07:53:56Z",
@@ -2938,6 +3107,13 @@
       "score": 41,
       "title": "Masaya Nakamura - Woman’s Sphere 1978 - Signed Japanese Photobook 写された女",
       "url": "https://www.ebay.co.uk/itm/147426827170?_skw=photography+books+collection&hash=item225352dba2:g:B1AAAeSwsIxqT54U"
+    },
+    "ebay:147427038219": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 47,
+      "title": "Osamu Yokonami - Sasayama / 2015 - Libraryman Limited Edition 222/400 Photobook",
+      "url": "https://www.ebay.co.uk/itm/147427038219?_skw=limited+edition+photobook&hash=item225356140b:g:AdYAAeSwkN9qT7mC"
     },
     "ebay:147434237425": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -3380,6 +3556,13 @@
       "title": "BERSERK: KENTARO MIURA: THE MANGA AND THE ANIME - NEW ART BOOK",
       "url": "https://www.ebay.co.uk/itm/155223577877?_skw=photography+monograph&hash=item24240bd515:g:3pEAAOSwv4JhuMq6"
     },
+    "ebay:155466444679": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 37,
+      "title": "Distress - Stéphane Duroy Photo Book Limited Edition 800 Great Condition",
+      "url": "https://www.ebay.co.uk/itm/155466444679?_skw=limited+edition+photobook&hash=item243285af87:g:f9oAAOSwQF9kG1A0"
+    },
     "ebay:155888794753": {
       "first_seen": "2026-09-04T07:53:56Z",
       "last_seen": "2026-09-04T07:53:56Z",
@@ -3436,12 +3619,33 @@
       "title": "William Eggleston: Los Alamos: First Scalo Edition 2003",
       "url": "https://www.ebay.co.uk/itm/157158595509?_skw=William+Eggleston+Los+Alamos&hash=item249761dbb5:g:GQEAAeSwA~xobpun"
     },
+    "ebay:157454552804": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 34,
+      "title": "TWICE TASTE OF LOVE MONOGRAPH 150 page Photo Book 9 Photo Cards Limited Edition",
+      "url": "https://www.ebay.co.uk/itm/157454552804?_skw=limited+edition+photobook&hash=item24a905cee4:g:J-AAAOSwo5ljdagL"
+    },
+    "ebay:157455171557": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 26,
+      "title": "Teshima Art Museum 1st Anniversary Photo Book Rei Naito Limited 2011 millegraph",
+      "url": "https://www.ebay.co.uk/itm/157455171557?_skw=limited+edition+photobook&hash=item24a90f3fe5:g:~7wAAOSwJ6tmVnZd"
+    },
     "ebay:157455173977": {
       "first_seen": "2026-09-04T07:53:56Z",
       "last_seen": "2026-09-04T07:53:56Z",
       "score": 80,
       "title": "In the American West Richard Avedon Photographs 1979-1984 Photo Books Abrams",
       "url": "https://www.ebay.co.uk/itm/157455173977?_skw=Richard+Avedon+In+the+American+West&hash=item24a90f4959:g:TvIAAOSwNhJoMNtn"
+    },
+    "ebay:157455237148": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 26,
+      "title": "A Magazine Curated by Maison Martin Margie Fashion Photo Book Hobby Art Works",
+      "url": "https://www.ebay.co.uk/itm/157455237148?_skw=limited+edition+photobook&hash=item24a910401c:g:vh0AAOSwiqllLM5N"
     },
     "ebay:157634988749": {
       "first_seen": "2026-09-02T07:50:20Z",
@@ -4073,6 +4277,13 @@
       "title": "'The Street' by Harry Callahan (Hardcover, 2016)",
       "url": "https://www.ebay.co.uk/itm/167699906636?_skw=Harry+Callahan+Harry+Callahan+Photographs&hash=item270bb1804c:g:sx4AAeSwqBholHR0"
     },
+    "ebay:167813779575": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 18,
+      "title": "Moord In Rotterdam/Murder in Rotterdam 1905-1967, limited edition, 1994 HB",
+      "url": "https://www.ebay.co.uk/itm/167813779575?_skw=limited+edition+photobook&hash=item27127b1077:g:rCcAAeSwEyxo1CSu"
+    },
     "ebay:167813808148": {
       "first_seen": "2026-09-04T07:53:56Z",
       "last_seen": "2026-09-04T07:53:56Z",
@@ -4093,6 +4304,13 @@
       "score": 59,
       "title": "End of the Game: The Last Word From Paradise by Peter Beard Hardcover (1977)",
       "url": "https://www.ebay.co.uk/itm/167959495288?_skw=Peter+Beard+The+End+of+the+Game&hash=item271b2a8278:g:w58AAeSwlyJpJyz5"
+    },
+    "ebay:168102616116": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 38,
+      "title": "SIGNED Lorenzo Vitturi: Dalston Anatomy 2013 Ltd Ed London Culture Art Photobook",
+      "url": "https://www.ebay.co.uk/itm/168102616116?_skw=limited+edition+photobook&hash=item2723b25c34:g:pvMAAOSwdR9nFnIF"
     },
     "ebay:168139768081": {
       "first_seen": "2026-09-04T07:53:56Z",
@@ -4122,12 +4340,26 @@
       "title": "David Bailey SIGNED Book - Look Again The Autobiography  Photography Photo",
       "url": "https://www.ebay.co.uk/itm/168367574107?_skw=signed+photography+book&hash=item27337d4c5b:g:m2sAAeSw8fBqAaYD"
     },
+    "ebay:168386352101": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 40,
+      "title": "THRACE terra incognita, Nikos Economopoulos, Rodos Image HB 1st ed 1997, Greece",
+      "url": "https://www.ebay.co.uk/itm/168386352101?_skw=limited+edition+photobook&hash=item27349bd3e5:g:T84AAeSwqqJqDF-H"
+    },
     "ebay:168386726882": {
       "first_seen": "2026-09-04T07:53:56Z",
       "last_seen": "2026-09-04T07:53:56Z",
       "score": 22,
       "title": "Fault Lines /Turkey/East/West, GEORGE GEORGIOU, SIGNED, Schilt HB 2010, Turkiye",
       "url": "https://www.ebay.co.uk/itm/168386726882?_skw=signed+photography+book&hash=item2734a18be2:g:r~UAAeSwamJqDJxm"
+    },
+    "ebay:168388422820": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 18,
+      "title": "SOREN SOLKAER, Black Sun, Edition Circle 2020 Limited Edition of 500, Denmark",
+      "url": "https://www.ebay.co.uk/itm/168388422820?_skw=limited+edition+photobook&hash=item2734bb6ca4:g:1~sAAeSwX8RqDYTP"
     },
     "ebay:168389297403": {
       "first_seen": "2026-09-04T07:53:56Z",
@@ -4149,6 +4381,20 @@
       "score": 22,
       "title": "Signed London Burlesque A Family Album Angus Stewart Hardcover Book",
       "url": "https://www.ebay.co.uk/itm/168441365933?_skw=signed+photography+book&hash=item2737e345ad:g:zisAAeSwhMhqJvKV"
+    },
+    "ebay:168461781427": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 34,
+      "title": "Lorde – Going South Limited Edition Hardcover Photo Book (2021)",
+      "url": "https://www.ebay.co.uk/itm/168461781427?_skw=limited+edition+photobook&hash=item27391ac9b3:g:pQMAAeSwOUVqMEB2"
+    },
+    "ebay:168473879571": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 36,
+      "title": "The Rolling Stones Taschen Extra Large Photo Book Cased + Sealed RARE Aurhorised",
+      "url": "https://www.ebay.co.uk/itm/168473879571?_skw=limited+edition+photobook&hash=item2739d36413:g:pkcAAeSwNk5qNV4h"
     },
     "ebay:168560300572": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -4864,6 +5110,13 @@
       "title": "MINAMATA Words and Photography by W. Eugene Smith Aileen M. Smith New",
       "url": "https://www.ebay.co.uk/itm/177702493636?_skw=W.+Eugene+Smith+Minamata&hash=item295fe4ddc4:g:7iUAAeSwbz1pSdHC"
     },
+    "ebay:177905734325": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 29,
+      "title": "Grace, Nick Cave by Derek Ridgers Ltd Ed Photo-Book",
+      "url": "https://www.ebay.co.uk/itm/177905734325?_skw=limited+edition+photobook&hash=item296c0212b5:g:RRoAAOSwuqVnMeYE"
+    },
     "ebay:177936006054": {
       "first_seen": "2026-09-02T07:50:20Z",
       "last_seen": "2026-09-02T07:50:20Z",
@@ -4877,6 +5130,13 @@
       "score": 26,
       "title": "Harry Stafford: Manchester United's First Captain Marvel - Ean Gardiner",
       "url": "https://www.ebay.co.uk/itm/178035579072?_skw=Marvel+Harris+MARVEL&hash=item2973bf58c0:g:uH8AAeSwzp1p185j"
+    },
+    "ebay:178048985251": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 36,
+      "title": "TOKYO STYLE Japan Casual Interior Design Photo Book BUNKO Tsuzuki Kyoichi New",
+      "url": "https://www.ebay.co.uk/itm/178048985251?_skw=limited+edition+photobook&hash=item29748be8a3:g:CjgAAeSwoONpp4vj"
     },
     "ebay:178083173544": {
       "first_seen": "2026-09-04T07:53:56Z",
@@ -5501,6 +5761,13 @@
       "title": "Wang Qinsong - Sanguine Splendour, 2007 Chinablue Gallery, Beijing, RARE!",
       "url": "https://www.ebay.co.uk/itm/184480666767?_skw=photography+monograph&hash=item2af3e7948f:g:DRAAAOSw1Ppfexq5"
     },
+    "ebay:185507440600": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 40,
+      "title": "Marmalade: Photographs by Robin Broadbent (Hardcover, 1998). Photobook.",
+      "url": "https://www.ebay.co.uk/itm/185507440600?_skw=limited+edition+photobook&hash=item2b311ae7d8:g:1YYAAOSwwQdi2AvL"
+    },
     "ebay:185855504216": {
       "first_seen": "2026-09-02T07:50:20Z",
       "last_seen": "2026-09-02T07:50:20Z",
@@ -5529,12 +5796,33 @@
       "title": "Jacques Henri Lartigue. Diary Of A Century 1970 Paperback Penguin Books",
       "url": "https://www.ebay.co.uk/itm/186862500728?_skw=Jacques-Henri+Lartigue+Diary+of+a+Century&hash=item2b81df7b78:g:PMwAAOSwHNBnb~ue"
     },
+    "ebay:186910098087": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 34,
+      "title": "Araki Nobuyoshi 69 Waikei Photo Book Takashi Ishii Gallery 2009 Limited Edition",
+      "url": "https://www.ebay.co.uk/itm/186910098087?_skw=limited+edition+photobook&hash=item2b84b5c2a7:g:BN8AAOSwhN5nkt0N"
+    },
     "ebay:187388136689": {
       "first_seen": "2026-09-02T07:50:20Z",
       "last_seen": "2026-09-02T07:50:20Z",
       "score": 35,
       "title": "Robert Mapplethorpe Altars 1995 First Edition HB w/Slipcase Portrait Photography",
       "url": "https://www.ebay.co.uk/itm/187388136689?_skw=photography+monograph&hash=item2ba1340cf1:g:9ZIAAeSw8d9oZ~1H"
+    },
+    "ebay:187674990598": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 50,
+      "title": "PORT YARIN by JEFF HAHN (2016) Limited Edition 274/500 Photography Book IDENTITY",
+      "url": "https://www.ebay.co.uk/itm/187674990598?_skw=limited+edition+photobook&hash=item2bb24d1806:g:ffEAAeSwCIxo-YOd"
+    },
+    "ebay:187708681263": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 34,
+      "title": "Red String By Yoshikatsu Fujii Photobook With Tote Bag Edition Of 500 Mint",
+      "url": "https://www.ebay.co.uk/itm/187708681263?_skw=limited+edition+photobook&hash=item2bb44f2c2f:g:EqEAAeSw~l9pCR7a"
     },
     "ebay:187794698845": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -5557,6 +5845,13 @@
       "title": "The Idea of Louis Sullivan, John Szarkowski, lovely 2000 MOMA monograph",
       "url": "https://www.ebay.co.uk/itm/187974614907?_skw=photography+monograph&hash=item2bc428ff7b:g:aeIAAeSwk4JpcOBi"
     },
+    "ebay:188116628259": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 41,
+      "title": "Saints & Sinners punk photobook ltd. ed. independent Glasgow Paisley Brickley",
+      "url": "https://www.ebay.co.uk/itm/188116628259?_skw=limited+edition+photobook&hash=item2bcc9ff323:g:rS0AAeSwciBppu4T"
+    },
     "ebay:188131563232": {
       "first_seen": "2026-09-02T07:50:20Z",
       "last_seen": "2026-09-02T07:50:20Z",
@@ -5577,6 +5872,13 @@
       "score": 78,
       "title": "Peter Beard The End of the Game A Landmark Book on Africa Revisited 2020",
       "url": "https://www.ebay.co.uk/itm/188160667700?_skw=Peter+Beard+The+End+of+the+Game&hash=item2bcf3ff034:g:NgYAAeSw16NptYFZ"
+    },
+    "ebay:188216962437": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 40,
+      "title": "Viviane Sassen - DIE SON SIEN ALLES - 2nd LIMITED EDITION - 2012 - Photobook VG",
+      "url": "https://www.ebay.co.uk/itm/188216962437?_skw=limited+edition+photobook&hash=item2bd29aed85:g:88sAAeSwjStpxvZx"
     },
     "ebay:188336777708": {
       "first_seen": "2026-09-04T07:53:56Z",
@@ -5668,6 +5970,13 @@
       "score": 4,
       "title": "ALLEN GINSBERG |  THE LATE GREAT : Photo Biography | Christopher Felver, 1st Ed.",
       "url": "https://www.ebay.co.uk/itm/188848333632?_skw=Allen+Ginsberg+Allen+Ginsberg+Photographs&hash=item2bf83ce340:g:LIcAAOSwpzlndCvT"
+    },
+    "ebay:188852833809": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 26,
+      "title": "WE HAVE NO PLACE TO BE 1980 1982 - RARE JAPAN PHOTO BOOK - SKINS Joji Hashiguchi",
+      "url": "https://www.ebay.co.uk/itm/188852833809?_skw=limited+edition+photobook&hash=item2bf8818e11:g:eg4AAOSwzDZltqko"
     },
     "ebay:188857240956": {
       "first_seen": "2026-09-02T07:13:35Z",
@@ -6131,6 +6440,13 @@
       "title": "\"All About the Boys\" Photography by Michael Andrew, AS NEW,",
       "url": "https://www.ebay.co.uk/itm/196175894365?_skw=photography+monograph&hash=item2dacfe975d:g:Fb4AAOSwg7plmxQV"
     },
+    "ebay:196185588242": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 32,
+      "title": "The Complete Zines - Hardcover Photobook self published photography zines",
+      "url": "https://www.ebay.co.uk/itm/196185588242?_skw=limited+edition+photobook&hash=item2dad928212:g:kJYAAOSw1-9jlMdV"
+    },
     "ebay:196348738085": {
       "first_seen": "2026-09-04T07:53:56Z",
       "last_seen": "2026-09-04T07:53:56Z",
@@ -6138,12 +6454,47 @@
       "title": "Ray's a Laugh by Richard Billingham (Paperback, 2000)",
       "url": "https://www.ebay.co.uk/itm/196348738085?_skw=Richard+Billingham+Ray%27s+a+Laugh&hash=item2db74bfa25:g:DOUAAOSwX9RmHqok"
     },
+    "ebay:197658740164": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 54,
+      "title": "Protect Me From What I Want - Photozine numbered advertising zine photobook",
+      "url": "https://www.ebay.co.uk/itm/197658740164?_skw=limited+edition+photobook&hash=item2e056105c4:g:yWUAAOSwcMNgFfnG"
+    },
+    "ebay:197658755309": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 54,
+      "title": "Landscape - zine rare, numbered architecture  photobook Tokyo photozine",
+      "url": "https://www.ebay.co.uk/itm/197658755309?_skw=limited+edition+photobook&hash=item2e056140ed:g:XxIAAOSwWoRelg1P"
+    },
+    "ebay:197726737228": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 32,
+      "title": "City of Darkness Life in Kowloon Walled City Japanese ver Photo Book G Girard",
+      "url": "https://www.ebay.co.uk/itm/197726737228?_skw=limited+edition+photobook&hash=item2e096e934c:g:DbgAAeSwwvxnppua"
+    },
     "ebay:198050574725": {
       "first_seen": "2026-09-01T15:09:30Z",
       "last_seen": "2026-09-01T15:09:30Z",
       "score": 62,
       "title": "Diane Arbus: An Aperture Monograph, 1997",
       "url": "https://www.ebay.co.uk/itm/198050574725?_skw=Diane+Arbus+Diane+Arbus&hash=item2e1cbbf185:g:AAgAAeSwJRlpdEgK"
+    },
+    "ebay:198075795249": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 54,
+      "title": "Astana - Kazakhstan Photozine,Self Published Zine Numbered Photobook Rare",
+      "url": "https://www.ebay.co.uk/itm/198075795249?_skw=limited+edition+photobook&hash=item2e1e3cc731:g:TMgAAOSwaj5igVzm"
+    },
+    "ebay:198302990677": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 54,
+      "title": "Forever is Impossible - Tokyo Self Published Zine Numbered Photobook Rare",
+      "url": "https://www.ebay.co.uk/itm/198302990677?_skw=limited+edition+photobook&hash=item2e2bc78155:g:jlUAAOSwEipho-ZH"
     },
     "ebay:198312976004": {
       "first_seen": "2026-09-04T07:53:56Z",
@@ -6236,12 +6587,33 @@
       "title": "Jeanloup Sieff Derrieres Photo Monograph 1994 Kyoto Shoin Hardcover Japan -FS",
       "url": "https://www.ebay.co.uk/itm/198593881771?_skw=photography+monograph&hash=item2e3d1e26ab:g:7bEAAeSwk1JqjYEK"
     },
+    "ebay:198598905551": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 34,
+      "title": "Nobuyoshi Araki Film Nostalgia Photo Book 2011 Ltd 500 Taka Ishii Japan -FS",
+      "url": "https://www.ebay.co.uk/itm/198598905551?_skw=limited+edition+photobook&hash=item2e3d6acecf:g:niMAAeSwIf9qkEJG"
+    },
     "ebay:198606067487": {
       "first_seen": "2026-09-04T07:53:56Z",
       "last_seen": "2026-09-04T07:53:56Z",
       "score": 24,
       "title": "JACKY TSAI, ‘Future Past’ Signed Limited Edition exhibition catalogue, 2015.",
       "url": "https://www.ebay.co.uk/itm/198606067487?_skw=signed+photography+book&hash=item2e3dd8171f:g:DD4AAeSw5YJqSBt6"
+    },
+    "ebay:198608154680": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 44,
+      "title": "Yaniv Edri: Tel Aviv-Haifa [2017]; Limited Edition of 250;Very Scarce Photobook",
+      "url": "https://www.ebay.co.uk/itm/198608154680?_skw=limited+edition+photobook&hash=item2e3df7f038:g:CNQAAeSwUAlo3WNi"
+    },
+    "ebay:198608156339": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 56,
+      "title": "Chadwick Tyler: Florida [2014]: Very Scarce Photobook : 1st limited Ed. of 250",
+      "url": "https://www.ebay.co.uk/itm/198608156339?_skw=limited+edition+photobook&hash=item2e3df7f6b3:g:XQAAAOSwVkJno~fY"
     },
     "ebay:198608716248": {
       "first_seen": "2026-09-02T07:13:35Z",
@@ -6348,6 +6720,13 @@
       "title": "SIGNED Entropic Kingdom By Tom Chambers ART PHOTOGRAPHY BOOK 2012",
       "url": "https://www.ebay.co.uk/itm/198608725996?_skw=art+photography+book&hash=item2e3e00a7ec:g:fakAAOSwe3Zl0Q5l"
     },
+    "ebay:198608769660": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 54,
+      "title": "The World On Time - Photozine, numbered photobook rare photography zine",
+      "url": "https://www.ebay.co.uk/itm/198608769660?_skw=limited+edition+photobook&hash=item2e3e01527c:g:olMAAOSwxJFf~zg2"
+    },
     "ebay:198608788596": {
       "first_seen": "2026-09-02T07:13:35Z",
       "last_seen": "2026-09-02T07:13:35Z",
@@ -6368,6 +6747,13 @@
       "score": 50,
       "title": "Beautiful Canada Hardcover Illustrated Travel Photography Picture Book 1987",
       "url": "https://www.ebay.co.uk/itm/198609930935?_skw=photography+book&hash=item2e3e130ab7:g:xOAAAeSwZPBqlpHf"
+    },
+    "ebay:198609946206": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 4,
+      "title": "Van Halen Live Tour In Japan",
+      "url": "https://www.ebay.co.uk/itm/198609946206?_skw=limited+edition+photobook&hash=item2e3e13465e:g:~eAAAeSw1kNpmcOJ"
     },
     "ebay:198610053194": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -6712,6 +7098,13 @@
       "title": "DAVID LEVINTHAL: Works from 1975-1996 Artist's Monograph 1997 ICP *NEW* / Sealed",
       "url": "https://www.ebay.co.uk/itm/201590266150?_skw=photography+monograph&hash=item2eefb75926:g:WEsAAOSwU-pXsF-l"
     },
+    "ebay:201680491300": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 26,
+      "title": "JACK PIERSON: Tomorrow’s Man, Lynn Valley 9, 2014 Photo Book 1st Ed OoP Gay NEW!",
+      "url": "https://www.ebay.co.uk/itm/201680491300?_skw=limited+edition+photobook&hash=item2ef5181324:g:iD4AAOSwR0JUP-vI"
+    },
     "ebay:201738979623": {
       "first_seen": "2026-09-02T07:50:20Z",
       "last_seen": "2026-09-02T07:50:20Z",
@@ -6726,12 +7119,33 @@
       "title": "Uncommon Places Stephen Shore.Hardback Rare Thames And Hudson Edition.New.",
       "url": "https://www.ebay.co.uk/itm/203520688572?_skw=Stephen+Shore+Uncommon+Places&hash=item2f62c741bc:g:8sEAAOSwSqxe9xRI"
     },
+    "ebay:204440938370": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 44,
+      "title": "Daido Moriyama Photo Book Tales of Tono Monogatari  Limited Edition 2007 Japan",
+      "url": "https://www.ebay.co.uk/itm/204440938370?_skw=limited+edition+photobook&hash=item2f99a12782:g:BhgAAeSwWoVqmdb6"
+    },
+    "ebay:204939372343": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 34,
+      "title": "Gucci by Gucci, limited edition photobook of the iconic Italian fashion house",
+      "url": "https://www.ebay.co.uk/itm/204939372343?_skw=limited+edition+photobook&hash=item2fb756a737:g:0D4AAOSwFfZmu4VB"
+    },
     "ebay:205064818799": {
       "first_seen": "2026-09-02T07:13:35Z",
       "last_seen": "2026-09-02T07:13:35Z",
       "score": 14,
       "title": "The Wonder Book Of Do You Know?, By Harry Golding - 1930's VGC For Age",
       "url": "https://www.ebay.co.uk/itm/205064818799?_skw=Marvel+Harris+MARVEL&hash=item2fbed0d06f:g:L~wAAOSwTnpmczOG"
+    },
+    "ebay:205261972324": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 36,
+      "title": "Modern Muses by Bryan Adams - Rare photo book, by National Portrait Gallery",
+      "url": "https://www.ebay.co.uk/itm/205261972324?_skw=limited+edition+photobook&hash=item2fca912364:g:N9MAAOSwkupnn4J~"
     },
     "ebay:205564422280": {
       "first_seen": "2026-09-02T07:50:20Z",
@@ -6747,6 +7161,13 @@
       "title": "Folk by Aaron Schuman (signed first edition)",
       "url": "https://www.ebay.co.uk/itm/205692931420?_skw=Aaron+Schuman&hash=item2fe4410d5c:g:CtEAAeSwb-BorboN"
     },
+    "ebay:205701780492": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 54,
+      "title": "Revenge Of The Psychotronic Man Photo book The Final Gig 2018 Limited Edition",
+      "url": "https://www.ebay.co.uk/itm/205701780492?_skw=limited+edition+photobook&hash=item2fe4c8140c:g:gicAAOSwMN9mYkzW"
+    },
     "ebay:205715104572": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
@@ -6754,12 +7175,33 @@
       "title": "Diane Arbus: A Chronology 1923-1971 by D. Arbus, E. Sussman (Paperback)",
       "url": "https://www.ebay.co.uk/itm/205715104572?_skw=Arbus%2C+Diane+Diane+Arbus&hash=item2fe593633c:g:nQUAAeSwhAhovuUd"
     },
+    "ebay:205784814358": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 36,
+      "title": "Lowlands by Ester Vonplon, hardcover photobook, IIKKI 2017",
+      "url": "https://www.ebay.co.uk/itm/205784814358?_skw=limited+edition+photobook&hash=item2fe9bb1316:g:EAgAAeSwqn1o7lNn"
+    },
     "ebay:205878348086": {
       "first_seen": "2026-09-04T07:53:56Z",
       "last_seen": "2026-09-04T07:53:56Z",
       "score": 52,
       "title": "Redheaded Peckerwood by Christian Patterson (Third edition)",
       "url": "https://www.ebay.co.uk/itm/205878348086?_skw=Christian+Patterson+Redheaded+Peckerwood&hash=item2fef4e4936:g:b9MAAeSwAI9pKDbi"
+    },
+    "ebay:206067973937": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 34,
+      "title": "Terry Richardson MANIMAL Special Edition – Rare Limited Photo Book from Japan",
+      "url": "https://www.ebay.co.uk/itm/206067973937?_skw=limited+edition+photobook&hash=item2ffa9bbf31:g:my0AAeSw5dRpjuiU"
+    },
+    "ebay:206105266070": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 24,
+      "title": "TERRY RICHARDSON MANIMAL SPECIAL LIMITED EDITION 200 W/MASK SIGNED FROM JP",
+      "url": "https://www.ebay.co.uk/itm/206105266070?_skw=limited+edition+photobook&hash=item2ffcd4c796:g:wHQAAeSwXH1ppSH2"
     },
     "ebay:206200378262": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -6845,6 +7287,13 @@
       "title": "Terry Brooks Job Lot of Fantasy Books In Used Condition See Photos.",
       "url": "https://www.ebay.co.uk/itm/206392460250?_skw=photo+books+job+lot&hash=item300df303da:g:yREAAeSwzLJpJrrq"
     },
+    "ebay:206404799674": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 26,
+      "title": "Beautiful Encounters Daisaku Ikeda 2025 Hardcover Photo Book Rare Non-Sale",
+      "url": "https://www.ebay.co.uk/itm/206404799674?_skw=limited+edition+photobook&hash=item300eaf4cba:g:X~cAAeSwKwBqT27z"
+    },
     "ebay:206408834980": {
       "first_seen": "2026-09-03T11:38:48Z",
       "last_seen": "2026-09-03T11:38:48Z",
@@ -6921,6 +7370,13 @@
       "score": 36,
       "title": "Behind The Blinds BTB Limited Bundle Ash Alex Luca",
       "url": "https://www.ebay.co.uk/itm/206523078699?_skw=photography+book+bundle&hash=item3015bc182b:g:LD4AAeSwfoNqd0I0"
+    },
+    "ebay:206526577521": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 26,
+      "title": "Pieter HUGO : Flat Noodle Soup Talk -limited 500  copies photo book",
+      "url": "https://www.ebay.co.uk/itm/206526577521?_skw=limited+edition+photobook&hash=item3015f17b71:g:xs4AAOSwEHBnz1nO"
     },
     "ebay:206527408093": {
       "first_seen": "2026-09-02T07:13:35Z",
@@ -7426,6 +7882,41 @@
       "title": "Rich Photographer Poor Photographer by Richard Bradbury (Paperback) 3-Book Set",
       "url": "https://www.ebay.co.uk/itm/206533946211?_skw=photographer+book&hash=item301661eb63:g:FsgAAeSwWIxqmcgH"
     },
+    "ebay:206535038495": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 26,
+      "title": "The Kills: Dream & Drive: Photographs by Kenneth Cappello",
+      "url": "https://www.ebay.co.uk/itm/206535038495?_skw=photo+book&hash=item301672961f:g:WG8AAeSw7-lqfXg1"
+    },
+    "ebay:224789195795": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 36,
+      "title": "Poolaroids.  Skateboard photo  book .",
+      "url": "https://www.ebay.co.uk/itm/224789195795?_skw=limited+edition+photobook&hash=item34567aec13:g:yRkAAOSwhzhh4KR-"
+    },
+    "ebay:225118113812": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 26,
+      "title": "The Lurkers - Lurking In London - Extremely Rare/Out Of Print/Limited Photobook",
+      "url": "https://www.ebay.co.uk/itm/225118113812?_skw=limited+edition+photobook&hash=item346a15d014:g:dVUAAOSw6nNi-NDh"
+    },
+    "ebay:225717564076": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 44,
+      "title": "Julie Glassberg BIKE KILL (Signed) Ceiba Editions Signed Limited",
+      "url": "https://www.ebay.co.uk/itm/225717564076?_skw=limited+edition+photobook&hash=item348dd0b2ac:g:leAAAOSw~MRdTEzh"
+    },
+    "ebay:225895486521": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 26,
+      "title": "IBIZA '89 Dave Swindells Photo Book by IDEA 1st Edition. Limited 1000 Free Post.",
+      "url": "https://www.ebay.co.uk/itm/225895486521?_skw=limited+edition+photobook&hash=item34986b9439:g:KR4AAOSwYS9laL4t"
+    },
     "ebay:226478974069": {
       "first_seen": "2026-09-01T15:09:30Z",
       "last_seen": "2026-09-01T15:09:30Z",
@@ -7468,12 +7959,33 @@
       "title": "Walker Evans American Photographs by Walker Evans (Hardcover, 2013)",
       "url": "https://www.ebay.co.uk/itm/226901798616?_skw=Walker+Evans+American+Photographs&hash=item34d466aed8:g:on8AAeSw1rhoj7xa"
     },
+    "ebay:227022230664": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 16,
+      "title": "SIGNED Kanye West Glow in the Dark Deluxe Book - RARE XL Box Set version with CD",
+      "url": "https://www.ebay.co.uk/itm/227022230664?_skw=limited+edition+photobook&hash=item34db945488:g:-uMAAeSwQyto7BFR"
+    },
     "ebay:227086929890": {
       "first_seen": "2026-09-04T07:53:56Z",
       "last_seen": "2026-09-04T07:53:56Z",
       "score": 78,
       "title": "REDHEADED PECKERWOOD - CHRISTIAN PATTERSON. MACK 2012. 2nd Edition.",
       "url": "https://www.ebay.co.uk/itm/227086929890?_skw=Christian+Patterson+Redheaded+Peckerwood&hash=item34df6f8fe2:g:jW8AAeSwspRpHLpT"
+    },
+    "ebay:227219951782": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 54,
+      "title": "Guido Guidi - Album, 1969-82 Signed Photo Book New Mack photography Street Art",
+      "url": "https://www.ebay.co.uk/itm/227219951782?_skw=limited+edition+photobook&hash=item34e75d50a6:g:9LwAAeSwoZ9pk4K-"
+    },
+    "ebay:227271679049": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 36,
+      "title": "Łukasz Gorczyca & Michał Kaczyński / D.O.M. POLSKI / 2012 Raster (Poland) LTD HB",
+      "url": "https://www.ebay.co.uk/itm/227271679049?_skw=limited+edition+photobook&hash=item34ea729c49:g:qGkAAeSw-2Bpww6v"
     },
     "ebay:227319777094": {
       "first_seen": "2026-09-04T07:53:56Z",
@@ -7495,6 +8007,13 @@
       "score": 44,
       "title": "Matthew Connors - The Axe Will Survive the Master Signed Photography Book New",
       "url": "https://www.ebay.co.uk/itm/227329228783?_skw=signed+photography+book&hash=item34ede0bfef:g:~aQAAeSwX8Rp-Gsy"
+    },
+    "ebay:227342545321": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 26,
+      "title": "Kishin Shinoyama Balthus & Grand Chalet 1993 Photobook Set Ltd No.ed",
+      "url": "https://www.ebay.co.uk/itm/227342545321?_skw=limited+edition+photobook&hash=item34eeabf1a9:g:7r0AAeSw7cFqBAgZ"
     },
     "ebay:227347769162": {
       "first_seen": "2026-09-04T07:53:56Z",
@@ -8301,6 +8820,20 @@
       "title": "Herbert Baglione - Vossia. Monograph, Hardback , Fist Edition 2007",
       "url": "https://www.ebay.co.uk/itm/236388891003?_skw=photography+monograph&hash=item3709e0397b:g:s0IAAeSwTb1o7jQJ"
     },
+    "ebay:236393903087": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 32,
+      "title": "[NEW] City of Darkness Life in Kowloon Walled City Japanese Photo Book G Girard",
+      "url": "https://www.ebay.co.uk/itm/236393903087?_skw=limited+edition+photobook&hash=item370a2cb3ef:g:~DUAAeSwZuRqkK1J"
+    },
+    "ebay:236467845364": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 36,
+      "title": "[NEW] TOKYO STYLE Japan Casual Interior Design Tsuzuki Kyoichi Photo Book BUNKO",
+      "url": "https://www.ebay.co.uk/itm/236467845364?_skw=limited+edition+photobook&hash=item370e94f8f4:g:VxwAAeSwNsppFeKe"
+    },
     "ebay:236527898716": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
@@ -8328,6 +8861,13 @@
       "score": 47,
       "title": "JobLot 3 Photography Books Sell & Resell, Freelance Handbook Beginners Photoshop",
       "url": "https://www.ebay.co.uk/itm/236721862966?_skw=photography+books+job+lot&hash=item371db8f936:g:OIgAAeSwkhFpyTos"
+    },
+    "ebay:236741719244": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 50,
+      "title": "Noffun #0 Artist Book – Limited Edition 41/100 – Handmade Photobook / Art Zine",
+      "url": "https://www.ebay.co.uk/itm/236741719244?_skw=limited+edition+photobook&hash=item371ee7f4cc:g:9PIAAeSwfq9p1NJ9"
     },
     "ebay:236887968710": {
       "first_seen": "2026-09-04T07:53:56Z",
@@ -8426,6 +8966,13 @@
       "score": 26,
       "title": "SIGNED Michael Stokes ALWAYS LOYAL Hardcover Book #330/1886 W/ Certificate Rare",
       "url": "https://www.ebay.co.uk/itm/237024721345?_skw=signed+photography+book&hash=item372fc639c1:g:M~8AAeSwL-BqJBWD"
+    },
+    "ebay:237030893202": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 46,
+      "title": "Jack Pierson Pretty Lies Signed Photo Book Limited Edition of 300 Rare Authentic",
+      "url": "https://www.ebay.co.uk/itm/237030893202?_skw=limited+edition+photobook&hash=item3730246692:g:USkAAeSwdy9qjp3l"
     },
     "ebay:237041325063": {
       "first_seen": "2026-09-02T07:13:35Z",
@@ -8735,6 +9282,13 @@
       "title": "Art photography book called All Zones Off peak by Tom Wood, 1st Ed from 1998",
       "url": "https://www.ebay.co.uk/itm/255683043622?_skw=Tom+Wood+All+Zones+Off+Peak&hash=item3b87e5a126:g:oEcAAOSwlY9i~ii8"
     },
+    "ebay:256182175773": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 84,
+      "title": "John Davies Green and Pleasant Land ( , 1987) ltd edition signed 93 of 250",
+      "url": "https://www.ebay.co.uk/itm/256182175773?_skw=limited+edition+photobook&hash=item3ba5a5c81d:g:VmMAAOSwb69k2hyC"
+    },
     "ebay:256227512126": {
       "first_seen": "2026-09-04T07:53:56Z",
       "last_seen": "2026-09-04T07:53:56Z",
@@ -8756,6 +9310,13 @@
       "title": "William Klein Photographs: An Aperture Monograph",
       "url": "https://www.ebay.co.uk/itm/256824361202?_skw=photography+monograph&hash=item3bcbecc0f2:g:ZawAAOSwMptnqf4R"
     },
+    "ebay:257133665557": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 40,
+      "title": "JULIA  Photo Book: JULIA THE BEST [JP Oversized Hard Cover ] 3000 copies only",
+      "url": "https://www.ebay.co.uk/itm/257133665557?_skw=limited+edition+photobook&hash=item3bde5c5d15:g:w7oAAeSwucpo2NnH"
+    },
     "ebay:257144938406": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
@@ -8769,6 +9330,20 @@
       "score": 70,
       "title": "Stephen Shore: Uncommon Places Hardcover",
       "url": "https://www.ebay.co.uk/itm/257347758758?_skw=Stephen+Shore+Uncommon+Places&hash=item3beb1f2aa6:g:O50AAeSwQ1BpheHC"
+    },
+    "ebay:257434113484": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 32,
+      "title": "The beaty of JAPAN The Japanese Sword Photo Book Illustrated By Kazuhiko Inada",
+      "url": "https://www.ebay.co.uk/itm/257434113484?_skw=limited+edition+photobook&hash=item3bf044d5cc:g:XRUAAeSwJNBpr4nC"
+    },
+    "ebay:257434134213": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 32,
+      "title": "Visual Nude Pose Book  Asahi Mizuno Japanese Model Art Photo Book Japan",
+      "url": "https://www.ebay.co.uk/itm/257434134213?_skw=limited+edition+photobook&hash=item3bf04526c5:g:TjQAAeSw705psGKT"
     },
     "ebay:257499756158": {
       "first_seen": "2026-09-04T07:53:56Z",
@@ -9225,6 +9800,13 @@
       "title": "John Coltrane's Giant Steps by Chris Raschka (2002, Picture Book)",
       "url": "https://www.ebay.co.uk/itm/257721501374?_skw=photo+book&hash=item3c016606be:g:WfgAAeSwRZlqBjrx"
     },
+    "ebay:257722471365": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 29,
+      "title": "Photographie und Bauhaus. Kestner-Gesellschaft. 1986",
+      "url": "https://www.ebay.co.uk/itm/257722471365?_skw=photography+book&hash=item3c0174d3c5:g:1CcAAOSwrQVkylM~"
+    },
     "ebay:266391689277": {
       "first_seen": "2026-09-01T15:09:30Z",
       "last_seen": "2026-09-01T15:09:30Z",
@@ -9330,12 +9912,26 @@
       "title": "Zadie Smith - Dead And Alive Essays - 2025 - Hardback - NEW UNREAD - UK FREEPOST",
       "url": "https://www.ebay.co.uk/itm/267759017284?_skw=photography+books+collection&hash=item3e57ae5d44:g:qLEAAeSwtEFqgbZ1"
     },
+    "ebay:267760123898": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 37,
+      "title": "Willy Vanderperre 865 Photo Book IDEA publishing Limited Edition Art Book Prada",
+      "url": "https://www.ebay.co.uk/itm/267760123898?_skw=limited+edition+photobook&hash=item3e57bf3ffa:g:qLUAAeSwVppqg0ET"
+    },
     "ebay:267761163017": {
       "first_seen": "2026-09-04T07:53:56Z",
       "last_seen": "2026-09-04T07:53:56Z",
       "score": 82,
       "title": "Ray's a Laugh Richard Billingham / First edition - errata editions",
       "url": "https://www.ebay.co.uk/itm/267761163017?_skw=Richard+Billingham+Ray%27s+a+Laugh&hash=item3e57cf1b09:g:enYAAeSw~gJqhNRo"
+    },
+    "ebay:267765287553": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 36,
+      "title": "Ryan – Marc Armitano & Ryan McGinley EY! BOY Hardcover Ltd Ed 2017. 1 of 500.",
+      "url": "https://www.ebay.co.uk/itm/267765287553?_skw=limited+edition+photobook&hash=item3e580e0a81:g:9EYAAeSw0BpqiykD"
     },
     "ebay:267766755286": {
       "first_seen": "2026-09-01T17:16:36Z",
@@ -9764,6 +10360,20 @@
       "title": "Harley-Davidson: The Milwaukee Marvel - Harry V Sucher  Hardback Book",
       "url": "https://www.ebay.co.uk/itm/275240029022?_skw=Marvel+Harris+MARVEL&hash=item4015958b5e:g:q0oAAOSwZaRiQs96"
     },
+    "ebay:275441688113": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 29,
+      "title": "Nicolo Desgiorgis Oasis Hotel (2014). Photobook of a hitched road trip in China.",
+      "url": "https://www.ebay.co.uk/itm/275441688113?_skw=limited+edition+photobook&hash=item40219a9e31:g:J2QAAOSwiSNhICqr"
+    },
+    "ebay:275575179862": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 32,
+      "title": "Alec Soth and Carmen Soth Brighton Picture Hunt. New. Photobook",
+      "url": "https://www.ebay.co.uk/itm/275575179862?_skw=limited+edition+photobook&hash=item40298f8a56:g:yTUAAOSwzYVhN-24"
+    },
     "ebay:275859389646": {
       "first_seen": "2026-09-01T17:16:36Z",
       "last_seen": "2026-09-01T17:16:36Z",
@@ -9792,6 +10402,13 @@
       "title": "O RIO DE JANEIRO BY BRUCE WEBER Book",
       "url": "https://www.ebay.co.uk/itm/277361836415?_skw=Bruce+Weber+O+Rio+de+Janeiro&hash=item40940dc17f:g:eUgAAOSwNq9dzT0R"
     },
+    "ebay:277452779140": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 56,
+      "title": "SEQUENCES CALL OF THE RUNNING TIDE Photobook **signed** boxed Ltd Ed Dorset H20",
+      "url": "https://www.ebay.co.uk/itm/277452779140?_skw=limited+edition+photobook&hash=item4099796e84:g:5BkAAeSwrzFo~mGc"
+    },
     "ebay:277779919346": {
       "first_seen": "2026-09-02T07:50:20Z",
       "last_seen": "2026-09-02T07:50:20Z",
@@ -9805,6 +10422,13 @@
       "score": 47,
       "title": "Job lot Bundle Digital Photography / 35mm Photography Books x 3",
       "url": "https://www.ebay.co.uk/itm/277848650434?_skw=photography+books+job+lot&hash=item40b111f2c2:g:cFMAAeSwZrlpwmxs"
+    },
+    "ebay:277851280743": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 46,
+      "title": "Daido Moriyama Sunflower Signed Limited First Edition Photo Book Rare",
+      "url": "https://www.ebay.co.uk/itm/277851280743?_skw=limited+edition+photobook&hash=item40b13a1567:g:qLgAAeSw0vBpy6~n"
     },
     "ebay:277947107680": {
       "first_seen": "2026-09-04T07:53:56Z",
@@ -10205,6 +10829,13 @@
       "title": "William Eggleston's Guide",
       "url": "https://www.ebay.co.uk/itm/285563821258?_skw=William+Eggleston+William+Eggleston%27s+Guide&hash=item427cee1cca:g:Bw8AAOSwtgRlV6U5"
     },
+    "ebay:285831957052": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 29,
+      "title": "ocean city - skate photo book",
+      "url": "https://www.ebay.co.uk/itm/285831957052?_skw=limited+edition+photobook&hash=item428ce98a3c:g:aPcAAOSwujBmK87f"
+    },
     "ebay:285998200865": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
@@ -10225,6 +10856,13 @@
       "score": 10,
       "title": "Bashir Makhoul (2012) Palestinian Art Monograph Hardcover Book Painting Free P&P",
       "url": "https://www.ebay.co.uk/itm/286784773945?_skw=photography+monograph&hash=item42c5b45f39:g:GK0AAeSwqAhorHKt"
+    },
+    "ebay:286828868462": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 76,
+      "title": "Michael Kenna - Heiden Hotel PhotoBook with Signed Print - Limited Ed 298 of 500",
+      "url": "https://www.ebay.co.uk/itm/286828868462?_skw=limited+edition+photobook&hash=item42c855336e:g:ld8AAeSw4sdozSfX"
     },
     "ebay:287139956108": {
       "first_seen": "2026-09-04T07:53:56Z",
@@ -10324,6 +10962,13 @@
       "title": "SIGNED Grays of Westminster In The Company of Legends Gillian Greenwood Nikon HB",
       "url": "https://www.ebay.co.uk/itm/287447054884?_skw=signed+photography+book&hash=item42ed2dfa24:g:N3EAAeSwcdpqTiZ6"
     },
+    "ebay:287454879496": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 37,
+      "title": "Lorde – Going South Limited Edition Hardcover Photo Book (2021)",
+      "url": "https://www.ebay.co.uk/itm/287454879496?_skw=limited+edition+photobook&hash=item42eda55f08:g:HvEAAeSwEFNqUpKU"
+    },
     "ebay:287456202183": {
       "first_seen": "2026-09-04T07:53:56Z",
       "last_seen": "2026-09-04T07:53:56Z",
@@ -10407,6 +11052,13 @@
       "score": 89,
       "title": "David LaChapelle – LaChapelle Land Deluxe Edition 2005 – Boxed + Original Map",
       "url": "https://www.ebay.co.uk/itm/287528244150?_skw=David+LaChapelle+LaChapelle+Land&hash=item42f204d3b6:g:C~sAAeSww5NqgX5c"
+    },
+    "ebay:287536347650": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 32,
+      "title": "Curated China : Guizhou, China, Ethnic Minorities, Book, Travel, Photobook, 2026",
+      "url": "https://www.ebay.co.uk/itm/287536347650?_skw=limited+edition+photobook&hash=item42f2807a02:g:DWIAAeSwcXFqhv65"
     },
     "ebay:287542470654": {
       "first_seen": "2026-09-04T07:53:56Z",
@@ -10933,6 +11585,13 @@
       "title": "Joel Sternfeld:American Prospects: American Prospects by Joel Sternfeld...",
       "url": "https://www.ebay.co.uk/itm/296488934387?_skw=Joel+Sternfeld+American+Prospects&hash=item45081e1bf3:g:Ru8AAOxy7nNTSl2D"
     },
+    "ebay:296698565312": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 37,
+      "title": "JYJ - Premiere Collection Mahalo Photobook (Limited Edition)",
+      "url": "https://www.ebay.co.uk/itm/296698565312?_skw=limited+edition+photobook&hash=item45149cd2c0:g:6HYAAOSw5zxm6cXd"
+    },
     "ebay:296941496539": {
       "first_seen": "2026-09-02T07:50:20Z",
       "last_seen": "2026-09-02T07:50:20Z",
@@ -11058,6 +11717,20 @@
       "score": 32,
       "title": "Rinko Kawauchi Hanabi Fireworks Photo Art Book Photographer New",
       "url": "https://www.ebay.co.uk/itm/298558235698?_skw=photography+books+collection&hash=item4583752432:g:TlIAAeSwl85qcYMK"
+    },
+    "ebay:298615129453": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 48,
+      "title": "Marc Almond Soft Cell Photo Book + 7” Clear Vinyl Single *NEW UNREAD SIGNED*",
+      "url": "https://www.ebay.co.uk/itm/298615129453?_skw=limited+edition+photobook&hash=item4586d9456d:g:da4AAeSwCctp35H5"
+    },
+    "ebay:298615132715": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 46,
+      "title": "Saint Etienne Deluxe Photo Book  & 7” Vinyl Pocket Call/Jan Leeming *SIGNED*",
+      "url": "https://www.ebay.co.uk/itm/298615132715?_skw=limited+edition+photobook&hash=item4586d9522b:g:RqUAAeSwUopovr~M"
     },
     "ebay:298618082497": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -11528,6 +12201,13 @@
       "title": "Jazz 1955-1959, 1961 / Ed van der Elsken. Photo book",
       "url": "https://www.ebay.co.uk/itm/306234417307?_skw=van+der+Elsken%2C+Ed+Jazz&hash=item474cfe609b:g:HOoAAOSwieln9mVL"
     },
+    "ebay:306646873910": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 26,
+      "title": "The Sixties by Kishin Shinoyama Art Photobook 1960s Vintage Japanese RARE Used",
+      "url": "https://www.ebay.co.uk/itm/306646873910?_skw=limited+edition+photobook&hash=item476593f736:g:6oAAAeSwBD9qjWRW"
+    },
     "ebay:306754606606": {
       "first_seen": "2026-09-01T15:09:30Z",
       "last_seen": "2026-09-01T15:09:30Z",
@@ -11577,12 +12257,26 @@
       "title": "PONY KIDS By Perry Ogden & Fintan O'toole - Hardcover, SIGNED BY THE AUTHOR",
       "url": "https://www.ebay.co.uk/itm/306956831595?_skw=signed+photography+book&hash=item47780d8b6b:g:5oMAAeSwSzBqEXhZ"
     },
+    "ebay:306957551390": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 34,
+      "title": "LED ZEPPELIN Photo Book Limited Edition 4000 Near Mint from Japan",
+      "url": "https://www.ebay.co.uk/itm/306957551390?_skw=limited+edition+photobook&hash=item477818871e:g:ujoAAeSwhKZqevYv"
+    },
     "ebay:306976395993": {
       "first_seen": "2026-09-04T07:53:56Z",
       "last_seen": "2026-09-04T07:53:56Z",
       "score": 22,
       "title": "Scattershot Life Music Elton And Me By Bernie Taupin Hardcover Signed Biography",
       "url": "https://www.ebay.co.uk/itm/306976395993?_skw=signed+photography+book&hash=item47793812d9:g:O7sAAeSw16xqHaMQ"
+    },
+    "ebay:306984193795": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 29,
+      "title": "CITY OF DARKNESS LIFE IN KOWLOON WALLED CITY PHOTO BOOK printed in Japan 2004",
+      "url": "https://www.ebay.co.uk/itm/306984193795?_skw=limited+edition+photobook&hash=item4779af0f03:g:ynQAAeSwNtZqgSlM"
     },
     "ebay:306992346030": {
       "first_seen": "2026-09-01T19:45:15Z",
@@ -12165,12 +12859,33 @@
       "title": "Daido Moriyama Japanese Photo Book Farewell to Photography Popular Edition 2023",
       "url": "https://www.ebay.co.uk/itm/317723053363?_skw=Daido+Moriyama+Farewell+Photography&hash=item49f9c50d33:g:PlcAAeSwAuVqdU95"
     },
+    "ebay:318066349980": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 32,
+      "title": "TOKYO STYLE Architecture Photo Book Japanese Interior Design Art TSUZUKI Kyoichi",
+      "url": "https://www.ebay.co.uk/itm/318066349980?_skw=limited+edition+photobook&hash=item4a0e3b579c:g:iMMAAOSw2n9jqmyI"
+    },
+    "ebay:318167737722": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 40,
+      "title": "Winter Sonata Memorial Photo Book Limited Edition Bae Yong Joon Japan K-Drama",
+      "url": "https://www.ebay.co.uk/itm/318167737722?_skw=limited+edition+photobook&hash=item4a1446657a:g:PBoAAeSw--9p43f9"
+    },
     "ebay:318370143048": {
       "first_seen": "2026-09-04T07:53:56Z",
       "last_seen": "2026-09-04T07:53:56Z",
       "score": 14,
       "title": "Graca Abreu The book of Skies.  About Time  About Space. 2001 Graça Abreu Design",
       "url": "https://www.ebay.co.uk/itm/318370143048?_skw=signed+photography+book&hash=item4a2056db48:g:VfIAAeSwPN5qFxhH"
+    },
+    "ebay:318446916009": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 14,
+      "title": "Man City We’re Not Really Here Signed Ltd Ed Boxed HB Photo Book Maine Rd",
+      "url": "https://www.ebay.co.uk/itm/318446916009?_skw=limited+edition+photobook&hash=item4a24ea51a9:g:PoMAAeSw6tJqLFe4"
     },
     "ebay:318481072990": {
       "first_seen": "2026-09-04T07:53:56Z",
@@ -12269,6 +12984,13 @@
       "score": 19,
       "title": "Henri Cartier-Bresson: Scrapbook | Hardcover Monograph (Thames & Hudson, 2006)",
       "url": "https://www.ebay.co.uk/itm/318677761339?_skw=photography+monograph&hash=item4a32acbd3b:g:jIIAAeSwwrlqchwA"
+    },
+    "ebay:318713826670": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 40,
+      "title": "Limited Edition Chic!ken Photo book by Moreno Monti and Matteo Tranchellini",
+      "url": "https://www.ebay.co.uk/itm/318713826670?_skw=limited+edition+photobook&hash=item4a34d30d6e:g:xy8AAeSw1Ktqe0iz"
     },
     "ebay:318718053512": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -12669,6 +13391,55 @@
       "title": "Destroy : A Photographic Record of the Sex Pistols, 1977 by Dennis Morris (1998,",
       "url": "https://www.ebay.co.uk/itm/318823636382?_skw=photographer+book&hash=item4a3b5e9d9e:g:FfcAAeSwHvxqmmdP"
     },
+    "ebay:318823888391": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 14,
+      "title": "The Picture of Dorian Gray (Penguin Clothbound C, Oscar Wilde 2008",
+      "url": "https://www.ebay.co.uk/itm/318823888391?_skw=photo+book&hash=item4a3b627607:i:318823888391"
+    },
+    "ebay:326646474421": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 32,
+      "title": "Alec Soth and Carmen Soth Brighton Picture Hunt. New. Photobook",
+      "url": "https://www.ebay.co.uk/itm/326646474421?_skw=limited+edition+photobook&hash=item4c0da5a6b5:g:cyoAAeSwpOVoUo6~"
+    },
+    "ebay:326753305114": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 32,
+      "title": "Limited cover ver Fumiya Imai Photo Book CONCEPT? Book from Japan",
+      "url": "https://www.ebay.co.uk/itm/326753305114?_skw=limited+edition+photobook&hash=item4c1403c21a:g:KGkAAOSwYslnhwAR"
+    },
+    "ebay:326765876353": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 36,
+      "title": "ABBA : The Official Photo Book by Petter Karlsson Hardcover NEW",
+      "url": "https://www.ebay.co.uk/itm/326765876353?_skw=limited+edition+photobook&hash=item4c14c39481:g:zugAAeSwtcZowAiq"
+    },
+    "ebay:326813557447": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 9,
+      "title": "United Kingdom Hardcore II Photobook Limited Edition, 250 copies",
+      "url": "https://www.ebay.co.uk/itm/326813557447?_skw=limited+edition+photobook&hash=item4c179b22c7:g:CJkAAeSwZxJo6p~z"
+    },
+    "ebay:326949795825": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 42,
+      "title": "ON/OFF - Tom Oldham / 2014 Photo book w slipcase / War Child / FREE UK P&P",
+      "url": "https://www.ebay.co.uk/itm/326949795825?_skw=limited+edition+photobook&hash=item4c1fb9f7f1:g:bOoAAeSwN4JpYk~G"
+    },
+    "ebay:327197090777": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 26,
+      "title": "Japan NEW 消滅した時間 Where Time Has Vanished Ikko Narahara Photo Book 2025",
+      "url": "https://www.ebay.co.uk/itm/327197090777?_skw=limited+edition+photobook&hash=item4c2e7763d9:g:IroAAeSw1PVpQXFA"
+    },
     "ebay:327204163883": {
       "first_seen": "2026-09-04T07:53:56Z",
       "last_seen": "2026-09-04T07:53:56Z",
@@ -13068,6 +13839,13 @@
       "title": "The Emperor's New Clothes (Usborne Picture Books) By Mike Gordon",
       "url": "https://www.ebay.co.uk/itm/327341119879?_skw=photo+book&hash=item4c370d1987:g:dGwAAeSwYttqcuEi"
     },
+    "ebay:335483209347": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 32,
+      "title": "1976 STREET PHOTOGRAPHY BOOK State University College New York HUMAN IMAGE Art",
+      "url": "https://www.ebay.co.uk/itm/335483209347?_skw=limited+edition+photobook&hash=item4e1c5b8683:g:rKEAAOSwv3pjhRQV"
+    },
     "ebay:335758756045": {
       "first_seen": "2026-09-04T07:53:56Z",
       "last_seen": "2026-09-04T07:53:56Z",
@@ -13152,6 +13930,20 @@
       "title": "Living Wild Signed by Author Oliver Maclennan Hardback",
       "url": "https://www.ebay.co.uk/itm/336687996442?_skw=signed+photography+book&hash=item4e642b1e1a:g:2OoAAeSw1KlqVjrl"
     },
+    "ebay:336707491834": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 56,
+      "title": "Bruce Gilden: Go (Magnum Edition, August 2000) Limited Edition unsigned",
+      "url": "https://www.ebay.co.uk/itm/336707491834?_skw=limited+edition+photobook&hash=item4e655497fa:g:Iy0AAeSwDDdqZIR8"
+    },
+    "ebay:336721952089": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 29,
+      "title": "Thai BL 4 Minutes Official Photobook BeOnCloud BibleJes OOP BRAND NEW SEALED",
+      "url": "https://www.ebay.co.uk/itm/336721952089?_skw=limited+edition+photobook&hash=item4e66313d59:g:6MgAAeSw0uRplFwt"
+    },
     "ebay:336746753749": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
@@ -13228,6 +14020,13 @@
       "score": 50,
       "title": "Giles The Collection 2025, Giles, Carl",
       "url": "https://www.ebay.co.uk/itm/336769812783?_skw=photography+books+collection&hash=item4e690b892f:g:3aUAAeSwlyZqlFfw"
+    },
+    "ebay:336771133512": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 29,
+      "title": "Thai BL SmartBoom BiteMark Photobook Sealed Rare OOP Smart Boom Thailand BL Book",
+      "url": "https://www.ebay.co.uk/itm/336771133512?_skw=limited+edition+photobook&hash=item4e691fb048:g:c9MAAeSwtmpp~MLs"
     },
     "ebay:336771228514": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -13656,12 +14455,40 @@
       "title": "Diane Arbus An Aperture Monograph 50th Anniversary Edition",
       "url": "https://www.ebay.co.uk/itm/356829224725?_skw=Diane+Arbus+Diane+Arbus&hash=item5314addf15:g:yl8AAOSwtP1oDOP9"
     },
+    "ebay:357484203089": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 29,
+      "title": "MARK BORTHWICK / ABANDOM REVERIE JAPAN PHOTO BOOK 2014 Limited to 500 copies",
+      "url": "https://www.ebay.co.uk/itm/357484203089?_skw=limited+edition+photobook&hash=item533bb80c51:g:4sEAAOSw39VoM0Uh"
+    },
+    "ebay:357569567002": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 44,
+      "title": "MAIKO's PHOTO JOURNEY : The Making of a Muse  Limited edition photo book",
+      "url": "https://www.ebay.co.uk/itm/357569567002?_skw=limited+edition+photobook&hash=item5340ce991a:g:5WcAAeSw2I5oubWb"
+    },
     "ebay:357875941195": {
       "first_seen": "2026-09-04T07:53:56Z",
       "last_seen": "2026-09-04T07:53:56Z",
       "score": 84,
       "title": "Ray's a Laugh by Richard Billingham (1996, Trade Paperback)",
       "url": "https://www.ebay.co.uk/itm/357875941195?_skw=Richard+Billingham+Ray%27s+a+Laugh&hash=item5353117f4b:g:qL8AAeSwFVFpD1g9"
+    },
+    "ebay:358100326980": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 29,
+      "title": "JAN SAUDEK photo collection book Czech photographer Art Book Rare 1993",
+      "url": "https://www.ebay.co.uk/itm/358100326980?_skw=limited+edition+photobook&hash=item5360715a44:g:6PoAAeSwBlVpYSoo"
+    },
+    "ebay:358124060680": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 26,
+      "title": "The Sixties by Kishin Shinoyama Art Photobook 1960s photos Japanese",
+      "url": "https://www.ebay.co.uk/itm/358124060680?_skw=limited+edition+photobook&hash=item5361db8008:g:-d0AAOSwiyFne4z4"
     },
     "ebay:358143375798": {
       "first_seen": "2026-09-01T17:20:07Z",
@@ -13747,6 +14574,13 @@
       "title": "William Eggleston : Los Alamos Revisited First Edition 2012 Hard Cover Collector",
       "url": "https://www.ebay.co.uk/itm/358695247246?_skw=William+Eggleston+Los+Alamos&hash=item5383e71d8e:g:Ek4AAeSwwHJqM92E"
     },
+    "ebay:358825067464": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 10,
+      "title": "Live Aid Relived New Book-230 Photos by Murray Sanders, Words by Robert Hardman",
+      "url": "https://www.ebay.co.uk/itm/358825067464?_skw=limited+edition+photobook&hash=item538ba403c8:g:40gAAeSw0iNqS7lP"
+    },
     "ebay:358825945702": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
@@ -13789,6 +14623,13 @@
       "title": "Aperture Diane Arbus: An Aperture Monograph Stan Grossfeld 2005 PB 182p",
       "url": "https://www.ebay.co.uk/itm/358905472599?_skw=Diane+Arbus+Diane+Arbus&hash=item53906ee657:g:RLsAAeSwCQJqeNKa"
     },
+    "ebay:358917797633": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 26,
+      "title": "Jack Pierson Pretty Lies 1997 Photo Book 11 Prints Art Exhibition From Japan",
+      "url": "https://www.ebay.co.uk/itm/358917797633?_skw=limited+edition+photobook&hash=item53912af701:g:55YAAeSwbqVqfIJh"
+    },
     "ebay:363307238546": {
       "first_seen": "2026-09-02T07:50:20Z",
       "last_seen": "2026-09-02T07:50:20Z",
@@ -13803,12 +14644,40 @@
       "title": "Gilbert and George Twenty Five Worlds",
       "url": "https://www.ebay.co.uk/itm/363307793986?_skw=photography+monograph&hash=item5496d4fe42:g:YZMAAOSwC3VgO8yB"
     },
+    "ebay:364353725245": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 32,
+      "title": "PHOTO BOOK   \"THIS CITY\"   LONDON by  JUDGES  Ltd 1929    ( rare dans cet état )",
+      "url": "https://www.ebay.co.uk/itm/364353725245?_skw=limited+edition+photobook&hash=item54d52ca33d:g:A-8AAOSwdspjekxS"
+    },
+    "ebay:365104890040": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 32,
+      "title": "ABBA Photobook - 9781785120343",
+      "url": "https://www.ebay.co.uk/itm/365104890040?_skw=limited+edition+photobook&hash=item5501f280b8:g:nIIAAOSwJztm2X3C"
+    },
     "ebay:365247482993": {
       "first_seen": "2026-09-01T17:20:07Z",
       "last_seen": "2026-09-01T17:20:07Z",
       "score": 85,
       "title": "Diary Of A Century Jacques Henri Lartigue",
       "url": "https://www.ebay.co.uk/itm/365247482993?_skw=Jacques-Henri+Lartigue+Diary+of+a+Century&hash=item550a724c71:g:xVUAAOSwMxBnQcuQ"
+    },
+    "ebay:365624223261": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 44,
+      "title": "Masafumi Sanai Flower Road no Sekai Photobook Limited Edition",
+      "url": "https://www.ebay.co.uk/itm/365624223261?_skw=limited+edition+photobook&hash=item5520e6e61d:g:wGcAAeSwVXZoMXqN"
+    },
+    "ebay:365671329034": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 46,
+      "title": "Araki Nobuyoshi Signed Photobook \"After the War\" 1993 Limited Edition",
+      "url": "https://www.ebay.co.uk/itm/365671329034?_skw=limited+edition+photobook&hash=item5523b5ad0a:g:yMYAAeSwpkFo1Qir"
     },
     "ebay:365957096355": {
       "first_seen": "2026-09-01T17:24:57Z",
@@ -13824,12 +14693,33 @@
       "title": "Diane Arbus An Aperture monograph Hardcover",
       "url": "https://www.ebay.co.uk/itm/365974628145?_skw=Diane+Arbus+Diane+Arbus&hash=item5535c9a731:g:KQUAAeSwMR5pEGsr"
     },
+    "ebay:366039548955": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 29,
+      "title": "Mika Ninagawa, Helter Skelter Movie Official Photo Book",
+      "url": "https://www.ebay.co.uk/itm/366039548955?_skw=limited+edition+photobook&hash=item5539a8441b:g:EEsAAeSwHbhpMZG~"
+    },
     "ebay:366068718359": {
       "first_seen": "2026-09-02T07:50:20Z",
       "last_seen": "2026-09-02T07:50:20Z",
       "score": 7,
       "title": "Hans Bellmer Illustrated Monograph",
       "url": "https://www.ebay.co.uk/itm/366068718359?_skw=photography+monograph&hash=item553b655b17:g:dIoAAeSwKpxpQ7SO"
+    },
+    "ebay:366106454967": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 29,
+      "title": "Saul Leiter Photo Book Forever Soul Leiter Japanese Edition",
+      "url": "https://www.ebay.co.uk/itm/366106454967?_skw=limited+edition+photobook&hash=item553da52bb7:g:CGYAAeSwPURpXTD9"
+    },
+    "ebay:366115217349": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 26,
+      "title": "Takuma Nakahira Circulation Photo Book Japanese Art Photography",
+      "url": "https://www.ebay.co.uk/itm/366115217349?_skw=limited+edition+photobook&hash=item553e2adfc5:g:X0oAAeSweH5pYlCp"
     },
     "ebay:366117316383": {
       "first_seen": "2026-09-01T17:20:07Z",
@@ -13880,6 +14770,13 @@
       "title": "Ikemura Leiko Kawauchi Rinko Kirakira Signed Photography Poetry Vangi Museum",
       "url": "https://www.ebay.co.uk/itm/366464444012?_skw=signed+photography+book&hash=item5552fba66c:g:Y2UAAeSwsJVqeHcj"
     },
+    "ebay:366464531480": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 32,
+      "title": "Kawauchi Rinko Hajimari no Hi Kyuryudo Photobook Picture Book Hardcover 2018",
+      "url": "https://www.ebay.co.uk/itm/366464531480?_skw=limited+edition+photobook&hash=item5552fcfc18:g:YrsAAeSwE~dqJrV5"
+    },
     "ebay:366464538184": {
       "first_seen": "2026-09-04T07:53:56Z",
       "last_seen": "2026-09-04T07:53:56Z",
@@ -13929,6 +14826,13 @@
       "title": "RARE SIGNED 2012 1ST EDITION DAIDO MORIYAMA RECORD NO.22 / KIROKU NO.22 BOOK",
       "url": "https://www.ebay.co.uk/itm/366498323277?_skw=signed+photography+book&hash=item5555009b4d:g:LgwAAOSwPTxm3cby"
     },
+    "ebay:366504374708": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 26,
+      "title": "Stephen Gill OUTSIDE IN Photography Brighton Biennial AMC Photoworks 2010",
+      "url": "https://www.ebay.co.uk/itm/366504374708?_skw=limited+edition+photobook&hash=item55555cf1b4:g:mzUAAeSwwfFqPd3Z"
+    },
     "ebay:366506674636": {
       "first_seen": "2026-09-03T11:38:48Z",
       "last_seen": "2026-09-03T11:38:48Z",
@@ -13977,6 +14881,13 @@
       "score": 7,
       "title": "2016 1st edition TOKYO AND TOKYO 20 YEAR ANNIVERSARY TOP COLLECTION BOOK",
       "url": "https://www.ebay.co.uk/itm/366516862902?_skw=photography+books+collection&hash=item55561b7fb6:g:~PAAAOSwlCBnVwbv"
+    },
+    "ebay:366516941469": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 29,
+      "title": "Honma Takashi COSMIC WONDER Light Source Diamond Equinox Photobook Fashion",
+      "url": "https://www.ebay.co.uk/itm/366516941469?_skw=limited+edition+photobook&hash=item55561cb29d:g:wt4AAeSw909qRdcc"
     },
     "ebay:366516993208": {
       "first_seen": "2026-09-04T07:53:56Z",
@@ -14090,6 +15001,13 @@
       "title": "English Villages Francis Frith Collection Hardcover Illustrated Black Horse 2005",
       "url": "https://www.ebay.co.uk/itm/366558611560?_skw=photography+books+collection&hash=item5558988868:g:CgcAAeSwW0ZqYMu5"
     },
+    "ebay:366566928063": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 34,
+      "title": "UNDERCOVER GRACE Photo Book Jun Takahashi Katsuhide Morimoto Limited Edition",
+      "url": "https://www.ebay.co.uk/itm/366566928063?_skw=limited+edition+photobook&hash=item5559176ebf:g:pg0AAeSw5eRqZimF"
+    },
     "ebay:366571102060": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
@@ -14174,6 +15092,13 @@
       "title": "Hiroshi Sugimoto Honkadori Japanese Culture Tradition Evolution Photography",
       "url": "https://www.ebay.co.uk/itm/366596374049?_skw=photography+monograph&hash=item555ad8be21:g:kYYAAeSw7-lqeYUU"
     },
+    "ebay:366597227892": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 29,
+      "title": "SHIMANO WORKS 100 - 100TH ANNIVERSARY COMMEMORATIVE 264-PAGE PHOTOBOOK",
+      "url": "https://www.ebay.co.uk/itm/366597227892?_skw=limited+edition+photobook&hash=item555ae5c574:g:wLkAAeSwWatqegQ6"
+    },
     "ebay:366600476070": {
       "first_seen": "2026-09-03T11:38:48Z",
       "last_seen": "2026-09-03T11:38:48Z",
@@ -14194,6 +15119,20 @@
       "score": 32,
       "title": "Kishin Shinoyama Hair Nude Art Photo Book Paperback Shinchosha 1994",
       "url": "https://www.ebay.co.uk/itm/366605246952?_skw=photography+books+collection&hash=item555b6021e8:g:n34AAeSwwhdqfwzz"
+    },
+    "ebay:366607173599": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 34,
+      "title": "Daisuke Yokota Berlin Kominek Books Photography Book",
+      "url": "https://www.ebay.co.uk/itm/366607173599?_skw=limited+edition+photobook&hash=item555b7d87df:g:wbsAAeSwhrBqgAzR"
+    },
+    "ebay:366617349386": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 34,
+      "title": "Pretty Lies Jack Pierson Taka Ishii Gallery Photo Book 1997 Limited 300 Copies",
+      "url": "https://www.ebay.co.uk/itm/366617349386?_skw=limited+edition+photobook&hash=item555c18cd0a:g:HEUAAeSwLBFqhnDU"
     },
     "ebay:366617740768": {
       "first_seen": "2026-09-03T11:38:48Z",
@@ -14250,6 +15189,20 @@
       "score": 36,
       "title": "Tattoo Masterpieces Collection Vol 3 1000 JAPANESE TATTOOS Kunihiko Shinoda",
       "url": "https://www.ebay.co.uk/itm/366627007113?_skw=photography+books+collection&hash=item555cac2a89:g:m2EAAeSwMcdqjRqq"
+    },
+    "ebay:366627613810": {
+      "buying_options": [
+        "FIXED_PRICE"
+      ],
+      "collectible_signals": [
+        "limited edition"
+      ],
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "observed_price_gbp": 91.74,
+      "score": 73,
+      "title": "Homma Takashi Trails Photography Book Snow Mountain Hunter Traces Art Match",
+      "url": "https://www.ebay.co.uk/itm/366627613810?_skw=limited+edition+photobook&hash=item555cb56c72:g:sJAAAeSwBD9qjXJB"
     },
     "ebay:366627698387": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -14636,6 +15589,13 @@
       "title": "Stephen Shore Uncommon Places The Complete Works PHOTOGRAPHY ART BOOK THAMES",
       "url": "https://www.ebay.co.uk/itm/375881027679?_skw=Stephen+Shore+Uncommon+Places&hash=item578441505f:g:vjsAAOSwcbNnaEvr"
     },
+    "ebay:375905468015": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 26,
+      "title": "The Sixties by Kishin Shinoyama Art Photobook 1960s Vintage Japanese",
+      "url": "https://www.ebay.co.uk/itm/375905468015?_skw=limited+edition+photobook&hash=item5785b63e6f:g:gVQAAeSwQZZpTMxn"
+    },
     "ebay:375979843315": {
       "first_seen": "2026-09-02T07:13:35Z",
       "last_seen": "2026-09-02T07:13:35Z",
@@ -14677,6 +15637,20 @@
       "score": 98,
       "title": "Diane Arbus: Magazine Work by Thomas W. Southall (2005, Trade Paperback)",
       "url": "https://www.ebay.co.uk/itm/376964648100?_skw=Arbus%2C+Diane+Diane+Arbus&hash=item57c4d80ca4:g:zQ8AAeSwoN5pkJNc"
+    },
+    "ebay:377073610825": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 26,
+      "title": "Christopher Thomas Cars Only Photo Book Hardcover Very Good Condition Book Rare",
+      "url": "https://www.ebay.co.uk/itm/377073610825?_skw=limited+edition+photobook&hash=item57cb56b049:g:eXgAAeSwrudpyoQ-"
+    },
+    "ebay:377195302996": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 32,
+      "title": "Their Generation The Who in America 1967-69 Photobook by Tom Wright",
+      "url": "https://www.ebay.co.uk/itm/377195302996?_skw=limited+edition+photobook&hash=item57d2979054:g:MzEAAeSw12VqDFVL"
     },
     "ebay:377220075263": {
       "first_seen": "2026-09-04T07:53:56Z",
@@ -15056,6 +16030,13 @@
       "title": "marilyn monroe RARE hardback three books joblot vintage",
       "url": "https://www.ebay.co.uk/itm/388692112728?_skw=photography+books+job+lot&hash=item5a7fdaf558:g:S2AAAeSwQpdob7lH"
     },
+    "ebay:389341527660": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 34,
+      "title": "The Beatles Tom Murray's Mad Day Out Photo Book 2018 Limited Edition Acc NEW",
+      "url": "https://www.ebay.co.uk/itm/389341527660?_skw=limited+edition+photobook&hash=item5aa6903e6c:g:1OEAAeSwZzFpM7yA"
+    },
     "ebay:389464938446": {
       "first_seen": "2026-09-04T07:53:56Z",
       "last_seen": "2026-09-04T07:53:56Z",
@@ -15084,6 +16065,13 @@
       "title": "Hammy the Wonder Hamster by Poppy Harris Margaret Mc Allister",
       "url": "https://www.ebay.co.uk/itm/393869609353?_skw=Marvel+Harris+MARVEL&hash=item5bb4754989:g:0ncAAOSwzFVgjpx-"
     },
+    "ebay:397091346151": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 34,
+      "title": "ROGER STEFFENS photo book THE FAMILY ACID Limited Edition 1000 1st 2015 SEALED",
+      "url": "https://www.ebay.co.uk/itm/397091346151?_skw=limited+edition+photobook&hash=item5c747d16e7:g:2TAAAeSwIOlo1P8q"
+    },
     "ebay:397443164331": {
       "first_seen": "2026-09-04T07:53:56Z",
       "last_seen": "2026-09-04T07:53:56Z",
@@ -15098,6 +16086,20 @@
       "title": "book photography, Martin Munkacsi, sport, Black&white, monograph, Steidl,",
       "url": "https://www.ebay.co.uk/itm/397492185899?_skw=photography+monograph&hash=item5c8c616b2b:g:1rgAAeSwqDRpZqDT"
     },
+    "ebay:397682494990": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 26,
+      "title": "ADA The Rio Negro THE AMAZON UNEXP CORED Takashi Amano Photo Book Photography",
+      "url": "https://www.ebay.co.uk/itm/397682494990?_skw=limited+edition+photobook&hash=item5c97b94e0e:g:5jUAAeSwdDdpqtIU"
+    },
+    "ebay:397876097219": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 26,
+      "title": "Malice Mizer Photo Book Cathedrale de la Rose Livre Rose w/cross pendant Japan",
+      "url": "https://www.ebay.co.uk/itm/397876097219?_skw=limited+edition+photobook&hash=item5ca34370c3:g:XFgAAeSw73lp6ibX"
+    },
     "ebay:397981162209": {
       "first_seen": "2026-09-04T07:53:56Z",
       "last_seen": "2026-09-04T07:53:56Z",
@@ -15111,6 +16113,13 @@
       "score": 38,
       "title": "Signed LA Portraits by Estevan Oriol Photography Book Rare Edition Japan rare",
       "url": "https://www.ebay.co.uk/itm/398058357870?_skw=signed+photography+book&hash=item5cae20846e:g:-kcAAeSw9fJqg4JK"
+    },
+    "ebay:398063133374": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 26,
+      "title": "Where Time Has Vanished Iconic Post-War Japan Photo Book by Ikko Narahara NEW",
+      "url": "https://www.ebay.co.uk/itm/398063133374?_skw=limited+edition+photobook&hash=item5cae6962be:g:uSgAAeSwjX9p08mL"
     },
     "ebay:398083588631": {
       "first_seen": "2026-09-04T07:53:56Z",
@@ -15196,6 +16205,13 @@
       "title": "HIROMIX Works Photo Book Celeb Collection Iconic Female Photographer used Rare",
       "url": "https://www.ebay.co.uk/itm/398254480575?_skw=photographer+books+collection&hash=item5cb9d11cbf:g:ChkAAeSwRAVqhCTi"
     },
+    "ebay:398263513435": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 36,
+      "title": "Vintage Ricordo di Milano 32 Vedute Souvenir Photo Book Map Milan Italy 1940s",
+      "url": "https://www.ebay.co.uk/itm/398263513435?_skw=limited+edition+photobook&hash=item5cba5af15b:g:I70AAeSwlP5qdz4I"
+    },
     "ebay:398265674841": {
       "first_seen": "2026-09-03T11:38:48Z",
       "last_seen": "2026-09-03T11:38:48Z",
@@ -15209,6 +16225,13 @@
       "score": 46,
       "title": "Victorian & Edwardian Cycling & Motoring From Old Photographs HC Illus 1977",
       "url": "https://www.ebay.co.uk/itm/398274691162?_skw=old+photography+books&hash=item5cbb05805a:g:0JcAAeSww5Nqe1~r"
+    },
+    "ebay:398304051122": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 40,
+      "title": "Local Costume Kewpie Catalog 700 Japan Photo Book Rare Collector Limited Edition",
+      "url": "https://www.ebay.co.uk/itm/398304051122?_skw=limited+edition+photobook&hash=item5cbcc57fb2:g:ClwAAOSwZwloLyvJ"
     },
     "ebay:398307393581": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -15693,6 +16716,20 @@
       "title": "Akine Coco \" Like a Scene from on Anime\" Photo Book Anime-Like Photography Art",
       "url": "https://www.ebay.co.uk/itm/398357435704?_skw=photographer+book&hash=item5cbff41538:g:s94AAeSwLKFqmlxM"
     },
+    "ebay:402660377294": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 40,
+      "title": "TEENAGE PRE-OCCUPATION / DAVID STEWART / PHOTO BOOK / LTD EDITION / BROWNS 2013",
+      "url": "https://www.ebay.co.uk/itm/402660377294?_skw=limited+edition+photobook&hash=item5dc06dc2ce:g:DdsAAOSwCU1Yvfj9"
+    },
+    "ebay:403020247072": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 34,
+      "title": "HONG KONG / TERRY RICHARDSON / LIMITED EDITION PHOTOBOOK / DIESEL / 2011",
+      "url": "https://www.ebay.co.uk/itm/403020247072?_skw=limited+edition+photobook&hash=item5dd5e0f020:g:gjMAAOSwo0JWGt4w"
+    },
     "ebay:404879487928": {
       "first_seen": "2026-09-01T17:20:07Z",
       "last_seen": "2026-09-01T17:20:07Z",
@@ -15714,12 +16751,26 @@
       "title": "2 H/Backs - Another Art/Portrait Book📕Jefferson Hack (Firsts 2010) Kate Moss",
       "url": "https://www.ebay.co.uk/itm/405507711289?_skw=photography+monograph&hash=item5e6a24a139:g:M60AAOSwMmpkhJL2"
     },
+    "ebay:405948546682": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 36,
+      "title": "Daido Moriyama Dog's Memory Official Art Photo Book 2001 Japan Used",
+      "url": "https://www.ebay.co.uk/itm/405948546682?_skw=limited+edition+photobook&hash=item5e846b3e7a:g:KFwAAOSwkZtjd3zf"
+    },
     "ebay:406681701618": {
       "first_seen": "2026-09-02T07:50:20Z",
       "last_seen": "2026-09-02T07:50:20Z",
       "score": 32,
       "title": "The Idea of Louis Sullivan, John Szarkowski, lovely 2000 MOMA monograph",
       "url": "https://www.ebay.co.uk/itm/406681701618?_skw=photography+monograph&hash=item5eb01e4cf2:g:cBkAAeSwmgJpiJrG"
+    },
+    "ebay:406697630445": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 41,
+      "title": "Yoshio Mizoguchi Photobook Tokyo on the Brink of Sanity Shinjuku 1990s Ltd 500",
+      "url": "https://www.ebay.co.uk/itm/406697630445?_skw=limited+edition+photobook&hash=item5eb1115aed:g:dbgAAeSwLcVqmLcP"
     },
     "ebay:406747500150": {
       "first_seen": "2026-09-01T17:20:07Z",
@@ -15756,6 +16807,13 @@
       "title": "Kuniyoshi Kaneko Les Jeux 1997 Art Photo Book Hardcover Slipcase RARE",
       "url": "https://www.ebay.co.uk/itm/406992398553?_skw=signed+photography+book&hash=item5ec2a328d9:g:2XYAAeSw6IJqKlFT"
     },
+    "ebay:407014550894": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 26,
+      "title": "ACTION PORTRAIT GIG Koenji Edition Jin Sato SIGNED Ltd 500 Japanese Punk Photo",
+      "url": "https://www.ebay.co.uk/itm/407014550894?_skw=limited+edition+photobook&hash=item5ec3f52d6e:g:oOwAAeSwJmhqmMqZ"
+    },
     "ebay:407015998415": {
       "first_seen": "2026-09-04T07:53:56Z",
       "last_seen": "2026-09-04T07:53:56Z",
@@ -15791,6 +16849,13 @@
       "title": "RUBBER Issei Suda Photo Book 2012 Polaroid Fetish Art Photography Signed Used",
       "url": "https://www.ebay.co.uk/itm/407075120411?_skw=signed+photography+book&hash=item5ec791651b:g:cRUAAeSwL49qV4yO"
     },
+    "ebay:407075383186": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 34,
+      "title": "Terri Weifenbach Photo Book Between Maple And Chestnut Limited Edition 1000 Used",
+      "url": "https://www.ebay.co.uk/itm/407075383186?_skw=limited+edition+photobook&hash=item5ec7956792:g:k6kAAeSwWZtqV5El"
+    },
     "ebay:407087775163": {
       "first_seen": "2026-09-04T07:53:56Z",
       "last_seen": "2026-09-04T07:53:56Z",
@@ -15818,6 +16883,27 @@
       "score": 44,
       "title": "Worst Week Ever! Series 4 Books Collection Set - Ages 8+ - Paperback",
       "url": "https://www.ebay.co.uk/itm/407159021355?_skw=photography+books+collection&hash=item5ecc919f2b:g:8MQAAeSwjFZqiGsK"
+    },
+    "ebay:407167396201": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 44,
+      "title": "Julie Poly Ukrzaliznytsia 2020 Rare Limited Edition 259/1000 Photography Book",
+      "url": "https://www.ebay.co.uk/itm/407167396201?_skw=limited+edition+photobook&hash=item5ecd116969:g:mh0AAeSww-FqjJZx"
+    },
+    "ebay:407167475577": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 44,
+      "title": "Ewen Spencer YOUNG LOVE 2017 First Edition Rare Limited 1/1000 Photography Book",
+      "url": "https://www.ebay.co.uk/itm/407167475577?_skw=limited+edition+photobook&hash=item5ecd129f79:g:Q78AAeSwndxqjKKL"
+    },
+    "ebay:407169244066": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 14,
+      "title": "His Majesty the King Hardcover Illustrated Geographia Ltd. 1911",
+      "url": "https://www.ebay.co.uk/itm/407169244066?_skw=limited+edition+photobook&hash=item5ecd2d9ba2:g:KOAAAeSwOCtqjawV"
     },
     "ebay:407180954641": {
       "first_seen": "2026-09-02T07:50:20Z",
@@ -16182,6 +17268,13 @@
       "score": 26,
       "title": "Francis Bacon: Revelations, by Mark Stevens & Annalyn Swan (Pbck, Signed, 2021)",
       "url": "https://www.ebay.co.uk/itm/800367029193?_skw=signed+photography+book&hash=itemba5997abc9:g:n90AAeSwaStqW-ek"
+    },
+    "ebay:800367969347": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 29,
+      "title": "Reach Out, I'm Right Here by RYAN MCGINLEY Limited exhibition photo book JPN",
+      "url": "https://www.ebay.co.uk/itm/800367969347?_skw=limited+edition+photobook&hash=itemba59a60443:g:Q78AAeSwQtRqVYKX"
     },
     "ebay:800420381290": {
       "first_seen": "2026-09-01T17:16:36Z",
@@ -16687,6 +17780,20 @@
       "title": "Bluey: MY DAD IS AWESOME - Bluey Story Book - Bedtime Picture... - BBC Studios",
       "url": "https://www.ebay.co.uk/itm/800608551880?_skw=photo+book&hash=itemba67fd03c8:g:a8EAAeSwR8JqmeyK"
     },
+    "ebay:820019713234": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 34,
+      "title": "Lorde Going South Limited Edition Hardcover Photo Book (2021)",
+      "url": "https://www.ebay.co.uk/itm/820019713234?_skw=limited+edition+photobook&hash=itembeecfbd4d2:g:FY4AAeSwQUJqhMdU"
+    },
+    "ebay:820025277599": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 26,
+      "title": "Kishin Shinoyama THE SIXTIES Photo Book Japanese Art Photography Vintage Japan",
+      "url": "https://www.ebay.co.uk/itm/820025277599?_skw=limited+edition+photobook&hash=itembeed50bc9f:g:zeQAAeSwLOBqhnGD"
+    },
     "ebay:820026400422": {
       "first_seen": "2026-09-03T11:38:48Z",
       "last_seen": "2026-09-03T11:38:48Z",
@@ -16750,6 +17857,13 @@
       "title": "William Eggleston's Guide 2002 Reprint Hardcover Photo Book Rare New Color",
       "url": "https://www.ebay.co.uk/itm/820057309739?_skw=William+Eggleston+William+Eggleston%27s+Guide&hash=itembeef39822b:g:hwgAAeSwzbZqkT7k"
     },
+    "ebay:820057309805": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 56,
+      "title": "Nobuyoshi Araki Sentimental Journey Limited Reprint 2016 Photobook",
+      "url": "https://www.ebay.co.uk/itm/820057309805?_skw=limited+edition+photobook&hash=itembeef39826d:g:W5wAAeSwF-ZqkT9c"
+    },
     "ebay:820057309906": {
       "first_seen": "2026-09-04T07:53:56Z",
       "last_seen": "2026-09-04T07:53:56Z",
@@ -16757,12 +17871,61 @@
       "title": "Christian Patterson Redheaded Peckerwood Photo Book 2012 Award Winner",
       "url": "https://www.ebay.co.uk/itm/820057309906?_skw=Christian+Patterson+Redheaded+Peckerwood&hash=itembeef3982d2:g:z1wAAeSwehZqkT8g"
     },
+    "ebay:820057310215": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 56,
+      "title": "Lina Scheynius 07 Limited Edition 19/50 Signed Numbered Photobook Rare Book",
+      "url": "https://www.ebay.co.uk/itm/820057310215?_skw=limited+edition+photobook&hash=itembeef398407:g:XUAAAeSwicFqkT~X"
+    },
+    "ebay:820057310277": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 26,
+      "title": "SPOT Sounds of Two Eyes Opening Ltd Edition Sealed Punk Skate Photo Book Set",
+      "url": "https://www.ebay.co.uk/itm/820057310277?_skw=limited+edition+photobook&hash=itembeef398445:g:16EAAeSw9KNqkT9g"
+    },
+    "ebay:820057310791": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 29,
+      "title": "Nobuyoshi Araki Sentimental Sky Limited to 1200 copies Photobook ① Araki",
+      "url": "https://www.ebay.co.uk/itm/820057310791?_skw=limited+edition+photobook&hash=itembeef398647:g:AtgAAeSwLcVqkT~f"
+    },
     "ebay:820057310853": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
       "score": 36,
       "title": "Shomei Tomatsu Photo Collection 1951-1960 HC w/ Obi Araki Moriyama Talk Book",
       "url": "https://www.ebay.co.uk/itm/820057310853?_skw=photographer+books+collection&hash=itembeef398685:g:8VEAAeSwjPFqkT90"
+    },
+    "ebay:820057312845": {
+      "buying_options": [
+        "FIXED_PRICE"
+      ],
+      "collectible_signals": [
+        "limited edition"
+      ],
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "observed_price_gbp": 454.7,
+      "score": 76,
+      "title": "Terry Richardson Photobook Limited Edition 1998 Tokyo Shibuya Used Rare",
+      "url": "https://www.ebay.co.uk/itm/820057312845?_skw=limited+edition+photobook&hash=itembeef398e4d:g:WnoAAeSwhq5qkT9-"
+    },
+    "ebay:820057313240": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 26,
+      "title": "Designed By Apple In California Photo Book Size 32.5×26.5cm VeryGood",
+      "url": "https://www.ebay.co.uk/itm/820057313240?_skw=limited+edition+photobook&hash=itembeef398fd8:g:DjYAAeSwpSVqkT~z"
+    },
+    "ebay:820057313297": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 32,
+      "title": "Christopher Doyle Tamaki Ogawa 1997 Photo Book Japanese First Edition Rare",
+      "url": "https://www.ebay.co.uk/itm/820057313297?_skw=limited+edition+photobook&hash=itembeef399011:g:7kgAAeSwZsBqkT~B"
     },
     "ebay:820057313356": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -16778,12 +17941,26 @@
       "title": "Henry Roy Medium A HOBO Magazine Supplement 2008 Photo Book Rare Collectible",
       "url": "https://www.ebay.co.uk/itm/820057313420?_skw=photography+books+collection&hash=itembeef39908c:g:8NcAAeSwRjVqkT9W"
     },
+    "ebay:820057313450": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 34,
+      "title": "Rie Suzuki Photo Book Limited Edition 100 Copies Japanese Photography Rare",
+      "url": "https://www.ebay.co.uk/itm/820057313450?_skw=limited+edition+photobook&hash=itembeef3990aa:g:9JQAAeSwUjRqkT~G"
+    },
     "ebay:820057313742": {
       "first_seen": "2026-09-01T12:57:22Z",
       "last_seen": "2026-09-01T12:57:22Z",
       "score": 10,
       "title": "6+ Antwerp Fashion catalog Japanese Rare Antwerp six Margiela Dries Van Noten",
       "url": "https://www.ebay.co.uk/itm/820057313742?_skw=photography+books+collection&hash=itembeef3991ce:g:NPYAAeSw2o5qkT-Q"
+    },
+    "ebay:820057313810": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 32,
+      "title": "​Mayu Tsunoda Photobook “Cloud cuckoo land” Rare ZINE [Limited to 50...",
+      "url": "https://www.ebay.co.uk/itm/820057313810?_skw=limited+edition+photobook&hash=itembeef399212:g:RsIAAeSwFJZqkUAC"
     },
     "ebay:820057313957": {
       "first_seen": "2026-09-01T12:57:22Z",
@@ -17113,6 +18290,13 @@
       "score": 36,
       "title": "The Cats of Lamu Text by Jack Couffer, Photos by Jack and Mike Couffer",
       "url": "https://www.ebay.co.uk/itm/820085599427?_skw=photo+book&hash=itembef0e92cc3:g:73oAAeSwrT1oqEsh"
+    },
+    "ebay:820085812343": {
+      "first_seen": "2026-09-04T08:08:12Z",
+      "last_seen": "2026-09-04T08:08:12Z",
+      "score": 14,
+      "title": "Sketches for Friends by Edward Ardizzone (2002, Hardcover)",
+      "url": "https://www.ebay.co.uk/itm/820085812343?_skw=photographer+book&hash=itembef0ec6c77:g:i1MAAeSwWwFo4X3Z"
     }
   },
   "version": 1
