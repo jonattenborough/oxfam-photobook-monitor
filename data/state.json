@@ -1,16 +1,15 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-03T18:07:47Z",
+  "last_successful_fetch": "2026-09-04T09:55:01Z",
   "last_top_skus": [
-    "HD_304218039",
+    "HD_304218415",
+    "HD_304218360",
     "HD_304185447",
     "HD_304201229",
     "HD_304217881",
     "HD_304216362",
     "HD_304217501",
-    "HD_304199256",
     "HD_304217279",
-    "HD_304217293",
     "HD_304217186",
     "HD_304217189",
     "HD_304216419",
@@ -31,7 +30,8 @@
     "HD_304213037",
     "HD_304212964",
     "HD_304187758",
-    "HD_304212479"
+    "HD_304212479",
+    "HD_304211637"
   ],
   "products": {
     "HD_303805354": {
@@ -4198,8 +4198,40 @@
         "title": "A Hillhead Album - Glasgow W2"
       },
       "search_fingerprint": "93cd33fc44e92a3f"
+    },
+    "HD_304218360": {
+      "first_seen": "2026-09-04T09:55:01Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788510422000",
+        "description": "\"... a genuinely useful guide to the more technical side of phone shooting, including editing with popular apps like Snapseed. Jo Bradford makes the most of the creative possibilities of modern smartphone cameras, and her tips on improving exposure and ensuring decent prints are really useful.\" Awarded 5 stars by Amateur PhotographerMaximize your potential to get the shots you want with this guide to photography for both Apple and Android phones.There's a saying that the best camera for the job is the one you have with you when an opportunity arises. Thanks to the boom in camera-phone technology, today we're lucky enough to have a camera to hand to capture all those incredible moments. But are you making the most of that powerful tool in your pocket? Do the photos you have taken tend to be blurry, or look nothing like what you're seeing? If you want to shoot incredible images with your phone, buy Smart Phone, Smart Photography. Covering simple techniques that will allow you to get the image that you see every single time, you will soon be telling your camera what to do with confidence. Start with The Big Picture and get to know your camera phone and the rules behind taking the perfect shot. The next chapter, Taking Great Pictures, explains the key disciplines of photography - portrait, abstraction, macro, still life and plenty more. Finally, the Post-production chapter demonstrates how to use apps to edit and enhance your images and create incredible prints for display.",
+        "isbn": null,
+        "price_gbp": 3.49,
+        "product_id": "book-HD__304218360",
+        "publisher": null,
+        "route": "/smart-phone-smart-photography/product/HD_304218360",
+        "sku": "HD_304218360",
+        "title": "Smart Phone Smart Photography"
+      },
+      "search_fingerprint": "864cbbf3171ad7a5"
+    },
+    "HD_304218415": {
+      "first_seen": "2026-09-04T09:55:01Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788511501000",
+        "description": "This is the fascinating history of the Sikhs and their contribution to British society from the mid nineteenth century to the present day. With over 250 historical photographs, the majority of them drawn from private collections, the author tells the story of the Sikhs from the first arrival in this country to modern times. The Sikhs were the first community to migrate in large numbers to Britain from the Asian sub-continent. There were four major periods of mass migration 1930s, post-war, 1960s and 1970s and Peter Bance describes stories of individuals, capturing their struggles and successes.",
+        "isbn": null,
+        "price_gbp": 15.99,
+        "product_id": "book-HD__304218415",
+        "publisher": null,
+        "route": "/the-sikhs-in-britain-150-years-of-photographs/product/HD_304218415",
+        "sku": "HD_304218415",
+        "title": "The Sikhs in Britain - 150 Years of Photographs"
+      },
+      "search_fingerprint": "754931a2061b2fed"
     }
   },
-  "reported_category_count": 2830,
+  "reported_category_count": 2823,
   "version": 1
 }
