@@ -1,8 +1,10 @@
 {
-  "last_failed_sellers": [],
-  "last_run": "2026-09-04T19:28:44Z",
-  "last_successful_sellers": 26,
-  "seller_cursor": 64,
+  "last_failed_sellers": [
+    "EBAY_US mtwyouth: more than 1000 new results fell inside the incremental window"
+  ],
+  "last_run": "2026-09-04T22:19:25Z",
+  "last_successful_sellers": 25,
+  "seller_cursor": 90,
   "sellers": {
     "EBAY_GB:ageuk": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
@@ -360,7 +362,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-04T11:10:32Z",
+      "last_successful_fetch": "2026-09-04T22:19:25Z",
       "seen": {
         "ebay:236051790678": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -1579,8 +1581,8 @@
     "EBAY_GB:amnestyinternationaluk": {
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
-      "last_result_count": 1,
-      "last_successful_fetch": "2026-09-04T11:10:32Z",
+      "last_result_count": 7,
+      "last_successful_fetch": "2026-09-04T22:19:25Z",
       "seen": {
         "ebay:227345284848": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -2787,6 +2789,48 @@
           "last_seen": "2026-09-04T11:10:32Z",
           "title": "Oxford Word Skills Intermediate + CD-ROM by Ruth Gaines & Stuart Redman",
           "url": "https://www.ebay.co.uk/itm/227505479204?hash=item34f8621e24:g:2D8AAeSwFfJqmpcc"
+        },
+        "ebay:227505586631": {
+          "first_seen": "2026-09-04T22:19:25Z",
+          "last_seen": "2026-09-04T22:19:25Z",
+          "title": "Vaughan Oliver Exhibition/Exposition: An Exhibition | Graphic Design",
+          "url": "https://www.ebay.co.uk/itm/227505586631?hash=item34f863c1c7:g:dtgAAeSwR-1qmqWV"
+        },
+        "ebay:227505627672": {
+          "first_seen": "2026-09-04T22:19:25Z",
+          "last_seen": "2026-09-04T22:19:25Z",
+          "title": "Thinking Visually for Illustrators by Mark Wigan (2018, Trade Paperback)",
+          "url": "https://www.ebay.co.uk/itm/227505627672?hash=item34f8646218:g:K1gAAeSwpLBqmrGy"
+        },
+        "ebay:227505630244": {
+          "first_seen": "2026-09-04T22:19:25Z",
+          "last_seen": "2026-09-04T22:19:25Z",
+          "title": "The Rebel and the Peacemaker: The Incredible True Story of Mary and Charles B...",
+          "url": "https://www.ebay.co.uk/itm/227505630244?hash=item34f8646c24:g:QFsAAeSw0fJqmrKX"
+        },
+        "ebay:227505666181": {
+          "first_seen": "2026-09-04T22:19:25Z",
+          "last_seen": "2026-09-04T22:19:25Z",
+          "title": "Faebound SIGNED by Saara El-Arifi",
+          "url": "https://www.ebay.co.uk/itm/227505666181?hash=item34f864f885:g:lrAAAeSwS3Bqmro6"
+        },
+        "ebay:227505667002": {
+          "first_seen": "2026-09-04T22:19:25Z",
+          "last_seen": "2026-09-04T22:19:25Z",
+          "title": "Critique of Commodity Aesthetics : Appearance, Sexuality and Advertising in...",
+          "url": "https://www.ebay.co.uk/itm/227505667002?hash=item34f864fbba:g:HBAAAeSwmOBqmq-m"
+        },
+        "ebay:227505672368": {
+          "first_seen": "2026-09-04T22:19:25Z",
+          "last_seen": "2026-09-04T22:19:25Z",
+          "title": "Januaries, Olivie Blake ,EXCLUSIVE SIGNED 1st EDITION",
+          "url": "https://www.ebay.co.uk/itm/227505672368?hash=item34f86510b0:g:IH8AAeSwCqtqmrwr"
+        },
+        "ebay:227505683953": {
+          "first_seen": "2026-09-04T22:19:25Z",
+          "last_seen": "2026-09-04T22:19:25Z",
+          "title": "Foreign Agents by Casey Michel - SOGNED & Inscribed Hardback - American Politics",
+          "url": "https://www.ebay.co.uk/itm/227505683953?hash=item34f8653df1:g:EswAAeSwhVlqmr72"
         }
       }
     },
@@ -4580,7 +4624,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-04T11:10:32Z",
+      "last_successful_fetch": "2026-09-04T22:19:25Z",
       "seen": {
         "ebay:156884683058": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -4755,8 +4799,8 @@
     "EBAY_GB:barnardos_charity": {
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
-      "last_result_count": 4,
-      "last_successful_fetch": "2026-09-04T11:10:32Z",
+      "last_result_count": 0,
+      "last_successful_fetch": "2026-09-04T22:19:25Z",
       "seen": {
         "ebay:176795221202": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -6569,8 +6613,8 @@
     "EBAY_GB:bookreliefuk": {
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
-      "last_result_count": 12,
-      "last_successful_fetch": "2026-09-04T11:10:32Z",
+      "last_result_count": 0,
+      "last_successful_fetch": "2026-09-04T22:19:25Z",
       "seen": {
         "ebay:366433055686": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -16196,7 +16240,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-04T11:10:32Z",
+      "last_successful_fetch": "2026-09-04T22:19:25Z",
       "seen": {
         "ebay:168210293506": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -25623,8 +25667,8 @@
     "EBAY_GB:fightforsight": {
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
-      "last_result_count": 3,
-      "last_successful_fetch": "2026-09-04T11:10:32Z",
+      "last_result_count": 0,
+      "last_successful_fetch": "2026-09-04T22:19:25Z",
       "seen": {
         "ebay:327028849539": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -25842,7 +25886,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-04T11:10:32Z",
+      "last_successful_fetch": "2026-09-04T22:19:25Z",
       "seen": {
         "ebay:254692191736": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -26125,8 +26169,8 @@
     "EBAY_GB:forestup": {
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
-      "last_result_count": 2,
-      "last_successful_fetch": "2026-09-04T11:10:32Z",
+      "last_result_count": 3,
+      "last_successful_fetch": "2026-09-04T22:19:25Z",
       "seen": {
         "ebay:267537999258": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -27328,6 +27372,24 @@
           "title": "Military Dress of the Peninsular War 1808-14 HB Martin Windrow & Gerry Embleton",
           "url": "https://www.ebay.co.uk/itm/267760826504?hash=item3e57c9f888:g:4jEAAeSwdy9qhGmL"
         },
+        "ebay:267774921311": {
+          "first_seen": "2026-09-04T22:19:25Z",
+          "last_seen": "2026-09-04T22:19:25Z",
+          "title": "Sword Art Online Progressive, Vol. 3 (manga) by Kiseki Himura (Paperback Book)",
+          "url": "https://www.ebay.co.uk/itm/267774921311?hash=item3e58a10a5f:g:kDwAAeSwGEZqmVlU"
+        },
+        "ebay:267774924325": {
+          "first_seen": "2026-09-04T22:19:25Z",
+          "last_seen": "2026-09-04T22:19:25Z",
+          "title": "Sword Art Online Progressive Vol 1 (manga) (Sword by Reki Kawahara (PB 2015)",
+          "url": "https://www.ebay.co.uk/itm/267774924325?hash=item3e58a11625:g:hOcAAeSwUxNqmVqA"
+        },
+        "ebay:267774927782": {
+          "first_seen": "2026-09-04T22:19:25Z",
+          "last_seen": "2026-09-04T22:19:25Z",
+          "title": "Sword Art Online Progressive, Vol. 2 (manga) - Kawahara, Reki",
+          "url": "https://www.ebay.co.uk/itm/267774927782?hash=item3e58a123a6:g:ra4AAeSwa1BqmVtT"
+        },
         "ebay:267774942038": {
           "first_seen": "2026-09-04T11:10:32Z",
           "last_seen": "2026-09-04T11:10:32Z",
@@ -27345,8 +27407,8 @@
     "EBAY_GB:helenanddouglashouse": {
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
-      "last_result_count": 3,
-      "last_successful_fetch": "2026-09-04T11:10:32Z",
+      "last_result_count": 1,
+      "last_successful_fetch": "2026-09-04T22:19:25Z",
       "seen": {
         "ebay:315685425321": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -28001,14 +28063,20 @@
           "last_seen": "2026-09-04T11:10:32Z",
           "title": "Son of Prophecy The Rise of Henry Tudor by Nathen Amin Hardback",
           "url": "https://www.ebay.co.uk/itm/398354850329?hash=item5cbfcca219:g:GukAAeSwtFxqmXQ8"
+        },
+        "ebay:398358656269": {
+          "first_seen": "2026-09-04T22:19:25Z",
+          "last_seen": "2026-09-04T22:19:25Z",
+          "title": "The Quest for the Northwest Passage Folio Society Hardcover Slipcase",
+          "url": "https://www.ebay.co.uk/itm/398358656269?hash=item5cc006b50d:g:yuQAAeSwHUpqmsYY"
         }
       }
     },
     "EBAY_GB:highlandhospice": {
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
-      "last_result_count": 1,
-      "last_successful_fetch": "2026-09-04T11:10:32Z",
+      "last_result_count": 5,
+      "last_successful_fetch": "2026-09-04T22:19:25Z",
       "seen": {
         "ebay:196381934008": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -29215,6 +29283,36 @@
           "last_seen": "2026-09-04T11:10:32Z",
           "title": "The Northern Meeting by Angus Fairrie Hardcover History Book 1788-1988",
           "url": "https://www.ebay.co.uk/itm/198615076783?hash=item2e3e618faf:g:2y8AAeSwuQVqmUA3"
+        },
+        "ebay:198615945685": {
+          "first_seen": "2026-09-04T22:19:25Z",
+          "last_seen": "2026-09-04T22:19:25Z",
+          "title": "The Prussian Officer D H Lawrence Vintage Penguin Paperback 1969",
+          "url": "https://www.ebay.co.uk/itm/198615945685?hash=item2e3e6ed1d5:g:nqUAAeSwMf5qmbtV"
+        },
+        "ebay:198615945890": {
+          "first_seen": "2026-09-04T22:19:25Z",
+          "last_seen": "2026-09-04T22:19:25Z",
+          "title": "An Illustrated Life by Danny Gregory - Artists Sketchbooks Art Book",
+          "url": "https://www.ebay.co.uk/itm/198615945890?hash=item2e3e6ed2a2:g:qxEAAeSw7dJqmbo7"
+        },
+        "ebay:198615945894": {
+          "first_seen": "2026-09-04T22:19:25Z",
+          "last_seen": "2026-09-04T22:19:25Z",
+          "title": "The Double-Cross System J.C. Masterman Folio Society Hardcover WWII History",
+          "url": "https://www.ebay.co.uk/itm/198615945894?hash=item2e3e6ed2a6:g:TIUAAeSwIMRqmbsi"
+        },
+        "ebay:198615945967": {
+          "first_seen": "2026-09-04T22:19:25Z",
+          "last_seen": "2026-09-04T22:19:25Z",
+          "title": "Folio Society Behind the Wall Colin Thubron China Travel Book",
+          "url": "https://www.ebay.co.uk/itm/198615945967?hash=item2e3e6ed2ef:g:6UEAAeSwLrNqmbpo"
+        },
+        "ebay:198615946464": {
+          "first_seen": "2026-09-04T22:19:25Z",
+          "last_seen": "2026-09-04T22:19:25Z",
+          "title": "The Emerging Science of Homeopathy Bellavite Signorini Paperback Book",
+          "url": "https://www.ebay.co.uk/itm/198615946464?hash=item2e3e6ed4e0:g:XncAAeSwJaxqmbpi"
         }
       }
     },
@@ -34308,7 +34406,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-04T11:10:32Z",
+      "last_successful_fetch": "2026-09-04T22:19:25Z",
       "seen": {
         "ebay:278112237039": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -34411,8 +34509,8 @@
     "EBAY_GB:martinhls23": {
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
-      "last_result_count": 1,
-      "last_successful_fetch": "2026-09-04T11:10:32Z",
+      "last_result_count": 0,
+      "last_successful_fetch": "2026-09-04T22:19:25Z",
       "seen": {
         "ebay:205394987921": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -36087,8 +36185,8 @@
     "EBAY_GB:northdevonhospiceshop": {
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
-      "last_result_count": 3,
-      "last_successful_fetch": "2026-09-04T11:10:32Z",
+      "last_result_count": 0,
+      "last_successful_fetch": "2026-09-04T22:19:25Z",
       "seen": {
         "ebay:278194424951": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -36263,8 +36361,8 @@
     "EBAY_GB:outlet_trading": {
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
-      "last_result_count": 13,
-      "last_successful_fetch": "2026-09-04T11:10:32Z",
+      "last_result_count": 0,
+      "last_successful_fetch": "2026-09-04T22:19:25Z",
       "seen": {
         "ebay:358882264045": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -42540,7 +42638,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-04T11:10:32Z",
+      "last_successful_fetch": "2026-09-04T22:19:25Z",
       "seen": {
         "ebay:206314473843": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -45561,7 +45659,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-04T11:10:32Z",
+      "last_successful_fetch": "2026-09-04T22:19:25Z",
       "seen": {
         "ebay:206153375556": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -46939,8 +47037,8 @@
     "EBAY_GB:stcuthbertshospice": {
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
-      "last_result_count": 6,
-      "last_successful_fetch": "2026-09-04T11:10:32Z",
+      "last_result_count": 0,
+      "last_successful_fetch": "2026-09-04T22:19:25Z",
       "seen": {
         "ebay:178147131996": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -48208,7 +48306,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-04T11:10:32Z",
+      "last_successful_fetch": "2026-09-04T22:19:25Z",
       "seen": {
         "ebay:267592997241": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -48647,8 +48745,8 @@
     "EBAY_GB:stleonardshospice": {
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
-      "last_result_count": 7,
-      "last_successful_fetch": "2026-09-04T11:10:32Z",
+      "last_result_count": 0,
+      "last_successful_fetch": "2026-09-04T22:19:25Z",
       "seen": {
         "ebay:406970669382": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -49911,8 +50009,8 @@
     "EBAY_GB:stmhospicehastings": {
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
-      "last_result_count": 5,
-      "last_successful_fetch": "2026-09-04T11:10:32Z",
+      "last_result_count": 0,
+      "last_successful_fetch": "2026-09-04T22:19:25Z",
       "seen": {
         "ebay:137141015288": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -51149,8 +51247,8 @@
     "EBAY_GB:stmichaelshospicehereford1": {
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
-      "last_result_count": 30,
-      "last_successful_fetch": "2026-09-04T11:10:32Z",
+      "last_result_count": 0,
+      "last_successful_fetch": "2026-09-04T22:19:25Z",
       "seen": {
         "ebay:256737736218": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -52309,8 +52407,8 @@
     "EBAY_GB:stoswaldshospice": {
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
-      "last_result_count": 3,
-      "last_successful_fetch": "2026-09-04T11:10:32Z",
+      "last_result_count": 0,
+      "last_successful_fetch": "2026-09-04T22:19:25Z",
       "seen": {
         "ebay:168407207127": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -52995,8 +53093,8 @@
     "EBAY_GB:stwilfridshospice2010": {
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
-      "last_result_count": 42,
-      "last_successful_fetch": "2026-09-04T11:10:32Z",
+      "last_result_count": 1,
+      "last_successful_fetch": "2026-09-04T22:19:25Z",
       "seen": {
         "ebay:198529975623": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -54491,6 +54589,12 @@
           "last_seen": "2026-09-04T11:10:32Z",
           "title": "From A Bare Hull by Ferenc Mate  -  Hardback 1977 ed.",
           "url": "https://www.ebay.co.uk/itm/206535154507?hash=item3016745b4b:g:NfwAAeSwXeFqj~hH"
+        },
+        "ebay:206535459472": {
+          "first_seen": "2026-09-04T22:19:25Z",
+          "last_seen": "2026-09-04T22:19:25Z",
+          "title": "Pocket Booklets. Ships of the Royal Navy plus Ships of the Axis Navies 1939-1945",
+          "url": "https://www.ebay.co.uk/itm/206535459472?hash=item3016790290:g:YfEAAeSw2HNqmrWw"
         }
       }
     },
@@ -55671,7 +55775,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-04T11:10:32Z",
+      "last_successful_fetch": "2026-09-04T22:19:25Z",
       "seen": {
         "ebay:297629696062": {
           "first_seen": "2026-08-28T16:37:18Z",
