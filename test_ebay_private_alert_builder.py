@@ -144,7 +144,43 @@ class RecallFirstAlertBuilderTests(unittest.TestCase):
         )
         self.assertIn("Material change", body)
         self.assertIn("£120.00 to £40.00", body)
-        self.assertIn("Cheap unrecognised photobook", body)
+        self.assertIn("Unknown-book lane", body)
+
+    def test_urgent_candidate_always_leads_fast_triage(self):
+        urgent = {
+            "title": "Urgent bargain",
+            "opportunity_score": 95,
+            "landed_price_gbp": 120.0,
+            "best_recognition": {"collectibility_tier": "A"},
+        }
+        changed = {
+            "title": "Changed listing",
+            "opportunity_score": 72,
+            "landed_price_gbp": 40.0,
+            "material_change": True,
+        }
+        ordered = sorted([changed, urgent], key=alerts.priority_key)
+        self.assertIs(ordered[0], urgent)
+
+    def test_sub_100_special_candidate_leads_expensive_higher_score(self):
+        cheap_special = {
+            "title": "Signed documentary photobook",
+            "opportunity_score": 81,
+            "landed_price_gbp": 40.0,
+            "best_recognition": {"collectibility_tier": "A"},
+        }
+        expensive = {
+            "title": "Expensive canonical photobook",
+            "opportunity_score": 88,
+            "landed_price_gbp": 500.0,
+            "best_recognition": {"collectibility_tier": "S"},
+        }
+        ordered = sorted([expensive, cheap_special], key=alerts.priority_key)
+        self.assertIs(ordered[0], cheap_special)
+        title = alerts._packet_title(ordered, 1, 1)
+        self.assertIn("HOT", title)
+        self.assertIn("under £100", title)
+        self.assertIn("special", title)
 
 
 if __name__ == "__main__":
