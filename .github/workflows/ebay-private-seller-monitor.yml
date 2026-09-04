@@ -9,6 +9,7 @@ on:
     paths:
       - "ebay_api.py"
       - "ebay_private_seller_monitor.py"
+      - "ebay_private_recall_monitor.py"
       - "ebay_private_alert_builder.py"
       - "photobook_recognition.py"
       - "photobook_library_builder.py"
@@ -17,6 +18,7 @@ on:
       - "test_photobook_recognition.py"
       - "test_photobook_library_builder.py"
       - "test_ebay_private_seller_monitor.py"
+      - "test_ebay_private_recall_monitor.py"
       - "test_ebay_private_alert_builder.py"
       - "data/ebay_private_searches.json"
       - "data/photobook_recognition/**"
@@ -28,6 +30,7 @@ on:
     paths:
       - "ebay_api.py"
       - "ebay_private_seller_monitor.py"
+      - "ebay_private_recall_monitor.py"
       - "ebay_private_alert_builder.py"
       - "photobook_recognition.py"
       - "photobook_library_builder.py"
@@ -36,6 +39,7 @@ on:
       - "test_photobook_recognition.py"
       - "test_photobook_library_builder.py"
       - "test_ebay_private_seller_monitor.py"
+      - "test_ebay_private_recall_monitor.py"
       - "test_ebay_private_alert_builder.py"
       - "data/ebay_private_searches.json"
       - "data/photobook_recognition/**"
@@ -80,16 +84,17 @@ jobs:
             test_photobook_library_builder.py \
             test_photobook_recognition.py \
             test_ebay_private_seller_monitor.py \
+            test_ebay_private_recall_monitor.py \
             test_ebay_private_alert_builder.py
           python photobook_recognition.py
 
-      - name: Search private eBay sellers
+      - name: Search private eBay sellers with recall-first policy
         if: github.event_name != 'pull_request'
         id: private
         env:
           EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
-        run: python ebay_private_seller_monitor.py
+        run: python ebay_private_recall_monitor.py
 
       - name: Build recall-first alert packets
         if: github.event_name != 'pull_request'
@@ -107,7 +112,7 @@ jobs:
           for body in runtime/ebay-private/alerts/*.md; do
             stem="${body%.md}"
             {
-              printf '%s\n\n' '@jonattenborough Immediate private-seller photobook candidate alert. Search-result-only leads are intentionally included so limited live checks cannot hide a fast-moving bargain. A deeper ChatGPT gem appraisal will follow separately.'
+              printf '%s\n\n' '@jonattenborough Immediate private-seller photobook candidate alert. Search-result-only leads, material price drops and cheap unknown photobooks are intentionally included because missing a unicorn is worse than seeing some rubbish. A deeper ChatGPT gem appraisal will follow separately.'
               cat "$body"
             } > "${stem}.notified.md"
             gh issue create \
