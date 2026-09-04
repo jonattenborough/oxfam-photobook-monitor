@@ -271,6 +271,31 @@ def material_change(previous: Any, item: dict[str, Any]) -> tuple[bool, list[str
     return bool(reasons), reasons
 
 
+def apply_material_change_policy(
+    classified: dict[str, Any],
+    source_item: dict[str, Any],
+    issue_threshold: int,
+) -> dict[str, Any]:
+    reasons = [str(value) for value in source_item.get("material_change_reasons") or []]
+    if not reasons:
+        return classified
+
+    promoted = dict(classified)
+    score = max(int(promoted.get("opportunity_score") or 0), int(issue_threshold))
+    promoted["opportunity_score"] = score
+    promoted["score_band"] = _score_band(score)
+    promoted["material_change"] = True
+    promoted["recall_first_change"] = True
+    promoted["material_change_reasons"] = reasons
+    promoted["opportunity_kind"] = "materially improved seen listing lead"
+    promoted["opportunity_reasons"] = [
+        *[str(value) for value in promoted.get("opportunity_reasons") or []],
+        *reasons,
+        "recall-first material change lane: AI triage cannot be vetoed by the old score threshold",
+    ]
+    return promoted
+
+
 def record_seen_recall(
     seen: dict[str, Any],
     item: dict[str, Any],
@@ -463,13 +488,7 @@ def main() -> int:
         if not item.get("key"):
             continue
         result = recall_classify(item, issue_threshold)
-        if item.get("material_change_reasons"):
-            result["material_change"] = True
-            result["material_change_reasons"] = list(item["material_change_reasons"])
-            result["opportunity_reasons"] = [
-                *[str(value) for value in result.get("opportunity_reasons") or []],
-                *[str(value) for value in item["material_change_reasons"]],
-            ]
+        result = apply_material_change_policy(result, item, issue_threshold)
         classified.append(result)
 
     alertable: dict[str, dict[str, Any]] = {}
