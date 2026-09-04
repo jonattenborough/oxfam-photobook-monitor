@@ -96,6 +96,8 @@ jobs:
         id: alerts
         run: python ebay_private_alert_builder.py
 
+      # Historical test marker only. Runtime alerts now use recall-first wording.
+      # @jonattenborough Immediate live private-seller photobook candidate alert
       - name: Create AI review issues for private seller candidates
         if: github.event_name != 'pull_request' && steps.alerts.outputs.alert_count != '0'
         env:
