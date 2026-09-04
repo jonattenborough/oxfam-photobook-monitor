@@ -21,6 +21,7 @@ on:
       - "test_ebay_private_recall_monitor.py"
       - "test_ebay_private_alert_builder.py"
       - "data/ebay_private_searches.json"
+      - "data/ebay_private_recall_searches.json"
       - "data/photobook_recognition/**"
       - "data/parr_badger_master/**"
       - "data/roth_101_master.csv"
@@ -42,6 +43,7 @@ on:
       - "test_ebay_private_recall_monitor.py"
       - "test_ebay_private_alert_builder.py"
       - "data/ebay_private_searches.json"
+      - "data/ebay_private_recall_searches.json"
       - "data/photobook_recognition/**"
       - "data/ebay_private_seller_state.json"
       - "data/parr_badger_master/**"
@@ -94,12 +96,12 @@ jobs:
         env:
           EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
-        run: python ebay_private_recall_monitor.py
+        run: python ebay_private_recall_monitor.py --config data/ebay_private_recall_searches.json
 
       - name: Build recall-first alert packets
         if: github.event_name != 'pull_request'
         id: alerts
-        run: python ebay_private_alert_builder.py
+        run: python ebay_private_alert_builder.py --config data/ebay_private_recall_searches.json
 
       # Historical test marker only. Runtime alerts now use recall-first wording.
       # @jonattenborough Immediate live private-seller photobook candidate alert
