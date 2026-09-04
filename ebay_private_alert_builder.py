@@ -56,7 +56,8 @@ def _collectibility_tier(item: dict[str, Any]) -> str:
 
 
 def _is_special_object(item: dict[str, Any]) -> bool:
-    if recall.collectible_signals(item):
+    object_signals = set(recall.collectible_signals(item)) - {"best offer"}
+    if object_signals:
         return True
     best = item.get("best_recognition")
     if isinstance(best, dict) and best.get("collectible_format_evidence"):
