@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Build recall-first eBay private-seller alert packets.
 
-The discovery search itself is fresh eBay Browse API data. Live item checks add
-confidence, but are not required before a strong candidate is surfaced. This
-module combines already live-verified candidates with strong search-only
-candidates that the legacy monitor placed in pending_live.
+Fresh eBay Browse search results are enough to create a discovery alert. A
+second item-detail check is optional confidence enrichment, never a gate. The
+builder also preserves the richer seen-state baseline used to detect later
+price drops and newly visible collectible signals.
 """
 from __future__ import annotations
 
@@ -15,6 +15,7 @@ import shutil
 from pathlib import Path
 from typing import Any
 
+import ebay_private_recall_monitor as recall
 import ebay_private_seller_monitor as monitor
 
 ISSUE_CHUNK_SIZE = 10
@@ -39,6 +40,18 @@ def is_alertable(item: dict[str, Any], issue_threshold: int) -> bool:
         int(item.get("opportunity_score") or 0) >= issue_threshold
         and item.get("private_seller") is True
         and str(item.get("seller_account_type") or "").upper() != "BUSINESS"
+    )
+
+
+def _rank_key(item: dict[str, Any]) -> tuple[Any, ...]:
+    price = recall._landed_price(item)
+    return (
+        1 if item.get("material_change") else 0,
+        1 if item.get("recall_first_unknown") else 0,
+        int(item.get("opportunity_score") or 0),
+        1 if price is not None and price <= 100 else 0,
+        1 if item.get("alert_verification") == "LIVE VERIFIED" else 0,
+        -(price if price is not None else 999999.0),
     )
 
 
@@ -69,14 +82,7 @@ def collect_candidates(
         by_key[str(key)] = item
         search_only_keys.add(str(key))
 
-    ranked = sorted(
-        by_key.values(),
-        key=lambda item: (
-            int(item.get("opportunity_score") or 0),
-            1 if item.get("alert_verification") == "LIVE VERIFIED" else 0,
-        ),
-        reverse=True,
-    )
+    ranked = sorted(by_key.values(), key=_rank_key, reverse=True)
     return ranked, search_only_keys
 
 
@@ -87,8 +93,20 @@ def _verification_line(item: dict[str, Any], detected_at: str) -> str:
     observed = str(item.get("search_observed_at") or detected_at)
     return (
         f"- **Verification:** SEARCH RESULT ONLY at {observed}. "
-        "This was returned by the fresh eBay search but availability was not rechecked."
+        "This was returned by the eBay Browse search but availability was not rechecked."
     )
+
+
+def _trigger_lines(item: dict[str, Any]) -> list[str]:
+    lines: list[str] = []
+    change_reasons = [str(value) for value in item.get("material_change_reasons") or []]
+    if change_reasons:
+        lines.append(f"- **Material change:** {'; '.join(change_reasons)}")
+    if item.get("recall_first_unknown"):
+        lines.append(
+            "- **Recall-first lane:** Cheap unrecognised photobook sent to AI triage rather than automatically rejected."
+        )
+    return lines
 
 
 def make_issue_body(
@@ -105,19 +123,22 @@ def make_issue_body(
         if item.get("alert_verification") == "LIVE VERIFIED" or item.get("live_verified") is True
     )
     search_only_count = len(items) - live_count
+    changed_count = sum(1 for item in items if item.get("material_change"))
+    unknown_count = sum(1 for item in items if item.get("recall_first_unknown"))
     lines = [
         "## New private-seller eBay photobook opportunities",
         "",
         f"Detected at **{detected_at}** by the private-seller discovery engine.",
         f"Recognition library: **{stats.get('records', '?')} books**.",
         f"This packet contains **{live_count} live-verified** and **{search_only_count} search-result-only** candidates.",
+        f"Recall signals in this packet: **{changed_count} materially changed listings** and **{unknown_count} cheap unrecognised leads**.",
         "",
-        "Search-result-only candidates are deliberately surfaced without a second item-detail check so a limited live-check allowance cannot hide a fast-moving bargain.",
-        "The score is a discovery priority, not a purchase verdict. ChatGPT should still verify exact edition, printing, completeness, condition, delivery cost, current market value and current availability before recommending a purchase.",
+        "Search-result-only candidates are deliberately surfaced without a second item-detail check so verification limits cannot hide a fast-moving bargain.",
+        "The score is a discovery priority, not a purchase verdict. ChatGPT should verify current availability, exact edition, printing, completeness, condition, delivery cost and market value before recommending a purchase.",
         "",
     ]
 
-    for item in sorted(items, key=lambda value: int(value.get("opportunity_score") or 0), reverse=True):
+    for item in sorted(items, key=_rank_key, reverse=True):
         score = int(item.get("opportunity_score") or 0)
         urgency = "URGENT" if score >= urgent_threshold else "REVIEW"
         lines.extend(
@@ -132,6 +153,7 @@ def make_issue_body(
                 f"- **Search:** `{item.get('search_query') or ''}`",
                 f"- **Buying format:** {', '.join(item.get('buying_options') or []) or 'not returned'}",
                 _verification_line(item, detected_at),
+                *_trigger_lines(item),
                 f"- **Why it surfaced:** {', '.join(item.get('opportunity_reasons') or [])}",
                 f"- **Listing:** {item.get('url')}",
             ]
@@ -205,7 +227,7 @@ def mark_search_only_alerted(
         key = str(item.get("key") or "")
         if key not in search_only_keys:
             continue
-        monitor._record_seen(seen, item, detected_at)
+        recall.record_seen_recall(seen, item, detected_at)
         pending.pop(key, None)
     state["seen"] = monitor._trim_seen(seen)
 
@@ -230,10 +252,16 @@ def write_packets(
     for index, chunk in enumerate(chunks, start=1):
         live_count = sum(1 for item in chunk if item.get("live_verified") is True)
         search_count = len(chunk) - live_count
+        changed_count = sum(1 for item in chunk if item.get("material_change"))
+        unknown_count = sum(1 for item in chunk if item.get("recall_first_unknown"))
         title = (
             f"EBAY_PRIVATE_NEW: {len(chunk)} candidates | "
             f"{live_count} live checked | {search_count} search only"
         )
+        if changed_count:
+            title += f" | {changed_count} changed"
+        if unknown_count:
+            title += f" | {unknown_count} unknown"
         if len(chunks) > 1:
             title += f" | {index}/{len(chunks)}"
         stem = alerts_dir / f"issue-{index:03d}"
