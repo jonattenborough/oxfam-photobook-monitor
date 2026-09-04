@@ -39,6 +39,22 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
         self.assertTrue(classified["recall_first_unknown"])
         self.assertGreaterEqual(classified["opportunity_score"], 72)
 
+    def test_generic_cheap_picture_book_is_not_promoted(self):
+        item = {
+            "key": "ebay:picture-book",
+            "title": "Henry's Freedom Box Hardcover Picture Book Ages 4-8",
+            "context": "illustrated children's book",
+            "price_gbp": 8.0,
+            "price_value": 8.0,
+            "price_currency": "GBP",
+            "private_seller": True,
+            "seller_account_type": "INDIVIDUAL",
+            "search_lane": "active_stock",
+        }
+        classified = recall.recall_classify(item, 72)
+        self.assertFalse(classified.get("recall_first_unknown", False))
+        self.assertLess(classified["opportunity_score"], 72)
+
     def test_obvious_instructional_unknown_is_not_promoted(self):
         item = {
             "key": "ebay:manual",
@@ -108,6 +124,20 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
         self.assertIn("signed", combined)
         self.assertIn("first edition", combined)
         self.assertIn("best offer", combined)
+
+    def test_material_change_cannot_be_vetoed_by_old_score_threshold(self):
+        classified = {
+            "key": "ebay:change",
+            "opportunity_score": 48,
+            "opportunity_reasons": ["ordinary prior score"],
+        }
+        source = {
+            "material_change_reasons": ["price dropped from £140.00 to £45.00"]
+        }
+        promoted = recall.apply_material_change_policy(classified, source, 72)
+        self.assertEqual(promoted["opportunity_score"], 72)
+        self.assertTrue(promoted["recall_first_change"])
+        self.assertIn("materially improved seen listing", promoted["opportunity_kind"])
 
     def test_recall_seen_record_retains_price_and_signals(self):
         seen = {}
