@@ -1,7 +1,10 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-05T15:50:18Z",
+  "last_successful_fetch": "2026-09-05T17:44:11Z",
   "last_top_skus": [
+    "HD_304222911",
+    "HD_304222907",
+    "HD_304222874",
     "HD_304221810",
     "HD_304222605",
     "HD_304222599",
@@ -28,10 +31,7 @@
     "HD_304201516",
     "HD_304218415",
     "HD_304218360",
-    "HD_304185447",
-    "HD_304201229",
-    "HD_304217881",
-    "HD_304216362"
+    "HD_304185447"
   ],
   "products": {
     "HD_303805354": {
@@ -4662,8 +4662,56 @@
         "title": "The Last Days of District Six"
       },
       "search_fingerprint": "24f182613a081308"
+    },
+    "HD_304222874": {
+      "first_seen": "2026-09-05T17:44:11Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788621420000",
+        "description": "For nearly half a century, Sir Roy Strong has enjoyed a high public profile in the arts world in Britain. Yet remarkably little is known about his life before the Swinging Sixties when he burst upon the scene as the revolutionary trendy young director of the National Portrait Gallery, aged thirty-one. In this book he recounts for the first time the story of his social origins and the roots of his life-long passion for the culture and history of England. He describes his childhood home in a suburban North London terrace, revealing himself to have been a shy solitary child of melancholy temperament, painting Elizabethan miniatures and Shakespearean set designs in his teens. <br/> <br/> It follows him through grammar school and university, where together with a generation of postwar 'meritocrats' like A.S. Byatt and Alan Bennett, his passion for learning was awakened and nourished. We catch glimpses of seminal experiences, such as his first outings to the theatre, opera and ballet, and his first trip abroad to Italy, which was to have a lasting influence on his sensibilities. He explores key, sometimes painful relationships with his family, his school teacher with whom he had a lifelong correspondence, and his debt to such people as C.V. Wedgwood, A.L. Rowse, Frances Yates and Cecil Beaton. In it we glimpse a vanished world dominated by class and hierarchy up which he climbed. As a backdrop we have the transformation of London from the drab, postwar world of the 1950s to the epicentre of fashion in the 1960s, and the development of Sir Roy's distinctive sartorial style, inspired by the burgeoning shops on Carnaby Street. <br/> <br/> Richly illustrated with drawings, letters, photographs and other archival material, this is an honest and compelling portrait of a young man about to step into the limelight of the British cultural scene he helped to modernize and in which he played a leading role.",
+        "isbn": null,
+        "price_gbp": 4.99,
+        "product_id": "book-HD__304222874",
+        "publisher": null,
+        "route": "/roy-strong-self-portraits-as-a-young-man/product/HD_304222874",
+        "sku": "HD_304222874",
+        "title": "Roy Strong : Self portraits as a young man"
+      },
+      "search_fingerprint": "135629fd6dd80cbe"
+    },
+    "HD_304222907": {
+      "first_seen": "2026-09-05T17:44:11Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788622142000",
+        "description": "The Peninsula London, the city’s first hotel development to exceed £1 billion in cost, is situated at the heart of the capital, overlooking Hyde Park and Wellington Arch. Now open after a thirty-five year search by Sir Michael Kadoorie, Chairman of The Hongkong and Shanghai Hotels, owner of The Peninsula Hotels group, the property offers a unique East-meets-West dialogue, a fleet of signature green Rolls-Royces, London’s largest suite, and a rooftop restaurant and bar with sweeping panoramic views unlike any the city has ever seen. Photographer Oliver Pilcher captures it all for us, revealing why this is one of the globe’s most anticipated hotel openings of the past decade.",
+        "isbn": null,
+        "price_gbp": 39.99,
+        "product_id": "book-HD__304222907",
+        "publisher": null,
+        "route": "/the-peninsula/product/HD_304222907",
+        "sku": "HD_304222907",
+        "title": "The Peninsula"
+      },
+      "search_fingerprint": "b0fad87c41c07cd3"
+    },
+    "HD_304222911": {
+      "first_seen": "2026-09-05T17:44:11Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788622201000",
+        "description": "A collection of b&w photographs celebrating the British landscape, with accompanying text by novelist John Fowles.",
+        "isbn": null,
+        "price_gbp": 16.99,
+        "product_id": "book-HD__304222911",
+        "publisher": null,
+        "route": "/land/product/HD_304222911",
+        "sku": "HD_304222911",
+        "title": "Land"
+      },
+      "search_fingerprint": "1acae37458db68b5"
     }
   },
-  "reported_category_count": 2826,
+  "reported_category_count": 2829,
   "version": 1
 }
