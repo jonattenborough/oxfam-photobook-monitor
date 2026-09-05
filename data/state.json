@@ -1,9 +1,12 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-04T17:33:28Z",
+  "last_successful_fetch": "2026-09-05T12:56:15Z",
   "last_top_skus": [
+    "HD_304221888",
+    "HD_304221859",
+    "HD_304210935",
+    "HD_304221741",
     "HD_304221293",
-    "HD_304217508",
     "HD_304217417",
     "HD_304220824",
     "HD_304201043",
@@ -15,7 +18,6 @@
     "HD_304219970",
     "HD_304219969",
     "HD_304219962",
-    "HD_304219481",
     "HD_304219030",
     "HD_304201516",
     "HD_304218415",
@@ -29,9 +31,7 @@
     "HD_304217186",
     "HD_304217189",
     "HD_304216419",
-    "HD_304215350",
-    "HD_304214570",
-    "HD_304214341"
+    "HD_304215350"
   ],
   "products": {
     "HD_303805354": {
@@ -3639,6 +3639,22 @@
       },
       "search_fingerprint": "806fe9b89b2202cd"
     },
+    "HD_304210935": {
+      "first_seen": "2026-09-05T12:56:15Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788605641000",
+        "description": "A copy of issue #7884 of the British Journal of Photography, published in June 2019. It served as the publication's annual \"Talent Issue\" which focuses entirely on the world's best emerging photographic talent. The 19 selected artists represent a broad mix of fine art, documentary, portraiture, and fashion photography. Notable profiles featured within this specific cohort include Luis Alberto Rodrigues, Uma Bista, Olgac Bozalp, and Nydia Blas among others.<br/><br/>This copy is in very good condition, with very little signs of use or damage. There is some small corner damage to the top of the first few pages.",
+        "isbn": null,
+        "price_gbp": 5.99,
+        "product_id": "book-HD__304210935",
+        "publisher": null,
+        "route": "/british-journal-of-photography-ones-to-watch/product/HD_304210935",
+        "sku": "HD_304210935",
+        "title": "British Journal of Photography: Ones to Watch"
+      },
+      "search_fingerprint": "dd84bf0ae3061b1b"
+    },
     "HD_304211260": {
       "first_seen": "2026-09-01T19:28:33Z",
       "last_snapshot": {
@@ -4502,6 +4518,54 @@
         "title": "W. Eugene Smith"
       },
       "search_fingerprint": "bd43b89a53349ca4"
+    },
+    "HD_304221741": {
+      "first_seen": "2026-09-05T12:56:15Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788604560000",
+        "description": "Lake District Mountain Landscape is a spectacular photographic perspective on the Lake District from award-winning mountain photographer and filmmaker Alastair Lee. More than five years in the making, it is a work of extraordinary commitment and originality.With an emphasis on the mountain heights, Lee captures the otherworldliness and majesty of the 'English Alps' in all seasons and conditions. An experienced climber, Lee brings all his skill and tenacity to the task of capturing sunrise from the summits of the highest peaks in England, moonlight on icy slopes and seas of cloud filling the familiar valleys of Lakeland.Ascents of seemingly unscalable crags such as Pillar and Gimmer Crag are celebrated, and 360-degree panoramas in ethereal upland light from high peaks including Helvellyn, Bowfell and Great Gable are complemented by a series of identifying sketches. In a book which is full of revelations for Lakelanders and visitors alike, Alastair Lee renews and redefines the magic of this much-loved landscape.",
+        "isbn": null,
+        "price_gbp": 9.99,
+        "product_id": "book-HD__304221741",
+        "publisher": null,
+        "route": "/lake-district-mountain-landscape-by-alastair-lee-near-fine-hardback/product/HD_304221741",
+        "sku": "HD_304221741",
+        "title": "Lake District - Mountain Landscape by Alastair Lee (Near Fine) Hardback"
+      },
+      "search_fingerprint": "3b375f70d2fe8be0"
+    },
+    "HD_304221859": {
+      "first_seen": "2026-09-05T12:56:15Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788607681000",
+        "description": "Personal journeys with photographs by the the authors to those places in the titles.  <br/>Laminated softcovers, light wear. Secret Cottage is signed by Malpas.",
+        "isbn": null,
+        "price_gbp": 24.99,
+        "product_id": "book-HD__304221859",
+        "publisher": null,
+        "route": "/secret-cottage-isle-of-sark-phil-malpas-clive-minnitt/product/HD_304221859",
+        "sku": "HD_304221859",
+        "title": "Secret Cottage / Isle of Sark - Phil Malpas / Clive Minnitt"
+      },
+      "search_fingerprint": "c639102e0e86b3f9"
+    },
+    "HD_304221888": {
+      "first_seen": "2026-09-05T12:56:15Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788608281000",
+        "description": "This book is a retrospective collection celebrating four decades of work by renowned French photographer Jeanloup Sieff (1933–2000). <br/><br/>It brings together a wide selection of his distinctive black-and-white photographs, including fashion, portraits, nudes, landscapes, and architectural studies. <br/><br/>Condition: Very good with dust jacket. Very little signs of wear.<br/><br/>",
+        "isbn": null,
+        "price_gbp": 16.99,
+        "product_id": "book-HD__304221888",
+        "publisher": null,
+        "route": "/jeanloup-sieff-40-years-of-photography/product/HD_304221888",
+        "sku": "HD_304221888",
+        "title": "Jeanloup Sieff: 40 Years of Photography"
+      },
+      "search_fingerprint": "d193f3927a3b4efd"
     }
   },
   "reported_category_count": 2822,
