@@ -1,9 +1,10 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-05T17:44:11Z",
+  "last_successful_fetch": "2026-09-06T16:27:59Z",
   "last_top_skus": [
+    "HD_304223480",
+    "HD_304223421",
     "HD_304222911",
-    "HD_304222907",
     "HD_304222874",
     "HD_304221810",
     "HD_304222605",
@@ -26,7 +27,6 @@
     "HD_304220309",
     "HD_304219970",
     "HD_304219969",
-    "HD_304219962",
     "HD_304219030",
     "HD_304201516",
     "HD_304218415",
@@ -4710,8 +4710,40 @@
         "title": "Land"
       },
       "search_fingerprint": "1acae37458db68b5"
+    },
+    "HD_304223421": {
+      "first_seen": "2026-09-06T16:27:59Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788700447000",
+        "description": "One of the first cinematic sex symbols, Sophia Loren's charisma and voluptuous figure attracted many admirers. Despite this, she was a faithful and dedicated family woman. Committed to just one man - film producer Carlo Ponti, she considered her two children her greatest accomplishments. Loren came from impoverished roots, yet she was possibly the greatest Italian actress of her time. Her many films included Houseboat, Two Women (for which she won the Academy award), The Fall of the Roman Empire and The Millionairess. She also loved to sing, adding to her sex appeal with a seductive voice.'Sophia Loren: A Life in Pictures' illustrates the variety and contrasts in Loren's private and public persona, with wonderful pictures and an incisive biography.<br/><br/>Clean tight copy, no marks or inscriptions. Boards and dust jacket in very good condition. Like New.",
+        "isbn": null,
+        "price_gbp": 34.99,
+        "product_id": "book-HD__304223421",
+        "publisher": null,
+        "route": "/sophia-loren/product/HD_304223421",
+        "sku": "HD_304223421",
+        "title": "Sophia Loren"
+      },
+      "search_fingerprint": "343d5ce8302b8eba"
+    },
+    "HD_304223480": {
+      "first_seen": "2026-09-06T16:27:59Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788702360000",
+        "description": "Clean tight copy, no marks or inscriptions. Like New.",
+        "isbn": null,
+        "price_gbp": 9.99,
+        "product_id": "book-HD__304223480",
+        "publisher": null,
+        "route": "/prague-praga-caput-regni/product/HD_304223480",
+        "sku": "HD_304223480",
+        "title": "Prague: Praga Caput Regni"
+      },
+      "search_fingerprint": "51aff5a456d94bcf"
     }
   },
-  "reported_category_count": 2829,
+  "reported_category_count": 2822,
   "version": 1
 }
