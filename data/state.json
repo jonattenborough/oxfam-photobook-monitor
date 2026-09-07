@@ -1,7 +1,11 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-07T15:18:52Z",
+  "last_successful_fetch": "2026-09-07T19:14:09Z",
   "last_top_skus": [
+    "HD_304227091",
+    "HD_304227003",
+    "HD_304227042",
+    "HD_303934721",
     "HD_304226689",
     "HD_304220429",
     "HD_304226537",
@@ -27,11 +31,7 @@
     "HD_304222911",
     "HD_304222874",
     "HD_304221810",
-    "HD_304222605",
-    "HD_304222599",
-    "HD_304222555",
-    "HD_304219630",
-    "HD_304221536"
+    "HD_304222605"
   ],
   "products": {
     "HD_303805354": {
@@ -49,6 +49,22 @@
         "title": "Works/Obras 2003-2013"
       },
       "search_fingerprint": "915229f64f1f20b8"
+    },
+    "HD_303934721": {
+      "first_seen": "2026-09-07T19:14:09Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788791515000",
+        "description": "Those born since the digital revolution, seem to have the hardest time re-imagining the role of photography in the world today. Thinking of photography as a visual language is the approach this book adopts to addresses this challenge.Considering photography in this way develops the metaphor of 'learning a language' when attempting to explain what photography can be, and what it can give a student in transferable creative and life skills. This begins with challenging the pre-conception that successful photography is defined by the successful single image or 'the good photograph'.The book emphasises the central role of narrative and visual storytelling through a technique of 'photosketching' to develop the building blocks of visual creativity and ultimately to craft successful bodies of photographic work.New Ways of Seeing explains how to both learn and teach photography as a visual language, appropriate for both professionals and students working today.",
+        "isbn": null,
+        "price_gbp": 19.99,
+        "product_id": "book-HD__303934721",
+        "publisher": null,
+        "route": "/new-ways-of-seeing/product/HD_303934721",
+        "sku": "HD_303934721",
+        "title": "New Ways of Seeing"
+      },
+      "search_fingerprint": "35de9c1bbfec5b2d"
     },
     "HD_304002522": {
       "first_seen": "2026-08-24T11:47:36Z",
@@ -5062,8 +5078,56 @@
         "title": "Shapes Shadows Lines"
       },
       "search_fingerprint": "eb678564f723bcc6"
+    },
+    "HD_304227003": {
+      "first_seen": "2026-09-07T19:14:09Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788794130000",
+        "description": "To take great mountain photographs you've got to know where to be, when, and how to take them. 'Photographing the Snowdonia Mountains' answers those questions. It's a hill walking guidebook, a photo-location guidebook, a safety in the hills manual, part biography, and is illustrated with over 300 stunning photographs.",
+        "isbn": null,
+        "price_gbp": 4.99,
+        "product_id": "book-HD__304227003",
+        "publisher": null,
+        "route": "/photographing-the-snowdonia-mountains/product/HD_304227003",
+        "sku": "HD_304227003",
+        "title": "Photographing the Snowdonia Mountains"
+      },
+      "search_fingerprint": "0ae4660adaada5c5"
+    },
+    "HD_304227042": {
+      "first_seen": "2026-09-07T19:14:09Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788794115000",
+        "description": "PHOTOGRAPHING EAST ANGLIA is a photography-location and visitor guidebook An essential companion for anyone with a camera who is visiting East Anglia. - whether you are using a high-end DSLR or a mobile phone camera. The landscape of East Anglia is unique, giving photographic opportunities not found anywhere else in the UK. Its extensive coastline, lapped by the North Sea, and stretching from the Wash in the north then south to the Thames Estuary, is home to wild marshes, sandy beaches and dunes, beach huts and old harbours filled with boats.   Numerous nature reserves allow access to some of the best birdwatching in the UK. Inland, the fens, heaths, villages, waterways and woodlands inspired the paintings of John Constable and Thomas Gainsborough.   You will find medieval castles, ancient villages, stately homes such as Sandringham House - the private home of Queen Elizabeth II - and the historic cities of Cambridge and Norwich. The Broads National Park is an extensive wetland area, cut by seven rivers, where under big East Anglian skies, windmills and windpumps look over a timeless landscape of reedbeds and grazing marshes. FEATURING:   - 150 locations and over 800 beautiful photographs  - Topographic maps  - Sat nav and map co-ordinates  - Sun compass  - Best times to visit and seasonal highlights   - Photographic tips  - Accessibility notes  - Travel information  - The best places to stay, eat and drink",
+        "isbn": null,
+        "price_gbp": 8.99,
+        "product_id": "book-HD__304227042",
+        "publisher": null,
+        "route": "/photographing-east-anglia/product/HD_304227042",
+        "sku": "HD_304227042",
+        "title": "Photographing East Anglia"
+      },
+      "search_fingerprint": "2517d35b0f4bd5c6"
+    },
+    "HD_304227091": {
+      "first_seen": "2026-09-07T19:14:09Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788800520000",
+        "description": "Great copy. Minor wear to rear of cover; contents unharmed.",
+        "isbn": null,
+        "price_gbp": 30.0,
+        "product_id": "book-HD__304227091",
+        "publisher": null,
+        "route": "/forty-daguerreotypes-from-the-bokelberg-collection-a-scottish-photography-group-exhibition/product/HD_304227091",
+        "sku": "HD_304227091",
+        "title": "Forty Daguerreotypes from the Bokelberg Collection: A Scottish Photography Group Exhibition"
+      },
+      "search_fingerprint": "970fc0236bd1db7e"
     }
   },
-  "reported_category_count": 2830,
+  "reported_category_count": 2833,
   "version": 1
 }
