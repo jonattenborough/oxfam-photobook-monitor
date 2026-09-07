@@ -1,7 +1,11 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-06T16:27:59Z",
+  "last_successful_fetch": "2026-09-07T09:43:32Z",
   "last_top_skus": [
+    "HD_304224004",
+    "HD_304223914",
+    "HD_304223907",
+    "HD_304223839",
     "HD_304223480",
     "HD_304223421",
     "HD_304222911",
@@ -27,11 +31,7 @@
     "HD_304220309",
     "HD_304219970",
     "HD_304219969",
-    "HD_304219030",
-    "HD_304201516",
-    "HD_304218415",
-    "HD_304218360",
-    "HD_304185447"
+    "HD_304219030"
   ],
   "products": {
     "HD_303805354": {
@@ -4742,8 +4742,72 @@
         "title": "Prague: Praga Caput Regni"
       },
       "search_fingerprint": "51aff5a456d94bcf"
+    },
+    "HD_304223839": {
+      "first_seen": "2026-09-07T09:43:32Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788768784000",
+        "description": "If David Bailey was the quintessential London photographer during the Swinging Sixties, the photographs he produced in the 1970s reflect a radical reorientation. As can be seen in this superb and comprehensive selection, his subject matter became truly international. <br/> <br/>On a major assignment for Vogue in January 1970, Bailey photographed fashion against the dramatic mountain backdrops of Central Turkey. Throughout the decade that followed, he determined to photograph peoples and places across the world that fascinated him. His incisive documents of India, Peru, Japan, Haiti, Brazil and New Guinea, many previously unpublished, culminate in the most political of his reportages - haunting images of the Vietnamese boat people. <br/> <br/>Alongside these remarkable photographs, Locations presents the best of Bailey's 1970s fashion sittings. During this era Bailey also continued as a master of the art of portraiture, his subjects ranging from Salvador Dal and Mick Jagger to Mother Teresa. His acclaimed television documentaries on Andy Warhol, Cecil Beaton and Luchino Visconti provided yet more opportunities for compelling stills. <br/> <br/>Martin Harrison has trawled the archives to uncover scores of hitherto unknown masterpieces of the 1970s, together with stunning images that helped to define and illuminate the decade. With over 290 photographs, this lavishly produced book chronicles an extraordinary ability to capture a world of vivid contrasts and reveals a seldom seen side of one of the world's leading photographers.",
+        "isbn": null,
+        "price_gbp": 7.99,
+        "product_id": "book-HD__304223839",
+        "publisher": null,
+        "route": "/locations/product/HD_304223839",
+        "sku": "HD_304223839",
+        "title": "Locations"
+      },
+      "search_fingerprint": "37429433d199c697"
+    },
+    "HD_304223907": {
+      "first_seen": "2026-09-07T09:43:32Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788769833000",
+        "description": "We share about 98 percent of our DNA with chimpanzees, our closest biological cousins. And never have the similarities between simians and humans been so amusingly and brilliantly captured as in Monkey Portraits by celebrity photographer Jill Greenberg.   Jill has spent 15 years photographing everyone from Kelly Osbourne to Clint Eastwood, but has recently focused on photographing stars of a different sort - monkeys and apes, many of whom have appeared in films or on television shows.   Her intimate portraits of these animals convey a startling range of emotions and personalities. Each of these 76 amazing photographs of monkeys and apes will remind you of someone you know. These pictures will make you laugh out loud and wonder just how different we truly are.",
+        "isbn": null,
+        "price_gbp": 18.49,
+        "product_id": "book-HD__304223907",
+        "publisher": null,
+        "route": "/monkey-portraits/product/HD_304223907",
+        "sku": "HD_304223907",
+        "title": "Monkey Portraits"
+      },
+      "search_fingerprint": "a96831855882898e"
+    },
+    "HD_304223914": {
+      "first_seen": "2026-09-07T09:43:32Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788769923000",
+        "description": "Tonal value in painting is the key to a clear, attractive composition. This guide explains how to use light and dark tones to increase the appeal and drama of a painting. It covers all of the popular painting media, including watercolour, oils, acrylics and pastels.",
+        "isbn": null,
+        "price_gbp": 18.49,
+        "product_id": "book-HD__304223914",
+        "publisher": null,
+        "route": "/dramatize-your-paintings-with-tonal-value/product/HD_304223914",
+        "sku": "HD_304223914",
+        "title": "Dramatize Your Paintings With Tonal Value"
+      },
+      "search_fingerprint": "1e55774ecd1fe762"
+    },
+    "HD_304224004": {
+      "first_seen": "2026-09-07T09:43:32Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788771174000",
+        "description": "Ian Hamilton Finlay is  the creator of two famous and hugely visited gardens - Little Sparta in Scotland and Fleur de l'Air in France.  In this book, Hungarian photographer Sam Rebben has captured both of these extraordinary gardens.  The book also features an essay by Pia Maria Simig on the tradition of sacred groves.  In German and English (English text is at the end of book).  <br/><br/>Book is new and still in its cellophane wrap.  <br/>",
+        "isbn": null,
+        "price_gbp": 35.0,
+        "product_id": "book-HD__304224004",
+        "publisher": null,
+        "route": "/solitude-and-renunciation-two-gardens-in-german-english/product/HD_304224004",
+        "sku": "HD_304224004",
+        "title": "Solitude and Renunciation: Two Gardens [in German & English]"
+      },
+      "search_fingerprint": "4938f8b8e97818b3"
     }
   },
-  "reported_category_count": 2822,
+  "reported_category_count": 2817,
   "version": 1
 }
