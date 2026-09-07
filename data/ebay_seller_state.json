@@ -1,17 +1,14 @@
 {
-  "last_failed_sellers": [
-    "EBAY_US mtwyouth: more than 1000 new results fell inside the incremental window",
-    "EBAY_US baybooks53217fwfbl: more than 1000 new results fell inside the incremental window"
-  ],
-  "last_run": "2026-09-07T04:28:13Z",
-  "last_successful_sellers": 24,
-  "seller_cursor": 94,
+  "last_failed_sellers": [],
+  "last_run": "2026-09-07T10:10:47Z",
+  "last_successful_sellers": 26,
+  "seller_cursor": 17,
   "sellers": {
     "EBAY_GB:ageuk": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-06T19:05:41Z",
+      "last_successful_fetch": "2026-09-07T10:10:47Z",
       "seen": {
         "ebay:116744243894": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -175,7 +172,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-06T19:05:41Z",
+      "last_successful_fetch": "2026-09-07T10:10:47Z",
       "seen": {
         "ebay:257380408192": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -2845,7 +2842,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-06T19:05:41Z",
+      "last_successful_fetch": "2026-09-07T10:10:47Z",
       "seen": {
         "ebay:386834903448": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -3128,8 +3125,8 @@
     "EBAY_GB:arthurrankhospicecharity": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 5,
-      "last_successful_fetch": "2026-09-06T19:05:41Z",
+      "last_result_count": 0,
+      "last_successful_fetch": "2026-09-07T10:10:47Z",
       "seen": {
         "ebay:800506369246": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -5372,8 +5369,8 @@
     "EBAY_GB:bhf_shops": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 3,
-      "last_successful_fetch": "2026-09-06T19:05:41Z",
+      "last_result_count": 1,
+      "last_successful_fetch": "2026-09-07T10:10:47Z",
       "seen": {
         "ebay:377405094645": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -5572,6 +5569,12 @@
           "last_seen": "2026-09-06T19:05:41Z",
           "title": "24x Illustrated Guides to Historical Places Books Monarchs England CG S05",
           "url": "https://www.ebay.co.uk/itm/377476096186?hash=item57e35420ba:g:vl0AAeSwy-ZqnW7M"
+        },
+        "ebay:377476842677": {
+          "first_seen": "2026-09-07T10:10:47Z",
+          "last_seen": "2026-09-07T10:10:47Z",
+          "title": "Understanding Science Vol 1-3, Purnell, Acceptable condition- CG B97",
+          "url": "https://www.ebay.co.uk/itm/377476842677?hash=item57e35f84b5:g:nF8AAeSwndxqncgA"
         },
         "ebay:389658967922": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -6167,7 +6170,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-06T19:05:41Z",
+      "last_successful_fetch": "2026-09-07T10:10:47Z",
       "seen": {
         "ebay:298520197602": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -6277,7 +6280,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-06T19:05:41Z",
+      "last_successful_fetch": "2026-09-07T10:10:47Z",
       "seen": {
         "ebay:257346438208": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -8165,7 +8168,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-06T19:05:41Z",
+      "last_successful_fetch": "2026-09-07T10:10:47Z",
       "seen": {
         "ebay:820001618270": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -9637,7 +9640,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-06T19:05:41Z",
+      "last_successful_fetch": "2026-09-07T10:10:47Z",
       "seen": {
         "ebay:137321753849": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -10875,7 +10878,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-06T19:05:41Z",
+      "last_successful_fetch": "2026-09-07T10:10:47Z",
       "seen": {
         "ebay:155535433950": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -12083,7 +12086,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-06T19:05:41Z",
+      "last_successful_fetch": "2026-09-07T10:10:47Z",
       "seen": {
         "ebay:188640395075": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -16627,7 +16630,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-06T19:05:41Z",
+      "last_successful_fetch": "2026-09-07T10:10:47Z",
       "seen": {
         "ebay:157421827000": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -19261,7 +19264,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-06T19:05:41Z",
+      "last_successful_fetch": "2026-09-07T10:10:47Z",
       "seen": {
         "ebay:276557100684": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -19472,8 +19475,8 @@
     "EBAY_GB:eachbookshop": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 0,
-      "last_successful_fetch": "2026-09-06T19:05:41Z",
+      "last_result_count": 8,
+      "last_successful_fetch": "2026-09-07T10:10:47Z",
       "seen": {
         "ebay:158221779813": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -23014,6 +23017,54 @@
           "last_seen": "2026-09-04T16:16:52Z",
           "title": "A Wizard's Guide to Defensive Baking by T Kingfisher (Paperback, 2020)",
           "url": "https://www.ebay.co.uk/itm/158257204032?hash=item24d8dd4b40:g:GsUAAeSwJm1qmtHF"
+        },
+        "ebay:158266928539": {
+          "first_seen": "2026-09-07T10:10:47Z",
+          "last_seen": "2026-09-07T10:10:47Z",
+          "title": "John Berger Selected Essays Edited By Geoff Dyer Bloomsbury Paperback Book",
+          "url": "https://www.ebay.co.uk/itm/158266928539?hash=item24d971ad9b:g:u9AAAeSwdy9qnoSL"
+        },
+        "ebay:158266932915": {
+          "first_seen": "2026-09-07T10:10:47Z",
+          "last_seen": "2026-09-07T10:10:47Z",
+          "title": "VINTAGE DETECTIVE STORIES.-Mike (edited by). Higgs",
+          "url": "https://www.ebay.co.uk/itm/158266932915?hash=item24d971beb3:g:4jUAAeSwGDJqnoTD"
+        },
+        "ebay:158266933879": {
+          "first_seen": "2026-09-07T10:10:47Z",
+          "last_seen": "2026-09-07T10:10:47Z",
+          "title": "Piano Star Skills Builder : Scales, Aural and Reading, Hardcover, Brand New, ...",
+          "url": "https://www.ebay.co.uk/itm/158266933879?hash=item24d971c277:g:YtkAAeSwR-1qnoT8"
+        },
+        "ebay:158266934771": {
+          "first_seen": "2026-09-07T10:10:47Z",
+          "last_seen": "2026-09-07T10:10:47Z",
+          "title": "The PianoTrainer Scales Workbook, PianoTrainer Series:... - Karen Marshall",
+          "url": "https://www.ebay.co.uk/itm/158266934771?hash=item24d971c5f3:g:oK8AAeSwEu1qnoUr"
+        },
+        "ebay:158266936360": {
+          "first_seen": "2026-09-07T10:10:47Z",
+          "last_seen": "2026-09-07T10:10:47Z",
+          "title": "From Third World to First by Lee Kuan Yew (Paperback Book)",
+          "url": "https://www.ebay.co.uk/itm/158266936360?hash=item24d971cc28:g:5q4AAeSwYQVqnoVW"
+        },
+        "ebay:158266938708": {
+          "first_seen": "2026-09-07T10:10:47Z",
+          "last_seen": "2026-09-07T10:10:47Z",
+          "title": "Sarah Hall Sudden Traveller (Paperback)",
+          "url": "https://www.ebay.co.uk/itm/158266938708?hash=item24d971d554:g:tx8AAeSwU~lqnoWD"
+        },
+        "ebay:158266939162": {
+          "first_seen": "2026-09-07T10:10:47Z",
+          "last_seen": "2026-09-07T10:10:47Z",
+          "title": "The How to be British Collection  and Book 2 by Peter Legon Spiral bound",
+          "url": "https://www.ebay.co.uk/itm/158266939162?hash=item24d971d71a:g:08cAAeSwicFqnoW2"
+        },
+        "ebay:158266939995": {
+          "first_seen": "2026-09-07T10:10:47Z",
+          "last_seen": "2026-09-07T10:10:47Z",
+          "title": "Remarkably Bright Creatures by Shelby Van Pelt",
+          "url": "https://www.ebay.co.uk/itm/158266939995?hash=item24d971da5b:g:0swAAeSwMf5qnoXu"
         }
       }
     },
@@ -23021,7 +23072,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-06T19:05:41Z",
+      "last_successful_fetch": "2026-09-07T10:10:47Z",
       "seen": {
         "ebay:198148660166": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -23703,7 +23754,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-06T21:17:03Z",
+      "last_successful_fetch": "2026-09-07T10:10:47Z",
       "seen": {
         "ebay:167860038974": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -25105,7 +25156,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-06T19:05:41Z",
+      "last_successful_fetch": "2026-09-07T10:10:47Z",
       "seen": {}
     },
     "EBAY_GB:emmausoxfordstore": {
@@ -62218,8 +62269,8 @@
     "EBAY_US:blountcofriendsoflibrary": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 6,
-      "last_successful_fetch": "2026-09-06T19:05:41Z",
+      "last_result_count": 0,
+      "last_successful_fetch": "2026-09-07T10:10:47Z",
       "seen": {
         "ebay:278256311677": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -64038,8 +64089,8 @@
     "EBAY_US:brentwood_friends": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 0,
-      "last_successful_fetch": "2026-09-06T19:05:41Z",
+      "last_result_count": 5,
+      "last_successful_fetch": "2026-09-07T10:10:47Z",
       "seen": {
         "ebay:398243493283": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -65714,6 +65765,36 @@
           "last_seen": "2026-09-06T04:29:05Z",
           "title": "Illustrated Classics from India Amar Chitra Katha English Language (Lot of 13)",
           "url": "https://www.ebay.com/itm/398363464753?hash=item5cc0501431:g:yPkAAeSwN2tpmznS"
+        },
+        "ebay:398366920054": {
+          "first_seen": "2026-09-07T10:10:47Z",
+          "last_seen": "2026-09-07T10:10:47Z",
+          "title": "Just And Unjust Wars - A Moral Argument 1977 Vintage Paperback By Michael Walzer",
+          "url": "https://www.ebay.com/itm/398366920054?hash=item5cc084cd76:g:GwQAAOSwTupnJ-gr"
+        },
+        "ebay:398366930695": {
+          "first_seen": "2026-09-07T10:10:47Z",
+          "last_seen": "2026-09-07T10:10:47Z",
+          "title": "SIGNED Modern Lib. Peter the Great His Life World Robert K. Massie (2012, HC/DJ)",
+          "url": "https://www.ebay.com/itm/398366930695?hash=item5cc084f707:g:stcAAeSwfmJoP1kn"
+        },
+        "ebay:398366933968": {
+          "first_seen": "2026-09-07T10:10:47Z",
+          "last_seen": "2026-09-07T10:10:47Z",
+          "title": "Bird House Make and Makeover : Mix and Match to Make a Unique Project Goodsell",
+          "url": "https://www.ebay.com/itm/398366933968?hash=item5cc08503d0:g:ZjUAAeSwsEhpnJsI"
+        },
+        "ebay:398366977021": {
+          "first_seen": "2026-09-07T10:10:47Z",
+          "last_seen": "2026-09-07T10:10:47Z",
+          "title": "Death and the Gardener by Georgi Gospodinov (2025, Hardcover)",
+          "url": "https://www.ebay.com/itm/398366977021?hash=item5cc085abfd:g:fvkAAeSw5AlqneFU"
+        },
+        "ebay:398367035334": {
+          "first_seen": "2026-09-07T10:10:47Z",
+          "last_seen": "2026-09-07T10:10:47Z",
+          "title": "Mother Mary Comes to Me by Arundhati Roy (2025, Hardcover) Memoir",
+          "url": "https://www.ebay.com/itm/398367035334?hash=item5cc0868fc6:g:vbMAAeSw~lNqnem9"
         }
       }
     },
@@ -65721,7 +65802,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-06T19:05:41Z",
+      "last_successful_fetch": "2026-09-07T10:10:47Z",
       "seen": {
         "ebay:318249394768": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -67103,7 +67184,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-06T19:05:41Z",
+      "last_successful_fetch": "2026-09-07T10:10:47Z",
       "seen": {
         "ebay:278321278694": {
           "first_seen": "2026-08-29T00:40:06Z",
@@ -70097,14 +70178,14 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-06T19:05:41Z",
+      "last_successful_fetch": "2026-09-07T10:10:47Z",
       "seen": {}
     },
     "EBAY_US:goodwillminnesota": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-06T19:05:41Z",
+      "last_successful_fetch": "2026-09-07T10:10:47Z",
       "seen": {}
     },
     "EBAY_US:mtwyouth": {
@@ -77698,8 +77779,8 @@
     "EBAY_US:slofol": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 0,
-      "last_successful_fetch": "2026-09-06T19:05:41Z",
+      "last_result_count": 2,
+      "last_successful_fetch": "2026-09-07T10:10:47Z",
       "seen": {
         "ebay:357791215722": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -78660,6 +78741,18 @@
           "last_seen": "2026-09-05T00:53:04Z",
           "title": "Antique French JULES VERNE-VOYAGES EXTRAORDINAIRES, Two Tales/One Volume, 1931",
           "url": "https://www.ebay.com/itm/820088517238?hash=itembef115b276:g:jacAAeSwUv9qm0WE"
+        },
+        "ebay:820095439732": {
+          "first_seen": "2026-09-07T10:10:47Z",
+          "last_seen": "2026-09-07T10:10:47Z",
+          "title": "Robert Louis Stevenson: A Critical Celebration by Jenni Calder (1980, Hardback)",
+          "url": "https://www.ebay.com/itm/820095439732?hash=itembef17f5374:g:1BEAAeSwoAJqncyr"
+        },
+        "ebay:820095440356": {
+          "first_seen": "2026-09-07T10:10:47Z",
+          "last_seen": "2026-09-07T10:10:47Z",
+          "title": "Timberwolf Tracks by Leo Hoegh/Howard Doyle (1996, HC) 50th Anniversary Edition",
+          "url": "https://www.ebay.com/itm/820095440356?hash=itembef17f55e4:g:ktMAAeSw~gJqnczV"
         }
       }
     },
@@ -78667,7 +78760,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-06T19:05:41Z",
+      "last_successful_fetch": "2026-09-07T10:10:47Z",
       "seen": {
         "ebay:236200434700": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -79983,7 +80076,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-06T19:05:41Z",
+      "last_successful_fetch": "2026-09-07T10:10:47Z",
       "seen": {
         "ebay:357165678407": {
           "first_seen": "2026-08-28T15:13:59Z",
