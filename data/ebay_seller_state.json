@@ -1,8 +1,11 @@
 {
-  "last_failed_sellers": [],
-  "last_run": "2026-09-08T14:28:00Z",
-  "last_successful_sellers": 26,
-  "seller_cursor": 70,
+  "last_failed_sellers": [
+    "EBAY_US mtwyouth: more than 1000 new results fell inside the incremental window",
+    "EBAY_US baybooks53217fwfbl: more than 1000 new results fell inside the incremental window"
+  ],
+  "last_run": "2026-09-08T18:35:02Z",
+  "last_successful_sellers": 24,
+  "seller_cursor": 96,
   "sellers": {
     "EBAY_GB:ageuk": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
@@ -371,8 +374,8 @@
     "EBAY_GB:ageuksouthcumbria": {
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
-      "last_result_count": 0,
-      "last_successful_fetch": "2026-09-07T23:27:38Z",
+      "last_result_count": 1,
+      "last_successful_fetch": "2026-09-08T18:35:02Z",
       "seen": {
         "ebay:236051790678": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -1585,6 +1588,12 @@
           "last_seen": "2026-09-01T15:09:09Z",
           "title": "What's Welsh for Zen: Autobiography of John Cale - Paperback 1999",
           "url": "https://www.ebay.co.uk/itm/336772898892?hash=item4e693aa04c:g:klkAAeSwQUJqjZlh"
+        },
+        "ebay:336784912048": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Moon Of Three Rings - Andre Norton 1969 First English Edition Hardback Book",
+          "url": "https://www.ebay.co.uk/itm/336784912048?hash=item4e69f1eeb0:g:MbkAAeSww99qkVCX"
         }
       }
     },
@@ -4856,7 +4865,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-07T23:27:38Z",
+      "last_successful_fetch": "2026-09-08T18:35:02Z",
       "seen": {
         "ebay:156884683058": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -5031,8 +5040,8 @@
     "EBAY_GB:barnardos_charity": {
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
-      "last_result_count": 3,
-      "last_successful_fetch": "2026-09-07T23:27:38Z",
+      "last_result_count": 1,
+      "last_successful_fetch": "2026-09-08T18:35:02Z",
       "seen": {
         "ebay:176795221202": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -5453,6 +5462,12 @@
           "last_seen": "2026-09-07T23:27:38Z",
           "title": "Steven Brown Life Feels Better With Colour Colouring Book Volume 1 Not Used Set",
           "url": "https://www.ebay.co.uk/itm/178476928865?hash=item298e0dcf61:g:NMoAAeSwk2hqnxOF"
+        },
+        "ebay:178478660170": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Warhammer Swords of the Empire Black Library 2004 Paperback Ex Library",
+          "url": "https://www.ebay.co.uk/itm/178478660170?hash=item298e283a4a:g:IKMAAeSwB1dqn9db"
         }
       }
     },
@@ -16646,7 +16661,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-07T23:27:38Z",
+      "last_successful_fetch": "2026-09-08T18:35:02Z",
       "seen": {
         "ebay:168210293506": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -26386,7 +26401,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-07T23:27:38Z",
+      "last_successful_fetch": "2026-09-08T18:35:02Z",
       "seen": {
         "ebay:327028849539": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -26603,8 +26618,8 @@
     "EBAY_GB:force_cancer_charity": {
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
-      "last_result_count": 1,
-      "last_successful_fetch": "2026-09-07T23:27:38Z",
+      "last_result_count": 0,
+      "last_successful_fetch": "2026-09-08T18:35:02Z",
       "seen": {
         "ebay:254692191736": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -28137,8 +28152,8 @@
     "EBAY_GB:helenanddouglashouse": {
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
-      "last_result_count": 6,
-      "last_successful_fetch": "2026-09-07T23:27:38Z",
+      "last_result_count": 0,
+      "last_successful_fetch": "2026-09-08T18:35:02Z",
       "seen": {
         "ebay:315685425321": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -28841,8 +28856,8 @@
     "EBAY_GB:highlandhospice": {
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
-      "last_result_count": 4,
-      "last_successful_fetch": "2026-09-07T23:27:38Z",
+      "last_result_count": 0,
+      "last_successful_fetch": "2026-09-08T18:35:02Z",
       "seen": {
         "ebay:196381934008": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -35298,7 +35313,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-07T23:27:38Z",
+      "last_successful_fetch": "2026-09-08T18:35:02Z",
       "seen": {
         "ebay:278112237039": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -35425,8 +35440,8 @@
     "EBAY_GB:martinhls23": {
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
-      "last_result_count": 1,
-      "last_successful_fetch": "2026-09-07T23:27:38Z",
+      "last_result_count": 0,
+      "last_successful_fetch": "2026-09-08T18:35:02Z",
       "seen": {
         "ebay:205394987921": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -37114,7 +37129,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-07T23:27:38Z",
+      "last_successful_fetch": "2026-09-08T18:35:02Z",
       "seen": {
         "ebay:278194424951": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -43685,8 +43700,8 @@
     "EBAY_GB:rowcrofthospice": {
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
-      "last_result_count": 8,
-      "last_successful_fetch": "2026-09-07T23:27:38Z",
+      "last_result_count": 6,
+      "last_successful_fetch": "2026-09-08T18:35:02Z",
       "seen": {
         "ebay:206314473843": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -44293,6 +44308,24 @@
           "last_seen": "2026-09-07T23:27:38Z",
           "title": "Tinker Tailor Soldier Spy, John Le Carre, BCA, 1975, Hardcover *T",
           "url": "https://www.ebay.co.uk/itm/206541704476?hash=item3016d84d1c:g:VnEAAeSwCjpqnq7G"
+        },
+        "ebay:206544134542": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Dartmoor Stone Crosses, Harrison, Bill HB * D",
+          "url": "https://www.ebay.co.uk/itm/206544134542?hash=item3016fd618e:g:xWYAAeSwNjZqoCRJ"
+        },
+        "ebay:206544146955": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Dartmoor: Atlas of Antiquities, Vol. 4- The South- East: Erme Valley *D",
+          "url": "https://www.ebay.co.uk/itm/206544146955?hash=item3016fd920b:g:PUUAAeSwG~ZqoCWd"
+        },
+        "ebay:206544155132": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Dartmoor 365: An exploration of every one of the 365  by John Hayward PB *D",
+          "url": "https://www.ebay.co.uk/itm/206544155132?hash=item3016fdb1fc:g:ZNAAAeSwSyZqoCey"
         },
         "ebay:800105221360": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -44935,6 +44968,24 @@
           "last_seen": "2026-09-07T23:27:38Z",
           "title": "The Master and Margarita (Wordsworth Classics) by Mikhail Bulgakov PB *M",
           "url": "https://www.ebay.co.uk/itm/800626012984?hash=itemba69077338:g:mJMAAeSw~7pqnrB8"
+        },
+        "ebay:800631305123": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Mark Gibbons's Dartmoor-Mark Gibbons HB *D",
+          "url": "https://www.ebay.co.uk/itm/800631305123?hash=itemba695833a3:g:wVEAAeSwanZqoB0g"
+        },
+        "ebay:800631325007": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "The Hound of the Baskervilles: Hunting the Dartmoo... by Weller, Philip HB *H",
+          "url": "https://www.ebay.co.uk/itm/800631325007?hash=itemba6958814f:g:xuUAAeSwehJqoB5N"
+        },
+        "ebay:800631373080": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Dartmoor Sun: Solving the Riddle of Dartmoor's Prehistoric Sites Jack Walker *D",
+          "url": "https://www.ebay.co.uk/itm/800631373080?hash=itemba69593d18:g:830AAeSwKAJqoCAc"
         }
       }
     },
@@ -46947,7 +46998,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-07T23:27:38Z",
+      "last_successful_fetch": "2026-09-08T18:35:02Z",
       "seen": {
         "ebay:206153375556": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -48343,8 +48394,8 @@
     "EBAY_GB:stcuthbertshospice": {
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
-      "last_result_count": 7,
-      "last_successful_fetch": "2026-09-07T23:27:38Z",
+      "last_result_count": 1,
+      "last_successful_fetch": "2026-09-08T18:35:02Z",
       "seen": {
         "ebay:178147131996": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -49647,6 +49698,12 @@
           "last_seen": "2026-09-07T23:27:38Z",
           "title": "The Wombles of Wimbledon by Elisabeth Beresford Illustrated Paperback Book",
           "url": "https://www.ebay.co.uk/itm/188897890799?hash=item2bfb3111ef:g:HjcAAeSw1XdqQ8VF"
+        },
+        "ebay:188903920084": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "The War Zone by Alexander Stuart Paperback 1989 Edition",
+          "url": "https://www.ebay.co.uk/itm/188903920084?hash=item2bfb8d11d4:g:39MAAeSw1KlqoB3s"
         }
       }
     },
@@ -49654,7 +49711,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-07T23:27:38Z",
+      "last_successful_fetch": "2026-09-08T18:35:02Z",
       "seen": {
         "ebay:267592997241": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -50093,8 +50150,8 @@
     "EBAY_GB:stleonardshospice": {
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
-      "last_result_count": 1,
-      "last_successful_fetch": "2026-09-07T23:27:38Z",
+      "last_result_count": 2,
+      "last_successful_fetch": "2026-09-08T18:35:02Z",
       "seen": {
         "ebay:406970669382": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -51223,6 +51280,18 @@
           "last_seen": "2026-09-07T23:27:38Z",
           "title": "Aeneid of Virgil Trans. John Conington Thomas Crowell & Co Gilded Binding",
           "url": "https://www.ebay.co.uk/itm/407199496387?hash=item5ecefb38c3:g:h58AAeSwGflqnrFV"
+        },
+        "ebay:407201978220": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "My Book of Fairy Tales and Fables Hardback Book Brown Watson",
+          "url": "https://www.ebay.co.uk/itm/407201978220?hash=item5ecf21176c:g:jaAAAeSwFu5qoAZv"
+        },
+        "ebay:407201979036": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Power to the People The World of the Black Panthers Stephen Shames & Bobby Seale",
+          "url": "https://www.ebay.co.uk/itm/407201979036?hash=item5ecf211a9c:g:q-EAAeSwY5JqoAcH"
         }
       }
     },
@@ -52655,8 +52724,8 @@
     "EBAY_GB:stmichaelshospicehereford1": {
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
-      "last_result_count": 0,
-      "last_successful_fetch": "2026-09-07T23:27:38Z",
+      "last_result_count": 79,
+      "last_successful_fetch": "2026-09-08T18:35:02Z",
       "seen": {
         "ebay:256737736218": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -53809,14 +53878,488 @@
           "last_seen": "2026-09-04T11:10:32Z",
           "title": "Vintage Japanese Craft Book Handmade Accessories Illustrated",
           "url": "https://www.ebay.co.uk/itm/257720767318?hash=item3c015ad356:g:Y1YAAeSw7vNqNSOY"
+        },
+        "ebay:257731426813": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Wisden Cricketers' Almanack Australia 2001-2002 (Wisden)-Warwick",
+          "url": "https://www.ebay.co.uk/itm/257731426813?hash=item3c01fd79fd:g:1isAAeSwA1BpMvrJ"
+        },
+        "ebay:257731426814": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Wisden Cricketers' Almanack Australia 1998 Wisden Cricket... by Wisden Hardback",
+          "url": "https://www.ebay.co.uk/itm/257731426814?hash=item3c01fd79fe:g:C14AAeSwP2VpMvlH"
+        },
+        "ebay:257731426839": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Which Way Round the Galaxy By Cressida Cowell Hardback Book Signed Copy",
+          "url": "https://www.ebay.co.uk/itm/257731426839?hash=item3c01fd7a17:g:djkAAeSwl5xqCxiw"
+        },
+        "ebay:257731426840": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Warwick School A History By G N Frykman & E J Hadley Book",
+          "url": "https://www.ebay.co.uk/itm/257731426840?hash=item3c01fd7a18:g:FXkAAOSwQSlnXEo4"
+        },
+        "ebay:257731426871": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Watercolor Painting The Ron Ranson Technique-Signed Book-Ron Ranson Hardcover",
+          "url": "https://www.ebay.co.uk/itm/257731426871?hash=item3c01fd7a37:g:lTAAAeSwV~lpJFtc"
+        },
+        "ebay:257731426926": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Yoga Art by Ajit Mookerjee (1975, Hardcover) with contribution by Philip Rawson",
+          "url": "https://www.ebay.co.uk/itm/257731426926?hash=item3c01fd7a6e:g:dMMAAeSw6XlqczFG"
+        },
+        "ebay:257731426932": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "William Blake-Martin Butlin-Tate Gallery 1978-Exhibition Paperback",
+          "url": "https://www.ebay.co.uk/itm/257731426932?hash=item3c01fd7a74:g:iF8AAeSwBb1qDD7M"
+        },
+        "ebay:257731426935": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Young Brave and Beautiful-Hardback Book by Tania Szabó-WW2 Spy Biography",
+          "url": "https://www.ebay.co.uk/itm/257731426935?hash=item3c01fd7a77:g:f08AAeSwh6NpZmig"
+        },
+        "ebay:257731451481": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "The Eastern Schism: A Study of the Papacy  Eastern Churches Paperback Book",
+          "url": "https://www.ebay.co.uk/itm/257731451481?hash=item3c01fdda59:g:BDYAAeSwENVqZ1X1"
+        },
+        "ebay:257731451483": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "The Reformation Heritage KJV Study Bible (Black Premium Hardcover)",
+          "url": "https://www.ebay.co.uk/itm/257731451483?hash=item3c01fdda5b:g:LcQAAeSwSApqa0qx"
+        },
+        "ebay:257731451491": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "VUILLARD (LIVRES D'ART) By Jacques Salomon Gallimard - Hardcover Book 1968",
+          "url": "https://www.ebay.co.uk/itm/257731451491?hash=item3c01fdda63:g:YsAAAeSwk8Zqc0ke"
+        },
+        "ebay:257731451493": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "The Lure of Gems- Steve Bennett 2014-Definitive Guide to Gems/Gemology-Paperback",
+          "url": "https://www.ebay.co.uk/itm/257731451493?hash=item3c01fdda65:g:0e4AAeSwaZBqBc-j"
+        },
+        "ebay:257731451495": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "The Youth of Michelangelo by Charles De Tolnay Hardcover Art History Book",
+          "url": "https://www.ebay.co.uk/itm/257731451495?hash=item3c01fdda67:g:pSEAAeSw65pqdcrm"
+        },
+        "ebay:257731451500": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "The Illustrated Garden - Beautiful Book With 520 images from 69 printmakers",
+          "url": "https://www.ebay.co.uk/itm/257731451500?hash=item3c01fdda6c:g:ZxAAAeSwI3ZqBvtU"
+        },
+        "ebay:257731451563": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "The World of Artists Hardcover Book Set Collection Art Series x 9 Books",
+          "url": "https://www.ebay.co.uk/itm/257731451563?hash=item3c01fddaab:g:A6MAAeSwHUpqgvln"
+        },
+        "ebay:257731451570": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "The Weekend Gardener By Montagu Don Monty Don Rare Hardback Book",
+          "url": "https://www.ebay.co.uk/itm/257731451570?hash=item3c01fddab2:g:7hoAAeSw0kBpU~qB"
+        },
+        "ebay:257731451574": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "The Girl of Ink and Stars Signed Winner the British Book Awards Childrens Book",
+          "url": "https://www.ebay.co.uk/itm/257731451574?hash=item3c01fddab6:g:tKAAAeSwFdNqagwo"
+        },
+        "ebay:257731451584": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "The United Nations: Come Along with Me! book by Nane Annan (Hardcover)",
+          "url": "https://www.ebay.co.uk/itm/257731451584?hash=item3c01fddac0:g:38QAAeSwysppKEV4"
+        },
+        "ebay:257731451587": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "The Fifteen Streets by Catherine Cookson 1984 Hardcover Signed Edition",
+          "url": "https://www.ebay.co.uk/itm/257731451587?hash=item3c01fddac3:g:I~oAAeSwOetpkwpa"
+        },
+        "ebay:257731451604": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "The First World War Remembered Imperial War Museum Book Box Set Brand New Sealed",
+          "url": "https://www.ebay.co.uk/itm/257731451604?hash=item3c01fddad4:g:-akAAeSwaERqDY8A"
+        },
+        "ebay:257731451615": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Victorian Gardens By Brent Elliott Hardback Batsford Book",
+          "url": "https://www.ebay.co.uk/itm/257731451615?hash=item3c01fddadf:g:AL0AAeSwenppoDY-"
+        },
+        "ebay:257731451617": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "The Ultimate Guide to Match Fishing Guaranteed To Win You More Matches Paperback",
+          "url": "https://www.ebay.co.uk/itm/257731451617?hash=item3c01fddae1:g:xTgAAeSwt1ZqOnLc"
+        },
+        "ebay:257731451618": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "The Sweet Scented Rose Treasury Of Verse And Prose Boxed Illustrated Book",
+          "url": "https://www.ebay.co.uk/itm/257731451618?hash=item3c01fddae2:g:-TAAAeSwAV9p35uP"
+        },
+        "ebay:257731451644": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "The Book of Jewish Food by Claudia Roden Penguin Cookbook",
+          "url": "https://www.ebay.co.uk/itm/257731451644?hash=item3c01fddafc:g:ehEAAeSwqxdphe-O"
+        },
+        "ebay:257731451658": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "The Life of LTC Rolt by Victoria Owens (Hardback Book)",
+          "url": "https://www.ebay.co.uk/itm/257731451658?hash=item3c01fddb0a:g:DfkAAeSwyABpoDYV"
+        },
+        "ebay:257731451664": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "The Letters of John Wesley: Complete in 8 Volumes: Epworth Press 1931",
+          "url": "https://www.ebay.co.uk/itm/257731451664?hash=item3c01fddb10:g:hFUAAeSwEjFpmIHo"
+        },
+        "ebay:257731453399": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Spot 50 British Nature 5 Book Set Camilla de la Bedoyere Miles Kelly With Cover",
+          "url": "https://www.ebay.co.uk/itm/257731453399?hash=item3c01fde1d7:g:rj4AAeSwGCtpQtd3"
+        },
+        "ebay:257731453402": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Set of 7 Readers Digest Wildlife Watch Hard Back Cover Books Set",
+          "url": "https://www.ebay.co.uk/itm/257731453402?hash=item3c01fde1da:g:YksAAeSwl~ZpjH20"
+        },
+        "ebay:257731453447": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Steam Routes Around Gloucester Lydney Sharpness Stroud Sapperton Stephen Mourton",
+          "url": "https://www.ebay.co.uk/itm/257731453447?hash=item3c01fde207:g:2McAAeSwUfFpnZGs"
+        },
+        "ebay:257731453457": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Shakespeare Memorial Theatre Photographic Record Collection By Ivor Brown Set",
+          "url": "https://www.ebay.co.uk/itm/257731453457?hash=item3c01fde211:g:3B4AAeSwOk1qWh1n"
+        },
+        "ebay:257731453512": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "The Anglo-Saxon Cemeteries of Caistor by Norwich & Markshall-Archeology Book",
+          "url": "https://www.ebay.co.uk/itm/257731453512?hash=item3c01fde248:g:qGgAAeSw59Npc5pt"
+        },
+        "ebay:257731453531": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "The Birds Of Herefordshire Hardcover Book By Mervyn Davies 2007-2012 Ideal Xmas",
+          "url": "https://www.ebay.co.uk/itm/257731453531?hash=item3c01fde25b:g:XFgAAeSwpYZpOu9c"
+        },
+        "ebay:257731453542": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "The Art and Science of William Bartram-Judith Magee-Illustrated Hardback Book",
+          "url": "https://www.ebay.co.uk/itm/257731453542?hash=item3c01fde266:g:eJYAAeSwtppqDxpI"
+        },
+        "ebay:257731453559": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Set of 4 Railway Steam Engine Train History Four Book Set",
+          "url": "https://www.ebay.co.uk/itm/257731453559?hash=item3c01fde277:g:f90AAeSwwNlpuWhd"
+        },
+        "ebay:257731453566": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "The Ameliaranne Story Book - Constance Heward - Harrap & Co LTD",
+          "url": "https://www.ebay.co.uk/itm/257731453566?hash=item3c01fde27e:g:sIQAAOSwhCBm9DFo"
+        },
+        "ebay:257731453574": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Set of 7 Wildlife Library Hardback Books by Anita Townsend",
+          "url": "https://www.ebay.co.uk/itm/257731453574?hash=item3c01fde286:g:rjEAAeSwcIZppt3t"
+        },
+        "ebay:257731460735": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Pol Roger & Co Epernay Champagne History Book Extra Cuvee De Reserve 1849",
+          "url": "https://www.ebay.co.uk/itm/257731460735?hash=item3c01fdfe7f:g:~koAAeSw9SNqPQGx"
+        },
+        "ebay:257731460757": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "RSPB What’s That Bird ?  A Guide to British Birds by P. HAYMAN & M. EVERETT 1977",
+          "url": "https://www.ebay.co.uk/itm/257731460757?hash=item3c01fdfe95:g:ibkAAeSwPelpOuoG"
+        },
+        "ebay:257731460789": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Rutherford and Fry’s Complete Guide to Absolutely Everything by Stephen Fry",
+          "url": "https://www.ebay.co.uk/itm/257731460789?hash=item3c01fdfeb5:g:0mYAAeSwx99pVSWt"
+        },
+        "ebay:257731460804": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Renaissance Intarsia : Masterpieces of Wood Inlay by Luca Trevisan (2012,...",
+          "url": "https://www.ebay.co.uk/itm/257731460804?hash=item3c01fdfec4:g:khAAAeSwQjhqM9Qs"
+        },
+        "ebay:257731460845": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "SIGNED - Second Wind: The Autobiography by Jimmy White HB 2014 Hardback Book",
+          "url": "https://www.ebay.co.uk/itm/257731460845?hash=item3c01fdfeed:g:DYIAAeSwWhdqgwZ1"
+        },
+        "ebay:257731475985": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Modern Practical Building - Volume Two, Harry Bryant Newbold - Volume 3",
+          "url": "https://www.ebay.co.uk/itm/257731475985?hash=item3c01fe3a11:g:cVQAAeSwJ05pmHgZ"
+        },
+        "ebay:257731475994": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Modern Architecture A-Z: Laszlo Tashen-Architecture Art Book-Hardback & Sleeve",
+          "url": "https://www.ebay.co.uk/itm/257731475994?hash=item3c01fe3a1a:g:ORgAAeSwKEtqJrLM"
+        },
+        "ebay:257731476110": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Owners Workshop Manual Haynes Audi A3 Jun 2003 to Mar  2008 Petrol & Diesel",
+          "url": "https://www.ebay.co.uk/itm/257731476110?hash=item3c01fe3a8e:g:zNUAAeSwSJFqfIGb"
+        },
+        "ebay:257731476144": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Nicholas and the Fast Moving Diesel by Edward Ardizzone Illustrated Book 1948",
+          "url": "https://www.ebay.co.uk/itm/257731476144?hash=item3c01fe3ab0:g:bJAAAeSwzkRpKG~o"
+        },
+        "ebay:257731476160": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Musical Instruments Historic Rare Unique A J Hipkins Hardcover 1945",
+          "url": "https://www.ebay.co.uk/itm/257731476160?hash=item3c01fe3ac0:g:QPwAAeSwmOFqPQiy"
+        },
+        "ebay:257731476168": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Ospreys in Wales The First Ten Years Emyr Evans Iolo Williams Andy Rouse Signed",
+          "url": "https://www.ebay.co.uk/itm/257731476168?hash=item3c01fe3ac8:g:0goAAeSw9fxqL~fs"
+        },
+        "ebay:257731476183": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Mixed Lot Scottish Nature & Hiking Books/Guides/Maps",
+          "url": "https://www.ebay.co.uk/itm/257731476183?hash=item3c01fe3ad7:g:EmgAAeSwZQpp8gly"
+        },
+        "ebay:257731480317": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Learn How Airbrushes Work By Steven Leahy Air Skool Series",
+          "url": "https://www.ebay.co.uk/itm/257731480317?hash=item3c01fe4afd:g:jx0AAeSwPXZpU-wh"
+        },
+        "ebay:257731480324": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Michelangelo The Final Period by Charles De Tolnay Hardcover Edition Book",
+          "url": "https://www.ebay.co.uk/itm/257731480324?hash=item3c01fe4b04:g:kvEAAeSw9jhqdccK"
+        },
+        "ebay:257731480333": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Milestones of History Book Collection Set of 9 Historical Titles Hardback Books",
+          "url": "https://www.ebay.co.uk/itm/257731480333?hash=item3c01fe4b0d:g:P50AAeSw~gJqiFyR"
+        },
+        "ebay:257731480368": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Lock Stock & Barrel Familiar Sayings & their Meanings - Hardcover",
+          "url": "https://www.ebay.co.uk/itm/257731480368?hash=item3c01fe4b30:g:OSQAAeSwH4lpjvxo"
+        },
+        "ebay:257731480463": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Lower Wye Valley Climbers' Club Guides volume 1 by John Wilson Climbing Guide",
+          "url": "https://www.ebay.co.uk/itm/257731480463?hash=item3c01fe4b8f:g:9YAAAeSwUuFpMrw1"
+        },
+        "ebay:257731480465": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Marks & Spencer Children's Bible - Illustrated Hardcover Edition",
+          "url": "https://www.ebay.co.uk/itm/257731480465?hash=item3c01fe4b91:g:lLoAAeSw2r5plJdj"
+        },
+        "ebay:257731483848": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Horrible Science Ten Beastly B by Arnold  Nick Book The Cheap Fast Free Post",
+          "url": "https://www.ebay.co.uk/itm/257731483848?hash=item3c01fe58c8:g:Ig4AAeSwe5tp35LB"
+        },
+        "ebay:257731483880": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "I Restored My Morgan In My Garage Text in English & French By Daniel Plas",
+          "url": "https://www.ebay.co.uk/itm/257731483880?hash=item3c01fe58e8:g:-QYAAeSwwdVpNsbo"
+        },
+        "ebay:257731483894": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Karl Konig - The Order of Birth in the Family Constellation Book - The Cresset",
+          "url": "https://www.ebay.co.uk/itm/257731483894?hash=item3c01fe58f6:g:ncQAAOSwl3pnTzXi"
+        },
+        "ebay:257731483896": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Lacquer Of The West The History Of A Craft And An Industry 1550-1950 Hans Huth",
+          "url": "https://www.ebay.co.uk/itm/257731483896?hash=item3c01fe58f8:g:GesAAeSwVW1qMVPt"
+        },
+        "ebay:257731483915": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Icons Of Vologda Вологодская икона Alexander Rybakov Moscow Galart 1995 Book",
+          "url": "https://www.ebay.co.uk/itm/257731483915?hash=item3c01fe590b:g:x1sAAeSwEG1qdJ1M"
+        },
+        "ebay:257731483951": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Jean Markale Women of the Celts Good Read Gordon Cremonesi Hardback Book",
+          "url": "https://www.ebay.co.uk/itm/257731483951?hash=item3c01fe592f:g:VPUAAeSwZU5p3krr"
+        },
+        "ebay:257731483966": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Inside Chinese Embroidery The Art and The History Elizabeth Molnar Lafleur",
+          "url": "https://www.ebay.co.uk/itm/257731483966?hash=item3c01fe593e:g:CvcAAeSwmOFplJD1"
+        },
+        "ebay:257731484037": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "LIGHT FROM WITHIN: ICONS OF BYZANTIUM By Olga Popova & Rina Risitano",
+          "url": "https://www.ebay.co.uk/itm/257731484037?hash=item3c01fe5985:g:uR8AAeSwV0tqOTXl"
+        },
+        "ebay:257731484065": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Its A Fact By Dusty Miller Illustrated Facts & Myths Of The Isle Of Man",
+          "url": "https://www.ebay.co.uk/itm/257731484065?hash=item3c01fe59a1:g:NBUAAeSwjuFpeNn-"
+        },
+        "ebay:257731485425": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Court Favourites Recipes From Royal Kitchen Elizabeth Craig 1953 Andre Deutsch",
+          "url": "https://www.ebay.co.uk/itm/257731485425?hash=item3c01fe5ef1:g:EwUAAeSwrTlpLZVW"
+        },
+        "ebay:257731485438": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Handbook of Chemistry and Physics 43rd Edition 1962 India Paper Hardback Book",
+          "url": "https://www.ebay.co.uk/itm/257731485438?hash=item3c01fe5efe:g:iBwAAeSwi7ppNrtu"
+        },
+        "ebay:257731485483": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Dog Painting A History of the Dog in Art by William Secord Hardback Book",
+          "url": "https://www.ebay.co.uk/itm/257731485483?hash=item3c01fe5f2b:g:7NcAAeSwuPFqMAu2"
+        },
+        "ebay:257731485526": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Disability Servitude: From Peonage to Poverty, Ruthie-Marie Beckwith",
+          "url": "https://www.ebay.co.uk/itm/257731485526?hash=item3c01fe5f56:g:qrMAAeSwjFppPEHl"
+        },
+        "ebay:257731485566": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "DIANA PEOPLE`S PRINCESS DVD & BOOK BOX SET IDEAL XMAS GIFT",
+          "url": "https://www.ebay.co.uk/itm/257731485566?hash=item3c01fe5f7e:g:E2kAAeSwHbhpOYQH"
+        },
+        "ebay:257731485570": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Diana, Princess of Wales By Mario Testino At Kensington Palace Brand New Sealed",
+          "url": "https://www.ebay.co.uk/itm/257731485570?hash=item3c01fe5f82:g:noYAAeSw3Hxp-zHK"
+        },
+        "ebay:257731494118": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Collection Of 10 Battle Story Paperback Books Bundle New RRP £9.99p Each",
+          "url": "https://www.ebay.co.uk/itm/257731494118?hash=item3c01fe80e6:g:mrAAAeSwihxqWiMi"
+        },
+        "ebay:257731494148": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Clarendon Collection 'If These Walls Could Talk' Hardcover Book New Sealed",
+          "url": "https://www.ebay.co.uk/itm/257731494148?hash=item3c01fe8104:g:TVYAAeSwTF5qdIaz"
+        },
+        "ebay:257731494162": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "CENTURY OF INDIAN MOTORCYCLE YOUNGBLOOD HARDBACK BOOK MANUAL RESTORE NEW",
+          "url": "https://www.ebay.co.uk/itm/257731494162?hash=item3c01fe8112:g:M~AAAeSwbatpJcGN"
+        },
+        "ebay:257731494176": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Brett Whiteley Studio Art Book Exhibition History",
+          "url": "https://www.ebay.co.uk/itm/257731494176?hash=item3c01fe8120:g:y~QAAeSwzEZqM~P-"
+        },
+        "ebay:257731494277": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Celebrating the Seasons: Daily Spiritual Readings for the Christian Year- Atwell",
+          "url": "https://www.ebay.co.uk/itm/257731494277?hash=item3c01fe8185:g:bjIAAeSw3nlqRmXZ"
+        },
+        "ebay:257731494301": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Bonsai Landscapes by Peter Adams Hardback A Ward Lock Book",
+          "url": "https://www.ebay.co.uk/itm/257731494301?hash=item3c01fe819d:g:Je4AAeSwR~BpoGfW"
+        },
+        "ebay:257731494312": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "British Railways the First 25 Years Volume 5 The South West J Allan A Murray",
+          "url": "https://www.ebay.co.uk/itm/257731494312?hash=item3c01fe81a8:g:G3IAAeSw~KBpnZpT"
+        },
+        "ebay:257731494354": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Bulbophyllums and Their Allies : A Grower's Guide by Emly S. Siegerist HB",
+          "url": "https://www.ebay.co.uk/itm/257731494354?hash=item3c01fe81d2:g:1b0AAOSwUQ1Zq9YO"
+        },
+        "ebay:257731501151": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Birds Katrina Cook Large Hardback Paintings Drawings Sketches PAGE DAMAGE",
+          "url": "https://www.ebay.co.uk/itm/257731501151?hash=item3c01fe9c5f:g:dMcAAeSwM4Zp62o4"
+        },
+        "ebay:257731501193": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Bailliere's Atlas Of The Ox Anatomy Physiology 1927 Illustrated Plates",
+          "url": "https://www.ebay.co.uk/itm/257731501193?hash=item3c01fe9c89:g:mDsAAeSwPoVpU~O8"
         }
       }
     },
     "EBAY_GB:stoswaldshospice": {
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
-      "last_result_count": 3,
-      "last_successful_fetch": "2026-09-07T23:27:38Z",
+      "last_result_count": 0,
+      "last_successful_fetch": "2026-09-08T18:35:02Z",
       "seen": {
         "ebay:168407207127": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -57315,7 +57858,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-07T23:27:38Z",
+      "last_successful_fetch": "2026-09-08T18:35:02Z",
       "seen": {
         "ebay:297629696062": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -63475,8 +64018,8 @@
     "EBAY_US:blountcofriendsoflibrary": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 23,
-      "last_successful_fetch": "2026-09-07T23:27:38Z",
+      "last_result_count": 33,
+      "last_successful_fetch": "2026-09-08T18:35:02Z",
       "seen": {
         "ebay:278256311677": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -64419,6 +64962,90 @@
           "last_seen": "2026-09-07T23:27:38Z",
           "title": "Jonathan Kellerman PB Lot of 18 Alex Delaware Ser. 1-9 11-17 19-20 titles below",
           "url": "https://www.ebay.com/itm/278353437018?hash=item40cf28615a:g:XesAAeSwVqZqnx7V"
+        },
+        "ebay:278353842999": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Plastics Recycling as a Future Business Opportunity Lot of 2 SC 1988 and 1991",
+          "url": "https://www.ebay.com/itm/278353842999?hash=item40cf2e9337:g:8uQAAeSwmMtpQwQ3"
+        },
+        "ebay:278353930755": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Histories on Econometrics HC Ariane Dupont-Kieffer 2011 Duke U Press Very Good",
+          "url": "https://www.ebay.com/itm/278353930755?hash=item40cf2fea03:g:p54AAeSweUNqJtxt"
+        },
+        "ebay:278353937431": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Life's Canvas Pictorial Book Gregory P Rago HC 2000 International Library",
+          "url": "https://www.ebay.com/itm/278353937431?hash=item40cf300417:g:w4UAAOSweOpoUcOw"
+        },
+        "ebay:278355878382": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Living with a Mentally Retarded Child 1971 Beatrice Buclker HC DJ VNTG",
+          "url": "https://www.ebay.com/itm/278355878382?hash=item40cf4da1ee:g:55gAAeSwGflqnBBP"
+        },
+        "ebay:278355925589": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Handbook of Space Flight Proell & Bowman 1958 Reference rocketry & spaceflight",
+          "url": "https://www.ebay.com/itm/278355925589?hash=item40cf4e5a55:g:LUQAAeSwiX1qnCtD"
+        },
+        "ebay:278356046350": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Word of the Lord for Special Days 1964 HC J. Ralph Grant, Baker Book House VNTG",
+          "url": "https://www.ebay.com/itm/278356046350?hash=item40cf50320e:g:pX4AAeSwbHBqoBry"
+        },
+        "ebay:278356216104": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Sex Love and Marriage Strengthening the Commitment SC 1998 Maurice Fetty",
+          "url": "https://www.ebay.com/itm/278356216104?hash=item40cf52c928:g:ev8AAeSw1VJqoCr~"
+        },
+        "ebay:278356239419": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Clive Cussler PB Lot of 11 Oregon Files (9) plus The Sea Hunters I and II",
+          "url": "https://www.ebay.com/itm/278356239419?hash=item40cf53243b:g:r9AAAeSwUrBqoC6O"
+        },
+        "ebay:278356241768": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Larry McMurtry PB lot of 10 By Sorrow's River The Last Picture Show Lonesome Dov",
+          "url": "https://www.ebay.com/itm/278356241768?hash=item40cf532d68:g:6X4AAeSwlSJqoC7Q"
+        },
+        "ebay:278356331086": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Hierarchy : Perspectives for Ecological Complexity by  TFH Allen and T.B. Starr",
+          "url": "https://www.ebay.com/itm/278356331086?hash=item40cf548a4e:g:XM8AAeSwTy1qoDZw"
+        },
+        "ebay:278356347848": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "High Tech Thrillers PB lot of 19 Mike Maden, Daniel Suarez, Jim DeFelice",
+          "url": "https://www.ebay.com/itm/278356347848?hash=item40cf54cbc8:g:zCMAAeSwHGpqoDf~"
+        },
+        "ebay:278356368470": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Robyn Carr PB Lot of 18 A Family Affair Blue Skies Midnight Kiss Best of Us",
+          "url": "https://www.ebay.com/itm/278356368470?hash=item40cf551c56:g:WbIAAeSwThtqoDl1"
+        },
+        "ebay:278356483360": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Susan Mallery PB Lot of 18 Kiss Me Summer Days Two of a Kind A Christmas Bride",
+          "url": "https://www.ebay.com/itm/278356483360?hash=item40cf56dd20:g:5bwAAeSw3hBqoERZ"
+        },
+        "ebay:278356525908": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Suspense PB Lot of 15 Paul Carr Mason Cross Cameron Cruise April Hunt",
+          "url": "https://www.ebay.com/itm/278356525908?hash=item40cf578354:g:QI8AAeSwY5JqoEht"
         },
         "ebay:287511057786": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -65427,14 +66054,128 @@
           "last_seen": "2026-09-07T23:27:38Z",
           "title": "Lee Child PB Lot of 18 Jack Reacher Killing Floor Enemy Make Me Night School",
           "url": "https://www.ebay.com/itm/287571184163?hash=item42f4940a23:g:NsQAAeSw35RqLC7e"
+        },
+        "ebay:287572113805": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Smoky Mountain Country by North Callahan LTD Edition HC DJ 1988",
+          "url": "https://www.ebay.com/itm/287572113805?hash=item42f4a2398d:g:ZhQAAeSwyXhqn0fW"
+        },
+        "ebay:287572116157": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Lyndon Johnson Vietnam and the Presidency HC David Zarefsky 2021 Texas A&M Press",
+          "url": "https://www.ebay.com/itm/287572116157?hash=item42f4a242bd:g:gy0AAeSwOS1qJioK"
+        },
+        "ebay:287572120328": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Roman Club System of Distributional Bidding HC Belladonna and Avarelli 1959",
+          "url": "https://www.ebay.com/itm/287572120328?hash=item42f4a25308:g:RC0AAeSwUGdnv801"
+        },
+        "ebay:287572127075": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Economies Across Cultures: Towards a Comparative Science of the Economy HC 1988",
+          "url": "https://www.ebay.com/itm/287572127075?hash=item42f4a26d63:g:S2oAAeSwjERqJvDN"
+        },
+        "ebay:287572182055": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "ASQC Total Quality Management Series Box Set of 4 HC Richard Johnson 1993 Good",
+          "url": "https://www.ebay.com/itm/287572182055?hash=item42f4a34427:g:Y0UAAeSwquJqJ49L"
+        },
+        "ebay:287572183569": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Coles Notes Trigonometry 1 Study Guide 2012 Wiley Good",
+          "url": "https://www.ebay.com/itm/287572183569?hash=item42f4a34a11:g:gC8AAeSw-LRqJtst"
+        },
+        "ebay:287573304726": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Investigation of Violent and Sudden Death 1972 SC Robert Hendrix",
+          "url": "https://www.ebay.com/itm/287573304726?hash=item42f4b46596:g:YDkAAeSwwtFqnC3U"
+        },
+        "ebay:287573309994": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Hello After Goodbye Observations on the Life of Roger Bennett SC Fowler & Howard",
+          "url": "https://www.ebay.com/itm/287573309994?hash=item42f4b47a2a:g:xDcAAeSwzkRqnDQd"
+        },
+        "ebay:287573338854": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Pierre Laval and the Eclipse of France Geoffrey Warner 1968 HC Biography",
+          "url": "https://www.ebay.com/itm/287573338854?hash=item42f4b4eae6:g:u9AAAeSwMk1qnCV~"
+        },
+        "ebay:287573359428": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Nigh Onto Heaven The Story of Niota Tennessee SC Effie Lones 1996 Signed",
+          "url": "https://www.ebay.com/itm/287573359428?hash=item42f4b53b44:g:z9cAAeSw1PxqnBbO"
+        },
+        "ebay:287573375996": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Fox in Socks Hebrew Version HC 2005 Dr Seuss Random House",
+          "url": "https://www.ebay.com/itm/287573375996?hash=item42f4b57bfc:g:sc8AAeSwahJqnB92"
+        },
+        "ebay:287573438457": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Beverly Lewis PB Lot of 11 Rose Trilogy Abram's Daughters Heritage of Lancaster",
+          "url": "https://www.ebay.com/itm/287573438457?hash=item42f4b66ff9:g:-gIAAeSwPyVqoCDt"
+        },
+        "ebay:287573480989": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Selections from Fiddler on the Roof for Violin SC 1998 Sheet Music Warner Bros",
+          "url": "https://www.ebay.com/itm/287573480989?hash=item42f4b7161d:g:fegAAeSwS1tqoCp4"
+        },
+        "ebay:287573486034": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Space Weapons A Handbook of Military Astronautics HC 1959 Loosbrock",
+          "url": "https://www.ebay.com/itm/287573486034?hash=item42f4b729d2:g:pZ4AAeSwdntqoCtr"
+        },
+        "ebay:287573515480": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Urban Fantasy PB lot of 6 Stephen Blackmoore Eric Carter Series, Ghost Money",
+          "url": "https://www.ebay.com/itm/287573515480?hash=item42f4b79cd8:g:8LAAAeSwoiJqoDD~"
+        },
+        "ebay:287573565270": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Sherrilyn Kenyon PB lot of 11 Dragonbane One Silent Night Fantasy Lover",
+          "url": "https://www.ebay.com/itm/287573565270?hash=item42f4b85f56:g:FvIAAeSwoiJqoDOU"
+        },
+        "ebay:287573592483": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Silhouette Intimate Moments PB Lot of 27 Nora Roberts, Sharon Sala",
+          "url": "https://www.ebay.com/itm/287573592483?hash=item42f4b8c9a3:g:tSIAAeSw1vdqoD-b"
+        },
+        "ebay:287573602245": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Private Investigator Mysteries PB lot of 23 Womack Westbrook Smith Pelecanos",
+          "url": "https://www.ebay.com/itm/287573602245?hash=item42f4b8efc5:g:uPEAAeSwbHBqoECR"
+        },
+        "ebay:287573664330": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Mystery & Suspense PB lot of 18 Black Lyons Krist Maxim & More",
+          "url": "https://www.ebay.com/itm/287573664330?hash=item42f4b9e24a:g:aPoAAeSw74pqoEwQ"
         }
       }
     },
     "EBAY_US:brentwood_friends": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 3,
-      "last_successful_fetch": "2026-09-08T04:26:37Z",
+      "last_result_count": 0,
+      "last_successful_fetch": "2026-09-08T18:35:02Z",
       "seen": {
         "ebay:398243493283": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -68571,8 +69312,8 @@
     "EBAY_US:fol.lubbock": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 0,
-      "last_successful_fetch": "2026-09-07T23:27:38Z",
+      "last_result_count": 5,
+      "last_successful_fetch": "2026-09-08T18:35:02Z",
       "seen": {
         "ebay:298540090194": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -69378,6 +70119,12 @@
           "title": "Iran To America... 1001 Marathons  Parvaneh Moayedi  Signed 2016 SB VG 260904",
           "url": "https://www.ebay.com/itm/298645559339?hash=item4588a9982b:g:J~sAAeSwhPJqmxJZ"
         },
+        "ebay:298656629795": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "A History of the American Legion, Dept. of Texas, V. 2, 1949-69, HC, VG,  260908",
+          "url": "https://www.ebay.com/itm/298656629795?hash=item4589528423:g:BTYAAeSw3lJqoDRE"
+        },
         "ebay:307092161268": {
           "first_seen": "2026-08-28T15:13:59Z",
           "last_seen": "2026-08-28T15:13:59Z",
@@ -70169,14 +70916,38 @@
           "last_seen": "2026-09-03T09:38:41Z",
           "title": "Test Item File / Psychology Ciccarelli White Pearson 2011 PB BN 260902",
           "url": "https://www.ebay.com/itm/307159196192?hash=item47841d6220:g:61gAAeSwpN5qmG2r"
+        },
+        "ebay:307169117173": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Eleanor of Provence, Margaret Howell, 1998, No DJ, HC, GC, 260908",
+          "url": "https://www.ebay.com/itm/307169117173?hash=item4784b4c3f5:g:8P0AAeSwyYNqoDJb"
+        },
+        "ebay:307169121101": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Melville's Mardi: A Chartless Voyage, Davis, 1967 reprint, No DJ, HC, GC, 260908",
+          "url": "https://www.ebay.com/itm/307169121101?hash=item4784b4d34d:g:H0UAAeSwdINqoDMa"
+        },
+        "ebay:307169124029": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "The Hiker's Guide to the Enchanted Circle, Kathy Kalen, 1999, PB, VG,  260908",
+          "url": "https://www.ebay.com/itm/307169124029?hash=item4784b4debd:g:NYYAAeSw1KlqoDPs"
+        },
+        "ebay:307169129081": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "The Conditions of Philosophy: Its Checkered Past..., 1965, HC, No DJ, GC, 260908",
+          "url": "https://www.ebay.com/itm/307169129081?hash=item4784b4f279:g:FyEAAeSwQxlqoDTV"
         }
       }
     },
     "EBAY_US:friendsofthepaloaltolibrary": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 2,
-      "last_successful_fetch": "2026-09-07T23:27:38Z",
+      "last_result_count": 4,
+      "last_successful_fetch": "2026-09-08T18:35:02Z",
       "seen": {
         "ebay:137212370087": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -71545,6 +72316,30 @@
           "last_seen": "2026-09-07T23:27:38Z",
           "title": "Before Their Diaspora: A Photographic History of The Palestinians 1876-1948",
           "url": "https://www.ebay.com/itm/137708520067?hash=item2010114283:g:K1kAAeSw3h9qnlF2"
+        },
+        "ebay:137711867464": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "A New Reality - SIGNED Jonathan Salk (Jonas Salk Son) Red Sigmoid Stamp VG+",
+          "url": "https://www.ebay.com/itm/137711867464?hash=item2010445648:g:FQkAAeSwy0lqnvQ-"
+        },
+        "ebay:137712285769": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "The Nature of Photographs : A Primer Stephen Shore HC w/DJ",
+          "url": "https://www.ebay.com/itm/137712285769?hash=item20104ab849:g:qYMAAeSwN1tqn5EQ"
+        },
+        "ebay:137714401985": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "Milton Avery Robert Hobbs 1990 Stated First Edition HC/DJ Hudson Hills Rare",
+          "url": "https://www.ebay.com/itm/137714401985?hash=item20106b02c1:g:JFIAAeSwjWtqnvW-"
+        },
+        "ebay:137714468685": {
+          "first_seen": "2026-09-08T18:35:02Z",
+          "last_seen": "2026-09-08T18:35:02Z",
+          "title": "RH Quaytman Spine (2011 Hardcover) Sternberg Press - Crisp Very Nice Copy",
+          "url": "https://www.ebay.com/itm/137714468685?hash=item20106c074d:g:3JgAAeSw-C9qoEOJ"
         }
       }
     },
@@ -77573,8 +78368,8 @@
     "EBAY_US:sacramentobookden": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 12,
-      "last_successful_fetch": "2026-09-07T23:27:38Z",
+      "last_result_count": 0,
+      "last_successful_fetch": "2026-09-08T18:35:02Z",
       "seen": {
         "ebay:178303216836": {
           "first_seen": "2026-08-28T15:13:59Z",
