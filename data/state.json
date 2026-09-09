@@ -1,7 +1,9 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-08T17:28:45Z",
+  "last_successful_fetch": "2026-09-09T09:51:46Z",
   "last_top_skus": [
+    "HD_304231679",
+    "HD_304230925",
     "HD_304230677",
     "HD_304230570",
     "HD_304230569",
@@ -9,7 +11,6 @@
     "HD_304229517",
     "HD_304230119",
     "HD_304228832",
-    "HD_304228393",
     "HD_304229619",
     "HD_304221656",
     "HD_304229578",
@@ -30,8 +31,7 @@
     "HD_304225831",
     "HD_304225711",
     "HD_304225636",
-    "HD_304225363",
-    "HD_304220477"
+    "HD_304225363"
   ],
   "products": {
     "HD_303805354": {
@@ -5430,8 +5430,40 @@
         "title": "Powers of Ten - A Flipbook"
       },
       "search_fingerprint": "114bbe6e9a959e43"
+    },
+    "HD_304230925": {
+      "first_seen": "2026-09-09T09:51:46Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788940921000",
+        "description": "Exhibited across the globe, Richard Long, born in 1945, is one of Britain's most important living artists. Long belongs to a generation of British sculptors who re-imagined the traditional materials and methods of their medium. His work, rooted in his deep affinity with nature, developed during solitary walks through landscapes around the world, from the Andes, to Africa, to the Mongolian steppes. Often geometric in shape, Long's sculptures are always made with materials encountered during his walks. This fascinating book, extensively illustrated and designed in collaboration with the artist, surveys Long's entire career, beginning with key early works including A Line Made By Walking (1967), A Ten Mile Walk (1968), Climbing Mount Kilimanjaro (1969), A Sculpture Left By The Tide (1970) and A Circle In Africa (1978). Featuring an essay by Tate curator Clarrie Wallis, Richard Long is an insightful look at a landmark artist.<br/>",
+        "isbn": null,
+        "price_gbp": 30.0,
+        "product_id": "book-HD__304230925",
+        "publisher": null,
+        "route": "/richard-long/product/HD_304230925",
+        "sku": "HD_304230925",
+        "title": "Richard Long"
+      },
+      "search_fingerprint": "38b618ef11b4cb0c"
+    },
+    "HD_304231679": {
+      "first_seen": "2026-09-09T09:51:46Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1788942994000",
+        "description": "This magazine tells the meaning of being Italian through fashion, art, design, photography, music, companies, people, professional and culture. <br/><br/>The soft paperback cover is worn with some blemishes.",
+        "isbn": null,
+        "price_gbp": 25.0,
+        "product_id": "book-HD__304231679",
+        "publisher": null,
+        "route": "/pizza-semestrale-n1-italian-fashion-art-design-photography-music-culture/product/HD_304231679",
+        "sku": "HD_304231679",
+        "title": "Pizza Semestrale N.1 [Italian fashion, art, design, photography, music, culture]"
+      },
+      "search_fingerprint": "3ec05e56c310f5b8"
     }
   },
-  "reported_category_count": 2828,
+  "reported_category_count": 2825,
   "version": 1
 }
