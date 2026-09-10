@@ -1,7 +1,8 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-10T00:26:19Z",
+  "last_successful_fetch": "2026-09-10T09:39:19Z",
   "last_top_skus": [
+    "HD_304235400",
     "HD_304234486",
     "HD_304234626",
     "HD_304234697",
@@ -30,8 +31,7 @@
     "HD_304232543",
     "HD_304232276",
     "HD_304231824",
-    "HD_304231679",
-    "HD_304230925"
+    "HD_304231679"
   ],
   "products": {
     "HD_303805354": {
@@ -5927,8 +5927,24 @@
         "title": "The West - A Visual Celebration of Western Australia"
       },
       "search_fingerprint": "ff4413ed7644363d"
+    },
+    "HD_304235400": {
+      "first_seen": "2026-09-10T09:39:19Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789030562000",
+        "description": "With investigations into everything from black holes to exoplanets, the Hubble Telescope has changed not only the face of astronomy, but also our very sense of being in the universe. On the 25th anniversary of its launch into low-earth orbit, TASCHEN celebrates its most breathtaking deep space images both as scientific feats and as photographic masterpieces.Ultra high resolution and taken with almost no background light, these pictures have answered some of the most compelling questions of time and space, while also revealing new mysteries, like the strange \"dark energy\" that sees the universe expanding at an ever-accelerated rate. Now, the precision of the telescope is matched with the precision of TASCHEN reproduction standards, allowing the images to mesmerize in their iridescent colors and vast, fragile forms.The collection is accompanied by an essay from photography critic Owen Edwards and an interview with Zoltan Levay, who explains how the pictures are composed. Veteran Hubble astronauts Charles F. Bolden, Jr. and John Mace Grunsfeld also offer their insights on Hubble's legacy and future space exploration.",
+        "isbn": null,
+        "price_gbp": 30.0,
+        "product_id": "book-HD__304235400",
+        "publisher": null,
+        "route": "/brand-new-expanding-universe-photographs-from-the-hubble-space-telescope/product/HD_304235400",
+        "sku": "HD_304235400",
+        "title": "(Brand New) Expanding Universe: Photographs from the Hubble Space Telescope"
+      },
+      "search_fingerprint": "2ead3ae65c64c02f"
     }
   },
-  "reported_category_count": 2843,
+  "reported_category_count": 2840,
   "version": 1
 }
