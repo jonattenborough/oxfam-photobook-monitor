@@ -1,6 +1,6 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-10T17:17:02Z",
+  "last_successful_fetch": "2026-09-10T23:47:32Z",
   "last_top_skus": [
     "HD_304238656",
     "HD_304238355",
@@ -953,19 +953,20 @@
     },
     "HD_304183521": {
       "first_seen": "2026-09-10T17:17:02Z",
+      "last_changed": "2026-09-10T23:47:32Z",
       "last_snapshot": {
         "condition": null,
         "creation_date": "1789050891000",
         "description": "Australia revels in a rich diversity of habitats and environments, expressed no more beautifully than in our spectacular national parks. Each has its own distinct characteristics, from striking rock formations to labyrinthine waterways. These parks are a haven for out native species, many of which are found nowhere else in the world. Discover some of Australia's most beautiful wilderness areas as you explore fifty of Australian Geographic's favourite national parks.<br/><br/>Condition: This book is in very good condition.",
         "isbn": null,
-        "price_gbp": null,
+        "price_gbp": 80.0,
         "product_id": "book-HD__304183521",
         "publisher": null,
         "route": "/australian-geographic-national-parks/product/HD_304183521",
         "sku": "HD_304183521",
         "title": "Australian Geographic: National Parks"
       },
-      "search_fingerprint": "1e0514a7c9b9194d"
+      "search_fingerprint": "5834ddd2d62f282e"
     },
     "HD_304183924": {
       "first_seen": "2026-08-22T15:23:39Z",
@@ -6233,6 +6234,6 @@
       "search_fingerprint": "9c4d0f89253851ba"
     }
   },
-  "reported_category_count": 2855,
+  "reported_category_count": 2854,
   "version": 1
 }
