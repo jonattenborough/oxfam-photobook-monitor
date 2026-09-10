@@ -1,6 +1,6 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-09T17:39:16Z",
+  "last_successful_fetch": "2026-09-10T00:26:19Z",
   "last_top_skus": [
     "HD_304234486",
     "HD_304234626",
@@ -5785,19 +5785,20 @@
     },
     "HD_304233838": {
       "first_seen": "2026-09-09T17:39:16Z",
+      "last_changed": "2026-09-10T00:26:19Z",
       "last_snapshot": {
         "condition": null,
         "creation_date": "1788959699000",
         "description": "The Planets is a thrilling tour of our solar system by Andrew Cohen and Professor Brian Cox, in a Folio edition with breathtaking NASA photography from the latest space missions. <br/><br/>Please note: one very small mark on the bottom right corner of the slipcase but is otherwise in excellent condition.",
         "isbn": null,
-        "price_gbp": null,
+        "price_gbp": 100.0,
         "product_id": "book-HD__304233838",
         "publisher": null,
         "route": "/the-planets-folio-society/product/HD_304233838",
         "sku": "HD_304233838",
         "title": "The Planets (Folio Society)"
       },
-      "search_fingerprint": "9a3e9fc12b7c4b3a"
+      "search_fingerprint": "46da7c25dd2b8894"
     },
     "HD_304233875": {
       "first_seen": "2026-09-09T17:39:16Z",
@@ -5928,6 +5929,6 @@
       "search_fingerprint": "ff4413ed7644363d"
     }
   },
-  "reported_category_count": 2848,
+  "reported_category_count": 2843,
   "version": 1
 }
