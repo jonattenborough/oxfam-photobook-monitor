@@ -1,7 +1,11 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-10T13:48:09Z",
+  "last_successful_fetch": "2026-09-10T17:17:02Z",
   "last_top_skus": [
+    "HD_304238656",
+    "HD_304238355",
+    "HD_304183521",
+    "HD_304237836",
     "HD_304237519",
     "HD_304237539",
     "HD_304237461",
@@ -27,11 +31,7 @@
     "HD_304226425",
     "HD_304234097",
     "HD_304233875",
-    "HD_304233945",
-    "HD_304233838",
-    "HD_304233803",
-    "HD_304233814",
-    "HD_304233793"
+    "HD_304233945"
   ],
   "products": {
     "HD_303805354": {
@@ -950,6 +950,22 @@
         "title": "An Illustrated Encyclopaedia of Post-Revolution Havana Cigars"
       },
       "search_fingerprint": "fb1020eb95ad516b"
+    },
+    "HD_304183521": {
+      "first_seen": "2026-09-10T17:17:02Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789050891000",
+        "description": "Australia revels in a rich diversity of habitats and environments, expressed no more beautifully than in our spectacular national parks. Each has its own distinct characteristics, from striking rock formations to labyrinthine waterways. These parks are a haven for out native species, many of which are found nowhere else in the world. Discover some of Australia's most beautiful wilderness areas as you explore fifty of Australian Geographic's favourite national parks.<br/><br/>Condition: This book is in very good condition.",
+        "isbn": null,
+        "price_gbp": null,
+        "product_id": "book-HD__304183521",
+        "publisher": null,
+        "route": "/australian-geographic-national-parks/product/HD_304183521",
+        "sku": "HD_304183521",
+        "title": "Australian Geographic: National Parks"
+      },
+      "search_fingerprint": "1e0514a7c9b9194d"
     },
     "HD_304183924": {
       "first_seen": "2026-08-22T15:23:39Z",
@@ -6167,8 +6183,56 @@
         "title": "Visions of the American West: People"
       },
       "search_fingerprint": "b97a9532da876bfc"
+    },
+    "HD_304237836": {
+      "first_seen": "2026-09-10T17:17:02Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789047424000",
+        "description": "'The most original and illuminating study of the subject' New YorkerPhotographs are everywhere. From high art to family albums to legal evidence, they capture and document the world around us. And whether we use them to expose, reveal or remember, they hold an enduring power.In this essential and revelatory volume, Susan Sontag confronts important questions surrounding the power dynamics between photographer and subject, the blurred boundary between lived events and recreated images, and the desires that lead us to record our lives.'Complex and contradictory... one of America's greatest public intellectuals' Observer'Susan Sontag offers enough food for thought to satisfy the most intellectual of appetites' The Times'A brilliant analysis of the profound changes photographic images have had in our way of looking at the world, and at ourselves, over the years' Washington Post",
+        "isbn": null,
+        "price_gbp": 4.99,
+        "product_id": "book-HD__304237836",
+        "publisher": null,
+        "route": "/on-photography/product/HD_304237836",
+        "sku": "HD_304237836",
+        "title": "On Photography"
+      },
+      "search_fingerprint": "1b448da39511c4dc"
+    },
+    "HD_304238355": {
+      "first_seen": "2026-09-10T17:17:02Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789053135000",
+        "description": "Ice and Fire: Iceland 2022 is a beautifully illustrated exhibition catalogue showcasing Emma Jamison’s collection of paintings inspired by her travels through Iceland in 2022. Capturing the island’s dramatic contrasts of glaciers, volcanoes, lava fields, and waterfalls, the catalogue reflects Jamison’s fascination with the elemental forces that shape the landscape. Combining vibrant reproductions of her paintings with insights into her journey and artistic process, it offers an evocative exploration of Iceland’s powerful natural beauty and the enduring dialogue between fire and ice.",
+        "isbn": null,
+        "price_gbp": 6.0,
+        "product_id": "book-HD__304238355",
+        "publisher": null,
+        "route": "/ice-fire-emma-jamison/product/HD_304238355",
+        "sku": "HD_304238355",
+        "title": "ICE & FIRE (Emma Jamison)"
+      },
+      "search_fingerprint": "5310eb64971c61f0"
+    },
+    "HD_304238656": {
+      "first_seen": "2026-09-10T17:17:02Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789054767000",
+        "description": "German installation artist Nadim Vardag (born 1980) repurposes projected cinema towards painterly ends, looping film sequences of just a few seconds that record shifts of motion so minute as to resemble static paintings. This volume commemorates his winning of the 2009 BC21 Art Award.",
+        "isbn": null,
+        "price_gbp": 7.0,
+        "product_id": "book-HD__304238656",
+        "publisher": null,
+        "route": "/nadim-vardag/product/HD_304238656",
+        "sku": "HD_304238656",
+        "title": "Nadim Vardag"
+      },
+      "search_fingerprint": "9c4d0f89253851ba"
     }
   },
-  "reported_category_count": 2851,
+  "reported_category_count": 2855,
   "version": 1
 }
