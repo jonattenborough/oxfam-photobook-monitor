@@ -1,7 +1,10 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-11T15:15:37Z",
+  "last_successful_fetch": "2026-09-11T18:38:24Z",
   "last_top_skus": [
+    "HD_304242239",
+    "HD_304241814",
+    "HD_304241571",
     "HD_304241565",
     "HD_304234744",
     "HD_304241257",
@@ -28,10 +31,7 @@
     "HD_304237519",
     "HD_304237539",
     "HD_304237461",
-    "HD_304237159",
-    "HD_304230058",
-    "HD_304236468",
-    "HD_304236899"
+    "HD_304237159"
   ],
   "products": {
     "HD_303805354": {
@@ -6536,8 +6536,56 @@
         "title": "The stillness of a portrait, the turbulence of a riot"
       },
       "search_fingerprint": "bbbd52bf85996540"
+    },
+    "HD_304241571": {
+      "first_seen": "2026-09-11T18:38:24Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789136756000",
+        "description": "Hardback with photographic covers, no dust jacket as issued. Almost as new condition, minor wear to corners. Illustrated with colour photographs throughout.",
+        "isbn": null,
+        "price_gbp": 65.0,
+        "product_id": "book-HD__304241571",
+        "publisher": null,
+        "route": "/covers-retracing-reggae-record-sleeves-in-london/product/HD_304241571",
+        "sku": "HD_304241571",
+        "title": "Covers: Retracing Reggae Record Sleeves in London"
+      },
+      "search_fingerprint": "29900221f20bb716"
+    },
+    "HD_304241814": {
+      "first_seen": "2026-09-11T18:38:24Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789137421000",
+        "description": "Still sealed.<br/><br/>Written by art historian and writer Dora Lardelli, this clothbound hardcover celebrates the elusive allure, history, and glamorous lifestyle of the iconic Swiss alpine resort town, St. Moritz.   It features over 250 glossy illustrations, portraits, and idyllic landscape photos.  The book explores the hidden parties at Badrutt's Palace, legendary haunts of icons like Coco Chanel and Alfred Hitchcock, and winter homes of celebrities from Audrey Hepburn to John Lennon.   It highlights major local events like the Winter Olympics, the Snow Polo World Cup, and the British Classic Car Meeting.",
+        "isbn": null,
+        "price_gbp": 100.0,
+        "product_id": "book-HD__304241814",
+        "publisher": null,
+        "route": "/st-moritz-chic-travel-glamourfashionlifestylephotography/product/HD_304241814",
+        "sku": "HD_304241814",
+        "title": "St. Moritz Chic [travel] [glamour][fashion][lifestyle][photography]"
+      },
+      "search_fingerprint": "bf288da155d6ee27"
+    },
+    "HD_304242239": {
+      "first_seen": "2026-09-11T18:38:24Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789143420000",
+        "description": "These small format expanded guides are much more than just user guides and they cover all the capabilities of each camera. Written by experts and with worked examples, they are jargon free, full-colour, inclusive and even easier to use. This title covers Canon's new 'compact' pro digital SLR, the EOS 5D Mark II, a substantial update of their highly successful EOS 5D. The Mark II model offers 21 megapixels from its full-frame sensor, movie recording at 1080p, HDMI video out, a 3in LCD monitor with Live View, increased ISO range and a stunning array of other high-spec features. <br/><br/>The fully illustrated The Expanded Guide will help photographers to release the huge potential of the Canon EOS 5D Mark II with its comprehensive yet accessible approach.<br/><br/>Very good condition paperback, practically new.",
+        "isbn": null,
+        "price_gbp": 10.0,
+        "product_id": "book-HD__304242239",
+        "publisher": null,
+        "route": "/canon-eos-5d-mark-ii-the-expanded-guide/product/HD_304242239",
+        "sku": "HD_304242239",
+        "title": "Canon EOS 5D Mark II: The Expanded Guide"
+      },
+      "search_fingerprint": "8fe294dc34205dad"
     }
   },
-  "reported_category_count": 2859,
+  "reported_category_count": 2860,
   "version": 1
 }
