@@ -1,7 +1,8 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-11T18:38:24Z",
+  "last_successful_fetch": "2026-09-12T10:14:18Z",
   "last_top_skus": [
+    "HD_304234728",
     "HD_304242239",
     "HD_304241814",
     "HD_304241571",
@@ -30,8 +31,7 @@
     "HD_304237836",
     "HD_304237519",
     "HD_304237539",
-    "HD_304237461",
-    "HD_304237159"
+    "HD_304237461"
   ],
   "products": {
     "HD_303805354": {
@@ -5977,6 +5977,22 @@
       },
       "search_fingerprint": "ff4413ed7644363d"
     },
+    "HD_304234728": {
+      "first_seen": "2026-09-12T10:14:18Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789201861000",
+        "description": "Hajni and Kolozsvári, Budapest (English/Deutsch/Italiano/Français)<br/>Intended primarily for tourists, the beautifully designed album presents the Hungarian capital in four languages - English, German, Italian and French. The descriptions by Ildikó Kolozsvári are brought to life by István Hajni's fantastic photos; a map of the city makes the volume usable as a guide as well as a souvenir.<br/>Difficult to find outside Hungary - where it retails for the equivalent of £20+ - this book is in 'as new' condition.<br/>Large-format hardback in dust jacket, in original shrink wrap.",
+        "isbn": null,
+        "price_gbp": 9.99,
+        "product_id": "book-HD__304234728",
+        "publisher": null,
+        "route": "/budapest-english-deutsch-italiano-fran%C3%A7ais-hajni-kolozsv%C3%A1ri/product/HD_304234728",
+        "sku": "HD_304234728",
+        "title": "Budapest (English/Deutsch/Italiano/Français) Hajni & Kolozsvári,"
+      },
+      "search_fingerprint": "75d588d91be2c7d4"
+    },
     "HD_304234744": {
       "first_seen": "2026-09-11T15:15:37Z",
       "last_snapshot": {
@@ -6586,6 +6602,6 @@
       "search_fingerprint": "8fe294dc34205dad"
     }
   },
-  "reported_category_count": 2860,
+  "reported_category_count": 2859,
   "version": 1
 }
