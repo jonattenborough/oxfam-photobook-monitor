@@ -1,9 +1,12 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-12T13:38:14Z",
+  "last_successful_fetch": "2026-09-12T16:28:54Z",
   "last_top_skus": [
+    "HD_304243574",
+    "HD_304243609",
+    "HD_304243329",
+    "HD_304243321",
     "HD_304143944",
-    "HD_304242730",
     "HD_304234728",
     "HD_304242239",
     "HD_304241814",
@@ -28,10 +31,7 @@
     "HD_304238902",
     "HD_304238656",
     "HD_304238355",
-    "HD_304183521",
-    "HD_304237836",
-    "HD_304237519",
-    "HD_304237539"
+    "HD_304183521"
   ],
   "products": {
     "HD_303805354": {
@@ -6632,8 +6632,72 @@
         "title": "Seoul the Magnetic City"
       },
       "search_fingerprint": "40c61de178063c59"
+    },
+    "HD_304243321": {
+      "first_seen": "2026-09-12T16:28:54Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789219621000",
+        "description": "There are currently 272 London Underground, 113 Overground and 45 Docklands Light Railway stations. Luke Agbaimoni has been slowly attempting to capture visual moments at each one.<br/><br/>When we see a symmetrical image, it soothes us. It feels as if a puzzle has been completed in front of our eyes. In his first book, The Tube Mapper Project: Capturing Moments on the London Underground, Luke Agbaimoni captured themes such as light, reflections, tunnels and escalators, and documented how the London Underground is part of our identity, a network of shared experiences and visual memories. This follow-up project sees Luke delve into his obsession with symmetry, seeking out stunning and powerful examples across the network in his quest to find beauty in the seemingly mundane. London Underground Symmetry & Imperfections considers such questions as what symmetry means and how to find it in your daily commute, and also revels in the design of the newly opened Elizabeth line.",
+        "isbn": null,
+        "price_gbp": 12.0,
+        "product_id": "book-HD__304243321",
+        "publisher": null,
+        "route": "/london-underground-symmetry-imperfections/product/HD_304243321",
+        "sku": "HD_304243321",
+        "title": "London Underground Symmetry & Imperfections"
+      },
+      "search_fingerprint": "65bc7f7143222484"
+    },
+    "HD_304243329": {
+      "first_seen": "2026-09-12T16:28:54Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789219861000",
+        "description": "The Underground is the backbone of the city of London, a part of our identity. It's a network of shared experiences and visual memories, and most Londoners and visitors to the city will at some point have an interaction with the London Underground tube and train network. The Tube Mapper project deliberately captures moments of subconscious recognition and overlooked interests, showcasing images that can be seen near or at many of London's Underground, Overground and DLR stations.Photographer Luke Agbaimoni gave up city-scape night photography after the birth of his first child, but creating the Tube Mapper project allowed him to continue being creative, fitting photography around his new lifestyle and adding stations on his daily commute. His memorable photographs consider such themes as symmetry, reflections, tunnels and escalators, as well as simply pointing out and appreciating the way the light falls on a platform in an evening sunset. This book reveals the London every commuter knows in a unique, vibrant and arresting style.",
+        "isbn": null,
+        "price_gbp": 10.0,
+        "product_id": "book-HD__304243329",
+        "publisher": null,
+        "route": "/the-tube-mapper-project/product/HD_304243329",
+        "sku": "HD_304243329",
+        "title": "The Tube Mapper Project"
+      },
+      "search_fingerprint": "c633da42a85f039b"
+    },
+    "HD_304243574": {
+      "first_seen": "2026-09-12T16:28:54Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789224543000",
+        "description": "A copy of issue #7850 of the British Journal of Photography, published in July 2016. This issue is a special themed release which is completely devoted to contemporary photography education, teaching philosophies and creative experimentation. It includes sections from Stephen Shore on lecturing and his own unorthodox education.<br/><br/>This copy is used however it remains in very good condition, with only very minor damage to the corners and some mild staining on the front and back covers.",
+        "isbn": null,
+        "price_gbp": 5.99,
+        "product_id": "book-HD__304243574",
+        "publisher": null,
+        "route": "/british-journal-of-photography-look-learn/product/HD_304243574",
+        "sku": "HD_304243574",
+        "title": "British Journal of Photography: Look & Learn"
+      },
+      "search_fingerprint": "fba441ebf5cefbfc"
+    },
+    "HD_304243609": {
+      "first_seen": "2026-09-12T16:28:54Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789224240000",
+        "description": "Rare, limited edition book by pop artist Madonna that achieved notoriety on release in 1992. <br/>No sleeve but very good condition. The ring binder has come out of a couple of holes near the bottom (see pic). Metal boards well preserved with a few scratches.  <br/>",
+        "isbn": null,
+        "price_gbp": 100.0,
+        "product_id": "book-HD__304243609",
+        "publisher": null,
+        "route": "/sex-madonna-1992/product/HD_304243609",
+        "sku": "HD_304243609",
+        "title": "Sex, Madonna, 1992"
+      },
+      "search_fingerprint": "439886b31020be03"
     }
   },
-  "reported_category_count": 2853,
+  "reported_category_count": 2854,
   "version": 1
 }
