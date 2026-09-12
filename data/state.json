@@ -1,7 +1,9 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-12T10:14:18Z",
+  "last_successful_fetch": "2026-09-12T13:38:14Z",
   "last_top_skus": [
+    "HD_304143944",
+    "HD_304242730",
     "HD_304234728",
     "HD_304242239",
     "HD_304241814",
@@ -22,7 +24,6 @@
     "HD_304239212",
     "HD_304239145",
     "HD_304239116",
-    "HD_304238928",
     "HD_304238927",
     "HD_304238902",
     "HD_304238656",
@@ -30,8 +31,7 @@
     "HD_304183521",
     "HD_304237836",
     "HD_304237519",
-    "HD_304237539",
-    "HD_304237461"
+    "HD_304237539"
   ],
   "products": {
     "HD_303805354": {
@@ -177,6 +177,22 @@
         "title": "Henri Cartier-Bresson"
       },
       "search_fingerprint": "70f267d9f1448b35"
+    },
+    "HD_304143944": {
+      "first_seen": "2026-09-12T13:38:14Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789215961000",
+        "description": "Vienna-based Fritz Simak is a pioneer of conceptual photography who draws his subjects from his immediate surroundings. Simak’s true medium is light, the very element from which his images are formed. The richly illustrated pages of this volume reveal a striking and unexpected view of reality through his lens. In a series of personal reflections, Simak offers insight into the origins of his image concepts and how they are realized. <br/><br/>Additional depth is provided by a glossary of analogue photography terms, making this both a compelling read and a valuable reference. A lucid essay by art historian Peter Zawrel, together with contributions from photo historian Timm Starl and media theorist Peter Weibel, illuminate the life and character of a musician turned photographer. The title, “Photographs in the Key of Life”, a nod to the Stevie Wonder classic, captures the spirit of a distinctive and resonant life’s work.<br/><br/>The condition of the book is very good and the pages inside the book are clean.",
+        "isbn": null,
+        "price_gbp": 40.0,
+        "product_id": "book-HD__304143944",
+        "publisher": null,
+        "route": "/photographs-in-the-key-of-life/product/HD_304143944",
+        "sku": "HD_304143944",
+        "title": "Photographs In The Key of Life"
+      },
+      "search_fingerprint": "8366c67a57e608b1"
     },
     "HD_304145305": {
       "first_seen": "2026-08-25T12:48:15Z",
@@ -6600,8 +6616,24 @@
         "title": "Canon EOS 5D Mark II: The Expanded Guide"
       },
       "search_fingerprint": "8fe294dc34205dad"
+    },
+    "HD_304242730": {
+      "first_seen": "2026-09-12T13:38:14Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789211640000",
+        "description": "A large format photobook documenting the rapidly expanding Seoul of 1984. Created by the architectural and cultural 'Space Group' with support from the Seoul Metropolitan Government, in anticipation of the 1988 Seoul Olympics. <br/><br/>Spine is somewhat cocked and there is a price and notes in pen to front free endpaper. Otherwise in good condition, with all images and text clean and bright.<br/><br/>Dustjacket and hard case are both rubbed, with scratching and some small dents to case. Otherwise also in good condition.<br/><br/>Unpaginated but approx. 250pp.<br/>",
+        "isbn": null,
+        "price_gbp": 12.0,
+        "product_id": "book-HD__304242730",
+        "publisher": null,
+        "route": "/seoul-the-magnetic-city/product/HD_304242730",
+        "sku": "HD_304242730",
+        "title": "Seoul the Magnetic City"
+      },
+      "search_fingerprint": "40c61de178063c59"
     }
   },
-  "reported_category_count": 2859,
+  "reported_category_count": 2853,
   "version": 1
 }
