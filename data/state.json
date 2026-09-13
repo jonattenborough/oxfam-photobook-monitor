@@ -1,7 +1,9 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-12T16:28:54Z",
+  "last_successful_fetch": "2026-09-13T10:16:43Z",
   "last_top_skus": [
+    "HD_304233599",
+    "HD_304243827",
     "HD_304243574",
     "HD_304243609",
     "HD_304243329",
@@ -29,9 +31,7 @@
     "HD_304239116",
     "HD_304238927",
     "HD_304238902",
-    "HD_304238656",
-    "HD_304238355",
-    "HD_304183521"
+    "HD_304238656"
   ],
   "products": {
     "HD_303805354": {
@@ -5768,6 +5768,22 @@
       },
       "search_fingerprint": "9e45c36773a409ba"
     },
+    "HD_304233599": {
+      "first_seen": "2026-09-13T10:16:43Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789291140000",
+        "description": "Swiss photographer Werner Bischof spent nearly a year in Japan between 1951 and 1952, creating some of the most celebrated and defining black-and-white images of the post-war era. <br/><br/>Text is in German. <br/><br/>Book is in very good condition through only a few scratches to the cover.",
+        "isbn": null,
+        "price_gbp": 32.99,
+        "product_id": "book-HD__304233599",
+        "publisher": null,
+        "route": "/japan/product/HD_304233599",
+        "sku": "HD_304233599",
+        "title": "Japan"
+      },
+      "search_fingerprint": "9b07b35a130d5f08"
+    },
     "HD_304233629": {
       "first_seen": "2026-09-09T13:58:29Z",
       "last_snapshot": {
@@ -6696,8 +6712,24 @@
         "title": "Sex, Madonna, 1992"
       },
       "search_fingerprint": "439886b31020be03"
+    },
+    "HD_304243827": {
+      "first_seen": "2026-09-13T10:16:43Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789282821000",
+        "description": "Shaw's essays on photography, published between 1901 and 1909, are collected together with some of his own photographs. They show both Shaw and other figures of the 20th century he photographed including Rodin and Beatrice Webb as well as discussing the development of photography.",
+        "isbn": null,
+        "price_gbp": 8.0,
+        "product_id": "book-HD__304243827",
+        "publisher": null,
+        "route": "/bernard-shaw-on-photography-essays-and-photographs-shaw-george-bernard/product/HD_304243827",
+        "sku": "HD_304243827",
+        "title": "Bernard Shaw on Photography: Essays and Photographs - Shaw, George Bernard"
+      },
+      "search_fingerprint": "a1c6bb3c23aa7c02"
     }
   },
-  "reported_category_count": 2854,
+  "reported_category_count": 2849,
   "version": 1
 }
