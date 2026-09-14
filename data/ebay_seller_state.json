@@ -1,11 +1,8 @@
 {
-  "last_failed_sellers": [
-    "EBAY_US mtwyouth: more than 1000 new results fell inside the incremental window",
-    "EBAY_US baybooks53217fwfbl: more than 1000 new results fell inside the incremental window"
-  ],
-  "last_run": "2026-09-14T19:17:44Z",
-  "last_successful_sellers": 24,
-  "seller_cursor": 2,
+  "last_failed_sellers": [],
+  "last_run": "2026-09-14T23:05:37Z",
+  "last_successful_sellers": 26,
+  "seller_cursor": 28,
   "sellers": {
     "EBAY_GB:ageuk": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
@@ -2934,8 +2931,8 @@
     "EBAY_GB:ardgowanhospiceonline": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 0,
-      "last_successful_fetch": "2026-09-14T00:58:54Z",
+      "last_result_count": 1,
+      "last_successful_fetch": "2026-09-14T23:05:37Z",
       "seen": {
         "ebay:386834903448": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -3236,14 +3233,20 @@
           "last_seen": "2026-09-12T05:41:25Z",
           "title": "Dukes of Hazzard Annual 1979 Hardcover Illustrated Vintage Unclipped",
           "url": "https://www.ebay.co.uk/itm/800645782217?hash=itemba6a351ac9:g:1Q4AAeSwWxpqpAyZ"
+        },
+        "ebay:800660887324": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Beryl the Peril  Annual Hardback Book Unclipped - various years",
+          "url": "https://www.ebay.co.uk/itm/800660887324?hash=itemba6b1b971c:g:hLcAAeSwXYxqqAV0"
         }
       }
     },
     "EBAY_GB:arthurrankhospicecharity": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 6,
-      "last_successful_fetch": "2026-09-14T00:58:54Z",
+      "last_result_count": 11,
+      "last_successful_fetch": "2026-09-14T23:05:37Z",
       "seen": {
         "ebay:800506369246": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -5464,6 +5467,72 @@
           "last_seen": "2026-09-14T00:58:54Z",
           "title": "Churchill's Bestiary: His Life Through Animals - Piers Brendon, Signed 1st Ed.",
           "url": "https://www.ebay.co.uk/itm/800654899621?hash=itemba6ac039a5:g:BpgAAOSwC1RlqR~i"
+        },
+        "ebay:800659963674": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Lincoln - David Herbert Donald (Hardcover, 1995)",
+          "url": "https://www.ebay.co.uk/itm/800659963674?hash=itemba6b0d7f1a:g:uEQAAOSwwgJm7rRd"
+        },
+        "ebay:800659963675": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Giles 34th Series Cartoon Annual (Paperback, 1980)",
+          "url": "https://www.ebay.co.uk/itm/800659963675?hash=itemba6b0d7f1b:g:KhwAAOSwjPJm9WFX"
+        },
+        "ebay:800659963676": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Giant Cargo Planes : Enthusiast Color Series (Illustrated Paperback, 1999)",
+          "url": "https://www.ebay.co.uk/itm/800659963676?hash=itemba6b0d7f1c:g:HkcAAOSwEolnWHVT"
+        },
+        "ebay:800659963678": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "The Wallpaper Book - Geneviève Brunet (Illustrated Hardcover, 2012)",
+          "url": "https://www.ebay.co.uk/itm/800659963678?hash=itemba6b0d7f1e:g:84EAAOSwpIJnYU6Y"
+        },
+        "ebay:800659963680": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Advanced Fly-Fishing Techniques - Lefty Kreh (Hardcover, 2002)",
+          "url": "https://www.ebay.co.uk/itm/800659963680?hash=itemba6b0d7f20:g:Z7QAAOSwtpZn5TM-"
+        },
+        "ebay:800659963681": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Tatsuya Endo, Spy X Family - Band 7 - (German Import) Paperback Book",
+          "url": "https://www.ebay.co.uk/itm/800659963681?hash=itemba6b0d7f21:g:U0kAAOSw0BxlAD~X"
+        },
+        "ebay:800659963682": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Invisible Cars and Trucks Magic Picture Book - Anna Pomaska (Paperback, 1998)",
+          "url": "https://www.ebay.co.uk/itm/800659963682?hash=itemba6b0d7f22:g:sJ4AAOSwdednKj-u"
+        },
+        "ebay:800659963683": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Thinking, Fast And Slow by Daniel Kahneman (Simplfied Chinese Edition) Hardback",
+          "url": "https://www.ebay.co.uk/itm/800659963683?hash=itemba6b0d7f23:g:Rf4AAOSwDw9mB~gl"
+        },
+        "ebay:800659963685": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "300 Great Grand Prix Facts For Motorsport Fans - Utopia Press (Paperback)",
+          "url": "https://www.ebay.co.uk/itm/800659963685?hash=itemba6b0d7f25:g:oskAAOSwKaVmdJlt"
+        },
+        "ebay:800659963686": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Adventure Education: Theory and Applications by Project Adventure (Paperback)",
+          "url": "https://www.ebay.co.uk/itm/800659963686?hash=itemba6b0d7f26:g:ugcAAOSwwY1l-DfA"
+        },
+        "ebay:800659963687": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Chinese Intelligence Operations - Nicholas Eftimiades, 1994 Paperback",
+          "url": "https://www.ebay.co.uk/itm/800659963687?hash=itemba6b0d7f27:g:ZCkAAOSwcXZly0GL"
         }
       }
     },
@@ -6128,8 +6197,8 @@
     "EBAY_GB:bhf_shops": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 6,
-      "last_successful_fetch": "2026-09-14T00:58:54Z",
+      "last_result_count": 3,
+      "last_successful_fetch": "2026-09-14T23:05:37Z",
       "seen": {
         "ebay:377405094645": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -6809,6 +6878,24 @@
           "title": "Carsten Krieger - THE WEST OF IRELAND a photographer's journey book CG P20",
           "url": "https://www.ebay.co.uk/itm/398391251889?hash=item5cc1f813b1:g:suMAAeSw6EJqpuYi"
         },
+        "ebay:398393943496": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Dungeons & Dragons the SPEAKER in dreams book cg ca3",
+          "url": "https://www.ebay.co.uk/itm/398393943496?hash=item5cc22125c8:g:EW8AAeSw~dBqp~wJ"
+        },
+        "ebay:398393951941": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "x2 Overlight books child of zenith and birthright of Khar-Ulan cg ca3",
+          "url": "https://www.ebay.co.uk/itm/398393951941?hash=item5cc22146c5:g:eMgAAeSwIIxqp~zF"
+        },
+        "ebay:398393954295": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Black Void core rulebook hardback cg ca3",
+          "url": "https://www.ebay.co.uk/itm/398393954295?hash=item5cc2214ff7:g:tssAAeSwwTVqp~1V"
+        },
         "ebay:800472196613": {
           "first_seen": "2026-08-28T15:13:59Z",
           "last_seen": "2026-08-28T15:13:59Z",
@@ -7175,7 +7262,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-14T00:58:54Z",
+      "last_successful_fetch": "2026-09-14T23:05:37Z",
       "seen": {
         "ebay:298520197602": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -7291,7 +7378,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-14T00:58:54Z",
+      "last_successful_fetch": "2026-09-14T23:05:37Z",
       "seen": {
         "ebay:257346438208": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -9269,7 +9356,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-14T00:58:54Z",
+      "last_successful_fetch": "2026-09-14T23:05:37Z",
       "seen": {
         "ebay:820001618270": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -11401,7 +11488,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-14T00:58:54Z",
+      "last_successful_fetch": "2026-09-14T23:05:37Z",
       "seen": {
         "ebay:137321753849": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -12723,7 +12810,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-14T00:58:54Z",
+      "last_successful_fetch": "2026-09-14T23:05:37Z",
       "seen": {
         "ebay:155535433950": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -13931,7 +14018,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-14T00:58:54Z",
+      "last_successful_fetch": "2026-09-14T23:05:37Z",
       "seen": {
         "ebay:188640395075": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -19057,7 +19144,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-14T00:58:54Z",
+      "last_successful_fetch": "2026-09-14T23:05:37Z",
       "seen": {
         "ebay:157421827000": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -21799,7 +21886,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-14T00:58:54Z",
+      "last_successful_fetch": "2026-09-14T23:05:37Z",
       "seen": {
         "ebay:276557100684": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -22028,8 +22115,8 @@
     "EBAY_GB:eachbookshop": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 0,
-      "last_successful_fetch": "2026-09-14T00:58:54Z",
+      "last_result_count": 28,
+      "last_successful_fetch": "2026-09-14T23:05:37Z",
       "seen": {
         "ebay:158221779813": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -27220,14 +27307,182 @@
           "last_seen": "2026-09-11T14:21:36Z",
           "title": "The Innocent Ones (Dan Grant and Jayne ..., White, Neil",
           "url": "https://www.ebay.co.uk/itm/158281134223?hash=item24da4a708f:g:cqQAAeSwmvhqpAWe"
+        },
+        "ebay:158290925045": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Marvel Super Heroes: Secret Wars 30th Anniversary Edition - Jim Shooter",
+          "url": "https://www.ebay.co.uk/itm/158290925045?hash=item24dadfd5f5:g:uUEAAeSw10tqK9ep"
+        },
+        "ebay:158290976137": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Heart You Kept: T L Swan",
+          "url": "https://www.ebay.co.uk/itm/158290976137?hash=item24dae09d89:g:HfUAAeSwmydqp9jO"
+        },
+        "ebay:158290977440": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "The Seven Sisters",
+          "url": "https://www.ebay.co.uk/itm/158290977440?hash=item24dae0a2a0:g:yN4AAeSw7LZqp9kd"
+        },
+        "ebay:158290978569": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "The Suite Secret:  Page, Tierney",
+          "url": "https://www.ebay.co.uk/itm/158290978569?hash=item24dae0a709:g:nvEAAeSwfEhqp9lK"
+        },
+        "ebay:158290979216": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "The Other Brother: Tierney Page",
+          "url": "https://www.ebay.co.uk/itm/158290979216?hash=item24dae0a990:g:YLcAAeSwqcpqp9lv"
+        },
+        "ebay:158290980393": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Variation: A Novel, Yarros, Rebecca",
+          "url": "https://www.ebay.co.uk/itm/158290980393?hash=item24dae0ae29:g:rD0AAeSwH2Jqp9mS"
+        },
+        "ebay:158290983656": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Mr Men And Little Miss Book Bundle x 20 Books",
+          "url": "https://www.ebay.co.uk/itm/158290983656?hash=item24dae0bae8:g:5EkAAeSwxbpqp9oc"
+        },
+        "ebay:158290986151": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Ladybird Books Read It Yourself 42 Books Level 1-4 Peter Rabbit Peppa Pig",
+          "url": "https://www.ebay.co.uk/itm/158290986151?hash=item24dae0c4a7:g:fg0AAeSw4Zdqp9q6"
+        },
+        "ebay:158290994358": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Other Bennet Sister",
+          "url": "https://www.ebay.co.uk/itm/158290994358?hash=item24dae0e4b6:g:O1sAAeSwKkJqp9sB"
+        },
+        "ebay:158291011051": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "15 Book Bundle, Roger Hargreave's Mr. Men And Little Miss Books.",
+          "url": "https://www.ebay.co.uk/itm/158291011051?hash=item24dae125eb:g:LhMAAeSw5nNqp9te"
+        },
+        "ebay:158291016534": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Enough: Dawn’s Joyfully Human, Darkly ..., French, Dawn",
+          "url": "https://www.ebay.co.uk/itm/158291016534?hash=item24dae13b56:g:XCAAAeSw4FBqp9ui"
+        },
+        "ebay:158291017306": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "The Complete Mustang: A Model-By-Model History",
+          "url": "https://www.ebay.co.uk/itm/158291017306?hash=item24dae13e5a:g:SdMAAeSwmydqp9vQ"
+        },
+        "ebay:158291019498": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "World Of Ice & Fire: Elio M Carcia.",
+          "url": "https://www.ebay.co.uk/itm/158291019498?hash=item24dae146ea:g:NQIAAeSw5nNqp9wA"
+        },
+        "ebay:158291021336": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "The Beatles Drum Collection - Paperback  2000-09",
+          "url": "https://www.ebay.co.uk/itm/158291021336?hash=item24dae14e18:g:-M8AAeSw21dqp9xT"
+        },
+        "ebay:158291021588": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "The Zen Monkey and the Lotus Flower: 52 Stories that Will...by Tenpa Yeshe PB",
+          "url": "https://www.ebay.co.uk/itm/158291021588?hash=item24dae14f14:g:jZEAAeSwdAJqp9x5"
+        },
+        "ebay:158291021866": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Farewell to the King - Schoendoerffer, Pierre",
+          "url": "https://www.ebay.co.uk/itm/158291021866?hash=item24dae1502a:g:hJ8AAeSw1qtqp9yf"
+        },
+        "ebay:158291022879": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Bamburgh: A DCI Ryan Mystery (The DCI Ryan ..., LJ Ross",
+          "url": "https://www.ebay.co.uk/itm/158291022879?hash=item24dae1541f:g:hAwAAeSwsKFqp90l"
+        },
+        "ebay:158291374429": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Dragon Mountain/ Legend By Katie Tsang",
+          "url": "https://www.ebay.co.uk/itm/158291374429?hash=item24dae6b15d:g:vGsAAeSwVbhqp~5L"
+        },
+        "ebay:158291378100": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Artemis Fowl Bundle of 8 Books Eoin Colfer Paperbacks",
+          "url": "https://www.ebay.co.uk/itm/158291378100?hash=item24dae6bfb4:g:D8UAAeSwCvBqp~6~"
+        },
+        "ebay:158291379522": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "A BeWILDerwood book bundle x 3 Tom Blofeld,",
+          "url": "https://www.ebay.co.uk/itm/158291379522?hash=item24dae6c542:g:ZQwAAeSwlOpqp~8a"
+        },
+        "ebay:158291383721": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "MR MEN MY COMPLETE COLLECTION 45 Book Set ( 2 missing from set of 47)",
+          "url": "https://www.ebay.co.uk/itm/158291383721?hash=item24dae6d5a9:g:wmcAAeSw~CZqp~9b"
+        },
+        "ebay:158291387696": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "The Gremlins: a royal air force story by flight lieutenant... - Dahl, Roald",
+          "url": "https://www.ebay.co.uk/itm/158291387696?hash=item24dae6e530:g:GhoAAeSwwDVqp~-4"
+        },
+        "ebay:158291395275": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Weavers Way: A chilling Norfolk Broads crime thriller: 9 (British Detective Tann",
+          "url": "https://www.ebay.co.uk/itm/158291395275?hash=item24dae702cb:g:SbYAAeSwTadqp~~c"
+        },
+        "ebay:158291403002": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Perfecting Sound Forever: The Story of Recorded Music - Milner, Greg",
+          "url": "https://www.ebay.co.uk/itm/158291403002?hash=item24dae720fa:g:S2cAAeSwTadqqAAB"
+        },
+        "ebay:158291420677": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "21xVintage Charles Dickens (Thomas Nelson & Sons,/ Everyman's Library mixed lot)",
+          "url": "https://www.ebay.co.uk/itm/158291420677?hash=item24dae76605:g:CfgAAeSwKcdqqADK"
+        },
+        "ebay:158291422403": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "LAST FIGHT OF THE REVENGE - Earle, Peter",
+          "url": "https://www.ebay.co.uk/itm/158291422403?hash=item24dae76cc3:g:M~IAAeSwHAJqqAEB"
+        },
+        "ebay:158291423520": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "LEGO Harry Potter The Magical Guide to the Wizarding World by DK",
+          "url": "https://www.ebay.co.uk/itm/158291423520?hash=item24dae77120:g:7Z0AAeSwM~hqqAEp"
+        },
+        "ebay:158291424880": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Planted : A Chef's Show-Stopping Vegan Recipes by Chantelle Nicholson (2018,...",
+          "url": "https://www.ebay.co.uk/itm/158291424880?hash=item24dae77670:g:c1YAAeSwgkJqqAFV"
         }
       }
     },
     "EBAY_GB:edenvalleyhospice": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 1,
-      "last_successful_fetch": "2026-09-14T00:58:54Z",
+      "last_result_count": 0,
+      "last_successful_fetch": "2026-09-14T23:05:37Z",
       "seen": {
         "ebay:198148660166": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -27931,7 +28186,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-14T00:58:54Z",
+      "last_successful_fetch": "2026-09-14T23:05:37Z",
       "seen": {
         "ebay:177903127581": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -27999,7 +28254,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-14T00:58:54Z",
+      "last_successful_fetch": "2026-09-14T23:05:37Z",
       "seen": {
         "ebay:167860038974": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -29321,7 +29576,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-14T00:58:54Z",
+      "last_successful_fetch": "2026-09-14T23:05:37Z",
       "seen": {
         "ebay:397259433104": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -29491,14 +29746,14 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-14T00:58:54Z",
+      "last_successful_fetch": "2026-09-14T23:05:37Z",
       "seen": {}
     },
     "EBAY_GB:emmausoxfordstore": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 0,
-      "last_successful_fetch": "2026-09-14T00:58:54Z",
+      "last_result_count": 1,
+      "last_successful_fetch": "2026-09-14T23:05:37Z",
       "seen": {
         "ebay:257368311699": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -29733,6 +29988,12 @@
           "last_seen": "2026-09-12T05:41:25Z",
           "title": "Harry Potter ~ 'A History of Magic' ~ Hardback Book Re 2017 Exhibition ~ J.K.R",
           "url": "https://www.ebay.co.uk/itm/257736843601?hash=item3c02502151:g:IwUAAeSwfUpqpA1v"
+        },
+        "ebay:257742385424": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "'The Hobbit Companion' ~ by David Day ~ 3rd Print of First Edition ~ 1997",
+          "url": "https://www.ebay.co.uk/itm/257742385424?hash=item3c02a4b110:g:h48AAeSwId5qqAIy"
         }
       }
     },
@@ -29746,8 +30007,8 @@
     "EBAY_GB:ferneanimalsanctuary123": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 0,
-      "last_successful_fetch": "2026-09-14T00:58:54Z",
+      "last_result_count": 2,
+      "last_successful_fetch": "2026-09-14T23:05:37Z",
       "seen": {
         "ebay:127489764212": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -30396,6 +30657,18 @@
           "last_seen": "2026-09-07T16:25:20Z",
           "title": "ESV Journalling Study Bible Board Box Case Floral Design Stickers/tabs New -Dor",
           "url": "https://www.ebay.co.uk/itm/128066983126?hash=item1dd16314d6:g:X7gAAeSw0jpqnprL"
+        },
+        "ebay:128078913373": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Jane Austen Illustrated Library, Complete Works, Hardback, Midpoint Press, SAN42",
+          "url": "https://www.ebay.co.uk/itm/128078913373?hash=item1dd2191f5d:g:~SoAAeSwUuBqp8su"
+        },
+        "ebay:128078928540": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Mid Pont Press, Shakespeare The Library, Complete Works, Hardback, SANA",
+          "url": "https://www.ebay.co.uk/itm/128078928540?hash=item1dd2195a9c:g:YFIAAeSwYD5qp821"
         }
       }
     },
@@ -34636,8 +34909,8 @@
     "EBAY_GB:hoperescue": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 0,
-      "last_successful_fetch": "2026-09-14T00:58:54Z",
+      "last_result_count": 1,
+      "last_successful_fetch": "2026-09-14T23:05:37Z",
       "seen": {
         "ebay:257112274987": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -34716,6 +34989,12 @@
           "last_seen": "2026-09-01T15:09:09Z",
           "title": "Maggie’s Kitchen Maggie Beer Hardback Cookbook SIGNED",
           "url": "https://www.ebay.co.uk/itm/257716396832?hash=item3c01182320:g:f9IAAeSwQe1qluSk"
+        },
+        "ebay:257742061521": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Ruth Rendell The Bridesmaid Signed First Edition Hardback Book 1989",
+          "url": "https://www.ebay.co.uk/itm/257742061521?hash=item3c029fbfd1:g:q8oAAeSw6pdqp8y~"
         },
         "ebay:317390411955": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -34825,7 +35104,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-14T00:58:54Z",
+      "last_successful_fetch": "2026-09-14T23:05:37Z",
       "seen": {
         "ebay:203958209599": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -35318,8 +35597,8 @@
     "EBAY_GB:infocuscharityshop": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 0,
-      "last_successful_fetch": "2026-09-14T00:58:54Z",
+      "last_result_count": 3,
+      "last_successful_fetch": "2026-09-14T23:05:37Z",
       "seen": {
         "ebay:358837830797": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -35512,14 +35791,32 @@
           "last_seen": "2026-09-11T00:03:53Z",
           "title": "The Warden by Anthony Trollope Illustrated 1949 Edition Hardcover",
           "url": "https://www.ebay.co.uk/itm/820110110295?hash=itembef25f2e57:g:xM8AAeSwx0Vqoovn"
+        },
+        "ebay:820126007003": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Hans Andersen's Fairy Tales Illustrated Heath Robinson Vintage Book",
+          "url": "https://www.ebay.co.uk/itm/820126007003?hash=itembef351bedb:g:BrIAAeSwGlZqoovK"
+        },
+        "ebay:820126008332": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Eaglemoss 3D Create & Print Vector 3 Parts Bundle - Feed Mechanism 60-67",
+          "url": "https://www.ebay.co.uk/itm/820126008332?hash=itembef351c40c:g:74IAAeSw-V9qfsKK"
+        },
+        "ebay:820126015049": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Guinness World Records Collection 2001-2021 Hardcover Set Bundle",
+          "url": "https://www.ebay.co.uk/itm/820126015049?hash=itembef351de49:g:VrcAAeSwIR1qhtiL"
         }
       }
     },
     "EBAY_GB:isabelhospice": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
-      "last_result_count": 0,
-      "last_successful_fetch": "2026-09-14T00:58:54Z",
+      "last_result_count": 4,
+      "last_successful_fetch": "2026-09-14T23:05:37Z",
       "seen": {
         "ebay:206321491085": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -35790,6 +36087,18 @@
           "last_seen": "2026-09-11T00:03:53Z",
           "title": "Oxford Reading Tree Project X Alien Adventures Books Joblot Bundle  D52 B477",
           "url": "https://www.ebay.co.uk/itm/206548536649?hash=item3017408d49:g:06QAAeSw7ylqosFe"
+        },
+        "ebay:206556474283": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Michael Reit WWII Beyond The Tracks & Tracks To Freedom 2 Books Set  C101  Wh188",
+          "url": "https://www.ebay.co.uk/itm/206556474283?hash=item3017b9abab:g:yGMAAeSwTctqp-gF"
+        },
+        "ebay:206556504619": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Freida McFadden Thriller Paperback Book Bundle Set of 6 Housemaid    C101  Wh189",
+          "url": "https://www.ebay.co.uk/itm/206556504619?hash=item3017ba222b:g:sBEAAeSwn35qp-2b"
         },
         "ebay:278043635235": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -36169,6 +36478,18 @@
           "title": "Harriet Ziefert Arnold Lobel Bear 4 Book Set Viking Kestrel 1986  C124 B478",
           "url": "https://www.ebay.co.uk/itm/278362481775?hash=item40cfb2646f:g:5ZcAAeSwKutqosLQ"
         },
+        "ebay:278373932928": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Star Wars Complete Locations Hardback Book DK 2016 Cross-Sections B78 W86",
+          "url": "https://www.ebay.co.uk/itm/278373932928?hash=item40d0611f80:g:F~AAAeSwWZtqUO7R"
+        },
+        "ebay:278373962281": {
+          "first_seen": "2026-09-14T23:05:37Z",
+          "last_seen": "2026-09-14T23:05:37Z",
+          "title": "Job Lot 11 Japanese Language Books Sudoku Puzzle Picture Book Bundle  D53 B407",
+          "url": "https://www.ebay.co.uk/itm/278373962281?hash=item40d0619229:g:0ksAAeSwwzRqXdxn"
+        },
         "ebay:398013847521": {
           "first_seen": "2026-08-28T15:13:59Z",
           "last_seen": "2026-08-28T15:13:59Z",
@@ -36439,7 +36760,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-14T00:58:54Z",
+      "last_successful_fetch": "2026-09-14T23:05:37Z",
       "seen": {
         "ebay:318412010771": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -38749,7 +39070,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-14T00:58:54Z",
+      "last_successful_fetch": "2026-09-14T23:05:37Z",
       "seen": {
         "ebay:227440762054": {
           "first_seen": "2026-08-28T15:13:59Z",
@@ -40963,7 +41284,7 @@
       "first_successful_fetch": "2026-08-28T15:13:59Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-14T06:09:34Z",
+      "last_successful_fetch": "2026-09-14T23:05:37Z",
       "seen": {
         "ebay:197689846057": {
           "first_seen": "2026-08-28T15:13:59Z",
