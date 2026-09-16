@@ -89,7 +89,6 @@ jobs:
           for body in "${bodies[@]}"; do
             stem="${body%.md}"
             gh issue create \
-              --assignee jonattenborough \
               --title "$(cat "${stem}.title")" \
               --body-file "$body"
           done

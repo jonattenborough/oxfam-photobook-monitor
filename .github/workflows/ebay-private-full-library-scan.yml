@@ -149,7 +149,6 @@ jobs:
               for body in "$runtime"/issues/*.md; do
                 stem="${body%.md}"
                 gh issue create \
-                  --assignee jonattenborough \
                   --title "$(cat "${stem}.title")" \
                   --body-file "$body"
               done

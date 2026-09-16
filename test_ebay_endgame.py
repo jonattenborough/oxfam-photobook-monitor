@@ -235,8 +235,10 @@ class EndgameTests(unittest.TestCase):
             runtime = Path(tmp)
             self.assertEqual(endgame.write_alert_packets(alerts, runtime, self.config, NOW), 2)
             titles = sorted(path.read_text().strip() for path in (runtime / "alerts").glob("*.title"))
+            bodies = sorted(path.read_text() for path in (runtime / "alerts").glob("*.md"))
         self.assertTrue(any(title.startswith("ENDGAME_EARLY:") for title in titles))
         self.assertTrue(any(title.startswith("ENDGAME_4H:") for title in titles))
+        self.assertTrue(all("@jonattenborough" not in body for body in bodies))
 
     def test_detail_budget_prioritises_alertable_final_candidate(self):
         task = next(task for task in self.tasks if task["lane"] == "known" and task["tier"] == "1")

@@ -88,8 +88,6 @@ jobs:
         id: alerts
         run: python ebay_private_alert_builder.py --config data/ebay_private_recall_searches.json
 
-      # Historical test marker only. Runtime alerts now use recall-first wording.
-      # @jonattenborough Immediate live private-seller photobook candidate alert
       - name: Create AI review issues for private seller candidates
         if: github.event_name != 'pull_request' && steps.alerts.outputs.alert_count != '0'
         env:
@@ -99,11 +97,10 @@ jobs:
           for body in runtime/ebay-private/alerts/*.md; do
             stem="${body%.md}"
             {
-              printf '%s\n\n' '@jonattenborough Immediate private-seller photobook candidate alert. Search-result-only leads, material price drops and cheap unknown photobooks are intentionally included because missing a unicorn is worse than seeing some rubbish. A deeper ChatGPT gem appraisal will follow separately.'
+              printf '%s\n\n' 'Private-seller photobook candidate for AI review. Search-result-only leads, material price drops and cheap unknown photobooks are intentionally included because missing a unicorn is worse than seeing some rubbish. A deeper ChatGPT gem appraisal will follow separately.'
               cat "$body"
             } > "${stem}.notified.md"
             gh issue create \
-              --assignee jonattenborough \
               --title "$(cat "${stem}.title")" \
               --body-file "${stem}.notified.md"
           done

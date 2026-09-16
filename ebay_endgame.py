@@ -943,7 +943,7 @@ def write_alert_packets(alerts: list[dict[str, Any]], runtime: Path, config: dic
                 encoding="utf-8",
             )
             intro = (
-                f"@jonattenborough Endgame Auction Radar {label} alert. "
+                f"Endgame Auction Radar {label} candidate packet for AI review. "
                 "Recall is intentionally favoured over precision, so check the exact edition, shipping and live bid state before bidding.\n\n"
                 f"Detected at {utc_stamp(now)}.\n\n"
             )
