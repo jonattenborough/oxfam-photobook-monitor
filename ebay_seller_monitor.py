@@ -12,6 +12,7 @@ from typing import Any
 
 import canon_runner
 import ebay_api
+import ebay_core_targets as core_targets
 import external_monitor
 
 BOOKS_CATEGORY_ID = "261186"
@@ -188,6 +189,14 @@ def scan_seller(
 def qualification(item: dict[str, Any]) -> tuple[list[str], list[dict[str, Any]]]:
     text = " ".join([str(item.get("title") or ""), str(item.get("context") or "")]).lower()
     signals: list[str] = []
+    core_matches = core_targets.matches_for_item(item)
+    if core_matches:
+        names = list(dict.fromkeys(match["name"] for match in core_matches))
+        tier = core_matches[0]["tier"]
+        signals.append(f"Tier {tier} core photographer: {', '.join(names)}")
+        item["core_target_matches"] = core_matches
+        item["core_target_tier"] = tier
+        item["matched_core_photographers"] = names
     if any(term in text for term in external_monitor.TARGET_TERMS):
         signals.append("known photographer or title term")
     if any(term in text for term in external_monitor.DIRECT_PHOTO_TERMS):
@@ -202,7 +211,7 @@ def qualification(item: dict[str, Any]) -> tuple[list[str], list[dict[str, Any]]
     matches = canon_runner.pb.matches_for_item(item)
     if matches:
         signals.append("Parr/Badger or Roth canon match")
-    if not external_monitor.plausible(item) and not matches:
+    if not external_monitor.plausible(item) and not matches and not core_matches:
         return [], []
     return signals or ["photobook-radar wording"], matches
 
@@ -294,7 +303,16 @@ def make_issue_body(items: list[dict[str, Any]], detected_at: str, failures: lis
         "ChatGPT should verify edition, printing, completeness, condition, delivery cost and market value before sending any purchase alert.",
         "",
     ]
-    for item in items:
+    ordered = sorted(
+        items,
+        key=lambda item: (
+            0 if item.get("core_target_tier") else 1,
+            int(item.get("core_target_tier") or 9),
+            0 if item.get("parr_badger_matches") else 1,
+            float(item.get("price_value") or 999999),
+        ),
+    )
+    for item in ordered:
         lines.extend([
             f"### {item.get('title') or 'Untitled listing'}",
             "",
@@ -304,6 +322,12 @@ def make_issue_body(items: list[dict[str, Any]], detected_at: str, failures: lis
         price = _price_line(item)
         if price:
             lines.append(price)
+        if item.get("core_target_tier"):
+            names = ", ".join(item.get("matched_core_photographers") or [])
+            lines.append(
+                f"- **Core photographer priority:** Tier {item['core_target_tier']}"
+                + (f" - {names}" if names else "")
+            )
         lines.extend([
             f"- **Why it surfaced:** {', '.join(item.get('qualification_signals') or [])}",
             f"- **Listing:** {item['url']}",

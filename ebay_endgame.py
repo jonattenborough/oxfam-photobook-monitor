@@ -11,14 +11,13 @@ import argparse
 import hashlib
 import json
 import os
-import re
-import unicodedata
 from collections import defaultdict
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
 import ebay_api
+import ebay_core_targets as core_targets
 import ebay_private_seller_monitor as legacy
 import photobook_recognition as recognition
 
@@ -63,8 +62,7 @@ def parse_stamp(value: Any) -> datetime | None:
 
 
 def normalized(value: Any) -> str:
-    text = unicodedata.normalize("NFKD", str(value or "")).encode("ascii", "ignore").decode("ascii")
-    return re.sub(r"[^a-z0-9]+", " ", text.casefold()).strip()
+    return core_targets.normalized(value)
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -162,42 +160,11 @@ def reset_daily_usage(state: dict[str, Any], now: datetime) -> None:
 
 def compile_or_queries(terms: list[str], character_limit: int) -> list[dict[str, Any]]:
     """Pack exact alternatives into eBay's ``(one,two)`` OR syntax."""
-    cleaned: list[str] = []
-    seen: set[str] = set()
-    for raw in terms:
-        term = " ".join(re.sub(r"[(),]+", " ", str(raw or "")).split()).strip()
-        identity = normalized(term)
-        if not term or not identity or identity in seen:
-            continue
-        if len(term) + 2 > character_limit:
-            raise ValueError(f"Endgame search term is too long: {term}")
-        seen.add(identity)
-        cleaned.append(term)
-
-    groups: list[dict[str, Any]] = []
-    current: list[str] = []
-    for term in cleaned:
-        proposed = current + [term]
-        query = f"({','.join(proposed)})"
-        if current and len(query) > character_limit:
-            groups.append({"query": f"({','.join(current)})", "terms": current})
-            current = [term]
-        else:
-            current = proposed
-    if current:
-        groups.append({"query": f"({','.join(current)})", "terms": current})
-    return groups
+    return core_targets.compile_or_queries(terms, character_limit)
 
 
 def photographer_terms(config: dict[str, Any], tier: str) -> list[str]:
-    aliases = config.get("aliases") if isinstance(config.get("aliases"), dict) else {}
-    terms: list[str] = []
-    for name in config["tiers"][tier]["names"]:
-        terms.append(name)
-        extra = aliases.get(name) if isinstance(aliases, dict) else None
-        if isinstance(extra, list):
-            terms.extend(str(value) for value in extra)
-    return terms
+    return core_targets.photographer_terms(config, tier)
 
 
 def title_terms(config: dict[str, Any]) -> list[str]:
@@ -968,7 +935,7 @@ def write_alert_packets(alerts: list[dict[str, Any]], runtime: Path, config: dic
         for index in range(0, len(items), batch_size):
             chunk = items[index:index + batch_size]
             count += 1
-            label = "15" if phase == "final" else "90"
+            label = "4H" if phase == "final" else "EARLY"
             stem = alert_dir / f"{count:03d}-{phase}"
             noun = "auction" if len(chunk) == 1 else "auctions"
             (stem.with_suffix(".title")).write_text(
@@ -976,7 +943,7 @@ def write_alert_packets(alerts: list[dict[str, Any]], runtime: Path, config: dic
                 encoding="utf-8",
             )
             intro = (
-                f"@jonattenborough Endgame Auction Radar {phase} alert. "
+                f"@jonattenborough Endgame Auction Radar {label} alert. "
                 "Recall is intentionally favoured over precision, so check the exact edition, shipping and live bid state before bidding.\n\n"
                 f"Detected at {utc_stamp(now)}.\n\n"
             )

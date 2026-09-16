@@ -11,6 +11,7 @@ from unittest.mock import patch
 
 import ebay_private_recall_monitor as recall
 import ebay_private_seller_monitor as legacy
+import ebay_core_targets as core_targets
 import ebay_seller_monitor as charity
 import market_monitor
 
@@ -35,8 +36,9 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
         )
         self.assertEqual(config["max_live_checks_per_run"], 0)
         self.assertEqual(config["active_stock_queries_per_run"], 4)
-        self.assertEqual(len(plan), 36)
+        self.assertEqual(len(plan), 39)
         self.assertEqual(sum(step["lane"] == "active_stock" for step in plan), 4)
+        self.assertEqual(sum(step["lane"].startswith("core_target_") for step in plan), 5)
         self.assertFalse(
             any(step["lane"] in {"contemporary_auction", "classic_auction"} for step in plan)
         )
@@ -54,7 +56,7 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
             state,
             datetime(2026, 9, 4, 8, 0, tzinfo=timezone.utc),
         )
-        self.assertEqual(len(full_plan), 58)
+        self.assertEqual(len(full_plan), 59)
         self.assertEqual(sum(step["lane"] == "active_stock" for step in full_plan), 4)
         self.assertEqual(sum(step["lane"] == "wrong_category" for step in full_plan), 10)
         self.assertEqual(
@@ -63,8 +65,11 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
         )
         self.assertEqual(
             sum(step["lane"] in {"contemporary_contributor", "classic_contributor"} for step in full_plan),
-            4,
+            0,
         )
+        self.assertEqual(sum(step["lane"] == "core_target_1" for step in full_plan), 2)
+        self.assertEqual(sum(step["lane"] == "core_target_2" for step in full_plan), 2)
+        self.assertEqual(sum(step["lane"] == "core_target_3" for step in full_plan), 1)
         self.assertEqual(sum(step["lane"] == "collection" for step in full_plan), 4)
         self.assertEqual(sum(step["lane"] == "library_rotation" for step in full_plan), 16)
         self.assertEqual(sum(step["lane"] == "contemporary_hot" for step in full_plan), 6)
@@ -84,16 +89,17 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
         self.assertEqual(
             Counter(step["lane"] for step in budgeted),
             Counter({
-                "library_rotation": 5,
-                "active_stock": 4,
+                "library_rotation": 4,
+                "active_stock": 2,
                 "broad": 1,
                 "contemporary_hot": 1,
                 "classic_hot": 1,
-                "contemporary_contributor": 1,
-                "classic_contributor": 1,
                 "collectible_format": 1,
                 "collection": 1,
                 "wrong_category": 1,
+                "core_target_1": 2,
+                "core_target_2": 2,
+                "core_target_3": 1,
             }),
         )
 
@@ -177,19 +183,23 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
             self.assertEqual(len(feeds), 2)
             self.assertEqual(market_monitor.TARGET_MARKETS, ("abebooks",))
 
-    def test_normal_paced_plan_protects_library_stock_and_contributors(self):
+    def test_normal_paced_plan_protects_library_stock_and_core_targets(self):
         config = self.config()
         state = {"cursors": {}}
         plan = recall.build_budgeted_search_plan(config, state, datetime.now(timezone.utc), 17)
         counts = Counter(step["lane"] for step in plan)
         self.assertEqual(len(plan), 17)
-        self.assertEqual(counts["active_stock"], 4)
-        self.assertEqual(counts["library_rotation"], 5)
-        self.assertEqual(counts["contemporary_contributor"], 1)
-        self.assertEqual(counts["classic_contributor"], 1)
-        self.assertEqual(set(counts), set(recall.PACED_LANE_CALLS))
-        self.assertEqual(state["cursors"]["active_stock"], 4)
-        self.assertEqual(state["cursors"]["library_records"], 5)
+        self.assertEqual(counts["active_stock"], 2)
+        self.assertEqual(counts["library_rotation"], 4)
+        self.assertEqual(counts["core_target_1"], 2)
+        self.assertEqual(counts["core_target_2"], 2)
+        self.assertEqual(counts["core_target_3"], 1)
+        self.assertEqual(set(counts), set(recall.PACED_LANE_CALLS) | set(recall.CORE_TARGET_LANES))
+        self.assertEqual(state["cursors"]["active_stock"], 2)
+        self.assertEqual(state["cursors"]["library_records"], 4)
+        self.assertEqual(state["cursors"]["core_target_1"], 2)
+        self.assertEqual(state["cursors"]["core_target_2"], 2)
+        self.assertEqual(state["cursors"]["core_target_3"], 1)
         self.assertEqual(state["cursors"]["classic_hot_records"], counts["classic_hot"])
         self.assertTrue(
             all(step["buying_options"] == legacy.FIXED_BUYING_OPTIONS for step in plan)
@@ -233,7 +243,7 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
         config = self.config()
         positions = len(config["active_stock_queries"]) * 50
         state = {"cursors": {"active_stock": positions - 2}}
-        plan = recall.build_budgeted_search_plan(config, state, datetime.now(timezone.utc), 17)
+        plan = recall.build_budgeted_search_plan(config, state, datetime.now(timezone.utc), 44)
         stock = [step for step in plan if step["lane"] == "active_stock"]
         self.assertEqual([step["offset"] for step in stock[:3]], [9800, 9800, 0])
         self.assertTrue(all(not step["incremental"] for step in stock))
@@ -265,18 +275,26 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
         self.assertTrue({"photo book", "photobook", "photography collection", "signed photographer book",
                          "photo books job lot", "old photo books"}.issubset(queries))
 
-    def test_priority_photographers_get_short_title_free_active_inventory_cycle(self):
+    def test_all_175_core_photographers_rotate_through_grouped_description_searches(self):
         config = self.config()
         state = {"cursors": {}}
-        queries = set()
-        for _ in range(7):
-            plan = recall.build_budgeted_search_plan(config, state, datetime.now(timezone.utc), 44)
+        observed = {tier: set() for tier in ("1", "2", "3")}
+        for _ in range(10):
+            plan = recall.build_budgeted_search_plan(config, state, datetime.now(timezone.utc), 17)
             for step in plan:
-                if step["lane"] == "classic_contributor":
-                    queries.add(step["query"])
+                if step["lane"].startswith("core_target_"):
+                    tier = step["query_target_tier"]
+                    observed[tier].update(core_targets.normalized(term) for term in step["target_query_terms"])
                     self.assertFalse(step["incremental"])
                     self.assertTrue(step["search_in_description"])
-        self.assertEqual(queries, set(config["priority_contributors"]))
+                    self.assertLessEqual(len(step["query"]), 90)
+        targets = core_targets.load_targets(Path(config["core_targets_path"]))
+        for tier in ("1", "2", "3"):
+            expected = {
+                core_targets.normalized(term)
+                for term in core_targets.photographer_terms(targets, tier)
+            }
+            self.assertEqual(observed[tier], expected)
 
     def test_main_uses_budgeted_recall_defaults_without_live_calls(self):
         config = self.config()
@@ -293,8 +311,8 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
             proposed = json.loads((runtime / "proposed-state.json").read_text())
             self.assertEqual(query.call_count, 17)
             self.assertEqual(proposed["last_live_checks"], 0)
-            self.assertEqual(proposed["cursors"]["library_records"], 5)
-            self.assertEqual(proposed["cursors"]["active_stock"], 4)
+            self.assertEqual(proposed["cursors"]["library_records"], 4)
+            self.assertEqual(proposed["cursors"]["active_stock"], 2)
 
     def test_failed_library_query_is_retried_without_skipping_a_cursor_gap(self):
         library_attempts = 0
@@ -317,7 +335,7 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
                  patch.object(legacy, "set_output"):
                 self.assertEqual(recall.main(), 0)
             proposed = json.loads((runtime / "proposed-state.json").read_text())
-            self.assertEqual(library_attempts, 5)
+            self.assertEqual(library_attempts, 4)
             self.assertEqual(proposed["cursors"]["library_records"], 1)
             self.assertEqual(proposed["last_successful_queries"], 16)
 
@@ -368,6 +386,39 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
         classified = recall.recall_classify(item, 72)
         self.assertFalse(classified.get("recall_first_unknown", False))
         self.assertLess(classified["opportunity_score"], 72)
+
+    def test_visible_core_photographer_is_promoted_by_tier(self):
+        item = {
+            "key": "ebay:sian-davey",
+            "title": "Sian Davey Looking for Alice hardback",
+            "context": "used book",
+            "price_gbp": 45.0,
+            "private_seller": True,
+            "seller_account_type": "INDIVIDUAL",
+            "search_lane": "core_target_1",
+        }
+        classified = recall.recall_classify(item, 72)
+        self.assertEqual(classified["core_target_tier"], "1")
+        self.assertIn("Siân Davey", classified["matched_core_photographers"])
+        self.assertGreaterEqual(classified["opportunity_score"], 88)
+
+    def test_hidden_description_query_match_is_kept_for_ai_review(self):
+        item = {
+            "key": "ebay:hidden-core",
+            "title": "Old photography hardback see photos",
+            "context": "used book",
+            "price_gbp": 35.0,
+            "private_seller": True,
+            "seller_account_type": "INDIVIDUAL",
+            "search_lane": "core_target_3",
+            "query_target_tier": "3",
+            "target_query_terms": ["Amani Willett", "Kris Graves"],
+        }
+        classified = recall.recall_classify(item, 72)
+        self.assertEqual(classified["core_target_tier"], "3")
+        self.assertEqual(classified["matched_core_photographers"], [])
+        self.assertGreaterEqual(classified["opportunity_score"], 72)
+        self.assertTrue(any("seller description" in reason for reason in classified["opportunity_reasons"]))
 
     def test_obvious_instructional_unknown_is_not_promoted(self):
         item = {

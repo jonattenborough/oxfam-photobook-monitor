@@ -99,6 +99,24 @@ class EbaySellerMonitorTests(unittest.TestCase):
         self.assertEqual([item["external_id"] for item in candidates], ["101"])
         self.assertIn("ebay:102", updated["seen"])
 
+    def test_core_photographer_bypasses_generic_filter_and_keeps_tier(self):
+        previous, _, _ = monitor.update_seller_state(
+            None,
+            [listing("200", "Ordinary dictionary")],
+            "2026-08-28T12:00:00Z",
+        )
+        target = listing("201", "Sian Davey Looking for Alice hardback")
+        target["context"] = "Used book"
+        _, candidates, baseline = monitor.update_seller_state(
+            previous,
+            [target],
+            "2026-08-28T13:00:00Z",
+        )
+        self.assertFalse(baseline)
+        self.assertEqual(len(candidates), 1)
+        self.assertEqual(candidates[0]["core_target_tier"], "1")
+        self.assertIn("Siân Davey", candidates[0]["matched_core_photographers"])
+
     def test_us_scan_uses_books_seller_delivery_and_incremental_filters(self):
         client = FakeClient([[]])
         seller = {"id": "goodwillbks", "marketplace": "EBAY_US", "delivery_country": "GB"}

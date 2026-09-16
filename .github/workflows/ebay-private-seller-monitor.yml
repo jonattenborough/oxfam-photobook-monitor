@@ -8,6 +8,7 @@ on:
     branches: [main]
     paths:
       - "ebay_api.py"
+      - "ebay_core_targets.py"
       - "ebay_private_seller_monitor.py"
       - "ebay_private_recall_monitor.py"
       - "ebay_seller_monitor.py"
@@ -17,6 +18,7 @@ on:
       - "photobook_library_builder.py"
       - "test_ebay_api.py"
       - "test_ebay_private_api.py"
+      - "test_ebay_core_targets.py"
       - "test_photobook_recognition.py"
       - "test_photobook_library_builder.py"
       - "test_ebay_private_seller_monitor.py"
@@ -25,6 +27,7 @@ on:
       - "test_ebay_private_alert_builder.py"
       - "data/ebay_private_searches.json"
       - "data/ebay_private_recall_searches.json"
+      - "data/ebay_endgame_targets.json"
       - "data/photobook_recognition/**"
       - "data/parr_badger_master/**"
       - "data/roth_101_master.csv"
@@ -63,6 +66,7 @@ jobs:
           python -m unittest -v \
             test_ebay_api.py \
             test_ebay_private_api.py \
+            test_ebay_core_targets.py \
             test_photobook_library_builder.py \
             test_photobook_recognition.py \
             test_ebay_private_seller_monitor.py \

@@ -209,6 +209,17 @@ def make_issue_body(
                 _verification_line(item, detected_at),
             ]
         )
+        if item.get("core_target_tier"):
+            names = ", ".join(item.get("matched_core_photographers") or [])
+            lines.append(
+                f"- **Core photographer priority:** Tier {item['core_target_tier']}"
+                + (f" - {names}" if names else " - seller-description query match")
+            )
+            if item.get("target_query_terms"):
+                lines.append(
+                    "- **Possible grouped-query targets:** "
+                    + ", ".join(str(value) for value in item["target_query_terms"])
+                )
         if item.get("material_change") is True:
             change_text = "; ".join(str(value) for value in item.get("material_change_reasons") or [])
             lines.append(f"- **Material change:** {change_text or 'listing materially improved'}")

@@ -9,8 +9,8 @@
   "page_size": 200,
   "query_character_limit": 90,
   "candidate_retention_hours": 48,
-  "initial_alert_minutes": 90,
-  "final_alert_minutes": 15,
+  "initial_alert_minutes": 1440,
+  "final_alert_minutes": 240,
   "initial_alert_score": 58,
   "final_alert_score": 72,
   "issue_batch_size": 10,
@@ -23,7 +23,7 @@
   },
   "tiers": {
     "1": {
-      "horizon_hours": 10,
+      "horizon_hours": 30,
       "revisit_hours": 6,
       "major_revisit_hours": 3,
       "names": [
@@ -80,7 +80,7 @@
       ]
     },
     "2": {
-      "horizon_hours": 18,
+      "horizon_hours": 36,
       "revisit_hours": 12,
       "major_revisit_hours": 6,
       "names": [
@@ -157,7 +157,7 @@
       ]
     },
     "3": {
-      "horizon_hours": 36,
+      "horizon_hours": 48,
       "revisit_hours": 24,
       "major_revisit_hours": 12,
       "names": [
@@ -240,7 +240,7 @@
     "tier": 1,
     "records_per_photographer": 2,
     "revisit_hours": 12,
-    "horizon_hours": 18,
+    "horizon_hours": 30,
     "major_markets_only": true
   },
   "query_sets": {

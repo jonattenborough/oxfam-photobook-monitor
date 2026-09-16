@@ -34,7 +34,7 @@ jobs:
           python-version: "3.13"
 
       - name: Validate seller monitor and eBay API client
-        run: python -m unittest -v test_ebay_api.py test_ebay_seller_monitor.py
+        run: python -m unittest -v test_ebay_api.py test_ebay_core_targets.py test_ebay_seller_monitor.py
 
       - name: Check monitored sellers for new photography books
         id: sellers

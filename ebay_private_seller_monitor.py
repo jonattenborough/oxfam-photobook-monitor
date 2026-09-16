@@ -11,6 +11,7 @@ from pathlib import Path
 from typing import Any
 
 import ebay_api
+import ebay_core_targets as core_targets
 import external_monitor
 import parr_badger_runner as pb
 import photobook_recognition as recognition
@@ -120,6 +121,9 @@ def load_config(path: Path) -> dict[str, Any]:
     payload.setdefault("auction_horizon_hours", 36)
     payload.setdefault("active_stock_queries_per_run", 1)
     payload.setdefault("active_stock_max_offset", 9800)
+    payload.setdefault("core_targets_path", "data/ebay_endgame_targets.json")
+    payload.setdefault("core_target_queries_per_run", {})
+    payload.setdefault("core_target_query_character_limit", 90)
     payload.setdefault("collectible_queries", [])
     payload.setdefault("active_stock_queries", [])
     for key in (
@@ -133,6 +137,17 @@ def load_config(path: Path) -> dict[str, Any]:
         if not isinstance(value, list):
             raise RuntimeError(f"{key} must be a list")
         payload[key] = [str(item).strip() for item in value if str(item).strip()]
+    core_counts = payload.get("core_target_queries_per_run")
+    if not isinstance(core_counts, dict):
+        raise RuntimeError("core_target_queries_per_run must be a tier-to-count object")
+    payload["core_target_queries_per_run"] = {
+        tier: max(0, int(core_counts.get(tier) or 0))
+        for tier in ("1", "2", "3")
+    }
+    query_limit = int(payload.get("core_target_query_character_limit") or 90)
+    if query_limit < 20 or query_limit > 100:
+        raise RuntimeError("core_target_query_character_limit must be between 20 and 100")
+    payload["core_target_query_character_limit"] = query_limit
     return payload
 
 
@@ -220,6 +235,8 @@ def build_search_plan(config: dict[str, Any], state: dict[str, Any], now: dateti
         ending_start: str | None = None,
         ending_end: str | None = None,
         offset: int = 0,
+        target_tier: str = "",
+        target_terms: list[str] | None = None,
     ) -> None:
         query = str(query or "").strip()[:100]
         if not query:
@@ -235,6 +252,8 @@ def build_search_plan(config: dict[str, Any], state: dict[str, Any], now: dateti
                 "ending_start_date": ending_start,
                 "ending_end_date": ending_end,
                 "offset": max(0, min(int(offset), 9999)),
+                "query_target_tier": str(target_tier or ""),
+                "target_query_terms": list(target_terms or []),
             }
         )
 
@@ -367,6 +386,31 @@ def build_search_plan(config: dict[str, Any], state: dict[str, Any], now: dateti
                 description=True, incremental=not bool(priority_names),
             )
 
+    core_counts = config.get("core_target_queries_per_run") or {}
+    if any(int(core_counts.get(tier) or 0) > 0 for tier in ("1", "2", "3")):
+        target_config = core_targets.load_targets(Path(str(config["core_targets_path"])))
+        grouped = core_targets.tier_query_groups(
+            target_config,
+            character_limit=int(config["core_target_query_character_limit"]),
+        )
+        for tier in ("1", "2", "3"):
+            lane = f"core_target_{tier}"
+            selected, next_cursor = _cycle_slice(
+                grouped[tier],
+                int(cursors.get(lane, 0) or 0),
+                int(core_counts.get(tier) or 0),
+            )
+            cursors[lane] = next_cursor
+            for group in selected:
+                add(
+                    lane,
+                    str(group["query"]),
+                    description=True,
+                    incremental=False,
+                    target_tier=tier,
+                    target_terms=list(group["terms"]),
+                )
+
     contemporary_auction_selected, next_contemporary_auction = _cycle_slice(
         contemporary_hot or contemporary_records,
         int(cursors.get("contemporary_auctions", 0) or 0),
@@ -425,10 +469,13 @@ def trim_search_plan(plan: list[dict[str, Any]], budget: int) -> list[dict[str, 
         return []
     lane_priority = {
         "broad": 0,
+        "core_target_1": 1,
         "contemporary_hot": 1,
         "classic_hot": 1,
+        "core_target_2": 2,
         "collectible_format": 2,
         "collection": 3,
+        "core_target_3": 3,
         "active_stock": 4,
         "wrong_category": 5,
         "contemporary_auction": 6,
@@ -510,6 +557,8 @@ def run_query(
     ending_start_date: str | None,
     ending_end_date: str | None,
     offset: int = 0,
+    target_tier: str = "",
+    target_terms: list[str] | None = None,
 ) -> list[dict[str, Any]]:
     key = _query_key(lane, query, buying_options)
     last_checked = state["query_last_checked"].get(key)
@@ -546,6 +595,9 @@ def run_query(
         item["search_lane"] = lane
         item["search_query"] = query
         item["search_in_description"] = search_in_description
+        if target_tier:
+            item["query_target_tier"] = str(target_tier)
+            item["target_query_terms"] = list(target_terms or [])
         items.append(item)
     return items
 
@@ -969,6 +1021,8 @@ def main() -> int:
                 ending_start_date=step.get("ending_start_date"),
                 ending_end_date=step.get("ending_end_date"),
                 offset=int(step.get("offset") or 0),
+                target_tier=str(step.get("query_target_tier") or ""),
+                target_terms=list(step.get("target_query_terms") or []),
             )
             successful_queries += 1
         except Exception as exc:
@@ -984,6 +1038,17 @@ def main() -> int:
             else:
                 lanes = {str(current.get("search_lane") or ""), str(item.get("search_lane") or "")}
                 current["search_lane"] = "+".join(sorted(lane for lane in lanes if lane))
+                if item.get("query_target_tier") and (
+                    not current.get("query_target_tier")
+                    or int(item["query_target_tier"]) < int(current["query_target_tier"])
+                ):
+                    current["query_target_tier"] = item["query_target_tier"]
+                current["target_query_terms"] = list(
+                    dict.fromkeys(
+                        list(current.get("target_query_terms") or [])
+                        + list(item.get("target_query_terms") or [])
+                    )
+                )
 
     if successful_queries == 0:
         raise RuntimeError("All private-seller eBay searches failed; refusing to update state")

@@ -26,6 +26,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+import ebay_core_targets as core_targets
 import ebay_private_seller_monitor as legacy
 import photobook_recognition as recognition
 
@@ -38,8 +39,6 @@ PACED_LANE_CALLS = {
     "broad": 2,
     "contemporary_hot": 2,
     "classic_hot": 2,
-    "contemporary_contributor": 2,
-    "classic_contributor": 2,
     "collectible_format": 1,
     "collection": 1,
     "wrong_category": 2,
@@ -50,10 +49,9 @@ LANE_CURSORS = {
     "broad": "broad_priority",
     "contemporary_hot": "contemporary_hot_records",
     "classic_hot": "classic_hot_records",
-    "contemporary_contributor": "contemporary_contributors",
-    "classic_contributor": "classic_contributors",
     "library_rotation": "library_records",
 }
+CORE_TARGET_LANES = ("core_target_1", "core_target_2", "core_target_3")
 CHEAP_UNKNOWN_HARD_LIMIT_GBP = 30.0
 CHEAP_UNKNOWN_SOFT_LIMIT_GBP = 50.0
 PRICE_DROP_PERCENT = 0.20
@@ -131,6 +129,19 @@ def recall_config(config: dict[str, Any]) -> dict[str, Any]:
     # well as in JSON so a future config edit cannot silently restore auctions.
     adjusted["contemporary_auction_queries_per_run"] = 0
     adjusted["classic_auction_queries_per_run"] = 0
+    # The shared 175-name target file replaces the former 14-name contributor
+    # list. Five grouped searches per hour cover all three tiers without
+    # increasing the existing 17-call ceiling.
+    adjusted["contemporary_contributor_queries_per_run"] = 0
+    adjusted["classic_contributor_queries_per_run"] = 0
+    adjusted["core_targets_path"] = str(
+        adjusted.get("core_targets_path") or "data/ebay_endgame_targets.json"
+    )
+    adjusted["core_target_queries_per_run"] = {"1": 2, "2": 2, "3": 1}
+    adjusted["core_target_query_character_limit"] = min(
+        90,
+        int(adjusted.get("core_target_query_character_limit") or 90),
+    )
     adjusted["active_stock_queries_per_run"] = max(
         RECALL_ACTIVE_STOCK_QUERIES_PER_RUN,
         int(adjusted.get("active_stock_queries_per_run") or 0),
@@ -157,8 +168,24 @@ def build_budgeted_search_plan(
         for lane in PACED_LANE_CALLS
     }
     selected = {lane: 0 for lane in lanes}
-    plan = []
-    for _ in range(min(budget, len(full_plan))):
+    target_steps = [step for step in full_plan if step["lane"] in CORE_TARGET_LANES]
+    target_selected: list[dict[str, Any]] = []
+    target_counts = {lane: 0 for lane in CORE_TARGET_LANES}
+    total_budget = min(budget, len(full_plan))
+    # First preserve one call for every available broad/library discovery
+    # family. Any remaining normal allowance can fund up to all five grouped
+    # core-photographer calls.
+    non_target_families = sum(1 for steps in lanes.values() if steps)
+    target_budget = min(
+        len(target_steps),
+        max(0, total_budget - non_target_families),
+    )
+    for step in target_steps[:target_budget]:
+        target_selected.append(step)
+        target_counts[step["lane"]] += 1
+
+    plan: list[dict[str, Any]] = []
+    for _ in range(total_budget - len(target_selected)):
         available = [lane for lane, steps in lanes.items() if selected[lane] < len(steps)]
         if not available:
             break
@@ -171,7 +198,10 @@ def build_budgeted_search_plan(
             # Broad-query order shifts once, even if every broad query fits.
             advance = 1 if lane == "broad" else count
             state["cursors"][cursor] = int(state["cursors"].get(cursor, 0) or 0) + advance
-    return plan
+    for lane, count in target_counts.items():
+        if count:
+            state["cursors"][lane] = int(state["cursors"].get(lane, 0) or 0) + count
+    return plan + target_selected
 
 
 def _landed_price(item: dict[str, Any]) -> float | None:
@@ -228,8 +258,49 @@ def _score_band(score: int) -> str:
     )
 
 
+def apply_core_target_priority(
+    classified: dict[str, Any],
+    issue_threshold: int,
+) -> dict[str, Any]:
+    promoted = dict(classified)
+    visible = core_targets.matches_for_item(promoted)
+    query_tier = str(promoted.get("query_target_tier") or "")
+    best_tier = visible[0]["tier"] if visible else query_tier
+    if best_tier not in {"1", "2", "3"}:
+        return promoted
+
+    reasons = [str(value) for value in promoted.get("opportunity_reasons") or []]
+    if visible:
+        names = list(dict.fromkeys(match["name"] for match in visible))
+        floor = {"1": 88, "2": 82, "3": 76}[best_tier]
+        reasons.append(
+            f"Tier {best_tier} core photographer visibly matched: {', '.join(names)}"
+        )
+        promoted["matched_core_photographers"] = names
+        promoted["core_target_matches"] = visible
+    else:
+        # eBay may match a name in the seller description without returning
+        # that description in the search summary. Keep it for human review.
+        floor = int(issue_threshold)
+        reasons.append(
+            f"Tier {best_tier} core photographer query matched title or seller description"
+        )
+        promoted["matched_core_photographers"] = []
+        promoted["core_target_matches"] = []
+
+    score = max(int(promoted.get("opportunity_score") or 0), floor)
+    promoted["opportunity_score"] = score
+    promoted["score_band"] = _score_band(score)
+    promoted["core_target_tier"] = best_tier
+    promoted["core_target_lead"] = True
+    promoted["collecting_lane"] = f"core photographer Tier {best_tier}"
+    promoted["opportunity_kind"] = "core photographer fixed-price lead"
+    promoted["opportunity_reasons"] = list(dict.fromkeys(reasons))
+    return promoted
+
+
 def recall_classify(item: dict[str, Any], issue_threshold: int) -> dict[str, Any]:
-    classified = legacy.classify(item)
+    classified = apply_core_target_priority(legacy.classify(item), issue_threshold)
     if classified.get("recognized"):
         return classified
 
@@ -391,6 +462,16 @@ def _merge_result(existing: dict[str, Any], item: dict[str, Any]) -> None:
         str(item.get("search_lane") or ""),
     }
     existing["search_lane"] = "+".join(sorted(value for value in lanes if value))
+    existing_tier = str(existing.get("query_target_tier") or "")
+    item_tier = str(item.get("query_target_tier") or "")
+    if item_tier and (not existing_tier or int(item_tier) < int(existing_tier)):
+        existing["query_target_tier"] = item_tier
+    existing["target_query_terms"] = list(
+        dict.fromkeys(
+            list(existing.get("target_query_terms") or [])
+            + list(item.get("target_query_terms") or [])
+        )
+    )
     # Prefer the cheapest current summary when overlapping queries disagree.
     current_price = _landed_price(existing)
     new_price = _landed_price(item)
@@ -418,6 +499,7 @@ def _candidate_priority(pair: tuple[str, dict[str, Any]]) -> tuple[Any, ...]:
     price = _landed_price(item)
     return (
         1 if item.get("material_change") else 0,
+        4 - int(item.get("core_target_tier") or 4),
         1 if item.get("recall_first_unknown") else 0,
         int(item.get("opportunity_score") or 0),
         1 if price is not None and price <= 100 else 0,
@@ -492,6 +574,8 @@ def main() -> int:
                 ending_start_date=step.get("ending_start_date"),
                 ending_end_date=step.get("ending_end_date"),
                 offset=int(step.get("offset") or 0),
+                target_tier=str(step.get("query_target_tier") or ""),
+                target_terms=list(step.get("target_query_terms") or []),
             )
             successful_queries += 1
             if step["lane"] not in failed_lanes:

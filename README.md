@@ -57,11 +57,11 @@ The radar searches auctions only and uses three independent discovery nets:
 - broad local-language unknown-unicorn searches;
 - keyword-free Books-category sweeps as a backstop for badly titled listings.
 
-Tier 1 is revisited across all 16 Browse marketplaces within six hours and in the four major marketplaces within three hours, with a ten-hour ending horizon. Tier 2 uses 12-hour and six-hour revisits with an 18-hour horizon. Tier 3 uses 24-hour and 12-hour revisits with a 36-hour horizon. Selected high-priority photobook titles from the local recognition library receive an additional major-market lane.
+Tier 1 is revisited across all 16 Browse marketplaces within six hours and in the four major marketplaces within three hours, with a 30-hour ending horizon. Tier 2 uses 12-hour and six-hour revisits with a 36-hour horizon. Tier 3 uses 24-hour and 12-hour revisits with a 48-hour horizon. Selected high-priority photobook titles from the local recognition library receive an additional major-market lane with a 30-hour horizon.
 
 Every keyword lane searches the listing title and seller description using `filter=searchInDescription:true`. Discovery does not require UK delivery and does not restrict seller account type, so business, private and unknown-account auctions can all enter the pool. Results are deduplicated by the underlying eBay item ID across queries and marketplaces. Dense searches are divided by ending time before additional pagination follows eBay's returned `next` URL.
 
-Candidates are stored in `data/ebay_endgame_state.json`. The worker selectively calls `getItem` when an alert deadline arrives, keeps auction bid fields, and creates recall-first GitHub issues around 90 minutes and 15 minutes before the end. A failed live refresh does not silently discard a promising auction; the issue is marked `LIVE STATUS NOT VERIFIED - CHECK BEFORE BIDDING`.
+Candidates are stored in `data/ebay_endgame_state.json`. The worker selectively calls `getItem` when an alert deadline arrives, keeps auction bid fields, and creates an early GitHub issue within roughly 24 hours plus a stronger-candidate update around four hours before the end. A late discovery is surfaced immediately. A failed live refresh does not silently discard a promising auction; the issue is marked `LIVE STATUS NOT VERIFIED - CHECK BEFORE BIDDING`.
 
 The configured primary matrix is about 2,400 first-page searches/day. Endgame has a hard 3,600-call daily state cap, so roughly 1,200 calls remain for pagination and live item refreshes. It also stops before the shared 650-call reserve.
 
@@ -73,7 +73,7 @@ Results are matched and scored locally for collectibility and possible seller un
 
 The hand-curated contemporary layer favours respected documentary practice, important first monographs, independently recognised recent books and verifiable scarce physical editions. A plain expensive copy of a recent award winner is not enough on its own: it needs a genuine price, edition or high-recall discovery signal before it can cross the alert threshold.
 
-The private schedule runs once per hour at minute 4. Each run is capped at 17 Browse searches, for a maximum of 408 calls/day. Quota pacing protects a 650-call safety reserve and budgets for 164 shared calls/hour: 150 for Endgame, 12 charity seller searches and two market searches. Quota lookup failure cannot raise the 17-call ceiling.
+The private schedule runs once per hour at minute 4. Each run is capped at 17 Browse searches, for a maximum of 408 calls/day. Five of those searches rotate grouped title-and-description queries for the shared 175 core photographers, split two Tier 1, two Tier 2 and one Tier 3 group per hour. This covers every current group in about ten hours without increasing the API ceiling. The remaining calls preserve broad, collectible, wrong-category, active-stock and library-title discovery. Quota pacing protects a 650-call safety reserve and budgets for 164 shared calls/hour: 150 for Endgame, 12 charity seller searches and two market searches. Quota lookup failure cannot raise the 17-call ceiling.
 
 A normal 17-call plan uses five long-tail library searches, four active-stock pages and one search from each of the broad, contemporary-hot, classic-hot, contemporary-contributor, classic-contributor, collectible-format, collection and wrong-category lanes. Lane cursors advance only over selected prefixes, so quota trimming cannot silently skip library records or inventory pages.
 
@@ -83,7 +83,7 @@ The scheduled workflow files for the private historical backfill, international 
 
 ### Selected eBay charity sellers
 
-`ebay_seller_monitor.py` separately checks 103 selected charity and library sellers: 89 on eBay UK and 14 on eBay US. The hourly workflow processes 12 sellers in a persistent round-robin batch, so every seller is normally revisited within nine runs. At one page per seller this uses 288 calls/day. Each seller gets an independent Books-category query, so a large seller cannot consume a shared 200-result page and hide stock from smaller shops. Incremental scans can use up to five pages per seller; a 650-call quota reserve and worst-case page headroom checks remain in place. The US searches also require delivery availability to Great Britain.
+`ebay_seller_monitor.py` separately checks 103 selected charity and library sellers: 89 on eBay UK and 14 on eBay US. The hourly workflow processes 12 sellers in a persistent round-robin batch, so every seller is normally revisited within nine runs. At one page per seller this uses 288 calls/day. Each seller gets an independent Books-category query, so a large seller cannot consume a shared 200-result page and hide stock from smaller shops. Every returned item is also matched locally against the same 175 core photographers. A core match is promoted and sorted by tier even if the generic photobook filter would not have qualified it, with no extra Browse call. Incremental scans can use up to five pages per seller; a 650-call quota reserve and worst-case page headroom checks remain in place. The US searches also require delivery availability to Great Britain.
 
 The first successful search for each seller silently records its newest 200 fixed-price books. Later runs use that seller's last successful timestamp with a ten-minute overlap, then alert only on previously unseen listings that contain photography-book signals or match the combined Parr/Badger and Roth canon. Seller state is isolated, so one temporary seller failure does not turn existing stock into new alerts.
 
@@ -129,8 +129,8 @@ New GitHub candidates use one of these issue prefixes:
 - `OXFAM_ART_NEW:`
 - `CHARITY_NEW:`
 - `EXTERNAL_NEW:`
-- `ENDGAME_90:`
-- `ENDGAME_15:`
+- `ENDGAME_EARLY:`
+- `ENDGAME_4H:`
 
 The comprehensive market monitor deliberately uses `EXTERNAL_NEW:` so the existing downstream ChatGPT issue-review task processes it. That task verifies exact edition, printing, completeness, condition, all-in UK price and comparable copies before any email alert.
 

@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import copy
+import tempfile
 import unittest
 from datetime import datetime, timedelta, timezone
+from pathlib import Path
 
 import ebay_endgame as endgame
 
@@ -74,6 +76,13 @@ class EndgameTests(unittest.TestCase):
             {row["marketplace"] for row in self.config["markets"]},
             endgame.EXPECTED_MARKETS,
         )
+        self.assertEqual(self.config["initial_alert_minutes"], 24 * 60)
+        self.assertEqual(self.config["final_alert_minutes"], 4 * 60)
+        self.assertEqual(
+            {tier: self.config["tiers"][tier]["horizon_hours"] for tier in ("1", "2", "3")},
+            {"1": 30, "2": 36, "3": 48},
+        )
+        self.assertEqual(self.config["title_search"]["horizon_hours"], 30)
 
     def test_compiled_name_queries_are_complete_and_below_limit(self):
         for tier in ("1", "2", "3"):
@@ -206,6 +215,28 @@ class EndgameTests(unittest.TestCase):
         self.assertTrue(saved["initial_alerted_at"])
         self.assertTrue(saved["final_alerted_at"])
         self.assertEqual(endgame.collect_deadline_alerts(self.config, state, NOW, pool, 0)[0], [])
+
+    def test_alert_packets_use_early_and_four_hour_prefixes(self):
+        initial = auction_summary(title="Early target", end_minutes=12 * 60)
+        final = auction_summary(item_id="v1|222222222222|0", title="Four hour target", end_minutes=180)
+        alerts = [
+            {
+                **endgame.candidate_from_summary(initial, self.tasks[0], self.config, NOW),
+                "alert_phase": "initial",
+                "minutes_remaining": 12 * 60,
+            },
+            {
+                **endgame.candidate_from_summary(final, self.tasks[0], self.config, NOW),
+                "alert_phase": "final",
+                "minutes_remaining": 180,
+            },
+        ]
+        with tempfile.TemporaryDirectory() as tmp:
+            runtime = Path(tmp)
+            self.assertEqual(endgame.write_alert_packets(alerts, runtime, self.config, NOW), 2)
+            titles = sorted(path.read_text().strip() for path in (runtime / "alerts").glob("*.title"))
+        self.assertTrue(any(title.startswith("ENDGAME_EARLY:") for title in titles))
+        self.assertTrue(any(title.startswith("ENDGAME_4H:") for title in titles))
 
     def test_detail_budget_prioritises_alertable_final_candidate(self):
         task = next(task for task in self.tasks if task["lane"] == "known" and task["tier"] == "1")
