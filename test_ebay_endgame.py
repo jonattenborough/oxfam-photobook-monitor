@@ -35,9 +35,11 @@ class FakeDetailClient:
         self.error = error
         self.browse_calls = 0
         self._access_token = "fake"
+        self.item_ids: list[str] = []
 
     def get_item(self, item_id: str) -> dict:
         self.browse_calls += 1
+        self.item_ids.append(item_id)
         if self.error:
             raise self.error
         return copy.deepcopy(self.detail)
@@ -121,6 +123,18 @@ class EndgameTests(unittest.TestCase):
         self.assertEqual(candidate["query_target_tier"], "1")
         self.assertEqual(candidate["matched_target_terms"], [])
 
+    def test_broad_rediscovery_cannot_erase_known_target_lane(self):
+        known_task = next(task for task in self.tasks if task["lane"] == "known" and task["tier"] == "1")
+        broad_task = next(task for task in self.tasks if task["lane"] == "broad")
+        summary = auction_summary(title=f"{known_task['terms'][0]} photography book")
+        known = endgame.candidate_from_summary(summary, known_task, self.config, NOW)
+        broad = endgame.candidate_from_summary(summary, broad_task, self.config, NOW)
+        assert known is not None and broad is not None
+        merged = endgame.merge_candidate(known, broad)
+        self.assertEqual(merged["discovery_lane"], "known")
+        self.assertEqual(merged["query_target_tier"], "1")
+        self.assertGreaterEqual(merged["opportunity_score"], 88)
+
     def test_category_sweep_rejects_obvious_unrelated_noise(self):
         task = next(task for task in self.tasks if task["lane"] == "category")
         candidate = endgame.candidate_from_summary(
@@ -190,6 +204,40 @@ class EndgameTests(unittest.TestCase):
         self.assertTrue(saved["initial_alerted_at"])
         self.assertTrue(saved["final_alerted_at"])
         self.assertEqual(endgame.collect_deadline_alerts(self.config, state, NOW, pool, 0)[0], [])
+
+    def test_detail_budget_prioritises_alertable_final_candidate(self):
+        task = next(task for task in self.tasks if task["lane"] == "known" and task["tier"] == "1")
+        high = endgame.candidate_from_summary(
+            auction_summary(title=f"{task['terms'][0]} signed photobook", end_minutes=10),
+            task,
+            self.config,
+            NOW,
+        )
+        assert high is not None
+        low = dict(high)
+        low.update(
+            {
+                "key": "ebay:999999999999",
+                "external_id": "999999999999",
+                "rest_item_id": "v1|999999999999|0",
+                "title": "Unrelated school textbook",
+                "opportunity_score": 0,
+                "query_target_tier": "",
+                "target_query_terms": [],
+                "matched_target_terms": [],
+                "discovery_lane": "category",
+            }
+        )
+        state = endgame.blank_state()
+        state["candidates"] = {high["key"]: high, low["key"]: low}
+        detail = auction_summary(title=f"{task['terms'][0]} signed photobook", end_minutes=10)
+        detail["estimatedAvailabilityStatus"] = "IN_STOCK"
+        client = FakeDetailClient(detail)
+        alerts, calls = endgame.collect_deadline_alerts(self.config, state, NOW, FakePool(client), 1)
+        self.assertEqual(calls, 1)
+        self.assertEqual(client.item_ids, [high["rest_item_id"]])
+        self.assertEqual(len(alerts), 1)
+        self.assertEqual(alerts[0]["live_verification"], "live auction verified")
 
 
 if __name__ == "__main__":

@@ -642,6 +642,13 @@ def merge_candidate(existing: dict[str, Any] | None, incoming: dict[str, Any]) -
     merged["target_query_terms"] = list(
         dict.fromkeys((existing.get("target_query_terms") or []) + (incoming.get("target_query_terms") or []))
     )
+    lane_rank = {"known": 0, "title": 1, "broad": 2, "category": 3}
+    existing_lane = str(existing.get("discovery_lane") or "")
+    incoming_lane = str(incoming.get("discovery_lane") or "")
+    if lane_rank.get(existing_lane, 9) < lane_rank.get(incoming_lane, 9):
+        for key in ("discovery_lane", "discovery_query", "query_target_tier"):
+            if existing.get(key) not in (None, ""):
+                merged[key] = existing[key]
     if int(existing.get("opportunity_score") or 0) > int(incoming.get("opportunity_score") or 0):
         for key in (
             "opportunity_score", "score_band", "opportunity_reasons", "recognized",
@@ -813,7 +820,7 @@ def collect_deadline_alerts(
     pool: ClientPool,
     detail_budget: int,
 ) -> tuple[list[dict[str, Any]], int]:
-    due: list[tuple[int, float, str, dict[str, Any]]] = []
+    due: list[tuple[int, int, float, int, str, dict[str, Any]]] = []
     for key, candidate in state["candidates"].items():
         if not isinstance(candidate, dict) or candidate.get("active") is False:
             continue
@@ -821,12 +828,16 @@ def collect_deadline_alerts(
         if phase is None:
             continue
         name, minutes = phase
-        due.append((0 if name == "final" else 1, minutes, key, candidate))
-    due.sort(key=lambda value: (value[0], value[1], -int(value[3].get("opportunity_score") or 0)))
+        threshold = int(config["final_alert_score"] if name == "final" else config["initial_alert_score"])
+        if name == "final" and not candidate.get("initial_alerted_at"):
+            threshold = min(threshold, int(config["initial_alert_score"]))
+        score = int(candidate.get("opportunity_score") or 0)
+        due.append((0 if name == "final" else 1, 0 if score >= threshold else 1, minutes, -score, key, candidate))
+    due.sort(key=lambda value: value[:4])
 
     alerts: list[dict[str, Any]] = []
     detail_calls = 0
-    for _, minutes, key, candidate in due:
+    for _, _, minutes, _, key, candidate in due:
         working = dict(candidate)
         if detail_calls < detail_budget:
             client = pool.get(str(working.get("marketplace") or "EBAY_GB"))
