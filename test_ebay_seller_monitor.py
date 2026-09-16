@@ -41,20 +41,25 @@ class EbaySellerMonitorTests(unittest.TestCase):
         self.assertEqual(len({monitor.seller_key(s["marketplace"], s["id"]) for s in sellers}), 103)
         self.assertTrue(all(seller.get("delivery_country") == "GB" for seller in us))
 
-    def test_hourly_batches_cover_every_seller_in_four_runs(self):
+    def test_hourly_batches_cover_every_seller_in_nine_runs(self):
         sellers = monitor.load_config(Path("data/ebay_sellers.json"))
         cursor = 0
         batches = []
-        for _ in range(4):
+        for _ in range(9):
             batch, cursor = monitor.select_sellers(sellers, cursor, monitor.DEFAULT_SELLERS_PER_RUN)
             batches.append(batch)
         covered = {
             monitor.seller_key(seller["marketplace"], seller["id"])
             for batch in batches for seller in batch
         }
-        self.assertEqual([len(batch) for batch in batches], [26] * 4)
+        self.assertEqual([len(batch) for batch in batches], [12] * 9)
         self.assertEqual(len(covered), 103)
-        self.assertEqual(cursor, 1)
+        self.assertEqual(cursor, 5)
+
+    def test_nominal_daily_demand_is_inside_reduced_budget(self):
+        nominal_daily_calls = monitor.DEFAULT_SELLERS_PER_RUN * 24
+        self.assertGreaterEqual(nominal_daily_calls, 250)
+        self.assertLessEqual(nominal_daily_calls, 350)
 
     def test_scheduled_seller_allocation_matches_default(self):
         workflow = Path(".github/workflows/ebay-seller-monitor.yml").read_text(encoding="utf-8")

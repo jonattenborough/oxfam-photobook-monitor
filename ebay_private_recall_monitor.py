@@ -6,6 +6,8 @@ This wrapper keeps the proven query planning and scoring machinery from
 
 * all available per-run Browse calls are spent on discovery, not mandatory
   item-detail rechecks;
+* only fixed-price and Best Offer listings are searched; auction discovery is
+  owned by the Endgame Radar;
 * paced searches protect library, active-stock and photographer coverage, with
   a larger opportunistic plan when shared quota is available;
 * strong search results are handed straight to the recall-first alert builder;
@@ -29,8 +31,8 @@ import photobook_recognition as recognition
 
 RECALL_ACTIVE_STOCK_QUERIES_PER_RUN = 4
 RECALL_PENDING_LIMIT = 500
-# At the normal ~44-call allowance, keep every discovery family alive while
-# spending most calls on the long-tail library and deeper active inventory.
+# At the normal 17-call allowance, keep every fixed-price discovery family
+# alive while spending most calls on the long-tail library and active inventory.
 # Order breaks ties (and keeps a broad query first under extreme scarcity).
 PACED_LANE_CALLS = {
     "broad": 2,
@@ -41,8 +43,6 @@ PACED_LANE_CALLS = {
     "collectible_format": 1,
     "collection": 1,
     "wrong_category": 2,
-    "contemporary_auction": 1,
-    "classic_auction": 1,
     "active_stock": 10,
     "library_rotation": 16,
 }
@@ -52,8 +52,6 @@ LANE_CURSORS = {
     "classic_hot": "classic_hot_records",
     "contemporary_contributor": "contemporary_contributors",
     "classic_contributor": "classic_contributors",
-    "contemporary_auction": "contemporary_auctions",
-    "classic_auction": "classic_auctions",
     "library_rotation": "library_records",
 }
 CHEAP_UNKNOWN_HARD_LIMIT_GBP = 30.0
@@ -129,6 +127,10 @@ COLLECTIBLE_SIGNAL_TERMS = {
 def recall_config(config: dict[str, Any]) -> dict[str, Any]:
     adjusted = dict(config)
     adjusted["max_live_checks_per_run"] = 0
+    # Endgame is the sole auction-discovery owner. Keep this invariant here as
+    # well as in JSON so a future config edit cannot silently restore auctions.
+    adjusted["contemporary_auction_queries_per_run"] = 0
+    adjusted["classic_auction_queries_per_run"] = 0
     adjusted["active_stock_queries_per_run"] = max(
         RECALL_ACTIVE_STOCK_QUERIES_PER_RUN,
         int(adjusted.get("active_stock_queries_per_run") or 0),

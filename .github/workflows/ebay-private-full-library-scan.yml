@@ -23,24 +23,6 @@ on:
         required: true
         default: false
         type: boolean
-  push:
-    branches: [main]
-    paths:
-      - "data/ebay_private_full_library_scan_trigger.txt"
-      - "ebay_private_full_library_scan.py"
-      - "test_ebay_private_full_library_scan.py"
-      - ".github/workflows/ebay-private-full-library-scan.yml"
-  pull_request:
-    branches: [main]
-    paths:
-      - "ebay_api.py"
-      - "ebay_private_seller_monitor.py"
-      - "ebay_private_seller_backfill.py"
-      - "ebay_private_full_library_scan.py"
-      - "photobook_recognition.py"
-      - "test_ebay_private_full_library_scan.py"
-      - "data/photobook_recognition/**"
-      - ".github/workflows/ebay-private-full-library-scan.yml"
 
 permissions:
   actions: write
@@ -90,9 +72,6 @@ jobs:
           workflows=(
             ebay-seller-monitor.yml
             ebay-private-seller-monitor.yml
-            ebay-seller-backfill.yml
-            ebay-private-seller-backfill.yml
-            ebay-private-international-backfill.yml
             market-monitor.yml
           )
           for workflow in "${workflows[@]}"; do
@@ -203,9 +182,6 @@ jobs:
           workflows=(
             ebay-seller-monitor.yml
             ebay-private-seller-monitor.yml
-            ebay-seller-backfill.yml
-            ebay-private-seller-backfill.yml
-            ebay-private-international-backfill.yml
             market-monitor.yml
           )
           for workflow in "${workflows[@]}"; do

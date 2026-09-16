@@ -4,20 +4,6 @@ on:
   schedule:
     - cron: "9 * * * *"
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - "ebay_seller_monitor.py"
-      - "ebay_api.py"
-      - "external_monitor.py"
-      - "canon_runner.py"
-      - "parr_badger_runner.py"
-      - "test_ebay_api.py"
-      - "test_ebay_seller_monitor.py"
-      - "data/ebay_sellers.json"
-      - "data/parr_badger_master/**"
-      - "data/roth_101_master.csv"
-      - ".github/workflows/ebay-seller-monitor.yml"
 
 permissions:
   contents: write
@@ -55,7 +41,7 @@ jobs:
         env:
           EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
-        run: python ebay_seller_monitor.py --sellers-per-run 26
+        run: python ebay_seller_monitor.py --sellers-per-run 12
 
       - name: Create AI review issue for new seller candidates
         if: steps.sellers.outputs.new_count != '0'

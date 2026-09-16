@@ -2,7 +2,7 @@ name: eBay private seller photobook discovery
 
 on:
   schedule:
-    - cron: "2,17,32,47 * * * *"
+    - cron: "4 * * * *"
   workflow_dispatch:
   pull_request:
     branches: [main]
@@ -30,34 +30,6 @@ on:
       - "data/roth_101_master.csv"
       - ".github/workflows/ebay-private-seller-monitor.yml"
       - ".github/workflows/ebay-seller-monitor.yml"
-  push:
-    branches: [main]
-    paths:
-      - "ebay_api.py"
-      - "ebay_private_seller_monitor.py"
-      - "ebay_private_recall_monitor.py"
-      - "ebay_seller_monitor.py"
-      - "market_monitor_safe.py"
-      - "ebay_private_alert_builder.py"
-      - "photobook_recognition.py"
-      - "photobook_library_builder.py"
-      - "test_ebay_api.py"
-      - "test_ebay_private_api.py"
-      - "test_photobook_recognition.py"
-      - "test_photobook_library_builder.py"
-      - "test_ebay_private_seller_monitor.py"
-      - "test_ebay_private_recall_monitor.py"
-      - "test_ebay_seller_monitor.py"
-      - "test_ebay_private_alert_builder.py"
-      - "data/ebay_private_searches.json"
-      - "data/ebay_private_recall_searches.json"
-      - "data/photobook_recognition/**"
-      - "data/ebay_private_seller_state.json"
-      - "data/parr_badger_master/**"
-      - "data/roth_101_master.csv"
-      - ".github/workflows/ebay-private-seller-monitor.yml"
-      - ".github/workflows/ebay-seller-monitor.yml"
-
 permissions:
   contents: write
   issues: write

@@ -25,7 +25,7 @@ class QuotaClient:
 
 
 class RecallFirstPrivateMonitorTests(unittest.TestCase):
-    def test_repurposes_live_checks_into_three_extra_searches(self):
+    def test_repurposes_live_checks_and_disables_auctions(self):
         config = recall.recall_config(legacy.load_config(Path("data/ebay_private_searches.json")))
         state = legacy.load_state(Path("/path/that/does/not/exist.json"))
         plan = legacy.build_search_plan(
@@ -35,36 +35,67 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
         )
         self.assertEqual(config["max_live_checks_per_run"], 0)
         self.assertEqual(config["active_stock_queries_per_run"], 4)
-        self.assertEqual(len(plan), 38)
+        self.assertEqual(len(plan), 36)
         self.assertEqual(sum(step["lane"] == "active_stock" for step in plan), 4)
+        self.assertFalse(
+            any(step["lane"] in {"contemporary_auction", "classic_auction"} for step in plan)
+        )
+        self.assertTrue(
+            all(step["buying_options"] == legacy.FIXED_BUYING_OPTIONS for step in plan)
+        )
 
-    def test_expanded_recall_config_fills_opportunistic_70_search_ceiling(self):
+    def test_reduced_recall_config_builds_a_17_call_fixed_price_plan(self):
         config = recall.recall_config(
             legacy.load_config(Path("data/ebay_private_recall_searches.json"))
         )
         state = legacy.load_state(Path("/path/that/does/not/exist.json"))
-        plan = legacy.build_search_plan(
+        full_plan = legacy.build_search_plan(
             config,
             state,
             datetime(2026, 9, 4, 8, 0, tzinfo=timezone.utc),
         )
-        self.assertEqual(len(plan), config["max_api_calls_per_run"])
-        self.assertEqual(len(plan), 70)
-        self.assertEqual(sum(step["lane"] == "active_stock" for step in plan), 12)
-        self.assertEqual(sum(step["lane"] == "wrong_category" for step in plan), 10)
+        self.assertEqual(len(full_plan), 58)
+        self.assertEqual(sum(step["lane"] == "active_stock" for step in full_plan), 4)
+        self.assertEqual(sum(step["lane"] == "wrong_category" for step in full_plan), 10)
         self.assertEqual(
-            sum(step["lane"] in {"contemporary_auction", "classic_auction"} for step in plan),
-            4,
+            sum(step["lane"] in {"contemporary_auction", "classic_auction"} for step in full_plan),
+            0,
         )
         self.assertEqual(
-            sum(step["lane"] in {"contemporary_contributor", "classic_contributor"} for step in plan),
+            sum(step["lane"] in {"contemporary_contributor", "classic_contributor"} for step in full_plan),
             4,
         )
-        self.assertEqual(sum(step["lane"] == "collection" for step in plan), 4)
-        self.assertEqual(sum(step["lane"] == "library_rotation" for step in plan), 16)
-        self.assertEqual(sum(step["lane"] == "contemporary_hot" for step in plan), 6)
-        self.assertEqual(sum(step["lane"] == "classic_hot" for step in plan), 6)
+        self.assertEqual(sum(step["lane"] == "collection" for step in full_plan), 4)
+        self.assertEqual(sum(step["lane"] == "library_rotation" for step in full_plan), 16)
+        self.assertEqual(sum(step["lane"] == "contemporary_hot" for step in full_plan), 6)
+        self.assertEqual(sum(step["lane"] == "classic_hot" for step in full_plan), 6)
         self.assertEqual(config["max_live_checks_per_run"], 0)
+        self.assertTrue(
+            all(step["buying_options"] == legacy.FIXED_BUYING_OPTIONS for step in full_plan)
+        )
+
+        budgeted = recall.build_budgeted_search_plan(
+            config,
+            {"cursors": {}},
+            datetime(2026, 9, 4, 8, 0, tzinfo=timezone.utc),
+            config["max_api_calls_per_run"],
+        )
+        self.assertEqual(len(budgeted), 17)
+        self.assertEqual(
+            Counter(step["lane"] for step in budgeted),
+            Counter({
+                "library_rotation": 5,
+                "active_stock": 4,
+                "broad": 1,
+                "contemporary_hot": 1,
+                "classic_hot": 1,
+                "contemporary_contributor": 1,
+                "classic_contributor": 1,
+                "collectible_format": 1,
+                "collection": 1,
+                "wrong_category": 1,
+            }),
+        )
 
     def config(self):
         return recall.recall_config(legacy.load_config(Path("data/ebay_private_recall_searches.json")))
@@ -73,20 +104,26 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
         config = self.config()
         now = datetime(2026, 9, 4, 7, 0, tzinfo=timezone.utc)
         budget, _, warning = legacy.api_call_budget(QuotaClient(), config, now)
-        self.assertEqual(config["projected_shared_calls_per_hour"], charity.DEFAULT_SELLERS_PER_RUN + 2)
-        self.assertEqual(budget, 45)  # ceil((5000 - 80 - 24 * 28) / 96)
+        self.assertEqual(
+            config["projected_shared_calls_per_hour"],
+            150 + charity.DEFAULT_SELLERS_PER_RUN + 2,
+        )
+        self.assertEqual(budget, 17)
         self.assertIsNone(warning)
-        for remaining in (0, 79, 80, 81, 450, 752):
+        for remaining in (0, 649, 650, 651, 4586):
             with self.subTest(remaining=remaining):
                 budget, _, _ = legacy.api_call_budget(QuotaClient(remaining), config, now)
                 self.assertEqual(budget, 0)
+        self.assertEqual(legacy.api_call_budget(QuotaClient(4587), config, now)[0], 1)
+        self.assertEqual(legacy.api_call_budget(QuotaClient(4970), config, now)[0], 16)
+        self.assertEqual(legacy.api_call_budget(QuotaClient(4971), config, now)[0], 17)
 
     def test_spare_quota_is_available_near_reset_but_reserve_is_protected(self):
         config = self.config()
         now = datetime(2026, 9, 5, 6, 50, tzinfo=timezone.utc)
-        self.assertEqual(legacy.api_call_budget(QuotaClient(300), config, now)[0], 70)
-        self.assertEqual(legacy.api_call_budget(QuotaClient(120), config, now)[0], 12)
-        self.assertEqual(legacy.api_call_budget(QuotaClient(80), config, now)[0], 0)
+        self.assertEqual(legacy.api_call_budget(QuotaClient(900), config, now)[0], 17)
+        self.assertEqual(legacy.api_call_budget(QuotaClient(820), config, now)[0], 6)
+        self.assertEqual(legacy.api_call_budget(QuotaClient(814), config, now)[0], 0)
 
     def test_unknown_or_stale_quota_cannot_unlock_large_ceiling(self):
         config = self.config()
@@ -94,13 +131,14 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
         client = QuotaClient()
         with patch.object(client, "browse_quota", side_effect=RuntimeError("offline")):
             budget, quota, warning = legacy.api_call_budget(client, config, now)
-        self.assertEqual(budget, 20)
+        self.assertEqual(budget, 17)
         self.assertIsNone(quota)
         self.assertIn("lookup failed", warning)
         for reset in (None, "invalid", "2026-09-04T07:00:00Z", "2026-09-03T07:00:00Z"):
             with self.subTest(reset=reset):
-                self.assertEqual(legacy.api_call_budget(QuotaClient(reset=reset), config, now)[0], 20)
-                self.assertEqual(legacy.api_call_budget(QuotaClient(85, reset), config, now)[0], 5)
+                self.assertEqual(legacy.api_call_budget(QuotaClient(700, reset), config, now)[0], 17)
+                self.assertEqual(legacy.api_call_budget(QuotaClient(666, reset), config, now)[0], 16)
+                self.assertEqual(legacy.api_call_budget(QuotaClient(650, reset), config, now)[0], 0)
         config["max_api_calls_per_run"] = 7
         self.assertEqual(legacy.api_call_budget(QuotaClient(reset=None), config, now)[0], 7)
 
@@ -111,21 +149,22 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
         private_calls = 0
         budgets = []
         for minute in range(24 * 60):
-            if minute % 60 in (2, 17, 32, 47):
+            if minute % 60 == 4:
                 budget, _, _ = legacy.api_call_budget(client, config, start + timedelta(minutes=minute))
                 self.assertLessEqual(budget, config["max_api_calls_per_run"])
                 budgets.append(budget)
                 private_calls += budget
                 client.remaining -= budget
+            elif minute % 60 == 7:
+                client.remaining -= 150  # protected Endgame allocation
             elif minute % 60 == 9:
                 client.remaining -= charity.DEFAULT_SELLERS_PER_RUN
             elif minute % 60 == 27:
                 client.remaining -= 2
             self.assertGreaterEqual(client.remaining, config["quota_reserve"])
-        self.assertEqual(len(budgets), 96)
-        self.assertGreaterEqual(private_calls, 4100)
-        self.assertLessEqual(private_calls, 4300)
-        self.assertLessEqual(client.remaining, 150)
+        self.assertEqual(len(budgets), 24)
+        self.assertEqual(private_calls, 408)
+        self.assertEqual(client.remaining, 656)
 
     def test_market_keeps_two_broad_feeds_and_non_ebay_targets(self):
         # Run the wrapper without its CLI or persistent mutations to the
@@ -141,26 +180,30 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
     def test_normal_paced_plan_protects_library_stock_and_contributors(self):
         config = self.config()
         state = {"cursors": {}}
-        plan = recall.build_budgeted_search_plan(config, state, datetime.now(timezone.utc), 44)
+        plan = recall.build_budgeted_search_plan(config, state, datetime.now(timezone.utc), 17)
         counts = Counter(step["lane"] for step in plan)
-        self.assertEqual(len(plan), 44)
-        self.assertEqual(counts["active_stock"], 10)
-        self.assertEqual(counts["library_rotation"], 16)
-        self.assertEqual(counts["contemporary_contributor"], 2)
-        self.assertEqual(counts["classic_contributor"], 2)
+        self.assertEqual(len(plan), 17)
+        self.assertEqual(counts["active_stock"], 4)
+        self.assertEqual(counts["library_rotation"], 5)
+        self.assertEqual(counts["contemporary_contributor"], 1)
+        self.assertEqual(counts["classic_contributor"], 1)
         self.assertEqual(set(counts), set(recall.PACED_LANE_CALLS))
-        self.assertEqual(state["cursors"]["active_stock"], 10)
-        self.assertEqual(state["cursors"]["library_records"], 16)
+        self.assertEqual(state["cursors"]["active_stock"], 4)
+        self.assertEqual(state["cursors"]["library_records"], 5)
         self.assertEqual(state["cursors"]["classic_hot_records"], counts["classic_hot"])
+        self.assertTrue(
+            all(step["buying_options"] == legacy.FIXED_BUYING_OPTIONS for step in plan)
+        )
 
     def test_budget_bounds_and_zero_budget_do_not_skip_unsearched_work(self):
         config = self.config()
         now = datetime.now(timezone.utc)
-        for budget in (-1, 0, 1, 3, 10, 20, 43, 44, 45, 70, 100):
+        full_plan_length = len(legacy.build_search_plan(config, {"cursors": {}}, now))
+        for budget in (-1, 0, 1, 3, 10, 17, 20, 43, 58, 70, 100):
             with self.subTest(budget=budget):
                 state = {"cursors": {}}
                 plan = recall.build_budgeted_search_plan(config, state, now, budget)
-                self.assertEqual(len(plan), min(70, max(0, budget)))
+                self.assertEqual(len(plan), min(full_plan_length, max(0, budget)))
                 if budget <= 0:
                     self.assertEqual(state, {"cursors": {}})
         state = {"cursors": {}}
@@ -190,7 +233,7 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
         config = self.config()
         positions = len(config["active_stock_queries"]) * 50
         state = {"cursors": {"active_stock": positions - 2}}
-        plan = recall.build_budgeted_search_plan(config, state, datetime.now(timezone.utc), 44)
+        plan = recall.build_budgeted_search_plan(config, state, datetime.now(timezone.utc), 17)
         stock = [step for step in plan if step["lane"] == "active_stock"]
         self.assertEqual([step["offset"] for step in stock[:3]], [9800, 9800, 0])
         self.assertTrue(all(not step["incremental"] for step in stock))
@@ -248,10 +291,10 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
                  patch.object(legacy, "set_output"):
                 self.assertEqual(recall.main(), 0)
             proposed = json.loads((runtime / "proposed-state.json").read_text())
-            self.assertEqual(query.call_count, 45)
+            self.assertEqual(query.call_count, 17)
             self.assertEqual(proposed["last_live_checks"], 0)
-            self.assertEqual(proposed["cursors"]["library_records"], config["rotating_records_per_run"])
-            self.assertEqual(proposed["cursors"]["active_stock"], 10)
+            self.assertEqual(proposed["cursors"]["library_records"], 5)
+            self.assertEqual(proposed["cursors"]["active_stock"], 4)
 
     def test_failed_library_query_is_retried_without_skipping_a_cursor_gap(self):
         library_attempts = 0
@@ -274,9 +317,9 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
                  patch.object(legacy, "set_output"):
                 self.assertEqual(recall.main(), 0)
             proposed = json.loads((runtime / "proposed-state.json").read_text())
-            self.assertEqual(library_attempts, 16)
+            self.assertEqual(library_attempts, 5)
             self.assertEqual(proposed["cursors"]["library_records"], 1)
-            self.assertEqual(proposed["last_successful_queries"], 44)
+            self.assertEqual(proposed["last_successful_queries"], 16)
 
     def test_zero_quota_main_does_not_advance_state_or_search(self):
         with tempfile.TemporaryDirectory() as tmp:

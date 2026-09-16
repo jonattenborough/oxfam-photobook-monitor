@@ -1,10 +1,6 @@
 name: eBay international backfill accelerator
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - ".github/workflows/ebay-private-international-accelerator.yml"
   workflow_dispatch:
     inputs:
       total_call_cap:
@@ -22,14 +18,6 @@ on:
         required: true
         default: "750"
         type: string
-  pull_request:
-    branches: [main]
-    paths:
-      - "ebay_private_seller_backfill.py"
-      - "ebay_private_international_backfill.py"
-      - "test_ebay_private_seller_backfill.py"
-      - "test_ebay_private_international_backfill.py"
-      - ".github/workflows/ebay-private-international-accelerator.yml"
 
 permissions:
   actions: write
@@ -79,8 +67,6 @@ jobs:
           workflows=(
             344709945 # ebay-seller-monitor.yml
             347511676 # ebay-private-seller-monitor.yml
-            344716825 # ebay-seller-backfill.yml
-            347697301 # ebay-private-seller-backfill.yml
             340064758 # market-monitor.yml
           )
           for workflow in "${workflows[@]}"; do
@@ -182,8 +168,6 @@ jobs:
           workflows=(
             344709945 # ebay-seller-monitor.yml
             347511676 # ebay-private-seller-monitor.yml
-            344716825 # ebay-seller-backfill.yml
-            347697301 # ebay-private-seller-backfill.yml
             340064758 # market-monitor.yml
           )
           for workflow in "${workflows[@]}"; do
