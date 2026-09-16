@@ -85,13 +85,14 @@ class EndgameTests(unittest.TestCase):
             self.assertEqual({endgame.normalized(term) for term in packed}, {endgame.normalized(term) for term in terms})
 
     def test_task_matrix_is_auction_only_and_within_budget(self):
-        self.assertEqual(len(self.tasks), 644)
-        self.assertEqual(endgame.projected_primary_calls_per_day(self.tasks), 2400.0)
+        self.assertEqual(len(self.tasks), 643)
+        self.assertEqual(endgame.projected_primary_calls_per_day(self.tasks), 2396.0)
         self.assertLess(endgame.projected_primary_calls_per_day(self.tasks), self.config["daily_call_cap"])
         self.assertTrue(all("delivery_country" not in task for task in self.tasks))
         self.assertTrue(all("seller_account_type" not in task for task in self.tasks))
         self.assertTrue(any(task["lane"] == "category" and task["query"] is None for task in self.tasks))
         self.assertTrue(any(task["marketplace"] == "EBAY_HK" for task in self.tasks))
+        self.assertFalse(any(task["lane"] == "category" and task["marketplace"] == "EBAY_BE" for task in self.tasks))
 
     def test_bootstrap_selection_balances_all_four_lanes(self):
         selected = endgame.select_due_tasks(
@@ -168,6 +169,7 @@ class EndgameTests(unittest.TestCase):
             NOW,
         )
         assert candidate is not None
+        candidate["discovery_lane"] = "broad"
         target = task["terms"][0]
         detail = auction_summary(title="Old hardback book see photos", end_minutes=10)
         detail.update(

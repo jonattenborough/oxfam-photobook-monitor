@@ -324,6 +324,8 @@ def build_tasks(config: dict[str, Any]) -> list[dict[str, Any]]:
     category = config.get("category_sweep") or {}
     if category.get("enabled"):
         for market in markets:
+            if market.get("category_sweep") is False:
+                continue
             major = bool(market.get("major"))
             interval = float(category["major_revisit_hours"] if major else category["revisit_hours"])
             horizon = float(category["major_horizon_hours"] if major else category["horizon_hours"])
@@ -699,6 +701,10 @@ def discover(
             pool.sync_token(client)
         except (ebay_api.EbayApiError, ValueError) as exc:
             stats["errors"].append(f"{task['key']}: {exc}")
+            # Some eBay marketplaces do not expose the shared Books category.
+            # Avoid letting one unsupported category task occupy every cycle.
+            if task["lane"] == "category" and "valid 'q', 'category_ids'" in str(exc):
+                state["schedule"][task["key"]] = utc_stamp(now)
             continue
         pagination_remaining -= extra_used
         stats["pagination_calls"] += extra_used
@@ -780,7 +786,7 @@ def enrich_candidate(candidate: dict[str, Any], detail: dict[str, Any], now: dat
     score = int(rescored.get("opportunity_score") or 0)
     reasons = [str(value) for value in rescored.get("opportunity_reasons") or []]
     lane = str(merged.get("discovery_lane") or "")
-    if tier in {"1", "2", "3"} and lane == "known":
+    if tier in {"1", "2", "3"}:
         score = max(score, {"1": 88, "2": 82, "3": 76}[tier] if visible else {"1": 66, "2": 63, "3": 60}[tier])
         reasons.append(f"Tier {tier} targeted auction")
     elif lane == "title":

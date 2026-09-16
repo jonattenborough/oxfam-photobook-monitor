@@ -307,7 +307,7 @@
     {"marketplace": "EBAY_IT", "query_set": "it", "major": false},
     {"marketplace": "EBAY_ES", "query_set": "es", "major": false},
     {"marketplace": "EBAY_IE", "query_set": "en", "major": false},
-    {"marketplace": "EBAY_BE", "query_set": "nl_fr", "major": false},
+    {"marketplace": "EBAY_BE", "query_set": "nl_fr", "major": false, "category_sweep": false},
     {"marketplace": "EBAY_AT", "query_set": "de", "major": false},
     {"marketplace": "EBAY_CH", "query_set": "de_fr", "major": false},
     {"marketplace": "EBAY_PL", "query_set": "pl", "major": false},
