@@ -43,13 +43,13 @@ class EbayPrivateApiTests(unittest.TestCase):
         )
         request = urlopen.call_args_list[1].args[0]
         params = urllib.parse.parse_qs(urllib.parse.urlparse(request.full_url).query)
-        self.assertEqual(params["searchInDescription"], ["true"])
+        self.assertNotIn("searchInDescription", params)
         self.assertEqual(
             params["filter"],
             [
                 "buyingOptions:{FIXED_PRICE|BEST_OFFER},"
                 "sellerAccountTypes:{INDIVIDUAL},deliveryCountry:GB,"
-                "price:[..750],priceCurrency:GBP"
+                "price:[..750],priceCurrency:GBP,searchInDescription:true"
             ],
         )
 

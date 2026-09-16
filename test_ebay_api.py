@@ -160,6 +160,65 @@ class EbayApiTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Unsupported eBay search sort"):
             client.search("photobook", sort="random")
 
+    def test_search_rejects_query_truncation_and_invalid_offset(self):
+        client = ebay_api.EbayBrowseClient("app-id", "cert-id")
+        with self.assertRaisesRegex(ValueError, "100-character"):
+            client.search("x" * 101)
+        with self.assertRaisesRegex(ValueError, "offset"):
+            client.search("photobook", offset=10000)
+
+    @mock.patch("ebay_api.urllib.request.urlopen")
+    def test_auction_search_uses_end_window_description_filter_and_ending_sort(self, urlopen):
+        urlopen.side_effect = [
+            FakeResponse({"access_token": "short-lived-token"}),
+            FakeResponse({"itemSummaries": [], "total": 0}),
+        ]
+        client = ebay_api.EbayBrowseClient("app-id", "cert-id", marketplace="EBAY_NL")
+        page = client.search_page(
+            "(Alec Soth,Chris Killip)",
+            fixed_price_only=False,
+            buying_options=["AUCTION"],
+            ending_start_date="2026-09-16T12:00:00Z",
+            ending_end_date="2026-09-16T14:00:00Z",
+            search_in_description=True,
+            sort="endingSoonest",
+            limit=200,
+        )
+        self.assertEqual(page["total"], 0)
+        request = urlopen.call_args_list[1].args[0]
+        params = urllib.parse.parse_qs(urllib.parse.urlparse(request.full_url).query)
+        self.assertEqual(params["sort"], ["endingSoonest"])
+        self.assertEqual(
+            params["filter"],
+            [
+                "buyingOptions:{AUCTION},"
+                "itemEndDate:[2026-09-16T12:00:00Z..2026-09-16T14:00:00Z],"
+                "searchInDescription:true"
+            ],
+        )
+        self.assertNotIn("deliveryCountry", params["filter"][0])
+        self.assertNotIn("sellerAccountTypes", params["filter"][0])
+        self.assertEqual(request.get_header("X-ebay-c-marketplace-id"), "EBAY_NL")
+
+    @mock.patch("ebay_api.urllib.request.urlopen")
+    def test_search_next_follows_returned_browse_url(self, urlopen):
+        next_url = ebay_api.SEARCH_URL + "?q=photobook&offset=200&limit=200"
+        urlopen.side_effect = [
+            FakeResponse({"access_token": "short-lived-token"}),
+            FakeResponse({"itemSummaries": [{"itemId": "v1|1|0"}], "next": next_url}),
+            FakeResponse({"itemSummaries": [{"itemId": "v1|2|0"}]}),
+        ]
+        client = ebay_api.EbayBrowseClient("app-id", "cert-id")
+        first = client.search_page("photobook", limit=200)
+        second = client.search_next(first["next"])
+        self.assertEqual(second["itemSummaries"][0]["itemId"], "v1|2|0")
+        self.assertEqual(client.browse_calls, 2)
+
+    def test_search_next_rejects_non_ebay_url(self):
+        client = ebay_api.EbayBrowseClient("app-id", "cert-id")
+        with self.assertRaisesRegex(ValueError, "Invalid eBay Browse next URL"):
+            client.search_next("https://example.com/steal-token")
+
     @mock.patch("ebay_api.urllib.request.urlopen")
     def test_closed_item_start_date_range(self, urlopen):
         urlopen.side_effect = [
@@ -192,6 +251,9 @@ class EbayApiTests(unittest.TestCase):
                 "condition": "Used",
                 "itemCreationDate": "2026-08-28T12:00:00.000Z",
                 "buyingOptions": ["FIXED_PRICE"],
+                "currentBidPrice": {"value": "19.50", "currency": "GBP"},
+                "minimumPriceToBid": {"value": "20.50", "currency": "GBP"},
+                "bidCount": 4,
             },
             source,
         )
@@ -201,6 +263,9 @@ class EbayApiTests(unittest.TestCase):
         self.assertEqual(listing["price_gbp"], 25.50)
         self.assertEqual(listing["vendor"], "bookseller")
         self.assertIn("Used", listing["context"])
+        self.assertEqual(listing["current_bid_value"], 19.50)
+        self.assertEqual(listing["minimum_bid_value"], 20.50)
+        self.assertEqual(listing["bid_count"], 4)
 
     def test_us_summary_retains_original_currency(self):
         source = {"id": "seller", "name": "US seller", "marketplace": "EBAY_US"}

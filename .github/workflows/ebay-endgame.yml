@@ -1,0 +1,114 @@
+name: eBay Endgame Auction Radar
+
+on:
+  schedule:
+    - cron: "2/5 * * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "data/ebay_endgame_bootstrap_trigger.txt"
+  pull_request:
+    branches: [main]
+    paths:
+      - "ebay_api.py"
+      - "ebay_endgame.py"
+      - "test_ebay_api.py"
+      - "test_ebay_private_api.py"
+      - "test_ebay_endgame.py"
+      - "data/ebay_endgame_targets.json"
+      - ".github/workflows/ebay-endgame.yml"
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: ebay-endgame-auction-radar
+  cancel-in-progress: false
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Synchronize latest main state
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git fetch origin main
+          git checkout --detach FETCH_HEAD
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+
+      - name: Validate Endgame Radar
+        if: github.event_name != 'schedule'
+        run: |
+          python -m unittest -v \
+            test_ebay_api.py \
+            test_ebay_private_api.py \
+            test_ebay_endgame.py
+          python -m py_compile ebay_api.py ebay_endgame.py
+
+      - name: Run discovery and deadline worker
+        if: github.event_name != 'pull_request'
+        id: endgame
+        env:
+          EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
+          EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
+        run: |
+          set -euo pipefail
+          args=(
+            --config data/ebay_endgame_targets.json
+            --state data/ebay_endgame_state.json
+            --runtime runtime/ebay-endgame
+          )
+          if [ "${{ github.event_name }}" != "schedule" ]; then
+            args+=(--force-discovery)
+          fi
+          python ebay_endgame.py "${args[@]}"
+          cat runtime/ebay-endgame/summary.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Create Endgame auction alert issues
+        if: github.event_name != 'pull_request' && steps.endgame.outputs.alert_packet_count != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          bodies=(runtime/ebay-endgame/alerts/*.md)
+          for body in "${bodies[@]}"; do
+            stem="${body%.md}"
+            gh issue create \
+              --assignee jonattenborough \
+              --title "$(cat "${stem}.title")" \
+              --body-file "$body"
+          done
+
+      - name: Persist Endgame candidate and deadline state
+        if: github.event_name != 'pull_request' && steps.endgame.outputs.state_changed == 'true'
+        run: |
+          set -euo pipefail
+          cp runtime/ebay-endgame/proposed-state.json data/ebay_endgame_state.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data/ebay_endgame_state.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "Update eBay Endgame Radar state [skip ci]"
+          for attempt in 1 2 3 4; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then
+              break
+            fi
+            if [ "$attempt" = "4" ]; then
+              exit 1
+            fi
+          done

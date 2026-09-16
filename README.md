@@ -47,6 +47,24 @@ Every hour, the workflow asks the eBay Browse API for the newest fixed-price UK 
 
 The 24 exact Parr / Badger target searches still run on AbeBooks, but their eBay allocation now belongs to private-seller discovery. The market monitor retains its two broad all-seller eBay searches (48 Browse calls/day). Authentication uses short-lived application tokens generated at run time from the encrypted `EBAY_CLIENT_ID` and `EBAY_CLIENT_SECRET` repository secrets.
 
+### eBay Endgame Auction Radar
+
+`.github/workflows/ebay-endgame.yml` is the primary eBay auction system. A single worker wakes approximately every five minutes. Deadline checks run on every wake-up, while discovery becomes due every 15 minutes. This avoids relying on a last-minute rediscovery query and still tolerates delayed GitHub cron starts.
+
+The radar searches auctions only and uses three independent discovery nets:
+
+- 175 named photographers split into exact 50/70/55 priority tiers, including configured spelling and accent variants;
+- broad local-language unknown-unicorn searches;
+- keyword-free Books-category sweeps as a backstop for badly titled listings.
+
+Tier 1 is revisited across all 16 Browse marketplaces within six hours and in the four major marketplaces within three hours, with a ten-hour ending horizon. Tier 2 uses 12-hour and six-hour revisits with an 18-hour horizon. Tier 3 uses 24-hour and 12-hour revisits with a 36-hour horizon. Selected high-priority photobook titles from the local recognition library receive an additional major-market lane.
+
+Every keyword lane searches the listing title and seller description using `filter=searchInDescription:true`. Discovery does not require UK delivery and does not restrict seller account type, so business, private and unknown-account auctions can all enter the pool. Results are deduplicated by the underlying eBay item ID across queries and marketplaces. Dense searches are divided by ending time before additional pagination follows eBay's returned `next` URL.
+
+Candidates are stored in `data/ebay_endgame_state.json`. The worker selectively calls `getItem` when an alert deadline arrives, keeps auction bid fields, and creates recall-first GitHub issues around 90 minutes and 15 minutes before the end. A failed live refresh does not silently discard a promising auction; the issue is marked `LIVE STATUS NOT VERIFIED - CHECK BEFORE BIDDING`.
+
+The configured primary matrix is about 2,400 first-page searches/day. Endgame has a hard 3,600-call daily state cap, so roughly 1,200 calls remain for pagination and live item refreshes. It also stops before the shared 650-call reserve.
+
 ### Private-seller mispricing discovery
 
 The scheduled entry point is `ebay_private_recall_monitor.py --config data/ebay_private_recall_searches.json`. It reuses `ebay_private_seller_monitor.py` to search eBay UK individual accounts through the official `sellerAccountTypes:{INDIVIDUAL}` filter. It combines broad and job-lot searches, collectible-format searches, wrong-category searches, hot canonical targets and a rotating slice of the full recognition library. Every scheduled query is restricted to fixed-price and Best Offer listings. Auction discovery belongs exclusively to the Endgame Radar. Search-in-description is used on high-recall lanes. Incremental queries inherit the previous-run timestamp; library, hot-title, priority-photographer and active-stock searches deliberately examine existing inventory.
@@ -111,6 +129,8 @@ New GitHub candidates use one of these issue prefixes:
 - `OXFAM_ART_NEW:`
 - `CHARITY_NEW:`
 - `EXTERNAL_NEW:`
+- `ENDGAME_90:`
+- `ENDGAME_15:`
 
 The comprehensive market monitor deliberately uses `EXTERNAL_NEW:` so the existing downstream ChatGPT issue-review task processes it. That task verifies exact edition, printing, completeness, condition, all-in UK price and comparable copies before any email alert.
 
@@ -121,6 +141,7 @@ The comprehensive market monitor deliberately uses `EXTERNAL_NEW:` so the existi
 - **Comprehensive photobook market discovery:** minute 27 of every hour.
 - **Selected eBay charity sellers:** minute 9 of every hour.
 - **eBay private-seller fixed-price discovery:** minute 4 of every hour.
+- **eBay Endgame Auction Radar:** approximately every five minutes; discovery every 15 minutes and deadline checks every run.
 - **Full-library scan, international accelerator and BHF full scan:** manual dispatch only.
 - **Photobook Wider Web Search:** hourly condition watch.
 - **Charity Photobook New Listings:** hourly condition watch for the GitHub issue-review and value-verification stage.
@@ -154,6 +175,7 @@ In GitHub Actions you can manually run:
 - **Oxfam broad Art and Photography monitor** for the wider Oxfam safety net.
 - **Comprehensive photobook market discovery** for the authenticated eBay search, specialist photobook shops, and the rotating eBay and AbeBooks sweep.
 - **eBay charity seller photobook monitor** for the 89 UK and 14 US seller-specific searches.
+- **eBay Endgame Auction Radar** for a forced discovery pass plus all currently due auction deadlines.
 - **eBay private full-library scan**, **international backfill accelerator** and **BHF full book inventory scan** only when a deliberate high-quota maintenance run is required.
 
 Each scheduled workflow validates the Parr / Badger master before running. Source failures are isolated where possible, while an all-source failure makes the job fail visibly rather than treating an empty response as valid inventory.
