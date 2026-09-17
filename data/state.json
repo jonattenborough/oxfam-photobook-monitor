@@ -1,7 +1,10 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-16T21:24:05Z",
+  "last_successful_fetch": "2026-09-17T12:11:47Z",
   "last_top_skus": [
+    "HD_304256637",
+    "HD_304256310",
+    "HD_304255841",
     "HD_304255030",
     "HD_304254882",
     "HD_304254539",
@@ -12,7 +15,6 @@
     "HD_304253871",
     "HD_304253328",
     "HD_304253147",
-    "HD_304252904",
     "HD_304252208",
     "HD_304250899",
     "HD_304251529",
@@ -29,9 +31,7 @@
     "HD_304246272",
     "HD_304249878",
     "HD_304249579",
-    "HD_304249310",
-    "HD_304249148",
-    "HD_304248469"
+    "HD_304249310"
   ],
   "products": {
     "HD_303805354": {
@@ -7800,8 +7800,56 @@
         "title": "Cai Guo-Qiang: I Want To Believe"
       },
       "search_fingerprint": "57accb145c5ca00d"
+    },
+    "HD_304255841": {
+      "first_seen": "2026-09-17T12:11:47Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789640308000",
+        "description": "Architectural photography of houses: How to take good pictures of exteriors and interiors, by Robert C. Cleveland. <br/><br/>First edition. In good overall condition, despite tear on dust jacket. Cloth boards show some dirt and use. Pages lightly sun damaged due but tightly bound and include black and white photographs as demonstrations. Light foxing.",
+        "isbn": null,
+        "price_gbp": 45.0,
+        "product_id": "book-HD__304255841",
+        "publisher": null,
+        "route": "/architectural-photography-of-houses-how-to-take-good-pictures-of-exteriors-and-interiors/product/HD_304255841",
+        "sku": "HD_304255841",
+        "title": "Architectural photography of houses: How to take good pictures of exteriors and interiors"
+      },
+      "search_fingerprint": "563ae0f98c472835"
+    },
+    "HD_304256310": {
+      "first_seen": "2026-09-17T12:11:47Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789641152000",
+        "description": "Information on the creative aspects of each photograph combine with practical tips and technical detail to make this work an invaluable addition to the library of all keen photographers.",
+        "isbn": null,
+        "price_gbp": 4.99,
+        "product_id": "book-HD__304256310",
+        "publisher": null,
+        "route": "/seeing-landscapes/product/HD_304256310",
+        "sku": "HD_304256310",
+        "title": "Seeing Landscapes"
+      },
+      "search_fingerprint": "5c991ee8229df44d"
+    },
+    "HD_304256637": {
+      "first_seen": "2026-09-17T12:11:47Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789642959000",
+        "description": "Europe and photography, No. 3 Francais/English",
+        "isbn": null,
+        "price_gbp": 17.0,
+        "product_id": "book-HD__304256637",
+        "publisher": null,
+        "route": "/the-eye-s/product/HD_304256637",
+        "sku": "HD_304256637",
+        "title": "The Eye S"
+      },
+      "search_fingerprint": "962972e91c8f9d6f"
     }
   },
-  "reported_category_count": 2871,
+  "reported_category_count": 2868,
   "version": 1
 }
