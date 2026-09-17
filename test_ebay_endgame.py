@@ -90,13 +90,23 @@ class EndgameTests(unittest.TestCase):
             {row["marketplace"] for row in self.config["markets"]},
             endgame.EXPECTED_MARKETS,
         )
-        self.assertEqual(self.config["initial_alert_minutes"], 24 * 60)
+        self.assertEqual(self.config["initial_alert_minutes"], 48 * 60)
         self.assertEqual(self.config["final_alert_minutes"], 4 * 60)
         self.assertEqual(
             {tier: self.config["tiers"][tier]["horizon_hours"] for tier in ("1", "2", "3")},
-            {"1": 30, "2": 36, "3": 48},
+            {"1": 72, "2": 72, "3": 72},
         )
-        self.assertEqual(self.config["title_search"]["horizon_hours"], 30)
+        self.assertEqual(self.config["title_search"]["horizon_hours"], 72)
+
+    def test_two_day_warning_boundary_and_no_duplicate_early_alert(self):
+        self.assertTrue(all(task["horizon_hours"] == 72 for task in self.tasks))
+        candidate = {"item_end_date": endgame.utc_stamp(NOW + timedelta(hours=48, minutes=1))}
+        self.assertIsNone(endgame.due_phase(candidate, NOW, self.config))
+        candidate["item_end_date"] = endgame.utc_stamp(NOW + timedelta(hours=48))
+        self.assertEqual(endgame.due_phase(candidate, NOW, self.config)[0], "initial")
+        candidate["initial_alerted_at"] = endgame.utc_stamp(NOW)
+        self.assertIsNone(endgame.due_phase(candidate, NOW + timedelta(hours=40), self.config))
+        self.assertEqual(endgame.due_phase(candidate, NOW + timedelta(hours=44), self.config)[0], "final")
 
     def test_compiled_name_queries_are_complete_and_below_limit(self):
         for tier in ("1", "2", "3"):

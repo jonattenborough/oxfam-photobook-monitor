@@ -10,7 +10,7 @@
   "page_size": 200,
   "query_character_limit": 90,
   "candidate_retention_hours": 48,
-  "initial_alert_minutes": 1440,
+  "initial_alert_minutes": 2880,
   "final_alert_minutes": 240,
   "initial_alert_score": 58,
   "final_alert_score": 72,
@@ -24,7 +24,7 @@
   },
   "tiers": {
     "1": {
-      "horizon_hours": 30,
+      "horizon_hours": 72,
       "revisit_hours": 6,
       "major_revisit_hours": 3,
       "names": [
@@ -81,7 +81,7 @@
       ]
     },
     "2": {
-      "horizon_hours": 36,
+      "horizon_hours": 72,
       "revisit_hours": 12,
       "major_revisit_hours": 6,
       "names": [
@@ -158,7 +158,7 @@
       ]
     },
     "3": {
-      "horizon_hours": 48,
+      "horizon_hours": 72,
       "revisit_hours": 24,
       "major_revisit_hours": 12,
       "names": [
@@ -241,7 +241,7 @@
     "tier": 1,
     "records_per_photographer": 2,
     "revisit_hours": 12,
-    "horizon_hours": 30,
+    "horizon_hours": 72,
     "major_markets_only": true
   },
   "query_sets": {
@@ -320,15 +320,15 @@
   ],
   "broad_search": {
     "major_revisit_hours": 1,
-    "major_horizon_hours": 3,
+    "major_horizon_hours": 72,
     "revisit_hours": 3,
-    "horizon_hours": 5
+    "horizon_hours": 72
   },
   "category_sweep": {
     "enabled": true,
     "major_revisit_hours": 2,
-    "major_horizon_hours": 3,
+    "major_horizon_hours": 72,
     "revisit_hours": 6,
-    "horizon_hours": 8
+    "horizon_hours": 72
   }
 }
