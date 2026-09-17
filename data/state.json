@@ -1,10 +1,12 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-17T16:58:56Z",
+  "last_successful_fetch": "2026-09-17T20:04:23Z",
   "last_top_skus": [
+    "HD_304258433",
+    "HD_304258601",
+    "HD_304258507",
     "HD_304258316",
     "HD_304251022",
-    "HD_304258422",
     "HD_304257492",
     "HD_304255520",
     "HD_304257157",
@@ -29,9 +31,7 @@
     "HD_304253147",
     "HD_304252904",
     "HD_304252208",
-    "HD_304250899",
-    "HD_304251529",
-    "HD_304251347"
+    "HD_304250899"
   ],
   "products": {
     "HD_303805354": {
@@ -8040,6 +8040,54 @@
         "title": "Manufactured Landscapes"
       },
       "search_fingerprint": "e3ef1e593337dde4"
+    },
+    "HD_304258433": {
+      "first_seen": "2026-09-17T20:04:23Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789664205000",
+        "description": "Posed and candid portraits by photographers ranging from Hill and Anderson to today's street photographers illustrate an account of their techniques, selection of subjects, purposes, and achievements.",
+        "isbn": null,
+        "price_gbp": 20.0,
+        "product_id": "book-HD__304258433",
+        "publisher": null,
+        "route": "/faces-narrative-history-of-the-portrait-in-photography/product/HD_304258433",
+        "sku": "HD_304258433",
+        "title": "Faces: Narrative History of the Portrait in Photography"
+      },
+      "search_fingerprint": "245844c304219019"
+    },
+    "HD_304258507": {
+      "first_seen": "2026-09-17T20:04:23Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789661774000",
+        "description": "Photographs show street scenes, workers, restaurants, festivals, pets, people on their lunch hours, and tourists in New York City.",
+        "isbn": null,
+        "price_gbp": 40.0,
+        "product_id": "book-HD__304258507",
+        "publisher": null,
+        "route": "/new-york-inside-out/product/HD_304258507",
+        "sku": "HD_304258507",
+        "title": "New York Inside Out"
+      },
+      "search_fingerprint": "6180aa006e98c9b9"
+    },
+    "HD_304258601": {
+      "first_seen": "2026-09-17T20:04:23Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789661775000",
+        "description": "Wide ranging photographs and text to celebrate this venerable and vigorous cornerstone of English culture",
+        "isbn": null,
+        "price_gbp": 10.0,
+        "product_id": "book-HD__304258601",
+        "publisher": null,
+        "route": "/the-english-pub/product/HD_304258601",
+        "sku": "HD_304258601",
+        "title": "The English Pub"
+      },
+      "search_fingerprint": "6945eaf01da17ba7"
     }
   },
   "reported_category_count": 2878,
