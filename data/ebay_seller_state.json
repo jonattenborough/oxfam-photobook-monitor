@@ -1,8 +1,10 @@
 {
-  "last_failed_sellers": [],
-  "last_run": "2026-09-16T22:53:30Z",
-  "last_successful_sellers": 12,
-  "seller_cursor": 78,
+  "last_failed_sellers": [
+    "EBAY_US mtwyouth: more than 1000 new results fell inside the incremental window"
+  ],
+  "last_run": "2026-09-17T01:20:03Z",
+  "last_successful_sellers": 11,
+  "seller_cursor": 90,
   "sellers": {
     "EBAY_GB:ageuk": {
       "first_successful_fetch": "2026-08-28T15:13:59Z",
@@ -5806,7 +5808,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-16T05:56:43Z",
+      "last_successful_fetch": "2026-09-17T01:20:03Z",
       "seen": {
         "ebay:176795221202": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -19604,7 +19606,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-16T00:13:31Z",
+      "last_successful_fetch": "2026-09-17T01:20:03Z",
       "seen": {
         "ebay:168210293506": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -31992,7 +31994,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-16T05:56:43Z",
+      "last_successful_fetch": "2026-09-17T01:20:03Z",
       "seen": {
         "ebay:254692191736": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -33550,7 +33552,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-16T00:13:31Z",
+      "last_successful_fetch": "2026-09-17T01:20:03Z",
       "seen": {
         "ebay:315685425321": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -34272,7 +34274,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-16T05:56:43Z",
+      "last_successful_fetch": "2026-09-17T01:20:03Z",
       "seen": {
         "ebay:196381934008": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -41748,7 +41750,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-16T05:56:43Z",
+      "last_successful_fetch": "2026-09-17T01:20:03Z",
       "seen": {
         "ebay:278112237039": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -41876,7 +41878,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-16T05:56:43Z",
+      "last_successful_fetch": "2026-09-17T01:20:03Z",
       "seen": {
         "ebay:205394987921": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -43672,7 +43674,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-16T05:56:43Z",
+      "last_successful_fetch": "2026-09-17T01:20:03Z",
       "seen": {
         "ebay:278194424951": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -54099,7 +54101,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-16T05:56:43Z",
+      "last_successful_fetch": "2026-09-17T01:20:03Z",
       "seen": {
         "ebay:206153375556": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -62762,7 +62764,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-16T05:56:43Z",
+      "last_successful_fetch": "2026-09-17T01:20:03Z",
       "seen": {
         "ebay:168407207127": {
           "first_seen": "2026-08-28T16:37:18Z",
@@ -66711,7 +66713,7 @@
       "first_successful_fetch": "2026-08-28T16:37:18Z",
       "initialized": true,
       "last_result_count": 0,
-      "last_successful_fetch": "2026-09-16T00:13:31Z",
+      "last_successful_fetch": "2026-09-17T01:20:03Z",
       "seen": {
         "ebay:297629696062": {
           "first_seen": "2026-08-28T16:37:18Z",
