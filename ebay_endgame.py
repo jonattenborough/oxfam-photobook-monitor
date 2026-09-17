@@ -330,7 +330,7 @@ def _due_sort_key(task: dict[str, Any], schedule: dict[str, Any], now: datetime)
     missing = last is None
     overdue = 10**9 if missing else (now - last).total_seconds() / (3600 * float(task["interval_hours"]))
     tier = int(task.get("tier") or 9)
-    return (0 if missing else 1, tier, -overdue, task["key"])
+    return (0 if missing else 1, -overdue, tier)
 
 
 def select_due_tasks(
@@ -344,29 +344,63 @@ def select_due_tasks(
     by_lane: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for task in due:
         by_lane[task["lane"]].append(task)
+    market_rank = {row["marketplace"]: (0 if row.get("major") else 1, index)
+                   for index, row in enumerate(config["markets"])}
     for lane in by_lane:
-        by_lane[lane].sort(key=lambda task: _due_sort_key(task, schedule, now))
+        by_lane[lane].sort(key=lambda task: (
+            _due_sort_key(task, schedule, now), market_rank[task["marketplace"]], task["key"]
+        ))
+
+    # Reserve turns for every tier, including while the initial matrix fills.
+    # Previously all never-searched Tier 1 routes preceded every Tier 2/3 route.
+    known_by_tier = {tier: [task for task in by_lane.get("known", []) if task["tier"] == tier]
+                     for tier in ("1", "2", "3")}
+    by_lane["known"] = []
+    while any(known_by_tier.values()):
+        for tier, slots in (("1", 7), ("2", 5), ("3", 2)):
+            by_lane["known"].extend(known_by_tier[tier][:slots])
+            del known_by_tier[tier][:slots]
 
     selected: list[dict[str, Any]] = []
-    selected_keys: set[str] = set()
-    for lane in ("known", "broad", "title", "category"):
-        count = max(0, int(config["lane_slots"].get(lane, 0)))
-        for task in by_lane.get(lane, [])[:count]:
-            if len(selected) >= limit:
-                return selected
-            selected.append(task)
-            selected_keys.add(task["key"])
-    if len(selected) < limit:
-        remaining = [task for task in due if task["key"] not in selected_keys]
-        lane_rank = {"known": 0, "broad": 1, "title": 2, "category": 3}
-        remaining.sort(
-            key=lambda task: (
-                _due_sort_key(task, schedule, now),
-                lane_rank.get(task["lane"], 9),
-            )
-        )
-        selected.extend(remaining[: limit - len(selected)])
+    # Repeat the lane allocation during catch-up instead of giving all extra
+    # slots to one lane. Empty lanes donate their slots to the remaining lanes.
+    while len(selected) < limit:
+        previous_count = len(selected)
+        for lane in ("known", "broad", "title", "category"):
+            count = min(max(0, int(config["lane_slots"].get(lane, 0))), limit - len(selected))
+            selected.extend(by_lane.get(lane, [])[:count])
+            del by_lane[lane][:count]
+        if len(selected) == previous_count:
+            break
     return selected
+
+
+def coverage_status(tasks: list[dict[str, Any]], state: dict[str, Any], now: datetime) -> dict[str, Any]:
+    schedule = state["schedule"]
+    return {
+        "never_searched": sum(parse_stamp(schedule.get(task["key"])) is None for task in tasks),
+        "never_searched_by_tier": {
+            tier: sum(task["lane"] == "known" and task["tier"] == tier
+                      and parse_stamp(schedule.get(task["key"])) is None for task in tasks)
+            for tier in ("1", "2", "3")
+        },
+        "due": sum(task_is_due(task, schedule, now) for task in tasks),
+    }
+
+
+def discovery_limits(config: dict[str, Any], state: dict[str, Any], now: datetime) -> tuple[int, int]:
+    """Recover missed cycles within the existing daily and shared quota caps."""
+    primary = max(1, int(config["max_primary_searches_per_discovery"]))
+    interval = max(5, int(config["discovery_interval_minutes"])) * 60
+    last = parse_stamp(state.get("last_discovery_at"))
+    cycles = max(1, int((now - last).total_seconds() / interval)) if last else 1
+    coverage = coverage_status(build_tasks(config), state, now)
+    if coverage["never_searched"]:
+        # Bootstrap must cover all tiers promptly rather than taking dozens of
+        # successful scheduled runs before the last tier is even attempted.
+        cycles = max(cycles, (coverage["due"] + primary - 1) // primary)
+    cycles = min(cycles, max(1, int(config.get("max_catchup_cycles", 1))))
+    return primary * cycles, max(0, int(config["max_pagination_calls_per_discovery"])) * cycles
 
 
 class ClientPool:
@@ -635,11 +669,12 @@ def discover(
     pool: ClientPool,
     call_budget: int,
 ) -> dict[str, Any]:
-    primary_limit = min(int(config["max_primary_searches_per_discovery"]), max(0, call_budget))
+    primary_cap, pagination_cap = discovery_limits(config, state, now)
+    primary_limit = min(primary_cap, max(0, call_budget))
     tasks = build_tasks(config)
     selected = select_due_tasks(tasks, state["schedule"], now, config, primary_limit)
     pagination_remaining = min(
-        int(config["max_pagination_calls_per_discovery"]),
+        pagination_cap,
         max(0, call_budget - len(selected)),
     )
     stats: dict[str, Any] = {
@@ -662,7 +697,8 @@ def discover(
         if pool.calls - start_calls >= call_budget:
             break
         client = pool.get(task["marketplace"])
-        extra_for_task = min(pagination_remaining, max(0, call_budget - (pool.calls - start_calls) - 1))
+        extra_for_task = min(pagination_remaining, int(config["max_pagination_calls_per_discovery"]),
+                             max(0, call_budget - (pool.calls - start_calls) - 1))
         try:
             rows, extra_used, complete = search_task(client, task, config, now, extra_for_task)
             pool.sync_token(client)
@@ -700,6 +736,7 @@ def discover(
 
     stats["search_calls"] = pool.calls - start_calls
     stats["lane_calls"] = dict(lane_calls)
+    stats["coverage"] = coverage_status(tasks, state, now)
     state["last_discovery_at"] = utc_stamp(now)
     return stats
 
@@ -965,6 +1002,7 @@ def write_summary(
     removed: int,
 ) -> None:
     tasks = build_tasks(config)
+    coverage = coverage_status(tasks, state, now)
     lines = [
         "# eBay Endgame Auction Radar",
         "",
@@ -975,6 +1013,8 @@ def write_summary(
         f"- Alerts generated: {len(alerts)}",
         f"- Expired candidates pruned: {removed}",
         f"- Configured primary demand: {projected_primary_calls_per_day(tasks):.0f} calls/day before pagination and details",
+        f"- Never-searched name routes by tier: {coverage['never_searched_by_tier']}",
+        f"- Never-searched routes (all lanes): {coverage['never_searched']}; routes still due: {coverage['due']}",
     ]
     if quota:
         lines.append(f"- Shared Browse quota remaining at start: {quota.get('remaining')} / {quota.get('limit')}")
@@ -1024,7 +1064,7 @@ def run_cycle(
     remaining = max(0, available_calls - (pool.calls - start_calls))
     discovery_stats = None
     if discovery_due(state, config, now, force_discovery) and remaining > 0:
-        discovery_cap = int(config["max_primary_searches_per_discovery"]) + int(config["max_pagination_calls_per_discovery"])
+        discovery_cap = sum(discovery_limits(config, state, now))
         discovery_stats = discover(config, state, now, pool, min(remaining, discovery_cap))
 
     remaining = max(0, available_calls - (pool.calls - start_calls))

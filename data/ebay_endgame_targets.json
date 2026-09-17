@@ -4,6 +4,7 @@
   "shared_quota_reserve": 650,
   "discovery_interval_minutes": 15,
   "max_primary_searches_per_discovery": 26,
+  "max_catchup_cycles": 24,
   "max_pagination_calls_per_discovery": 4,
   "max_detail_calls_per_run": 4,
   "page_size": 200,

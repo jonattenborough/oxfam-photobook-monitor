@@ -62,6 +62,20 @@ class FakePool:
         return self.client.browse_calls
 
 
+class FakeSearchClient(FakeDetailClient):
+    def __init__(self, dense=False):
+        super().__init__()
+        self.dense = dense
+
+    def search_page(self, query, **kwargs):
+        self.browse_calls += 1
+        return {"itemSummaries": [], "next": "https://api.ebay.com/next" if self.dense else None}
+
+    def search_next(self, url):
+        self.browse_calls += 1
+        return {"itemSummaries": [], "next": "https://api.ebay.com/next" if self.dense else None}
+
+
 class EndgameTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -117,7 +131,53 @@ class EndgameTests(unittest.TestCase):
         self.assertEqual(lanes.count("broad"), 8)
         self.assertEqual(lanes.count("title"), 2)
         self.assertEqual(lanes.count("category"), 2)
-        self.assertTrue(all(task["tier"] == "1" for task in selected if task["lane"] == "known"))
+        known = [task for task in selected if task["lane"] == "known"]
+        self.assertEqual([sum(task["tier"] == tier for task in known) for tier in ("1", "2", "3")], [7, 5, 2])
+        major = {row["marketplace"] for row in self.config["markets"] if row.get("major")}
+        self.assertTrue(all(task["marketplace"] in major for task in known))
+
+    def test_catchup_preserves_lane_and_tier_allocation_without_duplicates(self):
+        selected = endgame.select_due_tasks(self.tasks, {}, NOW, self.config, 52)
+        self.assertEqual(len({task["key"] for task in selected}), 52)
+        self.assertEqual([sum(task["lane"] == lane for task in selected)
+                          for lane in ("known", "broad", "title", "category")], [28, 16, 4, 4])
+        self.assertEqual([sum(task["lane"] == "known" and task["tier"] == tier for task in selected)
+                          for tier in ("1", "2", "3")], [14, 10, 4])
+
+    def test_delayed_discovery_scales_but_normal_cadence_does_not(self):
+        state = endgame.blank_state()
+        state["schedule"] = {task["key"]: endgame.utc_stamp(NOW - timedelta(hours=30)) for task in self.tasks}
+        state["last_discovery_at"] = endgame.utc_stamp(NOW - timedelta(hours=5))
+        self.assertEqual(endgame.discovery_limits(self.config, state, NOW), (520, 80))
+        state["last_discovery_at"] = endgame.utc_stamp(NOW - timedelta(minutes=15))
+        self.assertEqual(endgame.discovery_limits(self.config, state, NOW), (26, 4))
+        state["last_discovery_at"] = endgame.utc_stamp(NOW - timedelta(days=3))
+        self.assertEqual(endgame.discovery_limits(self.config, state, NOW), (624, 96))
+
+    def test_bootstrap_can_search_all_tiers_within_two_cycles(self):
+        state = endgame.blank_state()
+        pool = FakePool(FakeSearchClient())
+        endgame.run_cycle(self.config, state, NOW, pool, 3600)
+        coverage = endgame.coverage_status(self.tasks, state, NOW)
+        self.assertLessEqual(coverage["never_searched"], 19)
+        self.assertTrue(all(count < 20 for count in coverage["never_searched_by_tier"].values()))
+        endgame.run_cycle(self.config, state, NOW + timedelta(minutes=15), pool, 3600 - pool.calls)
+        self.assertEqual(endgame.coverage_status(self.tasks, state, NOW)["never_searched"], 0)
+
+    def test_catchup_cannot_exceed_available_quota_even_with_dense_pages(self):
+        for budget in (0, 1, 5, 35, 720):
+            with self.subTest(budget=budget):
+                state = endgame.blank_state()
+                pool = FakePool(FakeSearchClient(dense=True))
+                stats, alerts, used, details = endgame.run_cycle(self.config, state, NOW, pool, budget)
+                self.assertLessEqual(used, budget)
+                self.assertEqual(used, pool.calls)
+
+    def test_overdue_tier_three_gets_turn_despite_tier_one_bootstrap(self):
+        schedule = {task["key"]: endgame.utc_stamp(NOW - timedelta(hours=30))
+                    for task in self.tasks if task.get("tier") == "3"}
+        selected = endgame.select_due_tasks(self.tasks, schedule, NOW, self.config, 26)
+        self.assertEqual(sum(task["lane"] == "known" and task["tier"] == "3" for task in selected), 2)
 
     def test_target_query_keeps_hidden_description_match_for_recall(self):
         task = next(task for task in self.tasks if task["lane"] == "known" and task["tier"] == "1")
