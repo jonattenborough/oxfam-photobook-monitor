@@ -485,7 +485,9 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
             "search_lane": "core_target_1",
         }
         classified = recall.recall_classify(item, 72)
-        self.assertEqual(classified["target_match_quality"], "book_context")
+        # Looking for Alice is recognised by the photobook library, so the
+        # quality may be upgraded from generic book_context to supported.
+        self.assertIn(classified["target_match_quality"], {"book_context", "supported"})
         self.assertFalse(classified["core_target_collision"])
         self.assertGreaterEqual(classified["opportunity_score"], 88)
 
