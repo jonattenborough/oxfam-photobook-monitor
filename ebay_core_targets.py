@@ -42,7 +42,6 @@ PHOTO_OBJECT_TERMS = {
 ART_BOOK_TERMS = {
     "gallery", "museum", "exhibition", "catalogue", "catalog",
     "first edition", "1st edition", "first printing", "first impression",
-    "hardcover", "hardback", "softcover", "paperback", "dust jacket",
     "signed book", "signed copy", "with print", "original print",
 }
 CLEAR_NON_PHOTO_BOOK_TERMS = {
@@ -175,17 +174,21 @@ def target_object_context(item: dict[str, Any]) -> str:
     if not text:
         return "name_only"
     padded = f" {text} "
+    category_id = str(item.get("category_id") or "").strip()
+    category_path = normalized(item.get("category_path") or "")
+    is_book = category_id == BOOKS_CATEGORY_ID or " books " in f" {category_path} " or category_path == "books"
+
+    # An explicit memoir/novel/manual signal wins over generic book-format or
+    # edition language. This prevents a Guy Martin autobiography, for example,
+    # from becoming a photographer alert just because it is a hardcover.
+    if is_book and any(normalized(term) in text for term in CLEAR_NON_PHOTO_BOOK_TERMS):
+        return "name_only"
     if any(f" {normalized(term)} " in padded or normalized(term) in text for term in PHOTO_OBJECT_TERMS):
         return "supported"
     if any(normalized(term) in text for term in ART_BOOK_TERMS):
         return "supported"
 
-    category_id = str(item.get("category_id") or "").strip()
-    category_path = normalized(item.get("category_path") or "")
-    is_book = category_id == BOOKS_CATEGORY_ID or " books " in f" {category_path} " or category_path == "books"
     if is_book:
-        if any(normalized(term) in text for term in CLEAR_NON_PHOTO_BOOK_TERMS):
-            return "name_only"
         return "book_context"
     return "name_only"
 
