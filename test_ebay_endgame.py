@@ -204,6 +204,73 @@ class EndgameTests(unittest.TestCase):
         self.assertEqual(candidate["query_target_tier"], "1")
         self.assertEqual(candidate["matched_target_terms"], [])
 
+    def test_visible_sports_namesake_is_retained_below_alert_threshold(self):
+        task = next(
+            task for task in self.tasks
+            if task["lane"] == "known" and "Paul Graham" in task.get("terms", [])
+        )
+        summary = auction_summary(title="1993-94 NBA Topps #217 Paul Graham Hawks", end_minutes=180)
+        summary["categories"] = [{"categoryId": "212"}]
+        summary["categoryPath"] = "Sports Trading Cards"
+        candidate = endgame.candidate_from_summary(summary, task, self.config, NOW)
+        self.assertIsNotNone(candidate)
+        assert candidate is not None
+        self.assertEqual(candidate["target_match_quality"], "name_only")
+        self.assertLess(candidate["opportunity_score"], self.config["initial_alert_score"])
+
+        state = endgame.blank_state()
+        state["candidates"][candidate["key"]] = candidate
+        alerts, calls = endgame.collect_deadline_alerts(
+            self.config, state, NOW, FakePool(FakeDetailClient()), 0
+        )
+        self.assertEqual(calls, 0)
+        self.assertEqual(alerts, [])
+
+    def test_visible_matt_black_colour_phrase_is_not_a_photographer_alert(self):
+        task = next(
+            task for task in self.tasks
+            if task["lane"] == "known" and "Matt Black" in task.get("terms", [])
+        )
+        summary = auction_summary(title="Kitchen tap in matt black finish", end_minutes=180)
+        summary["categories"] = [{"categoryId": "205"}]
+        summary["categoryPath"] = "Home Plumbing Taps"
+        candidate = endgame.candidate_from_summary(summary, task, self.config, NOW)
+        self.assertIsNotNone(candidate)
+        assert candidate is not None
+        self.assertEqual(candidate["target_match_quality"], "name_only")
+        self.assertLess(candidate["opportunity_score"], self.config["initial_alert_score"])
+
+    def test_visible_photobook_target_keeps_full_priority(self):
+        task = next(
+            task for task in self.tasks
+            if task["lane"] == "known" and "Richard Billingham" in task.get("terms", [])
+        )
+        summary = auction_summary(
+            title="Richard Billingham Ikon Gallery 2000 photography book 1st edition",
+            end_minutes=180,
+        )
+        summary["categories"] = [{"categoryId": "261186"}]
+        summary["categoryPath"] = "Books"
+        candidate = endgame.candidate_from_summary(summary, task, self.config, NOW)
+        self.assertIsNotNone(candidate)
+        assert candidate is not None
+        self.assertEqual(candidate["target_match_quality"], "supported")
+        self.assertGreaterEqual(candidate["opportunity_score"], 88)
+
+    def test_visible_celebrity_autobiography_is_demoted_even_in_book_category(self):
+        task = next(
+            task for task in self.tasks
+            if task["lane"] == "known" and "Guy Martin" in task.get("terms", [])
+        )
+        summary = auction_summary(title="Guy Martin My Autobiography hardcover", end_minutes=180)
+        summary["categories"] = [{"categoryId": "261186"}]
+        summary["categoryPath"] = "Books"
+        candidate = endgame.candidate_from_summary(summary, task, self.config, NOW)
+        self.assertIsNotNone(candidate)
+        assert candidate is not None
+        self.assertEqual(candidate["target_match_quality"], "name_only")
+        self.assertLess(candidate["opportunity_score"], self.config["initial_alert_score"])
+
     def test_broad_rediscovery_cannot_erase_known_target_lane(self):
         known_task = next(task for task in self.tasks if task["lane"] == "known" and task["tier"] == "1")
         broad_task = next(task for task in self.tasks if task["lane"] == "broad")

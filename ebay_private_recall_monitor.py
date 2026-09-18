@@ -279,29 +279,47 @@ def apply_core_target_priority(
         return promoted
 
     reasons = [str(value) for value in promoted.get("opportunity_reasons") or []]
+    target_quality = core_targets.target_object_context(promoted)
+    collision = False
     if visible:
         names = list(dict.fromkeys(match["name"] for match in visible))
-        floor = {"1": 88, "2": 82, "3": 76}[best_tier]
-        reasons.append(
-            f"Tier {best_tier} core photographer visibly matched: {', '.join(names)}"
-        )
+        if target_quality in {"supported", "book_context"}:
+            floor = {"1": 88, "2": 82, "3": 76}[best_tier]
+            reasons.append(
+                f"Tier {best_tier} core photographer visibly matched with photographic/book context: "
+                f"{', '.join(names)}"
+            )
+        else:
+            # Keep the candidate in state, but a sports player, colour phrase,
+            # celebrity memoir or other namesake must not become an issue solely
+            # because the target string is visible.
+            floor = min(int(issue_threshold) - 1, {"1": 71, "2": 69, "3": 67}[best_tier])
+            collision = True
+            reasons.append(
+                f"Tier {best_tier} visible core-name match lacks photographic/book context: "
+                f"{', '.join(names)}"
+            )
         promoted["matched_core_photographers"] = names
         promoted["core_target_matches"] = visible
     else:
         # eBay may match a name in the seller description without returning
         # that description in the search summary. Keep it for human review.
         floor = int(issue_threshold)
+        target_quality = "hidden_description"
         reasons.append(
             f"Tier {best_tier} core photographer query matched title or seller description"
         )
         promoted["matched_core_photographers"] = []
         promoted["core_target_matches"] = []
 
-    score = max(int(promoted.get("opportunity_score") or 0), floor)
+    current_score = int(promoted.get("opportunity_score") or 0)
+    score = min(current_score, floor) if collision else max(current_score, floor)
     promoted["opportunity_score"] = score
     promoted["score_band"] = _score_band(score)
     promoted["core_target_tier"] = best_tier
     promoted["core_target_lead"] = True
+    promoted["core_target_collision"] = collision
+    promoted["target_match_quality"] = target_quality
     promoted["collecting_lane"] = f"core photographer Tier {best_tier}"
     promoted["opportunity_kind"] = "core photographer fixed-price lead"
     promoted["opportunity_reasons"] = list(dict.fromkeys(reasons))

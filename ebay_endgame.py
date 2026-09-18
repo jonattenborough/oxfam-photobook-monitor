@@ -546,20 +546,38 @@ def candidate_from_summary(
     visible = _visible_terms(classified, list(task.get("terms") or []))
     score = int(classified.get("opportunity_score") or 0)
     reasons = [str(reason) for reason in classified.get("opportunity_reasons") or []]
+    target_quality = core_targets.target_object_context(classified)
     if lane == "known":
         provisional = {"1": 66, "2": 63, "3": 60}[tier]
         confirmed = {"1": 88, "2": 82, "3": 76}[tier]
-        score = max(score, confirmed if visible else provisional)
-        reasons.append(
-            f"Tier {tier} photographer query"
-            + (f" visibly matched {', '.join(visible[:3])}" if visible else " matched title or seller description")
-        )
+        collision_cap = {"1": 57, "2": 55, "3": 53}[tier]
+        if visible and target_quality in {"supported", "book_context"}:
+            score = max(score, confirmed)
+            reasons.append(f"Tier {tier} photographer query visibly matched {', '.join(visible[:3])}")
+        elif visible:
+            score = min(score, collision_cap)
+            reasons.append(
+                f"Tier {tier} visible name match lacks photographic/book context; "
+                "retained below alert threshold pending richer detail"
+            )
+        else:
+            score = max(score, provisional)
+            target_quality = "hidden_description"
+            reasons.append(f"Tier {tier} photographer query matched title or seller description")
     elif lane == "title":
-        score = max(score, 86 if visible else 64)
-        reasons.append(
-            "Tier 1 photobook-title query"
-            + (f" visibly matched {', '.join(visible[:3])}" if visible else " matched title or seller description")
-        )
+        if visible and target_quality == "supported":
+            score = max(score, 86)
+            reasons.append(f"Tier 1 photobook-title query visibly matched {', '.join(visible[:3])}")
+        elif visible:
+            score = min(score, 57)
+            reasons.append(
+                "Visible title-term match lacks photographic/art-book context; "
+                "retained below alert threshold pending richer detail"
+            )
+        else:
+            score = max(score, 64)
+            target_quality = "hidden_description"
+            reasons.append("Tier 1 photobook-title query matched title or seller description")
     elif lane in {"broad", "category"}:
         minimum = 42 if lane == "broad" else 50
         if not classified.get("recognized") and score < minimum and not _has_discovery_evidence(classified):
@@ -573,6 +591,7 @@ def candidate_from_summary(
     classified["discovery_lane"] = lane
     classified["discovery_query"] = task.get("query") or "category-only Books sweep"
     classified["matched_target_terms"] = visible
+    classified["target_match_quality"] = target_quality if lane in {"known", "title"} else ""
     classified["target_query_terms"] = list(task.get("terms") or []) if lane in {"known", "title"} else []
     classified["first_seen"] = utc_stamp(now)
     classified["last_seen"] = utc_stamp(now)
@@ -779,16 +798,36 @@ def enrich_candidate(candidate: dict[str, Any], detail: dict[str, Any], now: dat
     score = int(rescored.get("opportunity_score") or 0)
     reasons = [str(value) for value in rescored.get("opportunity_reasons") or []]
     lane = str(merged.get("discovery_lane") or "")
+    target_quality = core_targets.target_object_context(rescored)
     if tier in {"1", "2", "3"}:
-        score = max(score, {"1": 88, "2": 82, "3": 76}[tier] if visible else {"1": 66, "2": 63, "3": 60}[tier])
-        reasons.append(f"Tier {tier} targeted auction")
+        if visible and target_quality in {"supported", "book_context"}:
+            score = max(score, {"1": 88, "2": 82, "3": 76}[tier])
+            reasons.append(f"Tier {tier} targeted auction with photographic/book context")
+        elif visible:
+            score = min(score, {"1": 57, "2": 55, "3": 53}[tier])
+            reasons.append(
+                f"Tier {tier} visible name match still lacks photographic/book context after detail refresh"
+            )
+        else:
+            score = max(score, {"1": 66, "2": 63, "3": 60}[tier])
+            target_quality = "hidden_description"
+            reasons.append(f"Tier {tier} targeted auction matched hidden seller text")
     elif lane == "title":
-        score = max(score, 86 if visible else 64)
-        reasons.append("Tier 1 title-targeted auction")
+        if visible and target_quality == "supported":
+            score = max(score, 86)
+            reasons.append("Tier 1 title-targeted auction with photographic/art-book context")
+        elif visible:
+            score = min(score, 57)
+            reasons.append("Visible title match still lacks photographic/art-book context after detail refresh")
+        else:
+            score = max(score, 64)
+            target_quality = "hidden_description"
+            reasons.append("Tier 1 title-targeted auction matched hidden seller text")
     rescored["opportunity_score"] = score
     rescored["opportunity_reasons"] = list(dict.fromkeys(reasons))
     rescored["score_band"] = "urgent" if score >= 90 else "alert" if score >= 72 else "review" if score >= 55 else "reject"
     rescored["matched_target_terms"] = list(dict.fromkeys((merged.get("matched_target_terms") or []) + visible))
+    rescored["target_match_quality"] = target_quality if tier in {"1", "2", "3"} or lane == "title" else ""
     rescored["last_detail_at"] = utc_stamp(now)
     rescored["live_verification"] = reason
     rescored["active"] = live

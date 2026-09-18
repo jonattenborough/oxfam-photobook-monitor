@@ -49,6 +49,38 @@ class EbayCoreTargetsTests(unittest.TestCase):
             [],
         )
 
+    def test_target_object_context_demotes_non_book_namesake(self):
+        item = {
+            "title": "1993-94 NBA Topps #217 Paul Graham Hawks",
+            "category_id": "212",
+            "category_path": "Sports Trading Cards",
+        }
+        self.assertEqual(targets.target_object_context(item), "name_only")
+
+    def test_target_object_context_accepts_photographic_object(self):
+        item = {
+            "title": "Paul Graham photography monograph first edition",
+            "category_id": "261186",
+            "category_path": "Books",
+        }
+        self.assertEqual(targets.target_object_context(item), "supported")
+
+    def test_target_object_context_generic_book_is_not_same_as_photo_proof(self):
+        item = {
+            "title": "Alec Soth uncommon hardback",
+            "category_id": "261186",
+            "category_path": "Books",
+        }
+        self.assertEqual(targets.target_object_context(item), "book_context")
+
+    def test_target_object_context_rejects_celebrity_autobiography_even_in_books(self):
+        item = {
+            "title": "Guy Martin My Autobiography hardcover",
+            "category_id": "261186",
+            "category_path": "Books",
+        }
+        self.assertEqual(targets.target_object_context(item), "name_only")
+
 
 if __name__ == "__main__":
     unittest.main()
