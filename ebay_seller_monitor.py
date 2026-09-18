@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import copy
 import json
 import os
 import sys
@@ -13,6 +14,7 @@ from typing import Any
 import canon_runner
 import ebay_api
 import ebay_core_targets as core_targets
+import ebay_search_checkpoint as checkpointing
 import external_monitor
 
 BOOKS_CATEGORY_ID = "261186"
@@ -121,6 +123,44 @@ def select_sellers(
     return selected, (start + selected_count) % len(sellers)
 
 
+def select_sellers_with_pending(
+    sellers: list[dict[str, str]],
+    state: dict[str, Any],
+    cursor: int,
+    count: int,
+) -> tuple[list[dict[str, str]], int]:
+    """Give resumable sellers bounded priority without starving fresh rotation."""
+    if not sellers or count <= 0:
+        return [], 0
+    seller_state = state.get("sellers") if isinstance(state.get("sellers"), dict) else {}
+    by_key = {seller_key(row["marketplace"], row["id"]): row for row in sellers}
+    pending: list[tuple[str, str, dict[str, str]]] = []
+    for key, previous in seller_state.items():
+        if key not in by_key or not isinstance(previous, dict):
+            continue
+        window = previous.get("pending_window")
+        if not isinstance(window, dict) or not window.get("pending"):
+            continue
+        pending.append((str(window.get("last_attempt_at") or ""), key, by_key[key]))
+    pending.sort(key=lambda row: (row[0], row[1]))
+    pending_limit = min(len(pending), max(1, int(count) // 3))
+    chosen_pending = [row[2] for row in pending[:pending_limit]]
+    chosen_keys = {seller_key(row["marketplace"], row["id"]) for row in chosen_pending}
+
+    rotating: list[dict[str, str]] = []
+    start = max(0, int(cursor)) % len(sellers)
+    examined = 0
+    wanted_rotation = max(0, min(len(sellers), int(count)) - len(chosen_pending))
+    while examined < len(sellers) and len(rotating) < wanted_rotation:
+        row = sellers[(start + examined) % len(sellers)]
+        examined += 1
+        if seller_key(row["marketplace"], row["id"]) in chosen_keys:
+            continue
+        rotating.append(row)
+    next_cursor = (start + examined) % len(sellers)
+    return chosen_pending + rotating, next_cursor
+
+
 def quota_safe_seller_count(usable_calls: int, requested_count: int) -> int:
     """Reserve enough headroom for the worst incremental page count."""
     return min(max(0, int(requested_count)), max(0, int(usable_calls)) // MAX_INCREMENTAL_PAGES)
@@ -141,14 +181,10 @@ def set_output(name: str, value: Any) -> None:
             fh.write(f"{name}={value}\n")
 
 
-def scan_seller(
-    client: ebay_api.EbayBrowseClient,
+def _convert_rows(
+    rows: list[dict[str, Any]],
     seller: dict[str, str],
-    previous: dict[str, Any] | None,
 ) -> list[dict[str, Any]]:
-    initialized = bool(previous and previous.get("initialized"))
-    start_date = incremental_start(previous.get("last_successful_fetch")) if initialized and previous else None
-    page_limit = MAX_INCREMENTAL_PAGES if initialized else 1
     source = {
         "id": f"ebay_seller_{seller['marketplace'].lower()}_{seller['id'].lower()}",
         "name": f"eBay seller {seller['id']}",
@@ -156,35 +192,73 @@ def scan_seller(
     }
     items: list[dict[str, Any]] = []
     seen_keys: set[str] = set()
+    for raw in rows:
+        item = ebay_api.listing_from_summary(raw, source)
+        if item is None or item["key"] in seen_keys:
+            continue
+        seen_keys.add(item["key"])
+        item["seller_id"] = seller["id"]
+        item["marketplace"] = seller["marketplace"]
+        item["source_page"] = seller_url(seller["marketplace"], seller["id"])
+        items.append(item)
+    return items
 
-    for page in range(page_limit):
+
+def scan_seller(
+    client: ebay_api.EbayBrowseClient,
+    seller: dict[str, str],
+    previous: dict[str, Any] | None,
+    *,
+    detected_at: str | None = None,
+    max_calls: int = MAX_INCREMENTAL_PAGES,
+) -> tuple[list[dict[str, Any]], dict[str, Any] | None, bool, str]:
+    """Scan one seller without losing dense incremental windows."""
+    initialized = bool(previous and previous.get("initialized"))
+    window_end = str(detected_at or utc_now())
+    if not initialized:
         rows = client.search(
             None,
             limit=PAGE_SIZE,
-            offset=page * PAGE_SIZE,
+            category_ids=BOOKS_CATEGORY_ID,
+            fixed_price_only=True,
+            seller_ids=[seller["id"]],
+            delivery_country=seller.get("delivery_country"),
+        )
+        return _convert_rows(rows, seller), None, True, window_end
+
+    prior_window = previous.get("pending_window") if isinstance(previous, dict) else None
+    if isinstance(prior_window, dict) and prior_window.get("pending"):
+        checkpoint = copy.deepcopy(prior_window)
+        window_end = str(checkpoint.get("end") or window_end)
+    else:
+        start_date = incremental_start(previous.get("last_successful_fetch")) if previous else None
+        if not start_date:
+            raise RuntimeError("initialized seller is missing a successful-fetch watermark")
+        checkpoint = checkpointing.new_checkpoint(start_date, window_end)
+
+    def fetch_window(start_date: str, end_date: str, offset: int) -> dict[str, Any]:
+        return client.search_page(
+            None,
+            limit=PAGE_SIZE,
+            offset=offset,
             category_ids=BOOKS_CATEGORY_ID,
             fixed_price_only=True,
             seller_ids=[seller["id"]],
             delivery_country=seller.get("delivery_country"),
             item_start_date=start_date,
+            item_end_date=end_date,
         )
-        for row in rows:
-            item = ebay_api.listing_from_summary(row, source)
-            if item is None or item["key"] in seen_keys:
-                continue
-            seen_keys.add(item["key"])
-            item["seller_id"] = seller["id"]
-            item["marketplace"] = seller["marketplace"]
-            item["source_page"] = seller_url(seller["marketplace"], seller["id"])
-            items.append(item)
-        if len(rows) < PAGE_SIZE:
-            break
-        if page + 1 == page_limit and initialized:
-            raise RuntimeError(
-                f"more than {PAGE_SIZE * page_limit} new results fell inside the incremental window"
-            )
-    return items
 
+    rows, _, complete = checkpointing.drain(
+        checkpoint,
+        fetch_window,
+        client.search_next,
+        max_calls=max(0, int(max_calls)),
+        page_size=PAGE_SIZE,
+        retryable_errors=(ebay_api.EbayApiError, ValueError),
+    )
+    checkpoint["last_attempt_at"] = str(detected_at or utc_now())
+    return _convert_rows(rows, seller), checkpoint, complete, window_end
 
 def qualification(item: dict[str, Any]) -> tuple[list[str], list[dict[str, Any]]]:
     text = " ".join([str(item.get("title") or ""), str(item.get("context") or "")]).lower()
@@ -231,6 +305,10 @@ def update_seller_state(
     previous: dict[str, Any] | None,
     items: list[dict[str, Any]],
     detected_at: str,
+    *,
+    scan_complete: bool = True,
+    checkpoint: dict[str, Any] | None = None,
+    window_end: str | None = None,
 ) -> tuple[dict[str, Any], list[dict[str, Any]], bool]:
     initialized = bool(previous and previous.get("initialized"))
     if not initialized:
@@ -277,9 +355,16 @@ def update_seller_state(
             prior_item["last_seen"] = detected_at
 
     updated["initialized"] = True
-    updated["last_successful_fetch"] = detected_at
     updated["last_result_count"] = len(items)
+    updated["last_scan_complete"] = bool(scan_complete)
     updated["seen"] = _trim_seen(seen)
+    if scan_complete:
+        updated["last_successful_fetch"] = str(window_end or detected_at)
+        updated.pop("pending_window", None)
+    else:
+        if not isinstance(checkpoint, dict) or not checkpoint.get("pending"):
+            raise RuntimeError("incomplete seller scan must retain a resumable checkpoint")
+        updated["pending_window"] = copy.deepcopy(checkpoint)
     return updated, candidates, False
 
 
@@ -379,7 +464,9 @@ def main() -> int:
     }
     requested_count = len(sellers) if args.all_sellers else max(1, args.sellers_per_run)
     cursor = int(state.get("seller_cursor") or 0)
-    selected_sellers, next_cursor = select_sellers(sellers, cursor, requested_count)
+    selected_sellers, next_cursor = select_sellers_with_pending(
+        sellers, state, cursor, requested_count
+    )
     quota: dict[str, Any] | None = None
     quota_warning: str | None = None
     try:
@@ -418,6 +505,7 @@ def main() -> int:
         failures.append(quota_warning)
     successes = 0
     baselines = 0
+    incomplete_sellers: list[str] = []
 
     for seller in selected_sellers:
         key = seller_key(seller["marketplace"], seller["id"])
@@ -425,8 +513,21 @@ def main() -> int:
         if not isinstance(previous, dict):
             previous = None
         try:
-            items = scan_seller(clients[seller["marketplace"]], seller, previous)
-            updated, seller_candidates, was_baseline = update_seller_state(previous, items, detected_at)
+            items, checkpoint, scan_complete, window_end = scan_seller(
+                clients[seller["marketplace"]],
+                seller,
+                previous,
+                detected_at=detected_at,
+                max_calls=MAX_INCREMENTAL_PAGES,
+            )
+            updated, seller_candidates, was_baseline = update_seller_state(
+                previous,
+                items,
+                detected_at,
+                scan_complete=scan_complete,
+                checkpoint=checkpoint,
+                window_end=window_end,
+            )
         except Exception as exc:
             warning = f"{seller['marketplace']} {seller['id']}: {exc}"
             failures.append(warning)
@@ -436,13 +537,16 @@ def main() -> int:
         sellers_state[key] = updated
         candidates.extend(seller_candidates)
         successes += 1
+        if not scan_complete:
+            incomplete_sellers.append(key)
         if was_baseline:
             baselines += 1
             print(f"{seller['marketplace']} {seller['id']}: silent baseline seeded with {len(items)} books.")
         else:
             print(
                 f"{seller['marketplace']} {seller['id']}: {len(items)} recent books checked; "
-                f"{len(seller_candidates)} new candidates."
+                f"{len(seller_candidates)} new candidates; "
+                f"{'window complete' if scan_complete else 'window checkpointed for resume'}."
             )
 
     if successes == 0:
@@ -462,6 +566,7 @@ def main() -> int:
         "successful_sellers": successes,
         "failed_sellers": failures,
         "baselines_seeded": baselines,
+        "incomplete_sellers": incomplete_sellers,
         "new_candidates": candidates,
     })
 
@@ -483,7 +588,8 @@ def main() -> int:
     print(
         f"Seller sweep complete: {successes}/{len(selected_sellers)} selected sellers succeeded "
         f"from {len(sellers)} configured; "
-        f"{baselines} baselines seeded; {len(candidates)} candidates; {len(failures)} failures."
+        f"{baselines} baselines seeded; {len(incomplete_sellers)} resumable windows pending; "
+        f"{len(candidates)} candidates; {len(failures)} failures."
     )
     return 0
 
