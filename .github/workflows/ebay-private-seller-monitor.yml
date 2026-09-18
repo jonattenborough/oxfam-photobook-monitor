@@ -11,9 +11,11 @@ on:
       - "ebay_search_checkpoint.py"
       - "test_ebay_search_checkpoint.py"
       - "photobook_review_health.py"
+      - "photobook_reviewer_ledger.py"
       - "photobook_review_handoff.py"
       - "test_photobook_review_handoff.py"
       - "test_photobook_review_health.py"
+      - "test_photobook_reviewer_ledger.py"
       - "ebay_core_targets.py"
       - "ebay_private_seller_monitor.py"
       - "ebay_private_recall_monitor.py"
@@ -73,6 +75,7 @@ jobs:
             test_ebay_api.py \
             test_ebay_search_checkpoint.py \
             test_photobook_review_health.py \
+            test_photobook_reviewer_ledger.py \
             test_photobook_review_handoff.py \
             test_ebay_private_api.py \
             test_ebay_core_targets.py \
@@ -135,13 +138,14 @@ jobs:
           cp runtime/review-health/health.json data/photobook_review_health.json
           cp runtime/review-health/index.json data/photobook_review_index.json
           cp runtime/review-health/handoff.json data/photobook_review_handoff.json
+          cp runtime/review-health/reviewer-receipt.json data/photobook_reviewer_receipt.json
           rm -rf data/photobook_review_queue
           mkdir -p data/photobook_review_queue
           cp -a runtime/review-health/queue/. data/photobook_review_queue/
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add --             data/ebay_private_seller_state.json             data/photobook_review_health.json             data/photobook_review_index.json             data/photobook_review_handoff.json             data/photobook_review_queue
+          git add --             data/ebay_private_seller_state.json             data/photobook_review_health.json             data/photobook_review_index.json             data/photobook_review_handoff.json             data/photobook_reviewer_receipt.json             data/photobook_review_queue
           if git diff --cached --quiet; then
             exit 0
           fi

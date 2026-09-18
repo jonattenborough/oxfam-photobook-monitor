@@ -51,6 +51,15 @@ def github_get(endpoint: str) -> list[dict[str, Any]]:
     return payload
 
 
+def github_get_object(endpoint: str) -> dict[str, Any]:
+    result = subprocess.run(["gh", "api", "--method", "GET", endpoint],
+                            capture_output=True, text=True, check=True, timeout=60)
+    payload = json.loads(result.stdout)
+    if not isinstance(payload, dict):
+        raise ValueError("Expected a GitHub object response")
+    return payload
+
+
 def pages(get: Callable, endpoint: str):
     """Use the list API beyond 1,000 issues, not GitHub Search's result cap."""
     separator = "&" if "?" in endpoint else "?"
@@ -218,6 +227,16 @@ def main() -> int:
     now = datetime.now(timezone.utc)
     index["checked_at"] = now.isoformat(timespec="seconds").replace("+00:00", "Z")
     report = health(index, endgame, now)
+    import photobook_reviewer_ledger as reviewer_ledger
+    ledger_issue = int(os.getenv("PHOTOBOOK_REVIEW_LEDGER_ISSUE", reviewer_ledger.DEFAULT_LEDGER_ISSUE))
+    reviewer_receipt = reviewer_ledger.derive_receipt(
+        args.repo, ledger_issue, github_get, github_get_object, now,
+    )
+    report["reviewer_run_receipt_status"] = reviewer_receipt["status"]
+    report["latest_verified_reviewer_run_at"] = reviewer_receipt["latest_verified_completion_at"]
+    if reviewer_receipt["warnings"]:
+        report["warnings"].extend(reviewer_receipt["warnings"])
+        report["status"] = "ATTENTION"
     import ebay_endgame as radar
     merged_state = {**radar.blank_state(), **endgame}
     report["auction_search_routes"] = radar.coverage_status(
@@ -228,6 +247,7 @@ def main() -> int:
         report["status"] = "ATTENTION"
     atomic_json(args.runtime / "index.json", index)
     atomic_json(args.runtime / "health.json", report)
+    atomic_json(args.runtime / "reviewer-receipt.json", reviewer_receipt)
     summary = ("# Photobook review health\n\n" + json.dumps(report, indent=2) + "\n")
     (args.runtime / "summary.md").write_text(summary)
     print(summary)
