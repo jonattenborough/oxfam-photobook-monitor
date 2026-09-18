@@ -4,6 +4,8 @@ import unittest
 
 import pre1970_unicorn_targets as unicorns
 
+# Curated radar invariants are deliberately strict because this file feeds live search.
+
 
 class Pre1970UnicornTargetTests(unittest.TestCase):
     def test_curated_universe_has_exact_tier_counts_and_year_cutoff(self):
