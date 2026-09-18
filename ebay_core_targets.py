@@ -28,6 +28,30 @@ ITEM_TEXT_FIELDS = (
     "vendor",
 )
 
+# A visible photographer-name hit is discovery evidence, not proof that the
+# object is photographic. These terms let the monitors distinguish a likely
+# photobook/photographic object from obvious namesakes such as sports cards,
+# clothing, paint colours, memoirs and novels. Ambiguous records are retained
+# for later enrichment rather than silently discarded.
+PHOTO_OBJECT_TERMS = {
+    "photobook", "photo book", "photography", "photographic", "photograph",
+    "photographs", "photo ", "photos ", "monograph", "contact sheet",
+    "silver gelatin", "c print", "chromogenic", "gelatin silver",
+    "artist book", "artist's book", "artists book",
+}
+ART_BOOK_TERMS = {
+    "gallery", "museum", "exhibition", "catalogue", "catalog",
+    "first edition", "1st edition", "first printing", "first impression",
+    "hardcover", "hardback", "softcover", "paperback", "dust jacket",
+    "signed book", "signed copy", "with print", "original print",
+}
+CLEAR_NON_PHOTO_BOOK_TERMS = {
+    "autobiography", "memoir", "novel", "fiction", "thriller", "romance",
+    "cookbook", "recipe", "manual", "textbook", "children's book",
+    "childrens book", "colouring book", "coloring book", "activity book",
+}
+BOOKS_CATEGORY_ID = "261186"
+
 
 def normalized(value: Any) -> str:
     text = unicodedata.normalize("NFKD", str(value or "")).encode("ascii", "ignore").decode("ascii")
@@ -134,6 +158,36 @@ def _item_text(item: dict[str, Any]) -> str:
     elif tags:
         parts.append(str(tags))
     return normalized(" ".join(parts))
+
+
+def target_object_context(item: dict[str, Any]) -> str:
+    """Classify whether local listing data supports a photographic target hit.
+
+    Returns supported when photography/art-book evidence is visible,
+    book_context for a generic book-category item without contrary literary
+    evidence, and name_only otherwise. Nothing here rejects a listing; the
+    downstream monitors use this only to decide whether a name match deserves
+    an automatic priority-score floor before richer eBay detail is available.
+    """
+    if item.get("recognized") or item.get("best_recognition"):
+        return "supported"
+    text = _item_text(item)
+    if not text:
+        return "name_only"
+    padded = f" {text} "
+    if any(f" {normalized(term)} " in padded or normalized(term) in text for term in PHOTO_OBJECT_TERMS):
+        return "supported"
+    if any(normalized(term) in text for term in ART_BOOK_TERMS):
+        return "supported"
+
+    category_id = str(item.get("category_id") or "").strip()
+    category_path = normalized(item.get("category_path") or "")
+    is_book = category_id == BOOKS_CATEGORY_ID or " books " in f" {category_path} " or category_path == "books"
+    if is_book:
+        if any(normalized(term) in text for term in CLEAR_NON_PHOTO_BOOK_TERMS):
+            return "name_only"
+        return "book_context"
+    return "name_only"
 
 
 def matches_for_item(
