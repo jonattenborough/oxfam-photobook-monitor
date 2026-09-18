@@ -271,6 +271,96 @@ class EndgameTests(unittest.TestCase):
         self.assertEqual(candidate["target_match_quality"], "name_only")
         self.assertLess(candidate["opportunity_score"], self.config["initial_alert_score"])
 
+    def test_high_collision_name_in_generic_book_is_not_enough(self):
+        task = next(
+            task for task in self.tasks
+            if task["lane"] == "known" and "Guy Martin" in task.get("terms", [])
+        )
+        summary = auction_summary(
+            title="Guy Martin When You Dead You Dead Hardback Book",
+            end_minutes=180,
+        )
+        summary["categories"] = [{"categoryId": "261186"}]
+        summary["categoryPath"] = "Books"
+        candidate = endgame.candidate_from_summary(summary, task, self.config, NOW)
+        self.assertIsNotNone(candidate)
+        assert candidate is not None
+        self.assertEqual(candidate["target_match_quality"], "book_context")
+        self.assertLess(candidate["opportunity_score"], self.config["initial_alert_score"])
+
+    def test_generic_title_match_stays_below_threshold_before_and_after_detail(self):
+        task = next(
+            task for task in self.tasks
+            if task["lane"] == "title" and "Small World" in task.get("terms", [])
+        )
+        summary = auction_summary(title="Disney Small World Library hardback book", end_minutes=180)
+        summary["categories"] = [{"categoryId": "261186"}]
+        summary["categoryPath"] = "Books"
+        candidate = endgame.candidate_from_summary(summary, task, self.config, NOW)
+        self.assertIsNotNone(candidate)
+        assert candidate is not None
+        self.assertEqual(candidate["target_match_quality"], "book_context")
+        self.assertLess(candidate["opportunity_score"], self.config["initial_alert_score"])
+
+        detail = copy.deepcopy(summary)
+        detail["estimatedAvailabilityStatus"] = "IN_STOCK"
+        enriched, live, _ = endgame.enrich_candidate(candidate, detail, NOW)
+        self.assertTrue(live)
+        self.assertEqual(enriched["target_match_quality"], "book_context")
+        self.assertLess(enriched["opportunity_score"], self.config["initial_alert_score"])
+
+    def test_persisted_old_title_collision_is_demoted_before_deadline_alert(self):
+        task = next(
+            task for task in self.tasks
+            if task["lane"] == "title" and "The British Isles" in task.get("terms", [])
+        )
+        summary = auction_summary(title="Birds of The British Isles hardback", end_minutes=180)
+        summary["categories"] = [{"categoryId": "261186"}]
+        summary["categoryPath"] = "Books"
+        candidate = endgame.candidate_from_summary(summary, task, self.config, NOW)
+        self.assertIsNotNone(candidate)
+        assert candidate is not None
+
+        # Simulate stale pre-fix state that had already been promoted.
+        candidate["opportunity_score"] = 88
+        candidate["score_band"] = "alert"
+        candidate["target_match_quality"] = "book_context"
+        state = endgame.blank_state()
+        state["candidates"][candidate["key"]] = candidate
+
+        alerts, calls = endgame.collect_deadline_alerts(
+            self.config, state, NOW, FakePool(FakeDetailClient()), 0
+        )
+        self.assertEqual(calls, 0)
+        self.assertEqual(alerts, [])
+        saved = state["candidates"][candidate["key"]]
+        self.assertLess(saved["opportunity_score"], self.config["initial_alert_score"])
+
+    def test_persisted_old_known_namesake_is_demoted_before_deadline_alert(self):
+        task = next(
+            task for task in self.tasks
+            if task["lane"] == "known" and "Matt Black" in task.get("terms", [])
+        )
+        summary = auction_summary(title="Matt Black kitchen tap", end_minutes=180)
+        summary["categories"] = [{"categoryId": "205"}]
+        summary["categoryPath"] = "Home Plumbing Taps"
+        candidate = endgame.candidate_from_summary(summary, task, self.config, NOW)
+        self.assertIsNotNone(candidate)
+        assert candidate is not None
+
+        candidate["opportunity_score"] = 82
+        candidate["score_band"] = "alert"
+        state = endgame.blank_state()
+        state["candidates"][candidate["key"]] = candidate
+        alerts, _ = endgame.collect_deadline_alerts(
+            self.config, state, NOW, FakePool(FakeDetailClient()), 0
+        )
+        self.assertEqual(alerts, [])
+        self.assertLess(
+            state["candidates"][candidate["key"]]["opportunity_score"],
+            self.config["initial_alert_score"],
+        )
+
     def test_broad_rediscovery_cannot_erase_known_target_lane(self):
         known_task = next(task for task in self.tasks if task["lane"] == "known" and task["tier"] == "1")
         broad_task = next(task for task in self.tasks if task["lane"] == "broad")

@@ -519,6 +519,57 @@ def _has_discovery_evidence(item: dict[str, Any]) -> bool:
     return any(normalized(term) in text for term in PHOTO_EVIDENCE | COLLECTIBLE_EVIDENCE)
 
 
+def _target_collision(
+    item: dict[str, Any],
+    lane: str,
+    visible_terms: list[str],
+) -> tuple[bool, str]:
+    quality = core_targets.target_object_context(item)
+    if not visible_terms:
+        return False, quality
+    if lane == "title":
+        # Single title phrases such as Small World, The Valley and The British
+        # Isles are intentionally broad. Generic Books context is not enough.
+        return quality != "supported", quality
+    if lane == "known":
+        if quality == "name_only":
+            return True, quality
+        if (
+            quality == "book_context"
+            and core_targets.target_names_need_photo_evidence(visible_terms)
+        ):
+            return True, quality
+    return False, quality
+
+
+def _demote_persisted_target_collision(candidate: dict[str, Any]) -> dict[str, Any]:
+    """Re-score old candidate state so pre-fix junk cannot keep alerting."""
+    lane = str(candidate.get("discovery_lane") or "")
+    if lane not in {"known", "title"}:
+        return candidate
+    visible = [str(value) for value in candidate.get("matched_target_terms") or []]
+    collision, quality = _target_collision(candidate, lane, visible)
+    if not collision:
+        return candidate
+    tier = str(candidate.get("query_target_tier") or "")
+    cap = 57 if lane == "title" else {"1": 57, "2": 55, "3": 53}.get(tier, 57)
+    result = dict(candidate)
+    result["opportunity_score"] = min(int(result.get("opportunity_score") or 0), cap)
+    score = int(result["opportunity_score"])
+    result["score_band"] = (
+        "urgent" if score >= 90 else "alert" if score >= 72
+        else "review" if score >= 55 else "reject"
+    )
+    result["target_match_quality"] = quality
+    reasons = [str(value) for value in result.get("opportunity_reasons") or []]
+    reasons.append(
+        "persisted target-name/title collision rechecked and retained below alert threshold "
+        "pending photographic evidence"
+    )
+    result["opportunity_reasons"] = list(dict.fromkeys(reasons))
+    return result
+
+
 def candidate_from_summary(
     raw: dict[str, Any],
     task: dict[str, Any],
@@ -546,18 +597,18 @@ def candidate_from_summary(
     visible = _visible_terms(classified, list(task.get("terms") or []))
     score = int(classified.get("opportunity_score") or 0)
     reasons = [str(reason) for reason in classified.get("opportunity_reasons") or []]
-    target_quality = core_targets.target_object_context(classified)
+    collision, target_quality = _target_collision(classified, lane, visible)
     if lane == "known":
         provisional = {"1": 66, "2": 63, "3": 60}[tier]
         confirmed = {"1": 88, "2": 82, "3": 76}[tier]
         collision_cap = {"1": 57, "2": 55, "3": 53}[tier]
-        if visible and target_quality in {"supported", "book_context"}:
+        if visible and not collision:
             score = max(score, confirmed)
             reasons.append(f"Tier {tier} photographer query visibly matched {', '.join(visible[:3])}")
         elif visible:
             score = min(score, collision_cap)
             reasons.append(
-                f"Tier {tier} visible name match lacks photographic/book context; "
+                f"Tier {tier} visible name match lacks enough photographic identity evidence; "
                 "retained below alert threshold pending richer detail"
             )
         else:
@@ -565,7 +616,7 @@ def candidate_from_summary(
             target_quality = "hidden_description"
             reasons.append(f"Tier {tier} photographer query matched title or seller description")
     elif lane == "title":
-        if visible and target_quality == "supported":
+        if visible and not collision:
             score = max(score, 86)
             reasons.append(f"Tier 1 photobook-title query visibly matched {', '.join(visible[:3])}")
         elif visible:
@@ -798,22 +849,12 @@ def enrich_candidate(candidate: dict[str, Any], detail: dict[str, Any], now: dat
     score = int(rescored.get("opportunity_score") or 0)
     reasons = [str(value) for value in rescored.get("opportunity_reasons") or []]
     lane = str(merged.get("discovery_lane") or "")
-    target_quality = core_targets.target_object_context(rescored)
-    if tier in {"1", "2", "3"}:
-        if visible and target_quality in {"supported", "book_context"}:
-            score = max(score, {"1": 88, "2": 82, "3": 76}[tier])
-            reasons.append(f"Tier {tier} targeted auction with photographic/book context")
-        elif visible:
-            score = min(score, {"1": 57, "2": 55, "3": 53}[tier])
-            reasons.append(
-                f"Tier {tier} visible name match still lacks photographic/book context after detail refresh"
-            )
-        else:
-            score = max(score, {"1": 66, "2": 63, "3": 60}[tier])
-            target_quality = "hidden_description"
-            reasons.append(f"Tier {tier} targeted auction matched hidden seller text")
-    elif lane == "title":
-        if visible and target_quality == "supported":
+    collision, target_quality = _target_collision(rescored, lane, visible)
+    # Title tasks also carry tier=1. Test the lane first so a generic book
+    # called Small World or The British Isles cannot be re-promoted merely
+    # because a detail request succeeded.
+    if lane == "title":
+        if visible and not collision:
             score = max(score, 86)
             reasons.append("Tier 1 title-targeted auction with photographic/art-book context")
         elif visible:
@@ -823,6 +864,19 @@ def enrich_candidate(candidate: dict[str, Any], detail: dict[str, Any], now: dat
             score = max(score, 64)
             target_quality = "hidden_description"
             reasons.append("Tier 1 title-targeted auction matched hidden seller text")
+    elif tier in {"1", "2", "3"}:
+        if visible and not collision:
+            score = max(score, {"1": 88, "2": 82, "3": 76}[tier])
+            reasons.append(f"Tier {tier} targeted auction with sufficient photographic/book identity evidence")
+        elif visible:
+            score = min(score, {"1": 57, "2": 55, "3": 53}[tier])
+            reasons.append(
+                f"Tier {tier} visible name match still lacks enough photographic identity evidence after detail refresh"
+            )
+        else:
+            score = max(score, {"1": 66, "2": 63, "3": 60}[tier])
+            target_quality = "hidden_description"
+            reasons.append(f"Tier {tier} targeted auction matched hidden seller text")
     rescored["opportunity_score"] = score
     rescored["opportunity_reasons"] = list(dict.fromkeys(reasons))
     rescored["score_band"] = "urgent" if score >= 90 else "alert" if score >= 72 else "review" if score >= 55 else "reject"
@@ -859,9 +913,11 @@ def collect_deadline_alerts(
     detail_budget: int,
 ) -> tuple[list[dict[str, Any]], int]:
     due: list[tuple[int, int, float, int, str, dict[str, Any]]] = []
-    for key, candidate in state["candidates"].items():
+    for key, candidate in list(state["candidates"].items()):
         if not isinstance(candidate, dict) or candidate.get("active") is False:
             continue
+        candidate = _demote_persisted_target_collision(candidate)
+        state["candidates"][key] = candidate
         phase = due_phase(candidate, now, config)
         if phase is None:
             continue

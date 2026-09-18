@@ -283,10 +283,15 @@ def apply_core_target_priority(
     collision = False
     if visible:
         names = list(dict.fromkeys(match["name"] for match in visible))
-        if target_quality in {"supported", "book_context"}:
+        needs_photo_evidence = core_targets.target_names_need_photo_evidence(names)
+        sufficient = (
+            target_quality == "supported"
+            or (target_quality == "book_context" and not needs_photo_evidence)
+        )
+        if sufficient:
             floor = {"1": 88, "2": 82, "3": 76}[best_tier]
             reasons.append(
-                f"Tier {best_tier} core photographer visibly matched with photographic/book context: "
+                f"Tier {best_tier} core photographer visibly matched with sufficient photographic/book context: "
                 f"{', '.join(names)}"
             )
         else:
@@ -296,7 +301,7 @@ def apply_core_target_priority(
             floor = min(int(issue_threshold) - 1, {"1": 71, "2": 69, "3": 67}[best_tier])
             collision = True
             reasons.append(
-                f"Tier {best_tier} visible core-name match lacks photographic/book context: "
+                f"Tier {best_tier} visible core-name match lacks enough photographic identity evidence: "
                 f"{', '.join(names)}"
             )
         promoted["matched_core_photographers"] = names
