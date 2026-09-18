@@ -83,7 +83,8 @@ def visible_terms(target: dict[str, Any]) -> list[str]:
         _clean(target.get("Title")),
         _clean(target.get("Contributor")),
     ]
-    aliases = _clean(target.get("Title aliases"))
-    if aliases:
-        terms.extend(_clean(value) for value in aliases.split("|"))
+    for field in ("Title aliases", "Contributor aliases"):
+        aliases = _clean(target.get(field))
+        if aliases:
+            terms.extend(_clean(value) for value in aliases.split("|"))
     return list(dict.fromkeys(term for term in terms if term))
