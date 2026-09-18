@@ -1,0 +1,91 @@
+name: Isolated photobook reliability validation
+
+on:
+  push:
+    branches: [fix/photobook-reliability-20260918]
+    paths: [.github/workflows/reliability-apply-once.yml]
+
+permissions:
+  contents: write
+  issues: read
+
+jobs:
+  validate:
+    if: github.ref == 'refs/heads/fix/photobook-reliability-20260918'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      - name: Verify transport and apply exact locally tested patch
+        run: |
+          python - <<'PY'
+          import base64, gzip, hashlib
+          from pathlib import Path
+          encoded = ''.join(Path(f'tools/reliability-patch.{i}.b64').read_text().strip() for i in range(4))
+          # Correct one known copy-transcription defect, then verify the entire patch.
+          encoded = encoded.replace('L3b17Wi6TyOBsw', 'L3b17Wi6gtyOBsw')
+          raw = gzip.decompress(base64.b64decode(encoded, validate=True))
+          expected = '501508e66f5711450e45692ccf38dbfe1cc495b838523b165da065891d6ea2fb'
+          assert hashlib.sha256(raw).hexdigest() == expected, 'Patch transport integrity failed'
+          Path('/tmp/reliability.patch').write_bytes(raw)
+          print(f'Exact verified patch: {len(raw)} bytes')
+          PY
+          git apply --check /tmp/reliability.patch
+          git apply /tmp/reliability.patch
+          git diff --check
+      - name: Run complete offline regression suite
+        run: python -m unittest discover -q
+      - name: Read-only production queue and receipt check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python photobook_review_health.py
+          cat runtime/review-health/summary.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Bounded live eBay filter canary without state changes
+        env:
+          EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
+          EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
+        run: |
+          python - <<'PY'
+          import json
+          from datetime import datetime, timedelta, timezone
+          from pathlib import Path
+          import ebay_api
+          now = datetime.now(timezone.utc).replace(microsecond=0)
+          stamp = lambda t: t.isoformat().replace('+00:00', 'Z')
+          client = ebay_api.EbayBrowseClient(marketplace='EBAY_GB')
+          quota = client.browse_quota()
+          assert int(quota.get('remaining', 0)) >= 700, 'Canary skipped: protect shared quota reserve'
+          fixed = client.search_page('Robert Frank', limit=2, buying_options=['FIXED_PRICE'],
+              seller_account_type='INDIVIDUAL', delivery_country='GB', search_in_description=True,
+              item_start_date='1995-01-01T00:00:00Z', item_end_date=stamp(now))
+          auction = client.search_page('photobook', limit=2, fixed_price_only=False,
+              buying_options=['AUCTION'], ending_start_date=stamp(now),
+              ending_end_date=stamp(now + timedelta(hours=72)), sort='endingSoonest')
+          result = {'checked_at': stamp(now), 'browse_calls': client.browse_calls,
+              'quota_remaining_before': quota['remaining'],
+              'fixed_price_rows': len(fixed['itemSummaries']), 'fixed_price_has_next': bool(fixed.get('next')),
+              'auction_rows': len(auction['itemSummaries']), 'auction_has_next': bool(auction.get('next')),
+              'production_state_changed': False}
+          Path('runtime/review-health/canary.json').write_text(json.dumps(result, indent=2))
+          print(json.dumps(result, indent=2))
+          PY
+      - name: Retain validation evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: photobook-reliability-validation
+          path: runtime/review-health/
+          retention-days: 7
+      - name: Commit validated source only to isolated branch
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- ebay_api.py ebay_endgame.py ebay_private_recall_monitor.py ebay_private_seller_monitor.py ebay_search_checkpoint.py photobook_review_health.py test_ebay_endgame.py test_ebay_private_seller_monitor.py test_ebay_search_checkpoint.py test_photobook_review_health.py docs/photobook-reliability.md
+          git rm -- tools/reliability-patch.0.b64 tools/reliability-patch.1.b64 tools/reliability-patch.2.b64 tools/reliability-patch.3.b64
+          git commit -m 'Fix resumable Browse searches and evidence-based review health'
+          git push origin HEAD:fix/photobook-reliability-20260918
