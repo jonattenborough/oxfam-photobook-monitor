@@ -27,7 +27,7 @@ jobs:
           EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
         run: |
-          python ebay_seller_group_probe.py --group-size 8 --groups 4 --max-pages 2
+          python ebay_seller_group_probe.py --group-size 8 --groups 14 --max-pages 3
       - name: Retain probe evidence
         if: always()
         uses: actions/upload-artifact@v4
