@@ -18,8 +18,10 @@ on:
     branches: [main]
     paths:
       - "photobook_review_health.py"
+      - "photobook_reviewer_ledger.py"
       - "photobook_review_handoff.py"
       - "test_photobook_review_health.py"
+      - "test_photobook_reviewer_ledger.py"
       - "test_photobook_review_handoff.py"
       - ".github/workflows/photobook-review-health.yml"
 
