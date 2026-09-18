@@ -1,40 +1,7 @@
 {
-  "checked_at": "2026-09-18T07:40:44Z",
+  "checked_at": "2026-09-18T09:31:27Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
-    {
-      "number": 554,
-      "title": "EBAY_PRIVATE_NEW: HOT 3 | top 78 | 2 under £100 | 1 special | 2 unknown | 5/5",
-      "created_at": "2026-09-04T08:18:17Z",
-      "updated_at": "2026-09-04T08:18:18Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/554",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 23.0,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - Rock 'n' Roll 39-59 (Hardcover)",
-          "listing_ids": [
-            "407156255005"
-          ],
-          "observed_price_gbp": 23.0
-        },
-        {
-          "title": "DISCOVERY 72/100 - Wolfgang TILLMANS 3 Books Set TASCHEN Contemporary German Photography SEALED",
-          "listing_ids": [
-            "336754139935"
-          ],
-          "observed_price_gbp": 32.9
-        },
-        {
-          "title": "REVIEW 78/100 - Gilbert & George: Dark Shadow - 2024 Signed Limited Edition - Low Number",
-          "listing_ids": [
-            "326288898961"
-          ],
-          "observed_price_gbp": 135.9
-        }
-      ]
-    },
     {
       "number": 555,
       "title": "EBAY_PRIVATE_NEW: HOT 10 | top 78 | 10 under £100 | 3 special | 5 unknown | 1/2",
@@ -700,6 +667,67 @@
             "407019999018"
           ],
           "observed_price_gbp": 25.0
+        }
+      ]
+    },
+    {
+      "number": 578,
+      "title": "EBAY_PRIVATE_NEW: HOT 7 | top 80 | 3 under £100 | 3 special | 3 unknown | 5/5",
+      "created_at": "2026-09-04T11:40:41Z",
+      "updated_at": "2026-09-04T11:40:42Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/578",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 10.31,
+      "candidate_summaries": [
+        {
+          "title": "DISCOVERY 72/100 - COCCO OMOIGOTO 2007 JAPAN OKINAWA SINGER SONGWRITER PHOTO BOOK",
+          "listing_ids": [
+            "366521134026"
+          ],
+          "observed_price_gbp": 10.31
+        },
+        {
+          "title": "DISCOVERY 72/100 - Through A Different Lens: Stanley Kubrick Photographs HC Taschen 2023 Photo Book",
+          "listing_ids": [
+            "307039223678"
+          ],
+          "observed_price_gbp": 26.7
+        },
+        {
+          "title": "DISCOVERY 72/100 - ATEEZ - ATEEZ FEVER : DEAR DIARY K-pop Photo Book Card DVD DISC sealed new",
+          "listing_ids": [
+            "206535160808"
+          ],
+          "observed_price_gbp": 37.1
+        },
+        {
+          "title": "REVIEW 80/100 - signed Songbook by Alec Soth (Hardcover, 2014)",
+          "listing_ids": [
+            "166056754090"
+          ],
+          "observed_price_gbp": 104.7
+        },
+        {
+          "title": "REVIEW 80/100 - Songbook by Alec Soth Signed 1st Edition",
+          "listing_ids": [
+            "147058837474"
+          ],
+          "observed_price_gbp": 115.1
+        },
+        {
+          "title": "REVIEW 78/100 - IGOR SAMOLET BE HAPPY! By Edited *NEW Condition*",
+          "listing_ids": [
+            "397217289963"
+          ],
+          "observed_price_gbp": 106.2
+        },
+        {
+          "title": "REVIEW 76/100 - Richard Avedon Truman Capote Observations 1959 first edition. RARE!",
+          "listing_ids": [
+            "293929935528"
+          ],
+          "observed_price_gbp": 506.5
         }
       ]
     }

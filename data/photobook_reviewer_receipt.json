@@ -1,24 +1,61 @@
 {
-  "checked_at": "2026-09-18T07:40:44Z",
+  "checked_at": "2026-09-18T09:31:27Z",
   "ledger_issue_number": 2145,
   "status": "ATTENTION",
-  "latest_verified_completion_at": null,
+  "latest_verified_completion_at": "2026-09-18T08:45:52Z",
   "tasks": {
     "Endgame Urgent Review": {
-      "status": "NO_VERIFIED_FINISH",
-      "finished_at": null,
-      "age_minutes": null,
-      "run_id": null,
-      "verified_completed_issue_numbers": [],
-      "invalid_completed_issue_claims": {}
+      "status": "COMPLETED",
+      "declared_status": "COMPLETED",
+      "run_id": "Endgame Urgent Review|2026-09-18T08:44:15Z",
+      "started_at": "2026-09-18T08:44:15Z",
+      "finished_at": "2026-09-18T08:45:52Z",
+      "age_minutes": 45.6,
+      "claimed_completed_issue_numbers": [
+        2067,
+        2068
+      ],
+      "verified_completed_issue_numbers": [
+        2067,
+        2068
+      ],
+      "invalid_completed_issue_claims": {},
+      "unique_listings_reviewed": 14,
+      "reportable_listing_count": 0,
+      "errors": [],
+      "start_comment_url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2145#issuecomment-5727527385",
+      "finish_comment_url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2145#issuecomment-5727543380"
     },
     "eBay Fixed Price Review": {
-      "status": "NO_VERIFIED_FINISH",
-      "finished_at": null,
-      "age_minutes": null,
-      "run_id": null,
-      "verified_completed_issue_numbers": [],
-      "invalid_completed_issue_claims": {}
+      "status": "COMPLETED",
+      "declared_status": "COMPLETED",
+      "run_id": "eBay Fixed Price Review|2026-09-18T07:54:38Z",
+      "started_at": "2026-09-18T07:54:38Z",
+      "finished_at": "2026-09-18T08:03:59Z",
+      "age_minutes": 87.5,
+      "claimed_completed_issue_numbers": [
+        481,
+        2062,
+        1596,
+        2108,
+        2087
+      ],
+      "verified_completed_issue_numbers": [
+        481,
+        2062,
+        1596,
+        2108,
+        2087
+      ],
+      "invalid_completed_issue_claims": {},
+      "unique_listings_reviewed": 37,
+      "reportable_listing_count": 2,
+      "errors": [
+        "Exact live eBay page could not be freshly verified for item 206563165401; labelled LIVE STATUS NOT VERIFIED - CHECK BEFORE BUYING.",
+        "Exact live eBay page could not be freshly verified for item 295686066757; labelled LIVE STATUS NOT VERIFIED - CHECK BEFORE BUYING."
+      ],
+      "start_comment_url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2145#issuecomment-5726994628",
+      "finish_comment_url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2145#issuecomment-5727091422"
     },
     "eBay and Endgame Review": {
       "status": "NO_VERIFIED_FINISH",
@@ -29,10 +66,17 @@
       "invalid_completed_issue_claims": {}
     }
   },
-  "open_runs": [],
+  "open_runs": [
+    {
+      "run_id": "eBay Fixed Price Review|2026-09-18T08:53:43Z",
+      "task": "eBay Fixed Price Review",
+      "started_at": "2026-09-18T08:53:43Z",
+      "age_minutes": 37.7,
+      "comment_url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2145#issuecomment-5727629618"
+    }
+  ],
   "warnings": [
-    "Endgame Urgent Review: no matching START/FINISH receipt has been recorded",
-    "eBay Fixed Price Review: no matching START/FINISH receipt has been recorded",
-    "eBay and Endgame Review: no matching START/FINISH receipt has been recorded"
+    "eBay and Endgame Review: no matching START/FINISH receipt has been recorded",
+    "eBay Fixed Price Review: START has no matching FINISH after 37.7 minutes"
   ]
 }

@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-18T07:40:44Z",
+  "checked_at": "2026-09-18T09:31:27Z",
   "status": "ATTENTION",
   "index_scan_complete": true,
-  "successful_discovery_at": "2026-09-18T07:03:16Z",
-  "discovery_age_minutes": 37.5,
-  "last_completed_review_at": "2026-09-18T07:37:13Z",
-  "completed_review_age_minutes": 3.5,
+  "successful_discovery_at": "2026-09-18T09:12:45Z",
+  "discovery_age_minutes": 18.7,
+  "last_completed_review_at": "2026-09-18T08:45:26Z",
+  "completed_review_age_minutes": 46.0,
   "unreviewed_issues_by_source": {
-    "ENDGAME_4H": 5,
-    "ENDGAME_EARLY": 19,
-    "EBAY_PRIVATE_NEW": 1007,
-    "CHARITY_NEW": 60
+    "ENDGAME_4H": 3,
+    "ENDGAME_EARLY": 20,
+    "EBAY_PRIVATE_NEW": 1004,
+    "CHARITY_NEW": 58
   },
   "completed_but_open": [
     376,
@@ -71,35 +71,32 @@
     1981
   ],
   "unreviewed_elapsed_deadline_issue_numbers": [
-    2067,
-    2068,
     2104,
     2113,
     2069
   ],
   "unreviewed_next_four_hours_issue_numbers": [
-    2137,
-    2105
+    2148
   ],
-  "unfinished_endgame_windows": 52,
+  "unfinished_endgame_windows": 46,
   "warnings": [
     "Unreviewed Endgame packets include elapsed auction deadlines",
     "Fixed-price review backlog exceeds two nominal six-issue runs",
-    "Endgame Urgent Review: no matching START/FINISH receipt has been recorded",
-    "eBay Fixed Price Review: no matching START/FINISH receipt has been recorded",
-    "eBay and Endgame Review: no matching START/FINISH receipt has been recorded"
+    "eBay and Endgame Review: no matching START/FINISH receipt has been recorded",
+    "eBay Fixed Price Review: START has no matching FINISH after 37.7 minutes",
+    "Some configured auction search routes have never completed a first request"
   ],
   "limitations": "Issue index only; not live eBay availability, edition proof, or full search coverage.",
   "reviewer_run_receipt_status": "ATTENTION",
-  "latest_verified_reviewer_run_at": null,
+  "latest_verified_reviewer_run_at": "2026-09-18T08:45:52Z",
   "auction_search_routes": {
-    "never_searched": 0,
+    "never_searched": 233,
     "never_searched_by_tier": {
       "1": 0,
       "2": 0,
       "3": 0
     },
-    "due": 398,
-    "unfinished_windows": 52
+    "due": 288,
+    "unfinished_windows": 46
   }
 }

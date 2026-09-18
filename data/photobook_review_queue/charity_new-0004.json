@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-18T07:40:44Z",
+  "checked_at": "2026-09-18T09:31:27Z",
   "source": "CHARITY_NEW",
   "issues": [
     {
@@ -82,60 +82,6 @@
             "398391251889"
           ],
           "observed_price_gbp": 10.0
-        }
-      ]
-    },
-    {
-      "number": 1596,
-      "title": "CHARITY_NEW: 6 eBay seller photobook candidates",
-      "created_at": "2026-09-14T13:56:27Z",
-      "updated_at": "2026-09-14T13:56:27Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1596",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 9.5,
-      "candidate_summaries": [
-        {
-          "title": "Book Bundle Readers Digest Living Countryside Wildlife Woodlands Sea Island PPWH",
-          "listing_ids": [
-            "318856009233"
-          ],
-          "observed_price_gbp": 18.06
-        },
-        {
-          "title": "The National Geographic Magazine May 1931.",
-          "listing_ids": [
-            "198640608017"
-          ],
-          "observed_price_gbp": 14.0
-        },
-        {
-          "title": "SHIPWRECK Photography by the Gibsons of Scilly - text by John Fowles - Paperback",
-          "listing_ids": [
-            "198640608021"
-          ],
-          "observed_price_gbp": 15.0
-        },
-        {
-          "title": "Great News Photos and the Stories Behind Them by John Faber  Paperback 1972",
-          "listing_ids": [
-            "198640608026"
-          ],
-          "observed_price_gbp": 20.0
-        },
-        {
-          "title": "Bell's Shakespeare For Schools. The Merchant of Venice 1914 Hardback",
-          "listing_ids": [
-            "198639552480"
-          ],
-          "observed_price_gbp": 9.5
-        },
-        {
-          "title": "THE DESTRUCTION BUSINESS / DON McCULLIN / 1st EDITION PBK OPEN GATE BOOKS 1971*D",
-          "listing_ids": [
-            "800660379439"
-          ],
-          "observed_price_gbp": 22.0
         }
       ]
     },
@@ -446,6 +392,25 @@
             "366672607754"
           ],
           "observed_price_gbp": 40.0
+        }
+      ]
+    },
+    {
+      "number": 2039,
+      "title": "CHARITY_NEW: 1 eBay seller photobook candidate",
+      "created_at": "2026-09-17T18:09:11Z",
+      "updated_at": "2026-09-17T18:09:11Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2039",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 9.64,
+      "candidate_summaries": [
+        {
+          "title": "The Artist Lucy Steeds 2025 HB John Murray Literary Fiction Novel UK 1st Edition",
+          "listing_ids": [
+            "158298323256"
+          ],
+          "observed_price_gbp": 9.64
         }
       ]
     }
