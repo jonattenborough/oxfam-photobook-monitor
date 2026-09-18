@@ -81,6 +81,14 @@ class EbayCoreTargetsTests(unittest.TestCase):
         }
         self.assertEqual(targets.target_object_context(item), "name_only")
 
+    def test_repeated_collision_names_require_photo_evidence(self):
+        self.assertTrue(targets.target_names_need_photo_evidence(["Guy Martin"]))
+        self.assertTrue(targets.target_names_need_photo_evidence(["Paul Graham"]))
+        self.assertTrue(targets.target_names_need_photo_evidence(["Matt Black"]))
+
+    def test_noncollision_target_can_still_use_generic_book_context(self):
+        self.assertFalse(targets.target_names_need_photo_evidence(["Siân Davey"]))
+
 
 if __name__ == "__main__":
     unittest.main()
