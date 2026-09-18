@@ -97,6 +97,11 @@ class EndgameTests(unittest.TestCase):
             {"1": 72, "2": 72, "3": 72},
         )
         self.assertEqual(self.config["title_search"]["horizon_hours"], 72)
+        self.assertEqual(self.config["unicorn_search"]["horizon_hours"], 72)
+        self.assertEqual(sum(self.config["lane_slots"].values()), 26)
+        unicorn_tasks = [task for task in self.tasks if task["lane"] == "unicorn"]
+        self.assertEqual(len(unicorn_tasks), 25 * len(self.config["markets"]))
+        self.assertEqual({task["unicorn_tier"] for task in unicorn_tasks}, {"A"})
 
     def test_two_day_warning_boundary_and_no_duplicate_early_alert(self):
         self.assertTrue(all(task["horizon_hours"] == 72 for task in self.tasks))
@@ -119,7 +124,7 @@ class EndgameTests(unittest.TestCase):
 
     def test_task_matrix_is_auction_only_and_within_budget(self):
         self.assertEqual(len({task["key"] for task in self.tasks}), len(self.tasks))
-        self.assertGreaterEqual(len(self.tasks), 643)
+        self.assertGreaterEqual(len(self.tasks), 1000)
         self.assertLess(endgame.projected_primary_calls_per_day(self.tasks), self.config["daily_call_cap"])
         self.assertTrue(all("delivery_country" not in task for task in self.tasks))
         self.assertTrue(all("seller_account_type" not in task for task in self.tasks))
@@ -127,7 +132,7 @@ class EndgameTests(unittest.TestCase):
         self.assertTrue(any(task["marketplace"] == "EBAY_HK" for task in self.tasks))
         self.assertFalse(any(task["lane"] == "category" and task["marketplace"] == "EBAY_BE" for task in self.tasks))
 
-    def test_bootstrap_selection_balances_all_four_lanes(self):
+    def test_bootstrap_selection_balances_all_five_lanes(self):
         selected = endgame.select_due_tasks(
             self.tasks,
             {},
@@ -137,12 +142,13 @@ class EndgameTests(unittest.TestCase):
         )
         lanes = [task["lane"] for task in selected]
         self.assertEqual(len(selected), 26)
-        self.assertEqual(lanes.count("known"), 14)
-        self.assertEqual(lanes.count("broad"), 8)
+        self.assertEqual(lanes.count("known"), 12)
+        self.assertEqual(lanes.count("broad"), 5)
+        self.assertEqual(lanes.count("unicorn"), 5)
         self.assertEqual(lanes.count("title"), 2)
         self.assertEqual(lanes.count("category"), 2)
         known = [task for task in selected if task["lane"] == "known"]
-        self.assertEqual([sum(task["tier"] == tier for task in known) for tier in ("1", "2", "3")], [7, 5, 2])
+        self.assertEqual([sum(task["tier"] == tier for task in known) for tier in ("1", "2", "3")], [6, 4, 2])
         major = {row["marketplace"] for row in self.config["markets"] if row.get("major")}
         self.assertTrue(all(task["marketplace"] in major for task in known))
 
@@ -150,9 +156,10 @@ class EndgameTests(unittest.TestCase):
         selected = endgame.select_due_tasks(self.tasks, {}, NOW, self.config, 52)
         self.assertEqual(len({task["key"] for task in selected}), 52)
         self.assertEqual([sum(task["lane"] == lane for task in selected)
-                          for lane in ("known", "broad", "title", "category")], [28, 16, 4, 4])
+                          for lane in ("known", "broad", "unicorn", "title", "category")],
+                         [24, 10, 10, 4, 4])
         self.assertEqual([sum(task["lane"] == "known" and task["tier"] == tier for task in selected)
-                          for tier in ("1", "2", "3")], [14, 10, 4])
+                          for tier in ("1", "2", "3")], [12, 8, 4])
 
     def test_delayed_discovery_scales_but_normal_cadence_does_not(self):
         state = endgame.blank_state()
@@ -189,6 +196,37 @@ class EndgameTests(unittest.TestCase):
                     for task in self.tasks if task.get("tier") == "3"}
         selected = endgame.select_due_tasks(self.tasks, schedule, NOW, self.config, 26)
         self.assertEqual(sum(task["lane"] == "known" and task["tier"] == "3" for task in selected), 2)
+
+    def test_unicorn_lane_promotes_exact_pair_but_not_hidden_match_to_alert(self):
+        task = next(
+            task for task in self.tasks
+            if task["lane"] == "unicorn"
+            and task.get("unicorn_target", {}).get("Title") == "Naked City"
+            and task["marketplace"] == "EBAY_GB"
+        )
+        exact = endgame.candidate_from_summary(
+            auction_summary(title="Weegee Naked City 1945 first edition photography book"),
+            task,
+            self.config,
+            NOW,
+        )
+        self.assertIsNotNone(exact)
+        assert exact is not None
+        self.assertEqual(exact["target_match_quality"], "exact_pair")
+        self.assertGreaterEqual(exact["opportunity_score"], 92)
+        self.assertEqual(exact["unicorn_target_tier"], "A")
+
+        hidden = endgame.candidate_from_summary(
+            auction_summary(title="Old hardback photography book see description"),
+            task,
+            self.config,
+            NOW,
+        )
+        self.assertIsNotNone(hidden)
+        assert hidden is not None
+        self.assertEqual(hidden["target_match_quality"], "hidden_description")
+        self.assertEqual(hidden["opportunity_score"], 66)
+        self.assertLess(hidden["opportunity_score"], self.config["final_alert_score"])
 
     def test_target_query_keeps_hidden_description_match_for_recall(self):
         task = next(task for task in self.tasks if task["lane"] == "known" and task["tier"] == "1")
