@@ -11,6 +11,7 @@ from pathlib import Path
 from typing import Any
 
 import ebay_api
+import ebay_search_checkpoint as checkpoint_search
 import ebay_core_targets as core_targets
 import external_monitor
 import parr_badger_runner as pb
@@ -567,23 +568,43 @@ def run_query(
     # fresh state, so every discovery lane remains new-listings-only.
     incremental_baseline = last_checked or state.get("last_run") or detected_at
     item_start_date = incremental_start(incremental_baseline) if incremental else None
-    rows = client.search(
-        query,
-        limit=limit,
-        category_ids=category_ids,
-        fixed_price_only=False,
-        buying_options=buying_options,
-        seller_account_type="INDIVIDUAL",
-        delivery_country=delivery_country,
-        item_start_date=item_start_date,
-        ending_start_date=ending_start_date,
-        ending_end_date=ending_end_date,
-        search_in_description=search_in_description,
-        price_max=max_price_gbp,
-        price_currency="GBP",
-        offset=offset,
+    windows = state.setdefault("query_windows", {})
+    checkpoint = windows.get(key)
+    if not isinstance(checkpoint, dict) or checkpoint.get("completed"):
+        checkpoint = checkpoint_search.new_checkpoint(
+            item_start_date or "1995-01-01T00:00:00Z", detected_at, offset=offset,
+        )
+        checkpoint["step"] = {
+            "lane": lane, "query": query, "category_ids": category_ids,
+            "buying_options": buying_options, "search_in_description": search_in_description,
+            "incremental": incremental, "ending_start_date": ending_start_date,
+            "ending_end_date": ending_end_date, "offset": offset,
+            "query_target_tier": target_tier, "target_query_terms": list(target_terms or []),
+        }
+        windows[key] = checkpoint
+    checkpoint["last_attempt_at"] = detected_at
+
+    def fetch_window(start: str, end: str, page_offset: int) -> dict[str, Any]:
+        return client.search_page(
+            query, limit=limit, category_ids=category_ids, fixed_price_only=False,
+            buying_options=buying_options, seller_account_type="INDIVIDUAL",
+            delivery_country=delivery_country, item_start_date=start, item_end_date=end,
+            ending_start_date=ending_start_date, ending_end_date=ending_end_date,
+            search_in_description=search_in_description, price_max=max_price_gbp,
+            price_currency="GBP", offset=page_offset,
+        )
+
+    # Exactly one logical Browse call per selected plan entry. A bounded share
+    # of later runs is reserved for these continuations by the recall planner.
+    rows, _, complete = checkpoint_search.drain(
+        checkpoint, fetch_window, client.search_next, max_calls=1,
+        page_size=limit, retryable_errors=(ebay_api.EbayApiError, ValueError), newest_first=True,
     )
-    state["query_last_checked"][key] = detected_at
+    if checkpoint.get("last_error") and not rows:
+        raise ebay_api.EbayApiError(str(checkpoint["last_error"]))
+    if complete:
+        state["query_last_checked"][key] = str(checkpoint["end"])
+        windows.pop(key, None)
     source = _source(lane)
     items: list[dict[str, Any]] = []
     for raw in rows:
@@ -799,7 +820,7 @@ def _merge_live_detail(item: dict[str, Any], detail: dict[str, Any]) -> dict[str
     if value is not None:
         merged["price_value"] = value
         merged["price_currency"] = currency
-        merged["price_gbp"] = value if currency == "GBP" else merged.get("price_gbp")
+        merged["price_gbp"] = value if currency == "GBP" else None
     shipping_values: list[float] = []
     for option in shipping_options:
         if not isinstance(option, dict):
@@ -812,16 +833,14 @@ def _merge_live_detail(item: dict[str, Any], detail: dict[str, Any]) -> dict[str
             shipping_values.append(float(cost.get("value")))
         except (TypeError, ValueError):
             continue
-    if shipping_values:
-        merged["shipping_value"] = min(shipping_values)
-        merged["shipping_currency"] = currency
+    merged["shipping_value"] = min(shipping_values) if shipping_values else None
+    merged["shipping_currency"] = currency if shipping_values else ""
     shipping_value = merged.get("shipping_value")
-    try:
-        shipping_number = float(shipping_value) if shipping_value is not None else 0.0
-    except (TypeError, ValueError):
-        shipping_number = 0.0
-    if value is not None and currency == "GBP":
-        merged["landed_price_gbp"] = round(value + shipping_number, 2)
+    merged["landed_price_gbp"] = (
+        round(value + shipping_value, 2)
+        if value is not None and currency == "GBP" and shipping_value is not None
+        else None
+    )
     merged["item_end_date"] = str(detail.get("itemEndDate") or merged.get("item_end_date") or "")
     merged["live_estimated_availability"] = str(detail.get("estimatedAvailabilityStatus") or "")
     return merged

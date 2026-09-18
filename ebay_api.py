@@ -533,8 +533,8 @@ def listing_from_summary(item: dict[str, Any], source: dict[str, Any]) -> dict[s
     ]
     shipping_value = min(matching_shipping) if matching_shipping else None
     landed_price_gbp = (
-        round(price_value + (shipping_value or 0.0), 2)
-        if price_value is not None and price_currency == "GBP"
+        round(price_value + shipping_value, 2)
+        if price_value is not None and price_currency == "GBP" and shipping_value is not None
         else None
     )
     buying_options = item.get("buyingOptions") if isinstance(item.get("buyingOptions"), list) else []

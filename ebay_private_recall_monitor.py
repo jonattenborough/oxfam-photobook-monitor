@@ -27,6 +27,7 @@ from pathlib import Path
 from typing import Any
 
 import ebay_core_targets as core_targets
+import ebay_search_checkpoint as checkpoint_search
 import ebay_private_seller_monitor as legacy
 import photobook_recognition as recognition
 
@@ -153,7 +154,7 @@ def recall_config(config: dict[str, Any]) -> dict[str, Any]:
     return adjusted
 
 
-def build_budgeted_search_plan(
+def _build_fresh_search_plan(
     config: dict[str, Any], state: dict[str, Any], now: datetime, budget: int,
 ) -> list[dict[str, Any]]:
     """Choose balanced lane prefixes; never advance over quota-trimmed queries."""
@@ -202,6 +203,14 @@ def build_budgeted_search_plan(
         if count:
             state["cursors"][lane] = int(state["cursors"].get(lane, 0) or 0) + count
     return plan + target_selected
+
+
+def build_budgeted_search_plan(
+    config: dict[str, Any], state: dict[str, Any], now: datetime, budget: int,
+) -> list[dict[str, Any]]:
+    """Reserve a bounded portion of the SAME budget for unfinished windows."""
+    resumes = checkpoint_search.pending_steps(state, budget)
+    return resumes + _build_fresh_search_plan(config, state, now, budget - len(resumes))
 
 
 def _landed_price(item: dict[str, Any]) -> float | None:
@@ -578,11 +587,11 @@ def main() -> int:
                 target_terms=list(step.get("target_query_terms") or []),
             )
             successful_queries += 1
-            if step["lane"] not in failed_lanes:
+            if not step.get("resume_only") and step["lane"] not in failed_lanes:
                 successful_prefixes[step["lane"]] = successful_prefixes.get(step["lane"], 0) + 1
         except Exception as exc:
             failures.append(f"{step['lane']} `{step['query']}`: {exc}")
-            if step["lane"] not in failed_lanes:
+            if not step.get("resume_only") and step["lane"] not in failed_lanes:
                 # Retry from the first failed query in this lane next run;
                 # later successes must not advance the cursor past the gap.
                 lane = step["lane"]
@@ -680,6 +689,7 @@ def main() -> int:
     state["last_browse_quota"] = quota
     state["recall_first"] = True
     state["last_material_change_count"] = changed_count
+    state["unfinished_search_windows"] = len(state.get("query_windows", {}))
 
     legacy.write_json(runtime / "proposed-state.json", state)
     legacy.write_json(
@@ -691,6 +701,7 @@ def main() -> int:
             "api_call_budget": call_budget,
             "planned_queries": len(search_plan),
             "successful_queries": successful_queries,
+            "unfinished_search_windows": len(state.get("query_windows", {})),
             "live_checks": 0,
             "failures": failures,
             "unique_results": len(raw_by_key),
