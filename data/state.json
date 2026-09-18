@@ -1,7 +1,9 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-17T20:04:23Z",
+  "last_successful_fetch": "2026-09-18T09:52:04Z",
   "last_top_skus": [
+    "HD_304221268",
+    "HD_304258889",
     "HD_304258433",
     "HD_304258601",
     "HD_304258507",
@@ -23,15 +25,13 @@
     "HD_304254882",
     "HD_304254539",
     "HD_304254122",
-    "HD_304254362",
     "HD_304254173",
     "HD_304254216",
     "HD_304253871",
     "HD_304253328",
     "HD_304253147",
     "HD_304252904",
-    "HD_304252208",
-    "HD_304250899"
+    "HD_304252208"
   ],
   "products": {
     "HD_303805354": {
@@ -4824,6 +4824,22 @@
       },
       "search_fingerprint": "62d87f27d824eed4"
     },
+    "HD_304221268": {
+      "first_seen": "2026-09-18T09:52:04Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789721881000",
+        "description": "The Cabinet Portrait Gallery was a series of volumes in 5 series, published from 1890 - 1894, featuring original photographs and biographical texts.  <br/><br/>This is the first of Volume 1 (of 5) in the 1890 First Series of The Cabinet Portrait Gallery by the famous 19th and early 20th Century photographers Willian and Daniel Downey. The book comprises written biographical details of each of the sitters, Illustrated with 36 original photographic Cabinet cards (4\" by 6\"), mounted on heavy card paper.   Included in this volume are portraits of the Duke and Duchess of Fife, Sarah Bernhardt, Lord Armstrong, Mrs Langtry, Mrs. Humphry Ward, and many other prominent British contemporaries.  <br/><br/>This is a heavy, hardcover book, with tan cloth-covered boards and gold lettering to the decorative front cover and spine.  The pages with printed commentary are on standard, lightweight letterpress paper. The actual photographic portraits (carbon prints) in this volume are mounted onto thick, heavy card stock pages to support the images.  <br/><br/>In this copy, the front endpaper is loose, as is the portrait of the Duke and Duchess of Fife (page 1) and the portrait of Sir Henry Ponsonby (page 95).  The rest of the pages are tightly bound.   Because of the type of wood-pulp or rag blend used by publishers during this late 19th-century period, the pages are highly susceptible to foxing and age-toning over time, In this copy, there is heavy foxing and discolouration to the front endpaper, and most of the pages have signs of foxing or discolouration, some quite heavily.<br/><br/>   <br/><br/>The rest of the pages are ti<br/><br/>",
+        "isbn": null,
+        "price_gbp": 40.0,
+        "product_id": "book-HD__304221268",
+        "publisher": null,
+        "route": "/the-cabinet-portrait-gallery-photographs-by-w-d-downey-first-series-1890/product/HD_304221268",
+        "sku": "HD_304221268",
+        "title": "The Cabinet Portrait Gallery, Photographs by W & D Downey, First Series, 1890"
+      },
+      "search_fingerprint": "00a83000b54bd562"
+    },
     "HD_304221293": {
       "first_seen": "2026-09-04T17:33:28Z",
       "last_snapshot": {
@@ -8088,8 +8104,24 @@
         "title": "The English Pub"
       },
       "search_fingerprint": "6945eaf01da17ba7"
+    },
+    "HD_304258889": {
+      "first_seen": "2026-09-18T09:52:04Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789717996000",
+        "description": "Covering five thousand years of landscape architecture, from Stonehenge and Avebury to 18th-century pleasure gardens and modern times, this irreverent, challenging and revealing investigation delves into the diverse history of Britain and Ireland's most stunning sexually inspired landscapes and monuments.Thousands of people visit West Wycombe Park in Buckinghamshire each year but few realise that the gardens - created by Sir Francis Dashwood, founder of the Hell-Fire Club - are designed as an erotic tribute to the female form. A statue of Venus surmounts an ample grassy mound, at the base of which a stone facade spreads to either side revealing a narrow oval slit - the entrance to a secret subterranean grotto. some surprising Victorian outbreaks and the 20th century's landscapes of desire, Cathy Tuck shows how the natural cycle of fertility has been a central preoccupation in human monuments, with results that are sometimes awe-inspiring.Combining the latest research with stunning original photographs by Alun Bull, Landscapes and Desire re-establishes our link to nature and celebrates the joyous affirmation of sex that has moved cold-blooded Britons for five millennia. It will appeal to anyone interested in Britain's natural and architectural heritage.",
+        "isbn": null,
+        "price_gbp": 6.99,
+        "product_id": "book-HD__304258889",
+        "publisher": null,
+        "route": "/landscapes-and-desire/product/HD_304258889",
+        "sku": "HD_304258889",
+        "title": "Landscapes and Desire"
+      },
+      "search_fingerprint": "4d0d08e2bbf17c3c"
     }
   },
-  "reported_category_count": 2878,
+  "reported_category_count": 2873,
   "version": 1
 }
