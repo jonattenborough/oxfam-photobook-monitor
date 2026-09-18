@@ -1,33 +1,7 @@
 {
-  "checked_at": "2026-09-18T06:54:28Z",
+  "checked_at": "2026-09-18T07:40:44Z",
   "source": "CHARITY_NEW",
   "issues": [
-    {
-      "number": 1197,
-      "title": "CHARITY_NEW: 2 eBay seller photobook candidates",
-      "created_at": "2026-09-10T14:21:44Z",
-      "updated_at": "2026-09-10T14:21:44Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1197",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 39.99,
-      "candidate_summaries": [
-        {
-          "title": "Kurt Cobain The Last Session Jesse Frohman Hardback DJ 2014",
-          "listing_ids": [
-            "820110617338"
-          ],
-          "observed_price_gbp": 39.99
-        },
-        {
-          "title": "Graffiti and Urban Art Cristian Campos Paperback 2011 Street Art Book",
-          "listing_ids": [
-            "820110555051"
-          ],
-          "observed_price_gbp": 39.99
-        }
-      ]
-    },
     {
       "number": 1233,
       "title": "CHARITY_NEW: 23 eBay seller photobook candidates",
@@ -542,6 +516,25 @@
             "198636757837"
           ],
           "observed_price_gbp": 15.0
+        }
+      ]
+    },
+    {
+      "number": 1507,
+      "title": "CHARITY_NEW: 1 eBay seller photobook candidate",
+      "created_at": "2026-09-13T11:42:21Z",
+      "updated_at": "2026-09-13T11:42:21Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1507",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 8.0,
+      "candidate_summaries": [
+        {
+          "title": "Claude Monet - Taschen Portfolio - 15 Art Print Posters CG N54",
+          "listing_ids": [
+            "377491313034"
+          ],
+          "observed_price_gbp": 8.0
         }
       ]
     }

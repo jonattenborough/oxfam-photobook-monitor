@@ -1,0 +1,38 @@
+{
+  "checked_at": "2026-09-18T07:40:44Z",
+  "ledger_issue_number": 2145,
+  "status": "ATTENTION",
+  "latest_verified_completion_at": null,
+  "tasks": {
+    "Endgame Urgent Review": {
+      "status": "NO_VERIFIED_FINISH",
+      "finished_at": null,
+      "age_minutes": null,
+      "run_id": null,
+      "verified_completed_issue_numbers": [],
+      "invalid_completed_issue_claims": {}
+    },
+    "eBay Fixed Price Review": {
+      "status": "NO_VERIFIED_FINISH",
+      "finished_at": null,
+      "age_minutes": null,
+      "run_id": null,
+      "verified_completed_issue_numbers": [],
+      "invalid_completed_issue_claims": {}
+    },
+    "eBay and Endgame Review": {
+      "status": "NO_VERIFIED_FINISH",
+      "finished_at": null,
+      "age_minutes": null,
+      "run_id": null,
+      "verified_completed_issue_numbers": [],
+      "invalid_completed_issue_claims": {}
+    }
+  },
+  "open_runs": [],
+  "warnings": [
+    "Endgame Urgent Review: no matching START/FINISH receipt has been recorded",
+    "eBay Fixed Price Review: no matching START/FINISH receipt has been recorded",
+    "eBay and Endgame Review: no matching START/FINISH receipt has been recorded"
+  ]
+}

@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-18T06:54:28Z",
+  "checked_at": "2026-09-18T07:40:44Z",
   "status": "ATTENTION",
   "index_scan_complete": true,
-  "successful_discovery_at": "2026-09-18T06:40:40Z",
-  "discovery_age_minutes": 13.8,
-  "last_completed_review_at": "2026-09-18T06:54:24Z",
-  "completed_review_age_minutes": 0.1,
+  "successful_discovery_at": "2026-09-18T07:03:16Z",
+  "discovery_age_minutes": 37.5,
+  "last_completed_review_at": "2026-09-18T07:37:13Z",
+  "completed_review_age_minutes": 3.5,
   "unreviewed_issues_by_source": {
-    "ENDGAME_4H": 7,
-    "ENDGAME_EARLY": 18,
-    "EBAY_PRIVATE_NEW": 1010,
-    "CHARITY_NEW": 61
+    "ENDGAME_4H": 5,
+    "ENDGAME_EARLY": 19,
+    "EBAY_PRIVATE_NEW": 1007,
+    "CHARITY_NEW": 60
   },
   "completed_but_open": [
     376,
@@ -78,17 +78,20 @@
     2069
   ],
   "unreviewed_next_four_hours_issue_numbers": [
-    2132,
-    2133,
     2137,
     2105
   ],
-  "unfinished_endgame_windows": 53,
+  "unfinished_endgame_windows": 52,
   "warnings": [
     "Unreviewed Endgame packets include elapsed auction deadlines",
-    "Fixed-price review backlog exceeds two nominal six-issue runs"
+    "Fixed-price review backlog exceeds two nominal six-issue runs",
+    "Endgame Urgent Review: no matching START/FINISH receipt has been recorded",
+    "eBay Fixed Price Review: no matching START/FINISH receipt has been recorded",
+    "eBay and Endgame Review: no matching START/FINISH receipt has been recorded"
   ],
   "limitations": "Issue index only; not live eBay availability, edition proof, or full search coverage.",
+  "reviewer_run_receipt_status": "ATTENTION",
+  "latest_verified_reviewer_run_at": null,
   "auction_search_routes": {
     "never_searched": 0,
     "never_searched_by_tier": {
@@ -96,7 +99,7 @@
       "2": 0,
       "3": 0
     },
-    "due": 127,
-    "unfinished_windows": 53
+    "due": 398,
+    "unfinished_windows": 52
   }
 }
