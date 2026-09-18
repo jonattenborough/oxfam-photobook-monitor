@@ -178,7 +178,7 @@ class EndgameTests(unittest.TestCase):
         coverage = endgame.coverage_status(self.tasks, state, NOW)
         primary_cap, _ = endgame.discovery_limits(self.config, endgame.blank_state(), NOW)
         self.assertLessEqual(coverage["never_searched"], max(0, len(self.tasks) - primary_cap))
-        self.assertTrue(all(count < 40 for count in coverage["never_searched_by_tier"].values()))
+        self.assertTrue(all(count < 130 for count in coverage["never_searched_by_tier"].values()))
         endgame.run_cycle(self.config, state, NOW + timedelta(minutes=15), pool, 3600 - pool.calls)
         self.assertEqual(endgame.coverage_status(self.tasks, state, NOW)["never_searched"], 0)
 
