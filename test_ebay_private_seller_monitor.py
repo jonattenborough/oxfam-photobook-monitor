@@ -11,9 +11,12 @@ class FakeClient:
     def __init__(self):
         self.calls = []
 
-    def search(self, query, **kwargs):
+    def search_page(self, query, **kwargs):
         self.calls.append({"query": query, **kwargs})
-        return []
+        return {"itemSummaries": []}
+
+    def search_next(self, url):
+        raise AssertionError("Unexpected pagination")
 
 
 class PrivateSellerMonitorTests(unittest.TestCase):

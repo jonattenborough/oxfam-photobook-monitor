@@ -17,6 +17,7 @@ from pathlib import Path
 from typing import Any
 
 import ebay_api
+import ebay_search_checkpoint as checkpoint_search
 import ebay_core_targets as core_targets
 import ebay_private_seller_monitor as legacy
 import photobook_recognition as recognition
@@ -385,6 +386,7 @@ def coverage_status(tasks: list[dict[str, Any]], state: dict[str, Any], now: dat
             for tier in ("1", "2", "3")
         },
         "due": sum(task_is_due(task, schedule, now) for task in tasks),
+        "unfinished_windows": len(state.get("search_windows", {})),
     }
 
 
@@ -462,61 +464,30 @@ def search_task(
     config: dict[str, Any],
     now: datetime,
     extra_call_budget: int,
+    checkpoint: dict[str, Any] | None = None,
 ) -> tuple[list[dict[str, Any]], int, bool]:
-    """Search a frozen end window and split dense windows by ending time.
+    """Resume the same frozen window until every page has been drained."""
+    if checkpoint is None:
+        checkpoint = checkpoint_search.new_checkpoint(
+            utc_stamp(now), utc_stamp(now + timedelta(hours=float(task["horizon_hours"])))
+        )
 
-    One primary call is always made. If that page reports ``next``, remaining
-    pagination allowance is spent on time-halves first. A final narrow slice
-    follows eBay's own ``next`` link when it cannot be split further.
-    """
-    end = now + timedelta(hours=float(task["horizon_hours"]))
-    rows: dict[str, dict[str, Any]] = {}
-    extra_used = 0
-    complete = True
-    minimum_slice = timedelta(minutes=20)
+    def fetch_window(start: str, end: str, offset: int) -> dict[str, Any]:
+        return client.search_page(
+            task.get("query"), limit=int(config["page_size"]),
+            category_ids=task.get("category_ids"), fixed_price_only=False,
+            buying_options=["AUCTION"], ending_start_date=start,
+            ending_end_date=end, offset=offset,
+            search_in_description=bool(task.get("search_in_description")),
+            sort="endingSoonest",
+        )
 
-    def add_page(page: dict[str, Any]) -> None:
-        for row in page.get("itemSummaries") or []:
-            if not isinstance(row, dict):
-                continue
-            key = str(row.get("itemId") or "")
-            if key:
-                rows[key] = row
-
-    first = _search_page(client, task, config, now, end)
-    add_page(first)
-    pending: list[tuple[datetime, datetime, dict[str, Any]]] = []
-    if first.get("next"):
-        pending.append((now, end, first))
-
-    while pending:
-        window_start, window_end, page = pending.pop(0)
-        if extra_used >= extra_call_budget:
-            complete = False
-            break
-        span = window_end - window_start
-        calls_left = extra_call_budget - extra_used
-        if span > minimum_slice and calls_left >= 2:
-            midpoint = window_start + span / 2
-            for half_start, half_end in ((window_start, midpoint), (midpoint, window_end)):
-                child = _search_page(client, task, config, half_start, half_end)
-                extra_used += 1
-                add_page(child)
-                if child.get("next"):
-                    pending.append((half_start, half_end, child))
-        else:
-            next_url = str(page.get("next") or "")
-            if not next_url:
-                continue
-            child = client.search_next(next_url)
-            extra_used += 1
-            add_page(child)
-            if child.get("next"):
-                pending.append((window_start, window_end, child))
-
-    if pending:
-        complete = False
-    return list(rows.values()), extra_used, complete
+    rows, calls, complete = checkpoint_search.drain(
+        checkpoint, fetch_window, client.search_next,
+        max_calls=1 + max(0, extra_call_budget), page_size=int(config["page_size"]),
+        retryable_errors=(ebay_api.EbayApiError, ValueError),
+    )
+    return rows, max(0, calls - 1), complete
 
 
 def _auction_price(item: dict[str, Any]) -> tuple[float | None, str]:
@@ -681,6 +652,7 @@ def discover(
         "task_count": len(tasks),
         "due_count": sum(task_is_due(task, state["schedule"], now) for task in tasks),
         "selected_count": len(selected),
+        "successful_tasks": 0,
         "search_calls": 0,
         "pagination_calls": 0,
         "raw_results": 0,
@@ -699,8 +671,16 @@ def discover(
         client = pool.get(task["marketplace"])
         extra_for_task = min(pagination_remaining, int(config["max_pagination_calls_per_discovery"]),
                              max(0, call_budget - (pool.calls - start_calls) - 1))
+        windows = state.setdefault("search_windows", {})
+        checkpoint = windows.get(task["key"])
+        if not isinstance(checkpoint, dict) or checkpoint.get("completed"):
+            checkpoint = checkpoint_search.new_checkpoint(
+                utc_stamp(now), utc_stamp(now + timedelta(hours=float(task["horizon_hours"])))
+            )
+            windows[task["key"]] = checkpoint
+        previous_pages = int(checkpoint.get("successful_pages", 0))
         try:
-            rows, extra_used, complete = search_task(client, task, config, now, extra_for_task)
+            rows, extra_used, complete = search_task(client, task, config, now, extra_for_task, checkpoint)
             pool.sync_token(client)
         except (ebay_api.EbayApiError, ValueError) as exc:
             stats["errors"].append(f"{task['key']}: {exc}")
@@ -709,6 +689,10 @@ def discover(
             if task["lane"] == "category" and "valid 'q', 'category_ids'" in str(exc):
                 state["schedule"][task["key"]] = utc_stamp(now)
             continue
+        if int(checkpoint.get("successful_pages", 0)) > previous_pages:
+            stats["successful_tasks"] += 1
+        if checkpoint.get("last_error"):
+            stats["errors"].append(f"{task['key']}: {checkpoint['last_error']}")
         pagination_remaining -= extra_used
         stats["pagination_calls"] += extra_used
         lane_calls[task["lane"]] += 1 + extra_used
@@ -720,7 +704,9 @@ def discover(
                 now - timedelta(hours=float(task["interval_hours"])) + retry_after
             )
         else:
-            state["schedule"][task["key"]] = utc_stamp(now)
+            # This completed the original frozen window, not a fresh one.
+            state["schedule"][task["key"]] = str(checkpoint["start"])
+            windows.pop(task["key"], None)
 
         for raw in rows:
             candidate = candidate_from_summary(raw, task, config, now)
@@ -737,7 +723,10 @@ def discover(
     stats["search_calls"] = pool.calls - start_calls
     stats["lane_calls"] = dict(lane_calls)
     stats["coverage"] = coverage_status(tasks, state, now)
-    state["last_discovery_at"] = utc_stamp(now)
+    state["last_discovery_attempt_at"] = utc_stamp(now)
+    if stats["successful_tasks"]:
+        state["last_discovery_at"] = utc_stamp(now)
+    stats["unfinished_windows"] = len(state.get("search_windows", {}))
     return stats
 
 
@@ -1015,6 +1004,7 @@ def write_summary(
         f"- Configured primary demand: {projected_primary_calls_per_day(tasks):.0f} calls/day before pagination and details",
         f"- Never-searched name routes by tier: {coverage['never_searched_by_tier']}",
         f"- Never-searched routes (all lanes): {coverage['never_searched']}; routes still due: {coverage['due']}",
+        f"- Unfinished search windows retained for recovery: {coverage['unfinished_windows']}",
     ]
     if quota:
         lines.append(f"- Shared Browse quota remaining at start: {quota.get('remaining')} / {quota.get('limit')}")
@@ -1119,7 +1109,8 @@ def main() -> int:
             "last_calls_used": calls_used,
             "last_alert_count": len(alerts),
             "last_candidate_count": len(state["candidates"]),
-            "last_discovery": discovery_stats or {},
+            "last_discovery": (discovery_stats if discovery_stats is not None
+                               else state.get("stats", {}).get("last_discovery", {})),
             "quota_error": quota_error,
         }
 
@@ -1137,7 +1128,8 @@ def main() -> int:
     set_output("new_candidate_count", (discovery_stats or {}).get("new_candidates", 0))
     set_output("discovery_ran", str(discovery_stats is not None).lower())
     print((args.runtime / "summary.md").read_text(encoding="utf-8"))
-    if discovery_stats and discovery_stats["errors"] and discovery_stats["selected_count"] == len(discovery_stats["errors"]):
+    if discovery_stats and discovery_stats["errors"] and not discovery_stats.get("successful_tasks"):
+        # Partial successes are useful discoveries and must still be published.
         return 1
     return 0
 

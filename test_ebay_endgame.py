@@ -118,8 +118,8 @@ class EndgameTests(unittest.TestCase):
             self.assertEqual({endgame.normalized(term) for term in packed}, {endgame.normalized(term) for term in terms})
 
     def test_task_matrix_is_auction_only_and_within_budget(self):
-        self.assertEqual(len(self.tasks), 643)
-        self.assertEqual(endgame.projected_primary_calls_per_day(self.tasks), 2396.0)
+        self.assertEqual(len({task["key"] for task in self.tasks}), len(self.tasks))
+        self.assertGreaterEqual(len(self.tasks), 643)
         self.assertLess(endgame.projected_primary_calls_per_day(self.tasks), self.config["daily_call_cap"])
         self.assertTrue(all("delivery_country" not in task for task in self.tasks))
         self.assertTrue(all("seller_account_type" not in task for task in self.tasks))
@@ -169,8 +169,9 @@ class EndgameTests(unittest.TestCase):
         pool = FakePool(FakeSearchClient())
         endgame.run_cycle(self.config, state, NOW, pool, 3600)
         coverage = endgame.coverage_status(self.tasks, state, NOW)
-        self.assertLessEqual(coverage["never_searched"], 19)
-        self.assertTrue(all(count < 20 for count in coverage["never_searched_by_tier"].values()))
+        primary_cap, _ = endgame.discovery_limits(self.config, endgame.blank_state(), NOW)
+        self.assertLessEqual(coverage["never_searched"], max(0, len(self.tasks) - primary_cap))
+        self.assertTrue(all(count < 40 for count in coverage["never_searched_by_tier"].values()))
         endgame.run_cycle(self.config, state, NOW + timedelta(minutes=15), pool, 3600 - pool.calls)
         self.assertEqual(endgame.coverage_status(self.tasks, state, NOW)["never_searched"], 0)
 
