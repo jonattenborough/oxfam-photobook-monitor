@@ -21,6 +21,7 @@ import ebay_search_checkpoint as checkpoint_search
 import ebay_core_targets as core_targets
 import ebay_private_seller_monitor as legacy
 import photobook_recognition as recognition
+import pre1970_unicorn_targets as unicorn_targets
 
 DEFAULT_CONFIG = Path("data/ebay_endgame_targets.json")
 DEFAULT_STATE = Path("data/ebay_endgame_state.json")
@@ -121,6 +122,18 @@ def validate_config(config: dict[str, Any]) -> None:
         raise ValueError("query_character_limit must be between 20 and 100")
     if int(config.get("daily_call_cap") or 0) > 3600:
         raise ValueError("Endgame daily_call_cap cannot exceed its 3,600-call allocation")
+
+    unicorn = config.get("unicorn_search") or {}
+    if unicorn.get("enabled"):
+        target_path = Path(str(unicorn.get("targets_path") or unicorn_targets.DEFAULT_PATH))
+        tiers = {str(value).upper() for value in unicorn.get("tiers") or ["A"]}
+        selected = unicorn_targets.targets_for_tiers(tiers, target_path)
+        if not selected:
+            raise ValueError("Enabled unicorn_search must select at least one target")
+        if float(unicorn.get("revisit_hours") or 0) <= 0:
+            raise ValueError("unicorn_search.revisit_hours must be positive")
+        if float(unicorn.get("horizon_hours") or 0) <= 0:
+            raise ValueError("unicorn_search.horizon_hours must be positive")
 
 
 def load_config(path: Path = DEFAULT_CONFIG) -> dict[str, Any]:
@@ -265,6 +278,42 @@ def build_tasks(config: dict[str, Any]) -> list[dict[str, Any]]:
                 }
             )
 
+    unicorn_settings = config.get("unicorn_search") or {}
+    if unicorn_settings.get("enabled"):
+        unicorn_rows = unicorn_targets.targets_for_tiers(
+            {str(value).upper() for value in unicorn_settings.get("tiers") or ["A"]},
+            Path(str(unicorn_settings.get("targets_path") or unicorn_targets.DEFAULT_PATH)),
+        )
+        for market in markets:
+            if not unicorn_settings.get("all_markets", True) and not market.get("major"):
+                continue
+            marketplace = market["marketplace"]
+            for target in unicorn_rows:
+                query = unicorn_targets.search_query(target)
+                tasks.append(
+                    {
+                        "key": task_identity("unicorn", marketplace, query, target["Unicorn tier"]),
+                        "lane": "unicorn",
+                        "marketplace": marketplace,
+                        "query": query,
+                        "terms": unicorn_targets.visible_terms(target),
+                        "tier": "",
+                        "unicorn_tier": target["Unicorn tier"],
+                        "unicorn_target": {
+                            "Contributor": target["Contributor"],
+                            "Contributor aliases": target.get("Contributor aliases", ""),
+                            "Title": target["Title"],
+                            "Title aliases": target.get("Title aliases", ""),
+                            "Year": target["Year"],
+                            "Radar notes": target.get("Radar notes", ""),
+                        },
+                        "interval_hours": float(unicorn_settings["revisit_hours"]),
+                        "horizon_hours": float(unicorn_settings["horizon_hours"]),
+                        "category_ids": None,
+                        "search_in_description": True,
+                    }
+                )
+
     title_settings = config.get("title_search") or {}
     if title_settings.get("enabled"):
         groups = compile_or_queries(title_terms(config), limit)
@@ -330,7 +379,8 @@ def _due_sort_key(task: dict[str, Any], schedule: dict[str, Any], now: datetime)
     last = parse_stamp(schedule.get(task["key"]))
     missing = last is None
     overdue = 10**9 if missing else (now - last).total_seconds() / (3600 * float(task["interval_hours"]))
-    tier = int(task.get("tier") or 9)
+    tier_text = str(task.get("tier") or "")
+    tier = int(tier_text) if tier_text.isdigit() else 9
     return (0 if missing else 1, -overdue, tier)
 
 
@@ -358,7 +408,7 @@ def select_due_tasks(
                      for tier in ("1", "2", "3")}
     by_lane["known"] = []
     while any(known_by_tier.values()):
-        for tier, slots in (("1", 7), ("2", 5), ("3", 2)):
+        for tier, slots in (("1", 6), ("2", 4), ("3", 2)):
             by_lane["known"].extend(known_by_tier[tier][:slots])
             del known_by_tier[tier][:slots]
 
@@ -367,7 +417,7 @@ def select_due_tasks(
     # slots to one lane. Empty lanes donate their slots to the remaining lanes.
     while len(selected) < limit:
         previous_count = len(selected)
-        for lane in ("known", "broad", "title", "category"):
+        for lane in ("known", "broad", "unicorn", "title", "category"):
             count = min(max(0, int(config["lane_slots"].get(lane, 0))), limit - len(selected))
             selected.extend(by_lane.get(lane, [])[:count])
             del by_lane[lane][:count]
@@ -542,6 +592,28 @@ def _target_collision(
     return False, quality
 
 
+def _unicorn_match_quality(
+    target: dict[str, Any],
+    visible_terms: list[str],
+) -> str:
+    visible = {normalized(value) for value in visible_terms if normalized(value)}
+    contributor_terms = [
+        str(target.get("Contributor") or ""),
+        *str(target.get("Contributor aliases") or "").split("|"),
+    ]
+    title_terms = [
+        str(target.get("Title") or ""),
+        *str(target.get("Title aliases") or "").split("|"),
+    ]
+    contributor_hit = any(normalized(value) in visible for value in contributor_terms if normalized(value))
+    title_hit = any(normalized(value) in visible for value in title_terms if normalized(value))
+    if contributor_hit and title_hit:
+        return "exact_pair"
+    if visible:
+        return "partial_target"
+    return "hidden_description"
+
+
 def _demote_persisted_target_collision(candidate: dict[str, Any]) -> dict[str, Any]:
     """Re-score old candidate state so pre-fix junk cannot keep alerting."""
     lane = str(candidate.get("discovery_lane") or "")
@@ -629,6 +701,20 @@ def candidate_from_summary(
             score = max(score, 64)
             target_quality = "hidden_description"
             reasons.append("Tier 1 photobook-title query matched title or seller description")
+    elif lane == "unicorn":
+        target_quality = _unicorn_match_quality(task.get("unicorn_target") or {}, visible)
+        if target_quality == "exact_pair":
+            score = max(score, 92)
+            reasons.append("Pre-1970 unicorn query visibly matched both photographer and target title")
+        elif visible:
+            score = max(score, 68)
+            reasons.append(
+                "Pre-1970 unicorn query matched one visible target component; "
+                "retained for detail verification"
+            )
+        else:
+            score = max(score, 66)
+            reasons.append("Pre-1970 unicorn query matched hidden seller description")
     elif lane in {"broad", "category"}:
         minimum = 42 if lane == "broad" else 50
         if not classified.get("recognized") and score < minimum and not _has_discovery_evidence(classified):
@@ -639,11 +725,15 @@ def candidate_from_summary(
     classified["score_band"] = "urgent" if score >= 90 else "alert" if score >= 72 else "review" if score >= 55 else "reject"
     classified["marketplace"] = task["marketplace"]
     classified["query_target_tier"] = tier
+    classified["unicorn_target_tier"] = str(task.get("unicorn_tier") or "")
+    classified["unicorn_target"] = dict(task.get("unicorn_target") or {})
     classified["discovery_lane"] = lane
     classified["discovery_query"] = task.get("query") or "category-only Books sweep"
     classified["matched_target_terms"] = visible
-    classified["target_match_quality"] = target_quality if lane in {"known", "title"} else ""
-    classified["target_query_terms"] = list(task.get("terms") or []) if lane in {"known", "title"} else []
+    classified["target_match_quality"] = target_quality if lane in {"known", "title", "unicorn"} else ""
+    classified["target_query_terms"] = (
+        list(task.get("terms") or []) if lane in {"known", "title", "unicorn"} else []
+    )
     classified["first_seen"] = utc_stamp(now)
     classified["last_seen"] = utc_stamp(now)
     classified["initial_alerted_at"] = ""
@@ -686,11 +776,14 @@ def merge_candidate(existing: dict[str, Any] | None, incoming: dict[str, Any]) -
     merged["target_query_terms"] = list(
         dict.fromkeys((existing.get("target_query_terms") or []) + (incoming.get("target_query_terms") or []))
     )
-    lane_rank = {"known": 0, "title": 1, "broad": 2, "category": 3}
+    lane_rank = {"unicorn": 0, "known": 1, "title": 2, "broad": 3, "category": 4}
     existing_lane = str(existing.get("discovery_lane") or "")
     incoming_lane = str(incoming.get("discovery_lane") or "")
     if lane_rank.get(existing_lane, 9) < lane_rank.get(incoming_lane, 9):
-        for key in ("discovery_lane", "discovery_query", "query_target_tier"):
+        for key in (
+            "discovery_lane", "discovery_query", "query_target_tier",
+            "unicorn_target_tier", "unicorn_target",
+        ):
             if existing.get(key) not in (None, ""):
                 merged[key] = existing[key]
     if int(existing.get("opportunity_score") or 0) > int(incoming.get("opportunity_score") or 0):
@@ -864,6 +957,18 @@ def enrich_candidate(candidate: dict[str, Any], detail: dict[str, Any], now: dat
             score = max(score, 64)
             target_quality = "hidden_description"
             reasons.append("Tier 1 title-targeted auction matched hidden seller text")
+    elif lane == "unicorn":
+        target_quality = _unicorn_match_quality(merged.get("unicorn_target") or {}, visible)
+        if target_quality == "exact_pair":
+            score = max(score, 92)
+            reasons.append("Pre-1970 unicorn auction verified both photographer and target title")
+        elif visible:
+            score = max(score, 68)
+            reasons.append("Pre-1970 unicorn auction still has only a partial visible target match")
+        else:
+            score = max(score, 66)
+            target_quality = "hidden_description"
+            reasons.append("Pre-1970 unicorn auction matched hidden seller text")
     elif tier in {"1", "2", "3"}:
         if visible and not collision:
             score = max(score, {"1": 88, "2": 82, "3": 76}[tier])
@@ -881,7 +986,9 @@ def enrich_candidate(candidate: dict[str, Any], detail: dict[str, Any], now: dat
     rescored["opportunity_reasons"] = list(dict.fromkeys(reasons))
     rescored["score_band"] = "urgent" if score >= 90 else "alert" if score >= 72 else "review" if score >= 55 else "reject"
     rescored["matched_target_terms"] = list(dict.fromkeys((merged.get("matched_target_terms") or []) + visible))
-    rescored["target_match_quality"] = target_quality if tier in {"1", "2", "3"} or lane == "title" else ""
+    rescored["target_match_quality"] = (
+        target_quality if tier in {"1", "2", "3"} or lane in {"title", "unicorn"} else ""
+    )
     rescored["last_detail_at"] = utc_stamp(now)
     rescored["live_verification"] = reason
     rescored["active"] = live
