@@ -392,6 +392,8 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
             "key": "ebay:sian-davey",
             "title": "Sian Davey Looking for Alice hardback",
             "context": "used book",
+            "category_id": "261186",
+            "category_path": "Books",
             "price_gbp": 45.0,
             "private_seller": True,
             "seller_account_type": "INDIVIDUAL",
