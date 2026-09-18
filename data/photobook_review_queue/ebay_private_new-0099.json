@@ -1,61 +1,7 @@
 {
-  "checked_at": "2026-09-18T06:02:50Z",
+  "checked_at": "2026-09-18T06:54:28Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
-    {
-      "number": 1073,
-      "title": "EBAY_PRIVATE_NEW: REVIEW 6 | top 78 | 0 under £100 | 4 special | 1 changed | 9/9",
-      "created_at": "2026-09-09T11:57:34Z",
-      "updated_at": "2026-09-09T11:57:35Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1073",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 141.1,
-      "candidate_summaries": [
-        {
-          "title": "REVIEW 77/100 - Sam Contis Deep Springs Signed First Edition MACK Photography Book",
-          "listing_ids": [
-            "178459488369"
-          ],
-          "observed_price_gbp": 208.7
-        },
-        {
-          "title": "REVIEW 76/100 - Good Morning, America Volume II - Mark Power - SIGNED Gost Books 2019",
-          "listing_ids": [
-            "237039279776"
-          ],
-          "observed_price_gbp": 141.1
-        },
-        {
-          "title": "REVIEW 73/100 - Vanessa Winship - She Dances On Jackson - 1st Edition - SIGNED!",
-          "listing_ids": [
-            "336759393595"
-          ],
-          "observed_price_gbp": 182.7
-        },
-        {
-          "title": "CHANGED 78/100 - In the American West Richard Avedon Photographs 1979-1984 Photo Books Abrams",
-          "listing_ids": [
-            "157455173977"
-          ],
-          "observed_price_gbp": 539.16
-        },
-        {
-          "title": "REVIEW 78/100 - NOTHING PERSONAL - RICHARD AVEDON & JAMES BALDWIN - 1964 WITH SLIPCASE - penguin",
-          "listing_ids": [
-            "137717346642"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "REVIEW 78/100 - Vandals - Calling Card For The Film Bikeriders By Outlaw Originals - Danny Lyon",
-          "listing_ids": [
-            "257722809434"
-          ],
-          "observed_price_gbp": null
-        }
-      ]
-    },
     {
       "number": 1145,
       "title": "EBAY_PRIVATE_NEW: REVIEW 3 | top 80 | 0 under £100 | 2 special | 12/12",
@@ -371,6 +317,32 @@
             "227444026551"
           ],
           "observed_price_gbp": 399.4
+        }
+      ]
+    },
+    {
+      "number": 1761,
+      "title": "EBAY_PRIVATE_NEW: REVIEW 2 | top 80 | 0 under £100 | 2 special | 11/11",
+      "created_at": "2026-09-16T06:39:19Z",
+      "updated_at": "2026-09-16T06:39:20Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1761",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 125.5,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 80/100 - China Between by Polly Braden, Jennifer Higgie, David Campany (Hardcover, 2010)",
+          "listing_ids": [
+            "226845728400"
+          ],
+          "observed_price_gbp": 125.5
+        },
+        {
+          "title": "REVIEW 79/100 - Flamboya – Viviane Sassen (First Edition, 2008) – Signed & Dedicated",
+          "listing_ids": [
+            "336319022782"
+          ],
+          "observed_price_gbp": 450.0
         }
       ]
     }

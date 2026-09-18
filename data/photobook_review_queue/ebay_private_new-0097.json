@@ -1,89 +1,7 @@
 {
-  "checked_at": "2026-09-18T06:02:50Z",
+  "checked_at": "2026-09-18T06:54:28Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
-    {
-      "number": 2108,
-      "title": "EBAY_PRIVATE_NEW: REVIEW 10 | top 76 | 10 under £100 | 2/3",
-      "created_at": "2026-09-18T00:03:46Z",
-      "updated_at": "2026-09-18T00:03:46Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2108",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 3.0,
-      "candidate_summaries": [
-        {
-          "title": "REVIEW 76/100 - Celtic Britain (Country)-Homer Sykes Paperback",
-          "listing_ids": [
-            "377163552397"
-          ],
-          "observed_price_gbp": 3.0
-        },
-        {
-          "title": "REVIEW 76/100 - MYSTERIOUS BRITAIN Homer Sykes (Paperback 2001) LN #Y11",
-          "listing_ids": [
-            "364034705398"
-          ],
-          "observed_price_gbp": 3.3
-        },
-        {
-          "title": "REVIEW 76/100 - Celtic Britain by Homer Sykes (2001, Trade Paperback)",
-          "listing_ids": [
-            "157625406888"
-          ],
-          "observed_price_gbp": 3.31
-        },
-        {
-          "title": "REVIEW 76/100 - Celtic Britain Country Series Homer Sykes Paperback 2001",
-          "listing_ids": [
-            "236039190413"
-          ],
-          "observed_price_gbp": 4.33
-        },
-        {
-          "title": "REVIEW 76/100 - The Village Pub by Roger Protz & Homer Sykes, 1992, Illustrated Hardcover",
-          "listing_ids": [
-            "147302444918"
-          ],
-          "observed_price_gbp": 3.94
-        },
-        {
-          "title": "REVIEW 76/100 - Celtic Britain by Homer Sykes (2001, Trade Paperback)",
-          "listing_ids": [
-            "206122889413"
-          ],
-          "observed_price_gbp": 4.77
-        },
-        {
-          "title": "REVIEW 76/100 - Lewis Baltz: Texts Very Good Book (Hardback)",
-          "listing_ids": [
-            "257696625766"
-          ],
-          "observed_price_gbp": 8.55
-        },
-        {
-          "title": "REVIEW 76/100 - Celtic Britain & Mysterious Britain by Homer Sykes",
-          "listing_ids": [
-            "236494075640"
-          ],
-          "observed_price_gbp": 16.0
-        },
-        {
-          "title": "REVIEW 76/100 - The Island: The Sidcot School Magazine autumn 1967 vol. 166 = HOMER SYKES",
-          "listing_ids": [
-            "295686066757"
-          ],
-          "observed_price_gbp": 21.5
-        },
-        {
-          "title": "REVIEW 76/100 - Anthony Hernandez by Lewis Baltz and Ralph Rugoff, 2016, Hardcover",
-          "listing_ids": [
-            "177974587360"
-          ],
-          "observed_price_gbp": 37.1
-        }
-      ]
-    },
     {
       "number": 2109,
       "title": "EBAY_PRIVATE_NEW: REVIEW 7 | top 78 | 4 under £100 | 1 special | 3/3",
@@ -728,6 +646,46 @@
             "178186565212"
           ],
           "observed_price_gbp": 343.3
+        }
+      ]
+    },
+    {
+      "number": 775,
+      "title": "EBAY_PRIVATE_NEW: REVIEW 4 | top 78 | 0 under £100 | 2 special | 1 changed | 7/7",
+      "created_at": "2026-09-06T00:11:43Z",
+      "updated_at": "2026-09-06T00:11:43Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/775",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 85.05,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 73/100 - Waterfall Rapture Tadanori Yokoo.  1996 with obi 1st edition",
+          "listing_ids": [
+            "276777955301"
+          ],
+          "observed_price_gbp": 187.9
+        },
+        {
+          "title": "REVIEW 78/100 - Yutaka Takanashi - Toshi-e (Towards the City)",
+          "listing_ids": [
+            "318493692069"
+          ],
+          "observed_price_gbp": 85.05
+        },
+        {
+          "title": "REVIEW 73/100 - Case History by Mikhailov, Boris / Hardback w Dust jacket / Scala First Edition",
+          "listing_ids": [
+            "336775048635"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "CHANGED 72/100 - David Lynch The Factory Photographs Petra Giloy Hirtz Hardcover Photo Book",
+          "listing_ids": [
+            "287360287859"
+          ],
+          "observed_price_gbp": 396.1
         }
       ]
     }

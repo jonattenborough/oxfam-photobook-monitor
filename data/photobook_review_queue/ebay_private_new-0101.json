@@ -1,47 +1,7 @@
 {
-  "checked_at": "2026-09-18T06:02:50Z",
+  "checked_at": "2026-09-18T06:54:28Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
-    {
-      "number": 628,
-      "title": "EBAY_PRIVATE_NEW: REVIEW 4 | top 86 | 0 under £100 | 2 special | 1 changed | 17/17",
-      "created_at": "2026-09-04T19:28:29Z",
-      "updated_at": "2026-09-04T19:28:29Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/628",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 239.9,
-      "candidate_summaries": [
-        {
-          "title": "REVIEW 78/100 - Paul Graham: A Shimmer of Possibility by Paul Graham (Paperback, 2009)",
-          "listing_ids": [
-            "326746160272"
-          ],
-          "observed_price_gbp": 239.9
-        },
-        {
-          "title": "REVIEW 86/100 - Paul Graham The Present Limited Edition of 50 w/print",
-          "listing_ids": [
-            "276776982066"
-          ],
-          "observed_price_gbp": 567.7
-        },
-        {
-          "title": "REVIEW 78/100 - Gardner's Photographic Sketchbook of the Civil War Alexander Gardner PB VGC",
-          "listing_ids": [
-            "178468063118"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "CHANGED 72/100 - Hideaki Hamada DISTANT DRUMS Photo Book Signed Green Cover Photography from JP",
-          "listing_ids": [
-            "406814476421"
-          ],
-          "observed_price_gbp": 390.68
-        }
-      ]
-    },
     {
       "number": 702,
       "title": "EBAY_PRIVATE_NEW: REVIEW 2 | top 77 | 0 under £100 | 2 special | 17/17",
@@ -294,6 +254,32 @@
             "266864757872"
           ],
           "observed_price_gbp": 567.7
+        }
+      ]
+    },
+    {
+      "number": 1748,
+      "title": "EBAY_PRIVATE_NEW: REVIEW 2 | top 77 | 0 under £100 | 1 special | 13/13",
+      "created_at": "2026-09-16T01:19:26Z",
+      "updated_at": "2026-09-16T01:19:26Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1748",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 557.27,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 77/100 - Ken Domon Hiroshima Photo Book 1958 First Edition Kenko-Sha",
+          "listing_ids": [
+            "178441631530"
+          ],
+          "observed_price_gbp": 566.62
+        },
+        {
+          "title": "REVIEW 75/100 - TOKYO SUBURBIA Takashi Homma Photography Book Japanese Suburban Landscapes",
+          "listing_ids": [
+            "366625309787"
+          ],
+          "observed_price_gbp": 557.27
         }
       ]
     }

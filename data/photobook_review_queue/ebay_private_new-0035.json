@@ -1,75 +1,7 @@
 {
-  "checked_at": "2026-09-18T06:02:50Z",
+  "checked_at": "2026-09-18T06:54:28Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
-    {
-      "number": 927,
-      "title": "EBAY_PRIVATE_NEW: HOT 8 | top 72 | 8 under £100 | 8 unknown | 7/7",
-      "created_at": "2026-09-07T22:46:10Z",
-      "updated_at": "2026-09-07T22:46:11Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/927",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 14.3,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - Man Ray. Taschen.",
-          "listing_ids": [
-            "336592985232"
-          ],
-          "observed_price_gbp": 21.5
-        },
-        {
-          "title": "DISCOVERY 72/100 - Chuu Official Album \"XO, My Cyberlove\" [Photobook CD] Love Ver",
-          "listing_ids": [
-            "168671985941"
-          ],
-          "observed_price_gbp": 14.3
-        },
-        {
-          "title": "DISCOVERY 72/100 - Catwalking : Photographs by Chris Moore by Alexander Fury (New Sealed Hardcover)",
-          "listing_ids": [
-            "287095044360"
-          ],
-          "observed_price_gbp": 23.6
-        },
-        {
-          "title": "DISCOVERY 72/100 - Illustration Now! Volume 2 – Taschen Hardback – Contemporary Illustration Book",
-          "listing_ids": [
-            "136986213941"
-          ],
-          "observed_price_gbp": 26.7
-        },
-        {
-          "title": "DISCOVERY 72/100 - Art of the Burning Man Collectible Book Taschen, NK Guy",
-          "listing_ids": [
-            "178147844136"
-          ],
-          "observed_price_gbp": 35.0
-        },
-        {
-          "title": "DISCOVERY 72/100 - BTS Me, Myself & Jin Special 8 Folio Photobook",
-          "listing_ids": [
-            "407200170403"
-          ],
-          "observed_price_gbp": 42.3
-        },
-        {
-          "title": "DISCOVERY 72/100 - BTS Me, Myself & Rm Special 8 Folio Photobook",
-          "listing_ids": [
-            "407200176777"
-          ],
-          "observed_price_gbp": 42.3
-        },
-        {
-          "title": "DISCOVERY 72/100 - Peter Lindbergh - A Different Vision On Fashion Photography - Taschen - NEW",
-          "listing_ids": [
-            "157641190250"
-          ],
-          "observed_price_gbp": 42.3
-        }
-      ]
-    },
     {
       "number": 932,
       "title": "EBAY_PRIVATE_NEW: HOT 10 | top 78 | 10 under £100 | 10 special | 9 unknown | 1/5",
@@ -791,6 +723,88 @@
             "366117316383"
           ],
           "observed_price_gbp": 200.0
+        }
+      ]
+    },
+    {
+      "number": 952,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 81 | 10 under £100 | 8 special | 6 unknown | 1/10",
+      "created_at": "2026-09-08T10:03:08Z",
+      "updated_at": "2026-09-08T10:03:09Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/952",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 4.23,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 81/100 - Kristine Potter 'Manifest' 2018 TBW Books - Signed First Edition",
+          "listing_ids": [
+            "407201224256"
+          ],
+          "observed_price_gbp": 83.9
+        },
+        {
+          "title": "REVIEW 78/100 - THE BUS: The Free Photographic Omnibus 1973-2001 - D. Meadows (Paperback, 2001)",
+          "listing_ids": [
+            "307168385772"
+          ],
+          "observed_price_gbp": 16.15
+        },
+        {
+          "title": "REVIEW 78/100 - MINAMATA Words and Photographs by W. Eugene Smith & Aileen M. Smith 2021 JP",
+          "listing_ids": [
+            "397443164331"
+          ],
+          "observed_price_gbp": 54.82
+        },
+        {
+          "title": "REVIEW 78/100 - Mothers 2000-2005: Imprint of the Future, Miyako Ishiuchi Photo Book",
+          "listing_ids": [
+            "366068973749"
+          ],
+          "observed_price_gbp": 79.64
+        },
+        {
+          "title": "DISCOVERY 72/100 - The Spirit Of Football. Photographs By Sportsphoto. Hardback 1998",
+          "listing_ids": [
+            "157918497467"
+          ],
+          "observed_price_gbp": 4.79
+        },
+        {
+          "title": "DISCOVERY 72/100 - Digital Macro Photography by Ross Hoddinott (2008, Perfect)",
+          "listing_ids": [
+            "318259276411"
+          ],
+          "observed_price_gbp": 4.23
+        },
+        {
+          "title": "DISCOVERY 72/100 - Take Better Photographs by Michael Busselle, Vintage Hardback Book, Peerage 1984",
+          "listing_ids": [
+            "358046611765"
+          ],
+          "observed_price_gbp": 5.45
+        },
+        {
+          "title": "DISCOVERY 72/100 - Trevor Sorbie by Jackie Wadeson (2003) – Hairdressing Photography Book, 1st Edit",
+          "listing_ids": [
+            "198318965271"
+          ],
+          "observed_price_gbp": 10.53
+        },
+        {
+          "title": "DISCOVERY 72/100 - The 35mm Handbook by Michael Freeman New Revised Updated Edition photography",
+          "listing_ids": [
+            "127844209310"
+          ],
+          "observed_price_gbp": 7.59
+        },
+        {
+          "title": "DISCOVERY 72/100 - Howard Had A Submarine Steve Lawhead First Edition Hardback Lion Picture Story ￼",
+          "listing_ids": [
+            "137712587892"
+          ],
+          "observed_price_gbp": 10.8
         }
       ]
     }

@@ -1,89 +1,7 @@
 {
-  "checked_at": "2026-09-18T06:02:50Z",
+  "checked_at": "2026-09-18T06:54:28Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
-    {
-      "number": 675,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 81 | 10 under £100 | 4 special | 4 unknown | 1/10",
-      "created_at": "2026-09-05T06:16:31Z",
-      "updated_at": "2026-09-05T06:16:32Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/675",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 6.52,
-      "candidate_summaries": [
-        {
-          "title": "REVIEW 81/100 - Nicaragua, SUSAN MEISELAS, 1st Ed SB 1981, Writers & Readers Coop, Magnum Photos",
-          "listing_ids": [
-            "167813692299"
-          ],
-          "observed_price_gbp": 42.0
-        },
-        {
-          "title": "REVIEW 78/100 - Large Paperback Photographic Views of Sherman's Campaign Book George N. Barnard",
-          "listing_ids": [
-            "287463615544"
-          ],
-          "observed_price_gbp": 10.8
-        },
-        {
-          "title": "REVIEW 78/100 - Archaeology in Reverse - Stephen Gill. Hardback. Nobody Books 2007 New",
-          "listing_ids": [
-            "147440221074"
-          ],
-          "observed_price_gbp": 34.0
-        },
-        {
-          "title": "REVIEW 78/100 - Photo Book Sentimental Journey Winter 1991 Nobuyoshi Araki Japanese",
-          "listing_ids": [
-            "405948380287"
-          ],
-          "observed_price_gbp": 37.39
-        },
-        {
-          "title": "REVIEW 78/100 - Rinko Kawauchi Illuminance, Ametsuchi, Seeing Shadow  Photo Book Japan 2012",
-          "listing_ids": [
-            "335942921224"
-          ],
-          "observed_price_gbp": 52.4
-        },
-        {
-          "title": "REVIEW 78/100 - Michael Snow almost Cover to Cover",
-          "listing_ids": [
-            "267442882428"
-          ],
-          "observed_price_gbp": 52.7
-        },
-        {
-          "title": "DISCOVERY 72/100 - Photography Book- How To Take & Develop Colour Photographs- Michael Freeman 1988",
-          "listing_ids": [
-            "236944100560"
-          ],
-          "observed_price_gbp": 6.52
-        },
-        {
-          "title": "DISCOVERY 72/100 - ANCIENT EGYPT- PHARAOHS-PYRAMIDS-HIEROGLYPHS ENDURING SYMBOLS-HISTORY-PHOTOS",
-          "listing_ids": [
-            "187368316709"
-          ],
-          "observed_price_gbp": 6.52
-        },
-        {
-          "title": "DISCOVERY 72/100 - Techniques of the World's Great Photographers Hardcover Brian Coe",
-          "listing_ids": [
-            "377342310936"
-          ],
-          "observed_price_gbp": 6.52
-        },
-        {
-          "title": "DISCOVERY 72/100 - JIMMY DOHERTY ,HAND SIGNED ,H/B.'ON THE FARM'.PHOTOGRAPHY BY CHRIS TERRY 2004",
-          "listing_ids": [
-            "358904922635"
-          ],
-          "observed_price_gbp": 13.96
-        }
-      ]
-    },
     {
       "number": 676,
       "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 special | 10 unknown | 2/10",
@@ -798,6 +716,88 @@
             "226877295962"
           ],
           "observed_price_gbp": 104.7
+        }
+      ]
+    },
+    {
+      "number": 686,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 78 | 10 under £100 | 5 special | 5 unknown | 1/17",
+      "created_at": "2026-09-05T10:45:08Z",
+      "updated_at": "2026-09-05T10:45:08Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/686",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 2.77,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 78/100 - Self Publish, Be Happy: A DIY Photobook Manual and Manifesto by Bruno Ceschel...",
+          "listing_ids": [
+            "176298135685"
+          ],
+          "observed_price_gbp": 7.58
+        },
+        {
+          "title": "REVIEW 78/100 - Ken Ohara, Extended Portrait Studies, Steidl, 2006, Japanese photography, ONE",
+          "listing_ids": [
+            "167811920407"
+          ],
+          "observed_price_gbp": 16.0
+        },
+        {
+          "title": "REVIEW 78/100 - Nobuyoshi Araki Sentimental Journey Winter Photo Book 1991",
+          "listing_ids": [
+            "178296622309"
+          ],
+          "observed_price_gbp": 34.98
+        },
+        {
+          "title": "REVIEW 78/100 - ONE KEN OHARA Taschen Verlag NEU",
+          "listing_ids": [
+            "277774904727"
+          ],
+          "observed_price_gbp": 24.05
+        },
+        {
+          "title": "REVIEW 78/100 - Sentimental Journey 1971-2017 - Nobuyoshi Araki Photo Book",
+          "listing_ids": [
+            "365088748845"
+          ],
+          "observed_price_gbp": 71.84
+        },
+        {
+          "title": "DISCOVERY 72/100 - Childs Photo Book",
+          "listing_ids": [
+            "226569326766"
+          ],
+          "observed_price_gbp": 2.77
+        },
+        {
+          "title": "DISCOVERY 72/100 - \"The Complete Photobook\" by Philip Johnson - 1st edition, 1st impression HB 1955",
+          "listing_ids": [
+            "145294271256"
+          ],
+          "observed_price_gbp": 6.47
+        },
+        {
+          "title": "DISCOVERY 72/100 - Trans Siberia - Photozine Moscow to Japan Rare photobook numbered zine",
+          "listing_ids": [
+            "197912210519"
+          ],
+          "observed_price_gbp": 10.0
+        },
+        {
+          "title": "DISCOVERY 72/100 - Dashboards David Holland Phaidon vintage car automobile photo book P’back VGC",
+          "listing_ids": [
+            "126787856222"
+          ],
+          "observed_price_gbp": 11.86
+        },
+        {
+          "title": "DISCOVERY 72/100 - Photographic book \"Fotografia cyfrowa\" Scott Kelby (Polish Language)",
+          "listing_ids": [
+            "178291337172"
+          ],
+          "observed_price_gbp": 8.66
         }
       ]
     }

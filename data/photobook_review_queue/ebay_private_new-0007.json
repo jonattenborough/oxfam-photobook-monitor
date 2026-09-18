@@ -1,68 +1,7 @@
 {
-  "checked_at": "2026-09-18T06:02:50Z",
+  "checked_at": "2026-09-18T06:54:28Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
-    {
-      "number": 541,
-      "title": "EBAY_PRIVATE_NEW: 7 candidates | 0 live checked | 7 search only | 2 unknown | 4/4",
-      "created_at": "2026-09-04T08:13:55Z",
-      "updated_at": "2026-09-04T08:13:56Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/541",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 28.92,
-      "candidate_summaries": [
-        {
-          "title": "REVIEW 72/100 - Pharmakon by Teju Cole | Art Photography book published by MACK",
-          "listing_ids": [
-            "158233313475"
-          ],
-          "observed_price_gbp": 31.9
-        },
-        {
-          "title": "REVIEW 72/100 - TATI 50x50 1999 Steidl Nan Goldin Photography Art Book France French Edition",
-          "listing_ids": [
-            "820057325109"
-          ],
-          "observed_price_gbp": 28.92
-        },
-        {
-          "title": "REVIEW 82/100 - 'Meetings' Paul Shambroom, Rare Signed, Hardcover, 1st Edition, Photography Book",
-          "listing_ids": [
-            "286295015354"
-          ],
-          "observed_price_gbp": 68.3
-        },
-        {
-          "title": "REVIEW 82/100 - Michael Kenna \"Abruzzo\" new, Signed",
-          "listing_ids": [
-            "820057318526"
-          ],
-          "observed_price_gbp": 203.25
-        },
-        {
-          "title": "REVIEW 78/100 - Meetings by Paul Shambroom, Hardcover, Rare, Collectable, Very Good Condition",
-          "listing_ids": [
-            "225019799553"
-          ],
-          "observed_price_gbp": 47.5
-        },
-        {
-          "title": "REVIEW 78/100 - Chris Killip PHOTOGRAPHS OF THE NORTHEAST poster, 1975 & 1976, Jarrow Skinhead",
-          "listing_ids": [
-            "167814071668"
-          ],
-          "observed_price_gbp": 234.7
-        },
-        {
-          "title": "REVIEW 75/100 - 2003 The Bikeriders By Danny Lyon Paperback First Edition + Total Film Magazine",
-          "listing_ids": [
-            "178463928732"
-          ],
-          "observed_price_gbp": null
-        }
-      ]
-    },
     {
       "number": 542,
       "title": "EBAY_PRIVATE_NEW: 10 candidates | 0 live checked | 10 search only | 10 unknown | 1/5",
@@ -791,6 +730,88 @@
             "147515041865"
           ],
           "observed_price_gbp": 21.5
+        }
+      ]
+    },
+    {
+      "number": 553,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 4 special | 10 unknown | 4/5",
+      "created_at": "2026-09-04T08:18:15Z",
+      "updated_at": "2026-09-04T08:18:16Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/553",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 11.99,
+      "candidate_summaries": [
+        {
+          "title": "DISCOVERY 72/100 - Through A Different Lens: Stanley Kubrick Photographs - Taschen 2018 Photo Book",
+          "listing_ids": [
+            "398307031222"
+          ],
+          "observed_price_gbp": 21.5
+        },
+        {
+          "title": "DISCOVERY 72/100 - Tomorrow's People Jeremy Sandford Ron Reid 1974 Hippie Festival Photo Book",
+          "listing_ids": [
+            "158203223845"
+          ],
+          "observed_price_gbp": 25.0
+        },
+        {
+          "title": "DISCOVERY 72/100 - Jeanloup Sieff 40 Years of Photography Hardcover 2010 Taschen Photographic Book",
+          "listing_ids": [
+            "398307031214"
+          ],
+          "observed_price_gbp": 26.7
+        },
+        {
+          "title": "DISCOVERY 72/100 - KAWS Book - Paperback - Published By Phaidon  - UNIQLO. In Hand",
+          "listing_ids": [
+            "375200456896"
+          ],
+          "observed_price_gbp": 42.3
+        },
+        {
+          "title": "DISCOVERY 72/100 - 100 Great Street Photographs David Gibson Prestel Hardback Street Photography",
+          "listing_ids": [
+            "178423578639"
+          ],
+          "observed_price_gbp": 11.99
+        },
+        {
+          "title": "DISCOVERY 72/100 - Albert MAYSLES Scrapbook  Photographs Documents Hardcover STEIDL Scorsese Cinema",
+          "listing_ids": [
+            "327320457550"
+          ],
+          "observed_price_gbp": 15.9
+        },
+        {
+          "title": "DISCOVERY 72/100 - The Book Of Watford Vol 1 & 2 Local History Hertfordshire Photo Books - J B Nunn",
+          "listing_ids": [
+            "278295627459"
+          ],
+          "observed_price_gbp": 17.22
+        },
+        {
+          "title": "DISCOVERY 72/100 - Shoreditch Street Portraits - Coffee table photography book",
+          "listing_ids": [
+            "234675901060"
+          ],
+          "observed_price_gbp": 18.29
+        },
+        {
+          "title": "DISCOVERY 72/100 - Three Gorges Project In China Photo Book Huge Yangtze Hydro Dam Engineering Rare",
+          "listing_ids": [
+            "267761559288"
+          ],
+          "observed_price_gbp": 22.0
+        },
+        {
+          "title": "DISCOVERY 72/100 - Portobello by Patricia Almeida Photo Book",
+          "listing_ids": [
+            "227486360502"
+          ],
+          "observed_price_gbp": 28.0
         }
       ]
     }

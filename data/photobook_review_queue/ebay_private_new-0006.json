@@ -1,89 +1,7 @@
 {
-  "checked_at": "2026-09-18T06:02:50Z",
+  "checked_at": "2026-09-18T06:54:28Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
-    {
-      "number": 530,
-      "title": "EBAY_PRIVATE_NEW: 10 candidates | 0 live checked | 10 search only | 10 unknown | 1/4",
-      "created_at": "2026-09-04T08:11:59Z",
-      "updated_at": "2026-09-04T08:12:00Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/530",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 2.24,
-      "candidate_summaries": [
-        {
-          "title": "REVIEW 72/100 - On Photography by Susan Sontag (Trade Paperback)",
-          "listing_ids": [
-            "237038141091"
-          ],
-          "observed_price_gbp": 2.24
-        },
-        {
-          "title": "REVIEW 72/100 - The Crafter's Guide to Taking Great Photos by Heidi Adnum Paperback Crafts",
-          "listing_ids": [
-            "178448559708"
-          ],
-          "observed_price_gbp": 3.31
-        },
-        {
-          "title": "REVIEW 72/100 - Gimlet Eye, Donigan Cumming Paperback Non-Fiction Photography Book English",
-          "listing_ids": [
-            "227495537377"
-          ],
-          "observed_price_gbp": 5.45
-        },
-        {
-          "title": "REVIEW 72/100 - KENDAL REVISITED: Britain in Old Photographs by Margaret & Percy Duff. HISTORY",
-          "listing_ids": [
-            "366636601883"
-          ],
-          "observed_price_gbp": 4.38
-        },
-        {
-          "title": "REVIEW 72/100 - The Portrait - Kodak Photography Book 1993 1st Edition",
-          "listing_ids": [
-            "336767761359"
-          ],
-          "observed_price_gbp": 5.4
-        },
-        {
-          "title": "REVIEW 72/100 - Chris Killip Phaidon 55s by Gerry Badger PAPERBACK 9780714840284",
-          "listing_ids": [
-            "147537190216"
-          ],
-          "observed_price_gbp": 8.65
-        },
-        {
-          "title": "REVIEW 72/100 - Frank Lloyd Wright 1867-1959 - Bruce Brooks Pfeiffer - Taschen hardback",
-          "listing_ids": [
-            "298627148510"
-          ],
-          "observed_price_gbp": 8.65
-        },
-        {
-          "title": "REVIEW 72/100 - World Press Photo 11",
-          "listing_ids": [
-            "800584787047"
-          ],
-          "observed_price_gbp": 7.03
-        },
-        {
-          "title": "REVIEW 72/100 - Face To Face Francois & Jean Robert Lars Muller Softcover Photography Book 1996",
-          "listing_ids": [
-            "147524465589"
-          ],
-          "observed_price_gbp": 9.95
-        },
-        {
-          "title": "REVIEW 72/100 - Instant Film Photography by Michael Freeman (1985, Hardcover) – Good Condition",
-          "listing_ids": [
-            "188857919620"
-          ],
-          "observed_price_gbp": 9.99
-        }
-      ]
-    },
     {
       "number": 531,
       "title": "EBAY_PRIVATE_NEW: 10 candidates | 0 live checked | 10 search only | 10 unknown | 2/4",
@@ -819,6 +737,67 @@
             "820057324218"
           ],
           "observed_price_gbp": 15.03
+        }
+      ]
+    },
+    {
+      "number": 541,
+      "title": "EBAY_PRIVATE_NEW: 7 candidates | 0 live checked | 7 search only | 2 unknown | 4/4",
+      "created_at": "2026-09-04T08:13:55Z",
+      "updated_at": "2026-09-04T08:13:56Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/541",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 28.92,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 72/100 - Pharmakon by Teju Cole | Art Photography book published by MACK",
+          "listing_ids": [
+            "158233313475"
+          ],
+          "observed_price_gbp": 31.9
+        },
+        {
+          "title": "REVIEW 72/100 - TATI 50x50 1999 Steidl Nan Goldin Photography Art Book France French Edition",
+          "listing_ids": [
+            "820057325109"
+          ],
+          "observed_price_gbp": 28.92
+        },
+        {
+          "title": "REVIEW 82/100 - 'Meetings' Paul Shambroom, Rare Signed, Hardcover, 1st Edition, Photography Book",
+          "listing_ids": [
+            "286295015354"
+          ],
+          "observed_price_gbp": 68.3
+        },
+        {
+          "title": "REVIEW 82/100 - Michael Kenna \"Abruzzo\" new, Signed",
+          "listing_ids": [
+            "820057318526"
+          ],
+          "observed_price_gbp": 203.25
+        },
+        {
+          "title": "REVIEW 78/100 - Meetings by Paul Shambroom, Hardcover, Rare, Collectable, Very Good Condition",
+          "listing_ids": [
+            "225019799553"
+          ],
+          "observed_price_gbp": 47.5
+        },
+        {
+          "title": "REVIEW 78/100 - Chris Killip PHOTOGRAPHS OF THE NORTHEAST poster, 1975 & 1976, Jarrow Skinhead",
+          "listing_ids": [
+            "167814071668"
+          ],
+          "observed_price_gbp": 234.7
+        },
+        {
+          "title": "REVIEW 75/100 - 2003 The Bikeriders By Danny Lyon Paperback First Edition + Total Film Magazine",
+          "listing_ids": [
+            "178463928732"
+          ],
+          "observed_price_gbp": null
         }
       ]
     }

@@ -1,89 +1,7 @@
 {
-  "checked_at": "2026-09-18T06:02:50Z",
+  "checked_at": "2026-09-18T06:54:28Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
-    {
-      "number": 646,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 special | 10 unknown | 2/12",
-      "created_at": "2026-09-04T23:25:24Z",
-      "updated_at": "2026-09-04T23:25:24Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/646",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 9.94,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - One Day for Life: Photographs by the People of Britain.. Bantam Press, 1987. VTG",
-          "listing_ids": [
-            "188706197317"
-          ],
-          "observed_price_gbp": 9.94
-        },
-        {
-          "title": "DISCOVERY 72/100 - Scotland – W. A. Poucher - Art Photo Book – First Edition Hardcover 1980",
-          "listing_ids": [
-            "227069021020"
-          ],
-          "observed_price_gbp": 10.8
-        },
-        {
-          "title": "DISCOVERY 72/100 - Mario Testino Let Me In! TASCHEN 2007 Photography Hardcover Book",
-          "listing_ids": [
-            "407141646134"
-          ],
-          "observed_price_gbp": 14.0
-        },
-        {
-          "title": "DISCOVERY 72/100 - Chiapas by Patrocinio Gonzalez Garrido Photobook 1990 Rare (9688422266)",
-          "listing_ids": [
-            "167877304280"
-          ],
-          "observed_price_gbp": 16.15
-        },
-        {
-          "title": "DISCOVERY 72/100 - THE POLAROID BOOK PHOTO BOOK HARD COVER 2005 TASCHEN",
-          "listing_ids": [
-            "298530120078"
-          ],
-          "observed_price_gbp": 16.15
-        },
-        {
-          "title": "DISCOVERY 72/100 - NYANTAMA Furry Balls of Male Cats Japanese Photo Book by Rumiko Yoshizawa New",
-          "listing_ids": [
-            "317438101300"
-          ],
-          "observed_price_gbp": 20.05
-        },
-        {
-          "title": "DISCOVERY 72/100 - JASDF F-15J/DJ Photo Book All Aircraft Illustrated Japan Air Self-Defense Force",
-          "listing_ids": [
-            "128003365003"
-          ],
-          "observed_price_gbp": 25.38
-        },
-        {
-          "title": "DISCOVERY 72/100 - Jean-Louis DUMAS Photographer STEIDL books in slipcase SIGNED",
-          "listing_ids": [
-            "298575953427"
-          ],
-          "observed_price_gbp": 26.7
-        },
-        {
-          "title": "DISCOVERY 72/100 - MICHAEL PALIN HAND SIGNED 'SAHARA' H/B.PHOTOS BY BASIL PAO.WEIDENFELD/NICOLSON",
-          "listing_ids": [
-            "820006757485"
-          ],
-          "observed_price_gbp": 24.61
-        },
-        {
-          "title": "DISCOVERY 72/100 - Eric Kroll's Beauty Parade, published by Taschen.",
-          "listing_ids": [
-            "168607973495"
-          ],
-          "observed_price_gbp": 33.46
-        }
-      ]
-    },
     {
       "number": 647,
       "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 3/12",
@@ -819,6 +737,53 @@
             "357728290684"
           ],
           "observed_price_gbp": 26.7
+        }
+      ]
+    },
+    {
+      "number": 656,
+      "title": "EBAY_PRIVATE_NEW: HOT 5 | top 76 | 2 under £100 | 2 special | 2 unknown | 12/12",
+      "created_at": "2026-09-04T23:25:39Z",
+      "updated_at": "2026-09-04T23:25:40Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/656",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 35.02,
+      "candidate_summaries": [
+        {
+          "title": "DISCOVERY 72/100 - JAMES BIDGOOD 25 - Benderson - Taschen 2009 - homoerotic photographs art",
+          "listing_ids": [
+            "206447688734"
+          ],
+          "observed_price_gbp": 35.02
+        },
+        {
+          "title": "DISCOVERY 72/100 - Wolfgang Tillmans by Johanna Burton, Jan Werwoert, Peter Halley and Midori...",
+          "listing_ids": [
+            "407141265028"
+          ],
+          "observed_price_gbp": 42.29
+        },
+        {
+          "title": "REVIEW 74/100 - Wolfgang TILLMANS - Concorde - First Edition 1997",
+          "listing_ids": [
+            "236973773917"
+          ],
+          "observed_price_gbp": 156.7
+        },
+        {
+          "title": "REVIEW 74/100 - Winterreise by Luc Delahaye (Hardback, RARE VG",
+          "listing_ids": [
+            "357875917323"
+          ],
+          "observed_price_gbp": 156.7
+        },
+        {
+          "title": "REVIEW 76/100 - NEW Michael Wolf Tokyo Compression Final Cut 2017 Photo Book still sealed",
+          "listing_ids": [
+            "397214464069"
+          ],
+          "observed_price_gbp": 340.39
         }
       ]
     }

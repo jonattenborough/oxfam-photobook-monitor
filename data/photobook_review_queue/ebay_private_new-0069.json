@@ -1,89 +1,7 @@
 {
-  "checked_at": "2026-09-18T06:02:50Z",
+  "checked_at": "2026-09-18T06:54:28Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
-    {
-      "number": 1452,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 78 | 8 under £100 | 1 special | 1 changed | 8 unknown | 10/11",
-      "created_at": "2026-09-12T18:49:48Z",
-      "updated_at": "2026-09-12T18:49:49Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1452",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 25.73,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - Personalised Pet Portrait Storybook & Illustration A3 Art Print From Photo",
-          "listing_ids": [
-            "227518513695"
-          ],
-          "observed_price_gbp": 29.99
-        },
-        {
-          "title": "DISCOVERY 72/100 - Kate Moss by Mario Testino Taschen Hardcover Photography Book",
-          "listing_ids": [
-            "318571311249"
-          ],
-          "observed_price_gbp": 25.87
-        },
-        {
-          "title": "DISCOVERY 72/100 - On Tour with Leonard Cohen - Photographs by Sharon Robinson - New - Free P&P",
-          "listing_ids": [
-            "336791146329"
-          ],
-          "observed_price_gbp": 31.89
-        },
-        {
-          "title": "DISCOVERY 72/100 - BIGBANG Japan Dome Tour 2013 2014 Live 2CD Blu-ray Photo Book Box",
-          "listing_ids": [
-            "147568694435"
-          ],
-          "observed_price_gbp": 39.4
-        },
-        {
-          "title": "DISCOVERY 72/100 - Hans van der Meer - European Fields. Steidl Mack Paperback 2006. Good",
-          "listing_ids": [
-            "147287751019"
-          ],
-          "observed_price_gbp": 38.4
-        },
-        {
-          "title": "DISCOVERY 72/100 - Fashion History from the 18th to the 20th Century by TASCHEN (2019, Hardcover)",
-          "listing_ids": [
-            "366535160601"
-          ],
-          "observed_price_gbp": 42.3
-        },
-        {
-          "title": "DISCOVERY 72/100 - Hardcover \"Paris: Eugène Atget 1857-1927\" essay by Andreas Krase, Taschen",
-          "listing_ids": [
-            "178373958329"
-          ],
-          "observed_price_gbp": 25.73
-        },
-        {
-          "title": "DISCOVERY 72/100 - Konomi Nagisa Photo Book Best Boobs Vol.01 Paperback",
-          "listing_ids": [
-            "318861761806"
-          ],
-          "observed_price_gbp": 30.0
-        },
-        {
-          "title": "CHANGED 72/100 - My Rules By Glen E. Friedman - Unique Copy And Collectors Item.",
-          "listing_ids": [
-            "257616545121"
-          ],
-          "observed_price_gbp": 156.7
-        },
-        {
-          "title": "REVIEW 78/100 - Daido Moriyama Bye Bye Photography Radical Photobook Kodansha 2012 Softcover",
-          "listing_ids": [
-            "366537910024"
-          ],
-          "observed_price_gbp": 164.93
-        }
-      ]
-    },
     {
       "number": 1459,
       "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 special | 10 unknown | 1/10",
@@ -819,6 +737,32 @@
             "147285475296"
           ],
           "observed_price_gbp": 14.37
+        }
+      ]
+    },
+    {
+      "number": 1468,
+      "title": "EBAY_PRIVATE_NEW: HOT 2 | top 72 | 2 under £100 | 2 unknown | 10/10",
+      "created_at": "2026-09-12T21:23:20Z",
+      "updated_at": "2026-09-12T21:23:20Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1468",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 31.9,
+      "candidate_summaries": [
+        {
+          "title": "DISCOVERY 72/100 - Dalí. les dîners de Gala by Taschen (2016, Hardcover)",
+          "listing_ids": [
+            "117293283919"
+          ],
+          "observed_price_gbp": 31.9
+        },
+        {
+          "title": "DISCOVERY 72/100 - T-ARA Temptastic 2nd Mini Album CD Photobook",
+          "listing_ids": [
+            "147568752582"
+          ],
+          "observed_price_gbp": 39.11
         }
       ]
     }

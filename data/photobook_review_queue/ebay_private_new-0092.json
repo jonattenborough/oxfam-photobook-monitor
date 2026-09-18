@@ -1,89 +1,7 @@
 {
-  "checked_at": "2026-09-18T06:02:50Z",
+  "checked_at": "2026-09-18T06:54:28Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
-    {
-      "number": 1971,
-      "title": "EBAY_PRIVATE_NEW: REVIEW 10 | top 82 | 10 under £100 | 11/25",
-      "created_at": "2026-09-17T13:16:38Z",
-      "updated_at": "2026-09-17T13:16:38Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1971",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 5.45,
-      "candidate_summaries": [
-        {
-          "title": "REVIEW 82/100 - John Davies - Cosmic Impact - Hardcover",
-          "listing_ids": [
-            "176908126576"
-          ],
-          "observed_price_gbp": 6.51
-        },
-        {
-          "title": "REVIEW 82/100 - Life in History, A by John Davies (Paperback, 2015)",
-          "listing_ids": [
-            "175548146903"
-          ],
-          "observed_price_gbp": 5.45
-        },
-        {
-          "title": "REVIEW 82/100 - History of Wales by John Davies (1995, Uk-B Format Paperback)",
-          "listing_ids": [
-            "297888234924"
-          ],
-          "observed_price_gbp": 6.52
-        },
-        {
-          "title": "REVIEW 82/100 - King of the Sunset Strip : Volume Four : The Poetry Collection: John Davies VGC",
-          "listing_ids": [
-            "257186381101"
-          ],
-          "observed_price_gbp": 6.52
-        },
-        {
-          "title": "REVIEW 82/100 - Lower Deck by John Davies Hardback Book",
-          "listing_ids": [
-            "206404902492"
-          ],
-          "observed_price_gbp": 6.52
-        },
-        {
-          "title": "REVIEW 82/100 - Scales and Arpeggios for the Flute by John Davies (Arranger)",
-          "listing_ids": [
-            "389465234288"
-          ],
-          "observed_price_gbp": 6.62
-        },
-        {
-          "title": "REVIEW 82/100 - Magic in Ithkar 3 - ed. Andre Norton & Robert Adams - paperback, Tor Books, 1986",
-          "listing_ids": [
-            "146510519142"
-          ],
-          "observed_price_gbp": 6.0
-        },
-        {
-          "title": "REVIEW 82/100 - Really Easy Clarinet Book with Piano Accompaniment John Davies Paul Harris",
-          "listing_ids": [
-            "407185283658"
-          ],
-          "observed_price_gbp": 8.49
-        },
-        {
-          "title": "REVIEW 82/100 - Robert Adams - Revenge of the Horseclans (1st US Edition, 2nd Printing, 1977)",
-          "listing_ids": [
-            "396967077642"
-          ],
-          "observed_price_gbp": 8.66
-        },
-        {
-          "title": "REVIEW 82/100 - Swords of the Horseclans by Robert Adams Vintage Fantasy Book 1977",
-          "listing_ids": [
-            "287516500861"
-          ],
-          "observed_price_gbp": 6.99
-        }
-      ]
-    },
     {
       "number": 1972,
       "title": "EBAY_PRIVATE_NEW: REVIEW 10 | top 82 | 10 under £100 | 12/25",
@@ -819,6 +737,88 @@
             "188943721338"
           ],
           "observed_price_gbp": 2.77
+        }
+      ]
+    },
+    {
+      "number": 2024,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 6/20",
+      "created_at": "2026-09-17T18:05:05Z",
+      "updated_at": "2026-09-17T18:05:05Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2024",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 3.31,
+      "candidate_summaries": [
+        {
+          "title": "DISCOVERY 72/100 - Jungfrau Photo book Tourist book",
+          "listing_ids": [
+            "800418169252"
+          ],
+          "observed_price_gbp": 4.91
+        },
+        {
+          "title": "DISCOVERY 72/100 - Edward Weston Arts Council Collection 1999 Hayward Gallery Paperback",
+          "listing_ids": [
+            "267788312667"
+          ],
+          "observed_price_gbp": 4.98
+        },
+        {
+          "title": "DISCOVERY 72/100 - Careless by Kirsty Capes (Paperback, 2022)",
+          "listing_ids": [
+            "178505048550"
+          ],
+          "observed_price_gbp": 5.99
+        },
+        {
+          "title": "DISCOVERY 72/100 - Snowdrops by A. D. Miller (Paperback, 2011)",
+          "listing_ids": [
+            "178505148468"
+          ],
+          "observed_price_gbp": 5.99
+        },
+        {
+          "title": "DISCOVERY 72/100 - Budapest Gambit by Otto Borik. Batsford Chess Book. 1986",
+          "listing_ids": [
+            "168696203861"
+          ],
+          "observed_price_gbp": 3.31
+        },
+        {
+          "title": "DISCOVERY 72/100 - Printed Handkerchiefs historic souvenir hankies paperback Museum of London 1988",
+          "listing_ids": [
+            "117417477958"
+          ],
+          "observed_price_gbp": 6.04
+        },
+        {
+          "title": "DISCOVERY 72/100 - Mr. Men: My Daddy Roger Hargreave Picture Book",
+          "listing_ids": [
+            "287592529539"
+          ],
+          "observed_price_gbp": 3.31
+        },
+        {
+          "title": "DISCOVERY 72/100 - Nelson: A Dream of Glory - John Sugden - 2005 - Paperback - VGC",
+          "listing_ids": [
+            "178504704829"
+          ],
+          "observed_price_gbp": 3.31
+        },
+        {
+          "title": "DISCOVERY 72/100 - Brian Willsher Sculpture In Wood And Bronze Boundary Gallery 1990 Paperback",
+          "listing_ids": [
+            "267788321876"
+          ],
+          "observed_price_gbp": 5.45
+        },
+        {
+          "title": "DISCOVERY 72/100 - Vintage Princess Tina Pony Book 1971",
+          "listing_ids": [
+            "336798531994"
+          ],
+          "observed_price_gbp": 3.99
         }
       ]
     }

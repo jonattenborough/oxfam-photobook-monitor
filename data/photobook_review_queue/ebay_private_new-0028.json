@@ -1,89 +1,7 @@
 {
-  "checked_at": "2026-09-18T06:02:50Z",
+  "checked_at": "2026-09-18T06:54:28Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
-    {
-      "number": 832,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 82 | 10 under £100 | 9 special | 1 changed | 7 unknown | 1/12",
-      "created_at": "2026-09-06T20:46:09Z",
-      "updated_at": "2026-09-06T20:46:10Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/832",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 4.99,
-      "candidate_summaries": [
-        {
-          "title": "REVIEW 82/100 - Aftermath: World Trade Center Archive Hardback by Joel Meyerowitz, Phaidon",
-          "listing_ids": [
-            "287565176882"
-          ],
-          "observed_price_gbp": 30.0
-        },
-        {
-          "title": "REVIEW 78/100 - Self Portrait by Lee Friedlander (2005, Hardcover)",
-          "listing_ids": [
-            "366340556046"
-          ],
-          "observed_price_gbp": 81.82
-        },
-        {
-          "title": "DISCOVERY 72/100 - The Photographer’s Workbook by John Hedgecoe 1979 Hardback Book",
-          "listing_ids": [
-            "406840525917"
-          ],
-          "observed_price_gbp": 5.45
-        },
-        {
-          "title": "DISCOVERY 72/100 - British Trees Book Hardcover Edited by Archie Miles - see photos",
-          "listing_ids": [
-            "820095283187"
-          ],
-          "observed_price_gbp": 4.99
-        },
-        {
-          "title": "DISCOVERY 72/100 - Amateur Gardening Picture Book Chrysanthemums A.G.L. Hellyer Vintage",
-          "listing_ids": [
-            "307166316303"
-          ],
-          "observed_price_gbp": 7.49
-        },
-        {
-          "title": "DISCOVERY 72/100 - Mazda MX-5 Renaissance Sportscar Japan Miata / Eunos Photo Book by Brian Long",
-          "listing_ids": [
-            "198260419853"
-          ],
-          "observed_price_gbp": 7.55
-        },
-        {
-          "title": "DISCOVERY 72/100 - Photographers A-Z Taschen Hardback Book, Hans-Michael Koetzle",
-          "listing_ids": [
-            "366342457225"
-          ],
-          "observed_price_gbp": 8.66
-        },
-        {
-          "title": "DISCOVERY 72/100 - Between Two Seas Andrew Weaver Bahrain Hardcover Photography Book Hardcover 2011",
-          "listing_ids": [
-            "127938311562"
-          ],
-          "observed_price_gbp": 19.99
-        },
-        {
-          "title": "DISCOVERY 72/100 - George Nicholls - Picture if you can. A book about advertising photography 1967",
-          "listing_ids": [
-            "227405963583"
-          ],
-          "observed_price_gbp": 21.5
-        },
-        {
-          "title": "CHANGED 72/100 - Christer Stromholm - POST SCRIPTUM (2012), PHOTOGRAPHY, MONOGRAPH",
-          "listing_ids": [
-            "168201851944"
-          ],
-          "observed_price_gbp": 30.0
-        }
-      ]
-    },
     {
       "number": 833,
       "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 2 special | 10 unknown | 2/12",
@@ -819,6 +737,88 @@
             "206199496406"
           ],
           "observed_price_gbp": 28.24
+        }
+      ]
+    },
+    {
+      "number": 842,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 75 | 10 under £100 | 9 unknown | 11/12",
+      "created_at": "2026-09-06T20:46:22Z",
+      "updated_at": "2026-09-06T20:46:23Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/842",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 25.0,
+      "candidate_summaries": [
+        {
+          "title": "DISCOVERY 72/100 - Warhol by Ron Galella That's Great! Photography Book",
+          "listing_ids": [
+            "278330300565"
+          ],
+          "observed_price_gbp": 25.0
+        },
+        {
+          "title": "DISCOVERY 72/100 - Set 2 Taschen Photography Books Chargesheimer & Anton Stankowski Hardback",
+          "listing_ids": [
+            "137439277805"
+          ],
+          "observed_price_gbp": 26.7
+        },
+        {
+          "title": "DISCOVERY 72/100 - TASCHEN Asia Grace by Kevin Kelly Hardcover Photography Picture Book English",
+          "listing_ids": [
+            "158015708280"
+          ],
+          "observed_price_gbp": 27.37
+        },
+        {
+          "title": "DISCOVERY 72/100 - AHOF Official Album \"The Passage\" [Photobook CD] K-POP_ 2 Set",
+          "listing_ids": [
+            "168669145591"
+          ],
+          "observed_price_gbp": 25.03
+        },
+        {
+          "title": "DISCOVERY 72/100 - Roy Stuart by Alison Castle (2004, Trade Paperback)",
+          "listing_ids": [
+            "257592354076"
+          ],
+          "observed_price_gbp": 30.86
+        },
+        {
+          "title": "DISCOVERY 72/100 - Commercial Photo November 2025 issue",
+          "listing_ids": [
+            "377102503116"
+          ],
+          "observed_price_gbp": 31.24
+        },
+        {
+          "title": "DISCOVERY 72/100 - ICONS /Paris Hollywood",
+          "listing_ids": [
+            "257592083521"
+          ],
+          "observed_price_gbp": 35.02
+        },
+        {
+          "title": "DISCOVERY 72/100 - Yeonjun Official Album \"NO LABELS: PART 01\" [Photobook CD] TXT _ 3 Set",
+          "listing_ids": [
+            "168669150341"
+          ],
+          "observed_price_gbp": 35.77
+        },
+        {
+          "title": "DISCOVERY 72/100 - Anatolia Transient Lives Paul Veysseyre Turkey Photo Book Hardcover Monograph",
+          "listing_ids": [
+            "820095194700"
+          ],
+          "observed_price_gbp": 44.99
+        },
+        {
+          "title": "REVIEW 75/100 - Aftermath: World Trade Center Archive Hardback by Joel Meyerowitz, Phaidon",
+          "listing_ids": [
+            "326904814472"
+          ],
+          "observed_price_gbp": 42.3
         }
       ]
     }

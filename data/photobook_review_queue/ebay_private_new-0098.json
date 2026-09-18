@@ -1,47 +1,7 @@
 {
-  "checked_at": "2026-09-18T06:02:50Z",
+  "checked_at": "2026-09-18T06:54:28Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
-    {
-      "number": 775,
-      "title": "EBAY_PRIVATE_NEW: REVIEW 4 | top 78 | 0 under £100 | 2 special | 1 changed | 7/7",
-      "created_at": "2026-09-06T00:11:43Z",
-      "updated_at": "2026-09-06T00:11:43Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/775",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 85.05,
-      "candidate_summaries": [
-        {
-          "title": "REVIEW 73/100 - Waterfall Rapture Tadanori Yokoo.  1996 with obi 1st edition",
-          "listing_ids": [
-            "276777955301"
-          ],
-          "observed_price_gbp": 187.9
-        },
-        {
-          "title": "REVIEW 78/100 - Yutaka Takanashi - Toshi-e (Towards the City)",
-          "listing_ids": [
-            "318493692069"
-          ],
-          "observed_price_gbp": 85.05
-        },
-        {
-          "title": "REVIEW 73/100 - Case History by Mikhailov, Boris / Hardback w Dust jacket / Scala First Edition",
-          "listing_ids": [
-            "336775048635"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "CHANGED 72/100 - David Lynch The Factory Photographs Petra Giloy Hirtz Hardcover Photo Book",
-          "listing_ids": [
-            "287360287859"
-          ],
-          "observed_price_gbp": 396.1
-        }
-      ]
-    },
     {
       "number": 1157,
       "title": "EBAY_PRIVATE_NEW: HOT 8 | top 84 | 1 under £100 | 3 special | 2 changed | 12/12",
@@ -420,6 +380,60 @@
             "147559971586"
           ],
           "observed_price_gbp": 333.1
+        }
+      ]
+    },
+    {
+      "number": 1073,
+      "title": "EBAY_PRIVATE_NEW: REVIEW 6 | top 78 | 0 under £100 | 4 special | 1 changed | 9/9",
+      "created_at": "2026-09-09T11:57:34Z",
+      "updated_at": "2026-09-09T11:57:35Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1073",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 141.1,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 77/100 - Sam Contis Deep Springs Signed First Edition MACK Photography Book",
+          "listing_ids": [
+            "178459488369"
+          ],
+          "observed_price_gbp": 208.7
+        },
+        {
+          "title": "REVIEW 76/100 - Good Morning, America Volume II - Mark Power - SIGNED Gost Books 2019",
+          "listing_ids": [
+            "237039279776"
+          ],
+          "observed_price_gbp": 141.1
+        },
+        {
+          "title": "REVIEW 73/100 - Vanessa Winship - She Dances On Jackson - 1st Edition - SIGNED!",
+          "listing_ids": [
+            "336759393595"
+          ],
+          "observed_price_gbp": 182.7
+        },
+        {
+          "title": "CHANGED 78/100 - In the American West Richard Avedon Photographs 1979-1984 Photo Books Abrams",
+          "listing_ids": [
+            "157455173977"
+          ],
+          "observed_price_gbp": 539.16
+        },
+        {
+          "title": "REVIEW 78/100 - NOTHING PERSONAL - RICHARD AVEDON & JAMES BALDWIN - 1964 WITH SLIPCASE - penguin",
+          "listing_ids": [
+            "137717346642"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "REVIEW 78/100 - Vandals - Calling Card For The Film Bikeriders By Outlaw Originals - Danny Lyon",
+          "listing_ids": [
+            "257722809434"
+          ],
+          "observed_price_gbp": null
         }
       ]
     }
