@@ -1,0 +1,37 @@
+name: Grouped charity seller read-only probe
+
+on:
+  push:
+    branches: [exp/grouped-charity-seller-probe-20260918]
+    paths:
+      - "ebay_seller_group_probe.py"
+      - "test_ebay_seller_group_probe.py"
+      - ".github/workflows/charity-group-probe.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - name: Run grouped probe tests
+        run: python -m unittest -v test_ebay_seller_group_probe.py
+      - name: Run bounded read-only live probe
+        env:
+          EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
+          EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
+        run: |
+          python ebay_seller_group_probe.py --group-size 8 --groups 4 --max-pages 2
+      - name: Retain probe evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grouped-charity-seller-probe
+          path: runtime/charity-group-probe.json
+          retention-days: 7
