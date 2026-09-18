@@ -176,7 +176,16 @@ def _build_fresh_search_plan(
         for lane in PACED_LANE_CALLS
     }
     selected = {lane: 0 for lane in lanes}
-    target_steps = [step for step in full_plan if step["lane"] in CORE_TARGET_LANES]
+    target_groups = {
+        lane: [step for step in full_plan if step["lane"] == lane]
+        for lane in CORE_TARGET_LANES
+    }
+    target_steps: list[dict[str, Any]] = []
+    max_target_depth = max((len(steps) for steps in target_groups.values()), default=0)
+    for index in range(max_target_depth):
+        for lane in CORE_TARGET_LANES:
+            if index < len(target_groups[lane]):
+                target_steps.append(target_groups[lane][index])
     target_selected: list[dict[str, Any]] = []
     target_counts = {lane: 0 for lane in CORE_TARGET_LANES}
     total_budget = min(budget, len(full_plan))
@@ -698,64 +707,3 @@ def main() -> int:
             pending_copy = dict(item)
             pending_copy.pop("live_verified", None)
             pending_copy["pending_since"] = str(
-                previous_pending.get(key, {}).get("pending_since")
-                if isinstance(previous_pending.get(key), dict)
-                else detected_at
-            ) or detected_at
-            alertable[key] = pending_copy
-        else:
-            record_seen_recall(seen, item, detected_at)
-
-    ranked_alertable = sorted(alertable.items(), key=_candidate_priority, reverse=True)
-    state["pending_live"] = dict(ranked_alertable[: int(config["max_pending_live_checks"])])
-    state["seen"] = legacy._trim_seen(seen)
-    state["last_run"] = detected_at
-    state["last_query_count"] = len(search_plan)
-    state["last_successful_queries"] = successful_queries
-    state["last_live_checks"] = 0
-    state["last_failure_count"] = len(failures)
-    state["library_records"] = stats["records"]
-    state["last_api_call_budget"] = call_budget
-    state["last_browse_quota"] = quota
-    state["recall_first"] = True
-    state["last_material_change_count"] = changed_count
-    state["unfinished_search_windows"] = len(state.get("query_windows", {}))
-
-    legacy.write_json(runtime / "proposed-state.json", state)
-    legacy.write_json(
-        runtime / "latest-snapshot.json",
-        {
-            "checked_at": detected_at,
-            "library_stats": stats,
-            "quota": quota,
-            "api_call_budget": call_budget,
-            "planned_queries": len(search_plan),
-            "successful_queries": successful_queries,
-            "unfinished_search_windows": len(state.get("query_windows", {})),
-            "live_checks": 0,
-            "failures": failures,
-            "unique_results": len(raw_by_key),
-            "unseen_results": unseen_count,
-            "materially_changed_results": changed_count,
-            "pending_live_verification": len(state["pending_live"]),
-            "pending_recall_alerts": len(state["pending_live"]),
-            "new_candidates": [],
-            "recall_first": True,
-        },
-    )
-
-    legacy.set_output("new_count", 0)
-    legacy.set_output("state_changed", "true")
-    legacy.set_output("query_count", len(search_plan))
-    legacy.set_output("library_records", stats["records"])
-    print(
-        f"Recall-first eBay scan: {len(search_plan)} searches planned, "
-        f"{successful_queries} succeeded, {len(raw_by_key)} unique results, "
-        f"{unseen_count} unseen, {changed_count} materially changed, "
-        f"{len(state['pending_live'])} recall alerts, 0 live-check calls."
-    )
-    return 0
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())
