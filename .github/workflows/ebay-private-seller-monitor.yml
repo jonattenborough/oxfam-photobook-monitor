@@ -8,6 +8,12 @@ on:
     branches: [main]
     paths:
       - "ebay_api.py"
+      - "ebay_search_checkpoint.py"
+      - "test_ebay_search_checkpoint.py"
+      - "photobook_review_health.py"
+      - "photobook_review_handoff.py"
+      - "test_photobook_review_handoff.py"
+      - "test_photobook_review_health.py"
       - "ebay_core_targets.py"
       - "ebay_private_seller_monitor.py"
       - "ebay_private_recall_monitor.py"
@@ -65,6 +71,9 @@ jobs:
         run: |
           python -m unittest -v \
             test_ebay_api.py \
+            test_ebay_search_checkpoint.py \
+            test_photobook_review_health.py \
+            test_photobook_review_handoff.py \
             test_ebay_private_api.py \
             test_ebay_core_targets.py \
             test_photobook_library_builder.py \
