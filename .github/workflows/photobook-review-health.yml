@@ -1,0 +1,75 @@
+name: Photobook review health and queue index
+
+on:
+  schedule:
+    - cron: "13,43 * * * *"
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - "photobook_review_health.py"
+      - "photobook_review_handoff.py"
+      - "test_photobook_review_health.py"
+      - "test_photobook_review_handoff.py"
+      - ".github/workflows/photobook-review-health.yml"
+  push:
+    branches: [main]
+    paths:
+      - "photobook_review_health.py"
+      - "photobook_review_handoff.py"
+      - "test_photobook_review_health.py"
+      - "test_photobook_review_handoff.py"
+      - ".github/workflows/photobook-review-health.yml"
+
+permissions:
+  contents: write
+  issues: read
+
+concurrency:
+  group: photobook-review-health-${{ github.event_name == 'pull_request' && github.ref || 'main' }}
+  cancel-in-progress: false
+
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - name: Synchronize current source and monitor state
+        if: github.event_name != 'pull_request'
+        run: |
+          git fetch origin main
+          git checkout --detach FETCH_HEAD
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - name: Validate health reporting
+        run: python -m unittest discover -q
+      - name: Index all waiting batches and verify completed-review evidence
+        if: github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python photobook_review_health.py
+          python photobook_review_handoff.py
+          cat runtime/review-health/summary.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Save compact health and review index
+        if: github.event_name != 'pull_request'
+        run: |
+          set -euo pipefail
+          cp runtime/review-health/health.json data/photobook_review_health.json
+          cp runtime/review-health/index.json data/photobook_review_index.json
+          cp runtime/review-health/handoff.json data/photobook_review_handoff.json
+          mkdir -p runtime/review-health/queue data/photobook_review_queue
+          cp -a runtime/review-health/queue/. data/photobook_review_queue/
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data/photobook_review_health.json data/photobook_review_index.json data/photobook_review_handoff.json data/photobook_review_queue
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Update verified photobook review health [skip ci]"
+          for attempt in 1 2 3 4; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then exit 0; fi
+            sleep "$attempt"
+          done
+          exit 1
