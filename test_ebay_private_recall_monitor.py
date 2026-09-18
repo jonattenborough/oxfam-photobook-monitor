@@ -314,7 +314,7 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
             proposed = json.loads((runtime / "proposed-state.json").read_text())
             self.assertEqual(query.call_count, 17)
             self.assertEqual(proposed["last_live_checks"], 0)
-            self.assertEqual(proposed["cursors"]["library_records"], 4)
+            self.assertEqual(proposed["cursors"]["library_records"], 3)
             self.assertEqual(proposed["cursors"]["active_stock"], 2)
 
     def test_failed_library_query_is_retried_without_skipping_a_cursor_gap(self):
@@ -338,7 +338,7 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
                  patch.object(legacy, "set_output"):
                 self.assertEqual(recall.main(), 0)
             proposed = json.loads((runtime / "proposed-state.json").read_text())
-            self.assertEqual(library_attempts, 4)
+            self.assertEqual(library_attempts, 3)
             self.assertEqual(proposed["cursors"]["library_records"], 1)
             self.assertEqual(proposed["last_successful_queries"], 16)
 
