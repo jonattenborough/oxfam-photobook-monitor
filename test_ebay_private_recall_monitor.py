@@ -36,7 +36,7 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
         )
         self.assertEqual(config["max_live_checks_per_run"], 0)
         self.assertEqual(config["active_stock_queries_per_run"], 4)
-        self.assertEqual(len(plan), 39)
+        self.assertEqual(len(plan), 41)
         self.assertEqual(sum(step["lane"] == "active_stock" for step in plan), 4)
         self.assertEqual(sum(step["lane"].startswith("core_target_") for step in plan), 5)
         self.assertFalse(
@@ -56,7 +56,7 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
             state,
             datetime(2026, 9, 4, 8, 0, tzinfo=timezone.utc),
         )
-        self.assertEqual(len(full_plan), 59)
+        self.assertEqual(len(full_plan), 61)
         self.assertEqual(sum(step["lane"] == "active_stock" for step in full_plan), 4)
         self.assertEqual(sum(step["lane"] == "wrong_category" for step in full_plan), 10)
         self.assertEqual(
@@ -89,11 +89,12 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
         self.assertEqual(
             Counter(step["lane"] for step in budgeted),
             Counter({
-                "library_rotation": 4,
+                "library_rotation": 3,
                 "active_stock": 2,
                 "broad": 1,
                 "contemporary_hot": 1,
                 "classic_hot": 1,
+                "pre1970_unicorn": 1,
                 "collectible_format": 1,
                 "collection": 1,
                 "wrong_category": 1,
@@ -190,13 +191,15 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
         counts = Counter(step["lane"] for step in plan)
         self.assertEqual(len(plan), 17)
         self.assertEqual(counts["active_stock"], 2)
-        self.assertEqual(counts["library_rotation"], 4)
+        self.assertEqual(counts["library_rotation"], 3)
+        self.assertEqual(counts["pre1970_unicorn"], 1)
         self.assertEqual(counts["core_target_1"], 2)
         self.assertEqual(counts["core_target_2"], 2)
         self.assertEqual(counts["core_target_3"], 1)
         self.assertEqual(set(counts), set(recall.PACED_LANE_CALLS) | set(recall.CORE_TARGET_LANES))
         self.assertEqual(state["cursors"]["active_stock"], 2)
-        self.assertEqual(state["cursors"]["library_records"], 4)
+        self.assertEqual(state["cursors"]["library_records"], 3)
+        self.assertEqual(state["cursors"]["pre1970_unicorn"], 1)
         self.assertEqual(state["cursors"]["core_target_1"], 2)
         self.assertEqual(state["cursors"]["core_target_2"], 2)
         self.assertEqual(state["cursors"]["core_target_3"], 1)
