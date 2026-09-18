@@ -402,6 +402,57 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
         self.assertIn("Siân Davey", classified["matched_core_photographers"])
         self.assertGreaterEqual(classified["opportunity_score"], 88)
 
+    def test_visible_core_namesake_stays_below_issue_threshold(self):
+        item = {
+            "key": "ebay:paul-graham-card",
+            "title": "1993-94 NBA Topps #217 Paul Graham Hawks",
+            "context": "sports trading card",
+            "category_id": "212",
+            "category_path": "Sports Trading Cards",
+            "price_gbp": 2.0,
+            "private_seller": True,
+            "seller_account_type": "INDIVIDUAL",
+            "search_lane": "core_target_1",
+        }
+        classified = recall.recall_classify(item, 72)
+        self.assertEqual(classified["core_target_tier"], "1")
+        self.assertTrue(classified["core_target_collision"])
+        self.assertEqual(classified["target_match_quality"], "name_only")
+        self.assertLess(classified["opportunity_score"], 72)
+
+    def test_visible_core_photobook_still_gets_full_priority(self):
+        item = {
+            "key": "ebay:paul-graham-book",
+            "title": "Paul Graham Beyond Caring photography book first edition",
+            "context": "used photobook",
+            "category_id": "261186",
+            "category_path": "Books",
+            "price_gbp": 95.0,
+            "private_seller": True,
+            "seller_account_type": "INDIVIDUAL",
+            "search_lane": "core_target_1",
+        }
+        classified = recall.recall_classify(item, 72)
+        self.assertFalse(classified["core_target_collision"])
+        self.assertEqual(classified["target_match_quality"], "supported")
+        self.assertGreaterEqual(classified["opportunity_score"], 88)
+
+    def test_visible_celebrity_autobiography_does_not_get_core_floor(self):
+        item = {
+            "key": "ebay:guy-martin-memoir",
+            "title": "Guy Martin My Autobiography hardcover",
+            "context": "Books",
+            "category_id": "261186",
+            "category_path": "Books",
+            "price_gbp": 6.0,
+            "private_seller": True,
+            "seller_account_type": "INDIVIDUAL",
+            "search_lane": "core_target_3",
+        }
+        classified = recall.recall_classify(item, 72)
+        self.assertTrue(classified["core_target_collision"])
+        self.assertLess(classified["opportunity_score"], 72)
+
     def test_hidden_description_query_match_is_kept_for_ai_review(self):
         item = {
             "key": "ebay:hidden-core",
