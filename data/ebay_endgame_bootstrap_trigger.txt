@@ -1,4 +1,4 @@
-Run one production recovery check after reliability PR #2125.
-Retain existing Endgame daily cap, shared quota reserve, target matrix and alert policy.
-Validate that unfinished search windows persist and successful discovery timestamps update.
-Rollout: 2026-09-18, merged commit d27bcaabd6c9521830b49eddb120fe08f6517309.
+Run one production Endgame namesake-filter canary after PR #2136.
+Retain all 175 targets, marketplaces, query routes, daily cap, shared quota reserve and alert thresholds.
+Verify that visible non-photographic namesakes remain in state below alert threshold while supported photobooks still alert normally.
+Rollout: 2026-09-18, merged commit 89dcc8b5489cd13d16d529b7f86b4ffa9665a8d2.
