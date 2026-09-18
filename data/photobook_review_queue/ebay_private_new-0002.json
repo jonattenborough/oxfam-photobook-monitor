@@ -1,89 +1,7 @@
 {
-  "checked_at": "2026-09-18T09:31:27Z",
+  "checked_at": "2026-09-18T14:16:31Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
-    {
-      "number": 492,
-      "title": "EBAY_PRIVATE_NEW: 10 candidates | 0 live checked | 10 search only | 10 unknown | 16/37",
-      "created_at": "2026-09-04T08:09:38Z",
-      "updated_at": "2026-09-04T08:09:39Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/492",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 4.38,
-      "candidate_summaries": [
-        {
-          "title": "REVIEW 72/100 - Henry's Freedom Box — Ellen Levine, Hardcover Picture Book, Illus, Ages 4-8",
-          "listing_ids": [
-            "267772255786"
-          ],
-          "observed_price_gbp": 8.12
-        },
-        {
-          "title": "REVIEW 72/100 - Astronomy Photographer of the Year : Collection 1 by Greenwich Royal Observatory",
-          "listing_ids": [
-            "236650263883"
-          ],
-          "observed_price_gbp": 8.19
-        },
-        {
-          "title": "REVIEW 72/100 - Women: the National Geographic Image Collection (2019, Hardcover)",
-          "listing_ids": [
-            "318464677498"
-          ],
-          "observed_price_gbp": 4.38
-        },
-        {
-          "title": "REVIEW 72/100 - Charlie Mackesy Always Remember (Hardcover) Penguin Illustrated Picture Book",
-          "listing_ids": [
-            "128053844787"
-          ],
-          "observed_price_gbp": 8.66
-        },
-        {
-          "title": "REVIEW 72/100 - Nueva Argentina Panorama - Text by Elsa Insogna, Photos by Aldo Sessa",
-          "listing_ids": [
-            "188867245735"
-          ],
-          "observed_price_gbp": 8.66
-        },
-        {
-          "title": "REVIEW 72/100 - Spot's Big Book of Words by Eric Hill Children's Picture Book Published 1992 VIN",
-          "listing_ids": [
-            "206526820578"
-          ],
-          "observed_price_gbp": 8.66
-        },
-        {
-          "title": "REVIEW 72/100 - A First Book of Nature Nicola Davies HC Illustrated Mark Hearld Picture Book 4-8",
-          "listing_ids": [
-            "267772318318"
-          ],
-          "observed_price_gbp": 8.66
-        },
-        {
-          "title": "REVIEW 72/100 - The Art of Photographing the Model Bron Kowal 1985 Book With Dust Jacket 1st Edi",
-          "listing_ids": [
-            "307155147804"
-          ],
-          "observed_price_gbp": 8.66
-        },
-        {
-          "title": "REVIEW 72/100 - A Marsh & a Gasworks 100 Yrs Of Life In West Ham. 100 Pages Of Articles & Photos",
-          "listing_ids": [
-            "366640120173"
-          ],
-          "observed_price_gbp": 8.66
-        },
-        {
-          "title": "REVIEW 72/100 - Goodwood Country in Old Photographs, Serraillier, Ian,Pailthorpe, Richard, Good",
-          "listing_ids": [
-            "353329224872"
-          ],
-          "observed_price_gbp": 11.76
-        }
-      ]
-    },
     {
       "number": 493,
       "title": "EBAY_PRIVATE_NEW: 10 candidates | 0 live checked | 10 search only | 10 unknown | 17/37",
@@ -819,6 +737,88 @@
             "324830289769"
           ],
           "observed_price_gbp": 16.14
+        }
+      ]
+    },
+    {
+      "number": 502,
+      "title": "EBAY_PRIVATE_NEW: 10 candidates | 0 live checked | 10 search only | 10 unknown | 26/37",
+      "created_at": "2026-09-04T08:09:53Z",
+      "updated_at": "2026-09-04T08:09:53Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/502",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 16.14,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 72/100 - Composition In Stone Photographs From The Canadian Rockies Craig Richards 2012",
+          "listing_ids": [
+            "128052016790"
+          ],
+          "observed_price_gbp": 16.15
+        },
+        {
+          "title": "REVIEW 72/100 - Hamilton Easy Piano Selections - Lin-Manuel Miranda",
+          "listing_ids": [
+            "168650732145"
+          ],
+          "observed_price_gbp": 16.15
+        },
+        {
+          "title": "REVIEW 72/100 - Dr Seuss’s Classics Box Set Picture Books (Ages 4-8) by Dr. Seuss",
+          "listing_ids": [
+            "237040579541"
+          ],
+          "observed_price_gbp": 16.15
+        },
+        {
+          "title": "REVIEW 72/100 - X3 Photography Books / Manuals / How to Guides - For 35mm &  Digital Cameras",
+          "listing_ids": [
+            "147538033158"
+          ],
+          "observed_price_gbp": 16.14
+        },
+        {
+          "title": "REVIEW 72/100 - An Absolute Casserole: The Taskmaster Compendium SIGNED by Horne & Bernhardt VGC",
+          "listing_ids": [
+            "117386564902"
+          ],
+          "observed_price_gbp": 16.15
+        },
+        {
+          "title": "REVIEW 72/100 - The Einaudi Collection by Ludovico Einaudi SHEET MUSIC 9788863882162",
+          "listing_ids": [
+            "127689529108"
+          ],
+          "observed_price_gbp": 16.15
+        },
+        {
+          "title": "REVIEW 72/100 - British Wildlife Photography Awards 9 (2019) Illustrated Hardcover",
+          "listing_ids": [
+            "198605871340"
+          ],
+          "observed_price_gbp": 16.15
+        },
+        {
+          "title": "REVIEW 72/100 - The Michael Palin Collection 6 Books BBC Special Edition 6 Epic Journeys Travel",
+          "listing_ids": [
+            "277988143886"
+          ],
+          "observed_price_gbp": 16.15
+        },
+        {
+          "title": "REVIEW 72/100 - bady PHOTOGRAPH ALBUM 1998 VALERIE TABOR-SMITH 23 PAGES",
+          "listing_ids": [
+            "366639626542"
+          ],
+          "observed_price_gbp": 16.15
+        },
+        {
+          "title": "REVIEW 72/100 - Fresh Pretty Cure! Dance Picture Book: Includes Lesson DVD (Kodansha MOOK)",
+          "listing_ids": [
+            "307154984540"
+          ],
+          "observed_price_gbp": 19.61
         }
       ]
     }
