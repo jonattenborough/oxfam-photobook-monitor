@@ -455,6 +455,40 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
         self.assertTrue(classified["core_target_collision"])
         self.assertLess(classified["opportunity_score"], 72)
 
+    def test_high_collision_name_in_generic_book_is_not_enough(self):
+        item = {
+            "key": "ebay:guy-martin-hardback",
+            "title": "Guy Martin When You Dead You Dead Hardback Book",
+            "context": "Used hardback book",
+            "category_id": "261186",
+            "category_path": "Books",
+            "price_gbp": 3.30,
+            "private_seller": True,
+            "seller_account_type": "INDIVIDUAL",
+            "search_lane": "core_target_3",
+        }
+        classified = recall.recall_classify(item, 72)
+        self.assertEqual(classified["target_match_quality"], "book_context")
+        self.assertTrue(classified["core_target_collision"])
+        self.assertLess(classified["opportunity_score"], 72)
+
+    def test_noncollision_core_name_can_still_use_generic_book_context(self):
+        item = {
+            "key": "ebay:sian-davey-generic-book",
+            "title": "Sian Davey Looking for Alice hardback",
+            "context": "Used hardback book",
+            "category_id": "261186",
+            "category_path": "Books",
+            "price_gbp": 45.0,
+            "private_seller": True,
+            "seller_account_type": "INDIVIDUAL",
+            "search_lane": "core_target_1",
+        }
+        classified = recall.recall_classify(item, 72)
+        self.assertEqual(classified["target_match_quality"], "book_context")
+        self.assertFalse(classified["core_target_collision"])
+        self.assertGreaterEqual(classified["opportunity_score"], 88)
+
     def test_hidden_description_query_match_is_kept_for_ai_review(self):
         item = {
             "key": "ebay:hidden-core",
