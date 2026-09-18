@@ -1,4 +1,4 @@
-Run one production Endgame namesake-filter canary after PR #2136.
-Retain all 175 targets, marketplaces, query routes, daily cap, shared quota reserve and alert thresholds.
-Verify that visible non-photographic namesakes remain in state below alert threshold while supported photobooks still alert normally.
-Rollout: 2026-09-18, merged commit 89dcc8b5489cd13d16d529b7f86b4ffa9665a8d2.
+Run one production Endgame collision-v2 canary.
+Verify high-collision generic books and title-only generic Books matches remain below alert threshold, including persisted pre-fix candidates.
+Preserve hidden-description recall, all 175 targets, marketplaces, query routes, daily call cap, shared quota reserve and spending policy.
+Rollout commit: 469becc120aa53ebaa9dfc5e2a168ce669bfaaf7.
