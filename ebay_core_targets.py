@@ -51,6 +51,22 @@ CLEAR_NON_PHOTO_BOOK_TERMS = {
 }
 BOOKS_CATEGORY_ID = "261186"
 
+# Names that repeatedly collide with unrelated eBay inventory. Generic Books
+# context is not enough to confirm these identities because eBay contains
+# sports players, celebrities, authors and colour/product phrases with the same
+# strings. They remain searchable, but need photographic/art-book evidence
+# before receiving the automatic Core priority floor.
+HIGH_COLLISION_TARGET_NAMES = {
+    "Matt Black",
+    "Guy Martin",
+    "Paul Graham",
+    "Chris Shaw",
+    "Robert Adams",
+    "Tom Hunter",
+    "Tom Wood",
+    "Walker Evans",
+}
+
 
 def normalized(value: Any) -> str:
     text = unicodedata.normalize("NFKD", str(value or "")).encode("ascii", "ignore").decode("ascii")
@@ -157,6 +173,11 @@ def _item_text(item: dict[str, Any]) -> str:
     elif tags:
         parts.append(str(tags))
     return normalized(" ".join(parts))
+
+
+def target_names_need_photo_evidence(names: list[str] | tuple[str, ...] | set[str]) -> bool:
+    high_collision = {normalized(name) for name in HIGH_COLLISION_TARGET_NAMES}
+    return any(normalized(name) in high_collision for name in names)
 
 
 def target_object_context(item: dict[str, Any]) -> str:
