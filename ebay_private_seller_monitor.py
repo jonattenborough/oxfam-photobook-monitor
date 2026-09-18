@@ -16,6 +16,7 @@ import ebay_core_targets as core_targets
 import external_monitor
 import parr_badger_runner as pb
 import photobook_recognition as recognition
+import pre1970_unicorn_targets as unicorn_targets
 
 BOOKS_CATEGORY_ID = "261186"
 SUPPORTED_MARKETPLACE = "EBAY_GB"
@@ -125,6 +126,11 @@ def load_config(path: Path) -> dict[str, Any]:
     payload.setdefault("core_targets_path", "data/ebay_endgame_targets.json")
     payload.setdefault("core_target_queries_per_run", {})
     payload.setdefault("core_target_query_character_limit", 90)
+    payload.setdefault(
+        "pre1970_unicorn_targets_path",
+        "data/photobook_recognition/pre1970_unicorns.csv",
+    )
+    payload.setdefault("pre1970_unicorn_queries_per_run", 0)
     payload.setdefault("collectible_queries", [])
     payload.setdefault("active_stock_queries", [])
     for key in (
@@ -145,6 +151,9 @@ def load_config(path: Path) -> dict[str, Any]:
         tier: max(0, int(core_counts.get(tier) or 0))
         for tier in ("1", "2", "3")
     }
+    payload["pre1970_unicorn_queries_per_run"] = max(
+        0, int(payload.get("pre1970_unicorn_queries_per_run") or 0)
+    )
     query_limit = int(payload.get("core_target_query_character_limit") or 90)
     if query_limit < 20 or query_limit > 100:
         raise RuntimeError("core_target_query_character_limit must be between 20 and 100")
@@ -412,6 +421,27 @@ def build_search_plan(config: dict[str, Any], state: dict[str, Any], now: dateti
                     target_terms=list(group["terms"]),
                 )
 
+    unicorn_count = max(0, int(config.get("pre1970_unicorn_queries_per_run") or 0))
+    if unicorn_count:
+        unicorn_rows = unicorn_targets.tier_a_targets(
+            Path(str(config["pre1970_unicorn_targets_path"]))
+        )
+        selected, next_cursor = _cycle_slice(
+            unicorn_rows,
+            int(cursors.get("pre1970_unicorn", 0) or 0),
+            unicorn_count,
+        )
+        cursors["pre1970_unicorn"] = next_cursor
+        for target in selected:
+            add(
+                "pre1970_unicorn",
+                unicorn_targets.search_query(target),
+                description=True,
+                incremental=False,
+                target_tier="A",
+                target_terms=unicorn_targets.visible_terms(target),
+            )
+
     contemporary_auction_selected, next_contemporary_auction = _cycle_slice(
         contemporary_hot or contemporary_records,
         int(cursors.get("contemporary_auctions", 0) or 0),
@@ -471,6 +501,7 @@ def trim_search_plan(plan: list[dict[str, Any]], budget: int) -> list[dict[str, 
     lane_priority = {
         "broad": 0,
         "core_target_1": 1,
+        "pre1970_unicorn": 1,
         "contemporary_hot": 1,
         "classic_hot": 1,
         "core_target_2": 2,
