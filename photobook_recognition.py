@@ -563,6 +563,7 @@ def _record_rank(row: dict[str, Any]) -> int:
         "priority seed" in source
         or "emerging watch" in source
         or "curated contemporary documentary" in source
+        or "pre-1970 unicorn radar" in source
     ):
         return 3
     if record_id.startswith("canon:") or "parr/badger" in source or "roth 101" in source:

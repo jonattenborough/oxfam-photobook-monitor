@@ -17,8 +17,9 @@
   "issue_batch_size": 10,
   "book_category_ids": "261186",
   "lane_slots": {
-    "known": 14,
-    "broad": 8,
+    "known": 12,
+    "broad": 5,
+    "unicorn": 5,
     "title": 2,
     "category": 2
   },
@@ -221,21 +222,56 @@
     }
   },
   "aliases": {
-    "Siân Davey": ["Sian Davey"],
-    "Chris Steele-Perkins": ["Chris Steele Perkins"],
-    "Philip-Lorca diCorcia": ["Philip Lorca diCorcia"],
-    "An-My Lê": ["An-My Le", "An My Le"],
-    "Andre D. Wagner": ["Andre D Wagner", "André D Wagner"],
-    "Sasha Phyars-Burgess": ["Sasha Phyars Burgess"],
-    "Chris Dorley-Brown": ["Chris Dorley Brown"],
-    "Laura El-Tantawy": ["Laura El Tantawy"],
-    "Jocelyn Bain Hogg": ["Jocelyn Bain-Hogg"],
-    "Elle Pérez": ["Elle Perez"],
-    "Rotimi Fani-Kayode": ["Rotimi Fani Kayode"],
-    "Léonie Hampton": ["Leonie Hampton"],
-    "Nicholas J. R. White": ["Nicholas JR White", "Nicholas White"],
-    "Larry Sultan": ["Mike Mandel Evidence", "Clatworthy Evidence", "0918290015"],
-    "Tony O'Shea": ["Tony O Shea"]
+    "Siân Davey": [
+      "Sian Davey"
+    ],
+    "Chris Steele-Perkins": [
+      "Chris Steele Perkins"
+    ],
+    "Philip-Lorca diCorcia": [
+      "Philip Lorca diCorcia"
+    ],
+    "An-My Lê": [
+      "An-My Le",
+      "An My Le"
+    ],
+    "Andre D. Wagner": [
+      "Andre D Wagner",
+      "André D Wagner"
+    ],
+    "Sasha Phyars-Burgess": [
+      "Sasha Phyars Burgess"
+    ],
+    "Chris Dorley-Brown": [
+      "Chris Dorley Brown"
+    ],
+    "Laura El-Tantawy": [
+      "Laura El Tantawy"
+    ],
+    "Jocelyn Bain Hogg": [
+      "Jocelyn Bain-Hogg"
+    ],
+    "Elle Pérez": [
+      "Elle Perez"
+    ],
+    "Rotimi Fani-Kayode": [
+      "Rotimi Fani Kayode"
+    ],
+    "Léonie Hampton": [
+      "Leonie Hampton"
+    ],
+    "Nicholas J. R. White": [
+      "Nicholas JR White",
+      "Nicholas White"
+    ],
+    "Larry Sultan": [
+      "Mike Mandel Evidence",
+      "Clatworthy Evidence",
+      "0918290015"
+    ],
+    "Tony O'Shea": [
+      "Tony O Shea"
+    ]
   },
   "title_search": {
     "enabled": true,
@@ -302,22 +338,87 @@
     ]
   },
   "markets": [
-    {"marketplace": "EBAY_GB", "query_set": "en", "major": true},
-    {"marketplace": "EBAY_US", "query_set": "en", "major": true},
-    {"marketplace": "EBAY_DE", "query_set": "de", "major": true},
-    {"marketplace": "EBAY_FR", "query_set": "fr", "major": true},
-    {"marketplace": "EBAY_IT", "query_set": "it", "major": false},
-    {"marketplace": "EBAY_ES", "query_set": "es", "major": false},
-    {"marketplace": "EBAY_IE", "query_set": "en", "major": false},
-    {"marketplace": "EBAY_BE", "query_set": "nl_fr", "major": false, "category_sweep": false},
-    {"marketplace": "EBAY_AT", "query_set": "de", "major": false},
-    {"marketplace": "EBAY_CH", "query_set": "de_fr", "major": false},
-    {"marketplace": "EBAY_PL", "query_set": "pl", "major": false},
-    {"marketplace": "EBAY_CA", "query_set": "en", "major": false},
-    {"marketplace": "EBAY_AU", "query_set": "en", "major": false},
-    {"marketplace": "EBAY_NL", "query_set": "nl", "major": false},
-    {"marketplace": "EBAY_HK", "query_set": "en", "major": false},
-    {"marketplace": "EBAY_SG", "query_set": "en", "major": false}
+    {
+      "marketplace": "EBAY_GB",
+      "query_set": "en",
+      "major": true
+    },
+    {
+      "marketplace": "EBAY_US",
+      "query_set": "en",
+      "major": true
+    },
+    {
+      "marketplace": "EBAY_DE",
+      "query_set": "de",
+      "major": true
+    },
+    {
+      "marketplace": "EBAY_FR",
+      "query_set": "fr",
+      "major": true
+    },
+    {
+      "marketplace": "EBAY_IT",
+      "query_set": "it",
+      "major": false
+    },
+    {
+      "marketplace": "EBAY_ES",
+      "query_set": "es",
+      "major": false
+    },
+    {
+      "marketplace": "EBAY_IE",
+      "query_set": "en",
+      "major": false
+    },
+    {
+      "marketplace": "EBAY_BE",
+      "query_set": "nl_fr",
+      "major": false,
+      "category_sweep": false
+    },
+    {
+      "marketplace": "EBAY_AT",
+      "query_set": "de",
+      "major": false
+    },
+    {
+      "marketplace": "EBAY_CH",
+      "query_set": "de_fr",
+      "major": false
+    },
+    {
+      "marketplace": "EBAY_PL",
+      "query_set": "pl",
+      "major": false
+    },
+    {
+      "marketplace": "EBAY_CA",
+      "query_set": "en",
+      "major": false
+    },
+    {
+      "marketplace": "EBAY_AU",
+      "query_set": "en",
+      "major": false
+    },
+    {
+      "marketplace": "EBAY_NL",
+      "query_set": "nl",
+      "major": false
+    },
+    {
+      "marketplace": "EBAY_HK",
+      "query_set": "en",
+      "major": false
+    },
+    {
+      "marketplace": "EBAY_SG",
+      "query_set": "en",
+      "major": false
+    }
   ],
   "broad_search": {
     "major_revisit_hours": 1,
@@ -331,5 +432,15 @@
     "major_horizon_hours": 72,
     "revisit_hours": 6,
     "horizon_hours": 72
+  },
+  "unicorn_search": {
+    "enabled": true,
+    "targets_path": "data/photobook_recognition/pre1970_unicorns.csv",
+    "tiers": [
+      "A"
+    ],
+    "revisit_hours": 24,
+    "horizon_hours": 72,
+    "all_markets": true
   }
 }

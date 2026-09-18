@@ -40,6 +40,7 @@ PACED_LANE_CALLS = {
     "broad": 2,
     "contemporary_hot": 2,
     "classic_hot": 2,
+    "pre1970_unicorn": 5,
     "collectible_format": 1,
     "collection": 1,
     "wrong_category": 2,
@@ -50,6 +51,7 @@ LANE_CURSORS = {
     "broad": "broad_priority",
     "contemporary_hot": "contemporary_hot_records",
     "classic_hot": "classic_hot_records",
+    "pre1970_unicorn": "pre1970_unicorn",
     "library_rotation": "library_records",
 }
 CORE_TARGET_LANES = ("core_target_1", "core_target_2", "core_target_3")
@@ -139,6 +141,11 @@ def recall_config(config: dict[str, Any]) -> dict[str, Any]:
         adjusted.get("core_targets_path") or "data/ebay_endgame_targets.json"
     )
     adjusted["core_target_queries_per_run"] = {"1": 2, "2": 2, "3": 1}
+    adjusted["pre1970_unicorn_targets_path"] = str(
+        adjusted.get("pre1970_unicorn_targets_path")
+        or "data/photobook_recognition/pre1970_unicorns.csv"
+    )
+    adjusted["pre1970_unicorn_queries_per_run"] = 2
     adjusted["core_target_query_character_limit"] = min(
         90,
         int(adjusted.get("core_target_query_character_limit") or 90),
@@ -169,7 +176,16 @@ def _build_fresh_search_plan(
         for lane in PACED_LANE_CALLS
     }
     selected = {lane: 0 for lane in lanes}
-    target_steps = [step for step in full_plan if step["lane"] in CORE_TARGET_LANES]
+    target_groups = {
+        lane: [step for step in full_plan if step["lane"] == lane]
+        for lane in CORE_TARGET_LANES
+    }
+    target_steps: list[dict[str, Any]] = []
+    max_target_depth = max((len(steps) for steps in target_groups.values()), default=0)
+    for index in range(max_target_depth):
+        for lane in CORE_TARGET_LANES:
+            if index < len(target_groups[lane]):
+                target_steps.append(target_groups[lane][index])
     target_selected: list[dict[str, Any]] = []
     target_counts = {lane: 0 for lane in CORE_TARGET_LANES}
     total_budget = min(budget, len(full_plan))
