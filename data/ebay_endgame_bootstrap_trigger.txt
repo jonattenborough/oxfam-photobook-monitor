@@ -1,2 +1,4 @@
-Catch up unsearched photographer routes after scheduler delays; retain daily API caps.
-2026-09-17T06:28:19.693947+00:00
+Run one production recovery check after reliability PR #2125.
+Retain existing Endgame daily cap, shared quota reserve, target matrix and alert policy.
+Validate that unfinished search windows persist and successful discovery timestamps update.
+Rollout: 2026-09-18, merged commit d27bcaabd6c9521830b49eddb120fe08f6517309.
