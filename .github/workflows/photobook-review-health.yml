@@ -60,7 +60,9 @@ jobs:
           cp runtime/review-health/health.json data/photobook_review_health.json
           cp runtime/review-health/index.json data/photobook_review_index.json
           cp runtime/review-health/handoff.json data/photobook_review_handoff.json
-          mkdir -p runtime/review-health/queue data/photobook_review_queue
+          mkdir -p runtime/review-health/queue
+          rm -rf data/photobook_review_queue
+          mkdir -p data/photobook_review_queue
           cp -a runtime/review-health/queue/. data/photobook_review_queue/
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
