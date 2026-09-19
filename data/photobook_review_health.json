@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-19T04:29:12Z",
+  "checked_at": "2026-09-19T09:19:54Z",
   "status": "ATTENTION",
   "index_scan_complete": true,
-  "successful_discovery_at": "2026-09-19T01:16:38Z",
-  "discovery_age_minutes": 192.6,
-  "last_completed_review_at": "2026-09-19T04:03:56Z",
-  "completed_review_age_minutes": 25.3,
+  "successful_discovery_at": "2026-09-19T05:58:48Z",
+  "discovery_age_minutes": 201.1,
+  "last_completed_review_at": "2026-09-19T09:07:25Z",
+  "completed_review_age_minutes": 12.5,
   "unreviewed_issues_by_source": {
     "ENDGAME_4H": 0,
-    "ENDGAME_EARLY": 29,
-    "EBAY_PRIVATE_NEW": 993,
-    "CHARITY_NEW": 48
+    "ENDGAME_EARLY": 22,
+    "EBAY_PRIVATE_NEW": 976,
+    "CHARITY_NEW": 43
   },
   "completed_but_open": [
     376,
@@ -72,20 +72,20 @@
   ],
   "unreviewed_elapsed_deadline_issue_numbers": [],
   "unreviewed_next_four_hours_issue_numbers": [],
-  "unfinished_endgame_windows": 56,
+  "unfinished_endgame_windows": 39,
   "warnings": [
     "Successful auction discovery is stale or unknown",
     "Fixed-price review backlog exceeds two nominal six-issue runs",
     "eBay and Endgame Review: no matching START/FINISH receipt has been recorded",
-    "eBay Fixed Price Review: START has no matching FINISH after 1175.5 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 1054.5 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 1043.1 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 872.4 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 154.7 minutes"
+    "eBay Fixed Price Review: START has no matching FINISH after 1466.2 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 1345.2 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 1333.8 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 1163.1 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 445.4 minutes"
   ],
   "limitations": "Issue index only; not live eBay availability, edition proof, or full search coverage.",
   "reviewer_run_receipt_status": "ATTENTION",
-  "latest_verified_reviewer_run_at": "2026-09-19T04:04:06.488425+00:00",
+  "latest_verified_reviewer_run_at": "2026-09-19T09:09:22Z",
   "auction_search_routes": {
     "never_searched": 0,
     "never_searched_by_tier": {
@@ -93,7 +93,7 @@
       "2": 0,
       "3": 0
     },
-    "due": 288,
-    "unfinished_windows": 56
+    "due": 498,
+    "unfinished_windows": 39
   }
 }
