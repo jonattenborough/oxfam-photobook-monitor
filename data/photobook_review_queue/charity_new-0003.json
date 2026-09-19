@@ -1,40 +1,7 @@
 {
-  "checked_at": "2026-09-19T00:03:24Z",
+  "checked_at": "2026-09-19T04:29:12Z",
   "source": "CHARITY_NEW",
   "issues": [
-    {
-      "number": 1371,
-      "title": "CHARITY_NEW: 3 eBay seller photobook candidates",
-      "created_at": "2026-09-11T21:41:08Z",
-      "updated_at": "2026-09-11T21:41:08Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1371",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 8.0,
-      "candidate_summaries": [
-        {
-          "title": "SIGNED- Op Belonging When Did Britain Stop Seeing Us As A Band of Brothers?",
-          "listing_ids": [
-            "227516909522"
-          ],
-          "observed_price_gbp": 55.0
-        },
-        {
-          "title": "The Complete Illustrated Story - The Beatles  by Terry Burrows. Hardback 1996",
-          "listing_ids": [
-            "198633859008"
-          ],
-          "observed_price_gbp": 8.0
-        },
-        {
-          "title": "Dante Rediscovered Blake to Rodin, David Bindman & Stephen Hebron 1st Edition",
-          "listing_ids": [
-            "257736763067"
-          ],
-          "observed_price_gbp": 55.99
-        }
-      ]
-    },
     {
       "number": 1380,
       "title": "CHARITY_NEW: 3 eBay seller photobook candidates",
@@ -430,6 +397,46 @@
             "257742361872"
           ],
           "observed_price_gbp": 15.0
+        }
+      ]
+    },
+    {
+      "number": 1785,
+      "title": "CHARITY_NEW: 4 eBay seller photobook candidates",
+      "created_at": "2026-09-16T17:50:10Z",
+      "updated_at": "2026-09-16T17:50:10Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1785",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 8.99,
+      "candidate_summaries": [
+        {
+          "title": "The Story of Manchester by J.F.Wood, Illustrated, H/Back early 20th Century [HM]",
+          "listing_ids": [
+            "178502554761"
+          ],
+          "observed_price_gbp": 8.99
+        },
+        {
+          "title": "Kodak Make Color Work For You Guide To Creative Photography",
+          "listing_ids": [
+            "327360644067"
+          ],
+          "observed_price_gbp": 8.99
+        },
+        {
+          "title": "You Need To Exist: A book to love and destroy! by Yungblud, Paperback 2024 [HM]",
+          "listing_ids": [
+            "178502119471"
+          ],
+          "observed_price_gbp": 9.99
+        },
+        {
+          "title": "The Tales of the Trenthamshire Fairies by Leanne Shea, Hardback 2025 [HM]",
+          "listing_ids": [
+            "178502445975"
+          ],
+          "observed_price_gbp": 19.99
         }
       ]
     }

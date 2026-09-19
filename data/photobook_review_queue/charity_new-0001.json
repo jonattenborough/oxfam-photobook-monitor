@@ -1,38 +1,7 @@
 {
-  "checked_at": "2026-09-19T00:03:24Z",
+  "checked_at": "2026-09-19T04:29:12Z",
   "source": "CHARITY_NEW",
   "issues": [
-    {
-      "number": 768,
-      "title": "CHARITY_NEW: 2 eBay seller photobook candidates",
-      "created_at": "2026-09-05T23:49:53Z",
-      "updated_at": "2026-09-05T23:49:53Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/768",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 8.99,
-      "candidate_summaries": [
-        {
-          "title": "The Holocaust by František Emmert - Hardcover History Book",
-          "listing_ids": [
-            "198618390329"
-          ],
-          "observed_price_gbp": 8.99
-        },
-        {
-          "title": "Fabric of Scotland The Story of Johnstons Hardback Book",
-          "listing_ids": [
-            "198618390745"
-          ],
-          "observed_price_gbp": 17.99
-        },
-        {
-          "title": "Seller warnings",
-          "listing_ids": [],
-          "observed_price_gbp": null
-        }
-      ]
-    },
     {
       "number": 777,
       "title": "CHARITY_NEW: 1 eBay seller photobook candidate",
@@ -274,6 +243,39 @@
             "158274996722"
           ],
           "observed_price_gbp": 7.0
+        }
+      ]
+    },
+    {
+      "number": 1104,
+      "title": "CHARITY_NEW: 3 eBay seller photobook candidates",
+      "created_at": "2026-09-09T18:31:25Z",
+      "updated_at": "2026-09-09T18:31:25Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1104",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 14.99,
+      "candidate_summaries": [
+        {
+          "title": "Japanese Traditional tattoo photobook TATTOO IN JAPAN yakuza irezumi tebori..Aug",
+          "listing_ids": [
+            "327350215291"
+          ],
+          "observed_price_gbp": 100.0
+        },
+        {
+          "title": "Artemis Fowl The Eternity Code Eoin Colfer Fantasy Novel 1st Ed Hardback (Mar)",
+          "listing_ids": [
+            "366658340293"
+          ],
+          "observed_price_gbp": 14.99
+        },
+        {
+          "title": "Studio KO Yves Saint Laurent Museum Marrakech Phaidon Hardcover",
+          "listing_ids": [
+            "267780363579"
+          ],
+          "observed_price_gbp": 20.0
         }
       ]
     }
