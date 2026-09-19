@@ -1,9 +1,10 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-19T16:22:23Z",
+  "last_successful_fetch": "2026-09-19T18:39:37Z",
   "last_top_skus": [
+    "HD_304263604",
+    "HD_304263504",
     "HD_304263351",
-    "HD_304263036",
     "HD_304262876",
     "HD_304262872",
     "HD_304262458",
@@ -12,7 +13,6 @@
     "HD_304262109",
     "HD_304262068",
     "HD_304261763",
-    "HD_304261776",
     "HD_304261638",
     "HD_304261460",
     "HD_304237000",
@@ -8586,8 +8586,40 @@
         "title": "Anthony Blasko - Florida Strawberries"
       },
       "search_fingerprint": "fccda24f30e37eb6"
+    },
+    "HD_304263504": {
+      "first_seen": "2026-09-19T18:39:37Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789829010000",
+        "description": "The book opens with a foreword by the writer and poet Christopher Schreck. Comparing Geeting's images to Magic Eye illustrations from the 90s, Schreck argues Geeting's images contain an underlying order that transcends their garish subject matter and casual appearance. Although publicly disavowing influence and deeper meaning, Geeting's formalist explorations have a long history in the medium stretching at least as far back as Edward Weston's photograph of his toilet. As Schreck notes, Infinite Power is not only an exercise in visual pleasure, but also an exploration of how images shape and determine perception. <br/><br/>David Brandon Geeting is a New York based photographer who bridges genres, composing a colourful world which balances skillful chaos with wide-eyed curiosity. In David's world, subjects take on a new guise when re-photographed, re-assembled, or juxtaposed together in unexpected and sometimes humorous combinations.<br/><br/>Limited edition of 500 copies.<br/><br/>Condition - Minimal shelf wear. Stitched binding intact; pages clean and crisp.",
+        "isbn": null,
+        "price_gbp": 40.0,
+        "product_id": "book-HD__304263504",
+        "publisher": null,
+        "route": "/david-brandon-geeting-infinite-power-limited-edition/product/HD_304263504",
+        "sku": "HD_304263504",
+        "title": "David Brandon Geeting - Infinite Power [Limited edition]"
+      },
+      "search_fingerprint": "5f431de35118b645"
+    },
+    "HD_304263604": {
+      "first_seen": "2026-09-19T18:39:37Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789829703000",
+        "description": "'An ever-dependable showcase for the best images of Britain.' - The Telegraph<br/><br/>'No serious fan of landscape photography books should do without this.' - Digital Camera World <br/><br/>'A plethora of stunning black & white images that capture the UK's diverse topography in all its monochromatic glory.' - Black & White Photography<br/><br/>'Together [the images] attest to photography as a wonderfully effective medium to place the viewer at the same spots as the photographers stood and feel something of the wonder they felt.' - Artmag<br/><br/>Charlie Waite is one of today's most respected landscape photographers and the Landscape Photographer of the Year competition is his brainchild. Beautifully presented, this book is a stunning collection of images of the natural world from incredible image-makers, both amateur and professional. Each image is captioned with the photographer's account of the inspiration behind the picture, coupled with the technical information on equipment and technique that shaped the photograph.<br/><br/>A hugely prestigious competition, coupled with a high-profile author and an exhibition in central London, Landscape Photographer of the Year has enjoyed huge success in its thirteen years of publication.",
+        "isbn": null,
+        "price_gbp": null,
+        "product_id": "book-HD__304263604",
+        "publisher": null,
+        "route": "/landscape-photographer-of-the-year-collection-14/product/HD_304263604",
+        "sku": "HD_304263604",
+        "title": "Landscape Photographer of the Year. Collection 14"
+      },
+      "search_fingerprint": "b1213ea07a22a9a3"
     }
   },
-  "reported_category_count": 2880,
+  "reported_category_count": 2878,
   "version": 1
 }
