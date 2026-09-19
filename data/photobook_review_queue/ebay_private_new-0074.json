@@ -1,54 +1,7 @@
 {
-  "checked_at": "2026-09-19T20:22:46Z",
+  "checked_at": "2026-09-19T22:49:21Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
-    {
-      "number": 1594,
-      "title": "EBAY_PRIVATE_NEW: HOT 5 | top 78 | 3 under £100 | 1 special | 3 unknown | 5/5",
-      "created_at": "2026-09-14T07:01:45Z",
-      "updated_at": "2026-09-14T07:01:46Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1594",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 26.69,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - Illustration Now! Portraits: Wiedemann, Julius",
-          "listing_ids": [
-            "277644147621"
-          ],
-          "observed_price_gbp": 26.69
-        },
-        {
-          "title": "DISCOVERY 72/100 - Edgar Martins: Topologies Hardcover Edgar Martins New Sealed",
-          "listing_ids": [
-            "389466953760"
-          ],
-          "observed_price_gbp": 42.3
-        },
-        {
-          "title": "DISCOVERY 72/100 - Hans van der Meer European Fields. German Language Edition Hardback 2014",
-          "listing_ids": [
-            "147079188161"
-          ],
-          "observed_price_gbp": 43.34
-        },
-        {
-          "title": "REVIEW 78/100 - Henri Cartier-Bresson The Decisive Moment STEIDL 2018 Hardcover in Slipcase MINT",
-          "listing_ids": [
-            "306944053520"
-          ],
-          "observed_price_gbp": 275.0
-        },
-        {
-          "title": "REVIEW 78/100 - Ballet - Alexey Brodovitch - Errata Editions 2011 - Edwin Denby & Kerry William",
-          "listing_ids": [
-            "366117316383"
-          ],
-          "observed_price_gbp": 200.0
-        }
-      ]
-    },
     {
       "number": 1597,
       "title": "EBAY_PRIVATE_NEW: HOT 10 | top 78 | 10 under £100 | 7 special | 5 unknown | 1/8",
@@ -784,6 +737,88 @@
             "257253000576"
           ],
           "observed_price_gbp": 8.65
+        }
+      ]
+    },
+    {
+      "number": 1614,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 special | 10 unknown | 2/16",
+      "created_at": "2026-09-14T19:15:38Z",
+      "updated_at": "2026-09-14T19:15:38Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1614",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 4.12,
+      "candidate_summaries": [
+        {
+          "title": "DISCOVERY 72/100 - RARE ORIGINAL PHOTOGRAPH 1893 BRIDGES SUR L’ILL STRASBOURG ALSACE",
+          "listing_ids": [
+            "307178459789"
+          ],
+          "observed_price_gbp": 4.12
+        },
+        {
+          "title": "DISCOVERY 72/100 - A Vision of Paris by Eugene Atget & Marcel Proust 1980 reissue - CG H68",
+          "listing_ids": [
+            "286986807879"
+          ],
+          "observed_price_gbp": 8.66
+        },
+        {
+          "title": "DISCOVERY 72/100 - RARE ORIGINAL PHOTOGRAPH PONT DE CREIL WINTER 1894 1895 OISE GELÉE",
+          "listing_ids": [
+            "307178459784"
+          ],
+          "observed_price_gbp": 5.15
+        },
+        {
+          "title": "DISCOVERY 72/100 - ORIGINAL PHOTOGRAPH 1894 LOSS OF L’AIN BOURG DE SIROD PRÉS DE CHAMPAGNOLE",
+          "listing_ids": [
+            "307178459803"
+          ],
+          "observed_price_gbp": 5.15
+        },
+        {
+          "title": "DISCOVERY 72/100 - ORIGINAL PHOTOGRAPH JUNE 1954 FLEURI SAUMUR PARADE photographer J. DECKER",
+          "listing_ids": [
+            "267784904567"
+          ],
+          "observed_price_gbp": 6.18
+        },
+        {
+          "title": "DISCOVERY 72/100 - ALGERIA 1880 GORGES CHIFFA Original Photograph Hotel du Ruisseau des mones",
+          "listing_ids": [
+            "307178459797"
+          ],
+          "observed_price_gbp": 6.18
+        },
+        {
+          "title": "DISCOVERY 72/100 - A Book Of New Zealand, J.C. Reid. First Edition, 1964, Collins. With Photos/Maps",
+          "listing_ids": [
+            "237068036586"
+          ],
+          "observed_price_gbp": 10.79
+        },
+        {
+          "title": "DISCOVERY 72/100 - 1910-1916Antarctic Photographs Scott,Dawson&Shackleton Expeditions PontingHurley",
+          "listing_ids": [
+            "407216639336"
+          ],
+          "observed_price_gbp": 10.8
+        },
+        {
+          "title": "DISCOVERY 72/100 - Momfluenced: Inside the Maddening, Picture-Perfect World of Momm",
+          "listing_ids": [
+            "117412262814"
+          ],
+          "observed_price_gbp": 10.79
+        },
+        {
+          "title": "DISCOVERY 72/100 - Original PHOTOGRAPH of the ruins of the dam of Saint Denis du Sig 1890 Algeria",
+          "listing_ids": [
+            "307178459785"
+          ],
+          "observed_price_gbp": 6.18
         }
       ]
     }

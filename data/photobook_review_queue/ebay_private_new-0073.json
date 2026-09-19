@@ -1,89 +1,7 @@
 {
-  "checked_at": "2026-09-19T20:22:46Z",
+  "checked_at": "2026-09-19T22:49:21Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
-    {
-      "number": 1579,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 1 changed | 9 unknown | 6/7",
-      "created_at": "2026-09-13T23:26:35Z",
-      "updated_at": "2026-09-13T23:26:35Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1579",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 9.25,
-      "candidate_summaries": [
-        {
-          "title": "CHANGED 72/100 - Henri Cartier-Bresson: Scrapbook | Hardcover Monograph (Thames & Hudson, 2006)",
-          "listing_ids": [
-            "318677761339"
-          ],
-          "observed_price_gbp": 28.78
-        },
-        {
-          "title": "DISCOVERY 72/100 - KIRA KIRA Textiles by Nuno Corporation Photographs by Sue McNab. Hardcover",
-          "listing_ids": [
-            "287384436638"
-          ],
-          "observed_price_gbp": 26.0
-        },
-        {
-          "title": "DISCOVERY 72/100 - Mai Fukagawa, First Photo Book, Zutto Soba Ni Itai, Nogizaka46, Japan Import #24",
-          "listing_ids": [
-            "334832629462"
-          ],
-          "observed_price_gbp": 25.66
-        },
-        {
-          "title": "DISCOVERY 72/100 - Photographing America: Henri Cartier-Bresson  Walker Evans Used Photography book",
-          "listing_ids": [
-            "326984124575"
-          ],
-          "observed_price_gbp": 25.66
-        },
-        {
-          "title": "DISCOVERY 72/100 - Life TCG: Photography Card #2 Zebra | Sealed | Collector Card",
-          "listing_ids": [
-            "398391682438"
-          ],
-          "observed_price_gbp": 9.25
-        },
-        {
-          "title": "DISCOVERY 72/100 - Life TCG: Photography Card #3 Humpback Whale | Sealed | Collector Card",
-          "listing_ids": [
-            "398391688418"
-          ],
-          "observed_price_gbp": 9.25
-        },
-        {
-          "title": "DISCOVERY 72/100 - Afghanistan Photo Book",
-          "listing_ids": [
-            "177837523288"
-          ],
-          "observed_price_gbp": 26.7
-        },
-        {
-          "title": "DISCOVERY 72/100 - Illustration Now! Volume 2 – Taschen Hardback – Contemporary Illustration Book",
-          "listing_ids": [
-            "136986213941"
-          ],
-          "observed_price_gbp": 26.7
-        },
-        {
-          "title": "DISCOVERY 72/100 - Philippe MORILLON Une dernière danse STEIDL Paperback People Photographie Warhol",
-          "listing_ids": [
-            "327176031799"
-          ],
-          "observed_price_gbp": 39.9
-        },
-        {
-          "title": "DISCOVERY 72/100 - Peter Lindbergh - A Different Vision On Fashion Photography - Taschen - NEW",
-          "listing_ids": [
-            "157641190250"
-          ],
-          "observed_price_gbp": 42.3
-        }
-      ]
-    },
     {
       "number": 1583,
       "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 special | 1 changed | 9 unknown | 1/5",
@@ -770,6 +688,53 @@
             "318677761339"
           ],
           "observed_price_gbp": 28.78
+        }
+      ]
+    },
+    {
+      "number": 1594,
+      "title": "EBAY_PRIVATE_NEW: HOT 5 | top 78 | 3 under £100 | 1 special | 3 unknown | 5/5",
+      "created_at": "2026-09-14T07:01:45Z",
+      "updated_at": "2026-09-14T07:01:46Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1594",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 26.69,
+      "candidate_summaries": [
+        {
+          "title": "DISCOVERY 72/100 - Illustration Now! Portraits: Wiedemann, Julius",
+          "listing_ids": [
+            "277644147621"
+          ],
+          "observed_price_gbp": 26.69
+        },
+        {
+          "title": "DISCOVERY 72/100 - Edgar Martins: Topologies Hardcover Edgar Martins New Sealed",
+          "listing_ids": [
+            "389466953760"
+          ],
+          "observed_price_gbp": 42.3
+        },
+        {
+          "title": "DISCOVERY 72/100 - Hans van der Meer European Fields. German Language Edition Hardback 2014",
+          "listing_ids": [
+            "147079188161"
+          ],
+          "observed_price_gbp": 43.34
+        },
+        {
+          "title": "REVIEW 78/100 - Henri Cartier-Bresson The Decisive Moment STEIDL 2018 Hardcover in Slipcase MINT",
+          "listing_ids": [
+            "306944053520"
+          ],
+          "observed_price_gbp": 275.0
+        },
+        {
+          "title": "REVIEW 78/100 - Ballet - Alexey Brodovitch - Errata Editions 2011 - Edwin Denby & Kerry William",
+          "listing_ids": [
+            "366117316383"
+          ],
+          "observed_price_gbp": 200.0
         }
       ]
     }

@@ -1,89 +1,7 @@
 {
-  "checked_at": "2026-09-19T20:22:46Z",
+  "checked_at": "2026-09-19T22:49:21Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
-    {
-      "number": 555,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 78 | 10 under £100 | 3 special | 5 unknown | 1/2",
-      "created_at": "2026-09-04T08:20:17Z",
-      "updated_at": "2026-09-04T08:20:17Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/555",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 4.59,
-      "candidate_summaries": [
-        {
-          "title": "REVIEW 78/100 - Kodachrome, Luigi Ghirri, MACK Books, 2012",
-          "listing_ids": [
-            "178307715023"
-          ],
-          "observed_price_gbp": 31.9
-        },
-        {
-          "title": "REVIEW 78/100 - The Last Resort: Photographs of New Brighton by Martin Parr",
-          "listing_ids": [
-            "287487791578"
-          ],
-          "observed_price_gbp": 38.49
-        },
-        {
-          "title": "REVIEW 78/100 - The Last Resort: Photographs of New Brighton by Martin Parr",
-          "listing_ids": [
-            "358545118081"
-          ],
-          "observed_price_gbp": 40.49
-        },
-        {
-          "title": "REVIEW 78/100 - The Last Resort: Photographs of New Brighton by Martin Parr",
-          "listing_ids": [
-            "358457418012"
-          ],
-          "observed_price_gbp": 46.34
-        },
-        {
-          "title": "REVIEW 78/100 - Falkland Road - Prostitutes of Bombay - Mary Ellen Mark  - 1st Ed Large Pbk 1981",
-          "listing_ids": [
-            "297431663682"
-          ],
-          "observed_price_gbp": 52.7
-        },
-        {
-          "title": "DISCOVERY 72/100 - Britain The Landscape Below Philip Clucas Hardback Aerial Photography Book DJ",
-          "listing_ids": [
-            "147524886212"
-          ],
-          "observed_price_gbp": 4.59
-        },
-        {
-          "title": "DISCOVERY 72/100 - Lonely Planet Guide to Travel Photography Richard I'Anson Paperback 2012 4th",
-          "listing_ids": [
-            "800557642768"
-          ],
-          "observed_price_gbp": 6.52
-        },
-        {
-          "title": "DISCOVERY 72/100 - The Art of Children’s Portrait Photography Tamara Lackey Paperback 2008",
-          "listing_ids": [
-            "298612347720"
-          ],
-          "observed_price_gbp": 11.86
-        },
-        {
-          "title": "DISCOVERY 72/100 - Woodstock: Three Days That Rocked the World 50th Anniv HC - Evans",
-          "listing_ids": [
-            "178442516082"
-          ],
-          "observed_price_gbp": 10.8
-        },
-        {
-          "title": "DISCOVERY 72/100 - Steve McCurry - Instants Stupendus (Unguarded Moment) - French Photography Book",
-          "listing_ids": [
-            "206512872224"
-          ],
-          "observed_price_gbp": 12.94
-        }
-      ]
-    },
     {
       "number": 556,
       "title": "EBAY_PRIVATE_NEW: HOT 5 | top 72 | 5 under £100 | 5 unknown | 2/2",
@@ -728,6 +646,88 @@
             "158188911846"
           ],
           "observed_price_gbp": 18.99
+        }
+      ]
+    },
+    {
+      "number": 580,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 7 special | 10 unknown | 2/11",
+      "created_at": "2026-09-04T13:26:46Z",
+      "updated_at": "2026-09-04T13:26:47Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/580",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 1.29,
+      "candidate_summaries": [
+        {
+          "title": "DISCOVERY 72/100 - Venus - Masterpieces of modern Photography by Michelle Olley",
+          "listing_ids": [
+            "287540275885"
+          ],
+          "observed_price_gbp": 16.15
+        },
+        {
+          "title": "DISCOVERY 72/100 - BTS Young Forever Special Edition Photobook + J-Hope Polaroid",
+          "listing_ids": [
+            "366626409096"
+          ],
+          "observed_price_gbp": 19.36
+        },
+        {
+          "title": "DISCOVERY 72/100 - Women on Women: Katharine Holabird Erotic Nude Photography FIRST EDITION 1980",
+          "listing_ids": [
+            "336755919628"
+          ],
+          "observed_price_gbp": 19.36
+        },
+        {
+          "title": "DISCOVERY 72/100 - GIRLS' GENERATION SNSD Holiday JAPAN PHOTO BOOK 2011 w/Slipcase & OBI Z22",
+          "listing_ids": [
+            "128020918199"
+          ],
+          "observed_price_gbp": 24.94
+        },
+        {
+          "title": "DISCOVERY 72/100 - WAKANA SAKAI-YOKAN- Female Idol Japan Photobook 1st edition 1999",
+          "listing_ids": [
+            "377446647488"
+          ],
+          "observed_price_gbp": 28.08
+        },
+        {
+          "title": "DISCOVERY 72/100 - GPX special edition Ayrton Senna photo book (SAUDADE) From Japan",
+          "listing_ids": [
+            "820003176300"
+          ],
+          "observed_price_gbp": 28.96
+        },
+        {
+          "title": "DISCOVERY 72/100 - ZHENG The Chinese Hardcover Photo Book (English) Steidl China Photography",
+          "listing_ids": [
+            "198446009299"
+          ],
+          "observed_price_gbp": 31.9
+        },
+        {
+          "title": "DISCOVERY 72/100 - Mog’s Christmas Calamity Judith Kerr Paperback Illustrated Mog Picture Book",
+          "listing_ids": [
+            "237048706807"
+          ],
+          "observed_price_gbp": 1.29
+        },
+        {
+          "title": "DISCOVERY 72/100 - John Pilger - Freedom Next Time - book - see photos - Free P&P",
+          "listing_ids": [
+            "178467194473"
+          ],
+          "observed_price_gbp": 4.91
+        },
+        {
+          "title": "DISCOVERY 72/100 - David Beckham Beckham: My World Paperback 2001 Illustrated, photos Dean Freeman",
+          "listing_ids": [
+            "407192615786"
+          ],
+          "observed_price_gbp": 2.24
         }
       ]
     }

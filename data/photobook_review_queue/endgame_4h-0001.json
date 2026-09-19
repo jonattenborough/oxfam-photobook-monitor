@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-19T20:22:46Z",
+  "checked_at": "2026-09-19T22:49:21Z",
   "source": "ENDGAME_4H",
   "issues": [
     {
@@ -360,6 +360,43 @@
             "287582916965"
           ],
           "observed_price_gbp": null
+        }
+      ]
+    },
+    {
+      "number": 2355,
+      "title": "ENDGAME_4H: 3 collectible photobook auctions ending soon",
+      "created_at": "2026-09-19T21:34:51Z",
+      "updated_at": "2026-09-19T21:34:51Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2355",
+      "earliest_end_at": "2026-09-19T23:47:11Z",
+      "all_end_times": [
+        "2026-09-19T23:47:11Z",
+        "2026-09-19T23:55:29Z",
+        "2026-09-20T00:09:24Z"
+      ],
+      "lowest_observed_gbp": 5.45,
+      "candidate_summaries": [
+        {
+          "title": "[Frandsen Designer Modern Black Matt / Rose Gold 3 Tiered Feature Ceiling Lights](https://www.ebay.co.uk/itm/227518847740?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=item34f92e1afc:g:WFsAAeSwdk1oKtrn)",
+          "listing_ids": [
+            "227518847740"
+          ],
+          "observed_price_gbp": 5.45
+        },
+        {
+          "title": "[Ryan McGinley Gay Art Male Photo Men Book 2002 1st Edition Index](https://www.ebay.com/itm/287576638088?_skw=%28Dawoud+Bey%2CRyan+McGinley%2CCarolyn+Drake%2CPaul+Graham%2CMartin+Parr%2CRichard+Billingham%29&hash=item42f4e74288:g:96oAAeSwPdNqgzSP)",
+          "listing_ids": [
+            "287576638088"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[Corgi Toys Model Club 267 Batmobile Matt Black Edition with COA Reissue In Box](https://www.ebay.co.uk/itm/206553075854?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=item301785d08e:g:gRsAAeSwDjZqd53m)",
+          "listing_ids": [
+            "206553075854"
+          ],
+          "observed_price_gbp": 68.3
         }
       ]
     }

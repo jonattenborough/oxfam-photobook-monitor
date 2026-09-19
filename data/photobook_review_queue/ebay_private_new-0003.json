@@ -1,68 +1,7 @@
 {
-  "checked_at": "2026-09-19T20:22:46Z",
+  "checked_at": "2026-09-19T22:49:21Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
-    {
-      "number": 541,
-      "title": "EBAY_PRIVATE_NEW: 7 candidates | 0 live checked | 7 search only | 2 unknown | 4/4",
-      "created_at": "2026-09-04T08:13:55Z",
-      "updated_at": "2026-09-04T08:13:56Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/541",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 28.92,
-      "candidate_summaries": [
-        {
-          "title": "REVIEW 72/100 - Pharmakon by Teju Cole | Art Photography book published by MACK",
-          "listing_ids": [
-            "158233313475"
-          ],
-          "observed_price_gbp": 31.9
-        },
-        {
-          "title": "REVIEW 72/100 - TATI 50x50 1999 Steidl Nan Goldin Photography Art Book France French Edition",
-          "listing_ids": [
-            "820057325109"
-          ],
-          "observed_price_gbp": 28.92
-        },
-        {
-          "title": "REVIEW 82/100 - 'Meetings' Paul Shambroom, Rare Signed, Hardcover, 1st Edition, Photography Book",
-          "listing_ids": [
-            "286295015354"
-          ],
-          "observed_price_gbp": 68.3
-        },
-        {
-          "title": "REVIEW 82/100 - Michael Kenna \"Abruzzo\" new, Signed",
-          "listing_ids": [
-            "820057318526"
-          ],
-          "observed_price_gbp": 203.25
-        },
-        {
-          "title": "REVIEW 78/100 - Meetings by Paul Shambroom, Hardcover, Rare, Collectable, Very Good Condition",
-          "listing_ids": [
-            "225019799553"
-          ],
-          "observed_price_gbp": 47.5
-        },
-        {
-          "title": "REVIEW 78/100 - Chris Killip PHOTOGRAPHS OF THE NORTHEAST poster, 1975 & 1976, Jarrow Skinhead",
-          "listing_ids": [
-            "167814071668"
-          ],
-          "observed_price_gbp": 234.7
-        },
-        {
-          "title": "REVIEW 75/100 - 2003 The Bikeriders By Danny Lyon Paperback First Edition + Total Film Magazine",
-          "listing_ids": [
-            "178463928732"
-          ],
-          "observed_price_gbp": null
-        }
-      ]
-    },
     {
       "number": 542,
       "title": "EBAY_PRIVATE_NEW: 10 candidates | 0 live checked | 10 search only | 10 unknown | 1/5",
@@ -749,6 +688,88 @@
             "326288898961"
           ],
           "observed_price_gbp": 135.9
+        }
+      ]
+    },
+    {
+      "number": 555,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 78 | 10 under £100 | 3 special | 5 unknown | 1/2",
+      "created_at": "2026-09-04T08:20:17Z",
+      "updated_at": "2026-09-04T08:20:17Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/555",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 4.59,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 78/100 - Kodachrome, Luigi Ghirri, MACK Books, 2012",
+          "listing_ids": [
+            "178307715023"
+          ],
+          "observed_price_gbp": 31.9
+        },
+        {
+          "title": "REVIEW 78/100 - The Last Resort: Photographs of New Brighton by Martin Parr",
+          "listing_ids": [
+            "287487791578"
+          ],
+          "observed_price_gbp": 38.49
+        },
+        {
+          "title": "REVIEW 78/100 - The Last Resort: Photographs of New Brighton by Martin Parr",
+          "listing_ids": [
+            "358545118081"
+          ],
+          "observed_price_gbp": 40.49
+        },
+        {
+          "title": "REVIEW 78/100 - The Last Resort: Photographs of New Brighton by Martin Parr",
+          "listing_ids": [
+            "358457418012"
+          ],
+          "observed_price_gbp": 46.34
+        },
+        {
+          "title": "REVIEW 78/100 - Falkland Road - Prostitutes of Bombay - Mary Ellen Mark  - 1st Ed Large Pbk 1981",
+          "listing_ids": [
+            "297431663682"
+          ],
+          "observed_price_gbp": 52.7
+        },
+        {
+          "title": "DISCOVERY 72/100 - Britain The Landscape Below Philip Clucas Hardback Aerial Photography Book DJ",
+          "listing_ids": [
+            "147524886212"
+          ],
+          "observed_price_gbp": 4.59
+        },
+        {
+          "title": "DISCOVERY 72/100 - Lonely Planet Guide to Travel Photography Richard I'Anson Paperback 2012 4th",
+          "listing_ids": [
+            "800557642768"
+          ],
+          "observed_price_gbp": 6.52
+        },
+        {
+          "title": "DISCOVERY 72/100 - The Art of Children’s Portrait Photography Tamara Lackey Paperback 2008",
+          "listing_ids": [
+            "298612347720"
+          ],
+          "observed_price_gbp": 11.86
+        },
+        {
+          "title": "DISCOVERY 72/100 - Woodstock: Three Days That Rocked the World 50th Anniv HC - Evans",
+          "listing_ids": [
+            "178442516082"
+          ],
+          "observed_price_gbp": 10.8
+        },
+        {
+          "title": "DISCOVERY 72/100 - Steve McCurry - Instants Stupendus (Unguarded Moment) - French Photography Book",
+          "listing_ids": [
+            "206512872224"
+          ],
+          "observed_price_gbp": 12.94
         }
       ]
     }

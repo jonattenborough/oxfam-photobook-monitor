@@ -1,89 +1,7 @@
 {
-  "checked_at": "2026-09-19T20:22:46Z",
+  "checked_at": "2026-09-19T22:49:21Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
-    {
-      "number": 2092,
-      "title": "EBAY_PRIVATE_NEW: REVIEW 10 | top 76 | 10 under £100 | 16/27",
-      "created_at": "2026-09-17T22:00:59Z",
-      "updated_at": "2026-09-17T22:00:59Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2092",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 3.14,
-      "candidate_summaries": [
-        {
-          "title": "REVIEW 76/100 - Guy Martin My Autobiography + We Need to Weaken the Mixture PB Virgin Books",
-          "listing_ids": [
-            "127983013271"
-          ],
-          "observed_price_gbp": 3.14
-        },
-        {
-          "title": "REVIEW 76/100 - Guy Martin When You Dead, You Dead Paperback 2016 Virgin Books 352 Pages",
-          "listing_ids": [
-            "407206236346"
-          ],
-          "observed_price_gbp": 3.19
-        },
-        {
-          "title": "REVIEW 76/100 - Guy Martin My Autobiography hardcover book",
-          "listing_ids": [
-            "398155032680"
-          ],
-          "observed_price_gbp": 3.31
-        },
-        {
-          "title": "REVIEW 76/100 - Guy Martin Worms To Catch hardcover book",
-          "listing_ids": [
-            "398155044397"
-          ],
-          "observed_price_gbp": 3.31
-        },
-        {
-          "title": "REVIEW 76/100 - Guy Martin: When You Dead, You Dead by Guy Martin (2015, Hardcover)",
-          "listing_ids": [
-            "318187968513"
-          ],
-          "observed_price_gbp": 3.82
-        },
-        {
-          "title": "REVIEW 76/100 - Dead Men Don't Tell Tales by Guy Martin",
-          "listing_ids": [
-            "147480565029"
-          ],
-          "observed_price_gbp": 3.84
-        },
-        {
-          "title": "REVIEW 76/100 - Guy Martin: My Autobiography by Guy Martin (2015, Uk-B Format Paperback)",
-          "listing_ids": [
-            "318743391423"
-          ],
-          "observed_price_gbp": 3.84
-        },
-        {
-          "title": "REVIEW 76/100 - Guy Martin: When You Dead, You Dead by Guy Martin (2015, Hardcover)",
-          "listing_ids": [
-            "236756318999"
-          ],
-          "observed_price_gbp": 3.84
-        },
-        {
-          "title": "REVIEW 76/100 - Guy Martin: When You Dead, You Dead by Guy Martin (2015, Hardcover) Book",
-          "listing_ids": [
-            "158244147142"
-          ],
-          "observed_price_gbp": 3.84
-        },
-        {
-          "title": "REVIEW 76/100 - Worms To Catch - Guy Martin",
-          "listing_ids": [
-            "317482692288"
-          ],
-          "observed_price_gbp": 3.84
-        }
-      ]
-    },
     {
       "number": 2093,
       "title": "EBAY_PRIVATE_NEW: REVIEW 10 | top 76 | 10 under £100 | 17/27",
@@ -819,6 +737,88 @@
             "336801998105"
           ],
           "observed_price_gbp": 4.38
+        }
+      ]
+    },
+    {
+      "number": 2289,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 5/24",
+      "created_at": "2026-09-19T13:48:57Z",
+      "updated_at": "2026-09-19T13:48:57Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2289",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 1.99,
+      "candidate_summaries": [
+        {
+          "title": "DISCOVERY 72/100 - Figure Fantasy: The Pop Culture Photography of Daniel Picard (Hardback)",
+          "listing_ids": [
+            "336576163570"
+          ],
+          "observed_price_gbp": 1.99
+        },
+        {
+          "title": "DISCOVERY 72/100 - The Dart Valley Railway - a history of the line - this edition 1969",
+          "listing_ids": [
+            "318890836309"
+          ],
+          "observed_price_gbp": 2.24
+        },
+        {
+          "title": "DISCOVERY 72/100 - Fort George Historic Scotland Official Souvenir Guide By Iain MacIvor In VGC",
+          "listing_ids": [
+            "137755236284"
+          ],
+          "observed_price_gbp": 2.23
+        },
+        {
+          "title": "DISCOVERY 72/100 - The Princess Bride - William Goldman; Paperback book (Bloomsbury)",
+          "listing_ids": [
+            "178510253307"
+          ],
+          "observed_price_gbp": 2.24
+        },
+        {
+          "title": "DISCOVERY 72/100 - Igloo Books Happy Reindeer's Busy Night Board Book read description",
+          "listing_ids": [
+            "327365092094"
+          ],
+          "observed_price_gbp": 2.24
+        },
+        {
+          "title": "DISCOVERY 72/100 - Swamp Tigers Book & DVD Natural Killers Predators Close Up",
+          "listing_ids": [
+            "257752824117"
+          ],
+          "observed_price_gbp": 5.45
+        },
+        {
+          "title": "DISCOVERY 72/100 - The Book Of A Thousand Poems Evans Brothers Limited 1959",
+          "listing_ids": [
+            "158309553401"
+          ],
+          "observed_price_gbp": 2.24
+        },
+        {
+          "title": "DISCOVERY 72/100 - Cheltenham Flyer - A Great Western Railway Book 1934 - reprint 1971",
+          "listing_ids": [
+            "318890875257"
+          ],
+          "observed_price_gbp": 2.77
+        },
+        {
+          "title": "DISCOVERY 72/100 - The King of Railway Locos - A Great Western Railway Book 1928 - reprint 1971",
+          "listing_ids": [
+            "318890874436"
+          ],
+          "observed_price_gbp": 2.77
+        },
+        {
+          "title": "DISCOVERY 72/100 - The Rover Book for Boys D C Thomson H/B 1936? Coloured Illustrations",
+          "listing_ids": [
+            "398410608620"
+          ],
+          "observed_price_gbp": 2.77
         }
       ]
     }
