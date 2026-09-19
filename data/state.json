@@ -1,6 +1,6 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-18T17:33:11Z",
+  "last_successful_fetch": "2026-09-19T00:25:24Z",
   "last_top_skus": [
     "HD_304261763",
     "HD_304261776",
@@ -8,7 +8,6 @@
     "HD_304261460",
     "HD_304237000",
     "HD_304243512",
-    "HD_304257032",
     "HD_304243610",
     "HD_304260663",
     "HD_304245925",
@@ -30,8 +29,9 @@
     "HD_304251022",
     "HD_304257492",
     "HD_304255520",
+    "HD_304257152",
     "HD_304257157",
-    "HD_304257152"
+    "HD_304257090"
   ],
   "products": {
     "HD_303805354": {
@@ -8011,19 +8011,20 @@
     },
     "HD_304256902": {
       "first_seen": "2026-09-18T13:54:45Z",
+      "last_changed": "2026-09-19T00:25:24Z",
       "last_snapshot": {
         "condition": null,
         "creation_date": "1789729223000",
         "description": "Over the past 40 years, Lois Greenfield has earned a reputation as one of the world's most accomplished and respected photographers of human motion. Her images of dancers in mid-flight or mid-movement are astonishingly beautiful and capture the magic of dance in a unique way. In the 17 years since her last book was published, Greenfield has moved into digital colour photography, and some 150 of these breathtaking images are reproduced in Moving Still. They reflect her collaboration with leading contemporary dancers, many of whom perform with international touring companies. The book reunites Greenfield with the distinguished writer and curator William A. Ewing, her enduring champion across the decades and author of her two previous monographs, who provides an illuminating introduction as well as an interview  with the photographer about her recent work. The extended captions by Greenfield provide fascinating insights into the creative process. Divided into four picture sections, the free-flowing, rhythmic design of the book does justice to the majestic beauty of Greenfield's photographs.",
         "isbn": null,
-        "price_gbp": null,
+        "price_gbp": 20.0,
         "product_id": "book-HD__304256902",
         "publisher": null,
         "route": "/lois-greenfield/product/HD_304256902",
         "sku": "HD_304256902",
         "title": "Lois Greenfield"
       },
-      "search_fingerprint": "90ed6266f57df74c"
+      "search_fingerprint": "c6e4e315b694877b"
     },
     "HD_304256920": {
       "first_seen": "2026-09-17T16:58:56Z",
@@ -8331,19 +8332,20 @@
     },
     "HD_304260624": {
       "first_seen": "2026-09-18T13:54:45Z",
+      "last_changed": "2026-09-19T00:25:24Z",
       "last_snapshot": {
         "condition": null,
         "creation_date": "1789735600000",
         "description": "This a classic technical book written by Arthur William Judge  and first published by Chapman and Hall in London in 1926.<br/><br/>Scientific Uses: Explains how stereoscopy helps record microscopic objects, medical and X-ray subjects, astronomical phenomena, and geological formations in true depth.<br/><br/>Industrial Uses: Details how manufacturing and engineering firms use stereo pairs to document heavy machinery, architecture, and spare parts. Judge noted examples where companies sent stereoscopic view sets around the world to agencies instead of bulky physical samples.<br/><br/>Educational Uses: Discusses the value of depth perception in teaching geography, natural history, and technical training.Technical Principles: Covers the optics of human vision, stereo camera design, viewer equipment (stereoscopes), printing techniques, and measurement methods from stereo pairs (photogrammetry).<br/><br/>The book is in excellent condition for age. All pages are tight to binding.<br/><br/>The dustjacket has several tears and creases.<br/><br/>",
         "isbn": null,
-        "price_gbp": null,
+        "price_gbp": 34.99,
         "product_id": "book-HD__304260624",
         "publisher": null,
         "route": "/stereoscopic-photography-its-application-to-science-industry-and-education/product/HD_304260624",
         "sku": "HD_304260624",
         "title": "Stereoscopic photography : its application to science, industry and education"
       },
-      "search_fingerprint": "802ae8be073a0777"
+      "search_fingerprint": "397503e7f0a6c164"
     },
     "HD_304260663": {
       "first_seen": "2026-09-18T17:33:11Z",
@@ -8442,6 +8444,6 @@
       "search_fingerprint": "81e9cf446469cf0b"
     }
   },
-  "reported_category_count": 2882,
+  "reported_category_count": 2879,
   "version": 1
 }
