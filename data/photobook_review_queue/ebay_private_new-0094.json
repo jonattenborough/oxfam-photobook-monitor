@@ -1,824 +1,432 @@
 {
-  "checked_at": "2026-09-19T13:49:26Z",
+  "checked_at": "2026-09-19T17:07:02Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
     {
-      "number": 2294,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 10/24",
-      "created_at": "2026-09-19T13:49:01Z",
-      "updated_at": "2026-09-19T13:49:01Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2294",
+      "number": 2326,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 7/9",
+      "created_at": "2026-09-19T17:06:49Z",
+      "updated_at": "2026-09-19T17:06:49Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2326",
       "earliest_end_at": null,
       "all_end_times": [],
-      "lowest_observed_gbp": 5.4,
+      "lowest_observed_gbp": 7.6,
       "candidate_summaries": [
         {
-          "title": "DISCOVERY 72/100 - Memories of Durham - Peter Taylor Paperback Illustrated Local History",
+          "title": "DISCOVERY 72/100 - Vintage 35mm Slides Paris France Holiday Images 1970s Job Lot Bundle 15 Slides",
           "listing_ids": [
-            "307187383184"
-          ],
-          "observed_price_gbp": 5.4
-        },
-        {
-          "title": "DISCOVERY 72/100 - The Oakwood Press - Southern Railway Branch Lines No 93 -  published 1976",
-          "listing_ids": [
-            "318890843937"
-          ],
-          "observed_price_gbp": 5.45
-        },
-        {
-          "title": "DISCOVERY 72/100 - ACTION COMICS - Comic Book #481. DC Comics. March 1978. No.481. VG+ 4.5",
-          "listing_ids": [
-            "377508451875"
-          ],
-          "observed_price_gbp": 5.45
-        },
-        {
-          "title": "DISCOVERY 72/100 - SERGIO ARAGONES GROO THE WANDERER #105 NM (1993) MARVEL COMIC",
-          "listing_ids": [
-            "307187386655"
-          ],
-          "observed_price_gbp": 5.45
-        },
-        {
-          "title": "DISCOVERY 72/100 - SERGIO ARAGONES GROO THE WANDERER #106 NM (1993) MARVEL COMIC",
-          "listing_ids": [
-            "307187387359"
-          ],
-          "observed_price_gbp": 5.45
-        },
-        {
-          "title": "DISCOVERY 72/100 - Set 3 Vintage Ladybird Books -Bread, Night Sky & Prehistoric Animals And Fossils",
-          "listing_ids": [
-            "336802007728"
-          ],
-          "observed_price_gbp": 5.45
-        },
-        {
-          "title": "DISCOVERY 72/100 - Dover Publications – Sundials: Their Construction and Use (Paperback) 2000",
-          "listing_ids": [
-            "820146116922"
-          ],
-          "observed_price_gbp": 8.34
-        },
-        {
-          "title": "DISCOVERY 72/100 - Hokair II-II-S Book Bound Floral Photo Album Paper Blue Grey Beige",
-          "listing_ids": [
-            "377508358523"
-          ],
-          "observed_price_gbp": 5.44
-        },
-        {
-          "title": "DISCOVERY 72/100 - The End of Days, Jenny Erpenbeck paperback",
-          "listing_ids": [
-            "198652974586"
-          ],
-          "observed_price_gbp": 5.45
-        },
-        {
-          "title": "DISCOVERY 72/100 - VINTAGE 2003 ENGIE BENJY STORY BOOK PAINTING SPACESHIP RETRO KIDS TV RARE GIFT",
-          "listing_ids": [
-            "267789935541"
-          ],
-          "observed_price_gbp": 8.5
-        }
-      ]
-    },
-    {
-      "number": 2295,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 11/24",
-      "created_at": "2026-09-19T13:49:02Z",
-      "updated_at": "2026-09-19T13:49:02Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2295",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 5.45,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - Trowbridge Through Time by D. Jones and Kevin J. Hartley (2009, Trade Paperback)",
-          "listing_ids": [
-            "198365521901"
-          ],
-          "observed_price_gbp": 8.66
-        },
-        {
-          "title": "DISCOVERY 72/100 - Yorkshire Steam - A Nostalgic Look At Railways Vol. 3,  Photo Book",
-          "listing_ids": [
-            "257569307573"
-          ],
-          "observed_price_gbp": 8.66
-        },
-        {
-          "title": "DISCOVERY 72/100 - NARINDER DHAMI BINDI BABES CASSETTE AUDIO BOOK",
-          "listing_ids": [
-            "117415632652"
-          ],
-          "observed_price_gbp": 5.45
-        },
-        {
-          "title": "DISCOVERY 72/100 - Paddington Suitcase - Bond, Michael - 8 picture books in cardboard sleeve",
-          "listing_ids": [
-            "407229308701"
-          ],
-          "observed_price_gbp": 5.45
-        },
-        {
-          "title": "DISCOVERY 72/100 - Barton 2 John Banks Prestige Series Bus Book Venture 2004 GHF Atkins",
-          "listing_ids": [
-            "377508428795"
-          ],
-          "observed_price_gbp": 8.99
-        },
-        {
-          "title": "DISCOVERY 72/100 - Railway Photo Locations. 100 top British lineside photography locations.",
-          "listing_ids": [
-            "178510129556"
-          ],
-          "observed_price_gbp": 9.18
-        },
-        {
-          "title": "DISCOVERY 72/100 - County Wicklow in Old Photographs by Derek Stanley (2016, Trade Paperback)",
-          "listing_ids": [
-            "800045186531"
-          ],
-          "observed_price_gbp": 6.52
-        },
-        {
-          "title": "DISCOVERY 72/100 - The Oakwood Press - Pullman Trains in Britain No 210 -  published 1998",
-          "listing_ids": [
-            "318890871629"
-          ],
-          "observed_price_gbp": 6.52
-        },
-        {
-          "title": "DISCOVERY 72/100 - The Oakwood Press - Sidmouth, Seaton & Lyme Regis No 107 -  published 1979",
-          "listing_ids": [
-            "318890847547"
-          ],
-          "observed_price_gbp": 6.52
-        },
-        {
-          "title": "DISCOVERY 72/100 - The Oakwood Press - Taunton to Barnstaple line No 126 -  published 1980?",
-          "listing_ids": [
-            "318890864091"
-          ],
-          "observed_price_gbp": 6.52
-        }
-      ]
-    },
-    {
-      "number": 2296,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 12/24",
-      "created_at": "2026-09-19T13:49:03Z",
-      "updated_at": "2026-09-19T13:49:03Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2296",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 6.5,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - CASPER STRANGE GHOST STORIES 4# HARVEY (1974) HARVEY COMICS",
-          "listing_ids": [
-            "307187367061"
-          ],
-          "observed_price_gbp": 6.52
-        },
-        {
-          "title": "DISCOVERY 72/100 - Doctor Who Annual 1978; Hardback book Tom Baker",
-          "listing_ids": [
-            "298689570368"
-          ],
-          "observed_price_gbp": 6.5
-        },
-        {
-          "title": "DISCOVERY 72/100 - Cowboy Romance Bookish Gift Set Bookmark Keyring Western Romance Book Lover",
-          "listing_ids": [
-            "227529208851"
-          ],
-          "observed_price_gbp": 6.52
-        },
-        {
-          "title": "DISCOVERY 72/100 - Eve Arnold In Britain Paperback Photobook, Photography, English",
-          "listing_ids": [
-            "257752804853"
-          ],
-          "observed_price_gbp": 6.52
-        },
-        {
-          "title": "DISCOVERY 72/100 - ACTION COMICS - Comic Book #369. DC Comics. November 1968. No.369. VG+ 4.5",
-          "listing_ids": [
-            "377508437613"
-          ],
-          "observed_price_gbp": 6.95
-        },
-        {
-          "title": "DISCOVERY 72/100 - Edible Fungi by John Rambottom King Penguin Book, 1943",
-          "listing_ids": [
-            "336801972143"
-          ],
-          "observed_price_gbp": 7.05
-        },
-        {
-          "title": "DISCOVERY 72/100 - Peter Gabriel - OVO - Millennium Show - 2 X CD Album & Book Goldfrapp Excellent",
-          "listing_ids": [
-            "278389777987"
-          ],
-          "observed_price_gbp": 6.51
-        },
-        {
-          "title": "DISCOVERY 72/100 - CORVETTE - Iconic Cars - Editors of Car and Driver - American Muscle Car Book",
-          "listing_ids": [
-            "237077929962"
-          ],
-          "observed_price_gbp": 6.52
-        },
-        {
-          "title": "DISCOVERY 72/100 - Detroit Steel: New Age of the Great American Performance. American Muscle Car",
-          "listing_ids": [
-            "237077904829"
-          ],
-          "observed_price_gbp": 6.52
-        },
-        {
-          "title": "DISCOVERY 72/100 - Scott Kelby The Digital Photography Book Box Set Volumes 1-3 Peachpit Press",
-          "listing_ids": [
-            "257752639938"
-          ],
-          "observed_price_gbp": 6.52
-        }
-      ]
-    },
-    {
-      "number": 2297,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 13/24",
-      "created_at": "2026-09-19T13:49:04Z",
-      "updated_at": "2026-09-19T13:49:04Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2297",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 7.58,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - Blood Bowl Spike! Issue 12: Black Orcs and Imperial Nobility",
-          "listing_ids": [
-            "366678724766"
-          ],
-          "observed_price_gbp": 10.0
-        },
-        {
-          "title": "DISCOVERY 72/100 - CASPER STRANGE GHOST STORIES 3# HARVEY (1974) HARVEY COMICS",
-          "listing_ids": [
-            "307187361684"
-          ],
-          "observed_price_gbp": 7.59
-        },
-        {
-          "title": "DISCOVERY 72/100 - Top Cow Classics in Black and White -  Battle of the Planets #1  (2003)",
-          "listing_ids": [
-            "307187370865"
-          ],
-          "observed_price_gbp": 7.59
-        },
-        {
-          "title": "DISCOVERY 72/100 - Game Of Thrones Series 6 Photo Book New Sealed",
-          "listing_ids": [
-            "287376172364"
-          ],
-          "observed_price_gbp": 7.58
-        },
-        {
-          "title": "DISCOVERY 72/100 - BR Standard Locomotives to Scale - Ian Beattie - Bradford Barton - VGC",
-          "listing_ids": [
-            "318890885669"
-          ],
-          "observed_price_gbp": 7.59
-        },
-        {
-          "title": "DISCOVERY 72/100 - Sex & Drugs & Rock 'N' Roll. Gallo Book. 1984. Photo Book. Celebrities.",
-          "listing_ids": [
-            "227369084572"
-          ],
-          "observed_price_gbp": 10.8
-        },
-        {
-          "title": "DISCOVERY 72/100 - Redbull Air Race 2005, Longleat - Commemoration Race Day Book.",
-          "listing_ids": [
-            "366678715496"
-          ],
-          "observed_price_gbp": 7.99
-        },
-        {
-          "title": "DISCOVERY 72/100 - Redbull Air Race 2005, Longleat - Commemoration Race Day Book - with race times.",
-          "listing_ids": [
-            "366678735738"
-          ],
-          "observed_price_gbp": 7.99
-        },
-        {
-          "title": "DISCOVERY 72/100 - The First and the Last Adolf Galland Fontana Paperback 1973 WWII Luftwaffe",
-          "listing_ids": [
-            "168700268198"
-          ],
-          "observed_price_gbp": 8.0
-        },
-        {
-          "title": "DISCOVERY 72/100 - PHAIDON THE PHOTO BOOK PHOTOGRAPHY LARGE THICK PAPERBACK BOOK",
-          "listing_ids": [
-            "377228338375"
-          ],
-          "observed_price_gbp": 7.58
-        }
-      ]
-    },
-    {
-      "number": 2298,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 14/24",
-      "created_at": "2026-09-19T13:49:05Z",
-      "updated_at": "2026-09-19T13:49:05Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2298",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 7.59,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - British Gand Prix Heroes",
-          "listing_ids": [
-            "257752840630"
-          ],
-          "observed_price_gbp": 7.59
-        },
-        {
-          "title": "DISCOVERY 72/100 - VINTAGE 1992 MICHAEL BOND’S BOOK OF BEARS HARDBACK STORY COLLECTION BLYTON VGC",
-          "listing_ids": [
-            "267789935237"
-          ],
-          "observed_price_gbp": 10.99
-        },
-        {
-          "title": "DISCOVERY 72/100 - Digital Photography Books X2",
-          "listing_ids": [
-            "137315347733"
-          ],
-          "observed_price_gbp": 7.59
-        },
-        {
-          "title": "DISCOVERY 72/100 - The Antiquary  by  Sir Walter Scott  Published by Nicholson & Sons",
-          "listing_ids": [
-            "287596054522"
-          ],
-          "observed_price_gbp": 8.12
-        },
-        {
-          "title": "DISCOVERY 72/100 - 20th Century Photography (Taschen 25) Paperback Book",
-          "listing_ids": [
-            "336581978364"
-          ],
-          "observed_price_gbp": 8.21
-        },
-        {
-          "title": "DISCOVERY 72/100 - Vintage 1953 The Queen Elizabeth Coronation Souvenir Hardback Photo Book",
-          "listing_ids": [
-            "358597840540"
-          ],
-          "observed_price_gbp": 8.65
-        },
-        {
-          "title": "DISCOVERY 72/100 - Zombie Capitalism : Global Crisis and the Relevance of Marx by Chris Harman...",
-          "listing_ids": [
-            "188951499637"
-          ],
-          "observed_price_gbp": 8.66
-        },
-        {
-          "title": "DISCOVERY 72/100 - VINTAGE 1990 TEENAGE MUTANT HERO TURTLES PAPERBACK BOOK BURIED TREASURE RARE",
-          "listing_ids": [
-            "267789935857"
-          ],
-          "observed_price_gbp": 11.99
-        },
-        {
-          "title": "DISCOVERY 72/100 - 10 Dirty Bertie Books Bundle David Roberts Alan MacDonald Jackpot Aliens Burp",
-          "listing_ids": [
-            "137755251552"
-          ],
-          "observed_price_gbp": 8.65
-        },
-        {
-          "title": "DISCOVERY 72/100 - Free comic book day 2024 Bundle",
-          "listing_ids": [
-            "398410708697"
-          ],
-          "observed_price_gbp": 8.66
-        }
-      ]
-    },
-    {
-      "number": 2300,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 1 changed | 9 unknown | 16/24",
-      "created_at": "2026-09-19T13:49:06Z",
-      "updated_at": "2026-09-19T13:49:06Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2300",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 9.73,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - Childrens Nature Bks Sharks, Whales, Penguins, Otters, Owls, Frogs, Gift VGC",
-          "listing_ids": [
-            "257752368133"
-          ],
-          "observed_price_gbp": 9.73
-        },
-        {
-          "title": "DISCOVERY 72/100 - Vintage 1954 The Royal Tour Hardback Photo Book Queen Elizabeth by Neil Ferrier",
-          "listing_ids": [
-            "358597920429"
-          ],
-          "observed_price_gbp": 10.79
-        },
-        {
-          "title": "DISCOVERY 72/100 - Games Workshop Warhammer 40,000 Codex Necrons Role Play Rule Book Hardback",
-          "listing_ids": [
-            "267789921387"
-          ],
-          "observed_price_gbp": 10.8
-        },
-        {
-          "title": "DISCOVERY 72/100 - Roy Conyers Nesbit The RAF in Camera 1939–1945 Illustrated Photo Book",
-          "listing_ids": [
-            "198645798793"
-          ],
-          "observed_price_gbp": 10.8
-        },
-        {
-          "title": "DISCOVERY 72/100 - The Female Lead- Women Who Shape Our World Paperback Book by Edwina Dunn 2017",
-          "listing_ids": [
-            "800027579948"
-          ],
-          "observed_price_gbp": 10.8
-        },
-        {
-          "title": "CHANGED 72/100 - The Faroes in Pictures Gordon Huson HC 1946 Allen & Unwin Illus Ex Libris",
-          "listing_ids": [
-            "137747889939"
-          ],
-          "observed_price_gbp": 14.01
-        },
-        {
-          "title": "DISCOVERY 72/100 - Inside Ferrari : Behind-the-Scenes Photography by Jon Nicholson",
-          "listing_ids": [
-            "236831583919"
-          ],
-          "observed_price_gbp": 10.8
-        },
-        {
-          "title": "DISCOVERY 72/100 - Ransom Riggs Miss Peregrine's Peculiar Children 3 Book Set Paperback Photos",
-          "listing_ids": [
-            "366678748671"
-          ],
-          "observed_price_gbp": 10.8
-        },
-        {
-          "title": "DISCOVERY 72/100 - Warhammer 40K Codex Chaos Knights – Games Workshop – 2019 – Used",
-          "listing_ids": [
-            "267789918251"
-          ],
-          "observed_price_gbp": 11.33
-        },
-        {
-          "title": "DISCOVERY 72/100 - Harry Potter Books 1, 2, 4Set by J.K. Rowling, Bloomsbury Paperback",
-          "listing_ids": [
-            "188951499625"
-          ],
-          "observed_price_gbp": 10.8
-        }
-      ]
-    },
-    {
-      "number": 2299,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 15/24",
-      "created_at": "2026-09-19T13:49:06Z",
-      "updated_at": "2026-09-19T13:49:06Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2299",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 7.05,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - Job Lot Jeffrey Archer 5 Paperback Books 3,4,5,6 & 7 Clifton Chronicles Series",
-          "listing_ids": [
-            "206567642890"
-          ],
-          "observed_price_gbp": 7.05
-        },
-        {
-          "title": "DISCOVERY 72/100 - ACTION COMICS - Comic Book #418. DC Comics. November 1972. No.418. FN 6.0",
-          "listing_ids": [
-            "377508426402"
-          ],
-          "observed_price_gbp": 9.73
-        },
-        {
-          "title": "DISCOVERY 72/100 - CASPER STRANGE GHOST STORIES 2# HARVEY (1974) HARVEY COMICS",
-          "listing_ids": [
-            "307187355110"
-          ],
-          "observed_price_gbp": 9.73
-        },
-        {
-          "title": "DISCOVERY 72/100 - \"Coriolanus\" (Arden Shakespeare) - William Shakespeare",
-          "listing_ids": [
-            "257752847173"
-          ],
-          "observed_price_gbp": 9.09
-        },
-        {
-          "title": "DISCOVERY 72/100 - Vintage Pitman Shorthand Collection – 1960 Pocket Dictionary & 23 Training mags",
-          "listing_ids": [
-            "227529217237"
-          ],
-          "observed_price_gbp": 12.5
-        },
-        {
-          "title": "DISCOVERY 72/100 - Vintage First Whisper of The Wind In The Willows' by Kenneth Graham Hardback",
-          "listing_ids": [
-            "158309499668"
-          ],
-          "observed_price_gbp": 9.25
-        },
-        {
-          "title": "DISCOVERY 72/100 - Denis Jenkinson, Jaguar E Type (Osprey Publishing Ltd 1982)",
-          "listing_ids": [
-            "178510171391"
-          ],
-          "observed_price_gbp": 9.98
-        },
-        {
-          "title": "DISCOVERY 72/100 - Ladybird 4 HC Illus Picture Books Puppies Kittens Ships Numbers",
-          "listing_ids": [
-            "237077927276"
-          ],
-          "observed_price_gbp": 10.0
-        },
-        {
-          "title": "DISCOVERY 72/100 - 6 Vintage Ladybird Conservation Books Series 727 Nature Wild Life Butterflies A6",
-          "listing_ids": [
-            "278389730047"
-          ],
-          "observed_price_gbp": 12.95
-        },
-        {
-          "title": "DISCOVERY 72/100 - Illustrated Mustang Buyer's Guide - American Muscle Car book.",
-          "listing_ids": [
-            "237077882267"
-          ],
-          "observed_price_gbp": 9.72
-        }
-      ]
-    },
-    {
-      "number": 2301,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 17/24",
-      "created_at": "2026-09-19T13:49:07Z",
-      "updated_at": "2026-09-19T13:49:07Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2301",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 10.8,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - Keanu Reeves Pull Out Photo Book Excellent Condition",
-          "listing_ids": [
-            "206305439386"
-          ],
-          "observed_price_gbp": 10.8
-        },
-        {
-          "title": "DISCOVERY 72/100 - “Marilyn Monroe Mon Amour” by André de Dienes Soft Back, 1986, UK Edition",
-          "listing_ids": [
-            "278384416657"
-          ],
-          "observed_price_gbp": 11.86
-        },
-        {
-          "title": "DISCOVERY 72/100 - Toy Stories By Gabriele Galimberti , Photos of Children from Around the World",
-          "listing_ids": [
-            "206567657335"
-          ],
-          "observed_price_gbp": 11.87
-        },
-        {
-          "title": "DISCOVERY 72/100 - Physical Memory Manual Photobook by Probability Books",
-          "listing_ids": [
-            "298352961028"
-          ],
-          "observed_price_gbp": 15.0
-        },
-        {
-          "title": "DISCOVERY 72/100 - Portland vol 2 by James Han zine / photobook",
-          "listing_ids": [
-            "298352962972"
-          ],
-          "observed_price_gbp": 15.0
-        },
-        {
-          "title": "DISCOVERY 72/100 - To Live Inside a Second - Benjamin Jones (Fondazione Elpis) Exhibition Photobook",
-          "listing_ids": [
-            "298352959441"
-          ],
-          "observed_price_gbp": 15.0
-        },
-        {
-          "title": "DISCOVERY 72/100 - The Photographers Awards Book 2009 Hardback Edition Good Condition",
-          "listing_ids": [
-            "287321166491"
-          ],
-          "observed_price_gbp": 11.33
-        },
-        {
-          "title": "DISCOVERY 72/100 - ACTION COMICS - Comic Book #419. DC Comics. December 1972. No.419. VG/FN 5.0",
-          "listing_ids": [
-            "377508429355"
-          ],
-          "observed_price_gbp": 12.94
-        },
-        {
-          "title": "DISCOVERY 72/100 - BATMAN Year One Parts 1-4 Complete Set  1987 #404 - #407 Frank Miller",
-          "listing_ids": [
-            "307187374093"
-          ],
-          "observed_price_gbp": 12.94
-        },
-        {
-          "title": "DISCOVERY 72/100 - Handmade crochet book sleeve/cover A5",
-          "listing_ids": [
-            "318890800957"
-          ],
-          "observed_price_gbp": 12.94
-        }
-      ]
-    },
-    {
-      "number": 2302,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 18/24",
-      "created_at": "2026-09-19T13:49:08Z",
-      "updated_at": "2026-09-19T13:49:08Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2302",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 12.94,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - Handmade crochet book sleeve/cover A5",
-          "listing_ids": [
-            "318890804448"
-          ],
-          "observed_price_gbp": 12.94
-        },
-        {
-          "title": "DISCOVERY 72/100 - Handmade crochet book sleeve/cover A5",
-          "listing_ids": [
-            "318890805361"
-          ],
-          "observed_price_gbp": 12.94
-        },
-        {
-          "title": "DISCOVERY 72/100 - Handmade crochet book sleeve/cover A5",
-          "listing_ids": [
-            "318890807116"
-          ],
-          "observed_price_gbp": 12.94
-        },
-        {
-          "title": "DISCOVERY 72/100 - Handmade crochet book sleeve/cover A5",
-          "listing_ids": [
-            "318890842935"
-          ],
-          "observed_price_gbp": 12.94
-        },
-        {
-          "title": "DISCOVERY 72/100 - Handmade crochet book sleeve/cover A5",
-          "listing_ids": [
-            "318890879850"
-          ],
-          "observed_price_gbp": 12.94
-        },
-        {
-          "title": "DISCOVERY 72/100 - Art & Photography Book Bundle – Great Escape Dreams, Clarissa Tossin & Romantik",
-          "listing_ids": [
-            "257518112836"
-          ],
-          "observed_price_gbp": 12.94
-        },
-        {
-          "title": "DISCOVERY 72/100 - Stereo NudesAkte Nudes 1850-1930 Taschen 199| English French German",
-          "listing_ids": [
-            "227346086682"
-          ],
-          "observed_price_gbp": 12.94
-        },
-        {
-          "title": "DISCOVERY 72/100 - Cliff - A Celebration",
-          "listing_ids": [
-            "178505144712"
-          ],
-          "observed_price_gbp": 13.47
-        },
-        {
-          "title": "DISCOVERY 72/100 - The Dinosaur That Pooped 6 Book Bundle Tom Fletcher & Dougie Poynter Used",
-          "listing_ids": [
-            "198652880718"
-          ],
-          "observed_price_gbp": 14.0
-        },
-        {
-          "title": "DISCOVERY 72/100 - A Cook's Book - The Essential Nigel Slater With Over 200 Recipes/Cooking/Cookery",
-          "listing_ids": [
-            "358593550738"
-          ],
-          "observed_price_gbp": 14.0
-        }
-      ]
-    },
-    {
-      "number": 2303,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 19/24",
-      "created_at": "2026-09-19T13:49:09Z",
-      "updated_at": "2026-09-19T13:49:09Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2303",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 14.99,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - Jack Pierson: Tomorrow's Man 5 -  Jack Pierson 2020. photobook",
-          "listing_ids": [
-            "306968531292"
-          ],
-          "observed_price_gbp": 14.99
-        },
-        {
-          "title": "DISCOVERY 72/100 - Le KORAN in FRENCH Book 1960 - Editions Garnier Freres  - Vintage EXC",
-          "listing_ids": [
-            "188951539287"
-          ],
-          "observed_price_gbp": 15.25
-        },
-        {
-          "title": "DISCOVERY 72/100 - 7 x French HEIDI Books 1970s - after Johanna Spyri - Vintage Illustrated Hemma",
-          "listing_ids": [
-            "188951542065"
-          ],
-          "observed_price_gbp": 14.99
-        },
-        {
-          "title": "DISCOVERY 72/100 - 9 x PERRY RHODAN Books in FRENCH - Vintage 1970/80s - Sci Fi Fantasy Bundle",
-          "listing_ids": [
-            "188951544326"
-          ],
-          "observed_price_gbp": 15.25
-        },
-        {
-          "title": "DISCOVERY 72/100 - Vintage Self-Adhesive Book Bound Photo Album, Paper Cover, Brown Beige",
-          "listing_ids": [
-            "366678779831"
-          ],
-          "observed_price_gbp": 15.28
-        },
-        {
-          "title": "DISCOVERY 72/100 - Dell Comics THIRTEEN GOING ON EIGHTEEN #28 U.S. July 1970 - John Stanley",
-          "listing_ids": [
-            "158309363226"
-          ],
-          "observed_price_gbp": 16.15
-        },
-        {
-          "title": "DISCOVERY 72/100 - CASPER STRANGE GHOST STORIES 1# HARVEY (1974) HARVEY COMICS",
-          "listing_ids": [
-            "307187350879"
-          ],
-          "observed_price_gbp": 16.15
-        },
-        {
-          "title": "DISCOVERY 72/100 - Horology, history. Sothebys 1988 Sales Catalogue, Important Clocks, Watches, etc",
-          "listing_ids": [
-            "158309545331"
-          ],
-          "observed_price_gbp": 16.15
-        },
-        {
-          "title": "DISCOVERY 72/100 - Ford Corsair V4 Workshop Manuals x 2",
-          "listing_ids": [
-            "237077980280"
+            "147584505655"
           ],
           "observed_price_gbp": 16.14
         },
         {
-          "title": "DISCOVERY 72/100 - Hornby Booking Hall Station R8007 OO Gauge 1:76 Plastic Painted Kit Platform",
+          "title": "DISCOVERY 72/100 - Kodak EasyShare Color Cartridge & Photo Paper Kit • 160 Sheets Refill",
           "listing_ids": [
-            "188951533642"
+            "137755260490"
           ],
-          "observed_price_gbp": 16.14
+          "observed_price_gbp": 16.68
+        },
+        {
+          "title": "DISCOVERY 72/100 - JOBLOT: The Digital Photography Book by Scott Kelby (Paperback, 2007) & 2 others",
+          "listing_ids": [
+            "144964385290"
+          ],
+          "observed_price_gbp": 16.15
+        },
+        {
+          "title": "DISCOVERY 72/100 - Genshin Impact Collei Korea Limited Clear Ticket Bonus Unused Japan",
+          "listing_ids": [
+            "800685447620"
+          ],
+          "observed_price_gbp": 20.08
+        },
+        {
+          "title": "DISCOVERY 72/100 - 4x New Home Collection Slip-in Memo Photo Album 5x7 Book Bound Floral Brown Pink",
+          "listing_ids": [
+            "168700650963"
+          ],
+          "observed_price_gbp": 16.15
+        },
+        {
+          "title": "DISCOVERY 72/100 - the Parthenon Sculpters by Ian Jenkins",
+          "listing_ids": [
+            "307187362056"
+          ],
+          "observed_price_gbp": 18.29
+        },
+        {
+          "title": "DISCOVERY 72/100 - Alison Jackson: Confidential - 2007 Taschen Hardcover Art Photography Lookalikes",
+          "listing_ids": [
+            "398396391938"
+          ],
+          "observed_price_gbp": 16.15
+        },
+        {
+          "title": "DISCOVERY 72/100 - America The Beautiful - A Story In Photographs - National Geographic 2020",
+          "listing_ids": [
+            "398410934495"
+          ],
+          "observed_price_gbp": 16.15
+        },
+        {
+          "title": "DISCOVERY 72/100 - WWE Official Program 2025 Cody Rhodes American Nightmare WrestleMania 41",
+          "listing_ids": [
+            "336801847330"
+          ],
+          "observed_price_gbp": 18.93
+        },
+        {
+          "title": "DISCOVERY 72/100 - Vintage Souvenir Pouch - Egypt Postcards (Valley of the Kings)",
+          "listing_ids": [
+            "318890758300"
+          ],
+          "observed_price_gbp": 7.6
+        }
+      ]
+    },
+    {
+      "number": 2328,
+      "title": "EBAY_PRIVATE_NEW: HOT 4 | top 88 | 3 under £100 | 1 special | 2 unknown | 9/9",
+      "created_at": "2026-09-19T17:06:50Z",
+      "updated_at": "2026-09-19T17:06:50Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2328",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 26.7,
+      "candidate_summaries": [
+        {
+          "title": "DISCOVERY 72/100 - BMX Annual 1985 IPC Magazines Vintage Old School BMX 80s YES BMX",
+          "listing_ids": [
+            "336801698095"
+          ],
+          "observed_price_gbp": 26.7
+        },
+        {
+          "title": "DISCOVERY 72/100 - Petracon Auto Multi Coating Vintage Camera Lens",
+          "listing_ids": [
+            "298688978527"
+          ],
+          "observed_price_gbp": 44.9
+        },
+        {
+          "title": "REVIEW 88/100 - The Shipping Forecast - Power, Mark",
+          "listing_ids": [
+            "267718301570"
+          ],
+          "observed_price_gbp": 63.1
+        },
+        {
+          "title": "REVIEW 88/100 - Martin Parr & John Gossage - Obvious And Ordinary, America 2006 Photobook",
+          "listing_ids": [
+            "237078123089"
+          ],
+          "observed_price_gbp": null
+        }
+      ]
+    },
+    {
+      "number": 2327,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 8/9",
+      "created_at": "2026-09-19T17:06:50Z",
+      "updated_at": "2026-09-19T17:06:50Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2327",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 10.29,
+      "candidate_summaries": [
+        {
+          "title": "DISCOVERY 72/100 - Esquire Magazine: December 2005: Keira Knightley: Exc. Cond.",
+          "listing_ids": [
+            "188951089882"
+          ],
+          "observed_price_gbp": 20.0
+        },
+        {
+          "title": "DISCOVERY 72/100 - Goseiger Super Sentai 50th Anniversary Itajaga No.34 N Bandai 2025 Japan",
+          "listing_ids": [
+            "398410352980"
+          ],
+          "observed_price_gbp": 15.79
+        },
+        {
+          "title": "DISCOVERY 72/100 - Vintage Film Camera Job Lot Bundle x10 Kodak Canon Panasonic Polaroid Ricoh",
+          "listing_ids": [
+            "257752382857"
+          ],
+          "observed_price_gbp": 20.43
+        },
+        {
+          "title": "DISCOVERY 72/100 - Vintage 1970s Polaroid Super Swinger Camera With Original Case. UNTESTED",
+          "listing_ids": [
+            "820145748320"
+          ],
+          "observed_price_gbp": 21.5
+        },
+        {
+          "title": "DISCOVERY 72/100 - TINTIN Belgacom Telecard 1995 Le Lotus Bleu II/VI Hergé Moulinsart 3000 ex",
+          "listing_ids": [
+            "407229600488"
+          ],
+          "observed_price_gbp": 16.46
+        },
+        {
+          "title": "DISCOVERY 72/100 - Butchers Carbine No 2 Vintage Camera With Original  British Made 1920’s Antique",
+          "listing_ids": [
+            "168700018703"
+          ],
+          "observed_price_gbp": 24.0
+        },
+        {
+          "title": "DISCOVERY 72/100 - Antique Porcelain Small Miniature Doll 9cm - Dollhouse",
+          "listing_ids": [
+            "257752754243"
+          ],
+          "observed_price_gbp": 10.29
+        },
+        {
+          "title": "DISCOVERY 72/100 - Vintage Cordon Bleu Cookery Course Issues 1-19 Consecutive Set Purnell 1960s/70s",
+          "listing_ids": [
+            "820146328852"
+          ],
+          "observed_price_gbp": 24.99
+        },
+        {
+          "title": "DISCOVERY 72/100 - Maginon Action Camera  AC500",
+          "listing_ids": [
+            "298689070277"
+          ],
+          "observed_price_gbp": 26.7
+        },
+        {
+          "title": "DISCOVERY 72/100 - Vintage WWI Era 8x26 Military Style Binoculars with Case",
+          "listing_ids": [
+            "117420309337"
+          ],
+          "observed_price_gbp": 26.7
+        }
+      ]
+    },
+    {
+      "number": 775,
+      "title": "EBAY_PRIVATE_NEW: REVIEW 4 | top 78 | 0 under £100 | 2 special | 1 changed | 7/7",
+      "created_at": "2026-09-06T00:11:43Z",
+      "updated_at": "2026-09-06T00:11:43Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/775",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 85.05,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 73/100 - Waterfall Rapture Tadanori Yokoo.  1996 with obi 1st edition",
+          "listing_ids": [
+            "276777955301"
+          ],
+          "observed_price_gbp": 187.9
+        },
+        {
+          "title": "REVIEW 78/100 - Yutaka Takanashi - Toshi-e (Towards the City)",
+          "listing_ids": [
+            "318493692069"
+          ],
+          "observed_price_gbp": 85.05
+        },
+        {
+          "title": "REVIEW 73/100 - Case History by Mikhailov, Boris / Hardback w Dust jacket / Scala First Edition",
+          "listing_ids": [
+            "336775048635"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "CHANGED 72/100 - David Lynch The Factory Photographs Petra Giloy Hirtz Hardcover Photo Book",
+          "listing_ids": [
+            "287360287859"
+          ],
+          "observed_price_gbp": 396.1
+        }
+      ]
+    },
+    {
+      "number": 533,
+      "title": "EBAY_PRIVATE_NEW: 2 candidates | 0 live checked | 2 search only | 4/4",
+      "created_at": "2026-09-04T08:12:05Z",
+      "updated_at": "2026-09-04T08:12:06Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/533",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 140.43,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 78/100 - RARE LIMITED EDITION JOEL-PETER WITKIN THE BONE HOUSE ART PHOTOGRAPHY BOOK HB",
+          "listing_ids": [
+            "128050807014"
+          ],
+          "observed_price_gbp": 140.43
+        },
+        {
+          "title": "REVIEW 72/100 - WEBER Donald, Interrogations. Schilt 2011. Winner of the World Press Photo 2012",
+          "listing_ids": [
+            "397216434066"
+          ],
+          "observed_price_gbp": 172.56
+        }
+      ]
+    },
+    {
+      "number": 549,
+      "title": "EBAY_PRIVATE_NEW: 1 candidates | 0 live checked | 1 search only | 3/3",
+      "created_at": "2026-09-04T08:16:41Z",
+      "updated_at": "2026-09-04T08:16:41Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/549",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 120.44,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 75/100 - Stephen Gill Archaeology in Reverse Photobook Hackney Wick Art Book HC Rare",
+          "listing_ids": [
+            "820057309901"
+          ],
+          "observed_price_gbp": 120.44
+        }
+      ]
+    },
+    {
+      "number": 589,
+      "title": "EBAY_PRIVATE_NEW: REVIEW 3 | top 77 | 0 under £100 | 11/11",
+      "created_at": "2026-09-04T13:27:03Z",
+      "updated_at": "2026-09-04T13:27:04Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/589",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 100.31,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 77/100 - Jason Fulford The Mushroom Collector Hardback",
+          "listing_ids": [
+            "287063907602"
+          ],
+          "observed_price_gbp": 146.3
+        },
+        {
+          "title": "REVIEW 76/100 - Rare James Nachtwey Inferno book.",
+          "listing_ids": [
+            "276433119912"
+          ],
+          "observed_price_gbp": 167.1
+        },
+        {
+          "title": "REVIEW 74/100 - Yasuhiro Ishimoto CHICAGO CHICAGO Part 2 Photo Book 1983 Canon Club",
+          "listing_ids": [
+            "366459876825"
+          ],
+          "observed_price_gbp": 100.31
+        }
+      ]
+    },
+    {
+      "number": 791,
+      "title": "EBAY_PRIVATE_NEW: REVIEW 3 | top 81 | 0 under £100 | 1 special | 7/7",
+      "created_at": "2026-09-06T08:59:14Z",
+      "updated_at": "2026-09-06T08:59:14Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/791",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 104.7,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 78/100 - Daido Moriyama Retrospective Since 1965 2007 Hardcover Photography Book Ltd 1000",
+          "listing_ids": [
+            "820093288432"
+          ],
+          "observed_price_gbp": 147.87
+        },
+        {
+          "title": "REVIEW 81/100 - Collier Schorr: Neighbors: Forest and Fields New & Sealed Steidl Mack",
+          "listing_ids": [
+            "306928758643"
+          ],
+          "observed_price_gbp": 104.7
+        },
+        {
+          "title": "REVIEW 79/100 - Flamboya – Viviane Sassen (First Edition, 2008) – Signed & Dedicated",
+          "listing_ids": [
+            "336319022782"
+          ],
+          "observed_price_gbp": 450.0
+        }
+      ]
+    },
+    {
+      "number": 843,
+      "title": "EBAY_PRIVATE_NEW: REVIEW 4 | top 80 | 0 under £100 | 2 special | 12/12",
+      "created_at": "2026-09-06T20:46:23Z",
+      "updated_at": "2026-09-06T20:46:24Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/843",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 146.3,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 80/100 - Signed Michael Kenna SHINAN Nazraeli Press Hardback + Slipcase + Exhibition Ephe",
+          "listing_ids": [
+            "307030495908"
+          ],
+          "observed_price_gbp": 182.7
+        },
+        {
+          "title": "REVIEW 78/100 - Masahisa Fukase Wonderful Days Photo Book Cat Sasuke Momoe Ravens Creator Item",
+          "listing_ids": [
+            "236745911350"
+          ],
+          "observed_price_gbp": 261.9
+        },
+        {
+          "title": "REVIEW 78/100 - Case History by Mikhailov, Boris | Book | condition good",
+          "listing_ids": [
+            "267708317015"
+          ],
+          "observed_price_gbp": 146.3
+        },
+        {
+          "title": "REVIEW 78/100 - Robert Mapplethorpe Black Book Bildband, Englisch – Fotografie Sachbuch",
+          "listing_ids": [
+            "800622001594"
+          ],
+          "observed_price_gbp": null
+        }
+      ]
+    },
+    {
+      "number": 897,
+      "title": "EBAY_PRIVATE_NEW: REVIEW 3 | top 78 | 0 under £100 | 2 special | 19/19",
+      "created_at": "2026-09-07T15:55:41Z",
+      "updated_at": "2026-09-07T15:55:42Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/897",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 104.7,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 78/100 - The Bikeriders by Danny Lyon (2003, Trade Paperback). VGC",
+          "listing_ids": [
+            "117400652057"
+          ],
+          "observed_price_gbp": 104.7
+        },
+        {
+          "title": "REVIEW 73/100 - Jessica Dimmock The Ninth Floor Photography Book Contrasto First Edition",
+          "listing_ids": [
+            "178186565212"
+          ],
+          "observed_price_gbp": 343.3
+        },
+        {
+          "title": "REVIEW 72/100 - Eadweard Muybridge: The Human and Animal Locomotion Photographs - rare book",
+          "listing_ids": [
+            "318838626954"
+          ],
+          "observed_price_gbp": null
         }
       ]
     }
