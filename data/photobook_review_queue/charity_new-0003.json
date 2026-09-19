@@ -1,76 +1,7 @@
 {
-  "checked_at": "2026-09-19T09:19:54Z",
+  "checked_at": "2026-09-19T13:49:26Z",
   "source": "CHARITY_NEW",
   "issues": [
-    {
-      "number": 1558,
-      "title": "CHARITY_NEW: 1 eBay seller photobook candidate",
-      "created_at": "2026-09-13T19:23:59Z",
-      "updated_at": "2026-09-13T19:23:59Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1558",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 9.5,
-      "candidate_summaries": [
-        {
-          "title": "Michel Katalog der Deutschen Privatpostmarken by Horst Muller 1984 paperback",
-          "listing_ids": [
-            "366666740739"
-          ],
-          "observed_price_gbp": 9.5
-        }
-      ]
-    },
-    {
-      "number": 1572,
-      "title": "CHARITY_NEW: 2 eBay seller photobook candidates",
-      "created_at": "2026-09-13T22:22:39Z",
-      "updated_at": "2026-09-13T22:22:39Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1572",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 20.0,
-      "candidate_summaries": [
-        {
-          "title": "Roald Dahl The Roald Dahl Treasury Hardcover First Edition Book",
-          "listing_ids": [
-            "318855995194"
-          ],
-          "observed_price_gbp": 50.0
-        },
-        {
-          "title": "Augustus John by John Rothenstein Phaidon Press Vintage Art Book",
-          "listing_ids": [
-            "398383625209"
-          ],
-          "observed_price_gbp": 20.0
-        },
-        {
-          "title": "Seller warnings",
-          "listing_ids": [],
-          "observed_price_gbp": null
-        }
-      ]
-    },
-    {
-      "number": 1643,
-      "title": "CHARITY_NEW: 1 eBay seller photobook candidate",
-      "created_at": "2026-09-14T23:05:51Z",
-      "updated_at": "2026-09-14T23:05:51Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1643",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 25.0,
-      "candidate_summaries": [
-        {
-          "title": "'The Hobbit Companion' ~ by David Day ~ 3rd Print of First Edition ~ 1997",
-          "listing_ids": [
-            "257742385424"
-          ],
-          "observed_price_gbp": 25.0
-        }
-      ]
-    },
     {
       "number": 1652,
       "title": "CHARITY_NEW: 3 eBay seller photobook candidates",
@@ -298,25 +229,6 @@
             "366672607754"
           ],
           "observed_price_gbp": 40.0
-        }
-      ]
-    },
-    {
-      "number": 2039,
-      "title": "CHARITY_NEW: 1 eBay seller photobook candidate",
-      "created_at": "2026-09-17T18:09:11Z",
-      "updated_at": "2026-09-17T18:09:11Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2039",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 9.64,
-      "candidate_summaries": [
-        {
-          "title": "The Artist Lucy Steeds 2025 HB John Murray Literary Fiction Novel UK 1st Edition",
-          "listing_ids": [
-            "158298323256"
-          ],
-          "observed_price_gbp": 9.64
         }
       ]
     },
@@ -813,6 +725,167 @@
       "candidate_summaries": [
         {
           "title": "The Lost Adventures of James Bond - book by Mark Edlitz",
+          "listing_ids": [],
+          "observed_price_gbp": null
+        }
+      ]
+    },
+    {
+      "number": 830,
+      "title": "CHARITY_NEW: 3 eBay seller photobook candidates",
+      "created_at": "2026-09-06T19:05:52Z",
+      "updated_at": "2026-09-06T19:05:52Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/830",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": null,
+      "candidate_summaries": [
+        {
+          "title": "Say Hey Little Prince by Steven Dandaneau SC 2020 1st Edition Owl Canyon Press",
+          "listing_ids": [
+            "278349805614"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "King in the North The Pictish Realms of Fortriu and Ce 2019 SC Noble and Evans",
+          "listing_ids": [
+            "287569518708"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "Spring Softly Into Summer 1994 Ron Evans Illustrated G Webb Union Printing",
+          "listing_ids": [
+            "278349389860"
+          ],
+          "observed_price_gbp": null
+        }
+      ]
+    },
+    {
+      "number": 874,
+      "title": "CHARITY_NEW: Shelter book listings 2026-09-07 15:19Z",
+      "created_at": "2026-09-07T15:19:47Z",
+      "updated_at": "2026-09-07T15:19:47Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/874",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": null,
+      "candidate_summaries": [
+        {
+          "title": "Brat Pack Rick Veitch",
+          "listing_ids": [],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "GPDST The Girls Public Day School Trust 1872 1972 A Centenary Review",
+          "listing_ids": [],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "My Vertical World Jerzy Kukuczka",
+          "listing_ids": [],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "British Battleships 1919 - 1945 New Revised Edition R A Burt",
+          "listing_ids": [],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "The Library of James Sutherland As Purchased By The Faculty of Advocates Edinburgh in 1705 and 1707 Robert L Betteridge",
+          "listing_ids": [],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "150 Years of Oxford University Rugby Football Club Limited Edition 69/1000 Alex Mead",
+          "listing_ids": [],
+          "observed_price_gbp": null
+        }
+      ]
+    },
+    {
+      "number": 1059,
+      "title": "CHARITY_NEW: 1 eBay seller photobook candidate",
+      "created_at": "2026-09-09T09:38:22Z",
+      "updated_at": "2026-09-09T09:38:22Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1059",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": null,
+      "candidate_summaries": [
+        {
+          "title": "Art and Dotty His Diary Their Letters & Photographs World War II Vol 1 SC 2020",
+          "listing_ids": [
+            "278356672310"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "Seller warnings",
+          "listing_ids": [],
+          "observed_price_gbp": null
+        }
+      ]
+    },
+    {
+      "number": 1075,
+      "title": "CHARITY_NEW: Shelter book listings 2026-09-09 13:58Z",
+      "created_at": "2026-09-09T13:59:21Z",
+      "updated_at": "2026-09-09T13:59:21Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1075",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": null,
+      "candidate_summaries": [
+        {
+          "title": "Isamu Noguchi A Sculptors World Foreword By R Buckminster Fuller",
+          "listing_ids": [],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "The Sonnets Of William Shakespeare Edited By Margaret Flower",
+          "listing_ids": [],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "Ceol Na Fidhle Highland Tunes For The Fiddle Volume 1",
+          "listing_ids": [],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "Joseph Hislop Gran Tenore Michael T R B Turnbull",
+          "listing_ids": [],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "The Use Of Memory Publishing and Further Pursuits Tom Burns",
+          "listing_ids": [],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "Modern Engineering Mathematics Sixth Edition Glyn James Phil Dyke",
+          "listing_ids": [],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "Bernadette Devlin The Price of My Soul",
+          "listing_ids": [],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "Landscapes of Eloquence Finding Rhetoric In The English Landscape Garden Judy Tarling",
+          "listing_ids": [],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "Science and Religion In Neo Victorian Novels The Eye of The Ichthyosaur John Glendening",
+          "listing_ids": [],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "The Book Of Saturn Zipporah Dobyns PH.D.",
           "listing_ids": [],
           "observed_price_gbp": null
         }
