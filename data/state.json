@@ -1,7 +1,9 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-19T00:25:24Z",
+  "last_successful_fetch": "2026-09-19T09:01:50Z",
   "last_top_skus": [
+    "HD_304262109",
+    "HD_304262068",
     "HD_304261763",
     "HD_304261776",
     "HD_304261638",
@@ -29,9 +31,7 @@
     "HD_304251022",
     "HD_304257492",
     "HD_304255520",
-    "HD_304257152",
-    "HD_304257157",
-    "HD_304257090"
+    "HD_304257157"
   ],
   "products": {
     "HD_303805354": {
@@ -8442,8 +8442,40 @@
         "title": "Churches in Early Medieval Ireland"
       },
       "search_fingerprint": "81e9cf446469cf0b"
+    },
+    "HD_304262068": {
+      "first_seen": "2026-09-19T09:01:50Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789801218000",
+        "description": "From the first misty `heliograph' taken by Joseph Nicephore Niepce in 1826 to the classic compositions of Cartier-Bresson and Alfred Steiglitz, to the striking postmodern strategies of Robert Mapplethorpe, Cindy Sherman and Victor Burgin, the history of photography is a record of dazzling and penetrating images. But photographs are also the most pervasive images of our time, infinite in their capacity to record and make moments significant, granting status to everything they touch. So how do we read a photograph? In a series of brilliant discussions of major themes and genres, Graham Clarke gives a clear and incisive account of the photograph's historical development, and elucidates the insights of the most interesting thinkers on the subject such as Roland Barthes and Susan Sontag. At the heart of the book is his ground-breaking examination of the main subject areas - landscape, the city, portraiture, the body, and reportage - and his detailed analysis of exemplary images in terms of their cultural and ideological contexts.",
+        "isbn": null,
+        "price_gbp": 8.0,
+        "product_id": "book-HD__304262068",
+        "publisher": null,
+        "route": "/the-photograph-a-visual-and-cultural-history-oxford-history-of-art-graham-clarke/product/HD_304262068",
+        "sku": "HD_304262068",
+        "title": "The Photograph: A Visual and Cultural History (Oxford History of Art) - Graham Clarke"
+      },
+      "search_fingerprint": "09b239d752374d3d"
+    },
+    "HD_304262109": {
+      "first_seen": "2026-09-19T09:01:50Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789804683000",
+        "description": "CONDITION: Book in excellent condition, with some small scuffs and a tiny blue pen mark on back cover.<br/><br/><br/>In The Photography Workshop Series, Aperture Foundation works with the world's top photographers to distill their creative approaches, teachings, and insights on photography- offering the workshop experience in a book. Our goal is to inspire photographers of all levels who wish to improve their work, as well as readers interested in deepening their understanding of the art of photography. Each volume is introduced by a well-known student of the featured photographer. In this book, Mary Ellen Mark-well-known for her pictures' emotional power, be they of people or animals-offers her insight on observing the world and capturing dramatic moments that reveal more than the reality at hand. Through words and pictures, she shares her own creative process and discusses a wide range of issues, from gaining the trust of the subject and taking pictures that are controlled but unforced, to organizing the frame so that every part contributes toward telling the story.",
+        "isbn": null,
+        "price_gbp": 25.0,
+        "product_id": "book-HD__304262109",
+        "publisher": null,
+        "route": "/mary-ellen-mark-on-the-portrait-and-the-moment/product/HD_304262109",
+        "sku": "HD_304262109",
+        "title": "Mary Ellen Mark on the Portrait and the Moment"
+      },
+      "search_fingerprint": "41e0bbba44a24b57"
     }
   },
-  "reported_category_count": 2879,
+  "reported_category_count": 2881,
   "version": 1
 }
