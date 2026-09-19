@@ -1,40 +1,7 @@
 {
-  "checked_at": "2026-09-19T17:07:02Z",
+  "checked_at": "2026-09-19T20:22:46Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
-    {
-      "number": 554,
-      "title": "EBAY_PRIVATE_NEW: HOT 3 | top 78 | 2 under £100 | 1 special | 2 unknown | 5/5",
-      "created_at": "2026-09-04T08:18:17Z",
-      "updated_at": "2026-09-04T08:18:18Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/554",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 23.0,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - Rock 'n' Roll 39-59 (Hardcover)",
-          "listing_ids": [
-            "407156255005"
-          ],
-          "observed_price_gbp": 23.0
-        },
-        {
-          "title": "DISCOVERY 72/100 - Wolfgang TILLMANS 3 Books Set TASCHEN Contemporary German Photography SEALED",
-          "listing_ids": [
-            "336754139935"
-          ],
-          "observed_price_gbp": 32.9
-        },
-        {
-          "title": "REVIEW 78/100 - Gilbert & George: Dark Shadow - 2024 Signed Limited Edition - Low Number",
-          "listing_ids": [
-            "326288898961"
-          ],
-          "observed_price_gbp": 135.9
-        }
-      ]
-    },
     {
       "number": 555,
       "title": "EBAY_PRIVATE_NEW: HOT 10 | top 78 | 10 under £100 | 3 special | 5 unknown | 1/2",
@@ -679,6 +646,88 @@
             "293929935528"
           ],
           "observed_price_gbp": 506.5
+        }
+      ]
+    },
+    {
+      "number": 579,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 81 | 10 under £100 | 9 special | 7 unknown | 1/11",
+      "created_at": "2026-09-04T13:26:44Z",
+      "updated_at": "2026-09-04T13:26:45Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/579",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 2.24,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 81/100 - Summer Camp - Mark Steinmetz Published by Nazraeli 2019 Hardback, 1st edition",
+          "listing_ids": [
+            "178313524003"
+          ],
+          "observed_price_gbp": 57.9
+        },
+        {
+          "title": "REVIEW 80/100 - Summer Camp by Mark Steinmetz. Hardcover. SIGNED. First edition, 2019.",
+          "listing_ids": [
+            "236970206165"
+          ],
+          "observed_price_gbp": 94.3
+        },
+        {
+          "title": "REVIEW 78/100 - Without Sanctuary : Lynching Photography in America by James Allen (1999,...",
+          "listing_ids": [
+            "147506260291"
+          ],
+          "observed_price_gbp": 57.05
+        },
+        {
+          "title": "DISCOVERY 72/100 - Whistler Photography By Greg Griffith Snowy Mountain Scenes Photo Book AB77",
+          "listing_ids": [
+            "327186490805"
+          ],
+          "observed_price_gbp": 2.24
+        },
+        {
+          "title": "DISCOVERY 72/100 - 1975 Muhammad Ali Photo Biography Book - I AM KING - 210 x 297mm - 128 pages",
+          "listing_ids": [
+            "298644616419"
+          ],
+          "observed_price_gbp": 5.75
+        },
+        {
+          "title": "DISCOVERY 72/100 - Ships and Aircraft of the Royal Navy, miniture photography catalogue F86",
+          "listing_ids": [
+            "168663337487"
+          ],
+          "observed_price_gbp": 5.44
+        },
+        {
+          "title": "DISCOVERY 72/100 - Little Library Books Set 10 Kids Picture Words Books Make Believe Ideas Age 1-4",
+          "listing_ids": [
+            "137698158837"
+          ],
+          "observed_price_gbp": 9.08
+        },
+        {
+          "title": "DISCOVERY 72/100 - Edie Girl on Fire Painter Weisman 1st Ed HB CD Sedgewick Warhol Factory VGC",
+          "listing_ids": [
+            "377264191274"
+          ],
+          "observed_price_gbp": 6.0
+        },
+        {
+          "title": "DISCOVERY 72/100 - Erie Canal Images of America Arcadia 2004 New York History Photo Book",
+          "listing_ids": [
+            "287520769932"
+          ],
+          "observed_price_gbp": 7.58
+        },
+        {
+          "title": "DISCOVERY 72/100 - Desert Eves An Indian Paradise Hans Silvester Hardback Photo Book Abrams 2002 HB",
+          "listing_ids": [
+            "158188911846"
+          ],
+          "observed_price_gbp": 18.99
         }
       ]
     }

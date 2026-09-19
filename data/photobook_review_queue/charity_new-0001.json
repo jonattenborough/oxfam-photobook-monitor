@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-19T17:07:02Z",
+  "checked_at": "2026-09-19T20:22:46Z",
   "source": "CHARITY_NEW",
   "issues": [
     {
@@ -44,32 +44,6 @@
             "198624559212"
           ],
           "observed_price_gbp": 12.0
-        }
-      ]
-    },
-    {
-      "number": 937,
-      "title": "CHARITY_NEW: 2 eBay seller photobook candidates",
-      "created_at": "2026-09-08T04:26:47Z",
-      "updated_at": "2026-09-08T04:26:47Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/937",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 9.0,
-      "candidate_summaries": [
-        {
-          "title": "A Clockwork Orange 2004 - RSC Script, Anthony Burgess, 1989 Paperback",
-          "listing_ids": [
-            "800625014994"
-          ],
-          "observed_price_gbp": 9.0
-        },
-        {
-          "title": "THE TOWN RECORDER - BUNGAY - A HISTORY IN PHOTOGRAPHS - Honeywood - 1994 - PB",
-          "listing_ids": [
-            "158267045073"
-          ],
-          "observed_price_gbp": 13.99
         }
       ]
     },
@@ -148,39 +122,6 @@
             "227511891033"
           ],
           "observed_price_gbp": 35.0
-        }
-      ]
-    },
-    {
-      "number": 1104,
-      "title": "CHARITY_NEW: 3 eBay seller photobook candidates",
-      "created_at": "2026-09-09T18:31:25Z",
-      "updated_at": "2026-09-09T18:31:25Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1104",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 14.99,
-      "candidate_summaries": [
-        {
-          "title": "Japanese Traditional tattoo photobook TATTOO IN JAPAN yakuza irezumi tebori..Aug",
-          "listing_ids": [
-            "327350215291"
-          ],
-          "observed_price_gbp": 100.0
-        },
-        {
-          "title": "Artemis Fowl The Eternity Code Eoin Colfer Fantasy Novel 1st Ed Hardback (Mar)",
-          "listing_ids": [
-            "366658340293"
-          ],
-          "observed_price_gbp": 14.99
-        },
-        {
-          "title": "Studio KO Yves Saint Laurent Museum Marrakech Phaidon Hardcover",
-          "listing_ids": [
-            "267780363579"
-          ],
-          "observed_price_gbp": 20.0
         }
       ]
     },
@@ -514,6 +455,93 @@
           "title": "Seller warnings",
           "listing_ids": [],
           "observed_price_gbp": null
+        }
+      ]
+    },
+    {
+      "number": 1249,
+      "title": "CHARITY_NEW: 5 eBay seller photobook candidates",
+      "created_at": "2026-09-10T21:35:11Z",
+      "updated_at": "2026-09-10T21:35:11Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1249",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 5.0,
+      "candidate_summaries": [
+        {
+          "title": "Land - Maggie O'Farrell (1st Edition Illustrated Hardcover, 2026)",
+          "listing_ids": [
+            "800641261762"
+          ],
+          "observed_price_gbp": 9.99
+        },
+        {
+          "title": "MACKENZIE THORPE FROM THE HEART BOOK NEW CG I04",
+          "listing_ids": [
+            "800641034873"
+          ],
+          "observed_price_gbp": 9.99
+        },
+        {
+          "title": "STEPHEN KING- BILLY SUMMERS- UK 1st EDITION-COLLECTORS EDITION- CG A19",
+          "listing_ids": [
+            "377485518721"
+          ],
+          "observed_price_gbp": 5.0
+        },
+        {
+          "title": "Vintage Ladybird Book Collection Fairy Tales Well-Loved Puddle Lane Bundle",
+          "listing_ids": [
+            "188913799072"
+          ],
+          "observed_price_gbp": 20.99
+        },
+        {
+          "title": "Barnaby Rudge Charles Dickens Hardcover Classic Literature Fiction Preloved",
+          "listing_ids": [
+            "188913942578"
+          ],
+          "observed_price_gbp": 9.0
+        }
+      ]
+    },
+    {
+      "number": 1267,
+      "title": "CHARITY_NEW: 4 eBay seller photobook candidates",
+      "created_at": "2026-09-11T00:04:05Z",
+      "updated_at": "2026-09-11T00:04:05Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1267",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 9.99,
+      "candidate_summaries": [
+        {
+          "title": "The Warden by Anthony Trollope Illustrated 1949 Edition Hardcover",
+          "listing_ids": [
+            "820110110295"
+          ],
+          "observed_price_gbp": 10.0
+        },
+        {
+          "title": "Picasso Vida y Obra 2 Vol Set 1992 Taschen Gilt Edges Spanish Y205 C120",
+          "listing_ids": [
+            "278362447214"
+          ],
+          "observed_price_gbp": 19.95
+        },
+        {
+          "title": "The Encyclopedia of Science Fiction Movies Phil Hardy 1984 Hardcover Reference",
+          "listing_ids": [
+            "278361825086"
+          ],
+          "observed_price_gbp": 9.99
+        },
+        {
+          "title": "Horrible Science 20 Book Collection Box Set Kids Educational Gift Nick Arnold",
+          "listing_ids": [
+            "327351542560"
+          ],
+          "observed_price_gbp": 29.95
         }
       ]
     }

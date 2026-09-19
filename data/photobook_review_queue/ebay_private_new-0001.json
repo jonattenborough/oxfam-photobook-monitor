@@ -1,89 +1,7 @@
 {
-  "checked_at": "2026-09-19T17:07:02Z",
+  "checked_at": "2026-09-19T20:22:46Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
-    {
-      "number": 514,
-      "title": "EBAY_PRIVATE_NEW: 10 candidates | 0 live checked | 10 search only | 10 unknown | 1/16",
-      "created_at": "2026-09-04T08:10:53Z",
-      "updated_at": "2026-09-04T08:10:54Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/514",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 1.17,
-      "candidate_summaries": [
-        {
-          "title": "REVIEW 72/100 - Birds of Southern Africa (photographic guide) by Ian Sinclair.",
-          "listing_ids": [
-            "257710270458"
-          ],
-          "observed_price_gbp": 1.17
-        },
-        {
-          "title": "REVIEW 72/100 - Birds of Australia (photograph guide) by Peter Rowland",
-          "listing_ids": [
-            "257710289021"
-          ],
-          "observed_price_gbp": 1.17
-        },
-        {
-          "title": "REVIEW 72/100 - The Lincolnshire Wolds (Britain in Old Photographs) By Cuppleditch PB 1997",
-          "listing_ids": [
-            "398333549432"
-          ],
-          "observed_price_gbp": 1.17
-        },
-        {
-          "title": "REVIEW 72/100 - South Yorkshire, Howse, Geoffrey Britain in Old Photographs",
-          "listing_ids": [
-            "168647661649"
-          ],
-          "observed_price_gbp": 1.7
-        },
-        {
-          "title": "REVIEW 72/100 - Glasgow: The People's Story Fifty Years of Photographs by Paul Harris (1996)",
-          "listing_ids": [
-            "398336821372"
-          ],
-          "observed_price_gbp": 2.23
-        },
-        {
-          "title": "REVIEW 72/100 - WESTERN NATIONAL PARKS - 1977- Rand McNally - CA, North & Southwest, Rocky Mnts",
-          "listing_ids": [
-            "128050602655"
-          ],
-          "observed_price_gbp": 2.24
-        },
-        {
-          "title": "REVIEW 72/100 - Selling A Horse ( or Pony ) Allen Photographic Guide Peter Gray",
-          "listing_ids": [
-            "257710370839"
-          ],
-          "observed_price_gbp": 2.46
-        },
-        {
-          "title": "REVIEW 72/100 - Images Of Wales Around The Rhondda Fawr Photo Compilation Book",
-          "listing_ids": [
-            "278320374384"
-          ],
-          "observed_price_gbp": 3.31
-        },
-        {
-          "title": "REVIEW 72/100 - NATO Navies of the 1980s (Warships Illustrated No. 3),  Paul Beaver",
-          "listing_ids": [
-            "398333905585"
-          ],
-          "observed_price_gbp": 3.98
-        },
-        {
-          "title": "REVIEW 72/100 - SHROPSHIRE FROM THE AIR A most Rare Vision by Mark Sisson (SIGNED by author) h/b",
-          "listing_ids": [
-            "257433519014"
-          ],
-          "observed_price_gbp": 2.23
-        }
-      ]
-    },
     {
       "number": 515,
       "title": "EBAY_PRIVATE_NEW: 10 candidates | 0 live checked | 10 search only | 10 unknown | 2/16",
@@ -819,6 +737,53 @@
             "267527566312"
           ],
           "observed_price_gbp": 42.3
+        }
+      ]
+    },
+    {
+      "number": 529,
+      "title": "EBAY_PRIVATE_NEW: 5 candidates | 0 live checked | 5 search only | 16/16",
+      "created_at": "2026-09-04T08:11:18Z",
+      "updated_at": "2026-09-04T08:11:19Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/529",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 30.0,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 78/100 - SIGNED The Teds Chris Steele Perkins Magnum Photos",
+          "listing_ids": [
+            "277618022017"
+          ],
+          "observed_price_gbp": 198.3
+        },
+        {
+          "title": "REVIEW 78/100 - Paul Fusco RFK Funeral Train signed copy",
+          "listing_ids": [
+            "326964580655"
+          ],
+          "observed_price_gbp": 208.7
+        },
+        {
+          "title": "REVIEW 78/100 - Kikuji Kawada The Map Chizu Photo Book Limited 1000 Copies 24cm Japan Rare",
+          "listing_ids": [
+            "358235069664"
+          ],
+          "observed_price_gbp": 397.86
+        },
+        {
+          "title": "REVIEW 77/100 - Corridor Of Uncertainty by Paul Hill Hardcover Book - SIGNED. Photography.",
+          "listing_ids": [
+            "267547714259"
+          ],
+          "observed_price_gbp": 30.0
+        },
+        {
+          "title": "REVIEW 77/100 - Ken Domon Hiroshima Photo Book 1958 First Edition Kenko-Sha",
+          "listing_ids": [
+            "178441631530"
+          ],
+          "observed_price_gbp": 566.62
         }
       ]
     }

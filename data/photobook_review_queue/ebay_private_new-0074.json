@@ -1,89 +1,7 @@
 {
-  "checked_at": "2026-09-19T17:07:02Z",
+  "checked_at": "2026-09-19T20:22:46Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
-    {
-      "number": 1593,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 1 changed | 9 unknown | 4/5",
-      "created_at": "2026-09-14T07:01:44Z",
-      "updated_at": "2026-09-14T07:01:45Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1593",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 10.8,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - Tribal Odyssey: A Photographic Journey Among Tribes - Hardcover",
-          "listing_ids": [
-            "336386356810"
-          ],
-          "observed_price_gbp": 11.99
-        },
-        {
-          "title": "DISCOVERY 72/100 - Life Style Bruce Mau Hard Cover",
-          "listing_ids": [
-            "376839206233"
-          ],
-          "observed_price_gbp": 10.8
-        },
-        {
-          "title": "DISCOVERY 72/100 - Dorothea Lange Color Photography by Neil Scott-Petrie 2014 Paperback 1935-1939",
-          "listing_ids": [
-            "236566219976"
-          ],
-          "observed_price_gbp": 14.99
-        },
-        {
-          "title": "DISCOVERY 72/100 - Guns N’ Roses by Mick St. Michael 1993 Hardback Photo Book ISBN 9781854225207",
-          "listing_ids": [
-            "257303253174"
-          ],
-          "observed_price_gbp": 16.15
-        },
-        {
-          "title": "DISCOVERY 72/100 - Life in Ancient Egypt by Eugen Strouhal, photographs by Werner Forman.",
-          "listing_ids": [
-            "366117464928"
-          ],
-          "observed_price_gbp": 18.24
-        },
-        {
-          "title": "DISCOVERY 72/100 - Astronomy Photographer of the Year: Collection 9, NEW, FREE UK DELIVERY",
-          "listing_ids": [
-            "236566279922"
-          ],
-          "observed_price_gbp": 21.99
-        },
-        {
-          "title": "DISCOVERY 72/100 - Oliver Eclipse Photography Fifty Desert Frames Hardback Book 2025 Australian Art",
-          "listing_ids": [
-            "267669524106"
-          ],
-          "observed_price_gbp": 20.0
-        },
-        {
-          "title": "DISCOVERY 72/100 - Gackt photo book \"Subarashikikana Jinsei\"",
-          "listing_ids": [
-            "277642980772"
-          ],
-          "observed_price_gbp": 22.0
-        },
-        {
-          "title": "DISCOVERY 72/100 - A Series of Glances by Andy Summers Hardcover Photography Book",
-          "listing_ids": [
-            "227162979023"
-          ],
-          "observed_price_gbp": 21.5
-        },
-        {
-          "title": "CHANGED 72/100 - Henri Cartier-Bresson: Scrapbook | Hardcover Monograph (Thames & Hudson, 2006)",
-          "listing_ids": [
-            "318677761339"
-          ],
-          "observed_price_gbp": 28.78
-        }
-      ]
-    },
     {
       "number": 1594,
       "title": "EBAY_PRIVATE_NEW: HOT 5 | top 78 | 3 under £100 | 1 special | 3 unknown | 5/5",
@@ -784,6 +702,88 @@
             "168688034755"
           ],
           "observed_price_gbp": null
+        }
+      ]
+    },
+    {
+      "number": 1613,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 82 | 10 under £100 | 7 special | 5 unknown | 1/16",
+      "created_at": "2026-09-14T19:15:36Z",
+      "updated_at": "2026-09-14T19:15:37Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1613",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 4.79,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 82/100 - à propos de l'U.R.S.S. - Henri Cartier-Bresson, rare 1973 first edition",
+          "listing_ids": [
+            "187624277309"
+          ],
+          "observed_price_gbp": 70.0
+        },
+        {
+          "title": "REVIEW 81/100 - Kristine Potter 'Manifest' 2018 TBW Books - Signed First Edition",
+          "listing_ids": [
+            "407201224256"
+          ],
+          "observed_price_gbp": 83.9
+        },
+        {
+          "title": "REVIEW 78/100 - Humans of New York: Stories by Brandon Stanton  (Hardcover, 2015, VERY GOOD)",
+          "listing_ids": [
+            "318206400192"
+          ],
+          "observed_price_gbp": 8.65
+        },
+        {
+          "title": "REVIEW 78/100 - ATGET at Sceaux: Inventory before disappearance. Somogy, 2008. FRENCH. LIKE NEW",
+          "listing_ids": [
+            "157864218401"
+          ],
+          "observed_price_gbp": 29.99
+        },
+        {
+          "title": "REVIEW 78/100 - KEN DOMON ALL ABOUT JAPAN EXHIBITION PHOTO BOOK 1991 HIROSHIMA OLD TEMPLE Z22",
+          "listing_ids": [
+            "127540970702"
+          ],
+          "observed_price_gbp": 48.08
+        },
+        {
+          "title": "DISCOVERY 72/100 - The Spirit Of Football. Photographs By Sportsphoto. Hardback 1998",
+          "listing_ids": [
+            "157918497467"
+          ],
+          "observed_price_gbp": 4.79
+        },
+        {
+          "title": "DISCOVERY 72/100 - Trevor Sorbie by Jackie Wadeson (2003) – Hairdressing Photography Book, 1st Edit",
+          "listing_ids": [
+            "198318965271"
+          ],
+          "observed_price_gbp": 10.53
+        },
+        {
+          "title": "DISCOVERY 72/100 - Organic Gardening for the 21st Century by John Fedor, photos by Steven Wooster",
+          "listing_ids": [
+            "127882132268"
+          ],
+          "observed_price_gbp": 5.45
+        },
+        {
+          "title": "DISCOVERY 72/100 - Amélie les Bains-Palalda original photograph view of the Pujade garden circa 1880",
+          "listing_ids": [
+            "158290650251"
+          ],
+          "observed_price_gbp": 6.18
+        },
+        {
+          "title": "DISCOVERY 72/100 - Unseen Isle of Wight : Britain in Old Photographs by Jan Toms (2017, Trade...",
+          "listing_ids": [
+            "257253000576"
+          ],
+          "observed_price_gbp": 8.65
         }
       ]
     }

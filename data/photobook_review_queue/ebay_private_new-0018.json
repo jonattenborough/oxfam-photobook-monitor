@@ -1,89 +1,7 @@
 {
-  "checked_at": "2026-09-19T17:07:02Z",
+  "checked_at": "2026-09-19T20:22:46Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
-    {
-      "number": 754,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 2/7",
-      "created_at": "2026-09-05T20:42:04Z",
-      "updated_at": "2026-09-05T20:42:05Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/754",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 2.77,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - Essentially English (Large Hardcover) photographs by Patrick Ward in VG cond",
-          "listing_ids": [
-            "366464833834"
-          ],
-          "observed_price_gbp": 2.77
-        },
-        {
-          "title": "DISCOVERY 72/100 - Children's Bear Book Bundle x8 Picture Books Toddler Bedtime",
-          "listing_ids": [
-            "327343750472"
-          ],
-          "observed_price_gbp": 3.31
-        },
-        {
-          "title": "DISCOVERY 72/100 - Picture of Dorian Gray by Oscar Wilde (2003, Trade Paperback)",
-          "listing_ids": [
-            "800617911786"
-          ],
-          "observed_price_gbp": 3.31
-        },
-        {
-          "title": "DISCOVERY 72/100 - Complete Guide to Digital Photography Book",
-          "listing_ids": [
-            "127994067087"
-          ],
-          "observed_price_gbp": 3.31
-        },
-        {
-          "title": "DISCOVERY 72/100 - TOM TIT MOVES HOUSE 1962 Vintage CHILDRENS PICTURE STORY BOOK Molly Brett Medici",
-          "listing_ids": [
-            "257725885279"
-          ],
-          "observed_price_gbp": 4.38
-        },
-        {
-          "title": "DISCOVERY 72/100 - Muhammad Ali: A Portrait in Words and Photographs by Sheed, Wilfrid Hardback The",
-          "listing_ids": [
-            "128012563081"
-          ],
-          "observed_price_gbp": 4.06
-        },
-        {
-          "title": "DISCOVERY 72/100 - Photographic History of World War Two  Photographs by the Daily Mail",
-          "listing_ids": [
-            "147403627613"
-          ],
-          "observed_price_gbp": 4.38
-        },
-        {
-          "title": "DISCOVERY 72/100 - The Encyclopedia of Practical Photography by Michael Freeman - Hardcover",
-          "listing_ids": [
-            "318637693435"
-          ],
-          "observed_price_gbp": 4.91
-        },
-        {
-          "title": "DISCOVERY 72/100 - 100 Masters of Photography Book Paperback **EXCELLENT**",
-          "listing_ids": [
-            "278217927397"
-          ],
-          "observed_price_gbp": 5.0
-        },
-        {
-          "title": "DISCOVERY 72/100 - British Wildlife : A Photographic Guide to Every Common Species by Paul...",
-          "listing_ids": [
-            "147552707817"
-          ],
-          "observed_price_gbp": 4.99
-        }
-      ]
-    },
     {
       "number": 755,
       "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 3/7",
@@ -812,6 +730,67 @@
             "257634950635"
           ],
           "observed_price_gbp": 26.65
+        }
+      ]
+    },
+    {
+      "number": 766,
+      "title": "EBAY_PRIVATE_NEW: HOT 7 | top 75 | 5 under £100 | 1 special | 5 unknown | 5/5",
+      "created_at": "2026-09-05T22:21:59Z",
+      "updated_at": "2026-09-05T22:21:59Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/766",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 29.81,
+      "candidate_summaries": [
+        {
+          "title": "DISCOVERY 72/100 - Laurie Simmons Walking Talking Lying Aperture Photography Book Staged Dollhouse",
+          "listing_ids": [
+            "257636054948"
+          ],
+          "observed_price_gbp": 29.81
+        },
+        {
+          "title": "DISCOVERY 72/100 - Elliott Erwitt Snaps by Murray Sayle and Charles Flowers (2003, Trade Paperback)",
+          "listing_ids": [
+            "178200722021"
+          ],
+          "observed_price_gbp": 36.05
+        },
+        {
+          "title": "DISCOVERY 72/100 - Child Soldiers Leora Kahn powerHouse Books Hardback Photojournalism Moreno-Ocamp",
+          "listing_ids": [
+            "257634950652"
+          ],
+          "observed_price_gbp": 37.05
+        },
+        {
+          "title": "DISCOVERY 72/100 - Danielle Levitt We Are Experienced powerHouse Books Youth Photography Book",
+          "listing_ids": [
+            "257636054940"
+          ],
+          "observed_price_gbp": 37.05
+        },
+        {
+          "title": "DISCOVERY 72/100 - Edward Burtynsky: Extraction / Abstraction (2024) Hardcover 240pp Steidl",
+          "listing_ids": [
+            "227374692972"
+          ],
+          "observed_price_gbp": 42.3
+        },
+        {
+          "title": "REVIEW 75/100 - Stephen Gill Archaeology in Reverse Photobook Hackney Wick Art Book HC Rare",
+          "listing_ids": [
+            "820057309901"
+          ],
+          "observed_price_gbp": 121.39
+        },
+        {
+          "title": "REVIEW 75/100 - Todd Hido: House Hunting Signed 1st Edition With Signed Print / Photography Book",
+          "listing_ids": [
+            "227444026551"
+          ],
+          "observed_price_gbp": 399.4
         }
       ]
     }

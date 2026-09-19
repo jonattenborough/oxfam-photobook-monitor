@@ -1,94 +1,7 @@
 {
-  "checked_at": "2026-09-19T17:07:02Z",
+  "checked_at": "2026-09-19T20:22:46Z",
   "source": "CHARITY_NEW",
   "issues": [
-    {
-      "number": 1249,
-      "title": "CHARITY_NEW: 5 eBay seller photobook candidates",
-      "created_at": "2026-09-10T21:35:11Z",
-      "updated_at": "2026-09-10T21:35:11Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1249",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 5.0,
-      "candidate_summaries": [
-        {
-          "title": "Land - Maggie O'Farrell (1st Edition Illustrated Hardcover, 2026)",
-          "listing_ids": [
-            "800641261762"
-          ],
-          "observed_price_gbp": 9.99
-        },
-        {
-          "title": "MACKENZIE THORPE FROM THE HEART BOOK NEW CG I04",
-          "listing_ids": [
-            "800641034873"
-          ],
-          "observed_price_gbp": 9.99
-        },
-        {
-          "title": "STEPHEN KING- BILLY SUMMERS- UK 1st EDITION-COLLECTORS EDITION- CG A19",
-          "listing_ids": [
-            "377485518721"
-          ],
-          "observed_price_gbp": 5.0
-        },
-        {
-          "title": "Vintage Ladybird Book Collection Fairy Tales Well-Loved Puddle Lane Bundle",
-          "listing_ids": [
-            "188913799072"
-          ],
-          "observed_price_gbp": 20.99
-        },
-        {
-          "title": "Barnaby Rudge Charles Dickens Hardcover Classic Literature Fiction Preloved",
-          "listing_ids": [
-            "188913942578"
-          ],
-          "observed_price_gbp": 9.0
-        }
-      ]
-    },
-    {
-      "number": 1267,
-      "title": "CHARITY_NEW: 4 eBay seller photobook candidates",
-      "created_at": "2026-09-11T00:04:05Z",
-      "updated_at": "2026-09-11T00:04:05Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1267",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 9.99,
-      "candidate_summaries": [
-        {
-          "title": "The Warden by Anthony Trollope Illustrated 1949 Edition Hardcover",
-          "listing_ids": [
-            "820110110295"
-          ],
-          "observed_price_gbp": 10.0
-        },
-        {
-          "title": "Picasso Vida y Obra 2 Vol Set 1992 Taschen Gilt Edges Spanish Y205 C120",
-          "listing_ids": [
-            "278362447214"
-          ],
-          "observed_price_gbp": 19.95
-        },
-        {
-          "title": "The Encyclopedia of Science Fiction Movies Phil Hardy 1984 Hardcover Reference",
-          "listing_ids": [
-            "278361825086"
-          ],
-          "observed_price_gbp": 9.99
-        },
-        {
-          "title": "Horrible Science 20 Book Collection Box Set Kids Educational Gift Nick Arnold",
-          "listing_ids": [
-            "327351542560"
-          ],
-          "observed_price_gbp": 29.95
-        }
-      ]
-    },
     {
       "number": 1328,
       "title": "CHARITY_NEW: 1 eBay seller photobook candidate",
@@ -402,6 +315,65 @@
             "257742361872"
           ],
           "observed_price_gbp": 15.0
+        }
+      ]
+    },
+    {
+      "number": 1785,
+      "title": "CHARITY_NEW: 4 eBay seller photobook candidates",
+      "created_at": "2026-09-16T17:50:10Z",
+      "updated_at": "2026-09-16T17:50:10Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1785",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 8.99,
+      "candidate_summaries": [
+        {
+          "title": "The Story of Manchester by J.F.Wood, Illustrated, H/Back early 20th Century [HM]",
+          "listing_ids": [
+            "178502554761"
+          ],
+          "observed_price_gbp": 8.99
+        },
+        {
+          "title": "Kodak Make Color Work For You Guide To Creative Photography",
+          "listing_ids": [
+            "327360644067"
+          ],
+          "observed_price_gbp": 8.99
+        },
+        {
+          "title": "You Need To Exist: A book to love and destroy! by Yungblud, Paperback 2024 [HM]",
+          "listing_ids": [
+            "178502119471"
+          ],
+          "observed_price_gbp": 9.99
+        },
+        {
+          "title": "The Tales of the Trenthamshire Fairies by Leanne Shea, Hardback 2025 [HM]",
+          "listing_ids": [
+            "178502445975"
+          ],
+          "observed_price_gbp": 19.99
+        }
+      ]
+    },
+    {
+      "number": 1828,
+      "title": "CHARITY_NEW: 1 eBay seller photobook candidate",
+      "created_at": "2026-09-16T20:03:29Z",
+      "updated_at": "2026-09-16T20:03:29Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1828",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 40.0,
+      "candidate_summaries": [
+        {
+          "title": "Sid Smith In the Court of King Crimson by Sid Smith 2019 hardback Panegyric",
+          "listing_ids": [
+            "366672607754"
+          ],
+          "observed_price_gbp": 40.0
         }
       ]
     }

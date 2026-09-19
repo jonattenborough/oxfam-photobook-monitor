@@ -1,89 +1,7 @@
 {
-  "checked_at": "2026-09-19T17:07:02Z",
+  "checked_at": "2026-09-19T20:22:46Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
-    {
-      "number": 1813,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 1 changed | 10 unknown | 5/15",
-      "created_at": "2026-09-16T19:28:35Z",
-      "updated_at": "2026-09-16T19:28:35Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1813",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 8.66,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - Village in the Carpaths - Impressions of Romania, photo-book  by Manfred Writz",
-          "listing_ids": [
-            "307101312408"
-          ],
-          "observed_price_gbp": 8.66
-        },
-        {
-          "title": "CHANGED 72/100 - Ricochet: David Bowie 1983 Tour Hardcover Photobook by Denis O'Regan",
-          "listing_ids": [
-            "178406247650"
-          ],
-          "observed_price_gbp": 9.19
-        },
-        {
-          "title": "DISCOVERY 72/100 - Capturing the Light: The Birth of Photography by Roger Watson, Helen Rappaport",
-          "listing_ids": [
-            "283465885444"
-          ],
-          "observed_price_gbp": 9.73
-        },
-        {
-          "title": "DISCOVERY 72/100 - Britain An Aerial View Sally Strugnell Hardcover Coffee Table Photo Book 1992",
-          "listing_ids": [
-            "398249298057"
-          ],
-          "observed_price_gbp": 10.79
-        },
-        {
-          "title": "DISCOVERY 72/100 - The Book Of Calendar Girl Photography by Roger Hicks. Magna Books. 1992 A4 size",
-          "listing_ids": [
-            "307182705860"
-          ],
-          "observed_price_gbp": 10.69
-        },
-        {
-          "title": "DISCOVERY 72/100 - Boring Postcards -  USA -  Hardback Book. Phaidon",
-          "listing_ids": [
-            "800469631586"
-          ],
-          "observed_price_gbp": 10.75
-        },
-        {
-          "title": "DISCOVERY 72/100 - Montagne Photography Book. Francoise Guichon",
-          "listing_ids": [
-            "164987945321"
-          ],
-          "observed_price_gbp": 10.8
-        },
-        {
-          "title": "DISCOVERY 72/100 - The Rolling Stones: Unseen Archives by Susan Hill by Parragon (Hardback)",
-          "listing_ids": [
-            "267755195129"
-          ],
-          "observed_price_gbp": 10.8
-        },
-        {
-          "title": "DISCOVERY 72/100 - Ceska Republika Miroslav Krob Kvarta Praha Photo Book Prague Castle Hardback",
-          "listing_ids": [
-            "398248638469"
-          ],
-          "observed_price_gbp": 10.8
-        },
-        {
-          "title": "DISCOVERY 72/100 - 100 Cotswolds Interior Design Photography Book: Timeless Charm from countryside",
-          "listing_ids": [
-            "206477759557"
-          ],
-          "observed_price_gbp": 11.86
-        }
-      ]
-    },
     {
       "number": 1962,
       "title": "EBAY_PRIVATE_NEW: HOT 10 | top 82 | 10 under £100 | 9 special | 2/25",
@@ -819,6 +737,88 @@
             "127808515805"
           ],
           "observed_price_gbp": 14.01
+        }
+      ]
+    },
+    {
+      "number": 1976,
+      "title": "EBAY_PRIVATE_NEW: REVIEW 10 | top 82 | 10 under £100 | 16/25",
+      "created_at": "2026-09-17T13:16:43Z",
+      "updated_at": "2026-09-17T13:16:43Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1976",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 19.31,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 82/100 - Revenge of the Horseclans by Robert Adams - Signet - Paperback - 1982",
+          "listing_ids": [
+            "176406205157"
+          ],
+          "observed_price_gbp": 20.4
+        },
+        {
+          "title": "REVIEW 82/100 - The Coming of the Horseclans by Robert Adams - 1982 - Paperback - Signet",
+          "listing_ids": [
+            "176406232892"
+          ],
+          "observed_price_gbp": 21.47
+        },
+        {
+          "title": "REVIEW 82/100 - The Death of A Legend by Robert Adams - Paperback - Signet - 1981 - See Photos",
+          "listing_ids": [
+            "176406198411"
+          ],
+          "observed_price_gbp": 21.47
+        },
+        {
+          "title": "REVIEW 82/100 - The Secret Book of John, Davies, Stevan L.",
+          "listing_ids": [
+            "226924824780"
+          ],
+          "observed_price_gbp": 19.31
+        },
+        {
+          "title": "REVIEW 82/100 - JOHN DAVIES, exhibition catalogue, Marlborough Gallery, London, 2004",
+          "listing_ids": [
+            "156237459838"
+          ],
+          "observed_price_gbp": 19.35
+        },
+        {
+          "title": "REVIEW 82/100 - Like A Thief's Dream by Danny Lyon (Hardcover, 2007)",
+          "listing_ids": [
+            "284634807393"
+          ],
+          "observed_price_gbp": 21.5
+        },
+        {
+          "title": "REVIEW 82/100 - Ireland under Elizabeth and James I HB Edmund Spenser, Sir John Davies & Fynes M",
+          "listing_ids": [
+            "404180284319"
+          ],
+          "observed_price_gbp": 25.0
+        },
+        {
+          "title": "REVIEW 82/100 - David Prentice, William Selby, Sandy Murphy etc- 2008 ex catalogue",
+          "listing_ids": [
+            "306025262782"
+          ],
+          "observed_price_gbp": 26.18
+        },
+        {
+          "title": "REVIEW 82/100 - The Horseclans Book Set Lot Bundle | Robert Adams - Revenge Of The Horseclans",
+          "listing_ids": [
+            "800508678242"
+          ],
+          "observed_price_gbp": 23.58
+        },
+        {
+          "title": "REVIEW 82/100 - DAVID PRENTICE ARTIST PAINTER CITY PERSPECTIVE LONDON EXHIBITION CATALOGUE 2008",
+          "listing_ids": [
+            "144407213615"
+          ],
+          "observed_price_gbp": 24.99
         }
       ]
     }
