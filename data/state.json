@@ -1,7 +1,11 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-19T13:02:56Z",
+  "last_successful_fetch": "2026-09-19T16:22:23Z",
   "last_top_skus": [
+    "HD_304263351",
+    "HD_304263036",
+    "HD_304262876",
+    "HD_304262872",
     "HD_304262458",
     "HD_304248209",
     "HD_304248484",
@@ -27,11 +31,7 @@
     "HD_304249442",
     "HD_304259365",
     "HD_304221268",
-    "HD_304258889",
-    "HD_304258433",
-    "HD_304258601",
-    "HD_304258316",
-    "HD_304251022"
+    "HD_304258889"
   ],
   "products": {
     "HD_303805354": {
@@ -8522,8 +8522,72 @@
         "title": "Portrait of Britain"
       },
       "search_fingerprint": "2e56da18c9d8189f"
+    },
+    "HD_304262872": {
+      "first_seen": "2026-09-19T16:22:23Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789820421000",
+        "description": "Large linen-covered hardback. Cover has some discolouration and a little wear. The black and white photos offer a wide selection of extremely artistic interpretations from photographers across the world.",
+        "isbn": null,
+        "price_gbp": 11.99,
+        "product_id": "book-HD__304262872",
+        "publisher": null,
+        "route": "/photograms-of-the-year-1949/product/HD_304262872",
+        "sku": "HD_304262872",
+        "title": "Photograms of the Year 1949"
+      },
+      "search_fingerprint": "9d363f28b9d671a1"
+    },
+    "HD_304262876": {
+      "first_seen": "2026-09-19T16:22:23Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789820476000",
+        "description": "A collection of exceptional photographs that aim to capture the incredible vitality and spectacular variety of life in the world's greatest city as viewed from above.<br/>Crease to first text page, minor shelf wear to head of spine.  Very good decorative slip case. <br/>",
+        "isbn": null,
+        "price_gbp": 9.99,
+        "product_id": "book-HD__304262876",
+        "publisher": null,
+        "route": "/new-york-vertigo/product/HD_304262876",
+        "sku": "HD_304262876",
+        "title": "New York vertigo"
+      },
+      "search_fingerprint": "d0520e7d171a11a1"
+    },
+    "HD_304263036": {
+      "first_seen": "2026-09-19T16:22:23Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789822296000",
+        "description": "Published by Blackberry (Research in Motion), 2007. Oversize softback. First Edition. Privately printed and never released for sale to the public. 20 full page portraits. 60 pages. Some very minor edge wear, otherwise very good condition throughout. A rare find!",
+        "isbn": null,
+        "price_gbp": 24.99,
+        "product_id": "book-HD__304263036",
+        "publisher": null,
+        "route": "/modern-muses-by-bryan-adams/product/HD_304263036",
+        "sku": "HD_304263036",
+        "title": "Modern Muses by Bryan Adams"
+      },
+      "search_fingerprint": "72fdcfdf5fbfbfd7"
+    },
+    "HD_304263351": {
+      "first_seen": "2026-09-19T16:22:23Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789827063000",
+        "description": "“Local fairs and carnivals have a long history in America. Even as we lose our connection to our agricultural past, there is something timeless about gathering at the fair.” - Anthony Blasko.<br/><br/>Since 2013 the American artist Anthony Blasko has been attending The Plant City Strawberry Festival, an 11-day community event celebrating the annual strawberry harvest in Florida, USA. Blasko’s beautifully rich images are produced at dusk, when the light starts to drop and the fair lights come on, bathing the attractions, vendors, and visitors, in the late afternoon light.<br/><br/>Slight bumps to edges.",
+        "isbn": null,
+        "price_gbp": 24.99,
+        "product_id": "book-HD__304263351",
+        "publisher": null,
+        "route": "/anthony-blasko-florida-strawberries/product/HD_304263351",
+        "sku": "HD_304263351",
+        "title": "Anthony Blasko - Florida Strawberries"
+      },
+      "search_fingerprint": "fccda24f30e37eb6"
     }
   },
-  "reported_category_count": 2875,
+  "reported_category_count": 2880,
   "version": 1
 }
