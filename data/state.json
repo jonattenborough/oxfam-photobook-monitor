@@ -1,7 +1,10 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-19T09:01:50Z",
+  "last_successful_fetch": "2026-09-19T13:02:56Z",
   "last_top_skus": [
+    "HD_304262458",
+    "HD_304248209",
+    "HD_304248484",
     "HD_304262109",
     "HD_304262068",
     "HD_304261763",
@@ -28,10 +31,7 @@
     "HD_304258433",
     "HD_304258601",
     "HD_304258316",
-    "HD_304251022",
-    "HD_304257492",
-    "HD_304255520",
-    "HD_304257157"
+    "HD_304251022"
   ],
   "products": {
     "HD_303805354": {
@@ -7385,6 +7385,22 @@
       },
       "search_fingerprint": "f1be1e9b65b7eb2b"
     },
+    "HD_304248209": {
+      "first_seen": "2026-09-19T13:02:56Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789806241000",
+        "description": "Photographic book of British landscape which is threatened by commercial and military exploitation. This adds a political aspect to this work in the Introduction and text captions for the photographs.<br/>Paperback book with black and white photographs. Soft covers are curled at upper right hand corner and are edge worn. Page edges have yellowed. Upper right hand corner of half title page has been clipped off. Text pages are in good clean condition.",
+        "isbn": null,
+        "price_gbp": 14.99,
+        "product_id": "book-HD__304248209",
+        "publisher": null,
+        "route": "/our-forbidden-land/product/HD_304248209",
+        "sku": "HD_304248209",
+        "title": "Our Forbidden Land"
+      },
+      "search_fingerprint": "31e82e816653ce3f"
+    },
     "HD_304248321": {
       "first_seen": "2026-09-15T10:18:00Z",
       "last_snapshot": {
@@ -7432,6 +7448,22 @@
         "title": "Private Houses of Paris"
       },
       "search_fingerprint": "6d379e8121b9b557"
+    },
+    "HD_304248484": {
+      "first_seen": "2026-09-19T13:02:56Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789806001000",
+        "description": "In the midst of the largely non violent Civil Rights movement sweeping through America, Huey P. Newton and Bobby Seale founded the legendary Black Panther Party, in 1966, in Oakland, California. The Party, revered by some and vilified by others, burst onto the scene with a militant vision that embraced violent tactics to advance its revolutionary agenda for social change and the empowerment of African Americans. Its methods were highly controversial and polarizing, so much so that in 1968, FBI head J. Edgar Hoover described the organisation as the country's greatest threat to internal security. During the height of the movement, from 1967 to 1972, photographer Stephen Shames had unprecedented access to the organisation and captured not only its public face - street demonstrations, protests, and militant armed posturing - but also unscripted behind-the-scenes moments, from private Party meetings held in its headquarters to Bobby Seale at work on his mayoral campaign in Oakland. Shames' prolific output has produced the largest archive of Panther images in the world. His remarkable insider status enabled him to create an uncommonly nuanced portrait of this dynamic social movement, during one of the most tumultuous periods in U.S. history. Released on the occasion of the Party's fortieth anniversary, this illuminating publication gathers an astonishing collection of never before published photographs, conveying an electrifying visual history. With a selection of interviews with both central figures and rank and file Party members, conducted by former Panther William Jennings, and iconic illustrations from Panther newspapers, posters, and other ephemera, this groundbreaking book conveys the ethos of both the Panthers and a dynamic period of social upheaval. <br/>Hardback book, illustrated with black and white full page and double spread photos. Hard covers have some marks from shelf wear. Glossy text pages are in very good condition.",
+        "isbn": null,
+        "price_gbp": 50.0,
+        "product_id": "book-HD__304248484",
+        "publisher": null,
+        "route": "/the-black-panthers-photographs-by-stephen-shames/product/HD_304248484",
+        "sku": "HD_304248484",
+        "title": "The Black Panthers - Photographs by Stephen Shames"
+      },
+      "search_fingerprint": "80ac7315736e827e"
     },
     "HD_304248627": {
       "first_seen": "2026-09-15T15:04:24Z",
@@ -8474,8 +8506,24 @@
         "title": "Mary Ellen Mark on the Portrait and the Moment"
       },
       "search_fingerprint": "41e0bbba44a24b57"
+    },
+    "HD_304262458": {
+      "first_seen": "2026-09-19T13:02:56Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789814941000",
+        "description": "Now in its third year, Portrait of Britain is an annual photography exhibition showcasing 100 of the best portraits taken by people throughout the country. The exhibition will re-launch in September 2018 but for the first time with a book, Portrait of Britain, published by Hoxton Mini Press in collaboration with the BJP. It will feature 200 photographs, including those from the exhibition, alongside information about each image. These images celebrate the diversity, culture and identity of Britain today.<br/><br/>(Personal inscription on Half Title Page.)",
+        "isbn": null,
+        "price_gbp": 19.99,
+        "product_id": "book-HD__304262458",
+        "publisher": null,
+        "route": "/portrait-of-britain/product/HD_304262458",
+        "sku": "HD_304262458",
+        "title": "Portrait of Britain"
+      },
+      "search_fingerprint": "2e56da18c9d8189f"
     }
   },
-  "reported_category_count": 2881,
+  "reported_category_count": 2875,
   "version": 1
 }
