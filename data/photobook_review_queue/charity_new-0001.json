@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-18T21:33:29Z",
+  "checked_at": "2026-09-19T00:03:24Z",
   "source": "CHARITY_NEW",
   "issues": [
     {
@@ -198,67 +198,6 @@
       ]
     },
     {
-      "number": 1019,
-      "title": "CHARITY_NEW: 7 eBay seller photobook candidates",
-      "created_at": "2026-09-08T21:48:22Z",
-      "updated_at": "2026-09-08T21:48:22Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1019",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 5.99,
-      "candidate_summaries": [
-        {
-          "title": "Silver Seas A Retrospective Ernest Brooks 2002 Signed Inscribed Photo Art DJ SC",
-          "listing_ids": [
-            "278354556404"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "Sidewalks on the Moon Nader Khalili SIGNED 1994 1st Ed Trade Paperback CalEarth",
-          "listing_ids": [
-            "287572645842"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "Cecilia Beaux American Figure Painter Signed Sylvia Yount 2007 Hardcover Art SC",
-          "listing_ids": [
-            "287572645855"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "Poland - Adam Bujak, 2001 1st Edition Large Format Hardback",
-          "listing_ids": [
-            "800630096709"
-          ],
-          "observed_price_gbp": 10.38
-        },
-        {
-          "title": "Vienna: 109 Colour Photographs text in English (Illustrated Paperback, 2000)",
-          "listing_ids": [
-            "800630096716"
-          ],
-          "observed_price_gbp": 5.99
-        },
-        {
-          "title": "TASCHEN A4 SIZE MONET A FEAST FOR THE EYES BOOK CG I04",
-          "listing_ids": [
-            "800630353866"
-          ],
-          "observed_price_gbp": 9.99
-        },
-        {
-          "title": "'We Are Congo' ~ Rankin/Oxfam photography book ~ hardback ~ mint condition",
-          "listing_ids": [
-            "257731203471"
-          ],
-          "observed_price_gbp": 20.0
-        }
-      ]
-    },
-    {
       "number": 1031,
       "title": "CHARITY_NEW: 3 eBay seller photobook candidates",
       "created_at": "2026-09-09T00:07:52Z",
@@ -288,6 +227,53 @@
             "227511891033"
           ],
           "observed_price_gbp": 35.0
+        }
+      ]
+    },
+    {
+      "number": 1076,
+      "title": "CHARITY_NEW: 5 eBay seller photobook candidates",
+      "created_at": "2026-09-09T14:29:54Z",
+      "updated_at": "2026-09-09T14:29:54Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1076",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 7.0,
+      "candidate_summaries": [
+        {
+          "title": "The Family Circus- Watch Out For Children, 1960-1961. By Bil Keane, Hrdb, VG",
+          "listing_ids": [
+            "318845413983"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "Behind the Photograph Charlie Waite SIGNED 1st Edition Hardcover Photography",
+          "listing_ids": [
+            "278357350159"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "Ebb and Flow TJ Thorne SIGNED Photo Monograph Art Book Very Good Ltd Ed 1000",
+          "listing_ids": [
+            "278357153317"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "Rhythm of Nature by Sandra Bartocha - Signed Fine Art Photography Monograph",
+          "listing_ids": [
+            "287573961948"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "Charlie Mackesy The Boy, the Mole, the Fox and the Horse Penguin Hardcover",
+          "listing_ids": [
+            "158274996722"
+          ],
+          "observed_price_gbp": 7.0
         }
       ]
     }

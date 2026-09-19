@@ -1,54 +1,7 @@
 {
-  "checked_at": "2026-09-18T21:33:29Z",
+  "checked_at": "2026-09-19T00:03:24Z",
   "source": "CHARITY_NEW",
   "issues": [
-    {
-      "number": 1076,
-      "title": "CHARITY_NEW: 5 eBay seller photobook candidates",
-      "created_at": "2026-09-09T14:29:54Z",
-      "updated_at": "2026-09-09T14:29:54Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1076",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 7.0,
-      "candidate_summaries": [
-        {
-          "title": "The Family Circus- Watch Out For Children, 1960-1961. By Bil Keane, Hrdb, VG",
-          "listing_ids": [
-            "318845413983"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "Behind the Photograph Charlie Waite SIGNED 1st Edition Hardcover Photography",
-          "listing_ids": [
-            "278357350159"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "Ebb and Flow TJ Thorne SIGNED Photo Monograph Art Book Very Good Ltd Ed 1000",
-          "listing_ids": [
-            "278357153317"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "Rhythm of Nature by Sandra Bartocha - Signed Fine Art Photography Monograph",
-          "listing_ids": [
-            "287573961948"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "Charlie Mackesy The Boy, the Mole, the Fox and the Horse Penguin Hardcover",
-          "listing_ids": [
-            "158274996722"
-          ],
-          "observed_price_gbp": 7.0
-        }
-      ]
-    },
     {
       "number": 1104,
       "title": "CHARITY_NEW: 3 eBay seller photobook candidates",
@@ -640,6 +593,25 @@
             "366660701595"
           ],
           "observed_price_gbp": 8.0
+        }
+      ]
+    },
+    {
+      "number": 1328,
+      "title": "CHARITY_NEW: 1 eBay seller photobook candidate",
+      "created_at": "2026-09-11T14:21:51Z",
+      "updated_at": "2026-09-11T14:21:51Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1328",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 23.0,
+      "candidate_summaries": [
+        {
+          "title": "Joe Lycett's Art Hole by Joe Lycett SIGNED 2024 UK 1st edition",
+          "listing_ids": [
+            "158280443715"
+          ],
+          "observed_price_gbp": 23.0
         }
       ]
     }

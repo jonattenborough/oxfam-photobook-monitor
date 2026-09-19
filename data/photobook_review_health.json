@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-18T21:33:29Z",
+  "checked_at": "2026-09-19T00:03:24Z",
   "status": "ATTENTION",
   "index_scan_complete": true,
-  "successful_discovery_at": "2026-09-18T21:10:35Z",
-  "discovery_age_minutes": 22.9,
-  "last_completed_review_at": "2026-09-18T21:05:42Z",
-  "completed_review_age_minutes": 27.8,
+  "successful_discovery_at": "2026-09-18T23:17:47Z",
+  "discovery_age_minutes": 45.6,
+  "last_completed_review_at": "2026-09-18T23:46:27Z",
+  "completed_review_age_minutes": 17.0,
   "unreviewed_issues_by_source": {
     "ENDGAME_4H": 0,
     "ENDGAME_EARLY": 34,
-    "EBAY_PRIVATE_NEW": 995,
-    "CHARITY_NEW": 52
+    "EBAY_PRIVATE_NEW": 990,
+    "CHARITY_NEW": 51
   },
   "completed_but_open": [
     376,
@@ -72,18 +72,18 @@
   ],
   "unreviewed_elapsed_deadline_issue_numbers": [],
   "unreviewed_next_four_hours_issue_numbers": [],
-  "unfinished_endgame_windows": 53,
+  "unfinished_endgame_windows": 52,
   "warnings": [
     "Fixed-price review backlog exceeds two nominal six-issue runs",
     "eBay and Endgame Review: no matching START/FINISH receipt has been recorded",
-    "eBay Fixed Price Review: START has no matching FINISH after 759.8 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 638.7 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 627.4 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 456.7 minutes"
+    "eBay Fixed Price Review: START has no matching FINISH after 909.7 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 788.7 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 777.3 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 606.6 minutes"
   ],
   "limitations": "Issue index only; not live eBay availability, edition proof, or full search coverage.",
   "reviewer_run_receipt_status": "ATTENTION",
-  "latest_verified_reviewer_run_at": "2026-09-18T21:06:09.520010Z",
+  "latest_verified_reviewer_run_at": "2026-09-18T23:46:41.528163Z",
   "auction_search_routes": {
     "never_searched": 0,
     "never_searched_by_tier": {
@@ -91,7 +91,7 @@
       "2": 0,
       "3": 0
     },
-    "due": 474,
-    "unfinished_windows": 53
+    "due": 326,
+    "unfinished_windows": 52
   }
 }
