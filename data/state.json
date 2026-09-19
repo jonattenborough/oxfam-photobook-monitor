@@ -1,7 +1,8 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-19T18:39:37Z",
+  "last_successful_fetch": "2026-09-19T20:59:52Z",
   "last_top_skus": [
+    "HD_304262036",
     "HD_304263604",
     "HD_304263504",
     "HD_304263351",
@@ -30,8 +31,7 @@
     "HD_304256902",
     "HD_304249442",
     "HD_304259365",
-    "HD_304221268",
-    "HD_304258889"
+    "HD_304221268"
   ],
   "products": {
     "HD_303805354": {
@@ -8475,6 +8475,22 @@
       },
       "search_fingerprint": "81e9cf446469cf0b"
     },
+    "HD_304262036": {
+      "first_seen": "2026-09-19T20:59:52Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1789842781000",
+        "description": "American Geography is the visual record of Magnum photographer Matt Black’s five-year, 100,000-mile road trip across 46 states of the United States, plus Puerto Rico. It examines the conditions of powerlessness, prejudice and pragmatism among America’s poor.<br/><br/>The project originated in Matt Black’s exploration of his own home town in California’s rural Central Valley – a place that has been called ‘the other California’ – where one third of the population lives in poverty. Travelling out from that location in 2015, he went on to visit designated ‘poverty areas’ – places with poverty rates of above 20% as defined by the US census. He found that, rather than being anomalies, ‘poverty areas’ are never more than two-hour’s drive apart. They are woven throughout the fabric of the country, yet are cut off from the ‘land of opportunity’.<br/><br/>Matt Black’s compelling black and white photographs, from which one can trace a line back to the FSA Photographers of the 1930s and 1940s such as Walker Evans and Dorothea Lange, are accompanied by his own travelogue – an eclectic combination of observations, overheard conversations in cafés and city buses, diner menus, bus timetables, historical facts and echoes from daily news reports – which enrich the vivid portrait of these ‘states of un-America.’<br/><br/>With 100 illustrations in colour.<br/><br/>Condition: Good, some scuff marks on the cover and spine pushed slightly forward (see photos).",
+        "isbn": null,
+        "price_gbp": 25.0,
+        "product_id": "book-HD__304262036",
+        "publisher": null,
+        "route": "/american-geography-a-reckoning-with-a-dream/product/HD_304262036",
+        "sku": "HD_304262036",
+        "title": "American Geography: A Reckoning with a Dream"
+      },
+      "search_fingerprint": "e6045922bb425278"
+    },
     "HD_304262068": {
       "first_seen": "2026-09-19T09:01:50Z",
       "last_snapshot": {
@@ -8620,6 +8636,6 @@
       "search_fingerprint": "b1213ea07a22a9a3"
     }
   },
-  "reported_category_count": 2878,
+  "reported_category_count": 2876,
   "version": 1
 }
