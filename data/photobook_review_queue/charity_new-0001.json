@@ -1,40 +1,7 @@
 {
-  "checked_at": "2026-09-20T14:40:34Z",
+  "checked_at": "2026-09-20T18:10:02Z",
   "source": "CHARITY_NEW",
   "issues": [
-    {
-      "number": 1031,
-      "title": "CHARITY_NEW: 3 eBay seller photobook candidates",
-      "created_at": "2026-09-09T00:07:52Z",
-      "updated_at": "2026-09-09T00:07:52Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1031",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 8.95,
-      "candidate_summaries": [
-        {
-          "title": "Parentalk The Primary Years DVD Course Pack Care For The Family  *New*C101 Wh182",
-          "listing_ids": [
-            "206543923166"
-          ],
-          "observed_price_gbp": 8.95
-        },
-        {
-          "title": "J.R.R. Tolkien The Lord Of The Rings 7 Volume Boxed Set Slipcase P/B  C101 Wh180",
-          "listing_ids": [
-            "278355752413"
-          ],
-          "observed_price_gbp": 12.0
-        },
-        {
-          "title": "The Party by Tessa Hadley (Signed, Hardback, 2024)",
-          "listing_ids": [
-            "227511891033"
-          ],
-          "observed_price_gbp": 35.0
-        }
-      ]
-    },
     {
       "number": 1160,
       "title": "CHARITY_NEW: 10 eBay seller photobook candidates",
@@ -435,44 +402,6 @@
       ]
     },
     {
-      "number": 1380,
-      "title": "CHARITY_NEW: 3 eBay seller photobook candidates",
-      "created_at": "2026-09-12T00:12:25Z",
-      "updated_at": "2026-09-12T00:12:25Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1380",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 10.0,
-      "candidate_summaries": [
-        {
-          "title": "Everything Under the Sun by Molly Oldfield Hardback Children's Fact Book Used",
-          "listing_ids": [
-            "178488233215"
-          ],
-          "observed_price_gbp": 10.0
-        },
-        {
-          "title": "Wildflowers Across America HC Lady Bird Johnson and Carlton Lees 1988 Signed Ed",
-          "listing_ids": [
-            "278365624625"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "Dirr's Encyclopedia of Trees and Shrubs by Michael A. Dirr (2011, Hardcover) VG",
-          "listing_ids": [
-            "318857936491"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "Seller warnings",
-          "listing_ids": [],
-          "observed_price_gbp": null
-        }
-      ]
-    },
-    {
       "number": 1507,
       "title": "CHARITY_NEW: 1 eBay seller photobook candidate",
       "created_at": "2026-09-13T11:42:21Z",
@@ -507,6 +436,56 @@
             "366666740739"
           ],
           "observed_price_gbp": 9.5
+        }
+      ]
+    },
+    {
+      "number": 1572,
+      "title": "CHARITY_NEW: 2 eBay seller photobook candidates",
+      "created_at": "2026-09-13T22:22:39Z",
+      "updated_at": "2026-09-13T22:22:39Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1572",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 20.0,
+      "candidate_summaries": [
+        {
+          "title": "Roald Dahl The Roald Dahl Treasury Hardcover First Edition Book",
+          "listing_ids": [
+            "318855995194"
+          ],
+          "observed_price_gbp": 50.0
+        },
+        {
+          "title": "Augustus John by John Rothenstein Phaidon Press Vintage Art Book",
+          "listing_ids": [
+            "398383625209"
+          ],
+          "observed_price_gbp": 20.0
+        },
+        {
+          "title": "Seller warnings",
+          "listing_ids": [],
+          "observed_price_gbp": null
+        }
+      ]
+    },
+    {
+      "number": 1643,
+      "title": "CHARITY_NEW: 1 eBay seller photobook candidate",
+      "created_at": "2026-09-14T23:05:51Z",
+      "updated_at": "2026-09-14T23:05:51Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1643",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 25.0,
+      "candidate_summaries": [
+        {
+          "title": "'The Hobbit Companion' ~ by David Day ~ 3rd Print of First Edition ~ 1997",
+          "listing_ids": [
+            "257742385424"
+          ],
+          "observed_price_gbp": 25.0
         }
       ]
     }
