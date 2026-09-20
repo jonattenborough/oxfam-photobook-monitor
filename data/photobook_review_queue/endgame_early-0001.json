@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-20T00:54:08Z",
+  "checked_at": "2026-09-20T05:56:29Z",
   "source": "ENDGAME_EARLY",
   "issues": [
     {
@@ -185,6 +185,88 @@
             "158280877579"
           ],
           "observed_price_gbp": 1.2
+        }
+      ]
+    },
+    {
+      "number": 2412,
+      "title": "ENDGAME_EARLY: 9 collectible photobook auctions ending soon",
+      "created_at": "2026-09-20T01:29:22Z",
+      "updated_at": "2026-09-20T01:29:22Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2412",
+      "earliest_end_at": "2026-09-20T18:19:40Z",
+      "all_end_times": [
+        "2026-09-20T18:19:40Z",
+        "2026-09-21T23:30:10Z",
+        "2026-09-22T00:01:05Z",
+        "2026-09-22T00:28:38Z",
+        "2026-09-22T01:00:16Z",
+        "2026-09-22T01:00:30Z"
+      ],
+      "lowest_observed_gbp": null,
+      "candidate_summaries": [
+        {
+          "title": "[STAUB 10 CM WEISSER TRÜFFEL +26 CM GUSSEISEN COCOTTE MIT DAMPFGARER SCHWARZ, GRÜNER BODEN](https://www.ebay.de/itm/307187737018?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=item4785d0e1ba:g:CPwAAeSw459qaxh2)",
+          "listing_ids": [
+            "307187737018"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[STAUB UNIKAT 2 STÜCK: DRAGON FRENCH OVEN + SCHWARZE COCOTTE, DAMPFGARER GRÜNER BODEN](https://www.ebay.de/itm/307187737019?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=item4785d0e1bb:g:VVgAAeSwfE5qcirI)",
+          "listing_ids": [
+            "307187737019"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[KOSTENLOSER VERSAND: STAUB 26 CM GUSSEISEN COCOTTE MIT DAMPFGARER, SCHWARZ, GRÜNER BODEN](https://www.ebay.de/itm/307187737020?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=item4785d0e1bc:g:zYsAAeSw7EhqXJBy)",
+          "listing_ids": [
+            "307187737020"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[STAUB UNIKAT 2 STÜCK: 26 CM HIRSCH FRANZÖSISCHER OFEN + SCHWARZE COCOTTE, DAMPFGARER GRÜNER BODEN](https://www.ebay.de/itm/307187737035?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=item4785d0e1cb:g:Ue0AAeSw6PpqcigY)",
+          "listing_ids": [
+            "307187737035"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[Between Past and Future: New German Photography (Aperture Periodical No 123)](https://www.ebay.com/itm/198635228739?_skw=photography+books+collection&hash=item2e3f950e43:g:~cUAAeSwG2hqSEOk)",
+          "listing_ids": [
+            "198635228739"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[Nobuyoshi Araki Tokyo Lucky Hole Taschen Bibliotheca Universalis 2021 HC Art](https://www.ebay.com/itm/168689356012?_skw=photography+book&hash=item2746ab4cec:g:riwAAeSwHYBqqIox)",
+          "listing_ids": [
+            "168689356012"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[Lotto 11 carte Topps Archives Mini 2019 nuove](https://www.ebay.it/itm/128080046825?_skw=%28Paul+Seawright%2CDonovan+Wylie%2CTom+Hunter%2CAnna+Fox%2CPaul+Reas%2CDaniel+Meadows%2CChris+Shaw%29&hash=item1dd22a6ae9:g:9o8AAeSw4C1qjNrh)",
+          "listing_ids": [
+            "128080046825"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[8x10 Press Photo Guy Christopher Reeve Paul Reiser Lifetime Special ESQUIRE](https://www.ebay.com/itm/377495861592?_skw=%28Andy+Sewell%2CGuy+Martin%2CLewis+Bush%2CNicholas+J.+R.+White%2CNicholas+JR+White%2CNicholas+White%29&hash=item57e481b958:g:EVEAAOSwgydkd65R)",
+          "listing_ids": [
+            "377495861592"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[Beat Scene 47 -- Bukowski, Kerouac, Charlie Parker, Al Hinkle, Gary Snyder](https://www.ebay.pl/itm/287586988703?_skw=%28Simon+Wheatley%2COlivia+Arthur%2CChloe+Dewe+Mathews%2CJack+Latham%2CRobbie+Lawrence%2CRobert+Frank%29&hash=item42f585329f:g:liAAAeSwhPJqkbzn)",
+          "listing_ids": [
+            "287586988703"
+          ],
+          "observed_price_gbp": null
         }
       ]
     },
@@ -829,99 +911,6 @@
           "title": "[CND Logo Flyer Retro Campaign for Nuclear Disarmament Bombs Cold War USA Russia](https://www.ebay.com.hk/itm/318857476480?_skw=Bill+Brandt+A+Night+in+London&hash=item4a3d62f980:g:V5gAAeSw-7ho~7oZ)",
           "listing_ids": [
             "318857476480"
-          ],
-          "observed_price_gbp": null
-        }
-      ]
-    },
-    {
-      "number": 2222,
-      "title": "ENDGAME_EARLY: 10 collectible photobook auctions ending soon",
-      "created_at": "2026-09-18T21:15:40Z",
-      "updated_at": "2026-09-18T21:15:40Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2222",
-      "earliest_end_at": "2026-09-20T20:49:29Z",
-      "all_end_times": [
-        "2026-09-20T20:49:29Z",
-        "2026-09-20T20:50:00Z",
-        "2026-09-20T20:52:00Z",
-        "2026-09-20T20:52:29Z",
-        "2026-09-20T20:53:20Z",
-        "2026-09-20T20:53:37Z",
-        "2026-09-20T20:53:57Z",
-        "2026-09-20T20:54:46Z",
-        "2026-09-20T20:55:00Z",
-        "2026-09-20T20:56:00Z"
-      ],
-      "lowest_observed_gbp": 6.51,
-      "candidate_summaries": [
-        {
-          "title": "[WILLIAM EGGLESTON [Very Rare]: ELVIS AT GRACELAND 1st Edition 1983 Cypress Press](https://www.ebay.de/itm/336792512244?_skw=%28Walker+Evans%2CDiane+Arbus%2CBruce+Davidson%2CWilliam+Eggleston%2CStephen+Shore%2CChris+Killip%29&hash=item4e6a65e6f4:g:qBMAAeSwiRFqOBXq)",
-          "listing_ids": [
-            "336792512244"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "[Silver Queen Elizabeth II Mother Crown Coin Royal Mint Family Spare 1980 Old UK](https://www.ebay.com.sg/itm/267782587403?_skw=Bill+Brandt+A+Night+in+London&hash=item3e5916040b:g:-CoAAOSw4VJj9UXq)",
-          "listing_ids": [
-            "267782587403"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "[World Cup 2026 Gold Silver Colour Coin Messi Ronaldo Autographs FIFA Flags Medal](https://www.ebay.com.sg/itm/278368290376?_skw=Walker+Evans+American+Photographs&hash=item40d00b0648:g:OtQAAeSwDgxqDXrQ)",
-          "listing_ids": [
-            "278368290376"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "[ROCKY & BULLWINKLE: NOTHING UP MY SLEEVE](https://www.ebay.com.hk/itm/237066586128?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=item3732450810:g:bAsAAeSwRYdpUvTd)",
-          "listing_ids": [
-            "237066586128"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "[JUDIE TZUKE - SPORTS CAR VINYL LP + INNER LYRIC/PICTURE SLEEVE](https://www.ebay.co.uk/itm/377493246930?_skw=%28Paul+Hart%2CCraig+Easton%2CChris+Coekin%2CJohn+Angerson%2CRob+Bremner%2CJames+Mortram%2CMatthew+Finn%29&hash=item57e459d3d2:g:WgoAAeSwRmRoj2MY)",
-          "listing_ids": [
-            "377493246930"
-          ],
-          "observed_price_gbp": 6.51
-        },
-        {
-          "title": "[BBR 1/43 Ferrari 360 N-GT Super GT Japan 2005 Press Version Matt Black BG300MATT](https://www.ebay.com.hk/itm/820123198068?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=itembef326e274:g:AJkAAeSw3XhqOcq8)",
-          "listing_ids": [
-            "820123198068"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "[Jay Ward: “Rocky & Bullwinkle”-  “Bullwinkle The Quarterback ”](https://www.ebay.com.hk/itm/237066587124?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=item3732450bf4:g:6nAAAeSwvxlpPz3q)",
-          "listing_ids": [
-            "237066587124"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "[Walter Lance: \"Woody Wood Pecker: Mad Scientist\"](https://www.ebay.com.hk/itm/237066587613?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=item3732450ddd:g:xXgAAeSwB9lpP0Al)",
-          "listing_ids": [
-            "237066587613"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "[Pioneer Silver Coin Nude Male Female Medal Stars Planet Retro 70s 80s Unusual US](https://www.ebay.com.sg/itm/318857476509?_skw=Walker+Evans+American+Photographs&hash=item4a3d62f99d:g:sWMAAOSwnFFmsQGq)",
-          "listing_ids": [
-            "318857476509"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "[MASSIVES SILBER Drei Pence 1890 Münze Alt Vintage Queen Victoria Antik 3D Retro](https://www.ebay.de/itm/318853900326?_skw=August+Sander+Antlitz+der+Zeit&hash=item4a3d2c6826:g:KigAAOSwTlRkLqrW)",
-          "listing_ids": [
-            "318853900326"
           ],
           "observed_price_gbp": null
         }

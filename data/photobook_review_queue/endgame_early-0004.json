@@ -1,7 +1,52 @@
 {
-  "checked_at": "2026-09-20T00:54:08Z",
+  "checked_at": "2026-09-20T05:56:29Z",
   "source": "ENDGAME_EARLY",
   "issues": [
+    {
+      "number": 2334,
+      "title": "ENDGAME_EARLY: 4 collectible photobook auctions ending soon",
+      "created_at": "2026-09-19T17:15:50Z",
+      "updated_at": "2026-09-19T17:15:50Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2334",
+      "earliest_end_at": "2026-09-21T16:55:44Z",
+      "all_end_times": [
+        "2026-09-21T16:55:44Z",
+        "2026-09-21T17:00:42Z",
+        "2026-09-21T17:05:21Z",
+        "2026-09-21T17:07:06Z"
+      ],
+      "lowest_observed_gbp": 1.17,
+      "candidate_summaries": [
+        {
+          "title": "[BG Nexus Metal 20A Switch Matt Black Double Pole Led Power Indicator Home DIY](https://www.ebay.co.uk/itm/147573006953?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=item225c096269:g:uQQAAeSwutNpuC6z)",
+          "listing_ids": [
+            "147573006953"
+          ],
+          "observed_price_gbp": 3.31
+        },
+        {
+          "title": "[Shell Game by Douglas Terman (Paperback, 1986)](https://www.ebay.co.uk/itm/327358012856?_skw=%28Looking+for+Alice%2CThe+Port+Glasgow+Book+Project%2CWe+English%2CThames+Log%2CThe+Americans%29&hash=item4c380eddb8:g:rWkAAOSwy05nepvS)",
+          "listing_ids": [
+            "327358012856"
+          ],
+          "observed_price_gbp": 1.17
+        },
+        {
+          "title": "[HOMOEOPATHIA VIVA - Fachzeitschrift  *Heft 2/23 * Fische in der Homöopathie](https://www.ebay.de/itm/128079566532?_skw=%28Peter+Fraser%2CJem+Southam%2CVanley+Burke%2CSunil+Gupta%2CTim+Hetherington%2CZed+Nelson%29&hash=item1dd22316c4:g:PfEAAOSwUJJlvd0c)",
+          "listing_ids": [
+            "128079566532"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[Madaus: Eine aufgeschlossene Firma (1969)-PERFECT COPY-COMPLETE with MOUSE Sound](https://www.ebay.de/itm/128082958141?_skw=%28Dawoud+Bey%2CRyan+McGinley%2CCarolyn+Drake%2CPaul+Graham%2CMartin+Parr%2CRichard+Billingham%29&hash=item1dd256d73d:g:zcMAAeSw3~5pxDC8)",
+          "listing_ids": [
+            "128082958141"
+          ],
+          "observed_price_gbp": null
+        }
+      ]
+    },
     {
       "number": 2340,
       "title": "ENDGAME_EARLY: 10 collectible photobook auctions ending soon",

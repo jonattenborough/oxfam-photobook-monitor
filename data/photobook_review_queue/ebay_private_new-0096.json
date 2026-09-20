@@ -1,628 +1,376 @@
 {
-  "checked_at": "2026-09-20T00:54:08Z",
+  "checked_at": "2026-09-20T05:56:29Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
     {
-      "number": 2403,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 20/26",
-      "created_at": "2026-09-20T00:53:51Z",
-      "updated_at": "2026-09-20T00:53:51Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2403",
+      "number": 1018,
+      "title": "EBAY_PRIVATE_NEW: REVIEW 5 | top 82 | 0 under £100 | 3 special | 11/11",
+      "created_at": "2026-09-08T21:14:44Z",
+      "updated_at": "2026-09-08T21:14:45Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1018",
       "earliest_end_at": null,
       "all_end_times": [],
-      "lowest_observed_gbp": 17.85,
+      "lowest_observed_gbp": 104.7,
       "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - TASCHEN Magazine Spring / Summer 2010 - 30th EDT Art, Erotica, Fashion, Culture",
-          "listing_ids": [
-            "117114741495"
-          ],
-          "observed_price_gbp": 17.99
-        },
-        {
-          "title": "DISCOVERY 72/100 - TASCHEN Magazine Winter 2012 - Vintage, Art, Erotica, Fashion, Culture",
-          "listing_ids": [
-            "117114759358"
-          ],
-          "observed_price_gbp": 17.99
-        },
-        {
-          "title": "DISCOVERY 72/100 - 10 Pack Sand Bags for Outdoor Gazebo Curtains, Portable Gazebo Weights with 10 S",
-          "listing_ids": [
-            "307186847606"
-          ],
-          "observed_price_gbp": 20.97
-        },
-        {
-          "title": "DISCOVERY 72/100 - Bullseye Moth, Automeris excreta, Wings Spread, Real Insect, A-, Entomology",
-          "listing_ids": [
-            "398408397648"
-          ],
-          "observed_price_gbp": 17.99
-        },
-        {
-          "title": "DISCOVERY 72/100 - Butterfly Crafting Bundle, Wings Spread, A-, Real Insect, Entomology",
-          "listing_ids": [
-            "398408368489"
-          ],
-          "observed_price_gbp": 17.99
-        },
-        {
-          "title": "DISCOVERY 72/100 - Vintage 1980s 8-Bit Computer Books Bundle x 3",
-          "listing_ids": [
-            "198653233740"
-          ],
-          "observed_price_gbp": 18.0
-        },
-        {
-          "title": "DISCOVERY 72/100 - 20th Century Photography by Taschen (2012, Hardcover)",
-          "listing_ids": [
-            "267594271134"
-          ],
-          "observed_price_gbp": 17.85
-        },
-        {
-          "title": "DISCOVERY 72/100 - 1823 Psalter or Psalms of David Morning & Evening Prayer – New Testament – SPCK",
-          "listing_ids": [
-            "117420043089"
-          ],
-          "observed_price_gbp": 21.99
-        },
-        {
-          "title": "DISCOVERY 72/100 - 1834 Conversations Father Children – Benjamin Gibbons Little Mitton Worcester",
-          "listing_ids": [
-            "298688360237"
-          ],
-          "observed_price_gbp": 21.99
-        },
-        {
-          "title": "DISCOVERY 72/100 - magnum° by Ignatieff, Michael Photojournalism Large Hardcover Free Post",
-          "listing_ids": [
-            "188172977801"
-          ],
-          "observed_price_gbp": 21.99
-        }
-      ]
-    },
-    {
-      "number": 2404,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 21/26",
-      "created_at": "2026-09-20T00:53:52Z",
-      "updated_at": "2026-09-20T00:53:52Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2404",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 14.41,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - Moth Crafting Bundle, A2/B DAMAGED, Wings Spread, Real Insect, apollina, mimosae",
-          "listing_ids": [
-            "398408364207"
-          ],
-          "observed_price_gbp": 18.99
-        },
-        {
-          "title": "DISCOVERY 72/100 - KAWASAKI C2TR &C2SS 1967-69 120cc MODEL'S GENUINE GASKETS SET",
-          "listing_ids": [
-            "318888094473"
-          ],
-          "observed_price_gbp": 20.0
-        },
-        {
-          "title": "DISCOVERY 72/100 - Fiveman Super Sentai 50th Anniversary Itajaga Card No.14 Bandai 2025 Japan",
-          "listing_ids": [
-            "398409301045"
-          ],
-          "observed_price_gbp": 15.79
-        },
-        {
-          "title": "DISCOVERY 72/100 - Antique PHOTO 1887 US NY New York Military Man Fredricks Statement Uniform",
-          "listing_ids": [
-            "278387797924"
-          ],
-          "observed_price_gbp": 14.41
-        },
-        {
-          "title": "DISCOVERY 72/100 - Vintage GB LONDON Marine Royal Navy British HMS Warspite Searle Bros PHOTO",
-          "listing_ids": [
-            "278387903959"
-          ],
-          "observed_price_gbp": 14.41
-        },
-        {
-          "title": "DISCOVERY 72/100 - 100 Photographs That Changed the World by Life Magazine Editors 2003, Hardcover",
-          "listing_ids": [
-            "267594274865"
-          ],
-          "observed_price_gbp": 19.23
-        },
-        {
-          "title": "DISCOVERY 72/100 - Papilio anchisiades, Ruby-Spotted Swallowtail Butterfly, Wings Spread, Insect",
-          "listing_ids": [
-            "398408266768"
-          ],
-          "observed_price_gbp": 19.99
-        },
-        {
-          "title": "DISCOVERY 72/100 - Manual of Mechanical Power Transmission 1936 Gear Box Engineering, Albion MD's.",
-          "listing_ids": [
-            "188951938900"
-          ],
-          "observed_price_gbp": 20.0
-        },
-        {
-          "title": "DISCOVERY 72/100 - Robert Doisneau B&W Photography Softback Book Photofile Thames & Hudson 1991",
-          "listing_ids": [
-            "137202277159"
-          ],
-          "observed_price_gbp": 20.0
-        },
-        {
-          "title": "DISCOVERY 72/100 - W.Eugene Smith Photography Softback Book Photofile Thames & Hudson 1991",
-          "listing_ids": [
-            "137202293792"
-          ],
-          "observed_price_gbp": 20.0
-        }
-      ]
-    },
-    {
-      "number": 2405,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 22/26",
-      "created_at": "2026-09-20T00:53:53Z",
-      "updated_at": "2026-09-20T00:53:53Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2405",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 15.79,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - Holy Sepulchre Velox vintage  Photo Packet Samaria Jerusalem Complete 6  Plus 1",
-          "listing_ids": [
-            "267789700707"
-          ],
-          "observed_price_gbp": 20.43
-        },
-        {
-          "title": "DISCOVERY 72/100 - Stella Jones Photo Book: World Beautiful Breasts Collection (Paperback)",
-          "listing_ids": [
-            "267592291031"
-          ],
-          "observed_price_gbp": 24.14
-        },
-        {
-          "title": "DISCOVERY 72/100 - Vanessa Cooper Photo Book: Blonde Girl Beautiful Breasts Collection (Paperback)",
-          "listing_ids": [
-            "267598406391"
-          ],
-          "observed_price_gbp": 24.14
-        },
-        {
-          "title": "DISCOVERY 72/100 - Rachel Williams Photo Book: World Beautiful Breasts Collection Japan Import",
-          "listing_ids": [
-            "267592293708"
-          ],
-          "observed_price_gbp": 24.24
-        },
-        {
-          "title": "DISCOVERY 72/100 - Führers Must Fall - Michael Osten - E W Dickes BOOK Undated Camelot Press Allen",
-          "listing_ids": [
-            "267789415620"
-          ],
-          "observed_price_gbp": 21.5
-        },
-        {
-          "title": "DISCOVERY 72/100 - Paint Kirby Collection Mate Sofubi Finger Puppet Figure Subarudo 2006 Japan",
-          "listing_ids": [
-            "398409682086"
-          ],
-          "observed_price_gbp": 15.79
-        },
-        {
-          "title": "DISCOVERY 72/100 - America (The Book) A Citizen’s Guide To Democracy Inaction Jon Stewart Hardback",
-          "listing_ids": [
-            "267789414226"
-          ],
-          "observed_price_gbp": 21.5
-        },
-        {
-          "title": "DISCOVERY 72/100 - Cassell’s Chronology Of World History - Dates Events & IdeasHywel Williams 2005",
-          "listing_ids": [
-            "267789414438"
-          ],
-          "observed_price_gbp": 21.5
-        },
-        {
-          "title": "DISCOVERY 72/100 - Charles Kray - Me And My Brothers - The Remarkable Inside Story 1977",
-          "listing_ids": [
-            "820147685252"
-          ],
-          "observed_price_gbp": 21.5
-        },
-        {
-          "title": "DISCOVERY 72/100 - MARCANTONIO VILAÇA Cosac & Naify (2001) Brazil CONTEMPORARY ART Photography Book",
-          "listing_ids": [
-            "188884432683"
-          ],
-          "observed_price_gbp": 21.5
-        }
-      ]
-    },
-    {
-      "number": 2406,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 23/26",
-      "created_at": "2026-09-20T00:53:54Z",
-      "updated_at": "2026-09-20T00:53:54Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2406",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 11.87,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - The Modern House Today Nick Dawe Kenneth Powell 2001 1 Ed Art Deco Architecture",
-          "listing_ids": [
-            "800685955836"
-          ],
-          "observed_price_gbp": 22.0
-        },
-        {
-          "title": "DISCOVERY 72/100 - Medic Team with Hazmat #1 HO 1:87 miniature figure no preiser",
-          "listing_ids": [
-            "237076032712"
-          ],
-          "observed_price_gbp": 11.87
-        },
-        {
-          "title": "DISCOVERY 72/100 - Moth And Butterfly Crafting Bundle, Wings Spread, Real Insect, A-",
-          "listing_ids": [
-            "398408399836"
-          ],
-          "observed_price_gbp": 21.99
-        },
-        {
-          "title": "DISCOVERY 72/100 - MINOLTA 8 VIDEO RECORDER CS - 8100E IN CARRY CASE",
-          "listing_ids": [
-            "800681981509"
-          ],
-          "observed_price_gbp": 20.43
-        },
-        {
-          "title": "DISCOVERY 72/100 - Missy Luv Photobook: International Nanpa European Beauty (Paperback)",
-          "listing_ids": [
-            "257388243910"
-          ],
-          "observed_price_gbp": 26.1
-        },
-        {
-          "title": "DISCOVERY 72/100 - Victoria White Photo Book: Beautiful Overseas Girl (Paperback)",
-          "listing_ids": [
-            "267592287865"
-          ],
-          "observed_price_gbp": 26.6
-        },
-        {
-          "title": "DISCOVERY 72/100 - Photo Journalism Getty Images Konemann Large Format Photography Book",
-          "listing_ids": [
-            "168258436689"
-          ],
-          "observed_price_gbp": 21.49
-        },
-        {
-          "title": "DISCOVERY 72/100 - Through A Different Lens: Stanley Kubrick Photographs - Taschen 2018 Photo Book",
-          "listing_ids": [
-            "398410934490"
-          ],
-          "observed_price_gbp": 21.5
-        },
-        {
-          "title": "DISCOVERY 72/100 - Tokyo Disney Halloween Mini Shopping Bag Small Collectible Japan",
-          "listing_ids": [
-            "800683655984"
-          ],
-          "observed_price_gbp": 26.94
-        },
-        {
-          "title": "DISCOVERY 72/100 - Shunka Ayami Photo Book: Last Work A version - Japanese Sexy Idol (Paperback)",
-          "listing_ids": [
-            "267598406982"
-          ],
-          "observed_price_gbp": 27.41
-        }
-      ]
-    },
-    {
-      "number": 2408,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 79 | 8 under £100 | 2 special | 1 unknown | 25/26",
-      "created_at": "2026-09-20T00:53:55Z",
-      "updated_at": "2026-09-20T00:53:55Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2408",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 1.17,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - MARIO DE JANEIRO TESTINO (TASCHEN) (Large Format: 34.25 x 25 cm approx.)",
-          "listing_ids": [
-            "287596762089"
-          ],
-          "observed_price_gbp": 47.92
-        },
-        {
-          "title": "REVIEW 76/100 - Guy Martin: Worms to Catch by Guy Martin (Hardcover, 2016)",
-          "listing_ids": [
-            "316501905478"
-          ],
-          "observed_price_gbp": 3.79
-        },
-        {
-          "title": "REVIEW 76/100 - Guy Martin: When You Dead, You Dead by Guy Martin (Hardcover, 2015)",
-          "listing_ids": [
-            "325717208262"
-          ],
-          "observed_price_gbp": 3.84
-        },
-        {
-          "title": "REVIEW 76/100 - Lewis Bush. Habakari Hankin. Tokyo News Service Ltd, 1961",
-          "listing_ids": [
-            "336072673609"
-          ],
-          "observed_price_gbp": 16.15
-        },
-        {
-          "title": "REVIEW 72/100 - That Near Death Thing: Inside the Most Dangerous Race in the World by Rick...",
-          "listing_ids": [
-            "135764847314"
-          ],
-          "observed_price_gbp": 1.17
-        },
-        {
-          "title": "REVIEW 72/100 - BOOK SALE-  (MIX &  MATCH BUILD YOUR OWN COLLECTION)",
-          "listing_ids": [
-            "176698202369"
-          ],
-          "observed_price_gbp": 2.23
-        },
-        {
-          "title": "REVIEW 72/100 - That Near Death Thing, Rick Broadbent",
-          "listing_ids": [
-            "135397853904"
-          ],
-          "observed_price_gbp": 2.24
-        },
-        {
-          "title": "REVIEW 72/100 - Bush. The Illustrious Captain Brown. Voyager's Press, 1969",
-          "listing_ids": [
-            "336072593729"
-          ],
-          "observed_price_gbp": 10.8
-        },
-        {
-          "title": "REVIEW 79/100 - Ravens Masahisa Fukase Bilingual Facsimile First Edition New With Slipcase",
-          "listing_ids": [
-            "366251416861"
-          ],
-          "observed_price_gbp": 146.96
-        },
-        {
-          "title": "REVIEW 78/100 - Masahisa Fukase Ravens MACK 2017 Photography Book New Sealed Slipcase",
-          "listing_ids": [
-            "407229350512"
-          ],
-          "observed_price_gbp": 125.49
-        }
-      ]
-    },
-    {
-      "number": 2407,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 24/26",
-      "created_at": "2026-09-20T00:53:55Z",
-      "updated_at": "2026-09-20T00:53:55Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2407",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 24.57,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - Fumi Ishino - ROWING A TETRAPOD, Photography, Art Book, Black and White",
-          "listing_ids": [
-            "168215545058"
-          ],
-          "observed_price_gbp": 25.0
-        },
-        {
-          "title": "DISCOVERY 72/100 - Cabo Verde Hardcover Photobook in English by Joe Wuerfel (Photography)",
-          "listing_ids": [
-            "366679082611"
-          ],
-          "observed_price_gbp": 25.66
-        },
-        {
-          "title": "DISCOVERY 72/100 - Antique Victorian Portrait Photo Child In Historical Fancy Dress Court Costume",
-          "listing_ids": [
-            "398408549573"
-          ],
-          "observed_price_gbp": 26.7
-        },
-        {
-          "title": "DISCOVERY 72/100 - English Heritage 100-Card Postcard Set - Photography Theme, Paper",
-          "listing_ids": [
-            "278389231601"
-          ],
-          "observed_price_gbp": 26.69
-        },
-        {
-          "title": "DISCOVERY 72/100 - 2 Vintage Beatrix Potter Books 1940s Warne - Peter Rabbit & Tailor of Gloucester",
-          "listing_ids": [
-            "336802290216"
-          ],
-          "observed_price_gbp": 26.7
-        },
-        {
-          "title": "DISCOVERY 72/100 - Sanyo Vision 8 8mm Camcorder Model VM-D3P",
-          "listing_ids": [
-            "117419489153"
-          ],
-          "observed_price_gbp": 24.57
-        },
-        {
-          "title": "DISCOVERY 72/100 - Vintage Kodak Brownie 127 Film Camera Made in USA Box Camera Collectable",
-          "listing_ids": [
-            "800684384922"
-          ],
-          "observed_price_gbp": 29.99
-        },
-        {
-          "title": "DISCOVERY 72/100 - Gian Paolo Barbieri MADAGASCAR Taschen Hardback Photography Book 1997 B/W",
-          "listing_ids": [
-            "267636015423"
-          ],
-          "observed_price_gbp": 26.7
-        },
-        {
-          "title": "DISCOVERY 72/100 - California Crazy. American Pop Architecture by Jim Heimann (2018, Hardcover)",
-          "listing_ids": [
-            "327087083416"
-          ],
-          "observed_price_gbp": 42.3
-        },
-        {
-          "title": "DISCOVERY 72/100 - Nadav Kander The Meeting Hardcover Photobook Photography Portraits Steidl",
-          "listing_ids": [
-            "158309691044"
-          ],
-          "observed_price_gbp": 44.38
-        }
-      ]
-    },
-    {
-      "number": 2350,
-      "title": "EBAY_PRIVATE_NEW: REVIEW 4 | top 78 | 0 under £100 | 1 special | 7/7",
-      "created_at": "2026-09-19T20:22:32Z",
-      "updated_at": "2026-09-19T20:22:32Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2350",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 100.0,
-      "candidate_summaries": [
-        {
-          "title": "REVIEW 78/100 - Sirkka-Liisa Konttinen, SIGNED, Writing in the Sand, Dewi Lewis Publishing, 2000",
-          "listing_ids": [
-            "167814061424"
-          ],
-          "observed_price_gbp": 100.0
-        },
-        {
-          "title": "REVIEW 78/100 - Fukase Masahisa Karasu Ravens Photo Book Art Collection Hardcover Photography",
-          "listing_ids": [
-            "366355414891"
-          ],
-          "observed_price_gbp": 141.32
-        },
-        {
-          "title": "REVIEW 78/100 - Lachapelle Land : Photos -David LaChapelle  Delux Edition 2005 Hardcover  Boxed",
-          "listing_ids": [
-            "800685820320"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "REVIEW 72/100 - *New & Sealed* Paolo Roversi Studio Luce - Rare & Collectible",
-          "listing_ids": [
-            "177654943645"
-          ],
-          "observed_price_gbp": 567.7
-        }
-      ]
-    },
-    {
-      "number": 2409,
-      "title": "EBAY_PRIVATE_NEW: REVIEW 5 | top 88 | 0 under £100 | 1 special | 26/26",
-      "created_at": "2026-09-20T00:53:56Z",
-      "updated_at": "2026-09-20T00:53:56Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2409",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 94.3,
-      "candidate_summaries": [
-        {
-          "title": "REVIEW 76/100 - Shadows of the State photobook Lewis Bush Brave Books numbers stations spying",
-          "listing_ids": [
-            "165240137320"
-          ],
-          "observed_price_gbp": 260.7
-        },
-        {
-          "title": "REVIEW 78/100 - Peter Beard The End of the Game A Landmark Book on Africa Revisited 2020",
-          "listing_ids": [
-            "188160667700"
-          ],
-          "observed_price_gbp": 94.3
-        },
-        {
-          "title": "REVIEW 78/100 - Ballet - Alexey Brodovitch - Errata Editions 2011 - Edwin Denby & Kerry William",
-          "listing_ids": [
-            "366117316383"
-          ],
-          "observed_price_gbp": 200.0
-        },
-        {
-          "title": "REVIEW 88/100 - Utterly Lazy and Inattentive: Martin Parr in Words and Pictures Hardcover",
-          "listing_ids": [
-            "168700461458"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "REVIEW 78/100 - EADWEARD MUYBRIDGE HUMAN & ANIMAL LOCOMOTION VOLUME 1",
-          "listing_ids": [
-            "168700625378"
-          ],
-          "observed_price_gbp": null
-        }
-      ]
-    },
-    {
-      "number": 533,
-      "title": "EBAY_PRIVATE_NEW: 2 candidates | 0 live checked | 2 search only | 4/4",
-      "created_at": "2026-09-04T08:12:05Z",
-      "updated_at": "2026-09-04T08:12:06Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/533",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 140.43,
-      "candidate_summaries": [
-        {
-          "title": "REVIEW 78/100 - RARE LIMITED EDITION JOEL-PETER WITKIN THE BONE HOUSE ART PHOTOGRAPHY BOOK HB",
-          "listing_ids": [
-            "128050807014"
-          ],
-          "observed_price_gbp": 140.43
-        },
         {
           "title": "REVIEW 72/100 - WEBER Donald, Interrogations. Schilt 2011. Winner of the World Press Photo 2012",
           "listing_ids": [
             "397216434066"
           ],
           "observed_price_gbp": 172.56
+        },
+        {
+          "title": "REVIEW 78/100 - Kosovo, 1999-2000 : The Flight of Reason by Paolo Pellegrin (2002, Hardcover)",
+          "listing_ids": [
+            "357875903982"
+          ],
+          "observed_price_gbp": 104.7
+        },
+        {
+          "title": "REVIEW 77/100 - John Gossage - THE POND 2nd edition Hardcover New!",
+          "listing_ids": [
+            "318486549213"
+          ],
+          "observed_price_gbp": 196.56
+        },
+        {
+          "title": "REVIEW 82/100 - AFRONAUTS Cristina De Middel Rare 1st edition 1st printing",
+          "listing_ids": [
+            "276820903901"
+          ],
+          "observed_price_gbp": 516.7
+        },
+        {
+          "title": "REVIEW 76/100 - Paul Graham Does Yellow Run Forever? MACK Hardcover 1st Ed 2011 Signed Inscribed",
+          "listing_ids": [
+            "147559971586"
+          ],
+          "observed_price_gbp": 333.1
         }
       ]
     },
     {
-      "number": 549,
-      "title": "EBAY_PRIVATE_NEW: 1 candidates | 0 live checked | 1 search only | 3/3",
-      "created_at": "2026-09-04T08:16:41Z",
-      "updated_at": "2026-09-04T08:16:41Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/549",
+      "number": 1073,
+      "title": "EBAY_PRIVATE_NEW: REVIEW 6 | top 78 | 0 under £100 | 4 special | 1 changed | 9/9",
+      "created_at": "2026-09-09T11:57:34Z",
+      "updated_at": "2026-09-09T11:57:35Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1073",
       "earliest_end_at": null,
       "all_end_times": [],
-      "lowest_observed_gbp": 120.44,
+      "lowest_observed_gbp": 141.1,
       "candidate_summaries": [
         {
-          "title": "REVIEW 75/100 - Stephen Gill Archaeology in Reverse Photobook Hackney Wick Art Book HC Rare",
+          "title": "REVIEW 77/100 - Sam Contis Deep Springs Signed First Edition MACK Photography Book",
           "listing_ids": [
-            "820057309901"
+            "178459488369"
           ],
-          "observed_price_gbp": 120.44
+          "observed_price_gbp": 208.7
+        },
+        {
+          "title": "REVIEW 76/100 - Good Morning, America Volume II - Mark Power - SIGNED Gost Books 2019",
+          "listing_ids": [
+            "237039279776"
+          ],
+          "observed_price_gbp": 141.1
+        },
+        {
+          "title": "REVIEW 73/100 - Vanessa Winship - She Dances On Jackson - 1st Edition - SIGNED!",
+          "listing_ids": [
+            "336759393595"
+          ],
+          "observed_price_gbp": 182.7
+        },
+        {
+          "title": "CHANGED 78/100 - In the American West Richard Avedon Photographs 1979-1984 Photo Books Abrams",
+          "listing_ids": [
+            "157455173977"
+          ],
+          "observed_price_gbp": 539.16
+        },
+        {
+          "title": "REVIEW 78/100 - NOTHING PERSONAL - RICHARD AVEDON & JAMES BALDWIN - 1964 WITH SLIPCASE - penguin",
+          "listing_ids": [
+            "137717346642"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "REVIEW 78/100 - Vandals - Calling Card For The Film Bikeriders By Outlaw Originals - Danny Lyon",
+          "listing_ids": [
+            "257722809434"
+          ],
+          "observed_price_gbp": null
+        }
+      ]
+    },
+    {
+      "number": 1145,
+      "title": "EBAY_PRIVATE_NEW: REVIEW 3 | top 80 | 0 under £100 | 2 special | 12/12",
+      "created_at": "2026-09-09T21:55:17Z",
+      "updated_at": "2026-09-09T21:55:18Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1145",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 125.5,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 80/100 - China Between by Polly Braden, Jennifer Higgie, David Campany (Hardcover, 2010)",
+          "listing_ids": [
+            "226845728400"
+          ],
+          "observed_price_gbp": 125.5
+        },
+        {
+          "title": "REVIEW 78/100 - Case History by Mikhailov, Boris | Book | condition good",
+          "listing_ids": [
+            "267708317015"
+          ],
+          "observed_price_gbp": 146.3
+        },
+        {
+          "title": "REVIEW 79/100 - Flamboya – Viviane Sassen (First Edition, 2008) – Signed & Dedicated",
+          "listing_ids": [
+            "336319022782"
+          ],
+          "observed_price_gbp": 450.0
+        }
+      ]
+    },
+    {
+      "number": 1370,
+      "title": "EBAY_PRIVATE_NEW: REVIEW 2 | top 78 | 0 under £100 | 8/8",
+      "created_at": "2026-09-11T20:53:42Z",
+      "updated_at": "2026-09-11T20:53:43Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1370",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 113.65,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 78/100 - Mrs Merryman's Collection Anne Sophie Merryman Postcard Photo MACK 2012",
+          "listing_ids": [
+            "366498528848"
+          ],
+          "observed_price_gbp": 113.65
+        },
+        {
+          "title": "REVIEW 78/100 - Lachapelle Land: Boxed Hardcover Book of Photographs by David LaChapelle 1st Ed.",
+          "listing_ids": [
+            "227398275015"
+          ],
+          "observed_price_gbp": 177.5
+        }
+      ]
+    },
+    {
+      "number": 1484,
+      "title": "EBAY_PRIVATE_NEW: REVIEW 5 | top 80 | 0 under £100 | 3 special | 12/12",
+      "created_at": "2026-09-12T23:15:46Z",
+      "updated_at": "2026-09-12T23:15:46Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1484",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 104.7,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 80/100 - Signed Michael Kenna SHINAN Nazraeli Press Hardback + Slipcase + Exhibition Ephe",
+          "listing_ids": [
+            "307030495908"
+          ],
+          "observed_price_gbp": 182.7
+        },
+        {
+          "title": "REVIEW 78/100 - People In Trouble Laughing Pushed To The Ground: Broomberg&Chanarin SIGNED 1stEd",
+          "listing_ids": [
+            "154486428678"
+          ],
+          "observed_price_gbp": 104.7
+        },
+        {
+          "title": "REVIEW 78/100 - Masahisa Fukase Wonderful Days Photo Book Cat Sasuke Momoe Ravens Creator Item",
+          "listing_ids": [
+            "236745911350"
+          ],
+          "observed_price_gbp": 262.15
+        },
+        {
+          "title": "REVIEW 78/100 - Fukase Masahisa Karasu Ravens Photo Book Art Collection Hardcover Photography",
+          "listing_ids": [
+            "366355414891"
+          ],
+          "observed_price_gbp": 139.87
+        },
+        {
+          "title": "REVIEW 78/100 - Vandals - Calling Card For The Film Bikeriders By Outlaw Originals - Danny Lyon",
+          "listing_ids": [
+            "257736638119"
+          ],
+          "observed_price_gbp": null
+        }
+      ]
+    },
+    {
+      "number": 1491,
+      "title": "EBAY_PRIVATE_NEW: REVIEW 2 | top 82 | 0 under £100 | 1 special | 5/5",
+      "created_at": "2026-09-13T01:08:04Z",
+      "updated_at": "2026-09-13T01:08:05Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1491",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 146.3,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 78/100 - Case History by Mikhailov, Boris | Book | condition good",
+          "listing_ids": [
+            "267708317015"
+          ],
+          "observed_price_gbp": 146.3
+        },
+        {
+          "title": "REVIEW 82/100 - AFRONAUTS Cristina De Middel Rare 1st edition 1st printing",
+          "listing_ids": [
+            "276820903901"
+          ],
+          "observed_price_gbp": 516.7
+        }
+      ]
+    },
+    {
+      "number": 1499,
+      "title": "EBAY_PRIVATE_NEW: REVIEW 2 | top 82 | 0 under £100 | 1 special | 5/5",
+      "created_at": "2026-09-13T06:16:54Z",
+      "updated_at": "2026-09-13T06:16:54Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1499",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 115.1,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 82/100 - Things Here And Things Still To Come Jose Pedro Cortes Hardback 1st Edition 2011",
+          "listing_ids": [
+            "327074696341"
+          ],
+          "observed_price_gbp": 115.1
+        },
+        {
+          "title": "REVIEW 81/100 - Rinko Kawauchi: Illuminance by Rinko Kawauchi (2011, Hardcover)",
+          "listing_ids": [
+            "267621854359"
+          ],
+          "observed_price_gbp": 156.7
+        }
+      ]
+    },
+    {
+      "number": 1516,
+      "title": "EBAY_PRIVATE_NEW: REVIEW 2 | top 78 | 0 under £100 | 1 special | 9/9",
+      "created_at": "2026-09-13T12:05:15Z",
+      "updated_at": "2026-09-13T12:05:16Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1516",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 113.0,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 78/100 - Anders Petersen - SIGNED Cafe Lehmitz 2004 Schirmer/Mosel",
+          "listing_ids": [
+            "257570928039"
+          ],
+          "observed_price_gbp": 113.0
+        },
+        {
+          "title": "REVIEW 78/100 - Richard Avedon In the American West Paperback Illustrated",
+          "listing_ids": [
+            "227519356643"
+          ],
+          "observed_price_gbp": null
+        }
+      ]
+    },
+    {
+      "number": 1580,
+      "title": "EBAY_PRIVATE_NEW: REVIEW 4 | top 78 | 0 under £100 | 1 special | 7/7",
+      "created_at": "2026-09-13T23:26:36Z",
+      "updated_at": "2026-09-13T23:26:37Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1580",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 115.1,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 78/100 - Robert Capa Death In The Making Hardback Book Damiani New Book",
+          "listing_ids": [
+            "297990593862"
+          ],
+          "observed_price_gbp": 115.1
+        },
+        {
+          "title": "REVIEW 78/100 - Inferno, by James Nachtwey, hardback book.",
+          "listing_ids": [
+            "236617760499"
+          ],
+          "observed_price_gbp": 167.1
+        },
+        {
+          "title": "REVIEW 74/100 - Eikoh Hosoe Kamaitachi Photo Book Avant Garde Rare Used Art 2009 publication",
+          "listing_ids": [
+            "820123545152"
+          ],
+          "observed_price_gbp": 242.6
+        },
+        {
+          "title": "REVIEW 78/100 - The Bikeriders Hardcover Book by Danny Lyon, Signed Limited Addition",
+          "listing_ids": [
+            "336791986603"
+          ],
+          "observed_price_gbp": null
+        }
+      ]
+    },
+    {
+      "number": 1717,
+      "title": "EBAY_PRIVATE_NEW: REVIEW 5 | top 82 | 0 under £100 | 4 special | 10/10",
+      "created_at": "2026-09-15T20:09:43Z",
+      "updated_at": "2026-09-15T20:09:44Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1717",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 104.69,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 82/100 - Michael Kenna \"Abruzzo\" new, Signed",
+          "listing_ids": [
+            "820057318526"
+          ],
+          "observed_price_gbp": 204.49
+        },
+        {
+          "title": "REVIEW 77/100 - Sam Contis Deep Springs Signed First Edition MACK Photography Book",
+          "listing_ids": [
+            "178459488369"
+          ],
+          "observed_price_gbp": 208.7
+        },
+        {
+          "title": "REVIEW 76/100 - Good Morning, America Volume II - Mark Power - SIGNED Gost Books 2019",
+          "listing_ids": [
+            "237039279776"
+          ],
+          "observed_price_gbp": 141.1
+        },
+        {
+          "title": "REVIEW 73/100 - Vanessa Winship - She Dances On Jackson - 1st Edition - SIGNED!",
+          "listing_ids": [
+            "336759393595"
+          ],
+          "observed_price_gbp": 182.7
+        },
+        {
+          "title": "REVIEW 75/100 - Phaidon Fruits by Shoichi Aoki Hardcover English Street Style Fashion Photo Book",
+          "listing_ids": [
+            "206559301571"
+          ],
+          "observed_price_gbp": 104.69
         }
       ]
     }

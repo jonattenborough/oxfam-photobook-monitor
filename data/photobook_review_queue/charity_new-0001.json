@@ -1,52 +1,7 @@
 {
-  "checked_at": "2026-09-20T00:54:08Z",
+  "checked_at": "2026-09-20T05:56:29Z",
   "source": "CHARITY_NEW",
   "issues": [
-    {
-      "number": 851,
-      "title": "CHARITY_NEW: 1 eBay seller photobook candidate",
-      "created_at": "2026-09-06T23:48:48Z",
-      "updated_at": "2026-09-06T23:48:48Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/851",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 20.0,
-      "candidate_summaries": [
-        {
-          "title": "Goldsmith's Choice Works Vicar of Wakefield Poems and Plays 1875 William P Nimmo",
-          "listing_ids": [
-            "366652696808"
-          ],
-          "observed_price_gbp": 20.0
-        }
-      ]
-    },
-    {
-      "number": 919,
-      "title": "CHARITY_NEW: 2 eBay seller photobook candidates",
-      "created_at": "2026-09-07T20:31:47Z",
-      "updated_at": "2026-09-07T20:31:47Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/919",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 10.0,
-      "candidate_summaries": [
-        {
-          "title": "Murder in the Westcountry 1975 paperback Bossiney Books (Intro by Colin Wilson)",
-          "listing_ids": [
-            "366654073380"
-          ],
-          "observed_price_gbp": 10.0
-        },
-        {
-          "title": "Signed Copy of The Comfort Book by Matt Haig",
-          "listing_ids": [
-            "198624559212"
-          ],
-          "observed_price_gbp": 12.0
-        }
-      ]
-    },
     {
       "number": 943,
       "title": "CHARITY_NEW: 1 eBay seller photobook candidate",
@@ -488,6 +443,77 @@
             "158280443715"
           ],
           "observed_price_gbp": 23.0
+        }
+      ]
+    },
+    {
+      "number": 1371,
+      "title": "CHARITY_NEW: 3 eBay seller photobook candidates",
+      "created_at": "2026-09-11T21:41:08Z",
+      "updated_at": "2026-09-11T21:41:08Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1371",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 8.0,
+      "candidate_summaries": [
+        {
+          "title": "SIGNED- Op Belonging When Did Britain Stop Seeing Us As A Band of Brothers?",
+          "listing_ids": [
+            "227516909522"
+          ],
+          "observed_price_gbp": 55.0
+        },
+        {
+          "title": "The Complete Illustrated Story - The Beatles  by Terry Burrows. Hardback 1996",
+          "listing_ids": [
+            "198633859008"
+          ],
+          "observed_price_gbp": 8.0
+        },
+        {
+          "title": "Dante Rediscovered Blake to Rodin, David Bindman & Stephen Hebron 1st Edition",
+          "listing_ids": [
+            "257736763067"
+          ],
+          "observed_price_gbp": 55.99
+        }
+      ]
+    },
+    {
+      "number": 1380,
+      "title": "CHARITY_NEW: 3 eBay seller photobook candidates",
+      "created_at": "2026-09-12T00:12:25Z",
+      "updated_at": "2026-09-12T00:12:25Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1380",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 10.0,
+      "candidate_summaries": [
+        {
+          "title": "Everything Under the Sun by Molly Oldfield Hardback Children's Fact Book Used",
+          "listing_ids": [
+            "178488233215"
+          ],
+          "observed_price_gbp": 10.0
+        },
+        {
+          "title": "Wildflowers Across America HC Lady Bird Johnson and Carlton Lees 1988 Signed Ed",
+          "listing_ids": [
+            "278365624625"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "Dirr's Encyclopedia of Trees and Shrubs by Michael A. Dirr (2011, Hardcover) VG",
+          "listing_ids": [
+            "318857936491"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "Seller warnings",
+          "listing_ids": [],
+          "observed_price_gbp": null
         }
       ]
     }
