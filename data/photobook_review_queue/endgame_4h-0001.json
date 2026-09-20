@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-20T05:56:29Z",
+  "checked_at": "2026-09-20T11:03:08Z",
   "source": "ENDGAME_4H",
   "issues": [
     {
@@ -418,6 +418,67 @@
             "267785620164"
           ],
           "observed_price_gbp": null
+        }
+      ]
+    },
+    {
+      "number": 2421,
+      "title": "ENDGAME_4H: 6 collectible photobook auctions ending soon",
+      "created_at": "2026-09-20T06:42:42Z",
+      "updated_at": "2026-09-20T06:42:42Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2421",
+      "earliest_end_at": "2026-09-20T07:48:48Z",
+      "all_end_times": [
+        "2026-09-20T07:48:48Z",
+        "2026-09-20T08:04:57Z",
+        "2026-09-20T08:48:03Z",
+        "2026-09-20T09:46:33Z",
+        "2026-09-20T09:50:06Z",
+        "2026-09-20T10:07:31Z"
+      ],
+      "lowest_observed_gbp": 9.72,
+      "candidate_summaries": [
+        {
+          "title": "[The Valley Of The Shadow By H Olof De Wet PB 1956 Panther](https://www.ebay.de/itm/407213173202?_skw=%28Pictures+from+Home%2CThe+Valley%29&hash=item5ecfcbe9d2:g:zyYAAOSwU8Ji2rdY)",
+          "listing_ids": [
+            "407213173202"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[Through The Valley By Robert Henriques HB Reprint Society 1937](https://www.ebay.de/itm/407213194588?_skw=%28Pictures+from+Home%2CThe+Valley%29&hash=item5ecfcc3d5c:g:KiYAAOSwKy5la1IA)",
+          "listing_ids": [
+            "407213194588"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[Richard Avedon In the American West Paperback Illustrated](https://www.ebay.co.uk/itm/227519356643?_skw=photography+book&hash=item34f935dee3:g:G48AAeSwfuZqpmK3)",
+          "listing_ids": [
+            "227519356643"
+          ],
+          "observed_price_gbp": 37.1
+        },
+        {
+          "title": "[TORRAS Magnetic Wireless Charging Case - For iPhone 16 Pro](https://www.ebay.co.uk/itm/257740064098?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=item3c02814562:g:sZAAAeSw2Ohqbww7)",
+          "listing_ids": [
+            "257740064098"
+          ],
+          "observed_price_gbp": 9.72
+        },
+        {
+          "title": "[1/350 model battleships x 3 as a lot](https://www.ebay.com.au/itm/147570132141?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=item225bdd84ad:g:cEAAAeSwtwVqk~qG)",
+          "listing_ids": [
+            "147570132141"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[The Bikeriders Hardcover Book by Danny Lyon, Signed Limited Addition](https://www.ebay.co.uk/itm/336791986603?_skw=%28Robin+Friend%2CLee+Friedlander%2CDanny+Lyon%2CJoel+Sternfeld%2CSusan+Meiselas%2CLarry+Clark%29&hash=item4e6a5de1ab:g:vD0AAeSwislqk~7m)",
+          "listing_ids": [
+            "336791986603"
+          ],
+          "observed_price_gbp": 115.1
         }
       ]
     }

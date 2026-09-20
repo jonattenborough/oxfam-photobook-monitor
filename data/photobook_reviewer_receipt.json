@@ -1,8 +1,8 @@
 {
-  "checked_at": "2026-09-20T05:56:29Z",
+  "checked_at": "2026-09-20T11:03:08Z",
   "ledger_issue_number": 2145,
   "status": "ATTENTION",
-  "latest_verified_completion_at": "2026-09-20T04:05:17.525037+00:00",
+  "latest_verified_completion_at": "2026-09-20T10:06:04.305725Z",
   "tasks": {
     "Endgame Urgent Review": {
       "status": "COMPLETED",
@@ -10,7 +10,7 @@
       "run_id": "Endgame Urgent Review|2026-09-19T12:56:30Z",
       "started_at": "2026-09-19T12:56:30Z",
       "finished_at": "2026-09-19T12:58:40Z",
-      "age_minutes": 1017.8,
+      "age_minutes": 1324.5,
       "claimed_completed_issue_numbers": [
         2275,
         2276
@@ -32,34 +32,33 @@
     "eBay Fixed Price Review": {
       "status": "COMPLETED",
       "declared_status": "COMPLETED",
-      "run_id": "eBay Fixed Price Review|2026-09-20T03:54:21.670387+00:00",
-      "started_at": "2026-09-20T03:54:21.670387+00:00",
-      "finished_at": "2026-09-20T04:05:17.525037+00:00",
-      "age_minutes": 111.2,
+      "run_id": "eBay Fixed Price Review|2026-09-20T09:57:14.785104Z",
+      "started_at": "2026-09-20T09:57:14.785104Z",
+      "finished_at": "2026-09-20T10:06:04.305725Z",
+      "age_minutes": 57.1,
       "claimed_completed_issue_numbers": [
-        2385,
-        2396,
-        2397,
-        2402,
-        2405,
-        919
+        552,
+        555,
+        2393,
+        2403,
+        2424
       ],
       "verified_completed_issue_numbers": [
-        2385,
-        2396,
-        2397,
-        2402,
-        2405,
-        919
+        552,
+        555,
+        2393,
+        2403,
+        2424
       ],
       "invalid_completed_issue_claims": {},
-      "unique_listings_reviewed": 52,
+      "unique_listings_reviewed": 41,
       "reportable_listing_count": 0,
       "errors": [
-        "Some exact eBay pages were technically inaccessible; affected plausible listings were explicitly labelled LIVE STATUS NOT VERIFIED - CHECK BEFORE BUYING in completion comments."
+        "handoff older than 90 minutes; fell back to direct issue reads",
+        "some exact listing pages were unavailable for fresh live verification; affected plausible items were labelled LIVE STATUS NOT VERIFIED - CHECK BEFORE BUYING"
       ],
-      "start_comment_url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2145#issuecomment-5747470892",
-      "finish_comment_url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2145#issuecomment-5747520148"
+      "start_comment_url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2145#issuecomment-5749086404",
+      "finish_comment_url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2145#issuecomment-5749123361"
     },
     "eBay and Endgame Review": {
       "status": "NO_VERIFIED_FINISH",
@@ -75,93 +74,100 @@
       "run_id": "eBay Fixed Price Review|2026-09-18T08:53:43Z",
       "task": "eBay Fixed Price Review",
       "started_at": "2026-09-18T08:53:43Z",
-      "age_minutes": 2702.8,
+      "age_minutes": 3009.4,
       "comment_url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2145#issuecomment-5727629618"
     },
     {
       "run_id": "eBay Fixed Price Review|2026-09-18T10:54:45Z",
       "task": "eBay Fixed Price Review",
       "started_at": "2026-09-18T10:54:45Z",
-      "age_minutes": 2581.7,
+      "age_minutes": 2888.4,
       "comment_url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2145#issuecomment-5728989601"
     },
     {
       "run_id": "eBay Fixed Price Review|2026-09-18T11:06:05.807013+00:00",
       "task": "eBay Fixed Price Review",
       "started_at": "2026-09-18T11:06:05.807013+00:00",
-      "age_minutes": 2570.4,
+      "age_minutes": 2877.0,
       "comment_url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2145#issuecomment-5729104634"
     },
     {
       "run_id": "eBay Fixed Price Review|2026-09-18T13:56:50.028058Z",
       "task": "eBay Fixed Price Review",
       "started_at": "2026-09-18T13:56:50.028058Z",
-      "age_minutes": 2399.7,
+      "age_minutes": 2706.3,
       "comment_url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2145#issuecomment-5731036646"
     },
     {
       "run_id": "eBay Fixed Price Review|2026-09-19T01:54:32Z",
       "task": "eBay Fixed Price Review",
       "started_at": "2026-09-19T01:54:32Z",
-      "age_minutes": 1682.0,
+      "age_minutes": 1988.6,
       "comment_url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2145#issuecomment-5738415500"
     },
     {
       "run_id": "eBay Fixed Price Review|2026-09-19T09:53:58Z",
       "task": "eBay Fixed Price Review",
       "started_at": "2026-09-19T09:53:58Z",
-      "age_minutes": 1202.5,
+      "age_minutes": 1509.2,
       "comment_url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2145#issuecomment-5740881001"
     },
     {
       "run_id": "eBay Fixed Price Review|2026-09-19T11:56:33.110504Z",
       "task": "eBay Fixed Price Review",
       "started_at": "2026-09-19T11:56:33.110504Z",
-      "age_minutes": 1079.9,
+      "age_minutes": 1386.6,
       "comment_url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2145#issuecomment-5741652040"
     },
     {
       "run_id": "eBay Fixed Price Review|2026-09-19T13:57:06Z",
       "task": "eBay Fixed Price Review",
       "started_at": "2026-09-19T13:57:06Z",
-      "age_minutes": 959.4,
+      "age_minutes": 1266.0,
       "comment_url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2145#issuecomment-5742445808"
     },
     {
       "run_id": "eBay Fixed Price Review|2026-09-19T21:57:22.953098Z",
       "task": "eBay Fixed Price Review",
       "started_at": "2026-09-19T21:57:22.953098Z",
-      "age_minutes": 479.1,
+      "age_minutes": 785.8,
       "comment_url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2145#issuecomment-5745593532"
     },
     {
       "run_id": "eBay Fixed Price Review|2026-09-20T04:57:25Z",
       "task": "eBay Fixed Price Review",
       "started_at": "2026-09-20T04:57:25Z",
-      "age_minutes": 59.1,
+      "age_minutes": 365.7,
       "comment_url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2145#issuecomment-5747740335"
     },
     {
-      "run_id": "eBay Fixed Price Review|2026-09-20T05:55:18.774627+00:00",
+      "run_id": "eBay Fixed Price Review|2026-09-20T08:56:11.725949+00:00",
       "task": "eBay Fixed Price Review",
-      "started_at": "2026-09-20T05:55:18.774627+00:00",
-      "age_minutes": 1.2,
-      "comment_url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2145#issuecomment-5747982518"
+      "started_at": "2026-09-20T08:56:11.725949+00:00",
+      "age_minutes": 126.9,
+      "comment_url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2145#issuecomment-5748801100"
+    },
+    {
+      "run_id": "eBay Fixed Price Review|2026-09-20T10:58:06Z",
+      "task": "eBay Fixed Price Review",
+      "started_at": "2026-09-20T10:58:06Z",
+      "age_minutes": 5.0,
+      "comment_url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2145#issuecomment-5749367236"
     }
   ],
   "warnings": [
     "Endgame Urgent Review: latest verified FINISH receipt is stale",
-    "eBay Fixed Price Review: latest verified FINISH receipt is stale",
     "eBay and Endgame Review: no matching START/FINISH receipt has been recorded",
-    "eBay Fixed Price Review: START has no matching FINISH after 2702.8 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 2581.7 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 2570.4 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 2399.7 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 1682.0 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 1202.5 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 1079.9 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 959.4 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 479.1 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 59.1 minutes"
+    "eBay Fixed Price Review: START has no matching FINISH after 3009.4 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 2888.4 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 2877.0 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 2706.3 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 1988.6 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 1509.2 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 1386.6 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 1266.0 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 785.8 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 365.7 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 126.9 minutes"
   ]
 }

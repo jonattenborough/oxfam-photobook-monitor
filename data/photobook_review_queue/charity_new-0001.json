@@ -1,26 +1,7 @@
 {
-  "checked_at": "2026-09-20T05:56:29Z",
+  "checked_at": "2026-09-20T11:03:08Z",
   "source": "CHARITY_NEW",
   "issues": [
-    {
-      "number": 943,
-      "title": "CHARITY_NEW: 1 eBay seller photobook candidate",
-      "created_at": "2026-09-08T09:35:12Z",
-      "updated_at": "2026-09-08T09:35:12Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/943",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 9.95,
-      "candidate_summaries": [
-        {
-          "title": "3x Peter's Railway Books Christopher Vine Signed Inscription Book 1 D52 Wh109",
-          "listing_ids": [
-            "206543450602"
-          ],
-          "observed_price_gbp": 9.95
-        }
-      ]
-    },
     {
       "number": 966,
       "title": "CHARITY_NEW: 2 eBay seller photobook candidates",
@@ -514,6 +495,25 @@
           "title": "Seller warnings",
           "listing_ids": [],
           "observed_price_gbp": null
+        }
+      ]
+    },
+    {
+      "number": 1507,
+      "title": "CHARITY_NEW: 1 eBay seller photobook candidate",
+      "created_at": "2026-09-13T11:42:21Z",
+      "updated_at": "2026-09-13T11:42:21Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1507",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 8.0,
+      "candidate_summaries": [
+        {
+          "title": "Claude Monet - Taschen Portfolio - 15 Art Print Posters CG N54",
+          "listing_ids": [
+            "377491313034"
+          ],
+          "observed_price_gbp": 8.0
         }
       ]
     }
