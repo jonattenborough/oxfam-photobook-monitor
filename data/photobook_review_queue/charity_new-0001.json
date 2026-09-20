@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-19T22:49:21Z",
+  "checked_at": "2026-09-20T00:54:08Z",
   "source": "CHARITY_NEW",
   "issues": [
     {
@@ -122,79 +122,6 @@
             "227511891033"
           ],
           "observed_price_gbp": 35.0
-        }
-      ]
-    },
-    {
-      "number": 1158,
-      "title": "CHARITY_NEW: 8 eBay seller photobook candidates",
-      "created_at": "2026-09-10T00:08:14Z",
-      "updated_at": "2026-09-10T00:08:14Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1158",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 17.49,
-      "candidate_summaries": [
-        {
-          "title": "Flora Flowers Along the Coastline of the British Isles Photographs",
-          "listing_ids": [
-            "257733386444"
-          ],
-          "observed_price_gbp": 60.0
-        },
-        {
-          "title": "Famous Horses of the British Turf Vol. 3-1926 by Arthur Coaten Numbered Ed",
-          "listing_ids": [
-            "257733386517"
-          ],
-          "observed_price_gbp": 41.99
-        },
-        {
-          "title": "Eleuthera Book by Katie Black Frost with Photographs by Marc Coeffic",
-          "listing_ids": [
-            "257733386502"
-          ],
-          "observed_price_gbp": 41.99
-        },
-        {
-          "title": "Fantasia in Ink Major by Li Yongfei and Qu Weiwei - Art Book Hardback Copy",
-          "listing_ids": [
-            "257733386494"
-          ],
-          "observed_price_gbp": 59.99
-        },
-        {
-          "title": "Fortnum & Mason: Time for Tea by Parker Bowles, Tom Book Signed Copy",
-          "listing_ids": [
-            "257733386509"
-          ],
-          "observed_price_gbp": 19.99
-        },
-        {
-          "title": "Jim Oliver What The Were You Playing At Football Memoir Paperback",
-          "listing_ids": [
-            "198629566758"
-          ],
-          "observed_price_gbp": 49.99
-        },
-        {
-          "title": "the Song of Roland C K Scott MoncrieffIllustrated Hardcover Poetry Book",
-          "listing_ids": [
-            "198629659943"
-          ],
-          "observed_price_gbp": 29.99
-        },
-        {
-          "title": "Rona The Distant Island Michael Robson Hardcover 1991 First Edition",
-          "listing_ids": [
-            "198629819105"
-          ],
-          "observed_price_gbp": 17.49
-        },
-        {
-          "title": "Seller warnings",
-          "listing_ids": [],
-          "observed_price_gbp": null
         }
       ]
     },
@@ -542,6 +469,25 @@
             "327351542560"
           ],
           "observed_price_gbp": 29.95
+        }
+      ]
+    },
+    {
+      "number": 1328,
+      "title": "CHARITY_NEW: 1 eBay seller photobook candidate",
+      "created_at": "2026-09-11T14:21:51Z",
+      "updated_at": "2026-09-11T14:21:51Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1328",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 23.0,
+      "candidate_summaries": [
+        {
+          "title": "Joe Lycett's Art Hole by Joe Lycett SIGNED 2024 UK 1st edition",
+          "listing_ids": [
+            "158280443715"
+          ],
+          "observed_price_gbp": 23.0
         }
       ]
     }
