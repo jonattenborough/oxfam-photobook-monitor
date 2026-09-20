@@ -1,33 +1,7 @@
 {
-  "checked_at": "2026-09-20T11:03:08Z",
+  "checked_at": "2026-09-20T14:40:34Z",
   "source": "CHARITY_NEW",
   "issues": [
-    {
-      "number": 966,
-      "title": "CHARITY_NEW: 2 eBay seller photobook candidates",
-      "created_at": "2026-09-08T14:28:14Z",
-      "updated_at": "2026-09-08T14:28:14Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/966",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 14.99,
-      "candidate_summaries": [
-        {
-          "title": "Signed Book - The Future Starts With Us by Gordon Brown First Edition [HM]",
-          "listing_ids": [
-            "178479004707"
-          ],
-          "observed_price_gbp": 16.99
-        },
-        {
-          "title": "Extraordinary Means Robyn Schneider Hardback Signed 1st Edition 2015",
-          "listing_ids": [
-            "820101988753"
-          ],
-          "observed_price_gbp": 14.99
-        }
-      ]
-    },
     {
       "number": 1031,
       "title": "CHARITY_NEW: 3 eBay seller photobook candidates",
@@ -514,6 +488,25 @@
             "377491313034"
           ],
           "observed_price_gbp": 8.0
+        }
+      ]
+    },
+    {
+      "number": 1558,
+      "title": "CHARITY_NEW: 1 eBay seller photobook candidate",
+      "created_at": "2026-09-13T19:23:59Z",
+      "updated_at": "2026-09-13T19:23:59Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1558",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 9.5,
+      "candidate_summaries": [
+        {
+          "title": "Michel Katalog der Deutschen Privatpostmarken by Horst Muller 1984 paperback",
+          "listing_ids": [
+            "366666740739"
+          ],
+          "observed_price_gbp": 9.5
         }
       ]
     }
