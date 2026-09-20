@@ -1,40 +1,7 @@
 {
-  "checked_at": "2026-09-20T18:10:02Z",
+  "checked_at": "2026-09-20T21:22:03Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
-    {
-      "number": 2499,
-      "title": "EBAY_PRIVATE_NEW: REVIEW 3 | top 88 | 0 under £100 | 1 special | 17/17",
-      "created_at": "2026-09-20T18:09:46Z",
-      "updated_at": "2026-09-20T18:09:46Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2499",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 115.1,
-      "candidate_summaries": [
-        {
-          "title": "REVIEW 79/100 - Jessica Dimmock The Ninth Floor Photography Book Contrasto First Edition",
-          "listing_ids": [
-            "193887214992"
-          ],
-          "observed_price_gbp": 224.3
-        },
-        {
-          "title": "REVIEW 88/100 - From A to B: Tales of Modern Motoring by Martin Parr (First Ed, Paperback, 1994)",
-          "listing_ids": [
-            "114201154764"
-          ],
-          "observed_price_gbp": 115.1
-        },
-        {
-          "title": "REVIEW 78/100 - Richard Avedon In the American West Paperback Illustrated",
-          "listing_ids": [
-            "227530559784"
-          ],
-          "observed_price_gbp": null
-        }
-      ]
-    },
     {
       "number": 1130,
       "title": "EBAY_PRIVATE_NEW: REVIEW 1 | top 73 | 0 under £100 | 1 special | 19/19",
@@ -195,6 +162,25 @@
           "title": "REVIEW 73/100 - Case History by Mikhailov, Boris / Hardback w Dust jacket / Scala First Edition",
           "listing_ids": [
             "336801640683"
+          ],
+          "observed_price_gbp": null
+        }
+      ]
+    },
+    {
+      "number": 2522,
+      "title": "EBAY_PRIVATE_NEW: REVIEW 1 | top 82 | 0 under £100 | 1 special | 14/14",
+      "created_at": "2026-09-20T21:21:48Z",
+      "updated_at": "2026-09-20T21:21:48Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2522",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": null,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 82/100 - WILLIAM KLEIN Photographs Aperture Monograph Hardback 1981 1st Edition Tokyo NYC",
+          "listing_ids": [
+            "287594475008"
           ],
           "observed_price_gbp": null
         }

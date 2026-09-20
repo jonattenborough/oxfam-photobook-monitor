@@ -1,7 +1,40 @@
 {
-  "checked_at": "2026-09-20T18:10:02Z",
+  "checked_at": "2026-09-20T21:22:03Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
+    {
+      "number": 589,
+      "title": "EBAY_PRIVATE_NEW: REVIEW 3 | top 77 | 0 under £100 | 11/11",
+      "created_at": "2026-09-04T13:27:03Z",
+      "updated_at": "2026-09-04T13:27:04Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/589",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 100.31,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 77/100 - Jason Fulford The Mushroom Collector Hardback",
+          "listing_ids": [
+            "287063907602"
+          ],
+          "observed_price_gbp": 146.3
+        },
+        {
+          "title": "REVIEW 76/100 - Rare James Nachtwey Inferno book.",
+          "listing_ids": [
+            "276433119912"
+          ],
+          "observed_price_gbp": 167.1
+        },
+        {
+          "title": "REVIEW 74/100 - Yasuhiro Ishimoto CHICAGO CHICAGO Part 2 Photo Book 1983 Canon Club",
+          "listing_ids": [
+            "366459876825"
+          ],
+          "observed_price_gbp": 100.31
+        }
+      ]
+    },
     {
       "number": 791,
       "title": "EBAY_PRIVATE_NEW: REVIEW 3 | top 81 | 0 under £100 | 1 special | 7/7",
@@ -338,32 +371,6 @@
             "276820903901"
           ],
           "observed_price_gbp": 516.7
-        }
-      ]
-    },
-    {
-      "number": 1499,
-      "title": "EBAY_PRIVATE_NEW: REVIEW 2 | top 82 | 0 under £100 | 1 special | 5/5",
-      "created_at": "2026-09-13T06:16:54Z",
-      "updated_at": "2026-09-13T06:16:54Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1499",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 115.1,
-      "candidate_summaries": [
-        {
-          "title": "REVIEW 82/100 - Things Here And Things Still To Come Jose Pedro Cortes Hardback 1st Edition 2011",
-          "listing_ids": [
-            "327074696341"
-          ],
-          "observed_price_gbp": 115.1
-        },
-        {
-          "title": "REVIEW 81/100 - Rinko Kawauchi: Illuminance by Rinko Kawauchi (2011, Hardcover)",
-          "listing_ids": [
-            "267621854359"
-          ],
-          "observed_price_gbp": 156.7
         }
       ]
     }
