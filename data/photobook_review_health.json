@@ -1,15 +1,15 @@
 {
-  "checked_at": "2026-09-21T16:56:15Z",
+  "checked_at": "2026-09-21T20:56:13Z",
   "status": "ATTENTION",
   "index_scan_complete": true,
-  "successful_discovery_at": "2026-09-21T16:38:08Z",
-  "discovery_age_minutes": 18.1,
-  "last_completed_review_at": "2026-09-21T16:10:20Z",
-  "completed_review_age_minutes": 45.9,
+  "successful_discovery_at": "2026-09-21T20:34:48Z",
+  "discovery_age_minutes": 21.4,
+  "last_completed_review_at": "2026-09-21T18:10:31Z",
+  "completed_review_age_minutes": 165.7,
   "unreviewed_issues_by_source": {
-    "ENDGAME_4H": 4,
-    "ENDGAME_EARLY": 8,
-    "EBAY_PRIVATE_NEW": 953,
+    "ENDGAME_4H": 2,
+    "ENDGAME_EARLY": 7,
+    "EBAY_PRIVATE_NEW": 957,
     "CHARITY_NEW": 7
   },
   "completed_but_open": [
@@ -71,43 +71,45 @@
     1981
   ],
   "unreviewed_elapsed_deadline_issue_numbers": [
-    2581,
-    2592
+    2618
   ],
   "unreviewed_next_four_hours_issue_numbers": [
-    2592,
-    2593,
-    2594
+    2618,
+    2619
   ],
-  "unfinished_endgame_windows": 47,
+  "unfinished_endgame_windows": 56,
   "warnings": [
+    "Waiting issues have no recent recorded completed review",
     "Unreviewed Endgame packets include elapsed auction deadlines",
     "Fixed-price review backlog exceeds two nominal six-issue runs",
     "Endgame Urgent Review: latest verified FINISH receipt is stale",
+    "eBay Fixed Price Review: latest verified FINISH receipt is stale",
     "eBay and Endgame Review: latest verified FINISH receipt is stale",
-    "eBay Fixed Price Review: START has no matching FINISH after 4802.5 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 4681.5 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 4670.2 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 4499.4 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 3781.7 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 3302.3 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 3179.7 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 3059.2 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 2578.9 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 2158.8 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 1920.1 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 1798.2 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 1380.8 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 1019.5 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 838.2 minutes",
-    "eBay and Endgame Review: START has no matching FINISH after 818.2 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 778.4 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 479.2 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 121.7 minutes"
+    "eBay Fixed Price Review: START has no matching FINISH after 5042.5 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 4921.5 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 4910.1 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 4739.4 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 4021.7 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 3542.3 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 3419.7 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 3299.1 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 2818.8 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 2398.8 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 2160.0 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 2038.1 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 1620.7 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 1259.5 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 1078.1 minutes",
+    "eBay and Endgame Review: START has no matching FINISH after 1058.2 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 1018.3 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 719.2 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 361.6 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 119.9 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 61.2 minutes"
   ],
   "limitations": "Issue index only; not live eBay availability, edition proof, or full search coverage.",
   "reviewer_run_receipt_status": "ATTENTION",
-  "latest_verified_reviewer_run_at": "2026-09-21T16:11:12.382798+00:00",
+  "latest_verified_reviewer_run_at": "2026-09-21T18:12:12Z",
   "auction_search_routes": {
     "never_searched": 0,
     "never_searched_by_tier": {
@@ -115,7 +117,7 @@
       "2": 0,
       "3": 0
     },
-    "due": 119,
-    "unfinished_windows": 47
+    "due": 105,
+    "unfinished_windows": 56
   }
 }
