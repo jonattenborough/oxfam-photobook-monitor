@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-21T00:01:10Z",
+  "checked_at": "2026-09-21T04:42:33Z",
   "index_scan_complete": true,
   "limitations": "Discovery index only. Re-fetch issue and comments; verify eBay availability and prices.",
   "queues": {
@@ -16,1915 +16,1860 @@
       "freshest_issues": []
     },
     "EBAY_PRIVATE_NEW": {
-      "issue_count": 989,
+      "issue_count": 964,
       "pages": [
         {
           "path": "data/photobook_review_queue/ebay_private_new-0001.json",
           "issue_numbers": [
-            547,
-            548,
-            553,
-            554,
-            556,
-            558,
-            559,
-            574,
-            575,
-            577
+            598,
+            599,
+            600,
+            603,
+            604,
+            605,
+            606,
+            607,
+            613,
+            615
           ],
           "lowest_observed_gbp": 1.16,
-          "oldest_created_at": "2026-09-04T08:16:37Z",
+          "oldest_created_at": "2026-09-04T17:01:18Z",
           "contains_unknown_price": false
         },
         {
           "path": "data/photobook_review_queue/ebay_private_new-0002.json",
           "issue_numbers": [
-            578,
-            579,
-            580,
-            581,
-            582,
-            583,
-            584,
-            585,
-            586,
-            587
-          ],
-          "lowest_observed_gbp": 1.29,
-          "oldest_created_at": "2026-09-04T11:40:41Z",
-          "contains_unknown_price": false
-        },
-        {
-          "path": "data/photobook_review_queue/ebay_private_new-0003.json",
-          "issue_numbers": [
-            588,
-            596,
-            597,
-            598,
-            599,
-            600,
-            601,
-            602,
-            603,
-            604
-          ],
-          "lowest_observed_gbp": 1.17,
-          "oldest_created_at": "2026-09-04T13:27:02Z",
-          "contains_unknown_price": false
-        },
-        {
-          "path": "data/photobook_review_queue/ebay_private_new-0004.json",
-          "issue_numbers": [
-            605,
-            606,
-            607,
-            613,
-            614,
-            615,
             616,
             617,
             618,
-            619
-          ],
-          "lowest_observed_gbp": 1.16,
-          "oldest_created_at": "2026-09-04T17:01:28Z",
-          "contains_unknown_price": false
-        },
-        {
-          "path": "data/photobook_review_queue/ebay_private_new-0005.json",
-          "issue_numbers": [
             620,
             621,
             622,
             623,
             624,
             625,
-            626,
-            627,
-            632,
-            633
+            626
           ],
-          "lowest_observed_gbp": 1.17,
-          "oldest_created_at": "2026-09-04T19:28:18Z",
+          "lowest_observed_gbp": 1.99,
+          "oldest_created_at": "2026-09-04T19:28:13Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0006.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0003.json",
           "issue_numbers": [
+            627,
+            632,
+            633,
             634,
             635,
             636,
             637,
             638,
             639,
-            640,
-            645,
-            646,
-            647
+            640
           ],
-          "lowest_observed_gbp": 2.49,
-          "oldest_created_at": "2026-09-04T21:45:03Z",
+          "lowest_observed_gbp": 1.17,
+          "oldest_created_at": "2026-09-04T19:28:27Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0007.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0004.json",
           "issue_numbers": [
+            645,
+            646,
+            647,
             648,
             649,
             650,
             651,
             652,
             653,
-            654,
-            655,
-            656,
-            660
+            654
           ],
-          "lowest_observed_gbp": 3.3,
-          "oldest_created_at": "2026-09-04T23:25:27Z",
+          "lowest_observed_gbp": 2.49,
+          "oldest_created_at": "2026-09-04T23:25:23Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0008.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0005.json",
           "issue_numbers": [
+            655,
+            656,
+            660,
             661,
             662,
             663,
             664,
             665,
             666,
-            667,
-            668,
-            675,
-            676
+            667
           ],
           "lowest_observed_gbp": 1.17,
-          "oldest_created_at": "2026-09-05T01:20:19Z",
+          "oldest_created_at": "2026-09-04T23:25:38Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0009.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0006.json",
           "issue_numbers": [
+            668,
+            675,
+            676,
             677,
             678,
             679,
             680,
             681,
             682,
-            683,
-            684,
-            686,
-            687
+            683
           ],
           "lowest_observed_gbp": 1.16,
-          "oldest_created_at": "2026-09-05T06:16:36Z",
+          "oldest_created_at": "2026-09-05T01:20:27Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0010.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0007.json",
           "issue_numbers": [
+            684,
+            686,
+            687,
             688,
             689,
             690,
             691,
             692,
             693,
-            694,
-            695,
-            696,
-            697
+            694
           ],
           "lowest_observed_gbp": 1.17,
-          "oldest_created_at": "2026-09-05T10:45:10Z",
+          "oldest_created_at": "2026-09-05T06:16:47Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0011.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0008.json",
           "issue_numbers": [
+            695,
+            696,
+            697,
             698,
             699,
             700,
             701,
             706,
             707,
-            708,
-            709,
-            710,
-            711
+            708
           ],
           "lowest_observed_gbp": 1.16,
-          "oldest_created_at": "2026-09-05T10:45:22Z",
+          "oldest_created_at": "2026-09-05T10:45:19Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0012.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0009.json",
           "issue_numbers": [
+            709,
+            710,
+            711,
             712,
             713,
             714,
             715,
             716,
             717,
-            718,
-            719,
-            725,
-            726
+            718
           ],
-          "lowest_observed_gbp": 1.99,
-          "oldest_created_at": "2026-09-05T13:35:17Z",
+          "lowest_observed_gbp": 3.31,
+          "oldest_created_at": "2026-09-05T13:35:13Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0013.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0010.json",
           "issue_numbers": [
+            719,
+            725,
+            726,
             727,
             728,
             729,
             730,
             731,
             732,
-            733,
-            734,
-            735,
-            736
+            733
           ],
-          "lowest_observed_gbp": 2.24,
-          "oldest_created_at": "2026-09-05T16:18:26Z",
+          "lowest_observed_gbp": 1.99,
+          "oldest_created_at": "2026-09-05T13:35:27Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0014.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0011.json",
           "issue_numbers": [
+            734,
+            735,
+            736,
             737,
             742,
             743,
             744,
             745,
             746,
-            747,
-            748,
-            749,
-            750
+            747
           ],
           "lowest_observed_gbp": 1.16,
-          "oldest_created_at": "2026-09-05T16:18:40Z",
+          "oldest_created_at": "2026-09-05T16:18:36Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0015.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0012.json",
           "issue_numbers": [
+            748,
+            749,
+            750,
             753,
             754,
             755,
             756,
             757,
             758,
-            759,
-            762,
-            763,
-            764
+            759
           ],
           "lowest_observed_gbp": 2.77,
-          "oldest_created_at": "2026-09-05T20:42:03Z",
+          "oldest_created_at": "2026-09-05T18:32:55Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0016.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0013.json",
           "issue_numbers": [
+            762,
+            763,
+            764,
             765,
             766,
             769,
             770,
             771,
             772,
-            773,
-            774,
-            778,
-            779
+            773
           ],
           "lowest_observed_gbp": 1.16,
-          "oldest_created_at": "2026-09-05T22:21:58Z",
+          "oldest_created_at": "2026-09-05T22:21:53Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0017.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0014.json",
           "issue_numbers": [
+            774,
+            778,
+            779,
             780,
             781,
             782,
             783,
             785,
             786,
-            787,
-            788,
-            789,
-            790
+            787
           ],
           "lowest_observed_gbp": 1.17,
-          "oldest_created_at": "2026-09-06T04:46:51Z",
+          "oldest_created_at": "2026-09-06T00:11:41Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0018.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0015.json",
           "issue_numbers": [
+            788,
+            789,
+            790,
             794,
             795,
             796,
             797,
             798,
             802,
-            803,
-            804,
-            805,
-            806
+            803
           ],
-          "lowest_observed_gbp": 1.17,
-          "oldest_created_at": "2026-09-06T12:50:34Z",
+          "lowest_observed_gbp": 1.42,
+          "oldest_created_at": "2026-09-06T08:59:10Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0019.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0016.json",
           "issue_numbers": [
+            804,
+            805,
+            806,
             807,
             808,
             809,
             810,
             811,
             812,
-            813,
-            814,
-            818,
-            819
+            813
           ],
-          "lowest_observed_gbp": 1.16,
-          "oldest_created_at": "2026-09-06T16:10:13Z",
+          "lowest_observed_gbp": 1.17,
+          "oldest_created_at": "2026-09-06T16:10:08Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0020.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0017.json",
           "issue_numbers": [
+            814,
+            818,
+            819,
             820,
             821,
             822,
             823,
             824,
             825,
-            826,
-            827,
-            832,
-            833
+            826
           ],
           "lowest_observed_gbp": 1.0,
-          "oldest_created_at": "2026-09-06T18:23:07Z",
+          "oldest_created_at": "2026-09-06T16:10:25Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0021.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0018.json",
           "issue_numbers": [
+            827,
+            832,
+            833,
             834,
             835,
             836,
             837,
             838,
             839,
-            840,
-            841,
-            842,
-            845
+            840
           ],
-          "lowest_observed_gbp": 2.77,
-          "oldest_created_at": "2026-09-06T20:46:12Z",
+          "lowest_observed_gbp": 2.24,
+          "oldest_created_at": "2026-09-06T18:23:15Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0022.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0019.json",
           "issue_numbers": [
+            841,
+            842,
+            845,
             846,
             847,
             848,
             849,
             850,
             853,
-            854,
-            855,
-            856,
-            857
+            854
           ],
           "lowest_observed_gbp": 2.77,
-          "oldest_created_at": "2026-09-06T22:27:48Z",
+          "oldest_created_at": "2026-09-06T20:46:21Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0023.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0020.json",
           "issue_numbers": [
+            855,
+            856,
+            857,
             860,
             861,
             862,
             863,
             865,
             866,
-            867,
-            868,
-            869,
-            870
+            867
           ],
           "lowest_observed_gbp": 1.17,
-          "oldest_created_at": "2026-09-07T04:56:28Z",
+          "oldest_created_at": "2026-09-07T00:17:28Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0024.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0021.json",
           "issue_numbers": [
+            868,
+            869,
+            870,
             879,
             880,
             881,
             882,
             883,
             884,
-            885,
-            886,
-            887,
-            888
+            885
           ],
           "lowest_observed_gbp": 1.17,
-          "oldest_created_at": "2026-09-07T15:55:03Z",
+          "oldest_created_at": "2026-09-07T10:08:14Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0025.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0022.json",
           "issue_numbers": [
+            886,
+            887,
+            888,
             889,
             890,
             891,
             892,
             893,
             894,
-            895,
-            896,
-            904,
-            905
+            895
           ],
-          "lowest_observed_gbp": 1.17,
-          "oldest_created_at": "2026-09-07T15:55:23Z",
+          "lowest_observed_gbp": 3.09,
+          "oldest_created_at": "2026-09-07T15:55:18Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0026.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0023.json",
           "issue_numbers": [
+            896,
+            904,
+            905,
             906,
             907,
             908,
             909,
             910,
             911,
-            912,
-            913,
-            914,
-            915
+            912
           ],
           "lowest_observed_gbp": 1.17,
-          "oldest_created_at": "2026-09-07T19:52:21Z",
+          "oldest_created_at": "2026-09-07T15:55:39Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0027.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0024.json",
           "issue_numbers": [
+            913,
+            914,
+            915,
             916,
             917,
             921,
             922,
             923,
             924,
-            925,
-            926,
-            927,
-            932
+            925
           ],
           "lowest_observed_gbp": 1.17,
-          "oldest_created_at": "2026-09-07T19:52:34Z",
+          "oldest_created_at": "2026-09-07T19:52:29Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0028.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0025.json",
           "issue_numbers": [
+            926,
+            927,
+            932,
             933,
             934,
             935,
             936,
             939,
             940,
-            941,
-            942,
-            952,
-            953
+            941
           ],
           "lowest_observed_gbp": 1.69,
-          "oldest_created_at": "2026-09-08T00:45:17Z",
+          "oldest_created_at": "2026-09-07T22:46:09Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0029.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0026.json",
           "issue_numbers": [
+            942,
+            952,
+            953,
             954,
             955,
             956,
             957,
             958,
             959,
-            960,
-            961,
-            967,
-            968
+            960
           ],
-          "lowest_observed_gbp": 2.23,
-          "oldest_created_at": "2026-09-08T10:03:12Z",
+          "lowest_observed_gbp": 2.06,
+          "oldest_created_at": "2026-09-08T05:22:06Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0030.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0027.json",
           "issue_numbers": [
+            961,
+            967,
+            968,
             969,
             970,
             971,
             972,
             973,
             982,
-            983,
-            984,
-            985,
-            986
+            983
           ],
-          "lowest_observed_gbp": 1.16,
-          "oldest_created_at": "2026-09-08T14:37:31Z",
+          "lowest_observed_gbp": 2.23,
+          "oldest_created_at": "2026-09-08T10:03:26Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0031.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0028.json",
           "issue_numbers": [
+            984,
+            985,
+            986,
             987,
             988,
             989,
             990,
             991,
             992,
-            993,
-            994,
-            995,
-            996
+            993
           ],
-          "lowest_observed_gbp": 2.24,
-          "oldest_created_at": "2026-09-08T18:08:51Z",
+          "lowest_observed_gbp": 1.16,
+          "oldest_created_at": "2026-09-08T18:08:46Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0032.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0029.json",
           "issue_numbers": [
+            994,
+            995,
+            996,
             997,
             998,
             999,
             1000,
             1001,
             1002,
-            1003,
-            1008,
-            1009,
-            1010
+            1003
           ],
-          "lowest_observed_gbp": 1.17,
-          "oldest_created_at": "2026-09-08T18:09:08Z",
+          "lowest_observed_gbp": 9.89,
+          "oldest_created_at": "2026-09-08T18:09:03Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0033.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0030.json",
           "issue_numbers": [
+            1008,
+            1009,
+            1010,
             1011,
             1012,
             1013,
             1014,
             1015,
             1016,
-            1017,
-            1022,
-            1023,
-            1024
+            1017
           ],
-          "lowest_observed_gbp": 1.16,
-          "oldest_created_at": "2026-09-08T21:14:32Z",
+          "lowest_observed_gbp": 1.17,
+          "oldest_created_at": "2026-09-08T21:14:28Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0034.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0031.json",
           "issue_numbers": [
+            1022,
+            1023,
+            1024,
             1025,
             1026,
             1027,
             1028,
             1029,
             1030,
-            1034,
-            1035,
-            1036,
-            1037
+            1034
           ],
-          "lowest_observed_gbp": 1.17,
-          "oldest_created_at": "2026-09-08T23:27:47Z",
+          "lowest_observed_gbp": 1.16,
+          "oldest_created_at": "2026-09-08T23:27:42Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0035.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0032.json",
           "issue_numbers": [
+            1035,
+            1036,
+            1037,
             1038,
             1039,
             1040,
             1041,
             1042,
             1043,
-            1049,
-            1050,
-            1051,
-            1052
+            1049
           ],
-          "lowest_observed_gbp": 1.97,
-          "oldest_created_at": "2026-09-09T01:28:37Z",
+          "lowest_observed_gbp": 1.17,
+          "oldest_created_at": "2026-09-09T01:28:31Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0036.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0033.json",
           "issue_numbers": [
+            1050,
+            1051,
+            1052,
             1053,
             1054,
             1055,
             1056,
             1057,
             1058,
-            1065,
-            1066,
-            1067,
-            1068
+            1065
           ],
-          "lowest_observed_gbp": 1.16,
-          "oldest_created_at": "2026-09-09T06:36:51Z",
+          "lowest_observed_gbp": 1.97,
+          "oldest_created_at": "2026-09-09T06:36:46Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0037.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0034.json",
           "issue_numbers": [
+            1066,
+            1067,
+            1068,
             1069,
             1070,
             1071,
             1072,
             1087,
             1088,
-            1089,
-            1090,
-            1091,
-            1092
+            1089
           ],
           "lowest_observed_gbp": 1.16,
-          "oldest_created_at": "2026-09-09T11:57:28Z",
+          "oldest_created_at": "2026-09-09T11:57:24Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0038.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0035.json",
           "issue_numbers": [
+            1090,
+            1091,
+            1092,
             1093,
             1094,
             1095,
             1096,
             1097,
             1098,
-            1099,
-            1100,
-            1101,
-            1102
+            1099
           ],
-          "lowest_observed_gbp": 5.45,
-          "oldest_created_at": "2026-09-09T16:30:49Z",
+          "lowest_observed_gbp": 3.31,
+          "oldest_created_at": "2026-09-09T16:30:44Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0039.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0036.json",
           "issue_numbers": [
+            1100,
+            1101,
+            1102,
             1112,
             1113,
             1114,
             1115,
             1116,
             1117,
-            1118,
-            1119,
-            1120,
-            1121
+            1118
           ],
           "lowest_observed_gbp": 1.17,
-          "oldest_created_at": "2026-09-09T19:28:38Z",
+          "oldest_created_at": "2026-09-09T16:31:01Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0040.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0037.json",
           "issue_numbers": [
+            1119,
+            1120,
+            1121,
             1122,
             1123,
             1124,
             1125,
             1126,
             1127,
-            1128,
-            1129,
-            1134,
-            1135
+            1128
           ],
-          "lowest_observed_gbp": 3.3,
-          "oldest_created_at": "2026-09-09T19:28:54Z",
+          "lowest_observed_gbp": 5.44,
+          "oldest_created_at": "2026-09-09T19:28:50Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0041.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0038.json",
           "issue_numbers": [
+            1129,
+            1134,
+            1135,
             1136,
             1137,
             1138,
             1139,
             1140,
             1141,
-            1142,
-            1143,
-            1144,
-            1146
+            1142
           ],
           "lowest_observed_gbp": 1.99,
-          "oldest_created_at": "2026-09-09T21:55:04Z",
+          "oldest_created_at": "2026-09-09T19:29:06Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0042.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0039.json",
           "issue_numbers": [
+            1143,
+            1144,
+            1146,
             1147,
             1148,
             1149,
             1150,
             1151,
             1152,
-            1153,
-            1154,
-            1155,
-            1156
+            1153
           ],
           "lowest_observed_gbp": 2.23,
-          "oldest_created_at": "2026-09-10T00:04:31Z",
+          "oldest_created_at": "2026-09-09T21:55:15Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0043.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0040.json",
           "issue_numbers": [
+            1154,
+            1155,
+            1156,
             1161,
             1162,
             1163,
             1164,
             1165,
             1166,
-            1167,
-            1168,
-            1169,
-            1173
+            1167
           ],
           "lowest_observed_gbp": 1.16,
-          "oldest_created_at": "2026-09-10T04:50:56Z",
+          "oldest_created_at": "2026-09-10T00:04:39Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0044.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0041.json",
           "issue_numbers": [
+            1168,
+            1169,
+            1173,
             1174,
             1175,
             1176,
             1177,
             1178,
             1179,
-            1188,
-            1189,
-            1190,
-            1191
+            1188
           ],
           "lowest_observed_gbp": 1.16,
-          "oldest_created_at": "2026-09-10T09:35:48Z",
+          "oldest_created_at": "2026-09-10T04:51:06Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0045.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0042.json",
           "issue_numbers": [
+            1189,
+            1190,
+            1191,
             1192,
             1193,
             1194,
             1195,
             1196,
             1209,
-            1210,
-            1211,
-            1212,
-            1213
+            1210
           ],
-          "lowest_observed_gbp": 1.92,
-          "oldest_created_at": "2026-09-10T13:53:14Z",
+          "lowest_observed_gbp": 3.31,
+          "oldest_created_at": "2026-09-10T13:53:10Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0046.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0043.json",
           "issue_numbers": [
+            1211,
+            1212,
+            1213,
             1214,
             1215,
             1216,
             1217,
             1218,
             1219,
-            1220,
-            1221,
-            1222,
-            1223
+            1220
           ],
-          "lowest_observed_gbp": 6.52,
-          "oldest_created_at": "2026-09-10T17:39:42Z",
+          "lowest_observed_gbp": 1.92,
+          "oldest_created_at": "2026-09-10T17:39:37Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0047.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0044.json",
           "issue_numbers": [
+            1221,
+            1222,
+            1223,
             1224,
             1225,
             1226,
             1227,
             1228,
             1229,
-            1230,
-            1237,
-            1238,
-            1239
+            1230
           ],
-          "lowest_observed_gbp": 1.16,
-          "oldest_created_at": "2026-09-10T17:40:00Z",
+          "lowest_observed_gbp": 7.11,
+          "oldest_created_at": "2026-09-10T17:39:55Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0048.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0045.json",
           "issue_numbers": [
+            1237,
+            1238,
+            1239,
             1240,
             1241,
             1242,
             1243,
             1244,
             1245,
-            1246,
-            1247,
-            1248,
-            1257
+            1246
           ],
-          "lowest_observed_gbp": 2.24,
-          "oldest_created_at": "2026-09-10T20:05:54Z",
+          "lowest_observed_gbp": 1.16,
+          "oldest_created_at": "2026-09-10T20:05:49Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0049.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0046.json",
           "issue_numbers": [
+            1247,
+            1248,
+            1257,
             1258,
             1259,
             1260,
             1261,
             1262,
             1263,
-            1264,
-            1265,
-            1270,
-            1271
+            1264
           ],
           "lowest_observed_gbp": 1.16,
-          "oldest_created_at": "2026-09-10T22:39:29Z",
+          "oldest_created_at": "2026-09-10T20:06:04Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0050.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0047.json",
           "issue_numbers": [
+            1265,
+            1270,
+            1271,
             1272,
             1273,
             1274,
             1275,
             1279,
             1280,
-            1281,
-            1282,
-            1283,
-            1284
+            1281
           ],
           "lowest_observed_gbp": 1.16,
-          "oldest_created_at": "2026-09-11T00:36:45Z",
+          "oldest_created_at": "2026-09-10T22:39:40Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0051.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0048.json",
           "issue_numbers": [
+            1282,
+            1283,
+            1284,
             1285,
             1286,
             1287,
             1288,
             1289,
             1290,
-            1295,
-            1296,
-            1297,
-            1298
+            1295
           ],
-          "lowest_observed_gbp": 1.0,
-          "oldest_created_at": "2026-09-11T05:20:33Z",
+          "lowest_observed_gbp": 2.58,
+          "oldest_created_at": "2026-09-11T05:20:29Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0052.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0049.json",
           "issue_numbers": [
+            1296,
+            1297,
+            1298,
             1299,
             1300,
             1301,
             1302,
             1303,
             1304,
-            1305,
-            1306,
-            1307,
-            1312
+            1305
           ],
-          "lowest_observed_gbp": 1.7,
-          "oldest_created_at": "2026-09-11T09:58:55Z",
+          "lowest_observed_gbp": 1.0,
+          "oldest_created_at": "2026-09-11T09:58:51Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0053.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0050.json",
           "issue_numbers": [
+            1306,
+            1307,
+            1312,
             1313,
             1314,
             1315,
             1316,
             1317,
             1318,
-            1319,
-            1320,
-            1321,
-            1322
+            1319
           ],
           "lowest_observed_gbp": 1.17,
-          "oldest_created_at": "2026-09-11T14:19:14Z",
+          "oldest_created_at": "2026-09-11T09:59:05Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0054.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0051.json",
           "issue_numbers": [
+            1320,
+            1321,
+            1322,
             1323,
             1324,
             1325,
             1326,
             1340,
             1341,
-            1342,
-            1343,
-            1344,
-            1345
+            1342
           ],
-          "lowest_observed_gbp": 1.16,
-          "oldest_created_at": "2026-09-11T14:19:30Z",
+          "lowest_observed_gbp": 2.77,
+          "oldest_created_at": "2026-09-11T14:19:25Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0055.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0052.json",
           "issue_numbers": [
+            1343,
+            1344,
+            1345,
             1346,
             1347,
             1348,
             1349,
             1350,
             1351,
-            1352,
-            1353,
-            1354,
-            1363
+            1352
           ],
-          "lowest_observed_gbp": 2.24,
-          "oldest_created_at": "2026-09-11T17:52:42Z",
+          "lowest_observed_gbp": 1.16,
+          "oldest_created_at": "2026-09-11T17:52:38Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0056.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0053.json",
           "issue_numbers": [
+            1353,
+            1354,
+            1363,
             1364,
             1365,
             1366,
             1367,
             1368,
             1369,
-            1374,
-            1375,
-            1376,
-            1377
+            1374
           ],
           "lowest_observed_gbp": 1.99,
-          "oldest_created_at": "2026-09-11T20:53:33Z",
+          "oldest_created_at": "2026-09-11T17:52:53Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0057.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0054.json",
           "issue_numbers": [
+            1375,
+            1376,
+            1377,
             1378,
             1379,
             1383,
             1384,
             1385,
             1386,
-            1387,
-            1390,
-            1391,
-            1392
+            1387
           ],
           "lowest_observed_gbp": 1.49,
-          "oldest_created_at": "2026-09-11T23:11:55Z",
+          "oldest_created_at": "2026-09-11T23:11:51Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0058.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0055.json",
           "issue_numbers": [
+            1390,
+            1391,
+            1392,
             1393,
             1394,
             1395,
             1396,
             1397,
             1403,
-            1404,
-            1405,
-            1406,
-            1407
+            1404
           ],
           "lowest_observed_gbp": 1.17,
-          "oldest_created_at": "2026-09-12T05:53:48Z",
+          "oldest_created_at": "2026-09-12T05:53:44Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0059.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0056.json",
           "issue_numbers": [
+            1405,
+            1406,
+            1407,
             1408,
             1409,
             1410,
             1411,
             1416,
             1417,
-            1418,
-            1419,
-            1423,
-            1424
+            1418
           ],
           "lowest_observed_gbp": 1.16,
-          "oldest_created_at": "2026-09-12T10:36:45Z",
+          "oldest_created_at": "2026-09-12T10:36:40Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0060.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0057.json",
           "issue_numbers": [
+            1419,
+            1423,
+            1424,
             1425,
             1426,
             1427,
             1428,
             1429,
             1430,
-            1431,
-            1432,
-            1433,
-            1443
+            1431
           ],
-          "lowest_observed_gbp": 3.43,
-          "oldest_created_at": "2026-09-12T16:34:55Z",
+          "lowest_observed_gbp": 1.17,
+          "oldest_created_at": "2026-09-12T13:47:19Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0061.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0058.json",
           "issue_numbers": [
+            1432,
+            1433,
+            1443,
             1444,
             1445,
             1446,
             1447,
             1448,
             1449,
-            1450,
-            1451,
-            1452,
-            1459
+            1450
           ],
-          "lowest_observed_gbp": 1.16,
-          "oldest_created_at": "2026-09-12T18:49:33Z",
+          "lowest_observed_gbp": 2.77,
+          "oldest_created_at": "2026-09-12T16:35:06Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0062.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0059.json",
           "issue_numbers": [
+            1451,
+            1452,
+            1459,
             1460,
             1461,
             1462,
             1463,
             1464,
             1465,
-            1466,
-            1467,
-            1468,
-            1473
+            1466
           ],
           "lowest_observed_gbp": 1.16,
-          "oldest_created_at": "2026-09-12T21:23:09Z",
+          "oldest_created_at": "2026-09-12T18:49:47Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0063.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0060.json",
           "issue_numbers": [
+            1467,
+            1468,
+            1473,
             1474,
             1475,
             1476,
             1477,
             1478,
             1479,
-            1480,
-            1481,
-            1482,
-            1483
+            1480
           ],
           "lowest_observed_gbp": 1.7,
-          "oldest_created_at": "2026-09-12T23:15:30Z",
+          "oldest_created_at": "2026-09-12T21:23:18Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0064.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0061.json",
           "issue_numbers": [
+            1481,
+            1482,
+            1483,
             1487,
             1488,
             1489,
             1490,
             1495,
             1496,
-            1497,
-            1498,
-            1508,
-            1509
+            1497
           ],
           "lowest_observed_gbp": 1.59,
-          "oldest_created_at": "2026-09-13T01:08:00Z",
+          "oldest_created_at": "2026-09-12T23:15:41Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0065.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0062.json",
           "issue_numbers": [
+            1498,
+            1508,
+            1509,
             1510,
             1511,
             1512,
             1513,
             1514,
             1515,
-            1521,
-            1522,
-            1523,
-            1524
+            1521
           ],
-          "lowest_observed_gbp": 1.2,
-          "oldest_created_at": "2026-09-13T12:05:05Z",
+          "lowest_observed_gbp": 1.79,
+          "oldest_created_at": "2026-09-13T06:16:52Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0066.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0063.json",
           "issue_numbers": [
+            1522,
+            1523,
+            1524,
             1525,
             1526,
             1527,
             1528,
             1529,
             1530,
-            1531,
-            1532,
-            1533,
-            1534
+            1531
           ],
-          "lowest_observed_gbp": 3.31,
-          "oldest_created_at": "2026-09-13T16:25:01Z",
+          "lowest_observed_gbp": 1.2,
+          "oldest_created_at": "2026-09-13T16:24:56Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0067.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0064.json",
           "issue_numbers": [
+            1532,
+            1533,
+            1534,
             1535,
             1541,
             1542,
             1543,
             1544,
             1545,
-            1546,
-            1547,
-            1548,
-            1549
+            1546
           ],
           "lowest_observed_gbp": 1.16,
-          "oldest_created_at": "2026-09-13T16:25:16Z",
+          "oldest_created_at": "2026-09-13T16:25:12Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0068.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0065.json",
           "issue_numbers": [
+            1547,
+            1548,
+            1549,
             1550,
             1551,
             1552,
             1553,
             1554,
             1555,
-            1556,
-            1562,
-            1563,
-            1564
+            1556
           ],
-          "lowest_observed_gbp": 1.17,
-          "oldest_created_at": "2026-09-13T18:56:01Z",
+          "lowest_observed_gbp": 5.29,
+          "oldest_created_at": "2026-09-13T18:55:55Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0069.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0066.json",
           "issue_numbers": [
+            1562,
+            1563,
+            1564,
             1565,
             1566,
             1567,
             1568,
             1569,
             1570,
-            1571,
-            1574,
-            1575,
-            1576
+            1571
           ],
           "lowest_observed_gbp": 1.17,
-          "oldest_created_at": "2026-09-13T21:24:22Z",
+          "oldest_created_at": "2026-09-13T21:24:17Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0070.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0067.json",
           "issue_numbers": [
+            1574,
+            1575,
+            1576,
             1577,
             1578,
             1579,
             1583,
             1584,
             1585,
-            1586,
-            1587,
-            1590,
-            1591
+            1586
           ],
-          "lowest_observed_gbp": 1.7,
-          "oldest_created_at": "2026-09-13T23:26:32Z",
+          "lowest_observed_gbp": 1.17,
+          "oldest_created_at": "2026-09-13T23:26:27Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0071.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0068.json",
           "issue_numbers": [
+            1587,
+            1590,
+            1591,
             1592,
             1593,
             1594,
             1597,
             1598,
             1599,
-            1600,
-            1601,
-            1602,
-            1603
+            1600
           ],
           "lowest_observed_gbp": 1.69,
-          "oldest_created_at": "2026-09-14T07:01:42Z",
+          "oldest_created_at": "2026-09-14T01:32:33Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0072.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0069.json",
           "issue_numbers": [
+            1601,
+            1602,
+            1603,
             1604,
             1613,
             1614,
             1615,
             1616,
             1617,
-            1618,
-            1619,
-            1620,
-            1621
+            1618
           ],
           "lowest_observed_gbp": 1.7,
-          "oldest_created_at": "2026-09-14T13:57:00Z",
+          "oldest_created_at": "2026-09-14T13:56:55Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0073.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0070.json",
           "issue_numbers": [
+            1619,
+            1620,
+            1621,
             1622,
             1623,
             1624,
             1625,
             1626,
             1627,
-            1632,
-            1633,
-            1634,
-            1635
+            1632
           ],
-          "lowest_observed_gbp": 1.17,
-          "oldest_created_at": "2026-09-14T19:15:51Z",
+          "lowest_observed_gbp": 3.09,
+          "oldest_created_at": "2026-09-14T19:15:46Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0074.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0071.json",
           "issue_numbers": [
+            1633,
+            1634,
+            1635,
             1636,
             1637,
             1638,
             1639,
             1640,
             1641,
-            1642,
-            1645,
-            1646,
-            1647
+            1642
           ],
-          "lowest_observed_gbp": 1.49,
-          "oldest_created_at": "2026-09-14T22:35:19Z",
+          "lowest_observed_gbp": 1.17,
+          "oldest_created_at": "2026-09-14T22:35:13Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0075.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0072.json",
           "issue_numbers": [
+            1645,
+            1646,
+            1647,
             1648,
             1649,
             1650,
             1651,
             1655,
             1656,
-            1657,
-            1658,
-            1659,
-            1660
+            1657
           ],
           "lowest_observed_gbp": 1.16,
-          "oldest_created_at": "2026-09-15T00:58:57Z",
+          "oldest_created_at": "2026-09-15T00:58:51Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0076.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0073.json",
           "issue_numbers": [
+            1658,
+            1659,
+            1660,
             1664,
             1665,
             1666,
             1667,
             1668,
             1669,
-            1670,
-            1671,
-            1672,
-            1673
+            1670
           ],
           "lowest_observed_gbp": 1.16,
-          "oldest_created_at": "2026-09-15T11:52:00Z",
+          "oldest_created_at": "2026-09-15T06:04:36Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0077.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0074.json",
           "issue_numbers": [
+            1671,
+            1672,
+            1673,
             1674,
             1675,
             1676,
             1677,
             1678,
             1686,
-            1687,
-            1688,
-            1689,
-            1690
+            1687
           ],
-          "lowest_observed_gbp": 1.7,
-          "oldest_created_at": "2026-09-15T11:52:16Z",
+          "lowest_observed_gbp": 7.07,
+          "oldest_created_at": "2026-09-15T11:52:12Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0078.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0075.json",
           "issue_numbers": [
+            1688,
+            1689,
+            1690,
             1691,
             1692,
             1693,
             1694,
             1695,
             1696,
-            1697,
-            1698,
-            1699,
-            1700
+            1697
           ],
-          "lowest_observed_gbp": 3.95,
-          "oldest_created_at": "2026-09-15T16:50:42Z",
+          "lowest_observed_gbp": 1.7,
+          "oldest_created_at": "2026-09-15T16:50:37Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0079.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0076.json",
           "issue_numbers": [
+            1698,
+            1699,
+            1700,
             1701,
             1708,
             1709,
             1710,
             1711,
             1712,
-            1713,
-            1714,
-            1715,
-            1716
+            1713
           ],
           "lowest_observed_gbp": 1.17,
-          "oldest_created_at": "2026-09-15T16:51:00Z",
+          "oldest_created_at": "2026-09-15T16:50:55Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0080.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0077.json",
           "issue_numbers": [
+            1714,
+            1715,
+            1716,
             1720,
             1721,
             1722,
             1723,
             1724,
             1725,
-            1726,
-            1727,
-            1728,
-            1729
+            1726
           ],
           "lowest_observed_gbp": 1.38,
-          "oldest_created_at": "2026-09-15T22:57:15Z",
+          "oldest_created_at": "2026-09-15T20:09:39Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0081.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0078.json",
           "issue_numbers": [
+            1727,
+            1728,
+            1729,
             1730,
             1737,
             1738,
             1739,
             1740,
             1741,
-            1742,
-            1743,
-            1744,
-            1745
+            1742
           ],
           "lowest_observed_gbp": 1.7,
-          "oldest_created_at": "2026-09-15T22:57:34Z",
+          "oldest_created_at": "2026-09-15T22:57:29Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0082.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0079.json",
           "issue_numbers": [
+            1743,
+            1744,
+            1745,
             1746,
             1747,
             1752,
             1753,
             1754,
             1755,
-            1756,
-            1757,
-            1758,
-            1759
+            1756
           ],
           "lowest_observed_gbp": 1.7,
-          "oldest_created_at": "2026-09-16T01:19:23Z",
+          "oldest_created_at": "2026-09-16T01:19:19Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0083.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0080.json",
           "issue_numbers": [
+            1757,
+            1758,
+            1759,
             1760,
             1765,
             1788,
             1789,
             1790,
             1791,
-            1792,
-            1793,
-            1794,
-            1796
+            1792
           ],
           "lowest_observed_gbp": 2.23,
-          "oldest_created_at": "2026-09-16T06:39:18Z",
+          "oldest_created_at": "2026-09-16T06:39:12Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0084.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0081.json",
           "issue_numbers": [
+            1793,
+            1794,
+            1796,
             1798,
             1813,
             1962,
             1965,
             1968,
             1970,
-            1969,
-            1971,
-            1972,
-            1973
+            1969
           ],
           "lowest_observed_gbp": 2.24,
-          "oldest_created_at": "2026-09-16T17:50:31Z",
+          "oldest_created_at": "2026-09-16T17:50:24Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0085.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0082.json",
           "issue_numbers": [
+            1971,
+            1972,
+            1973,
             1974,
             1976,
             2019,
             2020,
             2021,
             2022,
-            2023,
-            2024,
-            2025,
-            2026
+            2023
           ],
           "lowest_observed_gbp": 1.17,
-          "oldest_created_at": "2026-09-17T13:16:41Z",
+          "oldest_created_at": "2026-09-17T13:16:38Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0086.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0083.json",
           "issue_numbers": [
+            2024,
+            2025,
+            2026,
             2027,
             2028,
             2029,
             2030,
             2031,
             2032,
-            2033,
-            2034,
-            2035,
-            2036
+            2033
           ],
-          "lowest_observed_gbp": 4.75,
-          "oldest_created_at": "2026-09-17T18:05:08Z",
+          "lowest_observed_gbp": 3.31,
+          "oldest_created_at": "2026-09-17T18:05:05Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0087.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0084.json",
           "issue_numbers": [
+            2034,
+            2035,
+            2036,
             2037,
             2078,
             2079,
             2082,
             2081,
             2083,
-            2084,
-            2085,
-            2089,
-            2088
+            2084
           ],
           "lowest_observed_gbp": 1.17,
-          "oldest_created_at": "2026-09-17T18:05:19Z",
+          "oldest_created_at": "2026-09-17T18:05:16Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0088.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0085.json",
           "issue_numbers": [
+            2085,
+            2089,
+            2088,
             2090,
             2091,
             2092,
             2093,
             2094,
             2095,
-            2097,
-            2096,
-            2098,
-            2099
+            2097
           ],
           "lowest_observed_gbp": 1.7,
-          "oldest_created_at": "2026-09-17T22:00:57Z",
+          "oldest_created_at": "2026-09-17T22:00:53Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0089.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0086.json",
           "issue_numbers": [
+            2096,
+            2098,
+            2099,
             2100,
             2288,
             2289,
             2291,
             2292,
             2294,
-            2295,
-            2297,
-            2298,
-            2299
+            2295
           ],
           "lowest_observed_gbp": 1.17,
-          "oldest_created_at": "2026-09-17T22:01:06Z",
+          "oldest_created_at": "2026-09-17T22:01:03Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0090.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0087.json",
           "issue_numbers": [
+            2297,
+            2298,
+            2299,
             2322,
             2327,
             2348,
             2360,
             2362,
             2361,
-            2363,
-            2364,
-            2366,
-            2365
+            2363
           ],
           "lowest_observed_gbp": 1.17,
-          "oldest_created_at": "2026-09-19T17:06:46Z",
+          "oldest_created_at": "2026-09-19T13:49:04Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0091.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0088.json",
           "issue_numbers": [
+            2364,
+            2366,
+            2365,
             2367,
             2371,
             2370,
             2372,
             2374,
             2373,
-            2375,
-            2388,
-            2390,
-            2389
+            2375
           ],
-          "lowest_observed_gbp": 1.17,
-          "oldest_created_at": "2026-09-19T22:49:01Z",
+          "lowest_observed_gbp": 2.95,
+          "oldest_created_at": "2026-09-19T22:48:59Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0092.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0089.json",
           "issue_numbers": [
+            2388,
+            2390,
+            2389,
             2391,
             2399,
             2431,
             2430,
             2432,
             2436,
-            2437,
-            2440,
-            2442,
-            2443
+            2437
           ],
-          "lowest_observed_gbp": 2.77,
-          "oldest_created_at": "2026-09-20T00:53:43Z",
+          "lowest_observed_gbp": 1.17,
+          "oldest_created_at": "2026-09-20T00:53:41Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0093.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0090.json",
           "issue_numbers": [
+            2440,
+            2442,
+            2443,
             2457,
             2456,
             2458,
             2459,
             2460,
             2461,
-            2485,
-            2488,
-            2491,
-            2490
+            2485
           ],
           "lowest_observed_gbp": 3.31,
-          "oldest_created_at": "2026-09-20T14:40:11Z",
+          "oldest_created_at": "2026-09-20T11:02:53Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0094.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0091.json",
           "issue_numbers": [
+            2488,
+            2491,
+            2490,
             2493,
             2495,
             2497,
             2498,
-            2509,
             2510,
             2512,
-            2511,
-            2515,
-            2530
+            2511
           ],
           "lowest_observed_gbp": 1.44,
-          "oldest_created_at": "2026-09-20T18:09:42Z",
+          "oldest_created_at": "2026-09-20T18:09:38Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0095.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0092.json",
           "issue_numbers": [
+            2515,
+            2530,
             2529,
-            2531,
             2533,
             2532,
             2534,
             2536,
             2535,
             2537,
-            2538,
-            2539
+            2538
           ],
-          "lowest_observed_gbp": 1.65,
-          "oldest_created_at": "2026-09-21T00:00:48Z",
+          "lowest_observed_gbp": 4.0,
+          "oldest_created_at": "2026-09-20T21:21:43Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0096.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0093.json",
           "issue_numbers": [
+            2539,
             2540,
-            2541,
+            2546,
+            2547,
+            2548,
+            2549,
             589,
             791,
             843,
-            897,
-            1018,
-            1073,
-            1145,
-            1370
+            897
           ],
-          "lowest_observed_gbp": 13.19,
+          "lowest_observed_gbp": 3.26,
           "oldest_created_at": "2026-09-04T13:27:03Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0097.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0094.json",
           "issue_numbers": [
+            1018,
+            1073,
+            1145,
+            1370,
             1484,
             1491,
             1499,
             1580,
             1717,
-            1731,
-            1761,
-            1982,
-            1983,
-            2038
+            1731
           ],
           "lowest_observed_gbp": 104.69,
-          "oldest_created_at": "2026-09-12T23:15:46Z",
+          "oldest_created_at": "2026-09-08T21:14:44Z",
           "contains_unknown_price": false
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0098.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0095.json",
           "issue_numbers": [
+            1761,
+            1982,
+            1983,
+            2038,
             2102,
             1130,
             1434,
             1453,
             2103,
-            2308,
-            628,
-            702,
-            799,
-            918
+            2308
           ],
-          "lowest_observed_gbp": 119.7,
-          "oldest_created_at": "2026-09-04T19:28:29Z",
+          "lowest_observed_gbp": 104.7,
+          "oldest_created_at": "2026-09-09T19:29:07Z",
           "contains_unknown_price": true
         },
         {
-          "path": "data/photobook_review_queue/ebay_private_new-0099.json",
+          "path": "data/photobook_review_queue/ebay_private_new-0096.json",
           "issue_numbers": [
+            628,
+            702,
+            799,
+            918,
             1266,
             1327,
             1355,
             1412,
             1557,
-            1628,
-            1748,
-            2197,
-            2464
+            1628
           ],
           "lowest_observed_gbp": 156.7,
-          "oldest_created_at": "2026-09-10T22:39:42Z",
+          "oldest_created_at": "2026-09-04T19:28:29Z",
+          "contains_unknown_price": false
+        },
+        {
+          "path": "data/photobook_review_queue/ebay_private_new-0097.json",
+          "issue_numbers": [
+            1748,
+            2197,
+            2464,
+            2550
+          ],
+          "lowest_observed_gbp": 353.5,
+          "oldest_created_at": "2026-09-16T01:19:26Z",
           "contains_unknown_price": false
         }
       ],
       "oldest_affordable": {
-        "number": 547,
-        "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/547",
-        "page": "data/photobook_review_queue/ebay_private_new-0001.json"
+        "number": 589,
+        "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/589",
+        "page": "data/photobook_review_queue/ebay_private_new-0093.json"
       },
       "freshest_issues": [
         {
-          "number": 2541,
-          "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2541",
-          "page": "data/photobook_review_queue/ebay_private_new-0096.json"
+          "number": 2550,
+          "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2550",
+          "page": "data/photobook_review_queue/ebay_private_new-0097.json"
+        },
+        {
+          "number": 2549,
+          "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2549",
+          "page": "data/photobook_review_queue/ebay_private_new-0093.json"
+        },
+        {
+          "number": 2548,
+          "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2548",
+          "page": "data/photobook_review_queue/ebay_private_new-0093.json"
+        },
+        {
+          "number": 2547,
+          "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2547",
+          "page": "data/photobook_review_queue/ebay_private_new-0093.json"
+        },
+        {
+          "number": 2546,
+          "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2546",
+          "page": "data/photobook_review_queue/ebay_private_new-0093.json"
         },
         {
           "number": 2540,
           "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2540",
-          "page": "data/photobook_review_queue/ebay_private_new-0096.json"
+          "page": "data/photobook_review_queue/ebay_private_new-0093.json"
         },
         {
           "number": 2539,
           "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2539",
-          "page": "data/photobook_review_queue/ebay_private_new-0095.json"
+          "page": "data/photobook_review_queue/ebay_private_new-0093.json"
         },
         {
           "number": 2538,
           "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2538",
-          "page": "data/photobook_review_queue/ebay_private_new-0095.json"
+          "page": "data/photobook_review_queue/ebay_private_new-0092.json"
         },
         {
           "number": 2537,
           "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2537",
-          "page": "data/photobook_review_queue/ebay_private_new-0095.json"
+          "page": "data/photobook_review_queue/ebay_private_new-0092.json"
         },
         {
           "number": 2536,
           "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2536",
-          "page": "data/photobook_review_queue/ebay_private_new-0095.json"
-        },
-        {
-          "number": 2535,
-          "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2535",
-          "page": "data/photobook_review_queue/ebay_private_new-0095.json"
-        },
-        {
-          "number": 2534,
-          "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2534",
-          "page": "data/photobook_review_queue/ebay_private_new-0095.json"
-        },
-        {
-          "number": 2533,
-          "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2533",
-          "page": "data/photobook_review_queue/ebay_private_new-0095.json"
-        },
-        {
-          "number": 2532,
-          "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2532",
-          "page": "data/photobook_review_queue/ebay_private_new-0095.json"
+          "page": "data/photobook_review_queue/ebay_private_new-0092.json"
         }
       ]
     },
     "CHARITY_NEW": {
-      "issue_count": 24,
+      "issue_count": 18,
       "pages": [
         {
           "path": "data/photobook_review_queue/charity_new-0001.json",
           "issue_numbers": [
-            1233,
-            1267,
-            1328,
-            1507,
             1558,
             1643,
             2245,
             2315,
             2335,
-            2471
+            2471,
+            1187,
+            1208,
+            1311,
+            1435
           ],
-          "lowest_observed_gbp": 4.04,
-          "oldest_created_at": "2026-09-10T18:22:16Z",
-          "contains_unknown_price": false
+          "lowest_observed_gbp": 5.99,
+          "oldest_created_at": "2026-09-10T13:49:10Z",
+          "contains_unknown_price": true
         },
         {
           "path": "data/photobook_review_queue/charity_new-0002.json",
           "issue_numbers": [
-            874,
-            1075,
-            1187,
-            1208,
-            1311,
-            1435,
             1769,
             1808,
             2018,
-            2280
-          ],
-          "lowest_observed_gbp": null,
-          "oldest_created_at": "2026-09-07T15:19:47Z",
-          "contains_unknown_price": true
-        },
-        {
-          "path": "data/photobook_review_queue/charity_new-0003.json",
-          "issue_numbers": [
+            2280,
             2418,
             2445,
             2500,
             2523
           ],
           "lowest_observed_gbp": null,
-          "oldest_created_at": "2026-09-20T06:08:49Z",
+          "oldest_created_at": "2026-09-16T14:15:42Z",
           "contains_unknown_price": true
         }
       ],
       "oldest_affordable": {
-        "number": 1233,
-        "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1233",
+        "number": 1558,
+        "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1558",
         "page": "data/photobook_review_queue/charity_new-0001.json"
       },
       "freshest_issues": [
         {
           "number": 2523,
           "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2523",
-          "page": "data/photobook_review_queue/charity_new-0003.json"
+          "page": "data/photobook_review_queue/charity_new-0002.json"
         },
         {
           "number": 2500,
           "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2500",
-          "page": "data/photobook_review_queue/charity_new-0003.json"
+          "page": "data/photobook_review_queue/charity_new-0002.json"
         },
         {
           "number": 2471,
@@ -1934,12 +1879,12 @@
         {
           "number": 2445,
           "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2445",
-          "page": "data/photobook_review_queue/charity_new-0003.json"
+          "page": "data/photobook_review_queue/charity_new-0002.json"
         },
         {
           "number": 2418,
           "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2418",
-          "page": "data/photobook_review_queue/charity_new-0003.json"
+          "page": "data/photobook_review_queue/charity_new-0002.json"
         },
         {
           "number": 2335,

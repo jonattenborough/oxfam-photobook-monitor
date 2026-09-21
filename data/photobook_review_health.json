@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-21T00:01:10Z",
+  "checked_at": "2026-09-21T04:42:33Z",
   "status": "ATTENTION",
   "index_scan_complete": true,
-  "successful_discovery_at": "2026-09-20T22:26:01Z",
-  "discovery_age_minutes": 95.2,
-  "last_completed_review_at": "2026-09-20T23:37:18Z",
-  "completed_review_age_minutes": 23.9,
+  "successful_discovery_at": "2026-09-21T00:24:03Z",
+  "discovery_age_minutes": 258.5,
+  "last_completed_review_at": "2026-09-21T04:23:33Z",
+  "completed_review_age_minutes": 19.0,
   "unreviewed_issues_by_source": {
     "ENDGAME_4H": 0,
     "ENDGAME_EARLY": 0,
-    "EBAY_PRIVATE_NEW": 989,
-    "CHARITY_NEW": 24
+    "EBAY_PRIVATE_NEW": 964,
+    "CHARITY_NEW": 18
   },
   "completed_but_open": [
     376,
@@ -72,27 +72,33 @@
   ],
   "unreviewed_elapsed_deadline_issue_numbers": [],
   "unreviewed_next_four_hours_issue_numbers": [],
-  "unfinished_endgame_windows": 54,
+  "unfinished_endgame_windows": 55,
   "warnings": [
+    "Successful auction discovery is stale or unknown",
     "Fixed-price review backlog exceeds two nominal six-issue runs",
     "Endgame Urgent Review: latest verified FINISH receipt is stale",
-    "eBay Fixed Price Review: START has no matching FINISH after 3787.5 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 3666.4 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 3655.1 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 3484.3 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 2766.6 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 2287.2 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 2164.6 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 2044.1 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 1563.8 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 1143.8 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 905.0 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 783.1 minutes",
-    "eBay Fixed Price Review: START has no matching FINISH after 365.7 minutes"
+    "eBay Fixed Price Review: latest verified FINISH receipt is stale",
+    "eBay Fixed Price Review: START has no matching FINISH after 4068.8 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 3947.8 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 3936.5 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 3765.7 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 3048.0 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 2568.6 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 2446.0 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 2325.5 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 1845.2 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 1425.1 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 1186.4 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 1064.5 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 647.1 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 285.8 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 104.5 minutes",
+    "eBay and Endgame Review: START has no matching FINISH after 84.5 minutes",
+    "eBay Fixed Price Review: START has no matching FINISH after 44.7 minutes"
   ],
   "limitations": "Issue index only; not live eBay availability, edition proof, or full search coverage.",
   "reviewer_run_receipt_status": "ATTENTION",
-  "latest_verified_reviewer_run_at": "2026-09-20T23:38:23Z",
+  "latest_verified_reviewer_run_at": "2026-09-21T04:23:44.024Z",
   "auction_search_routes": {
     "never_searched": 0,
     "never_searched_by_tier": {
@@ -100,7 +106,7 @@
       "2": 0,
       "3": 0
     },
-    "due": 331,
-    "unfinished_windows": 54
+    "due": 335,
+    "unfinished_windows": 55
   }
 }
