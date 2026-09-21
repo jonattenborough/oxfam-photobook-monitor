@@ -1,453 +1,824 @@
 {
-  "checked_at": "2026-09-21T20:56:13Z",
+  "checked_at": "2026-09-21T23:59:05Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
     {
-      "number": 2642,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 16/18",
-      "created_at": "2026-09-21T20:55:59Z",
-      "updated_at": "2026-09-21T20:55:59Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2642",
+      "number": 2659,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 10/22",
+      "created_at": "2026-09-21T23:58:44Z",
+      "updated_at": "2026-09-21T23:58:44Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2659",
       "earliest_end_at": null,
       "all_end_times": [],
-      "lowest_observed_gbp": 21.5,
+      "lowest_observed_gbp": 12.4,
       "candidate_summaries": [
         {
-          "title": "DISCOVERY 72/100 - Camera Photography Tripod. Linhof Aluminium Tripod.",
+          "title": "DISCOVERY 72/100 - Urara Kanon Paperback Photobook book 1 Photo album Japan",
           "listing_ids": [
-            "377508129661"
+            "206568119921"
           ],
-          "observed_price_gbp": 21.5
+          "observed_price_gbp": 12.4
         },
         {
-          "title": "DISCOVERY 72/100 - Carp Talk Magazine No.49 - 64  All Very Good+  1995 Old School Vintage Carping",
+          "title": "DISCOVERY 72/100 - Waka Misono Paperback Photobook Photo album Japan",
           "listing_ids": [
-            "117424258970"
+            "206568098676"
           ],
-          "observed_price_gbp": 22.5
+          "observed_price_gbp": 12.4
         },
         {
-          "title": "DISCOVERY 72/100 - ZETT FAFIX 35mm PORTABLE SLIDE PROJECTOR With 80mm LENS & MINI SCREEN - UNTESTED",
+          "title": "DISCOVERY 72/100 - Yui Hatano Paperback 3 Photobook Photo album Japan",
           "listing_ids": [
-            "237075203721"
+            "206568049289"
           ],
-          "observed_price_gbp": 22.54
+          "observed_price_gbp": 12.4
         },
         {
-          "title": "DISCOVERY 72/100 - ASTRONOMY SOLAR SYSTEM 1846 HB Juvenile VICTORIAN SCIENCE planet Children cosmos",
+          "title": "DISCOVERY 72/100 - Yui Hatano Paperback 6 Photobook Photo album Japan",
           "listing_ids": [
-            "278377601378"
+            "206568152892"
+          ],
+          "observed_price_gbp": 12.4
+        },
+        {
+          "title": "DISCOVERY 72/100 - Kyogen Photo Book 'WORLD OF KYOGEN' Motoya Izumi JAPAN",
+          "listing_ids": [
+            "167870121928"
+          ],
+          "observed_price_gbp": 22.01
+        },
+        {
+          "title": "DISCOVERY 72/100 - Mei Washio/Paperback/Photobook/from japan",
+          "listing_ids": [
+            "286938664126"
+          ],
+          "observed_price_gbp": 14.65
+        },
+        {
+          "title": "DISCOVERY 72/100 - Duran Duran Photo book 1984",
+          "listing_ids": [
+            "117233166474"
+          ],
+          "observed_price_gbp": 16.99
+        },
+        {
+          "title": "DISCOVERY 72/100 - Mitsuki Nagisa Paperback Photobook Photo album Japan",
+          "listing_ids": [
+            "206568102553"
+          ],
+          "observed_price_gbp": 14.16
+        },
+        {
+          "title": "DISCOVERY 72/100 - Melody Hina Marks Paperback Photobook book 2 Photo album Japan",
+          "listing_ids": [
+            "206568082479"
+          ],
+          "observed_price_gbp": 15.05
+        },
+        {
+          "title": "DISCOVERY 72/100 - WW2 GERMAN MILITARY VEHICLE TAMIYA PHOTO BOOK & GERMAN PANZERS WW2 TIGER PANTHER",
+          "listing_ids": [
+            "277430285515"
+          ],
+          "observed_price_gbp": 24.1
+        }
+      ]
+    },
+    {
+      "number": 2660,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 11/22",
+      "created_at": "2026-09-21T23:58:45Z",
+      "updated_at": "2026-09-21T23:58:45Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2660",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 15.23,
+      "candidate_summaries": [
+        {
+          "title": "DISCOVERY 72/100 - JULIA Paperback Photobook book 3 Photo album Japan",
+          "listing_ids": [
+            "206568120273"
+          ],
+          "observed_price_gbp": 15.23
+        },
+        {
+          "title": "DISCOVERY 72/100 - Umi Yatsugake Paperback Photobook book 2 Photo album Japan",
+          "listing_ids": [
+            "206568099894"
+          ],
+          "observed_price_gbp": 15.94
+        },
+        {
+          "title": "DISCOVERY 72/100 - Roy Stuart Volume II Midsize Hanson, Dian Taschen Erotic Photography Book",
+          "listing_ids": [
+            "117424357828"
+          ],
+          "observed_price_gbp": 25.0
+        },
+        {
+          "title": "DISCOVERY 72/100 - Morning Musume. 16 Ayumi Ishida Photos It'S My Turn Photo Book",
+          "listing_ids": [
+            "336235580921"
+          ],
+          "observed_price_gbp": 28.56
+        },
+        {
+          "title": "DISCOVERY 72/100 - Maru the Cat Photo Book: \"Maru no Kurashi\" YouTube/Sliding Cat Viral Star Japan",
+          "listing_ids": [
+            "127461216391"
+          ],
+          "observed_price_gbp": 28.63
+        },
+        {
+          "title": "DISCOVERY 72/100 - IVE - Ive Switch Rei Digipack Album - Photocard + CD - Sealed New",
+          "listing_ids": [
+            "198653139859"
           ],
           "observed_price_gbp": 26.0
         },
         {
-          "title": "DISCOVERY 72/100 - Massimo Pallottino, Great Centuries of Painting : Etruscan Painting (Skira 1952)",
+          "title": "DISCOVERY 72/100 - IVE - Ive Switch Rei Digipack Album - Photocard + CD - Sealed New",
           "listing_ids": [
-            "128091560744"
+            "198653139893"
           ],
-          "observed_price_gbp": 23.58
+          "observed_price_gbp": 26.0
         },
         {
-          "title": "DISCOVERY 72/100 - Happy Nappers White Unicorn (Medium) for 3 to 6 years old.",
+          "title": "DISCOVERY 72/100 - Scandal Temptation Japan Photo Book",
           "listing_ids": [
-            "267790925072"
+            "167870108120"
           ],
-          "observed_price_gbp": 21.5
+          "observed_price_gbp": 21.41
         },
         {
-          "title": "DISCOVERY 72/100 - B+W 77mm F-Pro Circular Polarizer MRC Filter .",
+          "title": "DISCOVERY 72/100 - Japan Photos [2015- 19]  Twilight / Night time - Landscape / Street Photography",
           "listing_ids": [
-            "407228003866"
+            "402815664958"
           ],
-          "observed_price_gbp": 27.74
+          "observed_price_gbp": 25.66
         },
         {
-          "title": "DISCOVERY 72/100 - FLOWERS Herb Maxwell 1923 1st Ed Hb COLOUR PLATES Flora Scotland Scots Scottish",
+          "title": "DISCOVERY 72/100 - Mei Miyajima Paperback Photobook 1 Photo album Japan",
           "listing_ids": [
-            "278377163182"
+            "206568120647"
           ],
-          "observed_price_gbp": 27.74
-        },
-        {
-          "title": "DISCOVERY 72/100 - HILLYER 1762 Anglican Fasting PROTESTANT liturgy ecclesiastical calendar church",
-          "listing_ids": [
-            "278377580029"
-          ],
-          "observed_price_gbp": 27.74
-        },
-        {
-          "title": "DISCOVERY 72/100 - SEAMANSHIP 1932-7 HMSO Royal Navy Navigation Ropework Cables engines sail cargo",
-          "listing_ids": [
-            "278377636859"
-          ],
-          "observed_price_gbp": 27.74
+          "observed_price_gbp": 16.81
         }
       ]
     },
     {
-      "number": 2644,
-      "title": "EBAY_PRIVATE_NEW: HOT 7 | top 84 | 4 under £100 | 1 special | 4 unknown | 18/18",
-      "created_at": "2026-09-21T20:56:00Z",
-      "updated_at": "2026-09-21T20:56:00Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2644",
+      "number": 2661,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 12/22",
+      "created_at": "2026-09-21T23:58:46Z",
+      "updated_at": "2026-09-21T23:58:46Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2661",
       "earliest_end_at": null,
       "all_end_times": [],
-      "lowest_observed_gbp": 30.0,
+      "lowest_observed_gbp": 16.81,
       "candidate_summaries": [
         {
-          "title": "DISCOVERY 72/100 - ATLAS De L'AFRIQUE DU NORD 1939 hb Tunisia Maroc Algeria MAGHREB North Africa",
+          "title": "DISCOVERY 72/100 - MINAMO Photo album Paperback Photobook 5 Japan",
           "listing_ids": [
-            "278374006364"
+            "206568045111"
+          ],
+          "observed_price_gbp": 16.81
+        },
+        {
+          "title": "DISCOVERY 72/100 - Tsumugi Hara Paperback Photobook book 2 Photo album Japan",
+          "listing_ids": [
+            "206568121649"
+          ],
+          "observed_price_gbp": 16.81
+        },
+        {
+          "title": "DISCOVERY 72/100 - Yui Hatano Paperback Photo Album 16 Photobook Photo album Japan",
+          "listing_ids": [
+            "206568029390"
+          ],
+          "observed_price_gbp": 16.81
+        },
+        {
+          "title": "DISCOVERY 72/100 - ZEROBASEONE ZB1 MATTHEW Blue Paradise DIGIPACK Album - CD+ Photo Card NEW SEALED",
+          "listing_ids": [
+            "366678934970"
+          ],
+          "observed_price_gbp": 27.0
+        },
+        {
+          "title": "DISCOVERY 72/100 - Ai Uehara Dear Paperback Photobook 1 Photo album Japan",
+          "listing_ids": [
+            "206568077000"
+          ],
+          "observed_price_gbp": 17.7
+        },
+        {
+          "title": "DISCOVERY 72/100 - Airi Suzumura Paperback Photobook 43 Photo album Japan",
+          "listing_ids": [
+            "206568042877"
+          ],
+          "observed_price_gbp": 17.7
+        },
+        {
+          "title": "DISCOVERY 72/100 - Hinako Mori Paperback Photobook KMP Photo album Japan",
+          "listing_ids": [
+            "206568047449"
+          ],
+          "observed_price_gbp": 17.7
+        },
+        {
+          "title": "DISCOVERY 72/100 - Hinako Mori Paperback Photobook Photo album Japan",
+          "listing_ids": [
+            "206568101359"
+          ],
+          "observed_price_gbp": 17.7
+        },
+        {
+          "title": "DISCOVERY 72/100 - Ibuki Aoi Paperback Photobook 11 Photo album Japan",
+          "listing_ids": [
+            "206568101984"
+          ],
+          "observed_price_gbp": 17.7
+        },
+        {
+          "title": "DISCOVERY 72/100 - Ibuki Aoi Paperback Photobook 5 Photo album Japan",
+          "listing_ids": [
+            "206568041046"
+          ],
+          "observed_price_gbp": 17.7
+        }
+      ]
+    },
+    {
+      "number": 2662,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 13/22",
+      "created_at": "2026-09-21T23:58:47Z",
+      "updated_at": "2026-09-21T23:58:47Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2662",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 17.7,
+      "candidate_summaries": [
+        {
+          "title": "DISCOVERY 72/100 - Ibuki Aoi Paperback Photobook 8 Photo album Japan",
+          "listing_ids": [
+            "206568149321"
+          ],
+          "observed_price_gbp": 17.7
+        },
+        {
+          "title": "DISCOVERY 72/100 - Ibuki Aoi Paperback Photobook 9 Photo album Japan",
+          "listing_ids": [
+            "206568152386"
+          ],
+          "observed_price_gbp": 17.7
+        },
+        {
+          "title": "DISCOVERY 72/100 - Shunka Ayami Paperback Photobook 1 Photo album Japan",
+          "listing_ids": [
+            "206568081542"
+          ],
+          "observed_price_gbp": 17.7
+        },
+        {
+          "title": "DISCOVERY 72/100 - Umi Yatsugake Paperback Photobook book 13 Photo album Japan",
+          "listing_ids": [
+            "206568078524"
+          ],
+          "observed_price_gbp": 17.7
+        },
+        {
+          "title": "DISCOVERY 72/100 - Waka Misono Paperback Photobook KMP Photo album Japan",
+          "listing_ids": [
+            "206568040686"
+          ],
+          "observed_price_gbp": 17.7
+        },
+        {
+          "title": "DISCOVERY 72/100 - Yui Hatano Paperback Photo Album 8 Photobook Photo album Japan",
+          "listing_ids": [
+            "206568077375"
+          ],
+          "observed_price_gbp": 17.7
+        },
+        {
+          "title": "DISCOVERY 72/100 - Magnum Photobook :The Catalogue Raisonné by Fred Ritchin.Carole Naggar Hardcover",
+          "listing_ids": [
+            "357728290684"
+          ],
+          "observed_price_gbp": 26.7
+        },
+        {
+          "title": "DISCOVERY 72/100 - Airi Suzumura Paperback Photobook 11 Photo album Japan",
+          "listing_ids": [
+            "206568100214"
+          ],
+          "observed_price_gbp": 18.59
+        },
+        {
+          "title": "DISCOVERY 72/100 - Airi Suzumura Paperback Photobook 16 Photo album Japan",
+          "listing_ids": [
+            "206568042576"
+          ],
+          "observed_price_gbp": 18.59
+        },
+        {
+          "title": "DISCOVERY 72/100 - Airi Suzumura Paperback Photobook 23 Photo album Japan",
+          "listing_ids": [
+            "206568148751"
+          ],
+          "observed_price_gbp": 18.59
+        }
+      ]
+    },
+    {
+      "number": 2663,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 14/22",
+      "created_at": "2026-09-21T23:58:48Z",
+      "updated_at": "2026-09-21T23:58:48Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2663",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 18.59,
+      "candidate_summaries": [
+        {
+          "title": "DISCOVERY 72/100 - Airi Suzumura Paperback Photobook 26 Photo album Japan",
+          "listing_ids": [
+            "206568120342"
+          ],
+          "observed_price_gbp": 18.59
+        },
+        {
+          "title": "DISCOVERY 72/100 - Airi Suzumura Paperback Photobook 27 Photo album Japan",
+          "listing_ids": [
+            "206568044451"
+          ],
+          "observed_price_gbp": 18.59
+        },
+        {
+          "title": "DISCOVERY 72/100 - Airi Suzumura Paperback Photobook 7 Photo album Japan",
+          "listing_ids": [
+            "206568099900"
+          ],
+          "observed_price_gbp": 18.59
+        },
+        {
+          "title": "DISCOVERY 72/100 - Rei Kamiki Paperback Photobook 2 Photo album Japan",
+          "listing_ids": [
+            "206568084156"
+          ],
+          "observed_price_gbp": 18.59
+        },
+        {
+          "title": "DISCOVERY 72/100 - Sumire Mizukawa Miri Mizuki Paperback Photobook 2 Photo album Japan",
+          "listing_ids": [
+            "206568084440"
+          ],
+          "observed_price_gbp": 18.59
+        },
+        {
+          "title": "DISCOVERY 72/100 - Umi Yatsugake Paperback Photobook book 5 Photo album Japan",
+          "listing_ids": [
+            "206568152753"
+          ],
+          "observed_price_gbp": 18.59
+        },
+        {
+          "title": "DISCOVERY 72/100 - WAYV YANGYANG PHOTOCARD SET DEARMYMUSE BENEFIT GIVE ME THAT",
+          "listing_ids": [
+            "366678959747"
+          ],
+          "observed_price_gbp": 28.78
+        },
+        {
+          "title": "DISCOVERY 72/100 - Airi Suzumura Paperback Photobook 19 Photo album Japan",
+          "listing_ids": [
+            "206568152147"
+          ],
+          "observed_price_gbp": 19.48
+        },
+        {
+          "title": "DISCOVERY 72/100 - Airi Suzumura Paperback Photobook 9 Photo album Japan",
+          "listing_ids": [
+            "206568121822"
+          ],
+          "observed_price_gbp": 19.48
+        },
+        {
+          "title": "DISCOVERY 72/100 - Himari Kinoshita Paperback Photobook 4 Photo album Japan",
+          "listing_ids": [
+            "206568077807"
+          ],
+          "observed_price_gbp": 19.48
+        }
+      ]
+    },
+    {
+      "number": 2665,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 16/22",
+      "created_at": "2026-09-21T23:58:49Z",
+      "updated_at": "2026-09-21T23:58:49Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2665",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 19.48,
+      "candidate_summaries": [
+        {
+          "title": "DISCOVERY 72/100 - Shunka Ayami Paperback Photobook 22 Photo album Japan",
+          "listing_ids": [
+            "206568042607"
+          ],
+          "observed_price_gbp": 19.48
+        },
+        {
+          "title": "DISCOVERY 72/100 - Shunka Ayami Paperback Photobook 3 Photo album Japan",
+          "listing_ids": [
+            "206568128544"
+          ],
+          "observed_price_gbp": 19.48
+        },
+        {
+          "title": "DISCOVERY 72/100 - Umi Yatsugake Paperback Photobook Photo album Japan",
+          "listing_ids": [
+            "206568078069"
+          ],
+          "observed_price_gbp": 19.48
+        },
+        {
+          "title": "DISCOVERY 72/100 - Urara Kanon Paperback Photobook book 2 Photo album Japan",
+          "listing_ids": [
+            "206568028946"
+          ],
+          "observed_price_gbp": 19.48
+        },
+        {
+          "title": "DISCOVERY 72/100 - Yui Hatano Paperback Photo Album 10 Photobook Photo album Japan",
+          "listing_ids": [
+            "206568153074"
+          ],
+          "observed_price_gbp": 19.48
+        },
+        {
+          "title": "DISCOVERY 72/100 - WAYV Give Me That PHOTOBOOK Album Version A - Photo Card + Poster + Postcard NEW",
+          "listing_ids": [
+            "198653139880"
+          ],
+          "observed_price_gbp": 29.82
+        },
+        {
+          "title": "DISCOVERY 72/100 - Airi Suzumura Paperback Photobook 34 Photo album Japan",
+          "listing_ids": [
+            "206568153138"
+          ],
+          "observed_price_gbp": 20.35
+        },
+        {
+          "title": "DISCOVERY 72/100 - Sumire Mizukawa Miri Mizuki Paperback Photobook 3 Photo album Japan",
+          "listing_ids": [
+            "206568153003"
+          ],
+          "observed_price_gbp": 20.35
+        },
+        {
+          "title": "DISCOVERY 72/100 - NMIXX Stick Out PYROMANCY Version - First Press - 2 Photo Card + CD NEW SEALED",
+          "listing_ids": [
+            "198653139874"
           ],
           "observed_price_gbp": 30.0
         },
         {
-          "title": "DISCOVERY 72/100 - Peter Lindbergh -On Fashion Photography - 40th Anniversary...  Taschen",
+          "title": "DISCOVERY 72/100 - WAYV Give Me That PHOTOBOOK Album Version B - Photo Card + Poster + Postcard NEW",
           "listing_ids": [
-            "406380700975"
+            "198653139868"
           ],
-          "observed_price_gbp": 31.12
-        },
-        {
-          "title": "DISCOVERY 72/100 - Mario Testino: Private View - Hardcover By Testino, Mario-RARE",
-          "listing_ids": [
-            "236509172902"
-          ],
-          "observed_price_gbp": 35.02
-        },
-        {
-          "title": "DISCOVERY 72/100 - The Fourth Body by Roy Stuart - Taschen Hardback  - With DVD, Good Condition",
-          "listing_ids": [
-            "406412690921"
-          ],
-          "observed_price_gbp": 48.95
-        },
-        {
-          "title": "REVIEW 84/100 - Corinne Day Diary Photography Book (Hardcover, Kruse Verlag) 2000",
-          "listing_ids": [
-            "167363161269"
-          ],
-          "observed_price_gbp": 291.9
-        },
-        {
-          "title": "REVIEW 82/100 - Llyfr Mawr y Plant 1 ~ Argraffiad 1931 gan Jennie Thomas a J. O. Williams.",
-          "listing_ids": [
-            "237081151703"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "REVIEW 79/100 - Flamboya – Viviane Sassen (First Edition, 2008) – Signed & Dedicated",
-          "listing_ids": [
-            "336319022782"
-          ],
-          "observed_price_gbp": 450.0
+          "observed_price_gbp": 30.0
         }
       ]
     },
     {
-      "number": 843,
-      "title": "EBAY_PRIVATE_NEW: REVIEW 4 | top 80 | 0 under £100 | 2 special | 12/12",
-      "created_at": "2026-09-06T20:46:23Z",
-      "updated_at": "2026-09-06T20:46:24Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/843",
+      "number": 2664,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 15/22",
+      "created_at": "2026-09-21T23:58:49Z",
+      "updated_at": "2026-09-21T23:58:49Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2664",
       "earliest_end_at": null,
       "all_end_times": [],
-      "lowest_observed_gbp": 146.3,
+      "lowest_observed_gbp": 19.48,
       "candidate_summaries": [
         {
-          "title": "REVIEW 80/100 - Signed Michael Kenna SHINAN Nazraeli Press Hardback + Slipcase + Exhibition Ephe",
+          "title": "DISCOVERY 72/100 - Kirara Asuka Paperback Photobook 12 Photo album Japan",
           "listing_ids": [
-            "307030495908"
+            "206568119533"
           ],
-          "observed_price_gbp": 182.7
+          "observed_price_gbp": 19.48
         },
         {
-          "title": "REVIEW 78/100 - Masahisa Fukase Wonderful Days Photo Book Cat Sasuke Momoe Ravens Creator Item",
+          "title": "DISCOVERY 72/100 - Kirara Asuka Paperback Photobook book 16 Photo album Japan",
           "listing_ids": [
-            "236745911350"
+            "206568099133"
           ],
-          "observed_price_gbp": 261.9
+          "observed_price_gbp": 19.48
         },
         {
-          "title": "REVIEW 78/100 - Case History by Mikhailov, Boris | Book | condition good",
+          "title": "DISCOVERY 72/100 - Mitsuki Nagisa Paperback Photobook 5 Photo album Japan",
           "listing_ids": [
-            "267708317015"
+            "206568096050"
           ],
-          "observed_price_gbp": 146.3
+          "observed_price_gbp": 19.48
         },
         {
-          "title": "REVIEW 78/100 - Robert Mapplethorpe Black Book Bildband, Englisch – Fotografie Sachbuch",
+          "title": "DISCOVERY 72/100 - Natsu Tojo Paperback Photobook book 5 Photo album Japan",
           "listing_ids": [
-            "800622001594"
+            "206568086529"
           ],
-          "observed_price_gbp": null
+          "observed_price_gbp": 19.48
+        },
+        {
+          "title": "DISCOVERY 72/100 - Ranka Paperback Photobook 4 Photo album Japan",
+          "listing_ids": [
+            "206568128867"
+          ],
+          "observed_price_gbp": 19.48
+        },
+        {
+          "title": "DISCOVERY 72/100 - Shunka Ayami Paperback Photobook 12 Photo album Japan",
+          "listing_ids": [
+            "206568044497"
+          ],
+          "observed_price_gbp": 19.48
+        },
+        {
+          "title": "DISCOVERY 72/100 - Shunka Ayami Paperback Photobook 13 Photo album Japan",
+          "listing_ids": [
+            "206568121855"
+          ],
+          "observed_price_gbp": 19.48
+        },
+        {
+          "title": "DISCOVERY 72/100 - Shunka Ayami Paperback Photobook 15 Photo album Japan",
+          "listing_ids": [
+            "206568042634"
+          ],
+          "observed_price_gbp": 19.48
+        },
+        {
+          "title": "DISCOVERY 72/100 - Shunka Ayami Paperback Photobook 18 Photo album Japan",
+          "listing_ids": [
+            "206568043755"
+          ],
+          "observed_price_gbp": 19.48
+        },
+        {
+          "title": "DISCOVERY 72/100 - Shunka Ayami Paperback Photobook 20 Photo album Japan",
+          "listing_ids": [
+            "206568078560"
+          ],
+          "observed_price_gbp": 19.48
         }
       ]
     },
     {
-      "number": 897,
-      "title": "EBAY_PRIVATE_NEW: REVIEW 3 | top 78 | 0 under £100 | 2 special | 19/19",
-      "created_at": "2026-09-07T15:55:41Z",
-      "updated_at": "2026-09-07T15:55:42Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/897",
+      "number": 2666,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 17/22",
+      "created_at": "2026-09-21T23:58:50Z",
+      "updated_at": "2026-09-21T23:58:50Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2666",
       "earliest_end_at": null,
       "all_end_times": [],
-      "lowest_observed_gbp": 104.7,
+      "lowest_observed_gbp": 21.24,
       "candidate_summaries": [
         {
-          "title": "REVIEW 78/100 - The Bikeriders by Danny Lyon (2003, Trade Paperback). VGC",
+          "title": "DISCOVERY 72/100 - HEARTS2HEARTS The Chase Album A Version Photobook - CD + 2 Photocard NEW SEALED",
           "listing_ids": [
-            "117400652057"
+            "198653139885"
           ],
-          "observed_price_gbp": 104.7
+          "observed_price_gbp": 30.86
         },
         {
-          "title": "REVIEW 73/100 - Jessica Dimmock The Ninth Floor Photography Book Contrasto First Edition",
+          "title": "DISCOVERY 72/100 - HEARTS2HEARTS The Chase Album Version B Photo Book - CD + 2 Photocard NEW",
           "listing_ids": [
-            "178186565212"
+            "198653139890"
           ],
-          "observed_price_gbp": 343.3
+          "observed_price_gbp": 30.86
         },
         {
-          "title": "REVIEW 72/100 - Eadweard Muybridge: The Human and Animal Locomotion Photographs - rare book",
+          "title": "DISCOVERY 72/100 - Airi Suzumura Paperback Photobook 40 Photo album Japan",
           "listing_ids": [
-            "318838626954"
+            "206568078499"
           ],
-          "observed_price_gbp": null
+          "observed_price_gbp": 21.24
+        },
+        {
+          "title": "DISCOVERY 72/100 - Airi Suzumura Paperback Photobook 51 Photo album Japan",
+          "listing_ids": [
+            "206568083717"
+          ],
+          "observed_price_gbp": 21.24
+        },
+        {
+          "title": "DISCOVERY 72/100 - Airi Suzumura Paperback Photobook 59 Photo album Japan",
+          "listing_ids": [
+            "206568101372"
+          ],
+          "observed_price_gbp": 21.24
+        },
+        {
+          "title": "DISCOVERY 72/100 - Remu Suzumori Paperback Photobook book 13 Photo album Japan",
+          "listing_ids": [
+            "206568150287"
+          ],
+          "observed_price_gbp": 21.24
+        },
+        {
+          "title": "DISCOVERY 72/100 - Sakura Miura Cosplay Fetish Photobook book Photo album Japan",
+          "listing_ids": [
+            "206568099432"
+          ],
+          "observed_price_gbp": 21.24
+        },
+        {
+          "title": "DISCOVERY 72/100 - Umi Yatsugake Paperback Photobook 4 Photo album Japan",
+          "listing_ids": [
+            "206568077479"
+          ],
+          "observed_price_gbp": 21.24
+        },
+        {
+          "title": "DISCOVERY 72/100 - Umi Yatsugake Paperback Photobook book 3 Photo album Japan",
+          "listing_ids": [
+            "206568028997"
+          ],
+          "observed_price_gbp": 21.24
+        },
+        {
+          "title": "DISCOVERY 72/100 - Umi Yatsugake Paperback Photobook book 6 Photo album Japan",
+          "listing_ids": [
+            "206568149801"
+          ],
+          "observed_price_gbp": 21.24
         }
       ]
     },
     {
-      "number": 1018,
-      "title": "EBAY_PRIVATE_NEW: REVIEW 5 | top 82 | 0 under £100 | 3 special | 11/11",
-      "created_at": "2026-09-08T21:14:44Z",
-      "updated_at": "2026-09-08T21:14:45Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1018",
+      "number": 2668,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 19/22",
+      "created_at": "2026-09-21T23:58:51Z",
+      "updated_at": "2026-09-21T23:58:51Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2668",
       "earliest_end_at": null,
       "all_end_times": [],
-      "lowest_observed_gbp": 104.7,
+      "lowest_observed_gbp": 23.02,
       "candidate_summaries": [
         {
-          "title": "REVIEW 72/100 - WEBER Donald, Interrogations. Schilt 2011. Winner of the World Press Photo 2012",
+          "title": "DISCOVERY 72/100 - Miu Shiromine Paperback Photobook book Photo album Japan",
           "listing_ids": [
-            "397216434066"
+            "206568044239"
           ],
-          "observed_price_gbp": 172.56
+          "observed_price_gbp": 23.02
         },
         {
-          "title": "REVIEW 78/100 - Kosovo, 1999-2000 : The Flight of Reason by Paolo Pellegrin (2002, Hardcover)",
+          "title": "DISCOVERY 72/100 - Suzu Honjo REFRESH Paperback Photobook book Photo album Japan",
           "listing_ids": [
-            "357875903982"
+            "206568043608"
           ],
-          "observed_price_gbp": 104.7
+          "observed_price_gbp": 23.02
         },
         {
-          "title": "REVIEW 77/100 - John Gossage - THE POND 2nd edition Hardcover New!",
+          "title": "DISCOVERY 72/100 - Umi Yatsugake Paperback Photobook book 25 Photo album Japan",
           "listing_ids": [
-            "318486549213"
+            "206568121957"
           ],
-          "observed_price_gbp": 196.56
+          "observed_price_gbp": 23.02
         },
         {
-          "title": "REVIEW 82/100 - AFRONAUTS Cristina De Middel Rare 1st edition 1st printing",
+          "title": "DISCOVERY 72/100 - Umi Yatsugake Paperback Photobook book 26 Photo album Japan",
           "listing_ids": [
-            "276820903901"
+            "206568029445"
           ],
-          "observed_price_gbp": 516.7
+          "observed_price_gbp": 23.02
         },
         {
-          "title": "REVIEW 76/100 - Paul Graham Does Yellow Run Forever? MACK Hardcover 1st Ed 2011 Signed Inscribed",
+          "title": "DISCOVERY 72/100 - WAYV KUN PHOTOCARD SET KTOWN4U BENEFIT GIVE ME THAT",
           "listing_ids": [
-            "147559971586"
+            "366678959738"
           ],
-          "observed_price_gbp": 333.1
+          "observed_price_gbp": 32.94
+        },
+        {
+          "title": "DISCOVERY 72/100 - NMIXX Stick Out NEPHELOMANCY - 2 Photocard + YES24 Sticker POB - FIRST PRESS NEW",
+          "listing_ids": [
+            "366678934955"
+          ],
+          "observed_price_gbp": 33.0
+        },
+        {
+          "title": "DISCOVERY 72/100 - An Tsujimoto Paperback Photobook Photo album Japan",
+          "listing_ids": [
+            "206568100145"
+          ],
+          "observed_price_gbp": 23.9
+        },
+        {
+          "title": "DISCOVERY 72/100 - Urara Kanon Paperback Photobook Book 9 Photo album Japan",
+          "listing_ids": [
+            "206568101203"
+          ],
+          "observed_price_gbp": 23.9
+        },
+        {
+          "title": "DISCOVERY 72/100 - Kaho Shibuya KAHOPAI Paperback Photo album 86 pages Photobook Japan",
+          "listing_ids": [
+            "206568121952"
+          ],
+          "observed_price_gbp": 24.25
+        },
+        {
+          "title": "DISCOVERY 72/100 - Absolute Pose Book Act EMILY Luxury Photobook Photo album Japan",
+          "listing_ids": [
+            "206568153762"
+          ],
+          "observed_price_gbp": 24.78
         }
       ]
     },
     {
-      "number": 1073,
-      "title": "EBAY_PRIVATE_NEW: REVIEW 6 | top 78 | 0 under £100 | 4 special | 1 changed | 9/9",
-      "created_at": "2026-09-09T11:57:34Z",
-      "updated_at": "2026-09-09T11:57:35Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1073",
+      "number": 2667,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 18/22",
+      "created_at": "2026-09-21T23:58:51Z",
+      "updated_at": "2026-09-21T23:58:51Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2667",
       "earliest_end_at": null,
       "all_end_times": [],
-      "lowest_observed_gbp": 141.1,
+      "lowest_observed_gbp": 21.24,
       "candidate_summaries": [
         {
-          "title": "REVIEW 77/100 - Sam Contis Deep Springs Signed First Edition MACK Photography Book",
+          "title": "DISCOVERY 72/100 - Yu Rukawa Paperback Photobook book 1 Photo album Japan",
           "listing_ids": [
-            "178459488369"
+            "206568044731"
           ],
-          "observed_price_gbp": 208.7
+          "observed_price_gbp": 21.24
         },
         {
-          "title": "REVIEW 76/100 - Good Morning, America Volume II - Mark Power - SIGNED Gost Books 2019",
+          "title": "DISCOVERY 72/100 - Yu Rukawa Paperback Photobook book 11 Photo album Japan",
           "listing_ids": [
-            "237039279776"
+            "206568100203"
           ],
-          "observed_price_gbp": 141.1
+          "observed_price_gbp": 21.24
         },
         {
-          "title": "REVIEW 73/100 - Vanessa Winship - She Dances On Jackson - 1st Edition - SIGNED!",
+          "title": "DISCOVERY 72/100 - Yu Rukawa Paperback Photobook book 30 Photo album Japan",
           "listing_ids": [
-            "336759393595"
+            "206568039185"
           ],
-          "observed_price_gbp": 182.7
+          "observed_price_gbp": 21.24
         },
         {
-          "title": "CHANGED 78/100 - In the American West Richard Avedon Photographs 1979-1984 Photo Books Abrams",
+          "title": "DISCOVERY 72/100 - Yu Rukawa Paperback Photobook book 35 Photo album Japan",
           "listing_ids": [
-            "157455173977"
+            "206568102559"
           ],
-          "observed_price_gbp": 539.16
+          "observed_price_gbp": 21.24
         },
         {
-          "title": "REVIEW 78/100 - NOTHING PERSONAL - RICHARD AVEDON & JAMES BALDWIN - 1964 WITH SLIPCASE - penguin",
+          "title": "DISCOVERY 72/100 - Yu Rukawa Paperback Photobook book 4 Photo album Japan",
           "listing_ids": [
-            "137717346642"
+            "206568152978"
           ],
-          "observed_price_gbp": null
+          "observed_price_gbp": 21.24
         },
         {
-          "title": "REVIEW 78/100 - Vandals - Calling Card For The Film Bikeriders By Outlaw Originals - Danny Lyon",
+          "title": "DISCOVERY 72/100 - TXT Star Chapter: Sanctuary KNIGHT Album TOMORROW X TOGETHER - CD + PHOTOCARD",
           "listing_ids": [
-            "257722809434"
+            "198653139891"
           ],
-          "observed_price_gbp": null
-        }
-      ]
-    },
-    {
-      "number": 1145,
-      "title": "EBAY_PRIVATE_NEW: REVIEW 3 | top 80 | 0 under £100 | 2 special | 12/12",
-      "created_at": "2026-09-09T21:55:17Z",
-      "updated_at": "2026-09-09T21:55:18Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1145",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 125.5,
-      "candidate_summaries": [
-        {
-          "title": "REVIEW 80/100 - China Between by Polly Braden, Jennifer Higgie, David Campany (Hardcover, 2010)",
-          "listing_ids": [
-            "226845728400"
-          ],
-          "observed_price_gbp": 125.5
+          "observed_price_gbp": 30.86
         },
         {
-          "title": "REVIEW 78/100 - Case History by Mikhailov, Boris | Book | condition good",
+          "title": "DISCOVERY 72/100 - Suzu Honjo Cosplay Fetish Photobook book Photo album Japan",
           "listing_ids": [
-            "267708317015"
+            "206568128563"
           ],
-          "observed_price_gbp": 146.3
+          "observed_price_gbp": 22.13
         },
         {
-          "title": "REVIEW 79/100 - Flamboya – Viviane Sassen (First Edition, 2008) – Signed & Dedicated",
+          "title": "DISCOVERY 72/100 - Yui Hatano Paperback Photo Album 11 Photobook Photo album Japan",
           "listing_ids": [
-            "336319022782"
+            "206568045063"
           ],
-          "observed_price_gbp": 450.0
-        }
-      ]
-    },
-    {
-      "number": 1370,
-      "title": "EBAY_PRIVATE_NEW: REVIEW 2 | top 78 | 0 under £100 | 8/8",
-      "created_at": "2026-09-11T20:53:42Z",
-      "updated_at": "2026-09-11T20:53:43Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1370",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 113.65,
-      "candidate_summaries": [
-        {
-          "title": "REVIEW 78/100 - Mrs Merryman's Collection Anne Sophie Merryman Postcard Photo MACK 2012",
-          "listing_ids": [
-            "366498528848"
-          ],
-          "observed_price_gbp": 113.65
+          "observed_price_gbp": 22.13
         },
         {
-          "title": "REVIEW 78/100 - Lachapelle Land: Boxed Hardcover Book of Photographs by David LaChapelle 1st Ed.",
+          "title": "DISCOVERY 72/100 - Yui Hatano Paperback Photo Album 13 Photobook Photo album Japan",
           "listing_ids": [
-            "227398275015"
+            "206568044847"
           ],
-          "observed_price_gbp": 177.5
-        }
-      ]
-    },
-    {
-      "number": 1484,
-      "title": "EBAY_PRIVATE_NEW: REVIEW 5 | top 80 | 0 under £100 | 3 special | 12/12",
-      "created_at": "2026-09-12T23:15:46Z",
-      "updated_at": "2026-09-12T23:15:46Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1484",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 104.7,
-      "candidate_summaries": [
-        {
-          "title": "REVIEW 80/100 - Signed Michael Kenna SHINAN Nazraeli Press Hardback + Slipcase + Exhibition Ephe",
-          "listing_ids": [
-            "307030495908"
-          ],
-          "observed_price_gbp": 182.7
+          "observed_price_gbp": 22.13
         },
         {
-          "title": "REVIEW 78/100 - People In Trouble Laughing Pushed To The Ground: Broomberg&Chanarin SIGNED 1stEd",
+          "title": "DISCOVERY 72/100 - Melody Hina Marks Paperback Photobook book 4 Photo album Japan",
           "listing_ids": [
-            "154486428678"
+            "206568101123"
           ],
-          "observed_price_gbp": 104.7
-        },
-        {
-          "title": "REVIEW 78/100 - Masahisa Fukase Wonderful Days Photo Book Cat Sasuke Momoe Ravens Creator Item",
-          "listing_ids": [
-            "236745911350"
-          ],
-          "observed_price_gbp": 262.15
-        },
-        {
-          "title": "REVIEW 78/100 - Fukase Masahisa Karasu Ravens Photo Book Art Collection Hardcover Photography",
-          "listing_ids": [
-            "366355414891"
-          ],
-          "observed_price_gbp": 139.87
-        },
-        {
-          "title": "REVIEW 78/100 - Vandals - Calling Card For The Film Bikeriders By Outlaw Originals - Danny Lyon",
-          "listing_ids": [
-            "257736638119"
-          ],
-          "observed_price_gbp": null
-        }
-      ]
-    },
-    {
-      "number": 1491,
-      "title": "EBAY_PRIVATE_NEW: REVIEW 2 | top 82 | 0 under £100 | 1 special | 5/5",
-      "created_at": "2026-09-13T01:08:04Z",
-      "updated_at": "2026-09-13T01:08:05Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1491",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 146.3,
-      "candidate_summaries": [
-        {
-          "title": "REVIEW 78/100 - Case History by Mikhailov, Boris | Book | condition good",
-          "listing_ids": [
-            "267708317015"
-          ],
-          "observed_price_gbp": 146.3
-        },
-        {
-          "title": "REVIEW 82/100 - AFRONAUTS Cristina De Middel Rare 1st edition 1st printing",
-          "listing_ids": [
-            "276820903901"
-          ],
-          "observed_price_gbp": 516.7
+          "observed_price_gbp": 23.02
         }
       ]
     }
