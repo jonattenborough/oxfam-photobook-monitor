@@ -1,7 +1,9 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-22T00:54:44Z",
+  "last_successful_fetch": "2026-09-22T11:06:27Z",
   "last_top_skus": [
+    "HD_304265880",
+    "HD_304264824",
     "HD_304264322",
     "HD_304267690",
     "HD_304267655",
@@ -29,9 +31,7 @@
     "HD_304262036",
     "HD_304263604",
     "HD_304263504",
-    "HD_304263351",
-    "HD_304262876",
-    "HD_304262872"
+    "HD_304263351"
   ],
   "products": {
     "HD_303682420": {
@@ -8716,6 +8716,22 @@
       },
       "search_fingerprint": "2421fc87e90ada28"
     },
+    "HD_304264824": {
+      "first_seen": "2026-09-22T11:06:27Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1790065380000",
+        "description": "A major new overview of 100 of the world's best contemporary interior design projects, chosen by 10 of the world's leaders in the design world.<br/><br/>",
+        "isbn": null,
+        "price_gbp": 14.99,
+        "product_id": "book-HD__304264824",
+        "publisher": null,
+        "route": "/room-inside-contemporary-interiors/product/HD_304264824",
+        "sku": "HD_304264824",
+        "title": "Room: inside contemporary interiors"
+      },
+      "search_fingerprint": "b24ca201cb64fc89"
+    },
     "HD_304265133": {
       "first_seen": "2026-09-21T18:51:39Z",
       "last_snapshot": {
@@ -8748,6 +8764,22 @@
         "title": "The Photographer's Master Printing Course"
       },
       "search_fingerprint": "c290fda9a1d8bb33"
+    },
+    "HD_304265880": {
+      "first_seen": "2026-09-22T11:06:27Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1790068853000",
+        "description": "Passage is an eloquent testament to Andy Goldsworthy's determination to both deepen and extend his understanding of the world around him and his relationship with it through his art. <br/> <br/>The journeys that people, rivers, landscapes and even stone take through space and time are central to this book. A cairn built at the entrance to the village in Scotland where Goldsworthy lives reveals the importance of his work close to home, which inspires so much that he then creates elsewhere. Three similar cairns now span the United States, marking the artist's own journey across the States as well as the culmination of a form that has long played a significant part in his work. <br/><br/>Passage also includes Goldsworthy's most recent commission, the Garden of Stones, a Holocaust memorial at the Museum of Jewish Heritage in New York. Here eighteen oak trees were planted in earth-filled boulders, growing in almost impossible circumstances, carry powerful symbolic meaning.<br/><br/>First published in 2004 with over 200 colour illustrations",
+        "isbn": null,
+        "price_gbp": 19.99,
+        "product_id": "book-HD__304265880",
+        "publisher": null,
+        "route": "/passage/product/HD_304265880",
+        "sku": "HD_304265880",
+        "title": "Passage"
+      },
+      "search_fingerprint": "05739c02645df40b"
     },
     "HD_304266154": {
       "first_seen": "2026-09-21T13:23:49Z",
@@ -9023,6 +9055,6 @@
       "search_fingerprint": "b91f7f91c53fcaad"
     }
   },
-  "reported_category_count": 2882,
+  "reported_category_count": 2881,
   "version": 1
 }
