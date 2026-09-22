@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-21T23:59:05Z",
+  "checked_at": "2026-09-22T04:17:02Z",
   "source": "ENDGAME_EARLY",
   "issues": [
     {
@@ -765,6 +765,67 @@
             "800682658052"
           ],
           "observed_price_gbp": null
+        }
+      ]
+    },
+    {
+      "number": 2674,
+      "title": "ENDGAME_EARLY: 6 collectible photobook auctions ending soon",
+      "created_at": "2026-09-22T01:52:50Z",
+      "updated_at": "2026-09-22T01:52:50Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2674",
+      "earliest_end_at": "2026-09-23T23:59:45Z",
+      "all_end_times": [
+        "2026-09-23T23:59:45Z",
+        "2026-09-24T00:24:49Z",
+        "2026-09-24T00:49:16Z",
+        "2026-09-24T01:00:23Z",
+        "2026-09-24T01:15:48Z",
+        "2026-09-24T01:31:19Z"
+      ],
+      "lowest_observed_gbp": 29.86,
+      "candidate_summaries": [
+        {
+          "title": "[Natacha Merritt \"Digital Diaries\", Benedikt Taschen aus dem Jahr 2000](https://www.ebay.de/itm/227525001928?_skw=fotografie+bildband&hash=item34f98c02c8:g:Y48AAeSwL95pgOGD)",
+          "listing_ids": [
+            "227525001928"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[Beautiful Losers: Contemporary Art and Street Culture by Aaron Rose D.A.P.](https://www.ebay.com/itm/298672076937?_skw=%28Robin+Friend%2CLee+Friedlander%2CDanny+Lyon%2CJoel+Sternfeld%2CSusan+Meiselas%2CLarry+Clark%29&hash=item458a3e3889:g:7nwAAeSwuqxqpzvg)",
+          "listing_ids": [
+            "298672076937"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[Diane Arbus by Patricia Bosworth (paperback, 2005)](https://www.ebay.com.hk/itm/168686769308?_skw=%28Walker+Evans%2CDiane+Arbus%2CBruce+Davidson%2CWilliam+Eggleston%2CStephen+Shore%2CChris+Killip%29&hash=item274683d49c:g:3U8AAOSwpOdmsPFm)",
+          "listing_ids": [
+            "168686769308"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[THE TOMB OF TUTANKHAMEN By Howard Carter, 3-Volume Set. 2009 EP Hardcover. NIW](https://www.ebay.com/itm/188927355491?_skw=%28Pictures+from+Home%2CThe+Valley%29&hash=item2bfcf2aa63:g:1VEAAOSwwyNkXrXK)",
+          "listing_ids": [
+            "188927355491"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[Villeroy and Boch Boule - ornamental vase - vintage,classic](https://www.ebay.com.au/itm/206562154084?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=item3018105664:g:RsMAAOSw-YdlaEvh)",
+          "listing_ids": [
+            "206562154084"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[Rahim Fortune: I Can’t Stand To See You Cry 2022 photography book hc 2nd print](https://www.ebay.co.uk/itm/137745695864?_skw=signed+photography+book&hash=item2012488478:g:7PcAAeSw7SlqmMpf)",
+          "listing_ids": [
+            "137745695864"
+          ],
+          "observed_price_gbp": 29.86
         }
       ]
     }
