@@ -1,7 +1,10 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-22T15:30:12Z",
+  "last_successful_fetch": "2026-09-22T19:03:01Z",
   "last_top_skus": [
+    "HD_304271728",
+    "HD_304271581",
+    "HD_304271444",
     "HD_304270499",
     "HD_304270309",
     "HD_304269564",
@@ -28,10 +31,7 @@
     "HD_304266390",
     "HD_304266615",
     "HD_304249359",
-    "HD_304266518",
-    "HD_304266496",
-    "HD_304266346",
-    "HD_304266154"
+    "HD_304266518"
   ],
   "products": {
     "HD_303682420": {
@@ -9181,8 +9181,56 @@
         "title": "Nostalgia: Then and Now Vehicles - box of 40 photos plus booklet"
       },
       "search_fingerprint": "828fb51633c8a50a"
+    },
+    "HD_304271444": {
+      "first_seen": "2026-09-22T19:03:01Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1790089671000",
+        "description": "With over 300 illustrations, 90 of which are in colour, this is a fascinating insight into all the dynasties from the Early Dynastic Period and Old Kingdom, through to the late and Ptolemaic periods. Firmly bound throughout.",
+        "isbn": null,
+        "price_gbp": 15.0,
+        "product_id": "book-HD__304271444",
+        "publisher": null,
+        "route": "/the-complete-royal-families-of-ancient-egypt/product/HD_304271444",
+        "sku": "HD_304271444",
+        "title": "The Complete Royal Families of Ancient Egypt"
+      },
+      "search_fingerprint": "0877a362ec14aa06"
+    },
+    "HD_304271581": {
+      "first_seen": "2026-09-22T19:03:01Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1790091004000",
+        "description": "Located on Pittsburgh's North Side, and internationally recognized for the quality of its artistic and educational programs, the Mattress Factory is one of the few museums in the world that focuses exclusively on installation art. Installations is an exciting exploration of site-specific artworks by Kiki Smith, John Cage, Ann Hamilton, Greer Lankton, and many other artists from around the world. Statements by the artists, verbal descriptions of the eighty-seven works presented during the 1990s and insightful essays on different facets of installation art add depth to this remarkable photographic record.",
+        "isbn": null,
+        "price_gbp": 10.0,
+        "product_id": "book-HD__304271581",
+        "publisher": null,
+        "route": "/installations/product/HD_304271581",
+        "sku": "HD_304271581",
+        "title": "Installations"
+      },
+      "search_fingerprint": "9b5e4f247cc53386"
+    },
+    "HD_304271728": {
+      "first_seen": "2026-09-22T19:03:01Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1790093582000",
+        "description": "A few photos have fallen out but this is a full album with some captions in a french hand. A big family. There must be some descendants. A clever detective could re-unite this book with a family member as a little project. The front cover has been torn or cut off.",
+        "isbn": null,
+        "price_gbp": 25.0,
+        "product_id": "book-HD__304271728",
+        "publisher": null,
+        "route": "/album-of-french-family-photographs-1941-47-bicycles-tents-bikinis/product/HD_304271728",
+        "sku": "HD_304271728",
+        "title": "Album of French family photographs 1941-47 bicycles, tents, bikinis"
+      },
+      "search_fingerprint": "0fcd68e9f91d9bd9"
     }
   },
-  "reported_category_count": 2892,
+  "reported_category_count": 2895,
   "version": 1
 }
