@@ -1,280 +1,56 @@
 {
-  "checked_at": "2026-09-23T00:13:09Z",
+  "checked_at": "2026-09-23T05:43:58Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
     {
-      "number": 1453,
-      "title": "EBAY_PRIVATE_NEW: REVIEW 1 | top 78 | 0 under £100 | 11/11",
-      "created_at": "2026-09-12T18:49:50Z",
-      "updated_at": "2026-09-12T18:49:51Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1453",
+      "number": 1557,
+      "title": "EBAY_PRIVATE_NEW: REVIEW 2 | top 78 | 0 under £100 | 1 special | 17/17",
+      "created_at": "2026-09-13T18:56:11Z",
+      "updated_at": "2026-09-13T18:56:11Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1557",
       "earliest_end_at": null,
       "all_end_times": [],
-      "lowest_observed_gbp": null,
+      "lowest_observed_gbp": 343.3,
       "candidate_summaries": [
         {
-          "title": "REVIEW 78/100 - EADWEARD MUYBRIDGE HUMAN & ANIMAL LOCOMOTION VOLUME 1",
+          "title": "REVIEW 78/100 - Joel Sternfeld American Prospects Photography Book",
           "listing_ids": [
-            "168683611130"
+            "137707034795"
           ],
           "observed_price_gbp": null
+        },
+        {
+          "title": "REVIEW 73/100 - Jessica Dimmock The Ninth Floor Photography Book Contrasto First Edition",
+          "listing_ids": [
+            "178186565212"
+          ],
+          "observed_price_gbp": 343.3
         }
       ]
     },
     {
-      "number": 2103,
-      "title": "EBAY_PRIVATE_NEW: REVIEW 9 | top 76 | 0 under £100 | 1 special | 27/27",
-      "created_at": "2026-09-17T22:01:09Z",
-      "updated_at": "2026-09-17T22:01:09Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2103",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": null,
-      "candidate_summaries": [
-        {
-          "title": "REVIEW 76/100 - Guy Martin When You Dead, You Dead Hardback Book",
-          "listing_ids": [
-            "128073728673"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "REVIEW 76/100 - Guy Martin When You Dead, You Dead Paperback Book",
-          "listing_ids": [
-            "307176827573"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "REVIEW 76/100 - Guy Martin When You Dead, You Dead Paperback Non-Fiction Autobiography",
-          "listing_ids": [
-            "198641065480"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "REVIEW 76/100 - Guy Martin: Worms to Catch By Guy Martin",
-          "listing_ids": [
-            "128079547028"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "REVIEW 76/100 - Guy Martin : Worms to Catch by Guy Martin (2016, Hardcover)",
-          "listing_ids": [
-            "366665047608"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "REVIEW 76/100 - Guy Martin Worms to Catch Hardcover Biography Motor Sports Book English",
-          "listing_ids": [
-            "206552212694"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "REVIEW 76/100 - Guy Martin Worms to Catch Hardcover Non-Fiction Motor Sports Book w/ Dust Jacket",
-          "listing_ids": [
-            "198641089023"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "REVIEW 76/100 - MENU AIR FRANCE GISCARD CHINA 1980 ROBERT FALCUCCI EUROPE CONSTELLATION",
-          "listing_ids": [
-            "128084719465"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "REVIEW 76/100 - We Need to Weaken the Mixture by Guy Martin (2018, Hardcover)",
-          "listing_ids": [
-            "800666100385"
-          ],
-          "observed_price_gbp": null
-        }
-      ]
-    },
-    {
-      "number": 2308,
-      "title": "EBAY_PRIVATE_NEW: REVIEW 3 | top 82 | 0 under £100 | 3 special | 24/24",
-      "created_at": "2026-09-19T13:49:13Z",
-      "updated_at": "2026-09-19T13:49:13Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2308",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": null,
-      "candidate_summaries": [
-        {
-          "title": "REVIEW 82/100 - Northern Soul “I’m Com'un Home in the Morning” Photobook - (Signed Copy)",
-          "listing_ids": [
-            "117417344689"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "REVIEW 78/100 - NOTHING PERSONAL - RICHARD AVEDON & JAMES BALDWIN - 1964 WITH SLIPCASE - penguin",
-          "listing_ids": [
-            "137754828836"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "REVIEW 73/100 - Case History by Mikhailov, Boris / Hardback w Dust jacket / Scala First Edition",
-          "listing_ids": [
-            "336801640683"
-          ],
-          "observed_price_gbp": null
-        }
-      ]
-    },
-    {
-      "number": 2684,
-      "title": "EBAY_PRIVATE_NEW: REVIEW 1 | top 76 | 0 under £100 | 10/10",
-      "created_at": "2026-09-22T04:16:46Z",
-      "updated_at": "2026-09-22T04:16:46Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2684",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": null,
-      "candidate_summaries": [
-        {
-          "title": "REVIEW 76/100 - Lewis Bush Shadows of the State Hardcover Photography Surveillance 2019 English",
-          "listing_ids": [
-            "198657428295"
-          ],
-          "observed_price_gbp": null
-        }
-      ]
-    },
-    {
-      "number": 628,
-      "title": "EBAY_PRIVATE_NEW: REVIEW 4 | top 86 | 0 under £100 | 2 special | 1 changed | 17/17",
-      "created_at": "2026-09-04T19:28:29Z",
-      "updated_at": "2026-09-04T19:28:29Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/628",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 239.9,
-      "candidate_summaries": [
-        {
-          "title": "REVIEW 78/100 - Paul Graham: A Shimmer of Possibility by Paul Graham (Paperback, 2009)",
-          "listing_ids": [
-            "326746160272"
-          ],
-          "observed_price_gbp": 239.9
-        },
-        {
-          "title": "REVIEW 86/100 - Paul Graham The Present Limited Edition of 50 w/print",
-          "listing_ids": [
-            "276776982066"
-          ],
-          "observed_price_gbp": 567.7
-        },
-        {
-          "title": "REVIEW 78/100 - Gardner's Photographic Sketchbook of the Civil War Alexander Gardner PB VGC",
-          "listing_ids": [
-            "178468063118"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "CHANGED 72/100 - Hideaki Hamada DISTANT DRUMS Photo Book Signed Green Cover Photography from JP",
-          "listing_ids": [
-            "406814476421"
-          ],
-          "observed_price_gbp": 390.68
-        }
-      ]
-    },
-    {
-      "number": 702,
-      "title": "EBAY_PRIVATE_NEW: REVIEW 2 | top 77 | 0 under £100 | 2 special | 17/17",
-      "created_at": "2026-09-05T10:45:27Z",
-      "updated_at": "2026-09-05T10:45:28Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/702",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 613.6,
-      "candidate_summaries": [
-        {
-          "title": "REVIEW 77/100 - Slim Aarons A Wonderful Time first edition lovely condition. Art Photography",
-          "listing_ids": [
-            "267748519965"
-          ],
-          "observed_price_gbp": 613.6
-        },
-        {
-          "title": "REVIEW 72/100 - Untitled Film Stills: Cindy Sherman, Hardback First Edition, Rare, Damp Damage",
-          "listing_ids": [
-            "158259835548"
-          ],
-          "observed_price_gbp": null
-        }
-      ]
-    },
-    {
-      "number": 799,
-      "title": "EBAY_PRIVATE_NEW: REVIEW 1 | top 78 | 0 under £100 | 6/6",
-      "created_at": "2026-09-06T12:50:41Z",
-      "updated_at": "2026-09-06T12:50:41Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/799",
+      "number": 1628,
+      "title": "EBAY_PRIVATE_NEW: REVIEW 5 | top 78 | 0 under £100 | 2 special | 16/16",
+      "created_at": "2026-09-14T19:16:01Z",
+      "updated_at": "2026-09-14T19:16:02Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1628",
       "earliest_end_at": null,
       "all_end_times": [],
       "lowest_observed_gbp": 208.7,
       "candidate_summaries": [
         {
-          "title": "REVIEW 78/100 - Wolfgang Tillmans Concorde",
+          "title": "REVIEW 78/100 - kikuji kawada chizu signed maquette edition",
           "listing_ids": [
-            "358143425342"
+            "178081503503"
           ],
           "observed_price_gbp": 208.7
-        }
-      ]
-    },
-    {
-      "number": 918,
-      "title": "EBAY_PRIVATE_NEW: REVIEW 1 | top 78 | 0 under £100 | 15/15",
-      "created_at": "2026-09-07T19:52:37Z",
-      "updated_at": "2026-09-07T19:52:37Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/918",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 397.86,
-      "candidate_summaries": [
-        {
-          "title": "REVIEW 78/100 - Kikuji Kawada The Map Chizu Photo Book Limited 1000 Copies 24cm Japan Rare",
-          "listing_ids": [
-            "358235069664"
-          ],
-          "observed_price_gbp": 397.86
-        }
-      ]
-    },
-    {
-      "number": 1266,
-      "title": "EBAY_PRIVATE_NEW: REVIEW 4 | top 75 | 0 under £100 | 2 special | 1 changed | 10/10",
-      "created_at": "2026-09-10T22:39:42Z",
-      "updated_at": "2026-09-10T22:39:42Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1266",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 156.7,
-      "candidate_summaries": [
-        {
-          "title": "REVIEW 74/100 - Wolfgang TILLMANS - Concorde - First Edition 1997",
-          "listing_ids": [
-            "236973773917"
-          ],
-          "observed_price_gbp": 156.7
         },
         {
-          "title": "REVIEW 74/100 - Rare and collectable Lisette Model Monograph Photography Book",
+          "title": "REVIEW 78/100 - henri cartier-bresson: the decisive moment",
           "listing_ids": [
-            "278363218414"
+            "156411959446"
           ],
-          "observed_price_gbp": 156.7
+          "observed_price_gbp": 238.86
         },
         {
           "title": "REVIEW 75/100 - Michael Wolf Tokyo Compression Final Cut 2017 Photo Book very good condition",
@@ -284,42 +60,127 @@
           "observed_price_gbp": 219.1
         },
         {
-          "title": "CHANGED 72/100 - David Bowie By Terry O'Neill Signed Deluxe Limited Edition 221/500",
+          "title": "REVIEW 78/100 - Henri Cartier-Bresson: The Decisive Moment",
           "listing_ids": [
-            "800631791450"
+            "820010578480"
           ],
-          "observed_price_gbp": 593.2
+          "observed_price_gbp": 516.7
+        },
+        {
+          "title": "REVIEW 78/100 - Henri Cartier-Bresson - The Decisive Moment, Steidl Facsimile, New and Sealed.",
+          "listing_ids": [
+            "266864757872"
+          ],
+          "observed_price_gbp": 567.7
         }
       ]
     },
     {
-      "number": 1327,
-      "title": "EBAY_PRIVATE_NEW: REVIEW 3 | top 77 | 0 under £100 | 3 special | 16/16",
-      "created_at": "2026-09-11T14:19:36Z",
-      "updated_at": "2026-09-11T14:19:37Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1327",
+      "number": 1748,
+      "title": "EBAY_PRIVATE_NEW: REVIEW 2 | top 77 | 0 under £100 | 1 special | 13/13",
+      "created_at": "2026-09-16T01:19:26Z",
+      "updated_at": "2026-09-16T01:19:26Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1748",
       "earliest_end_at": null,
       "all_end_times": [],
-      "lowest_observed_gbp": 208.7,
+      "lowest_observed_gbp": 557.27,
       "candidate_summaries": [
         {
-          "title": "REVIEW 73/100 - Mont Sainte Victoire by Risaku Suzuki. Signed 1st Edition. Rare Photobook.",
+          "title": "REVIEW 77/100 - Ken Domon Hiroshima Photo Book 1958 First Edition Kenko-Sha",
           "listing_ids": [
-            "285398691368"
+            "178441631530"
           ],
-          "observed_price_gbp": 208.7
+          "observed_price_gbp": 566.62
         },
         {
-          "title": "REVIEW 77/100 - Slim Aarons A Wonderful Time first edition lovely condition. Art Photography",
+          "title": "REVIEW 75/100 - TOKYO SUBURBIA Takashi Homma Photography Book Japanese Suburban Landscapes",
           "listing_ids": [
-            "267748519965"
+            "366625309787"
           ],
-          "observed_price_gbp": 613.6
+          "observed_price_gbp": 557.27
+        }
+      ]
+    },
+    {
+      "number": 2197,
+      "title": "EBAY_PRIVATE_NEW: REVIEW 2 | top 82 | 0 under £100 | 7/7",
+      "created_at": "2026-09-18T18:14:07Z",
+      "updated_at": "2026-09-18T18:14:07Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2197",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 516.7,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 82/100 - First Book of Clarinet Solos (Bb Clarinet & piano) By John Davies,Paul Harris",
+          "listing_ids": [
+            "137748940195"
+          ],
+          "observed_price_gbp": null
         },
         {
-          "title": "REVIEW 75/100 - 2003 The Bikeriders By Danny Lyon Paperback First Edition + Total Film Magazine",
+          "title": "REVIEW 78/100 - Henri Cartier-Bresson - The Decisive Moment, Steidl Facsimile, New and Sealed.",
           "listing_ids": [
-            "178484610652"
+            "266864757872"
+          ],
+          "observed_price_gbp": 516.7
+        }
+      ]
+    },
+    {
+      "number": 2464,
+      "title": "EBAY_PRIVATE_NEW: REVIEW 1 | top 82 | 0 under £100 | 1 special | 1 changed | 12/12",
+      "created_at": "2026-09-20T14:40:17Z",
+      "updated_at": "2026-09-20T14:40:17Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2464",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 353.5,
+      "candidate_summaries": [
+        {
+          "title": "CHANGED 82/100 - Peter Mitchell RARE SIGNED Early Sunday Morning hardback w/ signed colour print",
+          "listing_ids": [
+            "137706033274"
+          ],
+          "observed_price_gbp": 353.5
+        }
+      ]
+    },
+    {
+      "number": 2836,
+      "title": "EBAY_PRIVATE_NEW: REVIEW 4 | top 88 | 0 under £100 | 3 special | 6/6",
+      "created_at": "2026-09-23T05:43:45Z",
+      "updated_at": "2026-09-23T05:43:45Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2836",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 413.22,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 88/100 - Alec Soth ADVICE FOR YOUNG ARTISTS 978-1915743763 Signed MACK Hardback Photobook",
+          "listing_ids": [
+            "117426188553"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "REVIEW 78/100 - Shomei Tomatsu I am a King 1972 Photo Book Japan Photography Slipcase",
+          "listing_ids": [
+            "186978623985"
+          ],
+          "observed_price_gbp": 413.22
+        },
+        {
+          "title": "REVIEW 72/100 - Dayanita Singh - Sent a Letter to My Friend - Signed photo book in handmade box.",
+          "listing_ids": [
+            "256864440171"
+          ],
+          "observed_price_gbp": 567.7
+        },
+        {
+          "title": "REVIEW 72/100 - KIOSK A History of Photojournalism 1839-1973 Lebeck & von Dewitz 978-3882437911",
+          "listing_ids": [
+            "336807915290"
           ],
           "observed_price_gbp": null
         }
