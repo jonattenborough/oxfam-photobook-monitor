@@ -1,253 +1,7 @@
 {
-  "checked_at": "2026-09-23T16:34:46Z",
+  "checked_at": "2026-09-23T20:05:22Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
-    {
-      "number": 2488,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 6/17",
-      "created_at": "2026-09-20T18:09:38Z",
-      "updated_at": "2026-09-20T18:09:38Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2488",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 10.62,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - KARA ELECTRIC BOY Japan CD Photobook",
-          "listing_ids": [
-            "147585256398"
-          ],
-          "observed_price_gbp": 21.64
-        },
-        {
-          "title": "DISCOVERY 72/100 - Yuu Fukuzawa Photobook Bromide Set",
-          "listing_ids": [
-            "398414118640"
-          ],
-          "observed_price_gbp": 19.36
-        },
-        {
-          "title": "DISCOVERY 72/100 - Mastering Nikon Speedlights Alan Hess Creative Lighting System Photography Book",
-          "listing_ids": [
-            "800689486539"
-          ],
-          "observed_price_gbp": 19.95
-        },
-        {
-          "title": "DISCOVERY 72/100 - Airi Suzumura Paperback Photobook Photo album Japan",
-          "listing_ids": [
-            "206569507985"
-          ],
-          "observed_price_gbp": 10.62
-        },
-        {
-          "title": "DISCOVERY 72/100 - Cocomi Naruse Kokomi Paperback Photobook 1 Photo album Japan",
-          "listing_ids": [
-            "206569357199"
-          ],
-          "observed_price_gbp": 10.62
-        },
-        {
-          "title": "DISCOVERY 72/100 - Ena koume Paperback Photobook Photo album Japan",
-          "listing_ids": [
-            "206569752693"
-          ],
-          "observed_price_gbp": 10.62
-        },
-        {
-          "title": "DISCOVERY 72/100 - Kirara Asuka Paperback Photobook Photo album Japan",
-          "listing_ids": [
-            "206569371847"
-          ],
-          "observed_price_gbp": 10.62
-        },
-        {
-          "title": "DISCOVERY 72/100 - Marina Shiraishi Paperback Photobook 10 Photo album Japan",
-          "listing_ids": [
-            "206569448388"
-          ],
-          "observed_price_gbp": 10.62
-        },
-        {
-          "title": "DISCOVERY 72/100 - Marina Shiraishi Paperback Photobook 11 Photo album Japan",
-          "listing_ids": [
-            "206569523960"
-          ],
-          "observed_price_gbp": 10.62
-        },
-        {
-          "title": "DISCOVERY 72/100 - Marina Shiraishi Paperback Photobook 3 Photo album Japan",
-          "listing_ids": [
-            "206569357461"
-          ],
-          "observed_price_gbp": 10.62
-        }
-      ]
-    },
-    {
-      "number": 2491,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 9/17",
-      "created_at": "2026-09-20T18:09:40Z",
-      "updated_at": "2026-09-20T18:09:40Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2491",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 16.81,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - Shuka Saito Live Photobook Shuka En 2024 LIVE HOUSE TOUR Tobira no Saki",
-          "listing_ids": [
-            "318894038811"
-          ],
-          "observed_price_gbp": 28.13
-        },
-        {
-          "title": "DISCOVERY 72/100 - Akari Mitani Paperback Photobook 1 Photo album Japan",
-          "listing_ids": [
-            "206569448421"
-          ],
-          "observed_price_gbp": 16.81
-        },
-        {
-          "title": "DISCOVERY 72/100 - Maria Nagai Paperback Photobook 2 Photo album Japan",
-          "listing_ids": [
-            "206569448357"
-          ],
-          "observed_price_gbp": 16.81
-        },
-        {
-          "title": "DISCOVERY 72/100 - Maria Nagai Paperback Photobook Photo album Japan",
-          "listing_ids": [
-            "206569503991"
-          ],
-          "observed_price_gbp": 16.81
-        },
-        {
-          "title": "DISCOVERY 72/100 - Yura kano Paperback Photobook book 1 Photo album Japan",
-          "listing_ids": [
-            "206569507510"
-          ],
-          "observed_price_gbp": 16.81
-        },
-        {
-          "title": "DISCOVERY 72/100 - Hinako Mori Paperback Photobook 0 Photo album Japan",
-          "listing_ids": [
-            "206569448280"
-          ],
-          "observed_price_gbp": 17.7
-        },
-        {
-          "title": "DISCOVERY 72/100 - Hinako Mori Paperback Photobook 1 Photo album Japan",
-          "listing_ids": [
-            "206569507806"
-          ],
-          "observed_price_gbp": 17.7
-        },
-        {
-          "title": "DISCOVERY 72/100 - Yui Hatano Paperback Photo Album 14 Photobook Photo album Japan",
-          "listing_ids": [
-            "206569359597"
-          ],
-          "observed_price_gbp": 17.7
-        },
-        {
-          "title": "DISCOVERY 72/100 - Yui Hatano Paperback Photo Album 9 Photobook Photo album Japan",
-          "listing_ids": [
-            "206569448185"
-          ],
-          "observed_price_gbp": 17.7
-        },
-        {
-          "title": "DISCOVERY 72/100 - ATEEZ ZERO : FEVER Part.2 2021 K-Pop Album (diary version) w/ Yeosang pc",
-          "listing_ids": [
-            "147586925070"
-          ],
-          "observed_price_gbp": 26.7
-        }
-      ]
-    },
-    {
-      "number": 2490,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 8/17",
-      "created_at": "2026-09-20T18:09:40Z",
-      "updated_at": "2026-09-20T18:09:40Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2490",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 13.27,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - Melody Hina Marks Paperback Photobook book 9 Photo album Japan",
-          "listing_ids": [
-            "206569353760"
-          ],
-          "observed_price_gbp": 13.27
-        },
-        {
-          "title": "DISCOVERY 72/100 - Moka Haruhi Paperback Photobook book 2 Photo album Japan",
-          "listing_ids": [
-            "206569492002"
-          ],
-          "observed_price_gbp": 13.27
-        },
-        {
-          "title": "DISCOVERY 72/100 - Ruka Inaba Paperback Photobook book 4 Photo album Japan",
-          "listing_ids": [
-            "206569355897"
-          ],
-          "observed_price_gbp": 13.27
-        },
-        {
-          "title": "DISCOVERY 72/100 - Kaori Maeda's 1st Photobook: Adult Scent - AKITA DX SERIES",
-          "listing_ids": [
-            "318892294563"
-          ],
-          "observed_price_gbp": 25.88
-        },
-        {
-          "title": "DISCOVERY 72/100 - MADE SERIES CD+3DVD+PHOTO BOOK+Smapla Music & Movie",
-          "listing_ids": [
-            "257753434274"
-          ],
-          "observed_price_gbp": 26.52
-        },
-        {
-          "title": "DISCOVERY 72/100 - Landscape Photography Book of Snowdonia & North Wales by Pierino Algieri FREE PO",
-          "listing_ids": [
-            "184588129495"
-          ],
-          "observed_price_gbp": 26.7
-        },
-        {
-          "title": "DISCOVERY 72/100 - Wani Books JUST A GIRL: Kumiko Takeda Photo Book",
-          "listing_ids": [
-            "377510492105"
-          ],
-          "observed_price_gbp": 26.72
-        },
-        {
-          "title": "DISCOVERY 72/100 - CYBER×CYBER Original Cosplay Photo Book Doujin Aisaka Yuyu B5 40P C104",
-          "listing_ids": [
-            "206569612851"
-          ],
-          "observed_price_gbp": 16.88
-        },
-        {
-          "title": "DISCOVERY 72/100 - Mei Miyajima Paperback Photobook Photo album Japan",
-          "listing_ids": [
-            "206569753791"
-          ],
-          "observed_price_gbp": 15.05
-        },
-        {
-          "title": "DISCOVERY 72/100 - Jungkook Golden Solid White Version With Official Photocard And Inclusions",
-          "listing_ids": [
-            "327366745135"
-          ],
-          "observed_price_gbp": 24.62
-        }
-      ]
-    },
     {
       "number": 2493,
       "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 11/17",
@@ -819,6 +573,252 @@
             "227196996668"
           ],
           "observed_price_gbp": 5.98
+        }
+      ]
+    },
+    {
+      "number": 2530,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 special | 10 unknown | 2/13",
+      "created_at": "2026-09-21T00:00:48Z",
+      "updated_at": "2026-09-21T00:00:48Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2530",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 9.16,
+      "candidate_summaries": [
+        {
+          "title": "DISCOVERY 72/100 - Ranma 1/2 Ukyo Kuonji Round Chinese Pouch Unused Collectible Japan",
+          "listing_ids": [
+            "800678958079"
+          ],
+          "observed_price_gbp": 22.18
+        },
+        {
+          "title": "DISCOVERY 72/100 - Polly Adams signed autograph book page: Marrying The Mistress, United 93",
+          "listing_ids": [
+            "128086715304"
+          ],
+          "observed_price_gbp": 21.5
+        },
+        {
+          "title": "DISCOVERY 72/100 - Charles Buchan's Football Monthly 1954/1955 - Bound Volume 12 issues -",
+          "listing_ids": [
+            "128086632385"
+          ],
+          "observed_price_gbp": 26.7
+        },
+        {
+          "title": "DISCOVERY 72/100 - Soligor 35mm f/2.8 M42 Mount Wide Angle Manual Focus Lens Made in Japan 46mm",
+          "listing_ids": [
+            "398405344267"
+          ],
+          "observed_price_gbp": 24.05
+        },
+        {
+          "title": "DISCOVERY 72/100 - Ranma 1/2 Round China Pouch Set of 4 Gacha Unused Japan Japan",
+          "listing_ids": [
+            "800678989231"
+          ],
+          "observed_price_gbp": 27.38
+        },
+        {
+          "title": "DISCOVERY 72/100 - STARLUX Ref 5164 Indian Squaw with Baby Far West Vintage Luxury Series 60mm",
+          "listing_ids": [
+            "407226145891"
+          ],
+          "observed_price_gbp": 9.16
+        },
+        {
+          "title": "DISCOVERY 72/100 - Barry Howard signed autograph book page: Scrooge, Hi-de-Hi!, Doctor Who",
+          "listing_ids": [
+            "128086586304"
+          ],
+          "observed_price_gbp": 26.7
+        },
+        {
+          "title": "DISCOVERY 72/100 - Niamh Cusack hand signed 6x3.5 photo - Heartbeat, The World of Peter Rabbit...",
+          "listing_ids": [
+            "128086792846"
+          ],
+          "observed_price_gbp": 26.7
+        },
+        {
+          "title": "DISCOVERY 72/100 - Gossen Sixtomat 2 Electronic Vintage Light Exposure Meter Photometer Tested Work",
+          "listing_ids": [
+            "147581576666"
+          ],
+          "observed_price_gbp": 15.43
+        },
+        {
+          "title": "DISCOVERY 72/100 - Cosinon camera 135mm F2.8 lens in original box M42",
+          "listing_ids": [
+            "188946547569"
+          ],
+          "observed_price_gbp": 42.3
+        }
+      ]
+    },
+    {
+      "number": 2529,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 special | 10 unknown | 1/13",
+      "created_at": "2026-09-21T00:00:48Z",
+      "updated_at": "2026-09-21T00:00:48Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2529",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 5.4,
+      "candidate_summaries": [
+        {
+          "title": "DISCOVERY 72/100 - M1 Lounge Prague 2010 Club Flyer Miami Vibes Slovak Special DJ Mad Skill D&B",
+          "listing_ids": [
+            "227528747259"
+          ],
+          "observed_price_gbp": 5.4
+        },
+        {
+          "title": "DISCOVERY 72/100 - KATHLEEN RYAN (1922-1985) hand signed page ODD MAN OUT, CHRISTOPHER COLUMBUS",
+          "listing_ids": [
+            "137753089695"
+          ],
+          "observed_price_gbp": 5.99
+        },
+        {
+          "title": "DISCOVERY 72/100 - Vintage 1978 The Book of Creative Crafts Elsie Burch Donald Hardback Craft Book",
+          "listing_ids": [
+            "147583810786"
+          ],
+          "observed_price_gbp": 6.52
+        },
+        {
+          "title": "DISCOVERY 72/100 - The Bobbsey Twins At Whitesail Harbour | Laura Lee Hope | First UK Edition | DJ",
+          "listing_ids": [
+            "298688005816"
+          ],
+          "observed_price_gbp": 9.99
+        },
+        {
+          "title": "DISCOVERY 72/100 - Adrian Lukis signed autograph book page: Marrying The Mistress, Peak Practice",
+          "listing_ids": [
+            "128086602000"
+          ],
+          "observed_price_gbp": 10.8
+        },
+        {
+          "title": "DISCOVERY 72/100 - Photograph, \"Garry Kasparov\", Linares, 2005 / 15 x 20",
+          "listing_ids": [
+            "227526889715"
+          ],
+          "observed_price_gbp": 12.76
+        },
+        {
+          "title": "DISCOVERY 72/100 - Photograph, \"Jose Raul Capablanca\", Berlin, June 1929 / 15 x 20",
+          "listing_ids": [
+            "227526870866"
+          ],
+          "observed_price_gbp": 12.86
+        },
+        {
+          "title": "DISCOVERY 72/100 - The Navy by T. K. Butcher 1973 Batsford Hardback Royal Navy Maritime History",
+          "listing_ids": [
+            "237076195052"
+          ],
+          "observed_price_gbp": 18.0
+        },
+        {
+          "title": "DISCOVERY 72/100 - Ranma 1/2 Sticker Collection Gashapon Akane Tendo Anime Stickers Japan",
+          "listing_ids": [
+            "800678927869"
+          ],
+          "observed_price_gbp": 20.32
+        },
+        {
+          "title": "DISCOVERY 72/100 - Workshop Mechanic Figure 1/35 Spalah SP28235 Scale Figures / 3D Printing",
+          "listing_ids": [
+            "407225400524"
+          ],
+          "observed_price_gbp": 21.05
+        }
+      ]
+    },
+    {
+      "number": 2533,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 5/13",
+      "created_at": "2026-09-21T00:00:50Z",
+      "updated_at": "2026-09-21T00:00:50Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2533",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 4.59,
+      "candidate_summaries": [
+        {
+          "title": "DISCOVERY 72/100 - Children Bible STORIES FROM THE BIBLE Old and New Testament JESUS 9781842394892",
+          "listing_ids": [
+            "137751903441"
+          ],
+          "observed_price_gbp": 6.99
+        },
+        {
+          "title": "DISCOVERY 72/100 - Rubaiyat of Omar Khayyam by Edward Fitzgerald, Vintage 1944, pocketbook",
+          "listing_ids": [
+            "327364562981"
+          ],
+          "observed_price_gbp": 4.99
+        },
+        {
+          "title": "DISCOVERY 72/100 - \"Beano and Dandy – Focus on the Fifties”, D C Thompson, Hardback, 2004",
+          "listing_ids": [
+            "298686715055"
+          ],
+          "observed_price_gbp": 4.59
+        },
+        {
+          "title": "DISCOVERY 72/100 - \"The Body Shop Book”, Foreword by Anita Roddick, H/back, 1985",
+          "listing_ids": [
+            "298690161647"
+          ],
+          "observed_price_gbp": 4.59
+        },
+        {
+          "title": "DISCOVERY 72/100 - Romance Bookmark - New - See Photos",
+          "listing_ids": [
+            "178508743990"
+          ],
+          "observed_price_gbp": 6.52
+        },
+        {
+          "title": "DISCOVERY 72/100 - Nutley UCKFIELD Sussex  photo vintage 1940s CASTLE TEA ROOMS Buses 104 x 85 mm",
+          "listing_ids": [
+            "407228507058"
+          ],
+          "observed_price_gbp": 6.52
+        },
+        {
+          "title": "DISCOVERY 72/100 - Funko Pop! Comics: Teenage Mutant Ninja Turtles PX Previews Raphael see photos",
+          "listing_ids": [
+            "800683071543"
+          ],
+          "observed_price_gbp": 6.52
+        },
+        {
+          "title": "DISCOVERY 72/100 - My Hero Academia School Briefs Books 1 And 2 Manga Anime Viz Media Paperback",
+          "listing_ids": [
+            "267789693390"
+          ],
+          "observed_price_gbp": 6.52
+        },
+        {
+          "title": "DISCOVERY 72/100 - Victoriana Scraps Victorian Book Bound Slip-In Photo Album A4 4x6 Blue",
+          "listing_ids": [
+            "117419842253"
+          ],
+          "observed_price_gbp": 6.52
+        },
+        {
+          "title": "DISCOVERY 72/100 - Doctor Who The Movie Paperback Book - Gary Russell  ISBN 9780563380009",
+          "listing_ids": [
+            "188949196731"
+          ],
+          "observed_price_gbp": 6.99
         }
       ]
     }
