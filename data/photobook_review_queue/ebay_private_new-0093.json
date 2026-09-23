@@ -1,40 +1,7 @@
 {
-  "checked_at": "2026-09-23T11:12:52Z",
+  "checked_at": "2026-09-23T16:34:46Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
-    {
-      "number": 2308,
-      "title": "EBAY_PRIVATE_NEW: REVIEW 3 | top 82 | 0 under £100 | 3 special | 24/24",
-      "created_at": "2026-09-19T13:49:13Z",
-      "updated_at": "2026-09-19T13:49:13Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2308",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": null,
-      "candidate_summaries": [
-        {
-          "title": "REVIEW 82/100 - Northern Soul “I’m Com'un Home in the Morning” Photobook - (Signed Copy)",
-          "listing_ids": [
-            "117417344689"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "REVIEW 78/100 - NOTHING PERSONAL - RICHARD AVEDON & JAMES BALDWIN - 1964 WITH SLIPCASE - penguin",
-          "listing_ids": [
-            "137754828836"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "REVIEW 73/100 - Case History by Mikhailov, Boris / Hardback w Dust jacket / Scala First Edition",
-          "listing_ids": [
-            "336801640683"
-          ],
-          "observed_price_gbp": null
-        }
-      ]
-    },
     {
       "number": 2684,
       "title": "EBAY_PRIVATE_NEW: REVIEW 1 | top 76 | 0 under £100 | 10/10",
@@ -273,6 +240,32 @@
             "188900269044"
           ],
           "observed_price_gbp": 309.2
+        }
+      ]
+    },
+    {
+      "number": 1557,
+      "title": "EBAY_PRIVATE_NEW: REVIEW 2 | top 78 | 0 under £100 | 1 special | 17/17",
+      "created_at": "2026-09-13T18:56:11Z",
+      "updated_at": "2026-09-13T18:56:11Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1557",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 343.3,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 78/100 - Joel Sternfeld American Prospects Photography Book",
+          "listing_ids": [
+            "137707034795"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "REVIEW 73/100 - Jessica Dimmock The Ninth Floor Photography Book Contrasto First Edition",
+          "listing_ids": [
+            "178186565212"
+          ],
+          "observed_price_gbp": 343.3
         }
       ]
     }
