@@ -1,253 +1,7 @@
 {
-  "checked_at": "2026-09-22T21:55:50Z",
+  "checked_at": "2026-09-23T00:13:09Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
-    {
-      "number": 1716,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 9 under £100 | 1 changed | 9 unknown | 9/10",
-      "created_at": "2026-09-15T20:09:42Z",
-      "updated_at": "2026-09-15T20:09:43Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1716",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 21.49,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - Sienna Day Photo Book: Grid Girl - Beautiful Overseas Girl (Paperback)",
-          "listing_ids": [
-            "257098081424"
-          ],
-          "observed_price_gbp": 25.03
-        },
-        {
-          "title": "DISCOVERY 72/100 - Cuba Walker Evan’s",
-          "listing_ids": [
-            "128077323257"
-          ],
-          "observed_price_gbp": 21.49
-        },
-        {
-          "title": "DISCOVERY 72/100 - Hans Günter Flieg: Documentary Photography from Brazil 1940-1970 Kerber",
-          "listing_ids": [
-            "226955965834"
-          ],
-          "observed_price_gbp": 24.03
-        },
-        {
-          "title": "DISCOVERY 72/100 - Shunka Ayami Photo Book: Full Customs Course - Japanese Sexy Idol (Paperback)",
-          "listing_ids": [
-            "257104782859"
-          ],
-          "observed_price_gbp": 27.41
-        },
-        {
-          "title": "DISCOVERY 72/100 - Japan NEW Toranoko Photo Book by Hoboneko Author, Made in Japan",
-          "listing_ids": [
-            "326753304091"
-          ],
-          "observed_price_gbp": 27.68
-        },
-        {
-          "title": "DISCOVERY 72/100 - Shunka Ayami Photo Book: First Experience with her - Japan Sexy Idol (Paperback)",
-          "listing_ids": [
-            "267400968772"
-          ],
-          "observed_price_gbp": 28.99
-        },
-        {
-          "title": "DISCOVERY 72/100 - Yura Kano Photo Book: Cosplay Fetish Book - Japan Gravure Idol",
-          "listing_ids": [
-            "267400962199"
-          ],
-          "observed_price_gbp": 29.64
-        },
-        {
-          "title": "DISCOVERY 72/100 - PARK JIHOON Wanna One SUPERDRY PHOTOBOOK Concert RE:FLECT Official",
-          "listing_ids": [
-            "366671192401"
-          ],
-          "observed_price_gbp": 22.12
-        },
-        {
-          "title": "DISCOVERY 72/100 - TXT Album \"7TH YEAR: 가시덤불에 잠시 바람이 멈췄을 때\" [3 Photobook 3 CD] 3...",
-          "listing_ids": [
-            "168691235752"
-          ],
-          "observed_price_gbp": 35.28
-        },
-        {
-          "title": "CHANGED 72/100 - United States of America, National Geographic, Taschen, 2016. Brand New & Sealed",
-          "listing_ids": [
-            "336762644898"
-          ],
-          "observed_price_gbp": 249.99
-        }
-      ]
-    },
-    {
-      "number": 1720,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 81 | 10 under £100 | 9 special | 8 unknown | 1/12",
-      "created_at": "2026-09-15T22:57:15Z",
-      "updated_at": "2026-09-15T22:57:16Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1720",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 4.37,
-      "candidate_summaries": [
-        {
-          "title": "REVIEW 81/100 - Beyond Maps and Atlases by Bertien van Manen *signed",
-          "listing_ids": [
-            "178212346709"
-          ],
-          "observed_price_gbp": 75.0
-        },
-        {
-          "title": "REVIEW 78/100 - The Family of Man by Edward Steichen, Carl Sandburg Paperback, MoMA, Illustrated",
-          "listing_ids": [
-            "227518567854"
-          ],
-          "observed_price_gbp": 10.21
-        },
-        {
-          "title": "DISCOVERY 72/100 - THE POLAROID BOOK PHOTO BOOK HARD COVER 2005 TASCHEN",
-          "listing_ids": [
-            "128075961445"
-          ],
-          "observed_price_gbp": 4.37
-        },
-        {
-          "title": "DISCOVERY 72/100 - Robert Capa Robert Capa/Photographs Aperture Paperback English Photography",
-          "listing_ids": [
-            "128075897104"
-          ],
-          "observed_price_gbp": 5.44
-        },
-        {
-          "title": "DISCOVERY 72/100 - Romney Marsh in Old Photographs by Edward Carpenter. **Signed ** Paperback.",
-          "listing_ids": [
-            "377342530974"
-          ],
-          "observed_price_gbp": 9.99
-        },
-        {
-          "title": "DISCOVERY 72/100 - Paul Strand: 1 (Masters of Photogra..., Haworth-Booth,",
-          "listing_ids": [
-            "128075959709"
-          ],
-          "observed_price_gbp": 10.79
-        },
-        {
-          "title": "DISCOVERY 72/100 - Photograph, \"Arthur Rimbaud\", Paris, 1871 / 15 x 20",
-          "listing_ids": [
-            "227523194766"
-          ],
-          "observed_price_gbp": 12.57
-        },
-        {
-          "title": "DISCOVERY 72/100 - Pictures On A Page Harold Evans 1978 Hardback First Edition Photo-Journalism",
-          "listing_ids": [
-            "307181179752"
-          ],
-          "observed_price_gbp": 15.99
-        },
-        {
-          "title": "DISCOVERY 72/100 - Signed 52 Assignments Street Photography Brian Lloyd Duckett HB Ammonite Press",
-          "listing_ids": [
-            "287456202183"
-          ],
-          "observed_price_gbp": 16.14
-        },
-        {
-          "title": "DISCOVERY 72/100 - Wingleader Photo Arc No.20, Supermarine Spitfire Mk.IX in RAF, NW Europe & Med.",
-          "listing_ids": [
-            "198644156655"
-          ],
-          "observed_price_gbp": 16.15
-        }
-      ]
-    },
-    {
-      "number": 1721,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 6 special | 10 unknown | 2/12",
-      "created_at": "2026-09-15T22:57:17Z",
-      "updated_at": "2026-09-15T22:57:18Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1721",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 1.38,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - NYANTAMA ω Furry Balls of Male Cats Japanese Photo Book by Rumiko Yoshizawa New",
-          "listing_ids": [
-            "318841247850"
-          ],
-          "observed_price_gbp": 20.36
-        },
-        {
-          "title": "DISCOVERY 72/100 - Kids of the World: Photography Brian McInerney Reg Morrison, 1970s, 1979 HC Book",
-          "listing_ids": [
-            "377492879745"
-          ],
-          "observed_price_gbp": 20.43
-        },
-        {
-          "title": "DISCOVERY 72/100 - READING 1975 PHOTOBOOK☆ 24 PAGES of PERSONALLY TAKEN PHOTOS☆BRAND NEW☆ 14cmx11cm",
-          "listing_ids": [
-            "188908213566"
-          ],
-          "observed_price_gbp": 22.0
-        },
-        {
-          "title": "DISCOVERY 72/100 - Annie Leibovitz A Photographer's Life 1990-2005 HB Photo Book w/ Dust Jacket",
-          "listing_ids": [
-            "267779622090"
-          ],
-          "observed_price_gbp": 21.5
-        },
-        {
-          "title": "DISCOVERY 72/100 - Wildlife Photographer of the Year Book - Portfolio One - 1992 - Hardback",
-          "listing_ids": [
-            "398383869790"
-          ],
-          "observed_price_gbp": 29.82
-        },
-        {
-          "title": "DISCOVERY 72/100 - Tom of Finland TASCHEN 1st Edition 1st Print Gay Art Male Nudes Photo Book 1992",
-          "listing_ids": [
-            "137731934689"
-          ],
-          "observed_price_gbp": 37.1
-        },
-        {
-          "title": "DISCOVERY 72/100 - Speedway Photo Book Nigel Harris. A5 size.",
-          "listing_ids": [
-            "158275331176"
-          ],
-          "observed_price_gbp": 1.97
-        },
-        {
-          "title": "DISCOVERY 72/100 - Nigel’s Night Out by Donnie Carter Picture Lions 1991 • Children’s Book vintage",
-          "listing_ids": [
-            "178500025584"
-          ],
-          "observed_price_gbp": 2.0
-        },
-        {
-          "title": "DISCOVERY 72/100 - Warwickshire Railways: Britain's Railways in Old Photographs by Mike Hitches...",
-          "listing_ids": [
-            "236705746735"
-          ],
-          "observed_price_gbp": 1.38
-        },
-        {
-          "title": "DISCOVERY 72/100 - Complete Guide to Digital Photography by Ian Farrell (Paperback, 2011)",
-          "listing_ids": [
-            "287584045178"
-          ],
-          "observed_price_gbp": 4.99
-        }
-      ]
-    },
     {
       "number": 1722,
       "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 3/12",
@@ -819,6 +573,252 @@
             "128075924001"
           ],
           "observed_price_gbp": 14.0
+        }
+      ]
+    },
+    {
+      "number": 1729,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 10/12",
+      "created_at": "2026-09-15T22:57:32Z",
+      "updated_at": "2026-09-15T22:57:33Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1729",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 20.42,
+      "candidate_summaries": [
+        {
+          "title": "DISCOVERY 72/100 - Cat Paws Photo Book Neko no Otete Japanese Cute Kitten Feet Photography Book",
+          "listing_ids": [
+            "318845612225"
+          ],
+          "observed_price_gbp": 20.91
+        },
+        {
+          "title": "DISCOVERY 72/100 - Victorian and Edwardian Brighton from old photographs by John Betjeman and J....",
+          "listing_ids": [
+            "227518342578"
+          ],
+          "observed_price_gbp": 23.06
+        },
+        {
+          "title": "DISCOVERY 72/100 - Vanessa Cooper Photo Book: Blonde Girl Beautiful Breasts Collection (Paperback)",
+          "listing_ids": [
+            "267598406391"
+          ],
+          "observed_price_gbp": 24.14
+        },
+        {
+          "title": "DISCOVERY 72/100 - Legends of the Land (Hardcover Photobook) - Ralph Talmont - Maori New Zealand",
+          "listing_ids": [
+            "366656870730"
+          ],
+          "observed_price_gbp": 20.96
+        },
+        {
+          "title": "DISCOVERY 72/100 - Shots from the Hip: Another Way of Looking Through the Camera",
+          "listing_ids": [
+            "128076000162"
+          ],
+          "observed_price_gbp": 21.49
+        },
+        {
+          "title": "DISCOVERY 72/100 - Missy Luv Photobook: International Nanpa European Beauty (Paperback)",
+          "listing_ids": [
+            "257388243910"
+          ],
+          "observed_price_gbp": 26.1
+        },
+        {
+          "title": "DISCOVERY 72/100 - Gourmand's Egg. a Collection of Stories and Recipes by The The Gourmand",
+          "listing_ids": [
+            "307168472309"
+          ],
+          "observed_price_gbp": 23.58
+        },
+        {
+          "title": "DISCOVERY 72/100 - David Stewart - Teenage Pre-Occupation 2013 Photo Book Youth Culture Lifestyle",
+          "listing_ids": [
+            "168685570457"
+          ],
+          "observed_price_gbp": 26.7
+        },
+        {
+          "title": "DISCOVERY 72/100 - Annie Leibovitz at Work Hardcover Photography Book (English)",
+          "listing_ids": [
+            "407213911848"
+          ],
+          "observed_price_gbp": 21.5
+        },
+        {
+          "title": "DISCOVERY 72/100 - Queen In 3-D Bohemian Rhapsody Edition - Brian May Hardcover New & Sealed",
+          "listing_ids": [
+            "318865928384"
+          ],
+          "observed_price_gbp": 20.42
+        }
+      ]
+    },
+    {
+      "number": 1730,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 83 | 8 under £100 | 1 special | 1 changed | 8 unknown | 11/12",
+      "created_at": "2026-09-15T22:57:34Z",
+      "updated_at": "2026-09-15T22:57:35Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1730",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 15.4,
+      "candidate_summaries": [
+        {
+          "title": "DISCOVERY 72/100 - Vintage 1977 MOSCOW Soviet USSR Photo Book – Kodansha Japan – Cold War Design",
+          "listing_ids": [
+            "407201234746"
+          ],
+          "observed_price_gbp": 15.4
+        },
+        {
+          "title": "DISCOVERY 72/100 - M-On Entertainment HYDE 『HYDE IS DEAD 2002-2008』",
+          "listing_ids": [
+            "377498041012"
+          ],
+          "observed_price_gbp": 29.16
+        },
+        {
+          "title": "DISCOVERY 72/100 - The Gourmand's Mushroom: A Collection ..., The Gourmand",
+          "listing_ids": [
+            "318804295870"
+          ],
+          "observed_price_gbp": 26.18
+        },
+        {
+          "title": "DISCOVERY 72/100 - The Gourmand's Mushroom: A Collection ..., The Gourmand",
+          "listing_ids": [
+            "307168477041"
+          ],
+          "observed_price_gbp": 26.7
+        },
+        {
+          "title": "DISCOVERY 72/100 - The Gourmand's Mushroom: A Collection ..., The Gourmand",
+          "listing_ids": [
+            "117373664499"
+          ],
+          "observed_price_gbp": 26.7
+        },
+        {
+          "title": "DISCOVERY 72/100 - Gourmand's Egg. a Collection of Stories and Recipes by The The Gourmand ...",
+          "listing_ids": [
+            "318804265729"
+          ],
+          "observed_price_gbp": 31.38
+        },
+        {
+          "title": "DISCOVERY 72/100 - Doris Kloster: Photographs book by Taschen Published 1995",
+          "listing_ids": [
+            "128072321070"
+          ],
+          "observed_price_gbp": 31.9
+        },
+        {
+          "title": "DISCOVERY 72/100 - Gourmand's Egg. a Collection of Stories and Recipes by The The Gourmand ...",
+          "listing_ids": [
+            "117373665475"
+          ],
+          "observed_price_gbp": 31.9
+        },
+        {
+          "title": "CHANGED 72/100 - Rizzoli Book 'Fuct' by Erik Brunetti Hardcover Punk Art Street Culture 2013 VGC",
+          "listing_ids": [
+            "178493443033"
+          ],
+          "observed_price_gbp": 167.1
+        },
+        {
+          "title": "REVIEW 83/100 - Liberty Theater by Rosalind Fox Solomon. Hardcover. SIGNED. Fine condition.",
+          "listing_ids": [
+            "236969089447"
+          ],
+          "observed_price_gbp": 125.5
+        }
+      ]
+    },
+    {
+      "number": 1737,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 special | 10 unknown | 2/13",
+      "created_at": "2026-09-16T01:19:10Z",
+      "updated_at": "2026-09-16T01:19:11Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/1737",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 11.86,
+      "candidate_summaries": [
+        {
+          "title": "DISCOVERY 72/100 - The Ones That Worked: Wildlife Photos by Michael Leach *SIGNED* (2002, VGOOD)",
+          "listing_ids": [
+            "317629207035"
+          ],
+          "observed_price_gbp": 11.86
+        },
+        {
+          "title": "DISCOVERY 72/100 - Looking. Photography of Vic Attfield 2005, signed",
+          "listing_ids": [
+            "117043766868"
+          ],
+          "observed_price_gbp": 12.94
+        },
+        {
+          "title": "DISCOVERY 72/100 - Koji Sato : The Zen Life - Zen Buddhism Photobook Hardcover English Weatherhill",
+          "listing_ids": [
+            "307149678957"
+          ],
+          "observed_price_gbp": 13.96
+        },
+        {
+          "title": "DISCOVERY 72/100 - Sinatra: Frank and Friendly, Giant Deluxe HB Photographic Memoir Terry O'Neill",
+          "listing_ids": [
+            "206543611434"
+          ],
+          "observed_price_gbp": 13.96
+        },
+        {
+          "title": "DISCOVERY 72/100 - P Francis Hunt & T Kijima - The Orchid HC collection of beautiful colour photos",
+          "listing_ids": [
+            "388448159496"
+          ],
+          "observed_price_gbp": 16.15
+        },
+        {
+          "title": "DISCOVERY 72/100 - New Orleans 1960 Taschen Hardcover Photo Book Claxton Jazzlife jazz Music USA",
+          "listing_ids": [
+            "117379652125"
+          ],
+          "observed_price_gbp": 15.99
+        },
+        {
+          "title": "DISCOVERY 72/100 - BTS Young Forever Special Edition Photobook + J-Hope Polaroid",
+          "listing_ids": [
+            "366626409096"
+          ],
+          "observed_price_gbp": 19.36
+        },
+        {
+          "title": "DISCOVERY 72/100 - Her Majesty. a Photographic History 1926-2022 by Christopher Warwick (signed,",
+          "listing_ids": [
+            "318044983385"
+          ],
+          "observed_price_gbp": 21.49
+        },
+        {
+          "title": "DISCOVERY 72/100 - Bruce Lee In “The Big Boss” Rare Photo Book With Autographed Photo Collectable",
+          "listing_ids": [
+            "168678569030"
+          ],
+          "observed_price_gbp": 21.5
+        },
+        {
+          "title": "DISCOVERY 72/100 - WAKANA SAKAI-YOKAN- Female Idol Japan Photobook 1st edition 1999",
+          "listing_ids": [
+            "377446647488"
+          ],
+          "observed_price_gbp": 28.08
         }
       ]
     }

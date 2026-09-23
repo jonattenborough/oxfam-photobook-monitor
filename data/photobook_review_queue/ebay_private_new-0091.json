@@ -1,663 +1,7 @@
 {
-  "checked_at": "2026-09-22T21:55:50Z",
+  "checked_at": "2026-09-23T00:13:09Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
-    {
-      "number": 2784,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 1 changed | 9 unknown | 13/37",
-      "created_at": "2026-09-22T21:55:17Z",
-      "updated_at": "2026-09-22T21:55:17Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2784",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 5.45,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - BRITISH FOOTBALL GREATEST GROUNDS POSTCARD BOXED SET 1 ( Stadiums Groundhopping)",
-          "listing_ids": [
-            "117419097759"
-          ],
-          "observed_price_gbp": 8.65
-        },
-        {
-          "title": "DISCOVERY 72/100 - Grand Theft Auto: Episodes from Liberty City Xbox 360- GUIDE BOOK & CITY MAP",
-          "listing_ids": [
-            "820143142282"
-          ],
-          "observed_price_gbp": 8.66
-        },
-        {
-          "title": "DISCOVERY 72/100 - Dr C SCHEUSSNER ADOX CINE FILM CANNISTER  c.1960's  & METAL FILM SPOOL",
-          "listing_ids": [
-            "137754228576"
-          ],
-          "observed_price_gbp": 6.84
-        },
-        {
-          "title": "DISCOVERY 72/100 - The Country Life Picture Book of The Lake District. C.H.D. Acland. Vintage, 1988",
-          "listing_ids": [
-            "236353345235"
-          ],
-          "observed_price_gbp": 5.88
-        },
-        {
-          "title": "DISCOVERY 72/100 - 4x Harry Potter Wizarding World Micro Magical Moments Figures, Quidditch Series",
-          "listing_ids": [
-            "327363775881"
-          ],
-          "observed_price_gbp": 5.45
-        },
-        {
-          "title": "DISCOVERY 72/100 - Built for Adventure: The Classic Automobiles of Clive Cussler Hardback",
-          "listing_ids": [
-            "327363721121"
-          ],
-          "observed_price_gbp": 5.45
-        },
-        {
-          "title": "CHANGED 72/100 - Hamlyn The Best of Cooking (600 Recipes) Hardback Vintage Cook Book",
-          "listing_ids": [
-            "800685015244"
-          ],
-          "observed_price_gbp": 5.45
-        },
-        {
-          "title": "DISCOVERY 72/100 - The Art of World of Warcraft Cataclysm Hardcover Book",
-          "listing_ids": [
-            "206565524205"
-          ],
-          "observed_price_gbp": 5.45
-        },
-        {
-          "title": "DISCOVERY 72/100 - The Story Of The Hoover Dam",
-          "listing_ids": [
-            "366677083187"
-          ],
-          "observed_price_gbp": 5.45
-        },
-        {
-          "title": "DISCOVERY 72/100 - WORLD OF CRUISING MAGAZINE JUL-AUG 2026 with Matchmaker Jul/Aug '26 magazine.New",
-          "listing_ids": [
-            "820142972821"
-          ],
-          "observed_price_gbp": 5.45
-        }
-      ]
-    },
-    {
-      "number": 2786,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 15/37",
-      "created_at": "2026-09-22T21:55:18Z",
-      "updated_at": "2026-09-22T21:55:18Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2786",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 6.47,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - Snow White and the Seven Dwarfs SOUND BOOK 30 Enchanting Fairy Tale Sounds",
-          "listing_ids": [
-            "298686286303"
-          ],
-          "observed_price_gbp": 6.75
-        },
-        {
-          "title": "DISCOVERY 72/100 - British Railcars 1900-1950. Lane and Jenkinson. Good condition. Post free UK",
-          "listing_ids": [
-            "178507840020"
-          ],
-          "observed_price_gbp": 9.72
-        },
-        {
-          "title": "DISCOVERY 72/100 - Main Line Across The Pennines, Woodhead in the Shadows. VGC. Post free UK",
-          "listing_ids": [
-            "178507955030"
-          ],
-          "observed_price_gbp": 9.72
-        },
-        {
-          "title": "DISCOVERY 72/100 - John Williams Butcher's Crossing NYRB Classics",
-          "listing_ids": [
-            "327363794961"
-          ],
-          "observed_price_gbp": 9.73
-        },
-        {
-          "title": "DISCOVERY 72/100 - High Noon : Wild West Picture Library Paperback",
-          "listing_ids": [
-            "137751894938"
-          ],
-          "observed_price_gbp": 7.05
-        },
-        {
-          "title": "DISCOVERY 72/100 - CLASSIC AND SPORTS CAR Magazine Summer 2017 Petrol Head Retro Collection Clect",
-          "listing_ids": [
-            "267788740438"
-          ],
-          "observed_price_gbp": 7.05
-        },
-        {
-          "title": "DISCOVERY 72/100 - Dybisz, Natalie Creative Portrait Photography Book",
-          "listing_ids": [
-            "306468619944"
-          ],
-          "observed_price_gbp": 6.47
-        },
-        {
-          "title": "DISCOVERY 72/100 - Encanto Mi Familia 12 Figurine Set, Mirabel Madrigal, Disney, boxed but opened",
-          "listing_ids": [
-            "327363745837"
-          ],
-          "observed_price_gbp": 6.52
-        },
-        {
-          "title": "DISCOVERY 72/100 - Five Nights at Freddy's The Twisted Ones Graphic Novel Cawthon Scholastic 2021",
-          "listing_ids": [
-            "128086196239"
-          ],
-          "observed_price_gbp": 6.52
-        },
-        {
-          "title": "DISCOVERY 72/100 - Shropshire: A Century in Photographs By Shropshire Federation of Women's Inst.",
-          "listing_ids": [
-            "227534061833"
-          ],
-          "observed_price_gbp": 6.52
-        }
-      ]
-    },
-    {
-      "number": 2785,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 14/37",
-      "created_at": "2026-09-22T21:55:18Z",
-      "updated_at": "2026-09-22T21:55:18Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2785",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 5.95,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - The Bad Guys Episodes 1-6 In 3 Paperback Books, By Aaron Blabey.",
-          "listing_ids": [
-            "168698364259"
-          ],
-          "observed_price_gbp": 9.0
-        },
-        {
-          "title": "DISCOVERY 72/100 - Classy Freddie Blassie : Listen, You Pencil Neck Geeks (PB, GC 2003)",
-          "listing_ids": [
-            "178508002495"
-          ],
-          "observed_price_gbp": 6.52
-        },
-        {
-          "title": "DISCOVERY 72/100 - ACTION COMICS - Comic Book #398. DC Comics March 1971. No.398. VG/FN 5.0",
-          "listing_ids": [
-            "377506304598"
-          ],
-          "observed_price_gbp": 6.52
-        },
-        {
-          "title": "DISCOVERY 72/100 - ACTION COMICS - Comic Book #491. DC Comics. January 1979. No.491. VF+ 8.5",
-          "listing_ids": [
-            "377506322995"
-          ],
-          "observed_price_gbp": 6.52
-        },
-        {
-          "title": "DISCOVERY 72/100 - ACTION COMICS - Comic Book #496. DC Comics. June 1979. No.496. VF/NM 9.0",
-          "listing_ids": [
-            "377506339535"
-          ],
-          "observed_price_gbp": 6.52
-        },
-        {
-          "title": "DISCOVERY 72/100 - OUTLAWS OF THE WEST - Comic Book #5. L Miller Comics. 1956. No.5. VG- 3.5",
-          "listing_ids": [
-            "377506201157"
-          ],
-          "observed_price_gbp": 6.52
-        },
-        {
-          "title": "DISCOVERY 72/100 - Street and Studio : An Urban History of Photography by Ute Eskildsen 2008 Tate",
-          "listing_ids": [
-            "197671612476"
-          ],
-          "observed_price_gbp": 5.95
-        },
-        {
-          "title": "DISCOVERY 72/100 - London Street Photography 1860-2010 Mike Seaborne & Anna Sparham PB",
-          "listing_ids": [
-            "227534530618"
-          ],
-          "observed_price_gbp": 6.52
-        },
-        {
-          "title": "DISCOVERY 72/100 - The History of the British Lions by Clem Thomas, Hardback 1996 ISBN 1851588698",
-          "listing_ids": [
-            "318887114014"
-          ],
-          "observed_price_gbp": 6.52
-        },
-        {
-          "title": "DISCOVERY 72/100 - Goldilocks and the Three Bears SOUND BOOK 30 Enchanting Fairy Tale Sounds",
-          "listing_ids": [
-            "298686278870"
-          ],
-          "observed_price_gbp": 6.75
-        }
-      ]
-    },
-    {
-      "number": 2787,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 16/37",
-      "created_at": "2026-09-22T21:55:19Z",
-      "updated_at": "2026-09-22T21:55:19Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2787",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 6.52,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - Tad Williams Otherland Books River Of Blue Fire Sea Of Silver Light Fantasy Pb",
-          "listing_ids": [
-            "227527522935"
-          ],
-          "observed_price_gbp": 6.52
-        },
-        {
-          "title": "DISCOVERY 72/100 - The Lord Of The Rings The Making Of The Movie Trilogy 2002 Paperback Book",
-          "listing_ids": [
-            "377506395671"
-          ],
-          "observed_price_gbp": 6.52
-        },
-        {
-          "title": "DISCOVERY 72/100 - Derelict Britain Beauty in Decay by Simon Sugden photography book",
-          "listing_ids": [
-            "178518485785"
-          ],
-          "observed_price_gbp": 10.0
-        },
-        {
-          "title": "DISCOVERY 72/100 - KAISER 5m (16 ft) FLASH EXTENSION CORD PC male/female",
-          "listing_ids": [
-            "137754229028"
-          ],
-          "observed_price_gbp": 6.84
-        },
-        {
-          "title": "DISCOVERY 72/100 - MINOLTA BODY CASE CB-700si PART No. 6089-560 IN ORIGINAL BOX",
-          "listing_ids": [
-            "137754228855"
-          ],
-          "observed_price_gbp": 6.84
-        },
-        {
-          "title": "DISCOVERY 72/100 - VINTAGE ISING KLEEPRESSE GERMAN MADE SPLICER For 8 or 16mm IN ORIGINAL BOX",
-          "listing_ids": [
-            "137754228901"
-          ],
-          "observed_price_gbp": 6.84
-        },
-        {
-          "title": "DISCOVERY 72/100 - British Railways Wagons: The First Half Million. Don Rowland. Post free UK",
-          "listing_ids": [
-            "178507851499"
-          ],
-          "observed_price_gbp": 10.25
-        },
-        {
-          "title": "DISCOVERY 72/100 - Standard 8mm - Love, Loot & Crash / His Marriage Wow - Silent - 400ft",
-          "listing_ids": [
-            "158306233213"
-          ],
-          "observed_price_gbp": 7.58
-        },
-        {
-          "title": "DISCOVERY 72/100 - Super 8mm - The General - Reel 5 Only - Silent - 250ft",
-          "listing_ids": [
-            "158306243217"
-          ],
-          "observed_price_gbp": 7.58
-        },
-        {
-          "title": "DISCOVERY 72/100 - FLASH GORDON - Comic Book #9. King Comics. October 1967. No.9. FN+ 6.5",
-          "listing_ids": [
-            "377506177628"
-          ],
-          "observed_price_gbp": 7.59
-        }
-      ]
-    },
-    {
-      "number": 2789,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 18/37",
-      "created_at": "2026-09-22T21:55:20Z",
-      "updated_at": "2026-09-22T21:55:20Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2789",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 7.59,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - KAISER 3073 1000w 220v TILT HEAD VIDEO LIGHT  With CAMERA BRACKET ORIGINAL BOX",
-          "listing_ids": [
-            "137754229070"
-          ],
-          "observed_price_gbp": 7.59
-        },
-        {
-          "title": "DISCOVERY 72/100 - VINTAGE BELL & HOWELL 8mm MOVIE TITLER in Original BOX, INSTRUCTIONS + LENS- VGC",
-          "listing_ids": [
-            "137754229019"
-          ],
-          "observed_price_gbp": 7.59
-        },
-        {
-          "title": "DISCOVERY 72/100 - VINTAGE KODAK INSTAMATIC M14 SUPER 8mm CINE CAMERA MADE USA  c.1967-69",
-          "listing_ids": [
-            "137754228972"
-          ],
-          "observed_price_gbp": 7.59
-        },
-        {
-          "title": "DISCOVERY 72/100 - VINTAGE KODAK INSTAMATIC M2 8mm CINE CAMERA MADE USA  c.1965-67 #6",
-          "listing_ids": [
-            "137754228216"
-          ],
-          "observed_price_gbp": 7.59
-        },
-        {
-          "title": "DISCOVERY 72/100 - M C Escher 'STARS' Art Used Magna Books Postcard",
-          "listing_ids": [
-            "377506449258"
-          ],
-          "observed_price_gbp": 9.97
-        },
-        {
-          "title": "DISCOVERY 72/100 - VINTAGE BOOK FIFTY TWO SPORT STORIES FOR BOYS (1935 Edition)",
-          "listing_ids": [
-            "117418995017"
-          ],
-          "observed_price_gbp": 7.59
-        },
-        {
-          "title": "DISCOVERY 72/100 - What the Ladybird Heard 5 x Book Bundle by Julia Donaldson - Read all notes",
-          "listing_ids": [
-            "128086095034"
-          ],
-          "observed_price_gbp": 7.59
-        },
-        {
-          "title": "DISCOVERY 72/100 - Doris Of Sunshine Ranch - Helen Dickson. Hardback Book. Published In 1948.",
-          "listing_ids": [
-            "178507900301"
-          ],
-          "observed_price_gbp": 8.12
-        },
-        {
-          "title": "DISCOVERY 72/100 - Mastering Macro Photography by David Taylor (2017, Trade Paperback)",
-          "listing_ids": [
-            "206575122298"
-          ],
-          "observed_price_gbp": 8.12
-        },
-        {
-          "title": "DISCOVERY 72/100 - THE CINNAMON BUN BOOK STORE - Laurie Gilmore - Sprayed Edge paperback READ TEXT!",
-          "listing_ids": [
-            "820142755721"
-          ],
-          "observed_price_gbp": 8.12
-        }
-      ]
-    },
-    {
-      "number": 2788,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 17/37",
-      "created_at": "2026-09-22T21:55:20Z",
-      "updated_at": "2026-09-22T21:55:20Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2788",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 7.59,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - ROCKY MOUNTAIN KING - Comic Book #60. L Miller Comics. 1955. No.60. VG+ 4.5",
-          "listing_ids": [
-            "377506244015"
-          ],
-          "observed_price_gbp": 7.59
-        },
-        {
-          "title": "DISCOVERY 72/100 - West Ham United FC A5 Black Notebook Memo Pad Brand New",
-          "listing_ids": [
-            "237075847663"
-          ],
-          "observed_price_gbp": 7.59
-        },
-        {
-          "title": "DISCOVERY 72/100 - ISBN 0- 86542-086-6,Clinical Anatomy Of The Eye,Snell & Lemp,Optometry,Medicine",
-          "listing_ids": [
-            "188947606198"
-          ],
-          "observed_price_gbp": 7.59
-        },
-        {
-          "title": "DISCOVERY 72/100 - Paddington's Suitcase 8 Book Collection Box Set Michael Bond R.W. Alley",
-          "listing_ids": [
-            "188947713085"
-          ],
-          "observed_price_gbp": 7.59
-        },
-        {
-          "title": "DISCOVERY 72/100 - RAF Fighter Units Europe 1939–42 by Bryan Philpott. Paperback",
-          "listing_ids": [
-            "800681597225"
-          ],
-          "observed_price_gbp": 7.59
-        },
-        {
-          "title": "DISCOVERY 72/100 - LEGO Star Wars Phonics Box Set 10 Books and 2 Workbooks",
-          "listing_ids": [
-            "287594343359"
-          ],
-          "observed_price_gbp": 7.59
-        },
-        {
-          "title": "DISCOVERY 72/100 - Under the Black Hat : My Life in the WWE & Beyond by Jim Ross and Paul O'Brien",
-          "listing_ids": [
-            "178508005926"
-          ],
-          "observed_price_gbp": 8.0
-        },
-        {
-          "title": "DISCOVERY 72/100 - Finland: Finlande Finnland (Oswell Blakeston)",
-          "listing_ids": [
-            "800681228207"
-          ],
-          "observed_price_gbp": 10.8
-        },
-        {
-          "title": "DISCOVERY 72/100 - Edith Holden Junk Journal Tags Cards Vintage Ephemera Supplies Cute & Unique!",
-          "listing_ids": [
-            "278387152112"
-          ],
-          "observed_price_gbp": 8.12
-        },
-        {
-          "title": "DISCOVERY 72/100 - JESSOP 1.6x COMPACT VIDEO CONVERTER TELEPHOTO LENS - Boxed With Case & Caps",
-          "listing_ids": [
-            "137754228826"
-          ],
-          "observed_price_gbp": 7.59
-        }
-      ]
-    },
-    {
-      "number": 2790,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 19/37",
-      "created_at": "2026-09-22T21:55:21Z",
-      "updated_at": "2026-09-22T21:55:21Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2790",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 6.52,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - FORBIDDEN KNOWLEDGE - Comic Book #2. Last Gasp Comics. 1978. No.2. VF 8.0",
-          "listing_ids": [
-            "377506197556"
-          ],
-          "observed_price_gbp": 8.66
-        },
-        {
-          "title": "DISCOVERY 72/100 - POPEYE - Comic Book #17. World Distributor Comics. 1957. No.17. VF- 7.5",
-          "listing_ids": [
-            "377506215729"
-          ],
-          "observed_price_gbp": 8.66
-        },
-        {
-          "title": "DISCOVERY 72/100 - Bromsgrove to Gloucester: Ashchurch to Great Malvern. NEW. Post free UK",
-          "listing_ids": [
-            "178507817663"
-          ],
-          "observed_price_gbp": 11.57
-        },
-        {
-          "title": "DISCOVERY 72/100 - PICTURE SHOW Vol 58 No 1511 15TH MAR 1952 MITZI GAYNOR DALE ROBERTSON COVER",
-          "listing_ids": [
-            "188947643121"
-          ],
-          "observed_price_gbp": 9.61
-        },
-        {
-          "title": "DISCOVERY 72/100 - Realistic Abstracts Kees Van Aalst",
-          "listing_ids": [
-            "128086276153"
-          ],
-          "observed_price_gbp": 8.66
-        },
-        {
-          "title": "DISCOVERY 72/100 - Arturo Di Stefano Purdy Hicks Gallery Exhibition Catalogue 1995",
-          "listing_ids": [
-            "267789161406"
-          ],
-          "observed_price_gbp": 10.8
-        },
-        {
-          "title": "DISCOVERY 72/100 - Rare 1964 Vintage Subbuteo Table Soccer Brochure Rule Book",
-          "listing_ids": [
-            "287594323961"
-          ],
-          "observed_price_gbp": 10.8
-        },
-        {
-          "title": "DISCOVERY 72/100 - Renos Loizou Christopher Hull Gallery Exhibition Catalogue 1987",
-          "listing_ids": [
-            "267789166829"
-          ],
-          "observed_price_gbp": 10.8
-        },
-        {
-          "title": "DISCOVERY 72/100 - Renos Loizou Christopher Hull Gallery Exhibition Catalogue 1989",
-          "listing_ids": [
-            "267789170774"
-          ],
-          "observed_price_gbp": 10.8
-        },
-        {
-          "title": "DISCOVERY 72/100 - Essentials of Rubin's Pathology 5th Ed Rubin & Reisner PB 2008 LWW",
-          "listing_ids": [
-            "128086254150"
-          ],
-          "observed_price_gbp": 6.52
-        }
-      ]
-    },
-    {
-      "number": 2792,
-      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 21/37",
-      "created_at": "2026-09-22T21:55:22Z",
-      "updated_at": "2026-09-22T21:55:22Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2792",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 6.52,
-      "candidate_summaries": [
-        {
-          "title": "DISCOVERY 72/100 - 2x Vintage Buster and Giggle Comic Magazine Books 1968 Fleetway",
-          "listing_ids": [
-            "820142677856"
-          ],
-          "observed_price_gbp": 9.95
-        },
-        {
-          "title": "DISCOVERY 72/100 - HORNBY HOBBIES 1976 PRICE LIST. RAILWAYS, SCALEXTRIC. MINIC SHIPS",
-          "listing_ids": [
-            "267789090881"
-          ],
-          "observed_price_gbp": 9.73
-        },
-        {
-          "title": "DISCOVERY 72/100 - Canon Vintage Photo Album Black Gold Hardback Camera Photography Book cannon",
-          "listing_ids": [
-            "800681194173"
-          ],
-          "observed_price_gbp": 9.99
-        },
-        {
-          "title": "DISCOVERY 72/100 - The Psychic Adventures of Ernest Oaten, 2025, seances, spirits, ghosts, mediums",
-          "listing_ids": [
-            "117419106717"
-          ],
-          "observed_price_gbp": 12.94
-        },
-        {
-          "title": "DISCOVERY 72/100 - Usborne Stories For Bedtime Boxset Of Three Books - Hardcover",
-          "listing_ids": [
-            "407227167479"
-          ],
-          "observed_price_gbp": 9.72
-        },
-        {
-          "title": "DISCOVERY 72/100 - Set of 4 Cook Books Pasta Salads Oriental Vegetables Parragon",
-          "listing_ids": [
-            "206565546586"
-          ],
-          "observed_price_gbp": 6.52
-        },
-        {
-          "title": "DISCOVERY 72/100 - Marilyn Monroe From Beginning to End Michael Ventura w/Photographs by Earl Leaf",
-          "listing_ids": [
-            "116791883293"
-          ],
-          "observed_price_gbp": 10.26
-        },
-        {
-          "title": "DISCOVERY 72/100 - Marvel Comics - The Invaders  #32 & #33 - 2 Issues - UK Pence  Thor, Doctor Doom",
-          "listing_ids": [
-            "287594325519"
-          ],
-          "observed_price_gbp": 10.0
-        },
-        {
-          "title": "DISCOVERY 72/100 - The Paintings Of Steven Campbell The Story So Far by DUNCAN MACMILLAN 1st 93 hb",
-          "listing_ids": [
-            "377506392802"
-          ],
-          "observed_price_gbp": 10.0
-        },
-        {
-          "title": "DISCOVERY 72/100 - Gloucester To Cardiff Route Description",
-          "listing_ids": [
-            "227527440581"
-          ],
-          "observed_price_gbp": 10.8
-        }
-      ]
-    },
     {
       "number": 2791,
       "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 20/37",
@@ -819,6 +163,662 @@
             "137754228938"
           ],
           "observed_price_gbp": 10.8
+        }
+      ]
+    },
+    {
+      "number": 2794,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 23/37",
+      "created_at": "2026-09-22T21:55:24Z",
+      "updated_at": "2026-09-22T21:55:24Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2794",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 10.79,
+      "candidate_summaries": [
+        {
+          "title": "DISCOVERY 72/100 - Architecture Now! Vol.2 (TASCHEN) Philip Jodidio, Paperback Coffee Table Book",
+          "listing_ids": [
+            "317283528770"
+          ],
+          "observed_price_gbp": 10.8
+        },
+        {
+          "title": "DISCOVERY 72/100 - Dog Man books x5 (3 hardback / 2 paperback) - used - good condition",
+          "listing_ids": [
+            "147582246177"
+          ],
+          "observed_price_gbp": 10.8
+        },
+        {
+          "title": "DISCOVERY 72/100 - Grumman F6F Hellcat by Anderton, David A. Hardback Book",
+          "listing_ids": [
+            "237075949410"
+          ],
+          "observed_price_gbp": 10.8
+        },
+        {
+          "title": "DISCOVERY 72/100 - Lost History The Lost History of Aztec & Maya Illustrated Hardcover Reference",
+          "listing_ids": [
+            "178508045628"
+          ],
+          "observed_price_gbp": 10.8
+        },
+        {
+          "title": "DISCOVERY 72/100 - The Forty-Five Vols 1 & 2 by Alexandre Dumas, 1899, set of 2 books, rare",
+          "listing_ids": [
+            "128086226641"
+          ],
+          "observed_price_gbp": 10.8
+        },
+        {
+          "title": "DISCOVERY 72/100 - VINTAGE CHINON 44 AUTO ZOOM SUPER 8 CINE CAMERA MADE JAPAN  c.1974",
+          "listing_ids": [
+            "137752872471"
+          ],
+          "observed_price_gbp": 10.8
+        },
+        {
+          "title": "DISCOVERY 72/100 - VINTAGE MAYORAL ZOOM  EE 8mm CINE CAMERA MADE JAPAN  c.1970's",
+          "listing_ids": [
+            "137752872063"
+          ],
+          "observed_price_gbp": 10.8
+        },
+        {
+          "title": "DISCOVERY 72/100 - Molecular Biology of the Cell 5th Edition Alberts Textbook",
+          "listing_ids": [
+            "128086210969"
+          ],
+          "observed_price_gbp": 10.8
+        },
+        {
+          "title": "DISCOVERY 72/100 - Until Now by Anne Geddes, Beautiful Large Hardback Book with baby images A  259",
+          "listing_ids": [
+            "187593944127"
+          ],
+          "observed_price_gbp": 10.8
+        },
+        {
+          "title": "DISCOVERY 72/100 - Gaillard Sutherland Ed. British Art 1740-1820 Essays Honor Robert R Wark 1st HB",
+          "listing_ids": [
+            "336799947175"
+          ],
+          "observed_price_gbp": 10.79
+        }
+      ]
+    },
+    {
+      "number": 2796,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 25/37",
+      "created_at": "2026-09-22T21:55:25Z",
+      "updated_at": "2026-09-22T21:55:25Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2796",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 12.4,
+      "candidate_summaries": [
+        {
+          "title": "DISCOVERY 72/100 - [Japanese] Beautiful Piano Solo Disney Songs Intermediate Sheet Music Yamaha",
+          "listing_ids": [
+            "820142945350"
+          ],
+          "observed_price_gbp": 12.99
+        },
+        {
+          "title": "DISCOVERY 72/100 - [Japanese] Beautiful Piano Solo Studio Ghibli Famous Songs 1 Advanced",
+          "listing_ids": [
+            "820142661528"
+          ],
+          "observed_price_gbp": 12.99
+        },
+        {
+          "title": "DISCOVERY 72/100 - [Japanese] Hayao Miyazaki Studio Ghibli Best Album Piano Solo Sheet Music",
+          "listing_ids": [
+            "820142924416"
+          ],
+          "observed_price_gbp": 12.99
+        },
+        {
+          "title": "DISCOVERY 72/100 - CANON SEMI HARD CAMERA CASE SHC-PS300 For Canon Powershot Pro90 IN ORIGINAL BOX",
+          "listing_ids": [
+            "137754228297"
+          ],
+          "observed_price_gbp": 12.4
+        },
+        {
+          "title": "DISCOVERY 72/100 - OLIMPIC - B - 20mm  f/1.6 PROJECTION LENS",
+          "listing_ids": [
+            "137754228931"
+          ],
+          "observed_price_gbp": 12.4
+        },
+        {
+          "title": "DISCOVERY 72/100 - PATHESCOPE 9.5mm B&W FILM NEWS REEL Title THE CORONATION PROCESSION Part 1 1937",
+          "listing_ids": [
+            "137754228465"
+          ],
+          "observed_price_gbp": 12.4
+        },
+        {
+          "title": "DISCOVERY 72/100 - POLAROID PROJECTOR REMOTE CONTROL - 13ft lead black 5 pin DIN 2",
+          "listing_ids": [
+            "137754229146"
+          ],
+          "observed_price_gbp": 12.4
+        },
+        {
+          "title": "DISCOVERY 72/100 - SILMA-PALLUX ZOOM 15mm-25mm  f/1.5 PROJECTION LENS #4",
+          "listing_ids": [
+            "137754228950"
+          ],
+          "observed_price_gbp": 12.4
+        },
+        {
+          "title": "DISCOVERY 72/100 - VINTAGE ISING 8/16mm KLEBEPRESSE SPLICER With INSTRUCTION MANUAL - BOXED",
+          "listing_ids": [
+            "137754228960"
+          ],
+          "observed_price_gbp": 12.4
+        },
+        {
+          "title": "DISCOVERY 72/100 - WATA-STAR 650 PHOTO CINE HALOGEN LAMP WITH CAMERA BRACKET GRIP - 240v 1000w",
+          "listing_ids": [
+            "137754228999"
+          ],
+          "observed_price_gbp": 12.4
+        }
+      ]
+    },
+    {
+      "number": 2797,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 26/37",
+      "created_at": "2026-09-22T21:55:26Z",
+      "updated_at": "2026-09-22T21:55:26Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2797",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 12.4,
+      "candidate_summaries": [
+        {
+          "title": "DISCOVERY 72/100 - VINTAGE BAUER C4 SUPER, SUPER 8mm CINE CAMERA  c.1973",
+          "listing_ids": [
+            "137752873141"
+          ],
+          "observed_price_gbp": 12.4
+        },
+        {
+          "title": "DISCOVERY 72/100 - Kids Banana Costume 5-7 Years Spooktacular Creations Fruit Fancy Dress Halloween",
+          "listing_ids": [
+            "257750637709"
+          ],
+          "observed_price_gbp": 12.93
+        },
+        {
+          "title": "DISCOVERY 72/100 - Maremi’s Small Art Collectanea Butterflies Vol 1 Collage Ephemera Craft Book",
+          "listing_ids": [
+            "128086284961"
+          ],
+          "observed_price_gbp": 12.94
+        },
+        {
+          "title": "DISCOVERY 72/100 - Vintage Hilda Boswell’s Treasury Of Poetry Hardback Book -1978",
+          "listing_ids": [
+            "147582474563"
+          ],
+          "observed_price_gbp": 12.94
+        },
+        {
+          "title": "DISCOVERY 72/100 - Percy the Small Engine by REV. Wilbert Vere Awdry 1974 Paperback",
+          "listing_ids": [
+            "307186018291"
+          ],
+          "observed_price_gbp": 13.6
+        },
+        {
+          "title": "DISCOVERY 72/100 - GENUINE NIKON CL-1018 SOFT DRAWSTRING LENS CASE EXT. Depth 18cm Diameter 10cm #4",
+          "listing_ids": [
+            "137754229082"
+          ],
+          "observed_price_gbp": 15.08
+        },
+        {
+          "title": "DISCOVERY 72/100 - [Japanese] J-POP Ballad Collection Piano Solo / Vocal & Piano Sheet Music Book",
+          "listing_ids": [
+            "820142963103"
+          ],
+          "observed_price_gbp": 13.99
+        },
+        {
+          "title": "DISCOVERY 72/100 - The Fermentation Kitchen: Recipes & Techniques Sam Cooper Hardcover",
+          "listing_ids": [
+            "307185935797"
+          ],
+          "observed_price_gbp": 14.01
+        },
+        {
+          "title": "DISCOVERY 72/100 - Hughie O'Donoghue A Line Of Retreat Purdy Hicks Gallery 1997 Catalogue",
+          "listing_ids": [
+            "267789189537"
+          ],
+          "observed_price_gbp": 16.15
+        },
+        {
+          "title": "DISCOVERY 72/100 - Michael Jackson 1998 Calendar Oliver Books Vintage King of Pop Memorabilia",
+          "listing_ids": [
+            "137751905839"
+          ],
+          "observed_price_gbp": 17.21
+        }
+      ]
+    },
+    {
+      "number": 2799,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 28/37",
+      "created_at": "2026-09-22T21:55:28Z",
+      "updated_at": "2026-09-22T21:55:28Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2799",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 15.08,
+      "candidate_summaries": [
+        {
+          "title": "DISCOVERY 72/100 - Playboy - 50 Years - The Photographs by Jim Peterson (Hardcover)",
+          "listing_ids": [
+            "158321787053"
+          ],
+          "observed_price_gbp": 15.08
+        },
+        {
+          "title": "DISCOVERY 72/100 - VINTAGE BAUER C1(B) SUPER, SUPER 8mm CINE CAMERA  c.1965",
+          "listing_ids": [
+            "137752871781"
+          ],
+          "observed_price_gbp": 15.08
+        },
+        {
+          "title": "DISCOVERY 72/100 - VINTAGE BAUER C2 SUPER, SUPER 8mm CINE CAMERA  c.1965",
+          "listing_ids": [
+            "137752872741"
+          ],
+          "observed_price_gbp": 15.08
+        },
+        {
+          "title": "DISCOVERY 72/100 - VINTAGE CERAMIC / PORCELAIN PASTEL DOGS AROUND A TABLE FIGURINE 1980s",
+          "listing_ids": [
+            "336800069099"
+          ],
+          "observed_price_gbp": 15.08
+        },
+        {
+          "title": "DISCOVERY 72/100 - NURSES IN BATTLEDRESS (AIKENS) WORLD WAR II STORY OF A Q.A. RESERVE -VERY GOOD",
+          "listing_ids": [
+            "206565618164"
+          ],
+          "observed_price_gbp": 16.15
+        },
+        {
+          "title": "DISCOVERY 72/100 - National Garden Festival Gateshead 1990 Souvenir Brochure & Original Carrier Bag",
+          "listing_ids": [
+            "137751821240"
+          ],
+          "observed_price_gbp": 16.14
+        },
+        {
+          "title": "DISCOVERY 72/100 - VINTAGE KODAK INSTAMATIC M2 8mm CINE CAMERA MADE USA & CASE c.1965-67 #1",
+          "listing_ids": [
+            "137754228875"
+          ],
+          "observed_price_gbp": 15.08
+        },
+        {
+          "title": "DISCOVERY 72/100 - VINTAGE KODAK INSTAMATIC M2 8mm CINE CAMERA MADE USA & CASE c.1965-67 #5",
+          "listing_ids": [
+            "137754228114"
+          ],
+          "observed_price_gbp": 15.08
+        },
+        {
+          "title": "DISCOVERY 72/100 - Collieries of Kingswood and South Gloucestershire",
+          "listing_ids": [
+            "336799919748"
+          ],
+          "observed_price_gbp": 16.15
+        },
+        {
+          "title": "DISCOVERY 72/100 - OAK EGGAR Mounted Framed Orig Colour Plate From Antique Vintage Childrens Book",
+          "listing_ids": [
+            "336800077975"
+          ],
+          "observed_price_gbp": 16.15
+        }
+      ]
+    },
+    {
+      "number": 2802,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 31/37",
+      "created_at": "2026-09-22T21:55:31Z",
+      "updated_at": "2026-09-22T21:55:31Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2802",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 18.29,
+      "candidate_summaries": [
+        {
+          "title": "DISCOVERY 72/100 - VINTAGE CINEREX SUPER 8 ZOOM 218 8mm CINE CAMERA  c.1970's Made JAPAN",
+          "listing_ids": [
+            "137754229042"
+          ],
+          "observed_price_gbp": 18.29
+        },
+        {
+          "title": "DISCOVERY 72/100 - VINTAGE CHINON DART REFLEX 3 SUPER 8mm CINE CAMERA  c.1967 - Powers Up",
+          "listing_ids": [
+            "137754228728"
+          ],
+          "observed_price_gbp": 18.29
+        },
+        {
+          "title": "DISCOVERY 72/100 - VINTAGE KMZ QUARTZ M 8mm CINE CAMERA  c.1955-65 #4",
+          "listing_ids": [
+            "137752872391"
+          ],
+          "observed_price_gbp": 18.29
+        },
+        {
+          "title": "DISCOVERY 72/100 - VINTAGE REVUE 350 SUPER 8mm CINE CAMERA MADE JAPAN  c.1970'S",
+          "listing_ids": [
+            "137752872804"
+          ],
+          "observed_price_gbp": 18.29
+        },
+        {
+          "title": "DISCOVERY 72/100 - VINTAGE SANKYO AUTO-4X  8mm CINE CAMERA WITH BUILT-IN  PISTOL GRIP  c1960's",
+          "listing_ids": [
+            "137754229277"
+          ],
+          "observed_price_gbp": 18.29
+        },
+        {
+          "title": "DISCOVERY 72/100 - VINTAGE SEKONIC ZOOM 8 8mm CINE CAMERA WITH PISTOL GRIP  c.1960's Made JAPAN",
+          "listing_ids": [
+            "137754228998"
+          ],
+          "observed_price_gbp": 18.29
+        },
+        {
+          "title": "DISCOVERY 72/100 - Gaudier-Brzeska Mercury Gallery Exhibition Catalogue 1991",
+          "listing_ids": [
+            "267789151065"
+          ],
+          "observed_price_gbp": 18.82
+        },
+        {
+          "title": "DISCOVERY 72/100 - Women Who Changed The World Packed with Incredible Stories Photographs Hardback",
+          "listing_ids": [
+            "227527449713"
+          ],
+          "observed_price_gbp": 18.82
+        },
+        {
+          "title": "DISCOVERY 72/100 - Vintage Nike Dri-Fit Total 90 Shirt T-shirt Size Small Orange, Vgc",
+          "listing_ids": [
+            "188947811950"
+          ],
+          "observed_price_gbp": 19.0
+        },
+        {
+          "title": "DISCOVERY 72/100 - VINTAGE BAUER S20/XL SUPER 8  8mm CINE CAMERA WITH PISTOL GRIP  c.1975",
+          "listing_ids": [
+            "137754229000"
+          ],
+          "observed_price_gbp": 18.29
+        }
+      ]
+    },
+    {
+      "number": 2803,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 32/37",
+      "created_at": "2026-09-22T21:55:32Z",
+      "updated_at": "2026-09-22T21:55:32Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2803",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 18.29,
+      "candidate_summaries": [
+        {
+          "title": "DISCOVERY 72/100 - THE BUMPER BOOK of NORWEGIAN FOLK TALES 1993 Illustrated Nordberg ASCHEHOUG H/Bk",
+          "listing_ids": [
+            "307185907534"
+          ],
+          "observed_price_gbp": 19.35
+        },
+        {
+          "title": "DISCOVERY 72/100 - VINTAGE BELL & HOWELL AUTOLOAD 8mm CINE CAMERA With CARTRIDGE c.1960s Made JAPAN",
+          "listing_ids": [
+            "137754228891"
+          ],
+          "observed_price_gbp": 18.29
+        },
+        {
+          "title": "DISCOVERY 72/100 - VINTAGE CANON MOTOR ZOOM 8 EEE  8mm CINE CAMERA & LENS ADAPTER c.1962 Made JAPAN",
+          "listing_ids": [
+            "137754228200"
+          ],
+          "observed_price_gbp": 18.29
+        },
+        {
+          "title": "DISCOVERY 72/100 - VINTAGE EUMIG SOUND 31XL LIVE SOUND 8mm CINE CAMERA + MICROPHONE - BOXED c.1977",
+          "listing_ids": [
+            "137754228797"
+          ],
+          "observed_price_gbp": 18.29
+        },
+        {
+          "title": "DISCOVERY 72/100 - VINTAGE KODAK INSTAMATIC M4 8mm CINE CAMERA MADE USA & CASE c.1965-67 #2",
+          "listing_ids": [
+            "137754228949"
+          ],
+          "observed_price_gbp": 18.29
+        },
+        {
+          "title": "DISCOVERY 72/100 - VINTAGE SANKYO SUPER 5CM 8mm CINE CAMERA WITH BUILT-IN  PISTOL GRIP  c1967",
+          "listing_ids": [
+            "137754229155"
+          ],
+          "observed_price_gbp": 18.29
+        },
+        {
+          "title": "DISCOVERY 72/100 - VINTAGE ZEISS IKON 'CINE' EXPOSURE METER",
+          "listing_ids": [
+            "237075709867"
+          ],
+          "observed_price_gbp": 19.89
+        },
+        {
+          "title": "DISCOVERY 72/100 - Comic Book Cityscape Vinyl Photo Backdrop 2x2m POW ZAP BAM Multicolour",
+          "listing_ids": [
+            "227527401386"
+          ],
+          "observed_price_gbp": 19.95
+        },
+        {
+          "title": "DISCOVERY 72/100 - Girl Guides Association Books Lot Alix Liddell Baden-Powell Chalet Songs 6 Items",
+          "listing_ids": [
+            "327363828231"
+          ],
+          "observed_price_gbp": 19.99
+        },
+        {
+          "title": "DISCOVERY 72/100 - VINTAGE VOLKSWAGENS Book. Photography by Flat 4 Project",
+          "listing_ids": [
+            "136425044048"
+          ],
+          "observed_price_gbp": 19.36
+        }
+      ]
+    },
+    {
+      "number": 2805,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 34/37",
+      "created_at": "2026-09-22T21:55:33Z",
+      "updated_at": "2026-09-22T21:55:33Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2805",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 19.35,
+      "candidate_summaries": [
+        {
+          "title": "DISCOVERY 72/100 - Machinarium Collector's Edition (PC/Mac DVD) - 100% Complete CIB - Very Good",
+          "listing_ids": [
+            "237075832462"
+          ],
+          "observed_price_gbp": 21.5
+        },
+        {
+          "title": "DISCOVERY 72/100 - The Book Of Calendar Girl Photography By Roger Hicks. Magna Books. 1990",
+          "listing_ids": [
+            "365874350693"
+          ],
+          "observed_price_gbp": 21.5
+        },
+        {
+          "title": "DISCOVERY 72/100 - Syd Barrett/Pink Floyd/Through the Prism: Hipgnosis/LSD/Psychedelic Rock/3xBooks",
+          "listing_ids": [
+            "398407896794"
+          ],
+          "observed_price_gbp": 19.35
+        },
+        {
+          "title": "DISCOVERY 72/100 - Luerzers Archive 200 Best Ad Photographers Worldwide",
+          "listing_ids": [
+            "197658190932"
+          ],
+          "observed_price_gbp": 19.36
+        },
+        {
+          "title": "DISCOVERY 72/100 - Odhams The 2nd World War In Pictures In 6 Hard Backed Volumes",
+          "listing_ids": [
+            "398408091531"
+          ],
+          "observed_price_gbp": 19.36
+        },
+        {
+          "title": "DISCOVERY 72/100 - TABLE CLAMP WITH BALL TRIPOD ACCESSORY HEAD AND VIVITAR FLASH GUN PISTOL MOUNT",
+          "listing_ids": [
+            "137754228291"
+          ],
+          "observed_price_gbp": 21.5
+        },
+        {
+          "title": "DISCOVERY 72/100 - 60's: The Hits & The Trivia by Ted Yates - Paperback book with CD (2010) - New",
+          "listing_ids": [
+            "327363766955"
+          ],
+          "observed_price_gbp": 21.45
+        },
+        {
+          "title": "DISCOVERY 72/100 - 70's: The Hits & The Trivia by Ted Yates - Paperback book (2011) - New",
+          "listing_ids": [
+            "327363762821"
+          ],
+          "observed_price_gbp": 21.45
+        },
+        {
+          "title": "DISCOVERY 72/100 - 50 walks series book for hiking/walking, 8 books",
+          "listing_ids": [
+            "327363830490"
+          ],
+          "observed_price_gbp": 21.5
+        },
+        {
+          "title": "DISCOVERY 72/100 - Acts Of Evil by Magdalene Visaggio, Karla Pacheco, Ryan Cady (TPB, 2020) Marvel",
+          "listing_ids": [
+            "287594336647"
+          ],
+          "observed_price_gbp": 21.5
+        }
+      ]
+    },
+    {
+      "number": 2807,
+      "title": "EBAY_PRIVATE_NEW: HOT 10 | top 72 | 10 under £100 | 10 unknown | 36/37",
+      "created_at": "2026-09-22T21:55:35Z",
+      "updated_at": "2026-09-22T21:55:35Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/2807",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 22.54,
+      "candidate_summaries": [
+        {
+          "title": "DISCOVERY 72/100 - BTS The 5th Album 'Arirang' CD Deluxe Living Legend Version - Brand New & Sealed",
+          "listing_ids": [
+            "287594426759"
+          ],
+          "observed_price_gbp": 23.57
+        },
+        {
+          "title": "DISCOVERY 72/100 - VINTAGE YASHICA U MATIC-G 8mm CINE CAMERA WITH PISTOL GRIP  c.1960",
+          "listing_ids": [
+            "137754229225"
+          ],
+          "observed_price_gbp": 22.54
+        },
+        {
+          "title": "DISCOVERY 72/100 - Vitamin D3 Today's Best in Contemporary Drawing Phaidon",
+          "listing_ids": [
+            "128086300614"
+          ],
+          "observed_price_gbp": 23.58
+        },
+        {
+          "title": "DISCOVERY 72/100 - Selection Of 9 Books Of 1980's Stamps, 8 Complete And 1 Part Used",
+          "listing_ids": [
+            "158306200725"
+          ],
+          "observed_price_gbp": 26.7
+        },
+        {
+          "title": "DISCOVERY 72/100 - Westbury In The Year 2000 - A Celebration",
+          "listing_ids": [
+            "158306520021"
+          ],
+          "observed_price_gbp": 26.7
+        },
+        {
+          "title": "DISCOVERY 72/100 - Azarashi no Anu Japanese Picture Book by Azumi Mushi Japan",
+          "listing_ids": [
+            "198650692029"
+          ],
+          "observed_price_gbp": 26.88
+        },
+        {
+          "title": "DISCOVERY 72/100 - Rare Barbie Her Life & Times 1987 - First UK Edition Hardback - BillyBoy Classic",
+          "listing_ids": [
+            "336799909184"
+          ],
+          "observed_price_gbp": 24.0
+        },
+        {
+          "title": "DISCOVERY 72/100 - Form & Thread Jacket Mens Large Green Chore Oi Polloi Overshirt Shacket Work",
+          "listing_ids": [
+            "188947822598"
+          ],
+          "observed_price_gbp": 25.0
+        },
+        {
+          "title": "DISCOVERY 72/100 - Azarashi (Seal) Book – Japanese Photo & Interview Book about Seals",
+          "listing_ids": [
+            "198650853100"
+          ],
+          "observed_price_gbp": 28.66
+        },
+        {
+          "title": "DISCOVERY 72/100 - TWIN TOWERS WEMBLEY FOOTBALL STADIUM -  1970's KEY RING & DUNOON CERAMICS MUG",
+          "listing_ids": [
+            "178507532158"
+          ],
+          "observed_price_gbp": 25.44
         }
       ]
     }
