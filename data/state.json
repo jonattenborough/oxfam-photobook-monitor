@@ -1,9 +1,11 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-23T14:21:52Z",
+  "last_successful_fetch": "2026-09-23T18:27:23Z",
   "last_top_skus": [
+    "HD_304275358",
+    "HD_304275351",
+    "HD_304272909",
     "HD_304274306",
-    "HD_304255857",
     "HD_304261396",
     "HD_304273782",
     "HD_304273364",
@@ -29,9 +31,7 @@
     "HD_304263985",
     "HD_304268833",
     "HD_304268681",
-    "HD_304265880",
-    "HD_304264824",
-    "HD_304264322"
+    "HD_304265880"
   ],
   "products": {
     "HD_303682420": {
@@ -9408,6 +9408,22 @@
       },
       "search_fingerprint": "d5f5d56e59afa15d"
     },
+    "HD_304272909": {
+      "first_seen": "2026-09-23T18:27:23Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1790172901000",
+        "description": "Lovely condition.  Almost as new.  No marks or highlights.",
+        "isbn": null,
+        "price_gbp": 20.0,
+        "product_id": "book-HD__304272909",
+        "publisher": null,
+        "route": "/sony-world-photography-awards/product/HD_304272909",
+        "sku": "HD_304272909",
+        "title": "Sony World Photography Awards"
+      },
+      "search_fingerprint": "baee967baa0f7655"
+    },
     "HD_304272979": {
       "first_seen": "2026-09-23T14:21:52Z",
       "last_snapshot": {
@@ -9487,8 +9503,40 @@
         "title": "Shooting the Front: Allied Aerial Reconnaissance in the FIrst World War"
       },
       "search_fingerprint": "99010962773f28fe"
+    },
+    "HD_304275351": {
+      "first_seen": "2026-09-23T18:27:23Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1790179043000",
+        "description": "Après les domaines hors-piste de Paradiski et des Trois Vallées, l'inoxydable Didier Givois, guide de haute montagne et photographe de talent, s'est attelé dans cet ouvrage à répertorier l'ensemble des itinéraires hors-pistes du magnifique domaine de l'Espace Killy. Accompagné de son habituel \"Dream Team\" de riders, Didier a parcouru toutes les descentes classiques qui ont fait la réputation des deux célèbres stations de Tarentaise, Tignes et Val d'Isère. Il a aussi exploré tous les versants de cet espace d'une extraordinaire variété pour nous en présenter la quintessence. Fort de son expérience professionnelle, Didier nous informe également des risques encourus lorsque nous glissons hors des pistes balisées et nous livre bien des clés en matière de sécurité. Cette vision pédagogique devrait permettre à tous, quelle que soit la pratique, d'adopter un comportement responsable en montagne. Feuilletez, compulsez, admirez, vous tenez indéniablement dans vos mains \" LE \" livre de références en matière d'itinéraires hors-piste sur l'Espace Killy. Ces \" Clés de l'Espace Killy \" ouvrent les portes d'une multitude de descentes et de randonnées à tous ceux dont la quête est d'éprouver aussi bien des sensations fortes que des émotions subtiles parmi ces montagnes à la beauté éternelle. Un ouvrage plus qu'indispensable pour tous ceux qui sortent des pistes balisées !",
+        "isbn": null,
+        "price_gbp": 19.99,
+        "product_id": "book-HD__304275351",
+        "publisher": null,
+        "route": "/les-cl%C3%A9s-de-lespace-killy-les-plus-beaux-hors-pistes-%C3%A9dition-bilingue-fran%C3%A7ais-anglais/product/HD_304275351",
+        "sku": "HD_304275351",
+        "title": "Les clés de l'Espace Killy: Les plus beaux hors-pistes, édition bilingue français-anglais"
+      },
+      "search_fingerprint": "b2874255d4f46a6d"
+    },
+    "HD_304275358": {
+      "first_seen": "2026-09-23T18:27:23Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1790179201000",
+        "description": "Les Trois Vallées forment incontestablement le plus grand domaine skiable du Monde. Et les immensités à travers lesquelles 600 kilomètres de pistes balisées ont été dessinées offrent également e plus vaste domaine hors piste accessible depuis des remontées mécaniques (depuis près de dix ans, Manu Gaidet, triple champion du monde de freeride, y fait ses gammes et il estime ne pas avoir out tracé !). Devant cette multitude d'itinéraires et de possibilités de hors piste, quelqu'un se devait de trier et de rassembler les plus représentatifs et les plus séduisants. Didier Givois, guide de haute montagne et photographe, a alors tenté de faire exister sur le papier toutes ces errances et ces sources d'aventures pour créer ainsi un véritable héritage à offrir aux générations présentes et futures de passionnés de glisse et de grands espaces. Mais il était aussi de son devoir d'informer les lecteurs des risques encourus hors des pistes balisées et de partager son expérience en matière de sécurité afin de donner à tous la possibilité d'adopter un comportement responsable. Les clés des 3 Vallées sont bien dans cet ouvrage à mille facettes, riche de pentes vierges, de belles gerbes de poudre, d'anecdotes, d'émotions et de rires échangés, à recevoir comme le plus simple mais aussi le plus beau des cadeaux... celui de l'expérience et de la connaissance. Un ouvrage plus qu'indispensable... pour tous ceux qui sortent des pistes balisées.",
+        "isbn": null,
+        "price_gbp": 19.99,
+        "product_id": "book-HD__304275358",
+        "publisher": null,
+        "route": "/les-cl%C3%A9s-des-3-vall%C3%A9es-les-plus-beaux-hors-pistes/product/HD_304275358",
+        "sku": "HD_304275358",
+        "title": "Les clés des 3 Vallées: Les plus beaux hors-pistes"
+      },
+      "search_fingerprint": "00ee3f8cba4740fc"
     }
   },
-  "reported_category_count": 2905,
+  "reported_category_count": 2904,
   "version": 1
 }
