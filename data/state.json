@@ -1,7 +1,9 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-24T17:59:48Z",
+  "last_successful_fetch": "2026-09-24T21:21:45Z",
   "last_top_skus": [
+    "HD_304278739",
+    "HD_304278927",
     "HD_304278604",
     "HD_304278550",
     "HD_304276586",
@@ -29,9 +31,7 @@
     "HD_304272718",
     "HD_304272691",
     "HD_304272697",
-    "HD_304272683",
-    "HD_304266994",
-    "HD_304272701"
+    "HD_304272683"
   ],
   "products": {
     "HD_303682420": {
@@ -9759,8 +9759,40 @@
         "title": "The Joy of iPhotography"
       },
       "search_fingerprint": "82a0cc756e7e22a9"
+    },
+    "HD_304278739": {
+      "first_seen": "2026-09-24T21:21:45Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1790268900000",
+        "description": "A solid copy. Dustjacket is quite worn, bearing a number of bends/tears, marks, and stains; actual cover is in rather good condition - minimal wear. Contents fine, no apparent fading in text or photos. Pages seem to be a tad tanned?",
+        "isbn": null,
+        "price_gbp": 25.0,
+        "product_id": "book-HD__304278739",
+        "publisher": null,
+        "route": "/russian-orthodox-church/product/HD_304278739",
+        "sku": "HD_304278739",
+        "title": "Russian Orthodox Church"
+      },
+      "search_fingerprint": "cf3305bef6ee113a"
+    },
+    "HD_304278927": {
+      "first_seen": "2026-09-24T21:21:45Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1790268486000",
+        "description": "Very Good condition; outer slip a little sunned/faded with lightly folded corners, inner slip [inscribed and signed by artists - pictured] head corners bumped, volume only very, very lightly handled.",
+        "isbn": null,
+        "price_gbp": 65.0,
+        "product_id": "book-HD__304278927",
+        "publisher": null,
+        "route": "/mark%C3%A9ta-luska%C4%8Dov%C3%A1-on-death-and-horses-and-other-people-signed/product/HD_304278927",
+        "sku": "HD_304278927",
+        "title": "Markéta Luskačová: On Death and Horses and Other People [signed]"
+      },
+      "search_fingerprint": "af49e51e383637b8"
     }
   },
-  "reported_category_count": 2897,
+  "reported_category_count": 2898,
   "version": 1
 }
