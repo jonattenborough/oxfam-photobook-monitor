@@ -1,7 +1,13 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-24T13:49:49Z",
+  "last_successful_fetch": "2026-09-24T17:59:48Z",
   "last_top_skus": [
+    "HD_304278604",
+    "HD_304278550",
+    "HD_304276586",
+    "HD_304277588",
+    "HD_304277658",
+    "HD_304277592",
     "HD_304277329",
     "HD_304277277",
     "HD_304277149",
@@ -25,13 +31,7 @@
     "HD_304272697",
     "HD_304272683",
     "HD_304266994",
-    "HD_304272701",
-    "HD_304272154",
-    "HD_304253071",
-    "HD_304271728",
-    "HD_304271581",
-    "HD_304271444",
-    "HD_304270499"
+    "HD_304272701"
   ],
   "products": {
     "HD_303682420": {
@@ -9616,6 +9616,22 @@
       },
       "search_fingerprint": "3a7a17aee440ad65"
     },
+    "HD_304276586": {
+      "first_seen": "2026-09-24T17:59:48Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1790258635000",
+        "description": "Immaculate hardback with photographic cover.<br/>A collection of exquisite photographs covering Annie Owen's passion for India.",
+        "isbn": null,
+        "price_gbp": 4.99,
+        "product_id": "book-HD__304276586",
+        "publisher": null,
+        "route": "/idling-in-india/product/HD_304276586",
+        "sku": "HD_304276586",
+        "title": "Idling in India"
+      },
+      "search_fingerprint": "32b2766b44a4b178"
+    },
     "HD_304277149": {
       "first_seen": "2026-09-24T13:49:49Z",
       "last_snapshot": {
@@ -9663,8 +9679,88 @@
         "title": "Julia Margaret Cameron"
       },
       "search_fingerprint": "9f2e04750e5f1643"
+    },
+    "HD_304277588": {
+      "first_seen": "2026-09-24T17:59:48Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1790256697000",
+        "description": "Hard back with DJ<br/>DH showing some signs of wear at top of spine <br/>Sticker inside-see photo<br/>Black & white photographic book<br/>30x23x2cm",
+        "isbn": null,
+        "price_gbp": 75.0,
+        "product_id": "book-HD__304277588",
+        "publisher": null,
+        "route": "/down-the-deep-lanes-by-peter-beacham-james-ravilious/product/HD_304277588",
+        "sku": "HD_304277588",
+        "title": "Down the deep lanes by Peter Beacham & James Ravilious"
+      },
+      "search_fingerprint": "630f98d06ac03058"
+    },
+    "HD_304277592": {
+      "first_seen": "2026-09-24T17:59:48Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1790256687000",
+        "description": "This hardback book is in very good condition.  The corners of the front cover are lightly creased and rubbed.  The binding remains tight and the contents are clean and bright.<br/><br/>\"Over the course of 15 years, native Londoner Paul Anthony Scane went out by bike and on foot to explore hidden corners of his city with four analogue cameras and an eye for the unusual. This book, which is devoid of the usual tourist spots, shines a light on places and people that are not often seen: the campy drycleaner (\"Go Gay\"); a double decker bus appearing to manoeuvre a miniature golf course; an abandoned tank in south London. These poignant and often witty images capture the character and soul of the real London with affection and curiosity. London Unseen is a character study of a world metropolis - based on its people and streets, away from Big Ben and Trafalgar Square.\"",
+        "isbn": null,
+        "price_gbp": 9.99,
+        "product_id": "book-HD__304277592",
+        "publisher": null,
+        "route": "/london-unseen/product/HD_304277592",
+        "sku": "HD_304277592",
+        "title": "London Unseen"
+      },
+      "search_fingerprint": "513cde55b4cc595c"
+    },
+    "HD_304277658": {
+      "first_seen": "2026-09-24T17:59:48Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1790256697000",
+        "description": "Widely regarded as one of the leading sculptors of the last twenty years, the works of Juan Muoz (1953-2001), though strongly figurative, are not the usual stuff of classical sculpture. The enigmatic figures he portrays-dwarves, midgets, ballerinas-are captured at moments that imply a stories that must be imagined by their audience, their faces frozen in expressions ranging from laughter to aggression. Accompanying the first full-scale retrospective of Muoz's work, this book concentrates on sculpture and installation, and also examines his drawings, performance, and sound works, and a selection of his writings.<br/><br/><br/>Cover may differ.",
+        "isbn": null,
+        "price_gbp": 4.99,
+        "product_id": "book-HD__304277658",
+        "publisher": null,
+        "route": "/juan-mu%C3%B1oz/product/HD_304277658",
+        "sku": "HD_304277658",
+        "title": "Juan Muñoz"
+      },
+      "search_fingerprint": "6cad0fd381a992f4"
+    },
+    "HD_304278550": {
+      "first_seen": "2026-09-24T17:59:48Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1790262380000",
+        "description": "'Abandoned Places 3' showcases the beauty of decay. The artist features palazzos and mansions from Italy, an abandoned theatre and a surrealistic shopping mall in the USA.",
+        "isbn": null,
+        "price_gbp": 49.99,
+        "product_id": "book-HD__304278550",
+        "publisher": null,
+        "route": "/abandoned-places-3-henk-van-rensbergen/product/HD_304278550",
+        "sku": "HD_304278550",
+        "title": "Abandoned Places 3 - Henk Van Rensbergen"
+      },
+      "search_fingerprint": "f65e93049edf3a36"
+    },
+    "HD_304278604": {
+      "first_seen": "2026-09-24T17:59:48Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1790264910000",
+        "description": "Forget all the tech-talk about workflow and archiving, Apple have given us all a camera that takes care of all this for us, so now it's time to take great photos.This book will show you the best ways to approach every possible subject with your iPhone, offering tips as clear and simple as the iPhone's interface. Additionally you'll see some great effects that you won't find in Instagram (but your followers will love).",
+        "isbn": null,
+        "price_gbp": 3.99,
+        "product_id": "book-HD__304278604",
+        "publisher": null,
+        "route": "/the-joy-of-iphotography/product/HD_304278604",
+        "sku": "HD_304278604",
+        "title": "The Joy of iPhotography"
+      },
+      "search_fingerprint": "82a0cc756e7e22a9"
     }
   },
-  "reported_category_count": 2906,
+  "reported_category_count": 2897,
   "version": 1
 }
