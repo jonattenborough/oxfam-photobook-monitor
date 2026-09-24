@@ -1,6 +1,6 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-24T21:21:45Z",
+  "last_successful_fetch": "2026-09-24T23:54:40Z",
   "last_top_skus": [
     "HD_304278739",
     "HD_304278927",
@@ -9570,19 +9570,20 @@
     },
     "HD_304275761": {
       "first_seen": "2026-09-24T13:49:49Z",
+      "last_changed": "2026-09-24T23:54:40Z",
       "last_snapshot": {
         "condition": null,
         "creation_date": "1790244337000",
         "description": "Beautiful atmospheric black and white photographs of London at night in the 1930s.  They show iconic buildings and deserted streets lit mainly by street lighting A forward by John Morrison and 50 full page photographs by Harold Burdekin, assisted by John Morrison.  The covers are bumped and show shelf wear on the edges and staining on the spine.  The interior is unmarked.",
         "isbn": null,
-        "price_gbp": null,
+        "price_gbp": 29.99,
         "product_id": "book-HD__304275761",
         "publisher": null,
         "route": "/london-night/product/HD_304275761",
         "sku": "HD_304275761",
         "title": "London Night"
       },
-      "search_fingerprint": "fa8d69d545d2b477"
+      "search_fingerprint": "ccad42dd2f92fe37"
     },
     "HD_304276344": {
       "first_seen": "2026-09-24T13:49:49Z",
@@ -9793,6 +9794,6 @@
       "search_fingerprint": "af49e51e383637b8"
     }
   },
-  "reported_category_count": 2898,
+  "reported_category_count": 2897,
   "version": 1
 }
