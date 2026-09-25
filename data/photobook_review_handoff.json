@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-25T14:20:59Z",
+  "checked_at": "2026-09-25T18:24:54Z",
   "index_scan_complete": true,
   "limitations": "Discovery index only. Re-fetch issue and comments; verify eBay availability and prices.",
   "queues": {
@@ -16,10 +16,116 @@
       "freshest_issues": []
     },
     "EBAY_PRIVATE_NEW": {
-      "issue_count": 0,
-      "pages": [],
-      "oldest_affordable": null,
-      "freshest_issues": []
+      "issue_count": 26,
+      "pages": [
+        {
+          "path": "data/photobook_review_queue/ebay_private_new-0001.json",
+          "issue_numbers": [
+            3019,
+            3020,
+            3021,
+            3022,
+            3023,
+            3024,
+            3026,
+            3025,
+            3027,
+            3028
+          ],
+          "lowest_observed_gbp": 1.17,
+          "oldest_created_at": "2026-09-25T18:24:27Z",
+          "contains_unknown_price": false
+        },
+        {
+          "path": "data/photobook_review_queue/ebay_private_new-0002.json",
+          "issue_numbers": [
+            3029,
+            3030,
+            3031,
+            3033,
+            3032,
+            3034,
+            3035,
+            3036,
+            3037,
+            3038
+          ],
+          "lowest_observed_gbp": 3.0,
+          "oldest_created_at": "2026-09-25T18:24:36Z",
+          "contains_unknown_price": false
+        },
+        {
+          "path": "data/photobook_review_queue/ebay_private_new-0003.json",
+          "issue_numbers": [
+            3040,
+            3039,
+            3041,
+            3042,
+            3043,
+            3044
+          ],
+          "lowest_observed_gbp": 4.6,
+          "oldest_created_at": "2026-09-25T18:24:45Z",
+          "contains_unknown_price": false
+        }
+      ],
+      "oldest_affordable": {
+        "number": 3019,
+        "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/3019",
+        "page": "data/photobook_review_queue/ebay_private_new-0001.json"
+      },
+      "freshest_issues": [
+        {
+          "number": 3044,
+          "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/3044",
+          "page": "data/photobook_review_queue/ebay_private_new-0003.json"
+        },
+        {
+          "number": 3043,
+          "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/3043",
+          "page": "data/photobook_review_queue/ebay_private_new-0003.json"
+        },
+        {
+          "number": 3042,
+          "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/3042",
+          "page": "data/photobook_review_queue/ebay_private_new-0003.json"
+        },
+        {
+          "number": 3041,
+          "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/3041",
+          "page": "data/photobook_review_queue/ebay_private_new-0003.json"
+        },
+        {
+          "number": 3040,
+          "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/3040",
+          "page": "data/photobook_review_queue/ebay_private_new-0003.json"
+        },
+        {
+          "number": 3039,
+          "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/3039",
+          "page": "data/photobook_review_queue/ebay_private_new-0003.json"
+        },
+        {
+          "number": 3038,
+          "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/3038",
+          "page": "data/photobook_review_queue/ebay_private_new-0002.json"
+        },
+        {
+          "number": 3037,
+          "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/3037",
+          "page": "data/photobook_review_queue/ebay_private_new-0002.json"
+        },
+        {
+          "number": 3036,
+          "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/3036",
+          "page": "data/photobook_review_queue/ebay_private_new-0002.json"
+        },
+        {
+          "number": 3035,
+          "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/3035",
+          "page": "data/photobook_review_queue/ebay_private_new-0002.json"
+        }
+      ]
     },
     "CHARITY_NEW": {
       "issue_count": 0,
@@ -34,16 +140,62 @@
       "freshest_issues": []
     },
     "OXFAM_NEW": {
-      "issue_count": 0,
-      "pages": [],
-      "oldest_affordable": null,
-      "freshest_issues": []
+      "issue_count": 1,
+      "pages": [
+        {
+          "path": "data/photobook_review_queue/oxfam_new-0001.json",
+          "issue_numbers": [
+            3004
+          ],
+          "lowest_observed_gbp": 12.99,
+          "oldest_created_at": "2026-09-25T14:35:05Z",
+          "contains_unknown_price": false
+        }
+      ],
+      "oldest_affordable": {
+        "number": 3004,
+        "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/3004",
+        "page": "data/photobook_review_queue/oxfam_new-0001.json"
+      },
+      "freshest_issues": [
+        {
+          "number": 3004,
+          "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/3004",
+          "page": "data/photobook_review_queue/oxfam_new-0001.json"
+        }
+      ]
     },
     "OXFAM_ART_NEW": {
-      "issue_count": 0,
-      "pages": [],
-      "oldest_affordable": null,
-      "freshest_issues": []
+      "issue_count": 2,
+      "pages": [
+        {
+          "path": "data/photobook_review_queue/oxfam_art_new-0001.json",
+          "issue_numbers": [
+            3016,
+            3015
+          ],
+          "lowest_observed_gbp": 3.49,
+          "oldest_created_at": "2026-09-25T15:32:45Z",
+          "contains_unknown_price": false
+        }
+      ],
+      "oldest_affordable": {
+        "number": 3016,
+        "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/3016",
+        "page": "data/photobook_review_queue/oxfam_art_new-0001.json"
+      },
+      "freshest_issues": [
+        {
+          "number": 3016,
+          "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/3016",
+          "page": "data/photobook_review_queue/oxfam_art_new-0001.json"
+        },
+        {
+          "number": 3015,
+          "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/3015",
+          "page": "data/photobook_review_queue/oxfam_art_new-0001.json"
+        }
+      ]
     }
   }
 }
