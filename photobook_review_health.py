@@ -232,6 +232,20 @@ def main() -> int:
     now = datetime.now(timezone.utc)
     index["checked_at"] = now.isoformat(timespec="seconds").replace("+00:00", "Z")
     report = health(index, endgame, now)
+    import photobook_target_books as target_books
+    private_state_path = Path("data/ebay_private_seller_state.json")
+    private_state = json.loads(private_state_path.read_text()) if private_state_path.exists() else {}
+    report["private_discovery"] = {
+        "last_scan_at": private_state.get("last_run"),
+        "pending_review_candidates": len(private_state.get("pending_live") or {}),
+        "pending_overflow": len(private_state.get("pending_overflow") or {}),
+        "generic_retained_for_reclassification": len(private_state.get("deferred_discovery") or {}),
+        "unfinished_search_windows": len(private_state.get("query_windows") or {}),
+        "curated_target_books": target_books.coverage(),
+    }
+    if report["private_discovery"]["pending_overflow"]:
+        report["warnings"].append("Private discovery has candidates waiting beyond the immediate review queue")
+        report["status"] = "ATTENTION"
     import photobook_reviewer_ledger as reviewer_ledger
     ledger_issue = int(os.getenv("PHOTOBOOK_REVIEW_LEDGER_ISSUE", reviewer_ledger.DEFAULT_LEDGER_ISSUE))
     reviewer_receipt = reviewer_ledger.derive_receipt(

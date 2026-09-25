@@ -87,6 +87,14 @@ python photobook_library_builder.py
 
 The live GitHub monitor never calls Open Library. It reads the stable checked-in CSV, so an Open Library outage cannot interrupt eBay discovery.
 
+## Curated 175-photographer targets
+
+`photobook_target_books.py` joins the 175 tiered photographers to books already marked `CORE` in this library. `curated_target_editions.csv` adds checked edition identity and later-issue traps for *Ray's a Laugh*, *Don't Call Me Urban!*, *Uncommon Places* and *Conversations with the Dead*. The Source column records the bibliography used for these entries. Unchecked publication and market claims do not become purchase ceilings.
+
+This is a growing target registry, not a claim that every photographer now has 5 to 15 verified important books. Its current coverage is visible in `photobook_review_health.py`, including photographers with no curated book. For those photographers, name discovery continues. New books should be added only with a source for edition identity and a checked later-edition trap where applicable. Enter `Strong buy GBP` and `Bargain GBP` only after verifying like-for-like sold prices and the condition of that exact edition.
+
+The private seller monitor searches grouped distinctive titles in addition to the photographer names within its existing 17-call hourly allowance. It routes target books, underdescribed description-query matches and signed or special copies to review. Generic cheap unnamed books enter a stable 10% audit sample; the other eligible summaries remain in the local `deferred_discovery` state for 45 days and are rechecked against new targets at up to 120 records per run, without new Browse calls. These retained summaries have not been verified live and are not purchase recommendations. `pending_overflow` keeps strong candidates beyond the immediate handoff size so a busy run does not silently drop them.
+
 ## Matching behaviour
 
 `photobook_recognition.py` normalises punctuation and accents, reuses the contributor-aware fuzzy matching already proven by the Parr/Badger monitor, and adds title aliases and contributor aliases. A token index keeps matching fast at more than 4,000 records. Short and eponymous titles receive stricter conflict checks, preventing a photographer's biography from being mistaken for an identically named monograph.

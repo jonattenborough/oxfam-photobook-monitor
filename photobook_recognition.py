@@ -561,6 +561,7 @@ def _record_rank(row: dict[str, Any]) -> int:
     source = f"{_clean(row.get('Canon sources'))} {_clean(row.get('Source'))}".lower()
     if (
         "priority seed" in source
+        or "curated target edition" in source
         or "emerging watch" in source
         or "curated contemporary documentary" in source
         or "pre-1970 unicorn radar" in source
@@ -845,6 +846,7 @@ def match_listing(item: dict[str, Any], *, limit: int = 5) -> list[dict[str, Any
                 "collectibility_tier": _clean(row.get("Collectibility tier")).upper(),
                 "search_priority": _clean(row.get("Search priority")),
                 "first_edition_notes": _clean(row.get("First edition notes")),
+                "edition_traps": _split_aliases(row.get("Edition traps")),
                 "collector_profile": _clean(row.get("Collector profile")),
                 "documentary_relevance": _clean(row.get("Documentary relevance")).upper(),
                 "first_monograph": _clean(row.get("First monograph")).upper(),
@@ -1183,15 +1185,14 @@ def opportunity_score(item: dict[str, Any], match: dict[str, Any]) -> tuple[int,
 
     buying = {str(value).upper() for value in item.get("buying_options", []) if str(value)}
     if "FIXED_PRICE" in buying:
-        score += 3
         reasons.append("immediate fixed-price purchase possible")
     if "BEST_OFFER" in buying:
-        score += 2
+        score += 1
         reasons.append("Best Offer available")
 
     account_type = _clean(item.get("seller_account_type")).upper()
     if account_type == "INDIVIDUAL" or item.get("private_seller") is True:
-        score += 4
+        score += 5
         reasons.append("private individual seller")
 
     text = _listing_text(item)

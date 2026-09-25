@@ -8,7 +8,9 @@ on:
     branches: [main]
     paths:
       - "ebay_seller_monitor.py"
+      - "ebay_charity_issue_sync.py"
       - "test_ebay_seller_monitor.py"
+      - "test_ebay_charity_issue_sync.py"
       - ".github/workflows/ebay-seller-monitor.yml"
 
 permissions:
@@ -56,18 +58,11 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
+          python ebay_charity_issue_sync.py --repository "$GITHUB_REPOSITORY"
+          shopt -s nullglob
           for body in runtime/ebay-sellers/alerts/*.md; do
             stem="${body%.md}"
             title="$(cat "${stem}.title")"
-            key="${title##* | key }"
-            # A failed run can already have created its first packets. Check
-            # the stable packet key before retrying and persisting state.
-            existing="$(gh issue list --repo "$GITHUB_REPOSITORY" --state all \
-              --search "$key in:title" --json title --limit 20 --jq '.[].title')"
-            if [[ "$existing" == *"$title"* ]]; then
-              echo "Already published charity packet $key"
-              continue
-            fi
             gh issue create --repo "$GITHUB_REPOSITORY" \
               --title "$title" --body-file "$body"
           done

@@ -18,6 +18,7 @@ import ebay_api
 import ebay_core_targets as core_targets
 import ebay_search_checkpoint as checkpointing
 import external_monitor
+import photobook_target_books as target_books
 
 BOOKS_CATEGORY_ID = "261186"
 PAGE_SIZE = 200
@@ -350,6 +351,7 @@ def update_seller_state(
             if signals:
                 candidate = dict(item)
                 candidate["qualification_signals"] = signals
+                candidate["book_judgment"] = target_books.assess_listing(candidate)
                 if matches:
                     candidate["parr_badger_matches"] = matches
                 candidates.append(candidate)
@@ -386,6 +388,7 @@ MAX_ISSUE_CANDIDATES = 20
 
 def candidate_order(item: dict[str, Any]) -> tuple[Any, ...]:
     return (
+        0 if (item.get("book_judgment") or {}).get("target_book") else 1,
         0 if item.get("core_target_tier") else 1,
         int(item.get("core_target_tier") or 9),
         0 if item.get("parr_badger_matches") else 1,
@@ -421,6 +424,14 @@ def make_issue_body(items: list[dict[str, Any]], detected_at: str, failures: lis
                 f"- **Core photographer priority:** Tier {item['core_target_tier']}"
                 + (f" - {names}" if names else "")
             )
+        judgment = item.get("book_judgment") or {}
+        if judgment.get("target_book"):
+            lines.extend([
+                f"- **Target book:** {judgment['target_book']}",
+                f"- **Collectibility:** {judgment['collectibility']}",
+                f"- **Identification confidence:** {judgment['identification_confidence']}",
+                f"- **Price opportunity:** {judgment['price_opportunity']}",
+            ])
         lines.extend([
             f"- **Why it surfaced:** {', '.join(item.get('qualification_signals') or [])}",
             f"- **Listing:** {item['url']}",

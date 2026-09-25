@@ -86,6 +86,9 @@ def priority_band(item: dict[str, Any]) -> int:
 
     if score >= 90:
         return 0
+    book = item.get("book_judgment") or {}
+    if book.get("target_book") and not book.get("known_later_edition"):
+        return 1 if under_300 else 4
     if under_100 and (special or tier in {"S", "A"}):
         return 1
     if item.get("material_change") is True and under_300:
@@ -223,6 +226,21 @@ def make_issue_body(
         if item.get("material_change") is True:
             change_text = "; ".join(str(value) for value in item.get("material_change_reasons") or [])
             lines.append(f"- **Material change:** {change_text or 'listing materially improved'}")
+        judgment = item.get("book_judgment") or {}
+        if judgment.get("target_book"):
+            lines.extend([
+                f"- **Target book:** {judgment['target_book']}"
+                + (" | title-only match; check photographer" if judgment.get("title_only") else ""),
+                f"- **Collectibility:** {judgment['collectibility']}",
+                f"- **Identification confidence:** {judgment['identification_confidence']}"
+                f" | edition {judgment['edition_status']}",
+                f"- **Price opportunity:** {judgment['price_opportunity']}"
+                + (" | delivery and like-for-like sold prices need checking"
+                   if judgment["price_opportunity"] == "unassessed" else ""),
+                "- **Next check:** inspect colophon, condition, completeness and current sold comparisons",
+            ])
+            if judgment.get("edition_reasons"):
+                lines.append("- **Edition clues:** " + "; ".join(judgment["edition_reasons"]))
         if item.get("recall_first_unknown") is True:
             lines.append(
                 f"- **Unknown-book lane:** not recognised by the {stats.get('records', 'current')}-book library, but cheap enough to receive human review instead of automatic rejection"
@@ -231,6 +249,7 @@ def make_issue_body(
             [
                 f"- **Why it surfaced:** {', '.join(item.get('opportunity_reasons') or [])}",
                 f"- **Listing:** {item.get('url')}",
+                f"- **Alert fingerprint:** {recall.alert_fingerprint(item)}",
             ]
         )
         best = item.get("best_recognition")
@@ -385,6 +404,7 @@ def main() -> int:
         state,
         int(config["issue_threshold"]),
     )
+    monitor.write_json(runtime / "alert-items.json", candidates)
     mark_search_only_alerted(state, candidates, search_only_keys, detected_at)
     monitor.write_json(runtime / "proposed-state.json", state)
 
