@@ -1,7 +1,10 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-25T14:34:37Z",
+  "last_successful_fetch": "2026-09-25T18:51:47Z",
   "last_top_skus": [
+    "HD_304282025",
+    "HD_304281811",
+    "HD_304281606",
     "HD_304281189",
     "HD_304277072",
     "HD_304277282",
@@ -28,10 +31,7 @@
     "HD_304272909",
     "HD_304274306",
     "HD_304261396",
-    "HD_304273782",
-    "HD_304273364",
-    "HD_304273268",
-    "HD_304272979"
+    "HD_304273782"
   ],
   "products": {
     "HD_303682420": {
@@ -9872,8 +9872,56 @@
         "title": "Women Seeing Women"
       },
       "search_fingerprint": "46adbe6fa405bc5d"
+    },
+    "HD_304281606": {
+      "first_seen": "2026-09-25T18:51:47Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1790346232000",
+        "description": "TEXT IN SPANISH AND ENGLISH<br/><br/>Softback - published by Gustavo Gili - 1997 - by Gustau Gili Galfetti - cover has bumping to spine ends and outer corners - all pages clean and unmarked - spine, binding and pages all tight, secure and intact - illustrated with colour and b/w photographs, diagrams and architectural plans",
+        "isbn": null,
+        "price_gbp": 45.0,
+        "product_id": "book-HD__304281606",
+        "publisher": null,
+        "route": "/model-apartments-experimental-domestic-cells/product/HD_304281606",
+        "sku": "HD_304281606",
+        "title": "Model Apartments : Experimental Domestic Cells"
+      },
+      "search_fingerprint": "bd9c13fdb73ebb94"
+    },
+    "HD_304281811": {
+      "first_seen": "2026-09-25T18:51:47Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1790349332000",
+        "description": "Rosa Barba (*1972 in Agrigent) works with the basic elements of the cinema: celluloid, light, projector, and sound. She dissects the structure of the narrative and plays with the often improbable characters, places, and stories of the medium of film. Her exploration of space, time, and language is crucial to the process. This publication presents her new project, which, like a story or a play in different acts, stretches out across two exhibition chapters: \"Chapter 1\" was shown in the Kunsthaus Zrich (June 6-September 9, 2012), curated by Mirjam Varadinis. \"Chapter 2\" presented at the Bergen Kunsthall (February 2-March 17, 2013) is curated by Solveig vsteb. The project revolves around a 35mm film, Time as Perspective, which Barba shot during the spring in Texas-fascinated by the desert landscape, which she approaches from an almost archaeological perspective on a quest for inscribed signs and times. Exhibition schedule: Bergen Kunsthall, February 2-March 17, 2013",
+        "isbn": null,
+        "price_gbp": null,
+        "product_id": "book-HD__304281811",
+        "publisher": null,
+        "route": "/time-as-perspective/product/HD_304281811",
+        "sku": "HD_304281811",
+        "title": "Time as Perspective"
+      },
+      "search_fingerprint": "3b98989b59348ff3"
+    },
+    "HD_304282025": {
+      "first_seen": "2026-09-25T18:51:47Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1790350815000",
+        "description": "Exploring the East Coast in Pictures<br/><br/>Join us on a trip along the East Coast of England, famous for its big skies, sea views, winding creeks, sand, single - and mud!<br/>Our journey starts at Lowestoft, once a premier fishing port and now rapidly being redevloped as a yachting centre. We end at the mouth of the English channel with the historic port of Ramsgate",
+        "isbn": null,
+        "price_gbp": 7.99,
+        "product_id": "book-HD__304282025",
+        "publisher": null,
+        "route": "/where-land-meets-sea/product/HD_304282025",
+        "sku": "HD_304282025",
+        "title": "Where Land Meets Sea"
+      },
+      "search_fingerprint": "9bd580b1c64756d5"
     }
   },
-  "reported_category_count": 2897,
+  "reported_category_count": 2898,
   "version": 1
 }
