@@ -613,6 +613,26 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
         self.assertIn("first edition", record["collectible_signals"])
         self.assertIn("BEST_OFFER", record["buying_options"])
 
+    def test_overlapping_library_and_core_queries_keep_best_tier(self):
+        existing = {
+            "search_lane": "library_rotation",
+            "query_target_tier": "A",
+            "target_query_terms": ["Alec Soth"],
+        }
+        recall._merge_result(existing, {
+            "search_lane": "library_rotation", "query_target_tier": "S",
+            "target_query_terms": ["Sleeping by the Mississippi"],
+        })
+        self.assertEqual(existing["query_target_tier"], "S")
+        recall._merge_result(existing, {
+            "search_lane": "core_target_2", "query_target_tier": "2",
+            "target_query_terms": ["Alec Soth"],
+        })
+        self.assertEqual(existing["query_target_tier"], "2")
+        recall._merge_result(existing, {"search_lane": "core_target_3", "query_target_tier": "3"})
+        self.assertEqual(existing["query_target_tier"], "2")
+        self.assertEqual(existing["target_query_terms"], ["Alec Soth", "Sleeping by the Mississippi"])
+
 
 if __name__ == "__main__":
     unittest.main()

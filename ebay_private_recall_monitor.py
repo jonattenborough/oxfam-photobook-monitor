@@ -512,7 +512,18 @@ def _merge_result(existing: dict[str, Any], item: dict[str, Any]) -> None:
     existing["search_lane"] = "+".join(sorted(value for value in lanes if value))
     existing_tier = str(existing.get("query_target_tier") or "")
     item_tier = str(item.get("query_target_tier") or "")
-    if item_tier and (not existing_tier or int(item_tier) < int(existing_tier)):
+    # Core-target searches use 1/2/3; rotating library searches use S/A/B/C.
+    # Either kind may find the same listing, so compare both without assuming
+    # that every tier is numeric. A core-target match wins over a library tier.
+    def tier_priority(value: str) -> tuple[int, int, str]:
+        value = value.strip().upper()
+        if value in {"1", "2", "3"}:
+            return (0, int(value), "")
+        if value in {"S", "A", "B", "C"}:
+            return (1, "SABC".index(value), "")
+        return (2, 0, value)
+
+    if item_tier and (not existing_tier or tier_priority(item_tier) < tier_priority(existing_tier)):
         existing["query_target_tier"] = item_tier
     existing["target_query_terms"] = list(
         dict.fromkeys(

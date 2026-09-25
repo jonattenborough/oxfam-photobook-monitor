@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """One-off, quota-safe scan of every photobook recognition record on eBay UK.
 
-Each of the 4,318 library records receives one current-stock search against
+Each current library record receives one current-stock search against
 individual sellers. Results are deduplicated and scored locally before scarce
 Browse calls are spent on mandatory live verification. Only the compact,
 live-verified review queue is written to GitHub issue payloads.
@@ -93,7 +93,7 @@ def build_plan() -> list[dict[str, Any]]:
                 "search_in_description": True,
                 "buying_options": ["FIXED_PRICE", "BEST_OFFER", "AUCTION"],
                 "offset": 0,
-                # One query per library record is the promised 4,318-book pass.
+                # One query per current library record.
                 # Popular titles are not allowed to consume another title's call.
                 "max_offset": 0,
             }
@@ -188,7 +188,7 @@ def write_issue_payloads(
             [
                 "## One-off full recognition-library sweep",
                 "",
-                "This batch comes from the exact 4,318-title UK private-seller scan.",
+                f"This batch comes from the exact {stats['records']}-title UK private-seller scan.",
                 "All API results were scored locally. Only live-verified candidates are included here.",
                 "Sub-£100 leads use the broadest review gate; £100 to £300 listings require progressively stronger evidence.",
                 "",

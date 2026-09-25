@@ -15,11 +15,15 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Callable
 
-PREFIXES = ("ENDGAME_4H:", "ENDGAME_EARLY:", "EBAY_PRIVATE_NEW:", "CHARITY_NEW:")
+PREFIXES = (
+    "ENDGAME_4H:", "ENDGAME_EARLY:", "EBAY_PRIVATE_NEW:", "CHARITY_NEW:",
+    "EXTERNAL_NEW:", "OXFAM_NEW:", "OXFAM_ART_NEW:",
+)
 MARKER = "CHATGPT_GEM_REVIEWED:"
+EXTERNAL_MARKER = "CHATGPT_EXTERNAL_REVIEWED:"
 ITEM_ID = re.compile(r"https?://(?:www\.)?ebay\.[a-z.]+/itm/(?:[^/\s)]+/)?(\d{9,15})")
 END_DATE = re.compile(r"\*\*Ends:\*\*\s*(\d{4}-\d\d-\d\dT[\d:.]+Z)")
-PRICE = re.compile(r"(?:\*\*(?:Observed price|Bid/price):\*\*\s*)(?:GBP\s*|£)([\d,]+(?:\.\d{1,2})?)")
+PRICE = re.compile(r"(?:\*\*(?:Observed price|Bid/price|Oxfam price):\*\*\s*)(?:GBP\s*|£)([\d,]+(?:\.\d{1,2})?)")
 
 
 def parse_time(value: Any) -> datetime | None:
@@ -72,8 +76,9 @@ def pages(get: Callable, endpoint: str):
         page += 1
 
 
-def trusted_receipt(comment: dict[str, Any], owner: str) -> bool:
-    return (str(comment.get("body") or "").startswith(MARKER)
+def trusted_receipt(comment: dict[str, Any], owner: str, source: str = "") -> bool:
+    markers = (MARKER, EXTERNAL_MARKER) if source in ("", "EXTERNAL_NEW") else (MARKER,)
+    return (str(comment.get("body") or "").startswith(markers)
             and str((comment.get("user") or {}).get("login") or "").lower() == owner.lower())
 
 
@@ -128,7 +133,7 @@ def collect(repo: str, get: Callable, previous: dict[str, Any] | None = None) ->
             else:
                 try:
                     comments = pages(get, f"repos/{repo}/issues/{key}/comments")
-                    receipts = [c for c in comments if trusted_receipt(c, owner)]
+                    receipts = [c for c in comments if trusted_receipt(c, owner, prefix[:-1])]
                     receipt = max(receipts, key=lambda c: c.get("created_at", ""), default=None)
                 except (subprocess.SubprocessError, ValueError) as exc:
                     # Unread comments are not proof of a completed review.

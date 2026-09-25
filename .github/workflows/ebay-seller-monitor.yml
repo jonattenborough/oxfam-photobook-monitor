@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: "9 * * * *"
   workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - "ebay_seller_monitor.py"
+      - "test_ebay_seller_monitor.py"
+      - ".github/workflows/ebay-seller-monitor.yml"
 
 permissions:
   contents: write
@@ -37,6 +43,7 @@ jobs:
         run: python -m unittest -v test_ebay_api.py test_ebay_core_targets.py test_ebay_seller_monitor.py
 
       - name: Check monitored sellers for new photography books
+        if: github.event_name != 'pull_request'
         id: sellers
         env:
           EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
@@ -44,16 +51,29 @@ jobs:
         run: python ebay_seller_monitor.py --sellers-per-run 12
 
       - name: Create AI review issue for new seller candidates
-        if: steps.sellers.outputs.new_count != '0'
+        if: github.event_name != 'pull_request' && steps.sellers.outputs.issue_count != '0'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh issue create \
-            --title "$(cat runtime/ebay-sellers/issue-title.txt)" \
-            --body-file runtime/ebay-sellers/issue-body.md
+          set -euo pipefail
+          for body in runtime/ebay-sellers/alerts/*.md; do
+            stem="${body%.md}"
+            title="$(cat "${stem}.title")"
+            key="${title##* | key }"
+            # A failed run can already have created its first packets. Check
+            # the stable packet key before retrying and persisting state.
+            existing="$(gh issue list --repo "$GITHUB_REPOSITORY" --state all \
+              --search "$key in:title" --json title --limit 20 --jq '.[].title')"
+            if [[ "$existing" == *"$title"* ]]; then
+              echo "Already published charity packet $key"
+              continue
+            fi
+            gh issue create --repo "$GITHUB_REPOSITORY" \
+              --title "$title" --body-file "$body"
+          done
 
       - name: Persist eBay seller state
-        if: steps.sellers.outputs.state_changed == 'true'
+        if: github.event_name != 'pull_request' && steps.sellers.outputs.state_changed == 'true'
         run: |
           set -euo pipefail
           cp runtime/ebay-sellers/proposed-state.json data/ebay_seller_state.json

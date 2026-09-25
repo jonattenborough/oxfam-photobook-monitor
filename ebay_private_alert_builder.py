@@ -225,7 +225,7 @@ def make_issue_body(
             lines.append(f"- **Material change:** {change_text or 'listing materially improved'}")
         if item.get("recall_first_unknown") is True:
             lines.append(
-                "- **Unknown-book lane:** not recognised by the 4,318-book library, but cheap enough to receive human review instead of automatic rejection"
+                f"- **Unknown-book lane:** not recognised by the {stats.get('records', 'current')}-book library, but cheap enough to receive human review instead of automatic rejection"
             )
         lines.extend(
             [

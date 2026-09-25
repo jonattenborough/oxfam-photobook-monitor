@@ -4,8 +4,10 @@ from __future__ import annotations
 
 import argparse
 import copy
+import hashlib
 import json
 import os
+import shutil
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -378,6 +380,20 @@ def _price_line(item: dict[str, Any]) -> str | None:
     return f"- **Observed price:** {currency} {value:.2f}".rstrip()
 
 
+MAX_ISSUE_BODY_BYTES = 28_000
+MAX_ISSUE_CANDIDATES = 20
+
+
+def candidate_order(item: dict[str, Any]) -> tuple[Any, ...]:
+    return (
+        0 if item.get("core_target_tier") else 1,
+        int(item.get("core_target_tier") or 9),
+        0 if item.get("parr_badger_matches") else 1,
+        float(item.get("price_value") or 999999),
+        str(item.get("key") or item.get("url") or ""),
+    )
+
+
 def make_issue_body(items: list[dict[str, Any]], detected_at: str, failures: list[str]) -> str:
     lines = [
         "## New books from monitored eBay charity sellers",
@@ -388,15 +404,7 @@ def make_issue_body(items: list[dict[str, Any]], detected_at: str, failures: lis
         "ChatGPT should verify edition, printing, completeness, condition, delivery cost and market value before sending any purchase alert.",
         "",
     ]
-    ordered = sorted(
-        items,
-        key=lambda item: (
-            0 if item.get("core_target_tier") else 1,
-            int(item.get("core_target_tier") or 9),
-            0 if item.get("parr_badger_matches") else 1,
-            float(item.get("price_value") or 999999),
-        ),
-    )
+    ordered = sorted(items, key=candidate_order)
     for item in ordered:
         lines.extend([
             f"### {item.get('title') or 'Untitled listing'}",
@@ -440,6 +448,45 @@ def make_issue_body(items: list[dict[str, Any]], detected_at: str, failures: lis
         lines.extend(f"- {failure}" for failure in failures)
         lines.append("")
     return "\n".join(lines).rstrip() + "\n"
+
+
+def split_issue_batches(items: list[dict[str, Any]], detected_at: str,
+                        failures: list[str]) -> list[list[dict[str, Any]]]:
+    """Keep each issue well inside GitHub's body limit without dropping items."""
+    batches: list[list[dict[str, Any]]] = []
+    current: list[dict[str, Any]] = []
+    for item in sorted(items, key=candidate_order):
+        proposed = current + [item]
+        if current and (len(proposed) > MAX_ISSUE_CANDIDATES or
+                        len(make_issue_body(proposed, detected_at, failures).encode("utf-8"))
+                        > MAX_ISSUE_BODY_BYTES):
+            batches.append(current)
+            proposed = [item]
+        if len(make_issue_body(proposed, detected_at, failures).encode("utf-8")) > MAX_ISSUE_BODY_BYTES:
+            raise ValueError(f"Single charity candidate exceeds issue body limit: {item.get('key')}")
+        current = proposed
+    if current:
+        batches.append(current)
+    return batches
+
+
+def write_issue_packets(runtime: Path, items: list[dict[str, Any]],
+                        detected_at: str, failures: list[str]) -> int:
+    alerts = runtime / "alerts"
+    if alerts.exists():
+        shutil.rmtree(alerts)
+    alerts.mkdir(parents=True)
+    batches = split_issue_batches(items, detected_at, failures)
+    for index, batch in enumerate(batches, start=1):
+        keys = sorted(str(item.get("key") or item.get("url") or "") for item in batch)
+        fingerprint = hashlib.sha256("\n".join(keys).encode("utf-8")).hexdigest()[:16]
+        title = (f"CHARITY_NEW: {len(batch)} eBay seller photobook candidates "
+                 f"| batch {index}/{len(batches)} | key {fingerprint}")
+        stem = alerts / f"issue-{index:03d}"
+        stem.with_suffix(".title").write_text(title + "\n", encoding="utf-8")
+        stem.with_suffix(".md").write_text(
+            make_issue_body(batch, detected_at, failures), encoding="utf-8")
+    return len(batches)
 
 
 def main() -> int:
@@ -493,6 +540,7 @@ def main() -> int:
             },
         )
         set_output("new_count", 0)
+        set_output("issue_count", 0)
         set_output("state_changed", "false")
         set_output("successful_requests", 0)
         set_output("failed_requests", 0)
@@ -570,18 +618,12 @@ def main() -> int:
         "new_candidates": candidates,
     })
 
+    issue_count = write_issue_packets(runtime, candidates, detected_at, failures)
     if candidates:
         write_json(runtime / "new-items.json", candidates)
-        title = (
-            f"CHARITY_NEW: {len(candidates)} eBay seller photobook "
-            f"candidate{'s' if len(candidates) != 1 else ''}"
-        )
-        (runtime / "issue-title.txt").write_text(title + "\n", encoding="utf-8")
-        (runtime / "issue-body.md").write_text(
-            make_issue_body(candidates, detected_at, failures), encoding="utf-8"
-        )
 
     set_output("new_count", len(candidates))
+    set_output("issue_count", issue_count)
     set_output("state_changed", "true")
     set_output("successful_requests", successes)
     set_output("failed_requests", len(failures))
@@ -589,7 +631,7 @@ def main() -> int:
         f"Seller sweep complete: {successes}/{len(selected_sellers)} selected sellers succeeded "
         f"from {len(sellers)} configured; "
         f"{baselines} baselines seeded; {len(incomplete_sellers)} resumable windows pending; "
-        f"{len(candidates)} candidates; {len(failures)} failures."
+        f"{len(candidates)} candidates in {issue_count} issue packets; {len(failures)} failures."
     )
     return 0
 
