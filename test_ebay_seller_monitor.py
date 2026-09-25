@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import unittest
+import tempfile
 from pathlib import Path
 
 import ebay_seller_monitor as monitor
@@ -90,6 +91,33 @@ class FakeClient:
 
 
 class EbaySellerMonitorTests(unittest.TestCase):
+    def test_dense_seller_run_is_split_without_losing_candidates(self):
+        items = [listing(str(100000000000 + index), f"Photography book {index}")
+                 for index in range(197)]
+        for item in items:
+            item["context"] = "Used photography book " * 35
+        with tempfile.TemporaryDirectory() as directory:
+            runtime = Path(directory)
+            count = monitor.write_issue_packets(runtime, items, "2026-09-25T12:00:00Z", [])
+            bodies = sorted((runtime / "alerts").glob("*.md"))
+            titles = [path.read_text() for path in sorted((runtime / "alerts").glob("*.title"))]
+            self.assertEqual(len(bodies), count)
+            self.assertEqual(sum(body.read_text().count("- **Listing:**") for body in bodies), 197)
+            self.assertTrue(all(len(body.read_bytes()) <= monitor.MAX_ISSUE_BODY_BYTES for body in bodies))
+            self.assertTrue(all(body.read_text().count("- **Listing:**") <= 20 for body in bodies))
+            monitor.write_issue_packets(runtime, list(reversed(items)), "2026-09-25T13:00:00Z", [])
+            self.assertEqual(titles, [path.read_text() for path in sorted((runtime / "alerts").glob("*.title"))])
+
+    def test_body_size_splits_before_candidate_count_limit(self):
+        items = [listing(str(200000000000 + index), "Photo book") for index in range(3)]
+        for item in items:
+            item["core_target_tier"] = "1"
+            item["matched_core_photographers"] = ["Photographer " + "x" * 11_000]
+        batches = monitor.split_issue_batches(items, "2026-09-25T12:00:00Z", [])
+        self.assertEqual([len(batch) for batch in batches], [2, 1])
+        self.assertTrue(all(len(monitor.make_issue_body(batch, "2026-09-25T12:00:00Z", []).encode("utf-8"))
+                            <= monitor.MAX_ISSUE_BODY_BYTES for batch in batches))
+
     def test_supplied_config_has_89_uk_and_14_us_unique_sellers(self):
         sellers = monitor.load_config(Path("data/ebay_sellers.json"))
         uk = [seller for seller in sellers if seller["marketplace"] == "EBAY_GB"]

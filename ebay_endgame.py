@@ -20,7 +20,9 @@ import ebay_api
 import ebay_search_checkpoint as checkpoint_search
 import ebay_core_targets as core_targets
 import ebay_private_seller_monitor as legacy
+import ebay_private_recall_monitor as recall
 import photobook_recognition as recognition
+import photobook_target_books as target_books
 import pre1970_unicorn_targets as unicorn_targets
 
 DEFAULT_CONFIG = Path("data/ebay_endgame_targets.json")
@@ -189,12 +191,12 @@ def title_terms(config: dict[str, Any]) -> list[str]:
     limit = max(1, int(settings.get("records_per_photographer") or 1))
     wanted = {normalized(name): name for name in config["tiers"][tier]["names"]}
     by_person: dict[str, list[dict[str, Any]]] = defaultdict(list)
-    for row in recognition.load_library():
-        person = normalized(row.get("Contributor"))
-        title = " ".join(str(row.get("Title") or "").split())
-        if person not in wanted or len(normalized(title).split()) < 2:
-            continue
-        by_person[person].append(row)
+    for person in wanted:
+        owner = target_books.registry().get(person)
+        for row in owner["books"] if owner else []:
+            title = " ".join(str(row.get("Title") or "").split())
+            if len(recognition.pb.useful_tokens(title)) >= 2 and len(normalized(title)) >= 12:
+                by_person[person].append(row)
 
     result: list[str] = []
     for person in wanted:
@@ -642,6 +644,25 @@ def _demote_persisted_target_collision(candidate: dict[str, Any]) -> dict[str, A
     return result
 
 
+def apply_book_target(
+    item: dict[str, Any], score: int, reasons: list[str],
+    initial_alert_score: int, lane: str,
+) -> int:
+    judgment = target_books.assess_listing(item)
+    item["book_judgment"] = judgment
+    special = bool(recall.collectible_signals(item) & recall.STRONG_SPECIAL_SIGNALS)
+    if judgment.get("known_later_edition") and not special:
+        reasons.append("known later edition is distinct from the curated target")
+        return min(score, initial_alert_score - 1)
+    if judgment.get("target_book"):
+        reasons.append(f"curated target book: {judgment['target_book']}")
+        return max(score, 86 if judgment.get("title_only") else 82)
+    if judgment.get("non_target_book") and lane == "known" and not special:
+        reasons.append("known other book does not inherit target first-edition priority")
+        return min(score, initial_alert_score - 1)
+    return score
+
+
 def candidate_from_summary(
     raw: dict[str, Any],
     task: dict[str, Any],
@@ -719,6 +740,9 @@ def candidate_from_summary(
         minimum = 42 if lane == "broad" else 50
         if not classified.get("recognized") and score < minimum and not _has_discovery_evidence(classified):
             return None
+
+    score = apply_book_target(classified, score, reasons,
+                              int(config["initial_alert_score"]), lane)
 
     classified["opportunity_score"] = score
     classified["opportunity_reasons"] = list(dict.fromkeys(reasons))
@@ -902,7 +926,8 @@ def _detail_money(detail: dict[str, Any], field: str) -> tuple[float | None, str
     return amount, str(value.get("currency") or "").upper()
 
 
-def enrich_candidate(candidate: dict[str, Any], detail: dict[str, Any], now: datetime) -> tuple[dict[str, Any], bool, str]:
+def enrich_candidate(candidate: dict[str, Any], detail: dict[str, Any], now: datetime,
+                     initial_alert_score: int = 58) -> tuple[dict[str, Any], bool, str]:
     merged = legacy._merge_live_detail(candidate, detail)
     merged["item_end_date"] = str(detail.get("itemEndDate") or merged.get("item_end_date") or "")
     current_bid, current_currency = _detail_money(detail, "currentBidPrice")
@@ -982,6 +1007,8 @@ def enrich_candidate(candidate: dict[str, Any], detail: dict[str, Any], now: dat
             score = max(score, {"1": 66, "2": 63, "3": 60}[tier])
             target_quality = "hidden_description"
             reasons.append(f"Tier {tier} targeted auction matched hidden seller text")
+    score = apply_book_target(rescored, score, reasons,
+                              initial_alert_score, lane)
     rescored["opportunity_score"] = score
     rescored["opportunity_reasons"] = list(dict.fromkeys(reasons))
     rescored["score_band"] = "urgent" if score >= 90 else "alert" if score >= 72 else "review" if score >= 55 else "reject"
@@ -1045,7 +1072,9 @@ def collect_deadline_alerts(
             try:
                 detail = client.get_item(str(working.get("rest_item_id") or working.get("external_id") or ""))
                 pool.sync_token(client)
-                working, live, _ = enrich_candidate(working, detail, now)
+                working, live, _ = enrich_candidate(
+                    working, detail, now, int(config["initial_alert_score"])
+                )
                 detail_calls += 1
                 state["candidates"][key] = working
                 if not live:
@@ -1129,6 +1158,14 @@ def _candidate_markdown(candidate: dict[str, Any]) -> str:
         recognition_line = f"{best.get('contributor')}, *{best.get('title')}* (match {best.get('score')}/100)"
     reasons = [str(value) for value in candidate.get("opportunity_reasons") or []]
     reason_line = "; ".join(reasons[:7]) or "recall-first auction discovery"
+    judgment = candidate.get("book_judgment") or {}
+    book_line = (
+        f"- **Target book:** {judgment['target_book']}\n"
+        f"- **Collectibility:** {judgment['collectibility']}\n"
+        f"- **Identification confidence:** {judgment['identification_confidence']}\n"
+        f"- **Price opportunity:** {judgment['price_opportunity']}\n"
+        if judgment.get("target_book") else ""
+    )
     verification = str(candidate.get("live_verification") or "LIVE STATUS NOT VERIFIED - CHECK BEFORE BIDDING")
     image = str(candidate.get("image_url") or "")
     image_line = f"\n![Listing image]({image})\n" if image else ""
@@ -1142,6 +1179,7 @@ def _candidate_markdown(candidate: dict[str, Any]) -> str:
         f"- **Priority target:** {', '.join(matches) if matches else 'query or local recognition match'}"
         f"{f' (Tier {candidate.get("query_target_tier")})' if candidate.get('query_target_tier') else ''}\n"
         f"- **Best library recognition:** {recognition_line}\n"
+        f"{book_line}"
         f"- **Why surfaced:** {reason_line}\n"
         f"- **Live check:** {verification}\n"
         f"- **Discovery:** {candidate.get('discovery_query')}\n"

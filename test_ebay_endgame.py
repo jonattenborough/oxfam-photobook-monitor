@@ -327,10 +327,11 @@ class EndgameTests(unittest.TestCase):
         self.assertLess(candidate["opportunity_score"], self.config["initial_alert_score"])
 
     def test_generic_title_match_stays_below_threshold_before_and_after_detail(self):
-        task = next(
-            task for task in self.tasks
-            if task["lane"] == "title" and "Small World" in task.get("terms", [])
-        )
+        self.assertFalse(any(task["lane"] == "title" and "Small World" in task.get("terms", [])
+                             for task in self.tasks))
+        # Old persisted title routes still need the namesake guard.
+        task = dict(next(task for task in self.tasks if task["lane"] == "title"))
+        task["terms"] = ["Small World"]
         summary = auction_summary(title="Disney Small World Library hardback book", end_minutes=180)
         summary["categories"] = [{"categoryId": "261186"}]
         summary["categoryPath"] = "Books"
@@ -345,6 +346,23 @@ class EndgameTests(unittest.TestCase):
         enriched, live, _ = endgame.enrich_candidate(candidate, detail, NOW)
         self.assertTrue(live)
         self.assertEqual(enriched["target_match_quality"], "book_context")
+        self.assertLess(enriched["opportunity_score"], self.config["initial_alert_score"])
+
+    def test_curated_first_issue_auction_is_distinguished_from_later_reissue(self):
+        task = next(task for task in self.tasks if task["lane"] == "title"
+                    and "Ray's a Laugh" in task.get("terms", []))
+        original = endgame.candidate_from_summary(
+            auction_summary(title="Ray's a Laugh Scalo 1996 photobook"), task, self.config, NOW)
+        self.assertIsNotNone(original)
+        self.assertTrue(original["book_judgment"]["target_book"])
+        self.assertGreaterEqual(original["opportunity_score"], self.config["final_alert_score"])
+        later_summary = auction_summary(title="Ray's a Laugh MACK 2024 photobook")
+        later = endgame.candidate_from_summary(later_summary, task, self.config, NOW)
+        self.assertTrue(later["book_judgment"]["known_later_edition"])
+        self.assertLess(later["opportunity_score"], self.config["initial_alert_score"])
+        later_detail = dict(later_summary, estimatedAvailabilityStatus="IN_STOCK")
+        enriched, live, _ = endgame.enrich_candidate(later, later_detail, NOW)
+        self.assertTrue(live)
         self.assertLess(enriched["opportunity_score"], self.config["initial_alert_score"])
 
     def test_persisted_old_title_collision_is_demoted_before_deadline_alert(self):

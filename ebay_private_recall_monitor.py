@@ -22,7 +22,8 @@ ChatGPT review, which freshly checks the listing and exact edition.
 from __future__ import annotations
 
 import argparse
-from datetime import datetime, timezone
+import hashlib
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
@@ -30,9 +31,15 @@ import ebay_core_targets as core_targets
 import ebay_search_checkpoint as checkpoint_search
 import ebay_private_seller_monitor as legacy
 import photobook_recognition as recognition
+import photobook_target_books as target_books
 
 RECALL_ACTIVE_STOCK_QUERIES_PER_RUN = 4
 RECALL_PENDING_LIMIT = 500
+GENERIC_AUDIT_SAMPLE_MODULUS = 10
+STRONG_SPECIAL_SIGNALS = {"signed", "inscribed", "limited edition", "numbered",
+                          "artist proof", "print included"}
+DEFERRED_RETENTION_DAYS = 45
+DEFERRED_RECHECKS_PER_RUN = 120
 # At the normal 17-call allowance, keep every fixed-price discovery family
 # alive while spending most calls on the long-tail library and active inventory.
 # Order breaks ties (and keeps a broad query first under extreme scarcity).
@@ -44,7 +51,7 @@ PACED_LANE_CALLS = {
     "collectible_format": 1,
     "collection": 1,
     "wrong_category": 2,
-    "active_stock": 10,
+    "active_stock": 3,
     "library_rotation": 16,
 }
 LANE_CURSORS = {
@@ -54,7 +61,7 @@ LANE_CURSORS = {
     "pre1970_unicorn": "pre1970_unicorn",
     "library_rotation": "library_records",
 }
-CORE_TARGET_LANES = ("core_target_1", "core_target_2", "core_target_3")
+CORE_TARGET_LANES = ("core_target_1", "target_book_title", "core_target_2", "core_target_3")
 CHEAP_UNKNOWN_HARD_LIMIT_GBP = 30.0
 CHEAP_UNKNOWN_SOFT_LIMIT_GBP = 50.0
 PRICE_DROP_PERCENT = 0.20
@@ -141,6 +148,7 @@ def recall_config(config: dict[str, Any]) -> dict[str, Any]:
         adjusted.get("core_targets_path") or "data/ebay_endgame_targets.json"
     )
     adjusted["core_target_queries_per_run"] = {"1": 2, "2": 2, "3": 1}
+    adjusted["target_book_title_queries_per_run"] = 1
     adjusted["pre1970_unicorn_targets_path"] = str(
         adjusted.get("pre1970_unicorn_targets_path")
         or "data/photobook_recognition/pre1970_unicorns.csv"
@@ -193,16 +201,29 @@ def _build_fresh_search_plan(
     # family. Any remaining normal allowance can fund up to all five grouped
     # core-photographer calls.
     non_target_families = sum(1 for steps in lanes.values() if steps)
-    target_budget = min(
-        len(target_steps),
-        max(0, total_budget - non_target_families),
-    )
-    for step in target_steps[:target_budget]:
+    target_budget = min(len(target_steps), max(0, total_budget - non_target_families))
+    if 2 <= total_budget <= 6:
+        target_budget = min(len(target_steps), total_budget // 2)
+    family_cursor = int(state["cursors"].get("target_family", 0) or 0)
+    chosen_targets = target_steps
+    first_round = [steps[0] for lane, steps in target_groups.items() if steps]
+    if first_round and target_budget < len(first_round):
+        chosen_targets = [first_round[(family_cursor + i) % len(first_round)]
+                          for i in range(target_budget)]
+        state["cursors"]["target_family"] = (family_cursor + target_budget) % len(first_round)
+    for step in chosen_targets[:target_budget]:
         target_selected.append(step)
         target_counts[step["lane"]] += 1
 
     plan: list[dict[str, Any]] = []
-    for _ in range(total_budget - len(target_selected)):
+    if total_budget <= 6:
+        for lane in ("broad", "library_rotation"):
+            if len(plan) >= total_budget - len(target_selected):
+                break
+            if lane in lanes and selected[lane] < len(lanes[lane]):
+                plan.append(lanes[lane][selected[lane]])
+                selected[lane] += 1
+    for _ in range(total_budget - len(target_selected) - len(plan)):
         available = [lane for lane, steps in lanes.items() if selected[lane] < len(steps)]
         if not available:
             break
@@ -265,6 +286,8 @@ def collectible_signals(item: dict[str, Any]) -> set[str]:
         for phrase, label in COLLECTIBLE_SIGNAL_TERMS.items()
         if phrase in text
     }
+    if any(term in text for term in ("not signed", "unsigned", "isn't signed", "isnt signed")):
+        signals.discard("signed")
     options = {str(value).upper() for value in item.get("buying_options") or []}
     if "BEST_OFFER" in options:
         signals.add("best offer")
@@ -281,6 +304,52 @@ def _score_band(score: int) -> str:
         if score >= 55
         else "reject"
     )
+
+
+def generic_audit_sample(key: str) -> bool:
+    """Stable 10% sample, so retries never resample a different subset."""
+    digest = hashlib.sha256(str(key).encode("utf-8")).digest()
+    return int.from_bytes(digest[:4], "big") % GENERIC_AUDIT_SAMPLE_MODULUS == 0
+
+
+def alert_fingerprint(item: dict[str, Any]) -> str:
+    """Stable across packet reshuffles; new prices or collector signals can re-alert."""
+    key = str(item.get("key") or item.get("url") or "")
+    components = (key, str(_landed_price(item)),
+                  ",".join(sorted(collectible_signals(item))),
+                  ",".join(sorted(str(x) for x in item.get("material_change_reasons") or [])))
+    return hashlib.sha256("\n".join(components).encode("utf-8")).hexdigest()[:20]
+
+
+def recheck_deferred(state: dict[str, Any], review_pool: dict[str, dict[str, Any]], now: datetime) -> None:
+    """Try newly added book targets against stored search-only leads without Browse calls."""
+    archived = state.setdefault("deferred_discovery", {})
+    cutoff = now - timedelta(days=DEFERRED_RETENTION_DAYS)
+    for key, row in list(archived.items()):
+        if not isinstance(row, dict) or (legacy._parse_stamp(row.get("deferred_at")) or now) < cutoff:
+            archived.pop(key, None)
+    keys = sorted(archived)
+    selected, cursor = legacy._cycle_slice(
+        keys, int(state.get("deferred_cursor") or 0), DEFERRED_RECHECKS_PER_RUN,
+    )
+    state["deferred_cursor"] = cursor
+    for key in selected:
+        item = archived[key]
+        if (target_books.assess_listing(item)["target_book"]
+                or core_targets.matches_for_item(item)
+                or recognition.match_listing(item)):
+            candidate = dict(item)
+            candidate["discovery_reason"] = "newly recognised deferred listing; verify live status"
+            review_pool.setdefault(key, candidate)
+            archived.pop(key, None)
+
+
+def compact_deferred(item: dict[str, Any], detected_at: str) -> dict[str, Any]:
+    fields = ("key", "title", "url", "category_id", "category_path", "price_gbp",
+              "landed_price_gbp", "price_value", "price_currency", "context", "image_url",
+              "search_lane", "seller_account_type", "private_seller", "vendor")
+    return {**{field: item[field] for field in fields if item.get(field) is not None},
+            "deferred_at": detected_at}
 
 
 def apply_core_target_priority(
@@ -349,6 +418,44 @@ def apply_core_target_priority(
 
 def recall_classify(item: dict[str, Any], issue_threshold: int) -> dict[str, Any]:
     classified = apply_core_target_priority(legacy.classify(item), issue_threshold)
+    judgment = target_books.assess_listing(classified)
+    classified["book_judgment"] = judgment
+    special = bool(collectible_signals(classified) & STRONG_SPECIAL_SIGNALS)
+    score = int(classified.get("opportunity_score") or 0)
+    hidden_title_query = ("target_book_title" in str(classified.get("search_lane") or "")
+                          and bool(classified.get("target_query_terms"))
+                          and not judgment["target_book"])
+    if judgment["target_book"]:
+        if judgment.get("known_later_edition") and not special:
+            score = min(score, issue_threshold - 1)
+            classified["opportunity_reasons"].append("known later edition is not the curated target")
+        else:
+            # A scarce title without a photographer name is worth inspecting
+            # even when the listing omits edition evidence. A conflicting
+            # claimed year without a known reissue also merits photo review.
+            score = max(score, issue_threshold + (3 if judgment["title_only"] else 6))
+            classified["opportunity_reasons"].append(
+                f"curated target book: {judgment['target_book']}"
+            )
+            classified["opportunity_kind"] = "check collectible edition and photos"
+    elif hidden_title_query:
+        # eBay can match a title buried in the seller description while the
+        # summary only exposes a vague title. Preserve these genuine leads.
+        score = max(score, issue_threshold)
+        classified["opportunity_kind"] = "possible target book hidden in seller description"
+        classified["opportunity_reasons"].append("curated title query matched seller description")
+    elif not special and (judgment["non_target_book"] or (
+        str(classified.get("core_target_tier") or "") in {"2", "3"}
+        and any(target_books.registry().get(core_targets.normalized(name), {}).get("books")
+                for name in classified.get("matched_core_photographers") or [])
+    )):
+        # Keep broad discovery for artists whose book list is incomplete.
+        # Where we already have targets, a generic name or a known lower-tier
+        # catalogue alone does not fill the expensive Chat review queue.
+        score = min(score, issue_threshold - 1)
+        classified["opportunity_reasons"].append("photographer name without curated book evidence")
+    classified["opportunity_score"] = score
+    classified["score_band"] = _score_band(score)
     if classified.get("recognized"):
         return classified
 
@@ -383,16 +490,32 @@ def recall_classify(item: dict[str, Any], issue_threshold: int) -> dict[str, Any
                 strict_photo_signal and high_recall_signal
             )
 
-    if recall_eligible:
-        score = max(int(classified.get("opportunity_score") or 0), int(issue_threshold))
-        classified["opportunity_score"] = score
-        classified["score_band"] = _score_band(score)
-        classified["collecting_lane"] = "open discovery"
-        classified["opportunity_kind"] = "cheap unrecognised photobook lead"
-        classified["recall_first_unknown"] = True
-        classified["opportunity_reasons"] = reasons + [
-            "recall-first cheap unknown lane: AI triage preferred over automatic rejection"
-        ]
+    if recall_eligible and not judgment["target_book"] and not judgment["non_target_book"]:
+        distinct_lead = (bool(classified.get("core_target_lead")) or special
+                         or recognition.collection_bundle_evidence(classified)
+                         or "wrong_category" in str(classified.get("search_lane") or "")
+                         or publisher_signal or high_recall_signal)
+        key = str(classified.get("key") or classified.get("url") or "")
+        if distinct_lead or generic_audit_sample(key):
+            score = max(int(classified.get("opportunity_score") or 0), int(issue_threshold))
+            classified["opportunity_score"] = score
+            classified["score_band"] = _score_band(score)
+            classified["collecting_lane"] = "open discovery"
+            classified["opportunity_kind"] = "cheap unrecognised photobook lead"
+            classified["recall_first_unknown"] = True
+            classified["opportunity_reasons"] = reasons + [
+                "rare-format or random audit sample of unrecognised cheap books"
+                if not distinct_lead else "distinct discovery evidence despite missing book identification"
+            ]
+        else:
+            classified["deferred_generic"] = True
+            classified["recall_first_unknown"] = False
+            score = min(int(classified.get("opportunity_score") or 0), issue_threshold - 1)
+            classified["opportunity_score"] = score
+            classified["score_band"] = _score_band(score)
+            classified["opportunity_reasons"] = reasons + [
+                "generic unnamed book retained for reclassification without immediate review issue"
+            ]
     return classified
 
 
@@ -512,7 +635,18 @@ def _merge_result(existing: dict[str, Any], item: dict[str, Any]) -> None:
     existing["search_lane"] = "+".join(sorted(value for value in lanes if value))
     existing_tier = str(existing.get("query_target_tier") or "")
     item_tier = str(item.get("query_target_tier") or "")
-    if item_tier and (not existing_tier or int(item_tier) < int(existing_tier)):
+    # Core-target searches use 1/2/3; rotating library searches use S/A/B/C.
+    # Either kind may find the same listing, so compare both without assuming
+    # that every tier is numeric. A core-target match wins over a library tier.
+    def tier_priority(value: str) -> tuple[int, int, str]:
+        value = value.strip().upper()
+        if value in {"1", "2", "3"}:
+            return (0, int(value), "")
+        if value in {"S", "A", "B", "C"}:
+            return (1, "SABC".index(value), "")
+        return (2, 0, value)
+
+    if item_tier and (not existing_tier or tier_priority(item_tier) < tier_priority(existing_tier)):
         existing["query_target_tier"] = item_tier
     existing["target_query_terms"] = list(
         dict.fromkeys(
@@ -656,14 +790,19 @@ def main() -> int:
     previous_pending = (
         state.get("pending_live") if isinstance(state.get("pending_live"), dict) else {}
     )
+    previous_overflow = (
+        state.get("pending_overflow") if isinstance(state.get("pending_overflow"), dict) else {}
+    )
     review_pool: dict[str, dict[str, Any]] = {}
     unseen_count = 0
     changed_count = 0
 
     # Carry any unflushed alert handoff forward first.
-    for key, raw in previous_pending.items():
+    for key, raw in {**previous_overflow, **previous_pending}.items():
         if isinstance(raw, dict):
             review_pool[str(key)] = dict(raw)
+
+    recheck_deferred(state, review_pool, now)
 
     for key, item in raw_by_key.items():
         previous = seen.get(key)
@@ -713,10 +852,15 @@ def main() -> int:
             ) or detected_at
             alertable[key] = pending_copy
         else:
+            if item.get("deferred_generic"):
+                state["deferred_discovery"][key] = compact_deferred(item, detected_at)
+            elif key in state["deferred_discovery"]:
+                state["deferred_discovery"].pop(key, None)
             record_seen_recall(seen, item, detected_at)
 
     ranked_alertable = sorted(alertable.items(), key=_candidate_priority, reverse=True)
     state["pending_live"] = dict(ranked_alertable[: int(config["max_pending_live_checks"])])
+    state["pending_overflow"] = dict(ranked_alertable[int(config["max_pending_live_checks"]):])
     state["seen"] = legacy._trim_seen(seen)
     state["last_run"] = detected_at
     state["last_query_count"] = len(search_plan)
@@ -728,6 +872,7 @@ def main() -> int:
     state["last_browse_quota"] = quota
     state["recall_first"] = True
     state["last_material_change_count"] = changed_count
+    state["deferred_discovery_count"] = len(state["deferred_discovery"])
     state["unfinished_search_windows"] = len(state.get("query_windows", {}))
 
     legacy.write_json(runtime / "proposed-state.json", state)
@@ -748,6 +893,8 @@ def main() -> int:
             "materially_changed_results": changed_count,
             "pending_live_verification": len(state["pending_live"]),
             "pending_recall_alerts": len(state["pending_live"]),
+            "pending_overflow": len(state["pending_overflow"]),
+            "deferred_generic": len(state["deferred_discovery"]),
             "new_candidates": [],
             "recall_first": True,
         },

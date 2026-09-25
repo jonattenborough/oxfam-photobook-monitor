@@ -43,6 +43,21 @@ class HandoffTests(unittest.TestCase):
         self.assertEqual(manifest['queues']['EBAY_PRIVATE_NEW']['issue_count'], 2)
         self.assertIsNone(manifest['queues']['EBAY_PRIVATE_NEW']['oldest_affordable'])
 
+    def test_external_and_oxfam_queues_get_handoff_pages(self):
+        with tempfile.TemporaryDirectory() as directory:
+            runtime = Path(directory)
+            manifest = publish({
+                'checked_at': 'now', 'index_scan_complete': True,
+                'queues': {'EXTERNAL_NEW': [entry(3)],
+                           'OXFAM_NEW': [entry(4)],
+                           'OXFAM_ART_NEW': [entry(5)]},
+            }, runtime)
+            for source in ('EXTERNAL_NEW', 'OXFAM_NEW', 'OXFAM_ART_NEW'):
+                queue = manifest['queues'][source]
+                self.assertEqual(queue['issue_count'], 1)
+                page = runtime / 'queue' / Path(queue['pages'][0]['path']).name
+                self.assertTrue(page.exists())
+
     def test_empty_queues_and_invalid_page_size(self):
         manifest, path = self.run_publish([])
         self.assertEqual(manifest['queues']['ENDGAME_4H']['pages'], [])

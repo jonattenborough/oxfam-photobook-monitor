@@ -34,7 +34,7 @@ class HealthTests(unittest.TestCase):
         issues = [issue(1), issue(2, 'BACKFILL: EBAY_PRIVATE_NEW: test'),
                   issue(3, 'EXTERNAL_NEW: test'), issue(4, 'ENDGAME_EARLY: test')]
         data = health.collect('owner/repo', getter(issues))
-        self.assertEqual(sum(map(len, data['queues'].values())), 2)
+        self.assertEqual(sum(map(len, data['queues'].values())), 3)
 
     def test_pr_is_not_an_issue(self):
         row = issue(1); row['pull_request'] = {}
@@ -60,6 +60,25 @@ class HealthTests(unittest.TestCase):
         data = health.collect('owner/repo', getter([issue(1, comments=101)], comments))
         self.assertEqual(data['completed_but_open'], [1])
         self.assertEqual(len(data['queues']['EBAY_PRIVATE_NEW']), 0)
+
+    def test_external_marker_is_accepted_only_for_external_queue(self):
+        comment = {'body': 'CHATGPT_EXTERNAL_REVIEWED: PASS',
+                   'user': {'login': 'owner'}, 'created_at': '2026-09-18T05:00:00Z'}
+        rows = [issue(1, 'EXTERNAL_NEW: test', comments=1),
+                issue(2, 'EBAY_PRIVATE_NEW: test', comments=1)]
+        data = health.collect('owner/repo', getter(rows, [comment]))
+        self.assertEqual(data['completed_but_open'], [1])
+        self.assertEqual(len(data['queues']['EBAY_PRIVATE_NEW']), 1)
+
+    def test_all_live_fixed_price_sources_are_counted(self):
+        rows = [issue(1, 'EXTERNAL_NEW: one'), issue(2, 'OXFAM_NEW: one'),
+                issue(3, 'OXFAM_ART_NEW: one')]
+        rows[2]['body'] = '### Book\n- **Oxfam price:** £18.00\n'
+        data = health.collect('owner/repo', getter(rows))
+        self.assertEqual({name: len(data['queues'][name]) for name in
+                          ('EXTERNAL_NEW', 'OXFAM_NEW', 'OXFAM_ART_NEW')},
+                         {'EXTERNAL_NEW': 1, 'OXFAM_NEW': 1, 'OXFAM_ART_NEW': 1})
+        self.assertEqual(data['queues']['OXFAM_ART_NEW'][0]['lowest_observed_gbp'], 18.0)
 
     def test_closed_issue_receipt_is_observed_from_recent_comments(self):
         comment = {'body': 'CHATGPT_GEM_REVIEWED: PASS', 'user': {'login': 'owner'},

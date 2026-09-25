@@ -36,7 +36,8 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
         )
         self.assertEqual(config["max_live_checks_per_run"], 0)
         self.assertEqual(config["active_stock_queries_per_run"], 4)
-        self.assertEqual(len(plan), 41)
+        self.assertEqual(len(plan), 42)
+        self.assertEqual(sum(step["lane"] == "target_book_title" for step in plan), 1)
         self.assertEqual(sum(step["lane"] == "active_stock" for step in plan), 4)
         self.assertEqual(sum(step["lane"].startswith("core_target_") for step in plan), 5)
         self.assertFalse(
@@ -56,7 +57,7 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
             state,
             datetime(2026, 9, 4, 8, 0, tzinfo=timezone.utc),
         )
-        self.assertEqual(len(full_plan), 61)
+        self.assertEqual(len(full_plan), 62)
         self.assertEqual(sum(step["lane"] == "active_stock" for step in full_plan), 4)
         self.assertEqual(sum(step["lane"] == "wrong_category" for step in full_plan), 10)
         self.assertEqual(
@@ -70,6 +71,7 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
         self.assertEqual(sum(step["lane"] == "core_target_1" for step in full_plan), 2)
         self.assertEqual(sum(step["lane"] == "core_target_2" for step in full_plan), 2)
         self.assertEqual(sum(step["lane"] == "core_target_3" for step in full_plan), 1)
+        self.assertEqual(sum(step["lane"] == "target_book_title" for step in full_plan), 1)
         self.assertEqual(sum(step["lane"] == "collection" for step in full_plan), 4)
         self.assertEqual(sum(step["lane"] == "library_rotation" for step in full_plan), 16)
         self.assertEqual(sum(step["lane"] == "contemporary_hot" for step in full_plan), 6)
@@ -90,7 +92,7 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
             Counter(step["lane"] for step in budgeted),
             Counter({
                 "library_rotation": 3,
-                "active_stock": 2,
+                "active_stock": 1,
                 "broad": 1,
                 "contemporary_hot": 1,
                 "classic_hot": 1,
@@ -101,6 +103,7 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
                 "core_target_1": 2,
                 "core_target_2": 2,
                 "core_target_3": 1,
+                "target_book_title": 1,
             }),
         )
 
@@ -190,14 +193,16 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
         plan = recall.build_budgeted_search_plan(config, state, datetime.now(timezone.utc), 17)
         counts = Counter(step["lane"] for step in plan)
         self.assertEqual(len(plan), 17)
-        self.assertEqual(counts["active_stock"], 2)
+        self.assertEqual(counts["active_stock"], 1)
         self.assertEqual(counts["library_rotation"], 3)
         self.assertEqual(counts["pre1970_unicorn"], 1)
         self.assertEqual(counts["core_target_1"], 2)
         self.assertEqual(counts["core_target_2"], 2)
         self.assertEqual(counts["core_target_3"], 1)
+        self.assertEqual(counts["target_book_title"], 1)
         self.assertEqual(set(counts), set(recall.PACED_LANE_CALLS) | set(recall.CORE_TARGET_LANES))
-        self.assertEqual(state["cursors"]["active_stock"], 2)
+        self.assertEqual(state["cursors"]["active_stock"], 1)
+        self.assertEqual(state["cursors"]["target_book_title"], 1)
         self.assertEqual(state["cursors"]["library_records"], 3)
         self.assertEqual(state["cursors"]["pre1970_unicorn"], 1)
         self.assertEqual(state["cursors"]["core_target_1"], 2)
@@ -225,6 +230,20 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
         second = recall.build_budgeted_search_plan(config, state, now, 1)
         self.assertEqual(first[0]["query"], "photography book")
         self.assertEqual(second[0]["query"], "photo book")
+
+    def test_five_call_runs_rotate_book_and_name_targets_without_starving_library(self):
+        state = {"cursors": {}}
+        visited = set()
+        library_queries = []
+        for _ in range(4):
+            steps = recall.build_budgeted_search_plan(
+                self.config(), state, datetime.now(timezone.utc), 5)
+            self.assertEqual(len(steps), 5)
+            visited.update(step["lane"] for step in steps)
+            library_queries += [step["query"] for step in steps
+                                if step["lane"] == "library_rotation"]
+        self.assertTrue(set(recall.CORE_TARGET_LANES) <= visited)
+        self.assertEqual(len(set(library_queries)), 4)
 
     def test_trimmed_stock_and_library_prefixes_continue_without_gaps(self):
         config = self.config()
@@ -315,7 +334,7 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
             self.assertEqual(query.call_count, 17)
             self.assertEqual(proposed["last_live_checks"], 0)
             self.assertEqual(proposed["cursors"]["library_records"], 3)
-            self.assertEqual(proposed["cursors"]["active_stock"], 2)
+            self.assertEqual(proposed["cursors"]["active_stock"], 1)
 
     def test_failed_library_query_is_retried_without_skipping_a_cursor_gap(self):
         library_attempts = 0
@@ -358,8 +377,10 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
             self.assertEqual(proposed, legacy.load_state(Path(tmp) / "state.json"))
 
     def test_cheap_unknown_photobook_can_cross_alert_threshold(self):
+        sample_key = next(f"ebay:cheap-unknown-{number}" for number in range(100)
+                          if recall.generic_audit_sample(f"ebay:cheap-unknown-{number}"))
         item = {
-            "key": "ebay:cheap-unknown",
+            "key": sample_key,
             "title": "Unknown photographer photobook",
             "context": "photography book monograph",
             "price_gbp": 18.0,
@@ -373,6 +394,74 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
         self.assertFalse(classified["recognized"])
         self.assertTrue(classified["recall_first_unknown"])
         self.assertGreaterEqual(classified["opportunity_score"], 72)
+
+    def test_generic_unknown_is_retained_for_later_target_reclassification(self):
+        key = next(f"ebay:unknown-{number}" for number in range(100)
+                   if not recall.generic_audit_sample(f"ebay:unknown-{number}"))
+        item = {
+            "key": key, "title": "Photobook from old collection",
+            "context": "photography book monograph", "price_gbp": 18,
+            "private_seller": True, "seller_account_type": "INDIVIDUAL",
+            "search_lane": "broad", "url": f"https://www.ebay.co.uk/itm/{100000000000}",
+        }
+        result = recall.recall_classify(item, 72)
+        self.assertTrue(result["deferred_generic"])
+        self.assertLess(result["opportunity_score"], 72)
+        stored = recall.compact_deferred(result, "2026-09-25T12:00:00Z")
+        self.assertEqual(stored["title"], item["title"])
+        self.assertEqual(stored["url"], item["url"])
+
+    def test_deferred_book_is_rechecked_without_an_ebay_request(self):
+        now = datetime(2026, 9, 25, 14, tzinfo=timezone.utc)
+        state = {"deferred_discovery": {
+            "ebay:book": {
+                "key": "ebay:book", "title": "Ray's a Laugh Scalo 1996 photobook",
+                "price_gbp": 29.0, "category_id": "261186",
+                "deferred_at": "2026-09-25T12:00:00Z",
+            },
+            "ebay:old": {
+                "key": "ebay:old", "title": "Old photography book",
+                "deferred_at": "2026-07-01T12:00:00Z",
+            },
+        }}
+        pool = {}
+        recall.recheck_deferred(state, pool, now)
+        self.assertIn("ebay:book", pool)
+        self.assertIn("verify live status", pool["ebay:book"]["discovery_reason"])
+        self.assertFalse(state["deferred_discovery"])
+
+    def test_pending_overflow_is_kept_for_the_following_run(self):
+        first = {
+            "key": "ebay:one", "title": "Richard Billingham Ray's a Laugh 1996 photobook",
+            "price_gbp": 30, "private_seller": True,
+            "seller_account_type": "INDIVIDUAL", "category_id": "261186",
+        }
+        second = {**first, "key": "ebay:two", "title": "Stephen Shore Uncommon Places 1982 photobook"}
+        config = self.config()
+        config["max_pending_live_checks"] = 1
+        with tempfile.TemporaryDirectory() as tmp:
+            state_file = Path(tmp) / "state.json"
+            runtime = Path(tmp) / "runtime"
+            for turn in range(2):
+                rows = [first, second] if turn == 0 else []
+                with patch.object(recall, "RECALL_PENDING_LIMIT", 1), \
+                     patch("sys.argv", ["recall", "--state", str(state_file),
+                                        "--runtime-dir", str(runtime)]), \
+                     patch.object(legacy, "load_config", return_value=config), \
+                     patch.object(legacy, "utc_now", return_value=f"2026-09-25T14:0{turn}:00Z"), \
+                     patch.object(legacy.ebay_api, "EbayBrowseClient", return_value=QuotaClient()), \
+                     patch.object(legacy, "run_query", side_effect=[rows] + [[]] * 16), \
+                     patch.object(legacy, "set_output"):
+                    self.assertEqual(recall.main(), 0)
+                state = json.loads((runtime / "proposed-state.json").read_text())
+                self.assertEqual(len(state["pending_live"]), 1)
+                if turn == 0:
+                    self.assertEqual(len(state["pending_overflow"]), 1)
+                    state["pending_live"] = {}  # simulated successful packet publication
+                    legacy.write_json(state_file, state)
+                else:
+                    self.assertEqual(len(state["pending_overflow"]), 0)
+                    self.assertIn("ebay:two", state["pending_live"])
 
     def test_generic_cheap_picture_book_is_not_promoted(self):
         item = {
@@ -612,6 +701,26 @@ class RecallFirstPrivateMonitorTests(unittest.TestCase):
         self.assertIn("signed", record["collectible_signals"])
         self.assertIn("first edition", record["collectible_signals"])
         self.assertIn("BEST_OFFER", record["buying_options"])
+
+    def test_overlapping_library_and_core_queries_keep_best_tier(self):
+        existing = {
+            "search_lane": "library_rotation",
+            "query_target_tier": "A",
+            "target_query_terms": ["Alec Soth"],
+        }
+        recall._merge_result(existing, {
+            "search_lane": "library_rotation", "query_target_tier": "S",
+            "target_query_terms": ["Sleeping by the Mississippi"],
+        })
+        self.assertEqual(existing["query_target_tier"], "S")
+        recall._merge_result(existing, {
+            "search_lane": "core_target_2", "query_target_tier": "2",
+            "target_query_terms": ["Alec Soth"],
+        })
+        self.assertEqual(existing["query_target_tier"], "2")
+        recall._merge_result(existing, {"search_lane": "core_target_3", "query_target_tier": "3"})
+        self.assertEqual(existing["query_target_tier"], "2")
+        self.assertEqual(existing["target_query_terms"], ["Alec Soth", "Sleeping by the Mississippi"])
 
 
 if __name__ == "__main__":

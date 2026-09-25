@@ -8,6 +8,7 @@ from pathlib import Path
 
 import ebay_private_forensic_scan as forensic
 import ebay_private_seller_monitor as live_monitor
+import photobook_recognition as recognition
 
 
 def raw_item(item_id: int, title: str, *, price: float = 20.0) -> dict:
@@ -63,8 +64,10 @@ class ForensicScanTests(unittest.TestCase):
 
     def test_plan_covers_every_record_without_a_score_gate(self):
         plan = forensic.build_plan()
-        self.assertEqual(len(plan), 4318)
-        self.assertEqual(len({item["query"].lower() for item in plan}), 4318)
+        library = recognition.load_library()
+        self.assertGreater(len(library), 4000)
+        self.assertEqual(len(plan), len(library))
+        self.assertEqual(len({item["query"].lower() for item in plan}), len(library))
         self.assertTrue(all(item["category_ids"] is None for item in plan))
         self.assertTrue(all(item["search_in_description"] for item in plan))
         self.assertTrue(all(item["price_max"] == 300.0 for item in plan))

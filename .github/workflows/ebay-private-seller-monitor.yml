@@ -22,19 +22,24 @@ on:
       - "ebay_seller_monitor.py"
       - "market_monitor_safe.py"
       - "ebay_private_alert_builder.py"
+      - "ebay_private_issue_sync.py"
+      - "ebay_charity_issue_sync.py"
       - "photobook_recognition.py"
+      - "photobook_target_books.py"
       - "pre1970_unicorn_targets.py"
       - "photobook_library_builder.py"
       - "test_ebay_api.py"
       - "test_ebay_private_api.py"
       - "test_ebay_core_targets.py"
       - "test_photobook_recognition.py"
+      - "test_photobook_target_books.py"
       - "test_pre1970_unicorn_targets.py"
       - "test_photobook_library_builder.py"
       - "test_ebay_private_seller_monitor.py"
       - "test_ebay_private_recall_monitor.py"
       - "test_ebay_seller_monitor.py"
       - "test_ebay_private_alert_builder.py"
+      - "test_ebay_private_issue_sync.py"
       - "data/ebay_private_searches.json"
       - "data/ebay_private_recall_searches.json"
       - "data/ebay_endgame_targets.json"
@@ -83,11 +88,13 @@ jobs:
             test_ebay_core_targets.py \
             test_photobook_library_builder.py \
             test_photobook_recognition.py \
+            test_photobook_target_books.py \
             test_pre1970_unicorn_targets.py \
             test_ebay_private_seller_monitor.py \
             test_ebay_private_recall_monitor.py \
             test_ebay_seller_monitor.py \
             test_ebay_private_alert_builder.py
+          python -m unittest -v test_ebay_private_issue_sync.py
           python photobook_recognition.py
 
       - name: Search private eBay sellers with recall-first policy
@@ -109,6 +116,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
+          python ebay_private_issue_sync.py --repository "$GITHUB_REPOSITORY"
+          shopt -s nullglob
           for body in runtime/ebay-private/alerts/*.md; do
             stem="${body%.md}"
             {

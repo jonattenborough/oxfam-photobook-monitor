@@ -16,6 +16,7 @@ import ebay_core_targets as core_targets
 import external_monitor
 import parr_badger_runner as pb
 import photobook_recognition as recognition
+import photobook_target_books as target_books
 import pre1970_unicorn_targets as unicorn_targets
 
 BOOKS_CATEGORY_ID = "261186"
@@ -126,6 +127,7 @@ def load_config(path: Path) -> dict[str, Any]:
     payload.setdefault("core_targets_path", "data/ebay_endgame_targets.json")
     payload.setdefault("core_target_queries_per_run", {})
     payload.setdefault("core_target_query_character_limit", 90)
+    payload.setdefault("target_book_title_queries_per_run", 0)
     payload.setdefault(
         "pre1970_unicorn_targets_path",
         "data/photobook_recognition/pre1970_unicorns.csv",
@@ -153,6 +155,9 @@ def load_config(path: Path) -> dict[str, Any]:
     }
     payload["pre1970_unicorn_queries_per_run"] = max(
         0, int(payload.get("pre1970_unicorn_queries_per_run") or 0)
+    )
+    payload["target_book_title_queries_per_run"] = max(
+        0, int(payload.get("target_book_title_queries_per_run") or 0)
     )
     query_limit = int(payload.get("core_target_query_character_limit") or 90)
     if query_limit < 20 or query_limit > 100:
@@ -288,6 +293,19 @@ def build_search_plan(config: dict[str, Any], state: dict[str, Any], now: dateti
                 category_ids=None if lane == "wrong_category" else BOOKS_CATEGORY_ID,
                 description=True,
             )
+
+    title_count = int(config.get("target_book_title_queries_per_run") or 0)
+    if title_count:
+        groups = target_books.title_query_groups(
+            int(config.get("core_target_query_character_limit") or 90)
+        )
+        selected, next_cursor = _cycle_slice(
+            groups, int(cursors.get("target_book_title", 0) or 0), title_count,
+        )
+        cursors["target_book_title"] = next_cursor
+        for group in selected:
+            add("target_book_title", group["query"], description=True,
+                incremental=False, target_terms=group["terms"])
 
     active_stock_queries = config["active_stock_queries"]
     active_stock_per_run = max(0, int(config["active_stock_queries_per_run"]))
@@ -501,6 +519,7 @@ def trim_search_plan(plan: list[dict[str, Any]], budget: int) -> list[dict[str, 
     lane_priority = {
         "broad": 0,
         "core_target_1": 1,
+        "target_book_title": 1,
         "pre1970_unicorn": 1,
         "contemporary_hot": 1,
         "classic_hot": 1,
