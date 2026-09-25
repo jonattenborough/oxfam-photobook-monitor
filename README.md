@@ -2,6 +2,12 @@
 
 A GitHub Actions monitoring system for newly listed collectible photography books and related bargains. It combines near-real-time charity-shop monitoring, an authenticated eBay API layer, specialist-market feeds, and a separate wider-web search for awkward sites.
 
+## Export the review backlog to CSV
+
+Run `python scripts/export_review_backlog.py` from the repository root. It reads all open issue pages directly from GitHub and writes `runtime/backlog-export/all_backlog.csv`, source-specific CSVs, an export summary, and `runtime/photobook_backlog_csvs.zip`. You can choose a different location with `--output-dir PATH`. Set `GH_TOKEN` or `GITHUB_TOKEN` if GitHub's anonymous API limit is insufficient. The command only reads GitHub and writes local output; it does not alter the live monitors or issue review state.
+
+The master CSV has one row per listing ID or canonical URL. Repeated discoveries retain their source issue numbers and duplicate count. Open issues with a verified owner review marker, plus historical private-seller full-library scans, are excluded. Auctions past their deadline remain visible with `auction_status=expired` and also appear in `expired_auctions.csv`. Listing availability and price are observations from the issue, not fresh marketplace checks. The failed eBay charity issue creation described in the queue audit cannot be recovered from GitHub issues until the monitor publishes those candidates.
+
 ## Parr / Badger master
 
 The operational reference database lives in `data/parr_badger_master/` and currently contains 628 search records across *The Photobook: A History* Volumes I, II and III.
