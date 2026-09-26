@@ -1,7 +1,10 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-26T13:54:04Z",
+  "last_successful_fetch": "2026-09-26T17:38:18Z",
   "last_top_skus": [
+    "HD_304266533",
+    "HD_304283150",
+    "HD_304275974",
     "HD_304283046",
     "HD_304282307",
     "HD_304282382",
@@ -28,10 +31,7 @@
     "HD_304276344",
     "HD_304275761",
     "HD_304266593",
-    "HD_304275628",
-    "HD_304275358",
-    "HD_304275351",
-    "HD_304272909"
+    "HD_304275628"
   ],
   "products": {
     "HD_303682420": {
@@ -8941,6 +8941,22 @@
       },
       "search_fingerprint": "6d362211efd6382e"
     },
+    "HD_304266533": {
+      "first_seen": "2026-09-26T17:38:18Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1790437261000",
+        "description": "This new book looks at her latest series Chalk Streams as well as work from earlier bodies of work including Fires, Stars, Seascapes and Between The Trees. The book includes an essay by writer and publisher Christiane Pratsch Monarchi.<br/>As New. The binding remains tight. The text and images within are sharp and clear",
+        "isbn": null,
+        "price_gbp": 21.99,
+        "product_id": "book-HD__304266533",
+        "publisher": null,
+        "route": "/into-the-woods/product/HD_304266533",
+        "sku": "HD_304266533",
+        "title": "Into the Woods"
+      },
+      "search_fingerprint": "366c4d7223890f8c"
+    },
     "HD_304266593": {
       "first_seen": "2026-09-24T13:49:49Z",
       "last_snapshot": {
@@ -9601,6 +9617,22 @@
       },
       "search_fingerprint": "ccad42dd2f92fe37"
     },
+    "HD_304275974": {
+      "first_seen": "2026-09-26T17:38:18Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1790429761000",
+        "description": "Crammed with images, in colour. Subtitled The 1st Mini Album.<br/><br/>Almost pristine. No page numbers.",
+        "isbn": null,
+        "price_gbp": 10.99,
+        "product_id": "book-HD__304275974",
+        "publisher": null,
+        "route": "/city-lights/product/HD_304275974",
+        "sku": "HD_304275974",
+        "title": "City Lights"
+      },
+      "search_fingerprint": "6a9069deded41dc2"
+    },
     "HD_304276344": {
       "first_seen": "2026-09-24T13:49:49Z",
       "last_snapshot": {
@@ -9969,8 +10001,24 @@
         "title": "The Architectural Forum June 1931"
       },
       "search_fingerprint": "3f374c049f145695"
+    },
+    "HD_304283150": {
+      "first_seen": "2026-09-26T17:38:18Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1790435602000",
+        "description": "This book celebrates Marzaroli's extraordinary talent with a number of specially-commissioned essays and a selection of previously unpublished photographs, as well as many of the iconic, much loved work for which he is renowned.<br/><br/>The first section, 'Europe: A Man with a Vision' (Anne Marzaroli), highlights Oscar's journey into photography at the age of eighteen and features figure and landscape shots from Scotland and beyond, as well as photographs of family and friends. 'Waiting for the Magic' is a piece by the late James Grassie, who worked with Marzaroli on many of his documentary films. Photographs include land and seascapes, and images which explore the human response to the natural environment. 'Glasgow: A Dear Green Place' (Robert Crawford, St Andrews University) contains some of Marzaroli's most familiar Glasgow shots, as well as many images never before published. All are of extraordinary historical and social importance as they depict the city during a profound process of change. 'Marzaroli's People (Peter Ross, Scotland on Sunday). Marzaroli's portraits always had a purpose and a point; his empathy is apparent as is his lack of intrusion and respect for people in their unique landscape, whether it be urban or country.<br/><br/>The book is in very good condition with only minior wear to the dust jacket. The text itself is in pristine condition.",
+        "isbn": null,
+        "price_gbp": 50.0,
+        "product_id": "book-HD__304283150",
+        "publisher": null,
+        "route": "/waiting-for-the-magic-the-photography-of-oscar-marzaroli/product/HD_304283150",
+        "sku": "HD_304283150",
+        "title": "Waiting for the Magic: The Photography of Oscar Marzaroli"
+      },
+      "search_fingerprint": "e8cb744c1490917f"
     }
   },
-  "reported_category_count": 2897,
+  "reported_category_count": 2900,
   "version": 1
 }
