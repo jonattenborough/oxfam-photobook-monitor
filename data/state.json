@@ -1,7 +1,10 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-26T00:11:47Z",
+  "last_successful_fetch": "2026-09-26T13:54:04Z",
   "last_top_skus": [
+    "HD_304283046",
+    "HD_304282307",
+    "HD_304282382",
     "HD_304282025",
     "HD_304281811",
     "HD_304281606",
@@ -28,10 +31,7 @@
     "HD_304275628",
     "HD_304275358",
     "HD_304275351",
-    "HD_304272909",
-    "HD_304274306",
-    "HD_304261396",
-    "HD_304273782"
+    "HD_304272909"
   ],
   "products": {
     "HD_303682420": {
@@ -9921,6 +9921,54 @@
         "title": "Where Land Meets Sea"
       },
       "search_fingerprint": "9bd580b1c64756d5"
+    },
+    "HD_304282307": {
+      "first_seen": "2026-09-26T13:54:04Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1790421367000",
+        "description": "Madrid: Ciudad abierta An open city is an illustrated book by Francisco Javier Fernández Bordonada and Miguel Sebastián, published in October 2022 by Ediciones La Librería<br/><br/>Text in Spanish and English.<br/><br/>Slight scuffing on covers and a crease on the back cover.  Beautifully illustrated throughout with colour photographs showing views of Madrid",
+        "isbn": null,
+        "price_gbp": 20.0,
+        "product_id": "book-HD__304282307",
+        "publisher": null,
+        "route": "/madrid-ciudad-abierta-an-open-city/product/HD_304282307",
+        "sku": "HD_304282307",
+        "title": "Madrid: Ciudad abierta. An open city"
+      },
+      "search_fingerprint": "66f8cbabe5e0c3e3"
+    },
+    "HD_304282382": {
+      "first_seen": "2026-09-26T13:54:04Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1790416681000",
+        "description": "Content: This is a special edition, signed by the authors.<br/>Ghost signs are fascinating pieces of urban archaeology. Imposing yet hidden in plain sight, these faded advertisements are London's history written onto the contemporary cityscape. The book showcases around 250 of London's most impressive and historically significant ghost signs, geo-located, accompanied by archival and other contextual images.<br/><br/>Condition: Excellent except for minor shelf-wear to bottom text block. No markings. Spine robust.",
+        "isbn": null,
+        "price_gbp": 35.0,
+        "product_id": "book-HD__304282382",
+        "publisher": null,
+        "route": "/ghost-signs-a-london-story-signed-special-edition/product/HD_304282382",
+        "sku": "HD_304282382",
+        "title": "Ghost Signs: A London Story (Signed Special Edition)"
+      },
+      "search_fingerprint": "fc3d7615e473639e"
+    },
+    "HD_304283046": {
+      "first_seen": "2026-09-26T13:54:04Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1790425946000",
+        "description": "Vintage photography book of of the interiors and exteriors of the great universities. No dust jacket.",
+        "isbn": null,
+        "price_gbp": 18.0,
+        "product_id": "book-HD__304283046",
+        "publisher": null,
+        "route": "/the-architectural-forum-june-1931/product/HD_304283046",
+        "sku": "HD_304283046",
+        "title": "The Architectural Forum June 1931"
+      },
+      "search_fingerprint": "3f374c049f145695"
     }
   },
   "reported_category_count": 2897,
