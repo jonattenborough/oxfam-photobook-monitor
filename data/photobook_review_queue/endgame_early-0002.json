@@ -1,426 +1,534 @@
 {
-  "checked_at": "2026-09-25T22:09:12Z",
+  "checked_at": "2026-09-26T00:37:24Z",
   "source": "ENDGAME_EARLY",
   "issues": [
     {
-      "number": 3072,
+      "number": 3099,
       "title": "ENDGAME_EARLY: 10 collectible photobook auctions ending soon",
-      "created_at": "2026-09-25T19:29:59Z",
-      "updated_at": "2026-09-25T19:29:59Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/3072",
-      "earliest_end_at": "2026-09-27T18:44:40Z",
+      "created_at": "2026-09-25T22:40:00Z",
+      "updated_at": "2026-09-25T22:40:00Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/3099",
+      "earliest_end_at": "2026-09-27T20:52:39Z",
       "all_end_times": [
-        "2026-09-27T18:44:40Z",
-        "2026-09-27T18:44:41Z",
-        "2026-09-27T18:45:01Z",
-        "2026-09-27T18:46:01Z",
-        "2026-09-27T18:50:00Z",
-        "2026-09-27T18:51:01Z",
-        "2026-09-27T18:52:29Z"
+        "2026-09-27T20:52:39Z",
+        "2026-09-27T20:53:29Z",
+        "2026-09-27T20:53:45Z",
+        "2026-09-27T20:54:07Z",
+        "2026-09-27T20:54:55Z",
+        "2026-09-27T20:56:14Z",
+        "2026-09-27T20:57:00Z",
+        "2026-09-27T20:58:00Z",
+        "2026-09-27T21:00:00Z"
       ],
-      "lowest_observed_gbp": null,
+      "lowest_observed_gbp": 2.86,
       "candidate_summaries": [
         {
-          "title": "[DAVID HOWARD PHOTOGRAPHY “ROY LICHTENSTEIN TRIBUTE” ORIGINAL SIGNED PHOTOGRAPH!](https://www.ebay.com.hk/itm/227526223178?_skw=signed+photography+book&hash=item34f99ea54a:g:Ky8AAeSwfFdo5bZh)",
+          "title": "[ROCKY & BULLWINKLE: NOTHING UP MY SLEEVE](https://www.ebay.com.hk/itm/237080493347?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=item3733193d23:g:bAsAAeSwRYdpUvTd)",
           "listing_ids": [
-            "227526223178"
+            "237080493347"
           ],
           "observed_price_gbp": null
         },
         {
-          "title": "[DAVID HOWARD PHOTOGRAPHY KEITH HARING PORTRAIT HAND SIGNED ORIGINAL PHOTOGRAPH!](https://www.ebay.com.hk/itm/227526223060?_skw=signed+photography+book&hash=item34f99ea4d4:g:Y3sAAeSwWhto5VAj)",
+          "title": "[JUDIE TZUKE - SPORTS CAR VINYL LP + INNER LYRIC/PICTURE SLEEVE](https://www.ebay.co.uk/itm/377511132005?_skw=%28Paul+Hart%2CCraig+Easton%2CChris+Coekin%2CJohn+Angerson%2CRob+Bremner%2CJames+Mortram%2CMatthew+Finn%29&hash=item57e56abb65:g:WgoAAeSwRmRoj2MY)",
           "listing_ids": [
-            "227526223060"
+            "377511132005"
+          ],
+          "observed_price_gbp": 6.51
+        },
+        {
+          "title": "[BBR 1/43 Ferrari 360 N-GT Super GT Japan 2005 Press Version Matt Black BG300MATT](https://www.ebay.com.hk/itm/820151285384?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=itembef4d37688:g:AJkAAeSw3XhqOcq8)",
+          "listing_ids": [
+            "820151285384"
           ],
           "observed_price_gbp": null
         },
         {
-          "title": "[DAVID HOWARD PHOTOGRAPH \"REAL BUT UNREAL #1\" ORIGINAL HAND SIGNED PHOTOGRAPH!](https://www.ebay.com.hk/itm/227526223234?_skw=signed+photography+book&hash=item34f99ea582:g:lSIAAeSwEaNp4M8M)",
+          "title": "[Jay Ward: “Rocky & Bullwinkle”-  “Bullwinkle The Quarterback ”](https://www.ebay.com.hk/itm/237080494037?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=item3733193fd5:g:6nAAAeSwvxlpPz3q)",
           "listing_ids": [
-            "227526223234"
+            "237080494037"
           ],
           "observed_price_gbp": null
         },
         {
-          "title": "[DAVID HOWARD PHOTOGRAPH \"REAL BUT UNREAL #21\" ORIGINAL HAND SIGNED PHOTOGRAPH!](https://www.ebay.com.hk/itm/227526223241?_skw=signed+photography+book&hash=item34f99ea589:g:76AAAeSw5zhp4M-D)",
+          "title": "[Walter Lance: \"Woody Wood Pecker: Mad Scientist\"](https://www.ebay.com.hk/itm/237080494835?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=item37331942f3:g:xXgAAeSwB9lpP0Al)",
           "listing_ids": [
-            "227526223241"
+            "237080494835"
           ],
           "observed_price_gbp": null
         },
         {
-          "title": "[Berlin Calling by Alex Flach - Photobook Art Subculture Dash Snow Ryan McGinley](https://www.ebay.com.hk/itm/287590609778?_skw=%28Dawoud+Bey%2CRyan+McGinley%2CCarolyn+Drake%2CPaul+Graham%2CMartin+Parr%2CRichard+Billingham%29&hash=item42f5bc7372:g:twMAAeSwpwVqquC5)",
+          "title": "[DIXIE CHICKS rare promo-only CMT Showcase CD photo disc Sept 1999 The Chicks](https://www.ebay.com.au/itm/237080496771?_skw=Walker+Evans+American+Photographs&hash=item3733194a83:g:8hkAAeSwKJ5o6-~3)",
           "listing_ids": [
-            "287590609778"
+            "237080496771"
           ],
           "observed_price_gbp": null
         },
         {
-          "title": "[Dolly Parton Gold Black Coin Pop Music Rock n Roll Country Tribute Memorial USA](https://www.ebay.com.sg/itm/366679376413?_skw=Walker+Evans+American+Photographs&hash=item555fcb421d:g:x3EAAeSwXz1qru1H)",
+          "title": "[Donald Trump Gold Silber Münze WM 2026 Mount Rushmore signiert Americana USA](https://www.ebay.de/itm/318887894325?_skw=August+Sander+Antlitz+der+Zeit&hash=item4a3f331d35:g:uiYAAeSwLWJpQaTo)",
           "listing_ids": [
-            "366679376413"
+            "318887894325"
           ],
           "observed_price_gbp": null
         },
         {
-          "title": "[Relative Dementias (Doctor Who Past Adv) Mark Michalowski ISBN 9780563538448](https://www.ebay.de/itm/198655563558?_skw=%28Sleeping+by+the+Mississippi%2CBroken+Manual%2CSouth+east%2CSummer+camp%2CRaised+by+Wolves%29&hash=item2e40cb5726:g:pF4AAeSwE6dpQzbL)",
+          "title": "[JAWS Card Signatures Ocean Shark Attack Blood Boat Memorabilia Americana Classic](https://www.ebay.co.uk/itm/267789281326?_skw=Walker+Evans+American+Photographs&hash=item3e597c282e:g:bOwAAOSwN~5im42S)",
           "listing_ids": [
-            "198655563558"
+            "267789281326"
+          ],
+          "observed_price_gbp": 2.86
+        },
+        {
+          "title": "[Queen Elizabeth II Silber Hochzeitsmünze Royal Mint Family 1947 1972 alt Vintage](https://www.ebay.de/itm/278390392252?_skw=Bill+Brandt+A+Night+in+London&hash=item40d15c45bc:g:v2QAAOSwbnpkMEti)",
+          "listing_ids": [
+            "278390392252"
           ],
           "observed_price_gbp": null
         },
         {
-          "title": "[Outskirts Remastered 2021 Edition by Todd Hido 2021 Hardcover book Photography](https://www.ebay.com.hk/itm/278393064552?_skw=%28Nan+Goldin%2CMike+Brodie%2CChristian+Patterson%2CTodd+Hido%2CAlessandra+Sanguinetti%29&hash=item40d1850c68:g:Zf0AAOSwTetn20Dn)",
+          "title": "[Die Hard Action Movie Tower signiert lustig Weihnachten Adventskalender 80er Retro LA USA](https://www.ebay.de/itm/366677223729?_skw=Walker+Evans+American+Photographs&hash=item555faa6931:g:s~wAAOSwYt9lylR1)",
           "listing_ids": [
-            "278393064552"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "[MAGNUM CONTACT SHEETS Kristen Lubben 2017 Alec Soth Eve Arnold Photography Book](https://www.ebay.com.hk/itm/287590726296?_skw=%28Alec+Soth%2CMark+Steinmetz%2CJim+Goldberg%2CBryan+Schutmaat%2CGregory+Halpern%2CCurran+Hatleberg%29&hash=item42f5be3a98:g:3CkAAeSwcGZqqva8)",
-          "listing_ids": [
-            "287590726296"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "[Nan Goldin / Luzifers Garten. Herausgegeben mit John Jenkinson, Valérie Mas](https://www.ebay.de/itm/287598370211?_skw=%28Nan+Goldin%2CMike+Brodie%2CChristian+Patterson%2CTodd+Hido%2CAlessandra+Sanguinetti%29&hash=item42f632dda3:g:CGIAAeSwRpxqd5DB)",
-          "listing_ids": [
-            "287598370211"
+            "366677223729"
           ],
           "observed_price_gbp": null
         }
       ]
     },
     {
-      "number": 3073,
+      "number": 3100,
       "title": "ENDGAME_EARLY: 10 collectible photobook auctions ending soon",
-      "created_at": "2026-09-25T19:30:01Z",
-      "updated_at": "2026-09-25T19:30:01Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/3073",
-      "earliest_end_at": "2026-09-27T18:53:18Z",
+      "created_at": "2026-09-25T22:40:01Z",
+      "updated_at": "2026-09-25T22:40:01Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/3100",
+      "earliest_end_at": "2026-09-27T21:07:00Z",
       "all_end_times": [
-        "2026-09-27T18:53:18Z",
-        "2026-09-27T18:55:29Z",
-        "2026-09-27T18:55:45Z",
-        "2026-09-27T18:56:01Z",
-        "2026-09-27T18:56:24Z",
-        "2026-09-27T18:57:50Z",
-        "2026-09-27T19:00:01Z"
+        "2026-09-27T21:07:00Z",
+        "2026-09-27T21:11:00Z",
+        "2026-09-27T21:12:17Z",
+        "2026-09-27T21:13:00Z",
+        "2026-09-27T21:14:00Z",
+        "2026-09-27T21:15:00Z",
+        "2026-09-27T21:17:00Z",
+        "2026-09-27T21:18:25Z",
+        "2026-09-27T21:22:00Z",
+        "2026-09-27T21:23:00Z"
       ],
-      "lowest_observed_gbp": 19.99,
+      "lowest_observed_gbp": 31.9,
       "candidate_summaries": [
         {
-          "title": "[Carbon Fiber Center Gear Shift Panel Frame Cover Trim For Audi A3 S3 8V 2014-19](https://www.ebay.co.uk/itm/158314290276?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=item24dc445c64:g:n4sAAeSw69RqsCuN)",
+          "title": "[Tom Brady Goldmünze Sport NFL Trump GOAT Hall of Fame Las Vegas Raiders Draft](https://www.ebay.de/itm/267789281315?_skw=August+Sander+Antlitz+der+Zeit&hash=item3e597c2823:g:xB0AAeSwUatpys8d)",
           "listing_ids": [
-            "158314290276"
-          ],
-          "observed_price_gbp": 19.99
-        },
-        {
-          "title": "[1969 Ford Cortina (Mk. 2) broszura samochodowa: De Luxe, Super, GT, 1600E, Cortina Lotus](https://www.ebay.pl/itm/158314291423?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=item24dc4460df:g:0qMAAOSwkCBmdusQ)",
-          "listing_ids": [
-            "158314291423"
+            "267789281315"
           ],
           "observed_price_gbp": null
         },
         {
-          "title": "[ELIZABETH TAYLOR 35mm color slide taken by Farooz Zarhedi 1998](https://www.ebay.ca/itm/237080395171?_skw=%28An-My+L%C3%AA%2CDavid+Armstrong%2CCatherine+Opie%2CJason+Eskenazi%2CKaty+Grannan%2CRichard+Renaldi%29&hash=item373317bda3:g:DbkAAeSw4NdqWpIf)",
+          "title": "[1914 Zeitung 1. Weltkrieg Antik II Großbritannien erklärt Deutschland den Krieg 1. Weltkrieg alt UK](https://www.ebay.de/itm/267789281311?_skw=August+Sander+Antlitz+der+Zeit&hash=item3e597c281f:g:hrIAAOSw82tmL6Nf)",
           "listing_ids": [
-            "237080395171"
+            "267789281311"
           ],
           "observed_price_gbp": null
         },
         {
-          "title": "[VIVIAN MAIER Street Photographer Hardback 2011 1st Edition Photobook Powerhouse](https://www.ebay.com.hk/itm/287590756024?_skw=photobook&hash=item42f5beaeb8:g:QboAAeSwt3xqqvxi)",
+          "title": "[LORETTA SWIT cuatro fotos de prensa originales Valerie Harper Sandy Dennis Rip Torn](https://www.ebay.es/itm/237080517732?_skw=August+Sander+Antlitz+der+Zeit&hash=item3733199c64:g:K6EAAeSwt~xpJANz)",
           "listing_ids": [
-            "287590756024"
+            "237080517732"
           ],
           "observed_price_gbp": null
         },
         {
-          "title": "[ROGER MOORE cuatro fotos de prensa solo para tus ojos vive y deja morir James Bond](https://www.ebay.es/itm/237080395497?_skw=lote+libros+fotograf%C3%ADa&hash=item373317bee9:g:yj4AAeSwcrlpsHqm)",
+          "title": "[Charlie Kirk Neusilber Münze Mikrotelefon Denkmal Trump Unterstützer alte Medaille](https://www.ebay.de/itm/366677223743?_skw=August+Sander+Antlitz+der+Zeit&hash=item555faa693f:g:yvgAAeSwid5pNIeb)",
           "listing_ids": [
-            "237080395497"
+            "366677223743"
           ],
           "observed_price_gbp": null
         },
         {
-          "title": "[Impresión firmada por fotografía de David Howard del libro \"Viaje sagrado\"; impresión #5](https://www.ebay.es/itm/227526240803?_skw=lote+libros+fotograf%C3%ADa&hash=item34f99eea23:g:QjwAAOSwXm9lJEUD)",
+          "title": "[Mike Tyson Goldmünze World Heavyweight Championship Gürtel Boxen Fury Jake Paul](https://www.ebay.de/itm/366677223745?_skw=August+Sander+Antlitz+der+Zeit&hash=item555faa6941:g:tkcAAOSwE21jbBSI)",
           "listing_ids": [
-            "227526240803"
+            "366677223745"
           ],
           "observed_price_gbp": null
         },
         {
-          "title": "[Photography , John Szarkowski, museum of modern art](https://www.ebay.ie/itm/206574502435?_skw=photography+book&hash=item3018ccc223:g:RpAAAeSwAfRqsoDl)",
+          "title": "[König Charles III Krönung Silber Gold alte Royal Münze 2023 signiert Kunstdiamant](https://www.ebay.de/itm/267789281307?_skw=Walker+Evans+American+Photographs&hash=item3e597c281b:g:HlEAAOSwH6NkrDz6)",
           "listing_ids": [
-            "206574502435"
+            "267789281307"
           ],
           "observed_price_gbp": null
         },
         {
-          "title": "[(3) De colección 2001 Serie Mundial MLB SGA Oso \"Spirit\" Dbacks Yankees ~ gorro bebé](https://www.ebay.es/itm/267790525496?_skw=August+Sander+Antlitz+der+Zeit&hash=item3e598f2438:g:kgsAAeSwCmBqExyH)",
+          "title": "[Jesus Christus 10 Gebote Gold Silber Barren Christentum Kruzifix Kirche Himmel](https://www.ebay.de/itm/267789281305?_skw=August+Sander+Antlitz+der+Zeit&hash=item3e597c2819:g:VCgAAOSwfNFlU-LI)",
           "listing_ids": [
-            "267790525496"
+            "267789281305"
           ],
           "observed_price_gbp": null
         },
         {
-          "title": "[STARBAR Karaoke Soundbar. All-in-one Karaoke Machine, Soundbar, Wireless Speaker](https://www.ebay.co.uk/itm/257754787710?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=item3c0361ef7e:g:TsgAAeSwN1lqr-Cb)",
+          "title": "[HJC C70 Full Face Motorcycle Helmet – Size Large (60 cm) – Matte Black/Grey/Red](https://www.ebay.co.uk/itm/327366971660?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=item4c3897910c:g:EJsAAeSw0VtqZnb-)",
           "listing_ids": [
-            "257754787710"
+            "327366971660"
           ],
-          "observed_price_gbp": 25.04
+          "observed_price_gbp": 31.9
         },
         {
-          "title": "[The Rolling Stones TASCHEN SUMO Signed Book #0394/1600 Jagger Richards](https://www.ebay.de/itm/237080348415?_skw=signiertes+fotobuch&hash=item37331706ff:g:ycwAAeSwjBpqsB7D)",
+          "title": "[Rocky Silver Liberty Champion Coin Star & Stripes Ali Signature Boxhandschuhe USA](https://www.ebay.de/itm/267789281300?_skw=Walker+Evans+American+Photographs&hash=item3e597c2814:g:ZZQAAeSwjh5qnrNl)",
           "listing_ids": [
-            "237080348415"
+            "267789281300"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[Space Shuttle Challenger Gold Silber Münze NASA Stars & Stripes Flagge Trek Wars UK](https://www.ebay.de/itm/366677223754?_skw=Walker+Evans+American+Photographs&hash=item555faa694a:g:iJcAAOSw7k5m2MAk)",
+          "listing_ids": [
+            "366677223754"
           ],
           "observed_price_gbp": null
         }
       ]
     },
     {
-      "number": 3074,
+      "number": 3101,
       "title": "ENDGAME_EARLY: 10 collectible photobook auctions ending soon",
-      "created_at": "2026-09-25T19:30:02Z",
-      "updated_at": "2026-09-25T19:30:02Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/3074",
-      "earliest_end_at": "2026-09-27T19:00:01Z",
+      "created_at": "2026-09-25T22:40:02Z",
+      "updated_at": "2026-09-25T22:40:02Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/3101",
+      "earliest_end_at": "2026-09-27T21:24:00Z",
       "all_end_times": [
-        "2026-09-27T19:00:01Z",
-        "2026-09-27T19:00:22Z",
-        "2026-09-27T19:00:52Z",
-        "2026-09-27T19:01:08Z",
-        "2026-09-27T19:02:54Z",
-        "2026-09-27T19:03:53Z",
-        "2026-09-27T19:04:00Z",
-        "2026-09-27T19:05:54Z"
+        "2026-09-27T21:24:00Z",
+        "2026-09-27T21:31:55Z",
+        "2026-09-27T21:33:00Z",
+        "2026-09-27T21:33:41Z",
+        "2026-09-27T21:34:38Z",
+        "2026-09-27T21:37:00Z",
+        "2026-09-27T21:39:11Z",
+        "2026-09-27T21:39:20Z"
       ],
-      "lowest_observed_gbp": 37.1,
+      "lowest_observed_gbp": 33.98,
       "candidate_summaries": [
         {
-          "title": "[Photograph As Contemporary Art : Third Edition by Charlotte Cotton (2014, Trade](https://www.ebay.ie/itm/206574391647?_skw=photography+book&hash=item3018cb115f:g:lkcAAeSwOXdqsnfm)",
+          "title": "[Gold Silver Ireland Coin Irish War 1921 II 2021 I St Paddys Day World Green Gift](https://www.ebay.com.sg/itm/366677223755?_skw=%28Robert+Adams%2CPeter+Mitchell%2CJohn+Davies%2CPaul+Trevor%2CEamonn+Doyle%29&hash=item555faa694b:g:pDMAAOSww6lfvsKq)",
           "listing_ids": [
-            "206574391647"
+            "366677223755"
           ],
           "observed_price_gbp": null
         },
         {
-          "title": "[Zorax Talon Kask motocyklowy Rozmiar M Lekko używany](https://www.ebay.pl/itm/307189523534?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=item4785ec244e:g:0FYAAeSwyUlqHW8B)",
+          "title": "[LUCAS FOGLIA: HUMAN NATURE 1st Edition Nazraeli 2017 Hardcover New In Shrinkwrap](https://www.ebay.com.hk/itm/336804215192?_skw=%28Matthew+Genitempo%2CLucas+Foglia%2CAndre+D.+Wagner%2CMatt+Eich%2CSasha+Phyars-Burgess%29&hash=item4e6b187998:g:22oAAeSw9zVqTtVN)",
           "listing_ids": [
-            "307189523534"
+            "336804215192"
           ],
           "observed_price_gbp": null
         },
         {
-          "title": "[EASTBOUND EXPRESS - YOU'RE A BEAT: THE BEST OF  (USA CD with 3 BONUS TRACKS)](https://www.ebay.ca/itm/377510991612?_skw=%28Robert+Adams%2CPeter+Mitchell%2CJohn+Davies%2CPaul+Trevor%2CEamonn+Doyle%29&hash=item57e56896fc:g:bZ8AAOSwtahoKhOA)",
+          "title": "[BORIS JOHNSON Goldmünze BREXIT Union Jack Big Ben Uhr Juwel Premierminister UKIP](https://www.ebay.de/itm/366677223764?_skw=Walker+Evans+American+Photographs&hash=item555faa6954:g:AGgAAOSwzKxiYaQ-)",
           "listing_ids": [
-            "377510991612"
+            "366677223764"
           ],
           "observed_price_gbp": null
         },
         {
-          "title": "[Photo/Picture mounting boards and frame surrounds - job lot](https://www.ebay.co.uk/itm/128089796873?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=item1dd2bf3109:g:R94AAeSw1LlqkEgZ)",
+          "title": "[BERTIEN VAN MANEN: Easter and Oak Trees - 1st Edition, MACK, 2013](https://www.ebay.co.uk/itm/336804217174?_skw=photography+book&hash=item4e6b188156:g:~ZcAAOSwwiBmbYwT)",
           "listing_ids": [
-            "128089796873"
+            "336804217174"
           ],
-          "observed_price_gbp": 37.1
+          "observed_price_gbp": 33.98
         },
         {
-          "title": "[SONY PLAYSTATION 4 PS4 BLACK Console + Controller +Games - LOW P&P NORESERVE](https://www.ebay.co.uk/itm/800691217937?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=itemba6cea6611:g:3JwAAeSwQRppa8o4)",
+          "title": "[MARTIN PARR: THE LAST RESORT - SIGNED - Dewi Lewis 2018 - British Photography](https://www.ebay.it/itm/336804217664?_skw=libro+fotografia+firmato&hash=item4e6b188340:g:~fEAAeSwbVVpT~J9)",
           "listing_ids": [
-            "800691217937"
+            "336804217664"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[WM 1966 FDC Briefmarke signiert Mannschaft Bild Ticket Programm 2026 Vintage Retro](https://www.ebay.de/itm/366677223768?_skw=August+Sander+Antlitz+der+Zeit&hash=item555faa6958:g:v1MAAeSwzRxqAw6l)",
+          "listing_ids": [
+            "366677223768"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[THE EVERYDAY Documents Of Contemporary Art Whitechapel MIT 2008 Theory Rare](https://www.ebay.de/itm/336804221710?_skw=%28Walker+Evans%2CDiane+Arbus%2CBruce+Davidson%2CWilliam+Eggleston%2CStephen+Shore%2CChris+Killip%29&hash=item4e6b18930e:g:gScAAeSwE99qOr9y)",
+          "listing_ids": [
+            "336804221710"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[JIM GOLDBERG Destiny's Shiny Bracelet Signed Photo MAGNUM SQUARE Archival Print](https://www.ebay.de/itm/336807915268?_skw=%28Alec+Soth%2CMark+Steinmetz%2CJim+Goldberg%2CBryan+Schutmaat%2CGregory+Halpern%2CCurran+Hatleberg%29&hash=item4e6b50ef04:g:alYAAeSwaOtocEz9)",
+          "listing_ids": [
+            "336807915268"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[ALEC SOTH Cambridge Minnesota 2017 signiertes Foto MAGNUM SQUARE Archivdruck 6 Zoll](https://www.ebay.de/itm/336807915273?_skw=%28Alec+Soth%2CMark+Steinmetz%2CJim+Goldberg%2CBryan+Schutmaat%2CGregory+Halpern%2CCurran+Hatleberg%29&hash=item4e6b50ef09:g:ImEAAOSwQUFjT8i2)",
+          "listing_ids": [
+            "336807915273"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[MAGNUM 2020 -  Olivia Arthur Magnum Photo Agency on lockdown 9782952410236 NEW](https://www.ebay.de/itm/336807915266?_skw=%28Simon+Wheatley%2COlivia+Arthur%2CChloe+Dewe+Mathews%2CJack+Latham%2CRobbie+Lawrence%2CRobert+Frank%29&hash=item4e6b50ef02:g:y34AAeSwGlBonw8N)",
+          "listing_ids": [
+            "336807915266"
+          ],
+          "observed_price_gbp": null
+        }
+      ]
+    },
+    {
+      "number": 3102,
+      "title": "ENDGAME_EARLY: 10 collectible photobook auctions ending soon",
+      "created_at": "2026-09-25T22:40:03Z",
+      "updated_at": "2026-09-25T22:40:03Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/3102",
+      "earliest_end_at": "2026-09-27T21:39:20Z",
+      "all_end_times": [
+        "2026-09-27T21:39:20Z",
+        "2026-09-27T21:39:21Z",
+        "2026-09-27T21:41:37Z",
+        "2026-09-27T21:42:13Z",
+        "2026-09-27T21:46:54Z",
+        "2026-09-27T21:52:17Z"
+      ],
+      "lowest_observed_gbp": 10.99,
+      "candidate_summaries": [
+        {
+          "title": "[LIVES LESS ORDINARY British Working Class Lives Re-seen 2 Temple Place ART Photo](https://www.ebay.de/itm/336807915302?_skw=%28Walker+Evans%2CDiane+Arbus%2CBruce+Davidson%2CWilliam+Eggleston%2CStephen+Shore%2CChris+Killip%29&hash=item4e6b50ef26:g:hwcAAOSwiCZoRoyJ)",
+          "listing_ids": [
+            "336807915302"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[ALEX WEBB Havana, Cuba 1993 - Signed Photo MAGNUM SQUARE Archival Print 6\"x 6\"](https://www.ebay.com.hk/itm/336807915257?_skw=%28Mitch+Epstein%2CAlex+Webb%2CDoug+DuBois%2CRaymond+Meeks%2CPhilip-Lorca+diCorcia%2CJamel+Shabazz%29&hash=item4e6b50eef9:g:p78AAOSw0lhjXXVG)",
+          "listing_ids": [
+            "336807915257"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[European Eyes on Japan 10 - Marco Bohr John Davies Mette Tronvoll Cary Marker](https://www.ebay.com.hk/itm/336807915271?_skw=%28Robert+Adams%2CPeter+Mitchell%2CJohn+Davies%2CPaul+Trevor%2CEamonn+Doyle%29&hash=item4e6b50ef07:g:kVoAAeSwrrxonwj4)",
+          "listing_ids": [
+            "336807915271"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[LOST IN TRANSITION Peter Bialobrzeski Michael Glasmeier PHOTOBOOK 9783775720496](https://www.ebay.co.uk/itm/336807915272?_skw=photography+book&hash=item4e6b50ef08:g:G7YAAOSwAjdoRhRy)",
+          "listing_ids": [
+            "336807915272"
+          ],
+          "observed_price_gbp": 27.74
+        },
+        {
+          "title": "[KIOSK A History of Photojournalism 1839-1973 Lebeck & von Dewitz 978-3882437911](https://www.ebay.de/itm/336807915290?_skw=%28Simon+Wheatley%2COlivia+Arthur%2CChloe+Dewe+Mathews%2CJack+Latham%2CRobbie+Lawrence%2CRobert+Frank%29&hash=item4e6b50ef1a:g:PSMAAOSw~ipfCkY3)",
+          "listing_ids": [
+            "336807915290"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[HIROJI KUBOTA From Sea to Shining Sea A Portrait of America 9780393034103 MAGNUM](https://www.ebay.de/itm/336807915297?_skw=%28Looking+for+Alice%2CThe+Port+Glasgow+Book+Project%2CWe+English%2CThames+Log%2CThe+Americans%29&hash=item4e6b50ef21:g:rjcAAeSwQV9onwv0)",
+          "listing_ids": [
+            "336807915297"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[LEE FRIEDLANDER: AT WORK Steidl 1st Edition Hardcover 2002 American Documentary](https://www.ebay.com.hk/itm/336804223701?_skw=%28Robin+Friend%2CLee+Friedlander%2CDanny+Lyon%2CJoel+Sternfeld%2CSusan+Meiselas%2CLarry+Clark%29&hash=item4e6b189ad5:g:ef4AAeSw27Bp3pyw)",
+          "listing_ids": [
+            "336804223701"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[4D Black Carbon Fibre Vinyl 0.5m x 2m Roll - BUBBLE FREE - Vehicle Car Wrap Film](https://www.ebay.co.uk/itm/407232522251?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=item5ed0f3280b:g:Xd4AAOSwHJNilLPJ)",
+          "listing_ids": [
+            "407232522251"
+          ],
+          "observed_price_gbp": 10.99
+        },
+        {
+          "title": "[3D Black Carbon Fibre Vinyl 0.5m x 2m Roll - AIR FREE - Vehicle Car Wrap Film](https://www.ebay.co.uk/itm/407232526720?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=item5ed0f33980:g:F-IAAOSwE45jhroN)",
+          "listing_ids": [
+            "407232526720"
+          ],
+          "observed_price_gbp": 10.99
+        },
+        {
+          "title": "[\"Knave of Hearts\" by Danny Lyon, 1999, Signed](https://www.ebay.com.hk/itm/206570536663?_skw=%28Robin+Friend%2CLee+Friedlander%2CDanny+Lyon%2CJoel+Sternfeld%2CSusan+Meiselas%2CLarry+Clark%29&hash=item3018903ed7:g:7IYAAOSwebVns6ry)",
+          "listing_ids": [
+            "206570536663"
+          ],
+          "observed_price_gbp": null
+        }
+      ]
+    },
+    {
+      "number": 3103,
+      "title": "ENDGAME_EARLY: 10 collectible photobook auctions ending soon",
+      "created_at": "2026-09-25T22:40:04Z",
+      "updated_at": "2026-09-25T22:40:04Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/3103",
+      "earliest_end_at": "2026-09-27T21:58:04Z",
+      "all_end_times": [
+        "2026-09-27T21:58:04Z",
+        "2026-09-27T21:58:38Z",
+        "2026-09-27T21:58:48Z",
+        "2026-09-27T22:00:01Z",
+        "2026-09-27T22:05:08Z",
+        "2026-09-27T22:05:59Z",
+        "2026-09-27T22:07:06Z"
+      ],
+      "lowest_observed_gbp": 3.78,
+      "candidate_summaries": [
+        {
+          "title": "[Diapositiva a color CRYSTAL GAYLE 35 mm en Statler Bros. Show 17 de junio de 1995 TNN](https://www.ebay.es/itm/237080560751?_skw=Groebli+Magie+der+Schiene&hash=item37331a446f:g:7OIAAOSwVSJnHItE)",
+          "listing_ids": [
+            "237080560751"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[Lot of 9 Rigby \"New PM Story Books\" Readers Early Learning Homeschool 1990's](https://www.ebay.com/itm/206570541943?_skw=%28House+Hunting%2CLaToya+Ruby+Frazier%2CImmediate+Family%2CDeana+Lawson%3A+An+Aperture+Monograph%29&hash=item3018905377:g:2zAAAeSw64ZqgNfc)",
+          "listing_ids": [
+            "206570541943"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[Alec Soth ADVICE FOR YOUNG ARTISTS 978-1915743763 Signed MACK Hardback Photobook](https://www.ebay.com.hk/itm/117426188553?_skw=signed+photography+book&hash=item1b57257109:g:wu4AAeSwwTBpVane)",
+          "listing_ids": [
+            "117426188553"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[MIST MOUNTAIN WATER WIND John Davies - UK Landscape photos  1986 1st Edition](https://www.ebay.com.hk/itm/117426188533?_skw=%28Robert+Adams%2CPeter+Mitchell%2CJohn+Davies%2CPaul+Trevor%2CEamonn+Doyle%29&hash=item1b572570f5:g:v-QAAOSwQ-RnK68u)",
+          "listing_ids": [
+            "117426188533"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[PORTRAIT PHOTOGRAPHER'S STOOL / CHAIR - Photo Memorabilia KIBRIS Stoke Newington](https://www.ebay.co.uk/itm/117426188537?_skw=%28Dawoud+Bey%2CRyan+McGinley%2CCarolyn+Drake%2CPaul+Graham%2CMartin+Parr%2CRichard+Billingham%29&hash=item1b572570f9:g:DgoAAOSw4L5lr6TG)",
+          "listing_ids": [
+            "117426188537"
+          ],
+          "observed_price_gbp": 42.3
+        },
+        {
+          "title": "[Walker Evans American Photographs with essay by Lincoln Kirstein 1975](https://www.ebay.com/itm/377501187206?_skw=Walker+Evans+American+Photographs&hash=item57e4d2fc86:g:b0sAAeSwt3xqmC90)",
+          "listing_ids": [
+            "377501187206"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[Tokyo Lucky Hole Nobuyoshi Araki Vintage Art Photography Erotica 1997 Taschen](https://www.ebay.co.uk/itm/336800225391?_skw=photography+book&hash=item4e6adb986f:g:wx8AAeSwCMlqrZcd)",
+          "listing_ids": [
+            "336800225391"
+          ],
+          "observed_price_gbp": 52.95
+        },
+        {
+          "title": "[RALF TECH WRB First Edition Automatic Diver Watch with Silicone Strap and Box](https://www.ebay.com.au/itm/188957238447?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=item2bfebaa4af:g:638AAeSw0pRqRCsn)",
+          "listing_ids": [
+            "188957238447"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[BILLETWORKZ - Fusion weighted shift knob - 2024 Mustang Darkhorse & Rev Lockout](https://www.ebay.nl/itm/158314747853?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=item24dc4b57cd:g:PHAAAeSwI8pp3BTZ)",
+          "listing_ids": [
+            "158314747853"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[The Golden Age Of British Photography 1839-1900](https://www.ebay.co.uk/itm/128090018491?_skw=photography+book&hash=item1dd2c292bb:g:AoEAAeSwSOpqgjQf)",
+          "listing_ids": [
+            "128090018491"
+          ],
+          "observed_price_gbp": 3.78
+        }
+      ]
+    },
+    {
+      "number": 3104,
+      "title": "ENDGAME_EARLY: 8 collectible photobook auctions ending soon",
+      "created_at": "2026-09-25T22:40:05Z",
+      "updated_at": "2026-09-25T22:40:05Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/3104",
+      "earliest_end_at": "2026-09-27T22:07:14Z",
+      "all_end_times": [
+        "2026-09-27T22:07:14Z",
+        "2026-09-27T22:07:36Z",
+        "2026-09-27T22:07:57Z",
+        "2026-09-27T22:20:01Z",
+        "2026-09-27T22:21:06Z",
+        "2026-09-27T22:21:57Z",
+        "2026-09-27T22:22:24Z",
+        "2026-09-27T22:33:08Z"
+      ],
+      "lowest_observed_gbp": 21.5,
+      "candidate_summaries": [
+        {
+          "title": "[Lee Friedlander: America by Car by Lee Friedlander: Used - like new](https://www.ebay.com.hk/itm/137760421498?_skw=%28Robin+Friend%2CLee+Friedlander%2CDanny+Lyon%2CJoel+Sternfeld%2CSusan+Meiselas%2CLarry+Clark%29&hash=item201329367a:g:-r8AAeSw3h9qiNeM)",
+          "listing_ids": [
+            "137760421498"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[Period Of Juvenile Prosperity by Mike Brodie - first edtion first printing](https://www.ebay.com/itm/137760422360?_skw=%28Nan+Goldin%2CMike+Brodie%2CChristian+Patterson%2CTodd+Hido%2CAlessandra+Sanguinetti%29&hash=item20132939d8:g:H84AAeSw4PZqeM-6)",
+          "listing_ids": [
+            "137760422360"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[Lost Coast by Curran Hatleberg (1st Edition, 2016, Hardcover) Signed](https://www.ebay.com/itm/137760422876?_skw=%28Alec+Soth%2CMark+Steinmetz%2CJim+Goldberg%2CBryan+Schutmaat%2CGregory+Halpern%2CCurran+Hatleberg%29&hash=item2013293bdc:g:vLEAAeSwf8Fp~p25)",
+          "listing_ids": [
+            "137760422876"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[Hold Still___keep going by Robert Frank with Ute Eskildsen 2001 HB/DJ](https://www.ebay.com/itm/398402062096?_skw=%28Simon+Wheatley%2COlivia+Arthur%2CChloe+Dewe+Mathews%2CJack+Latham%2CRobbie+Lawrence%2CRobert+Frank%29&hash=item5cc29d0710:g:ESYAAeSwS6JqmGwE)",
+          "listing_ids": [
+            "398402062096"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "[David Gibson - Street Photography : A History In 100 Iconic Photographs New Book](https://www.ebay.co.uk/itm/278393739666?_skw=photography+book&hash=item40d18f5992:g:aeUAAOSwDedk5lwB)",
+          "listing_ids": [
+            "278393739666"
           ],
           "observed_price_gbp": 83.9
         },
         {
-          "title": "[SHIMANO PhotoChromatic Grey Sunglasses  CE-PLSR3-PH MattBlk Lenses  *NEW In BOX*](https://www.ebay.com/itm/327366851284?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=item4c3895bad4:g:IdwAAeSwIGhp~mOj)",
+          "title": "[Jamel Shabazz - A Time Before Crack First Edition Hardcover Book (2005)](https://www.ebay.co.uk/itm/278393740858?_skw=%28Mitch+Epstein%2CAlex+Webb%2CDoug+DuBois%2CRaymond+Meeks%2CPhilip-Lorca+diCorcia%2CJamel+Shabazz%29&hash=item40d18f5e3a:g:ndYAAOSw6wdm51RC)",
           "listing_ids": [
-            "327366851284"
+            "278393740858"
           ],
-          "observed_price_gbp": null
+          "observed_price_gbp": 63.1
         },
         {
-          "title": "[Paul Trevor - Once Upon a Time in Brick Lane Hoxton Mini Press Book 2019](https://www.ebay.pl/itm/278393064542?_skw=%28Robert+Adams%2CPeter+Mitchell%2CJohn+Davies%2CPaul+Trevor%2CEamonn+Doyle%29&hash=item40d1850c5e:g:pM8AAeSwHkZqUhAE)",
+          "title": "[Sam Stephenson - Gene Smith's Sink : A Wide-Angle View Brand New Hardcover Book](https://www.ebay.co.uk/itm/278393741576?_skw=photography+book&hash=item40d18f6108:g:6ycAAOSwTWFnbr6r)",
           "listing_ids": [
-            "278393064542"
+            "278393741576"
           ],
-          "observed_price_gbp": null
+          "observed_price_gbp": 21.5
         },
         {
-          "title": "[£2950 EMPORIO ARMANI SHEARLING AVIATOR KURTKA BOMBERKA 38 48 SMALL MADE ITALY](https://www.ebay.pl/itm/278393356499?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=item40d18980d3:g:BXIAAeSwWhto7zm6)",
+          "title": "[CAROL CHANNING original AP cable foto GOWER CHAMPION ¡Hola Dolly! fiesta 1964](https://www.ebay.es/itm/237080589015?_skw=fotolibro+firmado&hash=item37331ab2d7:g:~gwAAeSwqLtpHqZQ)",
           "listing_ids": [
-            "278393356499"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "[£1345 GIVENCHY NOWY TARTAN WEŁNIANY SKÓRZANE RĘKAWY ZAMEK SWETER UK 42 EU 52 L WŁOCHY](https://www.ebay.pl/itm/278393356508?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=item40d18980dc:g:OpYAAeSwi7ppK7B-)",
-          "listing_ids": [
-            "278393356508"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "[£2250 EMPORIO ARMANI LEDER STICHDETAIL SCHÖNES LAMMFELL 40 50 M ITALIEN](https://www.ebay.ch/itm/278393356530?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=item40d18980f2:g:RVIAAeSwULhpqiS0)",
-          "listing_ids": [
-            "278393356530"
-          ],
-          "observed_price_gbp": null
-        }
-      ]
-    },
-    {
-      "number": 3075,
-      "title": "ENDGAME_EARLY: 10 collectible photobook auctions ending soon",
-      "created_at": "2026-09-25T19:30:03Z",
-      "updated_at": "2026-09-25T19:30:03Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/3075",
-      "earliest_end_at": "2026-09-27T19:05:54Z",
-      "all_end_times": [
-        "2026-09-27T19:05:54Z",
-        "2026-09-27T19:06:00Z",
-        "2026-09-27T19:07:01Z",
-        "2026-09-27T19:10:00Z",
-        "2026-09-27T19:10:01Z",
-        "2026-09-27T19:11:21Z",
-        "2026-09-27T19:13:18Z",
-        "2026-09-27T19:14:00Z",
-        "2026-09-27T19:15:00Z"
-      ],
-      "lowest_observed_gbp": 12.0,
-      "candidate_summaries": [
-        {
-          "title": "[£2250 GEORGIO ARMANI GRANATOWA ZAMSZOWA CZARNA SKÓRZANA KURTKA 46 56 XXL MADE ITALY](https://www.ebay.pl/itm/278393356548?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=item40d1898104:g:8TYAAeSw2BtphsjG)",
-          "listing_ids": [
-            "278393356548"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "[Tarjeta dorada Titanic más grande del mundo barco marítimo océano icónico inusual Nueva York Reino Unido](https://www.ebay.es/itm/318887863295?_skw=Groebli+Magie+der+Schiene&hash=item4a3f32a3ff:g:WRkAAOSwfp9nmmtK)",
-          "listing_ids": [
-            "318887863295"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "[2 X Sonik  XTRACTOR+  Carp Rods 10FT 3LB  RRP £150,,,](https://www.ebay.co.uk/itm/318893771727?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=item4a3f8ccbcf:g:jF4AAeSwURJpqi-v)",
-          "listing_ids": [
-            "318893771727"
-          ],
-          "observed_price_gbp": 21.0
-        },
-        {
-          "title": "[New York City Transit Buses 1945-1975 Bus Photo Archive United States Guy Martin](https://www.ebay.co.uk/itm/188952796678?_skw=%28Andy+Sewell%2CGuy+Martin%2CLewis+Bush%2CNicholas+J.+R.+White%2CNicholas+JR+White%2CNicholas+White%29&hash=item2bfe76de06:g:wUsAAeSwShxqruyi)",
-          "listing_ids": [
-            "188952796678"
-          ],
-          "observed_price_gbp": 12.0
-        },
-        {
-          "title": "[Gianluca Galtrucco - For Your Consideration by Peter Frank (Hardcover, 2017)](https://www.ebay.com.hk/itm/278393064556?_skw=%28Alec+Soth%2CMark+Steinmetz%2CJim+Goldberg%2CBryan+Schutmaat%2CGregory+Halpern%2CCurran+Hatleberg%29&hash=item40d1850c6c:g:rYoAAeSwzVpokm-a)",
-          "listing_ids": [
-            "278393064556"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "[WILLIAM KLEIN Photographs Aperture Monograph Hardback 1981 1st Edition Tokyo NYC](https://www.ebay.ie/itm/287594475008?_skw=photography+book&hash=item42f5f76e00:g:9pQAAeSwnsxqrXRu)",
-          "listing_ids": [
-            "287594475008"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "[DUCATI 1098 STREETFIGHTER 2009 - NO RESERVE](https://www.ebay.co.uk/itm/298692976862?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=item458b7d20de:g:ID4AAeSw6z1qeLLs)",
-          "listing_ids": [
-            "298692976862"
-          ],
-          "observed_price_gbp": 4650.0
-        },
-        {
-          "title": "[David Hockney RA - Framed Mini Prints x 4 of  Harvest In The E. Yorkshire Wolds](https://www.ebay.co.uk/itm/168710286932?_skw=%28Roe+Ethridge%2CStacy+Kranitz%2CMatt+Black%2CZoe+Strauss%2CJason+Fulford%2CDoug+Rickard%2CEd+Panar%29&hash=item2747eaae54:g:MyAAAeSwSYtpIbzV)",
-          "listing_ids": [
-            "168710286932"
-          ],
-          "observed_price_gbp": 37.1
-        },
-        {
-          "title": "[Auschwitz Black Silver Coin Holocaust Birkenau Remembrance Death Camp Israel USA](https://www.ebay.com.sg/itm/366677234772?_skw=Walker+Evans+American+Photographs&hash=item555faa9454:g:cQsAAOSwOsdlbiw2)",
-          "listing_ids": [
-            "366677234772"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "[Donald Trump Silver Coin FIFA World Cup 2026 250 Signature USA Ronaldo Messi UK](https://www.ebay.com.sg/itm/318887863313?_skw=Walker+Evans+American+Photographs&hash=item4a3f32a411:g:16EAAeSwvZ9pSEz1)",
-          "listing_ids": [
-            "318887863313"
-          ],
-          "observed_price_gbp": null
-        }
-      ]
-    },
-    {
-      "number": 3076,
-      "title": "ENDGAME_EARLY: 6 collectible photobook auctions ending soon",
-      "created_at": "2026-09-25T19:30:05Z",
-      "updated_at": "2026-09-25T19:30:05Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/3076",
-      "earliest_end_at": "2026-09-27T19:16:00Z",
-      "all_end_times": [
-        "2026-09-27T19:16:00Z",
-        "2026-09-27T19:16:28Z",
-        "2026-09-27T19:16:56Z",
-        "2026-09-27T19:18:00Z",
-        "2026-09-27T19:18:01Z",
-        "2026-09-27T19:20:10Z"
-      ],
-      "lowest_observed_gbp": null,
-      "candidate_summaries": [
-        {
-          "title": "[Moneda de plata Titanic 1912 Fiji Man White Star Line Londres Reina Isabel II 2012](https://www.ebay.es/itm/366677234773?_skw=Groebli+Magie+der+Schiene&hash=item555faa9455:g:2Y8AAOSw4qhja9hn)",
-          "listing_ids": [
-            "366677234773"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "[CASADA... CON HIJOS tres fotos de prensa CHRISTINA APPLEGATE Ed O'Neill](https://www.ebay.es/itm/237080410104?_skw=Groebli+Auge+der+Liebe&hash=item373317f7f8:g:JegAAeSwr-tpsKpS)",
-          "listing_ids": [
-            "237080410104"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "[HAYLEY MILLS tres fotos de prensa originales ROY BOULTING The Flame Trees of Thika](https://www.ebay.es/itm/237080410557?_skw=August+Sander+Antlitz+der+Zeit&hash=item373317f9bd:g:dvQAAeSwRXVqWpAl)",
-          "listing_ids": [
-            "237080410557"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "[Joe Biden Gold Silber Münze Karte USA Staatsflaggen Präsident US Kamala Harris signiert](https://www.ebay.de/itm/318887863318?_skw=fotob%C3%BCcher+sammlung&hash=item4a3f32a416:g:63MAAOSwMJZf2l0M)",
-          "listing_ids": [
-            "318887863318"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "[CHICAGO Adam Broomberg Oliver Chanarin Hardback Photo Art Book 1st Edition RARE](https://www.ebay.com.hk/itm/287594714208?_skw=photobook&hash=item42f5fb1460:g:9rIAAeSwdb9qrZkS)",
-          "listing_ids": [
-            "287594714208"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "[Signed! Chris Buck Presence Invisible Portrait Kehrer HC 2012 Photography Art](https://www.ebay.com/itm/117422609003?_skw=signed+photography+book&hash=item1b56eed26b:g:7ywAAeSwXSNp5Rie)",
-          "listing_ids": [
-            "117422609003"
+            "237080589015"
           ],
           "observed_price_gbp": null
         }
