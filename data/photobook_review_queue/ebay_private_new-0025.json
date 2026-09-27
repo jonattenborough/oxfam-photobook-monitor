@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-27T18:13:09Z",
+  "checked_at": "2026-09-27T19:17:45Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
     {
@@ -25,6 +25,25 @@
             "176416193842"
           ],
           "observed_price_gbp": 170.0
+        }
+      ]
+    },
+    {
+      "number": 3419,
+      "title": "EBAY_PRIVATE_NEW: REVIEW 1 | top 78 | 0 under £100 | 1 special | 24/24",
+      "created_at": "2026-09-27T18:13:05Z",
+      "updated_at": "2026-09-27T18:13:05Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/3419",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 350.0,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 78/100 - Kikuji Kawada - Chizu (Maquette Edition) *signed",
+          "listing_ids": [
+            "178113088234"
+          ],
+          "observed_price_gbp": 350.0
         }
       ]
     }
