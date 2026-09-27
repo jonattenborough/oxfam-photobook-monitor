@@ -1,9 +1,10 @@
 {
   "baseline_source": "Oxfam JSON supplied by user on 2026-08-21",
-  "last_successful_fetch": "2026-09-26T17:38:18Z",
+  "last_successful_fetch": "2026-09-27T17:03:17Z",
   "last_top_skus": [
+    "HD_304284223",
+    "HD_304284094",
     "HD_304266533",
-    "HD_304283150",
     "HD_304275974",
     "HD_304283046",
     "HD_304282307",
@@ -17,12 +18,11 @@
     "HD_304280310",
     "HD_304269511",
     "HD_304278739",
-    "HD_304278927",
     "HD_304278604",
     "HD_304278550",
     "HD_304276586",
-    "HD_304277588",
     "HD_304277658",
+    "HD_304277588",
     "HD_304277592",
     "HD_304277329",
     "HD_304277277",
@@ -10017,8 +10017,40 @@
         "title": "Waiting for the Magic: The Photography of Oscar Marzaroli"
       },
       "search_fingerprint": "e8cb744c1490917f"
+    },
+    "HD_304284094": {
+      "first_seen": "2026-09-27T17:03:17Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1790511480000",
+        "description": "In 1955, Henri Cartier-Bresson published The Europeans, a collection of photographs taken over a period of five years. His portrait of the continent documented a landscape shadowed by war, where people lived among ruins and still bore the mark of hunger.<br/><br/>For this book, first published forty-five years later, the celebrated photographer brought together a far broader range of images, spanning the years from the late 1920s to the early 1990s. Cartier-Bresson travelled across Europe, from the Scandinavian shield to the Balkan karst, from the Breton granites to the Irish bogs, in order to capture what it means to be European. Beyond nationalism and the particular characteristics of each culture and nation, he found evidence of a greater identity, a family likeness shared by the people and the landscape.<br/><br/>The Europeans recorded here inhabit both city and countryside, where we see them at work, in the streets, travelling and gossiping. Sometimes they are lone figures; a photograph may show only a single gaze, a glimpse of a face. Often, however, Cartier-Bresson turns his camera to couples, twin figures, mirrored individuals, linked solitudes. He captures crowds, gathering both to celebrate and to protest. Unified by the clarity and compassion of his vision, Cartier-Bresson's photographs speak of the same daily ceremony, of the ongoing business of living for people across Europe, whether Polish priests in alb or cassock, or Abruzzi peasants shrouded in the black of their coats and hats.<br/><br/>With his remarkable ability to capture the fragile reality of European life, Henri Cartier-Bresson underscores his reputation as one of the twentieth century's most influential and original photographers.",
+        "isbn": null,
+        "price_gbp": 7.0,
+        "product_id": "book-HD__304284094",
+        "publisher": null,
+        "route": "/henri-cartier-bresson-europeans/product/HD_304284094",
+        "sku": "HD_304284094",
+        "title": "Henri Cartier-Bresson: Europeans"
+      },
+      "search_fingerprint": "9e6029e1aa59304a"
+    },
+    "HD_304284223": {
+      "first_seen": "2026-09-27T17:03:17Z",
+      "last_snapshot": {
+        "condition": null,
+        "creation_date": "1790516101000",
+        "description": "Softback - published by Alternative Photography - 2022 - by Malin Fabbri - cover in good condition - all pages clean and unmarked - spine, binding and pages all tight, secure and intact - illustrated with colour photographs",
+        "isbn": null,
+        "price_gbp": 25.0,
+        "product_id": "book-HD__304284223",
+        "publisher": null,
+        "route": "/anthotype-emulsions-volume-1-/product/HD_304284223",
+        "sku": "HD_304284223",
+        "title": "Anthotype Emulsions Volume 1 :"
+      },
+      "search_fingerprint": "f622f2a2ce44ef7d"
     }
   },
-  "reported_category_count": 2900,
+  "reported_category_count": 2896,
   "version": 1
 }
