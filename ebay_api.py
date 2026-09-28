@@ -27,7 +27,7 @@ ALLOWED_SORTS = {"newlyListed", "endingSoonest", "price", "-price"}
 MARKETPLACE_DOMAINS = {
     "EBAY_AT": "www.ebay.at",
     "EBAY_AU": "www.ebay.com.au",
-    "EBAY_BE": "www.ebay.com.be",
+    "EBAY_BE": "www.benl.ebay.be",
     "EBAY_CA": "www.ebay.ca",
     "EBAY_CH": "www.ebay.ch",
     "EBAY_DE": "www.ebay.de",
