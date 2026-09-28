@@ -29,6 +29,7 @@ PHOTO_SCHEMA = {
     "required": ["assessment", "visible", "edition_condition", "collector_impact", "next_check"],
 }
 MAX_IMAGE_BYTES = 20_000_000
+PHOTO_ALERT_STAGES = ("FAST_LEAD", "RESEARCH_UPDATE", "RESEARCHED_FIND", "BARGAIN_FIND")
 
 
 def ingest_updates(db: sqlite3.Connection, updates: list[dict], chat_id: str) -> int:
@@ -46,6 +47,7 @@ def ingest_updates(db: sqlite3.Connection, updates: list[dict], chat_id: str) ->
             reply = message.get("reply_to_message") or {}
             if str(chat.get("id")) == str(chat_id) and chat.get("type") == "private" and type(message.get("message_id")) is int:
                 file = None
+                outcome = "NO_IMAGE"
                 photos = message.get("photo") or []
                 if isinstance(photos, list):
                     candidates = [p for p in photos if isinstance(p, dict) and isinstance(p.get("file_id"), str)]
@@ -55,13 +57,24 @@ def ingest_updates(db: sqlite3.Connection, updates: list[dict], chat_id: str) ->
                 if not file and isinstance(document, dict) and document.get("mime_type") in {"image/jpeg", "image/png"}:
                     file = document
                 if file and 0 < int(file.get("file_size") or 1) <= MAX_IMAGE_BYTES and type(reply.get("message_id")) is int:
-                    alert = db.execute("SELECT id,listing_id FROM notification_events WHERE channel='telegram' AND stage IN ('RESEARCHED_FIND','BARGAIN_FIND') AND status='PROVIDER_ACCEPTED' AND provider_request=? ORDER BY id DESC LIMIT 1",
-                                       (str(reply["message_id"]),)).fetchone()
+                    alert = db.execute("SELECT id,listing_id FROM notification_events WHERE channel='telegram' AND stage IN (?,?,?,?) AND status='PROVIDER_ACCEPTED' AND provider_request=? ORDER BY id DESC LIMIT 1",
+                                       (*PHOTO_ALERT_STAGES, str(reply["message_id"]))).fetchone()
                     if alert and enqueue_job(db, f"telegram-photo:{update_id}", "PHOTO_REVIEW", listing_id=alert["listing_id"],
                                              priority=250, payload={"update_id": update_id, "message_id": message["message_id"],
                                                                     "alert_event_id": alert["id"], "file_id": file["file_id"],
                                                                     "caption": str(message.get("caption") or "")[:500]}):
                         queued += 1
+                        outcome = "QUEUED"
+                    else:
+                        outcome = "UNKNOWN_ALERT"
+                elif file:
+                    outcome = "NO_REPLY_TO_ALERT" if type(reply.get("message_id")) is not int else "IMAGE_TOO_LARGE"
+                db.execute("INSERT INTO app_events(at,kind,detail_json) VALUES(?,?,?)",
+                           (now(), "telegram_inbox", json.dumps({"update_id": update_id,
+                                                                  "message_id": message["message_id"],
+                                                                  "reply_to_message_id": reply.get("message_id"),
+                                                                  "media_group_id": message.get("media_group_id"),
+                                                                  "outcome": outcome})))
             cursor = update_id
             db.execute("INSERT INTO health(key,value,updated_at) VALUES('telegram_update_id',?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value,updated_at=excluded.updated_at",
                        (str(cursor), now()))
@@ -133,8 +146,8 @@ def run_photo_research(db: sqlite3.Connection, job: sqlite3.Row, config: Config,
     if not (config.production and config.research_recurring_enabled and config.research_provider == "codex_cli"):
         raise RuntimeError("Photo research is disabled")
     payload = json.loads(job["payload_json"])
-    alert = db.execute("SELECT e.id,e.listing_id,e.provider_request,l.title,l.canonical_url,l.current_observation_id,r.result_json AS earlier_review FROM notification_events e JOIN listings l ON l.id=e.listing_id LEFT JOIN reviews r ON r.id=json_extract(e.payload_json,'$.review_id') WHERE e.id=? AND e.stage IN ('RESEARCHED_FIND','BARGAIN_FIND') AND e.status='PROVIDER_ACCEPTED' AND e.listing_id=?",
-                       (payload.get("alert_event_id"), job["listing_id"])).fetchone()
+    alert = db.execute("SELECT e.id,e.listing_id,e.provider_request,l.title,l.canonical_url,l.current_observation_id,r.result_json AS earlier_review FROM notification_events e JOIN listings l ON l.id=e.listing_id LEFT JOIN reviews r ON r.id=json_extract(e.payload_json,'$.review_id') WHERE e.id=? AND e.stage IN (?,?,?,?) AND e.status='PROVIDER_ACCEPTED' AND e.listing_id=?",
+                       (payload.get("alert_event_id"), *PHOTO_ALERT_STAGES, job["listing_id"])).fetchone()
     if not alert or not payload.get("file_id"):
         return {"stale": True}
     with transaction(db):

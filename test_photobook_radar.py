@@ -887,6 +887,35 @@ class RadarPersistenceTests(unittest.TestCase):
         self.assertEqual(ingest_updates(self.db, [update], "123"), 0)
         self.assertEqual(self.db.execute("SELECT COUNT(*) FROM jobs WHERE kind='PHOTO_REVIEW'").fetchone()[0], 0)
 
+    def test_private_photo_reply_to_earlier_quick_lead_is_reviewed(self):
+        config = Config(data_dir=Path(self.folder.name), mode="production", allow_real_notifications=True,
+                        notification_enabled=True, research_provider="codex_cli", research_recurring_enabled=True)
+        with transaction(self.db):
+            listing_id = capture(self.db, {"key": "ebay:123456789012", "title": "Henri Cartier-Bresson: Europeans",
+                                           "price_gbp": "20", "url": "https://www.ebay.co.uk/itm/123456789012"},
+                                 source_id="ebay", origin_key="quick-lead-photo", imported=False)
+            enqueue_notification(self.db, listing_id=listing_id, stage="FAST_LEAD", material_version="initial",
+                                 channel="telegram", payload={"message": "Quick lead"})
+            self.db.execute("UPDATE notification_events SET status='PROVIDER_ACCEPTED',provider_request='15' WHERE stage='FAST_LEAD'")
+        update = {"update_id": 81, "message": {"chat": {"id": 123, "type": "private"}, "message_id": 40,
+                                                "reply_to_message": {"message_id": 15}, "media_group_id": "album-1",
+                                                "photo": [{"file_id": "image", "file_size": 400}]}}
+        self.assertEqual(ingest_updates(self.db, [update], "123"), 1)
+        job = claim_job(self.db, "photo-test", kinds=("PHOTO_REVIEW",))
+        self.assertIsNotNone(job)
+        def download(_config, _file_id, folder):
+            path = folder / "photo.jpg"
+            path.write_bytes(b"\xff\xd8\xff\xd9")
+            return path
+        result = run_photo_research(self.db, job, config, downloader=download,
+                                    provider=lambda *_: {"assessment": "UNCLEAR", "visible": "Cover shown.",
+                                                         "edition_condition": "Copyright page absent.",
+                                                         "collector_impact": "Edition remains unverified.",
+                                                         "next_check": "Request the copyright page."})
+        self.assertEqual(result["assessment"], "UNCLEAR")
+        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events WHERE stage='PHOTO_REVIEW_REPLY'").fetchone()[0], 1)
+        self.assertIn('"outcome": "QUEUED"', self.db.execute("SELECT detail_json FROM app_events WHERE kind='telegram_inbox'").fetchone()[0])
+
     def test_researched_alert_is_suppressed_after_listing_changes(self):
         config = Config(data_dir=Path(self.folder.name), mode="production", allow_real_notifications=True, notification_enabled=True)
         with transaction(self.db):
