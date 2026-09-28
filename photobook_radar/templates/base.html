@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>{{ title }} | Photobook Radar</title>
+  <link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">◉</span><a href="/">Photobook Radar</a><small>A collecting desk for worthwhile books</small></div>
+    <nav aria-label="Main navigation">
+      <a class="{{ 'active' if section|default('') == 'finds' else '' }}" href="/finds">Finds</a>
+      <a class="{{ 'active' if section|default('') == 'urgent' else '' }}" href="/urgent">Urgent</a>
+      <a class="{{ 'active' if section|default('') == 'saved' else '' }}" href="/saved">Saved</a>
+      <a class="{{ 'active' if section|default('') == 'archive' else '' }}" href="/archive">Archive</a>
+      <a class="{{ 'active' if title == 'System' else '' }}" href="/system">System</a>
+    </nav>
+    <div class="session">{{ 'Signed in' if auth else 'Read only' }} <span class="mode">{{ mode }}</span>{% if not auth %}<a href="/login">Sign in</a>{% endif %}</div>
+  </header>
+  <main id="main">{% block content %}{% endblock %}</main>
+  <footer>Photobook Radar <span>Local data, London times. No purchases or bids are placed by this app.</span></footer>
+</body>
+</html>

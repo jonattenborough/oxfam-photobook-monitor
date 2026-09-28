@@ -1,0 +1,7 @@
+# Cutover and rollback
+
+**Current state: no cutover.** The local configuration is shadow mode with marketplace network and real notifications off. The existing GitHub workflows and ChatGPT tasks have not been altered. The current activation status of GitHub schedules has not been verified.
+
+Before asking Jon for final approval, complete and test every live source adapter, exact-listing verification, shared eBay request accounting, route scheduling and fault isolation, notification policy, credentials and phone receipt, recovery controls, regression/load/UI tests, and an observed backup/restore and service recovery rehearsal. Reconcile any GitHub state delta and actual eBay quota window. Record which ChatGPT tasks remain separate.
+
+At an approved cutover, record the old schedule states, stop the GitHub scan schedules, wait for in-flight jobs, take an import delta and private backup, verify the shared eBay quota, switch exactly one local scheduler to production, perform bounded source probes and a labelled Telegram test, then monitor actual source and delivery health. Do not enable both independent scanners against the same keyset. Roll back by disabling local network and delivery first, restoring the previous local release/config, then restoring only the intended old GitHub schedules after checking in-flight runs and quota. Never replay an uncertain outbox send as if it were certainly unsent. Keep the previous database backup and release until rollback is no longer needed.

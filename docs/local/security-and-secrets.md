@@ -1,0 +1,7 @@
+# Security and secrets
+
+`~/Library/Application Support/Photobook Radar` is owner-only. `config.toml`, `secrets.toml`, the database, imports and backup archives are private. The Production eBay App ID and Cert ID and the Telegram bot token were supplied by Jon and stored in `secrets.toml` without printing their values. The Telegram token was checked with `getMe`. No eBay Browse or OAuth call has been made by the local application. The Telegram chat ID is pending Jon's `/start` message.
+
+The Telegram private chat ID was obtained after Jon sent `/start` and saved in the same private file. A single labelled setup message was accepted by Telegram; Jon confirmed receipt on his phone. The dashboard binds to loopback only, checks Host and Origin, escapes seller text in templates, uses a content security policy, validates seller links, and requires a passphrase plus a session CSRF token for state-changing actions. The passphrase has not yet been set, so the dashboard is currently read-only. Remote access is not configured. The app does not fetch arbitrary seller URLs server-side and does not execute text from a listing.
+
+The repository contains example names only; no secrets or live database. Do not paste credentials into Issues, logs, source files or diagnostics. If a bot token or eBay Cert ID is suspected compromised, rotate it in the respective provider account and update the private local file. The screenshots supplied in this conversation contain credentials; they should be removed from any external share of the conversation.

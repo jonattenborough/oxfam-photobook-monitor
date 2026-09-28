@@ -1,0 +1,3 @@
+# Environment and baseline
+
+Inspected 28 September 2026. Mac Studio, macOS 14.4.1 arm64, Python 3.13.1, approximately 16.9 GiB free after import and backup. Local branch: `build/photobook-radar-local`, based on `692dc69c2a1352c750e1d69b394abd425d15a9b5`. Baseline: 297 existing offline unit tests passed. The locked app environment uses Python 3.13 and `requirements.lock`; Python 3.10 cannot parse some existing repository f-strings. The current full offline run is **309 tests passed**. No live marketplace requests or GitHub mutations were made by the local application. Telegram `getMe` was called only to validate the supplied bot token.

@@ -1,8 +1,6 @@
 name: Photobook review health and queue index
 
 on:
-  schedule:
-    - cron: "13,43 * * * *"
   workflow_dispatch:
   pull_request:
     branches: [main]
