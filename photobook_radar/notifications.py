@@ -72,7 +72,7 @@ def claim(db: sqlite3.Connection, config: Config) -> sqlite3.Row | None:
             except (json.JSONDecodeError, TypeError, AttributeError):
                 screen = {}
             valid = bool(review and review["policy_hash"] == LEAD_POLICY and review["status"] == "DONE"
-                         and review["verdict"] in {"GEM", "UNICORN"}
+                         and review["verdict"] in {"GEM", "UNICORN", "COLLECTOR"}
                          and screen.get("accepted") is True
                          and review["observation_id"] == review["current_observation_id"] and not review["imported"]
                          and (not review["auction_end_at"] or review["auction_end_at"] > current)
