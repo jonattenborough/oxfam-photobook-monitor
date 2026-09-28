@@ -123,7 +123,8 @@ def _prompt(lane: str) -> str:
                      "Return direct official announcement pages only, with the announcement date when explicit. Avoid old news.")
 
 
-def _codex(config: Config, prompt: str, *, schema: dict = SCHEMA, model: str | None = None) -> dict:
+def _codex(config: Config, prompt: str, *, schema: dict = SCHEMA, model: str | None = None,
+           image_paths: tuple[Path, ...] = ()) -> dict:
     with tempfile.TemporaryDirectory(prefix="photobook-radar-research-") as folder:
         root = Path(folder)
         root.chmod(0o700)
@@ -135,7 +136,10 @@ def _codex(config: Config, prompt: str, *, schema: dict = SCHEMA, model: str | N
         if not Path(executable).is_file():
             raise RuntimeError("Codex CLI is unavailable to the research service")
         command = [executable, "exec", "--ephemeral", "--ignore-user-config", "--skip-git-repo-check", "--sandbox", "read-only",
-                   "-C", str(root), "-m", model or config.research_model, "-c", "model_reasoning_effort=low", "--output-schema", str(schema_path), "-o", str(output), "-"]
+                   "-C", str(root), "-m", model or config.research_model, "-c", "model_reasoning_effort=low", "--output-schema", str(schema_path), "-o", str(output)]
+        for image_path in image_paths:
+            command.extend(("-i", str(image_path)))
+        command.append("-")
         try:
             completed = subprocess.run(command, input=prompt, text=True, capture_output=True, cwd=root, env=environment, timeout=100)
         except subprocess.TimeoutExpired:

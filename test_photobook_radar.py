@@ -21,6 +21,7 @@ from photobook_radar.shopify_scheduler import parse_products, run_shopify_job, s
 from photobook_radar.sources.ebay import capture_browse_page, parse_browse_page
 from photobook_radar.sources.oxfam import capture_photography_page, parse_photography_page
 from photobook_radar.store import capture, capture_page, claim_job, decide, enqueue_job, enqueue_notification, finish_job, now, reserve_request, safe_url, settle_request
+from photobook_radar.telegram_photos import ingest_updates, run_photo_research
 from photobook_radar.triage import object_in_seller_title, research_candidate, run_triage, score
 from photobook_radar.verification import run_verify
 
@@ -655,6 +656,53 @@ class RadarPersistenceTests(unittest.TestCase):
         self.assertTrue(send_one(self.db, config, fake=True))
         row = self.db.execute("SELECT status,attempts FROM notification_events").fetchone()
         self.assertEqual(tuple(row), ("PROVIDER_ACCEPTED", 2))
+
+    def test_private_photo_reply_to_researched_alert_gets_image_review(self):
+        config = Config(data_dir=Path(self.folder.name), mode="production", allow_real_notifications=True,
+                        notification_enabled=True, research_provider="codex_cli", research_recurring_enabled=True)
+        with transaction(self.db):
+            listing_id = capture(self.db, {"key": "ebay:123456789012", "title": "The Bikeriders Danny Lyon",
+                                           "price_gbp": "20", "url": "https://www.ebay.co.uk/itm/123456789012"},
+                                 source_id="ebay", origin_key="photo-subject", imported=False)
+            observation = self.db.execute("SELECT current_observation_id FROM listings WHERE id=?", (listing_id,)).fetchone()[0]
+            review = self.db.execute("INSERT INTO reviews(listing_id,observation_id,provider,policy_hash,verdict,status,result_json) VALUES(?,?,?,?,?,?,?)",
+                                     (listing_id, observation, "codex_cli", "collector-research-v3", "PAY_ATTENTION", "DONE", '{"edition_note":"unconfirmed"}'))
+            enqueue_notification(self.db, listing_id=listing_id, stage="RESEARCHED_FIND", material_version="initial", channel="telegram",
+                                 payload={"message": "A book lead", "review_id": review.lastrowid})
+            self.db.execute("UPDATE notification_events SET status='PROVIDER_ACCEPTED',provider_request='42' WHERE stage='RESEARCHED_FIND'")
+        message = {"update_id": 50, "message": {"chat": {"id": 123, "type": "private"}, "message_id": 99,
+                                                "reply_to_message": {"message_id": 42}, "caption": "Is this signed?",
+                                                "photo": [{"file_id": "small", "file_size": 100}, {"file_id": "large", "file_size": 400}]}}
+        self.assertEqual(ingest_updates(self.db, [message], "other-chat"), 0)
+        self.assertEqual(ingest_updates(self.db, [message], "123"), 0)  # already acknowledged update
+        message["update_id"] = 51
+        self.assertEqual(ingest_updates(self.db, [message], "123"), 1)
+        self.assertEqual(ingest_updates(self.db, [message], "123"), 0)
+        job = claim_job(self.db, "photo-test", kinds=("PHOTO_REVIEW",))
+        self.assertEqual(__import__("json").loads(job["payload_json"])["file_id"], "large")
+        def download(_config, _file_id, folder):
+            path = folder / "photo.jpg"
+            path.write_bytes(b"\xff\xd8\xff\xd9")
+            return path
+        result = run_photo_research(self.db, job, config, downloader=download,
+                                    provider=lambda _cfg, prompt, path: {
+                                        "assessment": "STRONGER", "visible": "An ink signature appears on the title page.",
+                                        "edition_condition": "Copyright page is not shown.",
+                                        "collector_impact": "The signature may make this copy more interesting; authenticity remains unverified.",
+                                        "next_check": "Ask for a clear copyright page image."
+                                    })
+        self.assertEqual(result["assessment"], "STRONGER")
+        finish_job(self.db, job["id"], job["lease_token"])
+        event = self.db.execute("SELECT payload_json FROM notification_events WHERE stage='PHOTO_REVIEW_REPLY'").fetchone()
+        self.assertEqual(__import__("json").loads(event[0])["reply_to_message_id"], 99)
+        self.assertTrue(send_one(self.db, config, fake=True))
+        self.assertEqual(self.db.execute("SELECT status FROM notification_events WHERE stage='PHOTO_REVIEW_REPLY'").fetchone()[0], "PROVIDER_ACCEPTED")
+
+    def test_unrelated_telegram_photo_does_not_queue_research(self):
+        update = {"update_id": 80, "message": {"chat": {"id": 123, "type": "private"}, "message_id": 22,
+                                               "photo": [{"file_id": "image", "file_size": 400}]}}
+        self.assertEqual(ingest_updates(self.db, [update], "123"), 0)
+        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM jobs WHERE kind='PHOTO_REVIEW'").fetchone()[0], 0)
 
     def test_researched_alert_is_suppressed_after_listing_changes(self):
         config = Config(data_dir=Path(self.folder.name), mode="production", allow_real_notifications=True, notification_enabled=True)
