@@ -293,7 +293,10 @@ class RadarPersistenceTests(unittest.TestCase):
         self.assertEqual(schedule_research(self.db, config), 0)
         wider = self.db.execute("SELECT payload_json FROM jobs WHERE kind='RESEARCH_SWEEP' AND route_id='research-wider'").fetchone()
         self.assertEqual(json.loads(wider[0])["market"], "Biblio")
-        job = claim_job(self.db, "research-test", kinds=("RESEARCH_SWEEP",), lease_seconds=180)
+        with transaction(self.db):
+            enqueue_job(self.db, "lead-backlog", "RESEARCH_LEAD", priority=130)
+        job = claim_job(self.db, "research-test", kinds=("RESEARCH_LEAD", "RESEARCH_SWEEP"), lease_seconds=180)
+        self.assertEqual(job["kind"], "RESEARCH_SWEEP")
         result = {"items": [{"title": "New photobook", "url": "https://www.biblio.com/book/123456789",
                              "source_name": "Biblio", "why": "Photographer's book", "published_at": "", "price_amount": None, "currency": ""}]}
         outcome = run_research_job(self.db, job, config, provider=lambda *_: result, link_check=lambda *_: True)
@@ -716,6 +719,30 @@ class RadarPersistenceTests(unittest.TestCase):
             self.assertEqual(opener.call_count, 2)
         self.assertEqual(self.db.execute("SELECT COUNT(*) FROM api_requests WHERE status='UNCERTAIN'").fetchone()[0], 1)
         self.assertEqual(self.db.execute("SELECT COUNT(*) FROM api_requests WHERE status='CONSUMED'").fetchone()[0], 1)
+
+    def test_ebay_oauth_token_is_shared_across_source_clients(self):
+        from photobook_radar import ebay_gateway
+        config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True)
+        first = MeteredEbayBrowseClient(self.db, config, route_id="private", client_id="shared-test-id", client_secret="shared-test-secret")
+        second = MeteredEbayBrowseClient(self.db, config, route_id="endgame", client_id="shared-test-id", client_secret="shared-test-secret")
+        with patch.object(ebay_gateway, "_TOKEN_CACHE", None), patch.object(first, "_json_request", return_value={"access_token": "shared-token", "expires_in": 7200}) as request:
+            self.assertEqual(first.access_token(), "shared-token")
+            with patch.object(second, "_json_request", side_effect=AssertionError("unnecessary OAuth request")):
+                self.assertEqual(second.access_token(), "shared-token")
+            self.assertEqual(request.call_count, 1)
+
+    def test_ebay_account_quota_reading_is_shared_across_source_threads(self):
+        from concurrent.futures import ThreadPoolExecutor
+        from photobook_radar import ebay_gateway
+        config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True)
+        window = BrowseWindow("2026-09-28T07:00:00Z", "2026-09-29T07:00:00Z", 5000, 2500, now())
+        with (patch.object(ebay_gateway, "_QUOTA_CACHE", None),
+              patch.object(ebay_gateway, "load_credentials", return_value=("quota-test-id", "quota-test-secret")),
+              patch.object(MeteredEbayBrowseClient, "refresh_browse_quota", return_value=window) as refresh):
+            with ThreadPoolExecutor(max_workers=2) as pool:
+                clients = list(pool.map(lambda route: ebay_gateway.thread_client(self.db, config, route), ("private", "endgame")))
+            self.assertEqual(refresh.call_count, 1)
+            self.assertTrue(all(client.browse_window is window for client in clients))
 
     def test_oxfam_photography_page_uses_sku_and_silent_baseline(self):
         payload = {"searchEventSummary": {"resultsSummary": [{"sort": {"sortKeys": [{"attribute": "product.creationDate", "direction": "desc"}]}, "totalMatchingRecords": 1, "records": [{"sku.listingId": "HD_123", "record.id": "/sku-PRODUCT..1", "product.displayName": "Danny Lyon: The Bikeriders", "sku.activePrice": "20", "product.route": "/books/bikeriders"}]}]}}
