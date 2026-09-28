@@ -59,9 +59,10 @@ LEAD_POLICY = "collector-bargains-v4"
 
 
 class ResearchDeferred(RuntimeError):
-    def __init__(self, message: str, retry_seconds: int):
+    def __init__(self, message: str, retry_seconds: int, *, provider_limited: bool = False):
         super().__init__(message)
         self.retry_seconds = retry_seconds
+        self.provider_limited = provider_limited
 
 
 def _later(seconds: int) -> str:
@@ -74,16 +75,6 @@ def _enabled(config: Config, lane: str) -> bool:
     }[lane]
 
 
-def _today_count(db: sqlite3.Connection) -> int:
-    day = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    return int(db.execute("SELECT COUNT(*) FROM research_sweeps WHERE started_at>=?", (day + "T00:00:00Z",)).fetchone()[0])
-
-
-def _sweep_cap(config: Config) -> int:
-    """Keep most Codex research capacity for individual book opportunities."""
-    return max(0, config.research_daily_jobs - min(40, max(3, config.research_daily_jobs - 4)))
-
-
 def schedule_research(db: sqlite3.Connection, config: Config) -> int:
     count = 0
     with transaction(db):
@@ -91,14 +82,12 @@ def schedule_research(db: sqlite3.Connection, config: Config) -> int:
             if not _enabled(config, lane):
                 continue
             db.execute("INSERT OR IGNORE INTO sources(id,adapter,status,cadence_seconds) VALUES(?,?,'SCHEDULED',?)", (source, "codex-web", cadence))
+            db.execute("UPDATE sources SET status='ACTIVE',last_error=NULL WHERE id=? AND last_error='Daily Codex research job limit reached'", (source,))
             db.execute("INSERT OR IGNORE INTO source_routes(id,source_id,lane) VALUES(?,?,?)", (source, source, lane.upper()))
             route = db.execute("SELECT next_due_at,last_success_at FROM source_routes WHERE id=?", (source,)).fetchone()
             if route["next_due_at"] and route["next_due_at"] > now():
                 continue
             if db.execute("SELECT 1 FROM jobs WHERE route_id=? AND kind='RESEARCH_SWEEP' AND status IN ('PENDING','RUNNING')", (source,)).fetchone():
-                continue
-            if _today_count(db) + count >= _sweep_cap(config):
-                db.execute("UPDATE sources SET status='ACTIVE',last_error=NULL WHERE id=? AND last_error='Daily Codex research job limit reached'", (source,))
                 continue
             window = f"{source}:{now()}"
             if enqueue_job(db, f"research:{window}", "RESEARCH_SWEEP", route_id=source, priority=12,
@@ -153,6 +142,11 @@ def _codex(config: Config, prompt: str, *, schema: dict = SCHEMA, model: str | N
             completed = subprocess.run(command, input=prompt, text=True, capture_output=True, cwd=root, env=environment, timeout=100)
         except subprocess.TimeoutExpired:
             raise RuntimeError("Codex research timed out") from None
+        if completed.returncode != 0:
+            detail = (completed.stderr or "").casefold()
+            if ("too many requests" in detail or "insufficient_quota" in detail or "429" in detail
+                    or ("limit" in detail and any(word in detail for word in ("usage", "rate", "quota", "reached", "exceeded")))):
+                raise ResearchDeferred("Codex account usage limit reached; research will retry", 900, provider_limited=True)
         if completed.returncode != 0 or not output.exists():
             raise RuntimeError(f"Codex research failed (exit {completed.returncode})")
         result = json.loads(output.read_text())
@@ -220,10 +214,6 @@ def run_research_job(db: sqlite3.Connection, job: sqlite3.Row, config: Config, *
     if lane not in LANES or not _enabled(config, lane) or job["route_id"] != LANES[lane][0]:
         raise ValueError("Research sweep is disabled or invalid")
     source = LANES[lane][0]
-    if _today_count(db) >= _sweep_cap(config):
-        with transaction(db):
-            db.execute("UPDATE sources SET status='ACTIVE',last_error=NULL WHERE id=? AND last_error='Daily Codex research job limit reached'", (source,))
-        return {"budget_exhausted": True}
     with transaction(db):
         cursor = db.execute("INSERT INTO research_sweeps(source_id,job_id,started_at,provider,model,status) VALUES(?,?,?,?,?,'RUNNING')",
                             (source, job["id"], now(), "codex_cli", "gpt-6-luna"))
@@ -266,9 +256,6 @@ def run_lead_research(db: sqlite3.Connection, job: sqlite3.Row, config: Config, 
         return {"rejected": "local shortlist no longer applies"}
     if row["auction_end_at"] and row["auction_end_at"] <= now():
         return {"rejected": "auction ended"}
-    if _today_count(db) >= config.research_daily_jobs:
-        tomorrow = (datetime.now(timezone.utc) + timedelta(days=1)).replace(hour=0, minute=5, second=0, microsecond=0)
-        raise ResearchDeferred("daily research allowance reached", max(60, int((tomorrow - datetime.now(timezone.utc)).total_seconds())))
     if row["platform"] == "ebay":
         live = db.execute("SELECT * FROM live_checks WHERE listing_id=? AND observation_id=? AND provider='ebay_browse' ORDER BY checked_at DESC LIMIT 1",
                           (row["id"], row["observation_id"])).fetchone()

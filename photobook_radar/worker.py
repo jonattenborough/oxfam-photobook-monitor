@@ -19,7 +19,7 @@ from .source_scheduler import ROUTE as OXFAM_ROUTE, run_oxfam_scan_job, schedule
 from .oxfam_broad import SOURCE as OXFAM_BROAD_SOURCE, run_oxfam_broad_job, schedule_oxfam_broad
 from .shopify_scheduler import run_shopify_job, schedule_shopify
 from .abebooks_scheduler import run_abebooks_job, schedule_abebooks
-from .research_sweeps import ResearchDeferred, run_lead_research, run_research_job, schedule_research
+from .research_sweeps import ResearchDeferred, _later, run_lead_research, run_research_job, schedule_research
 from .telegram_photos import poll_updates, run_photo_research
 from .store import claim_job, finish_job, now
 from .triage import run_triage
@@ -111,7 +111,16 @@ def _run_research_job(config: Config, job_id: int, token: str) -> None:
             else:
                 run_research_job(db, job, config)
             finish_job(db, job_id, token)
+            with transaction(db):
+                db.execute("DELETE FROM health WHERE key='codex_research_backoff_until'")
         except ResearchDeferred as exc:
+            with transaction(db):
+                # Waiting for source verification or the provider is not a
+                # failed research attempt and must not exhaust job retries.
+                db.execute("UPDATE jobs SET attempts=MAX(0,attempts-1) WHERE id=? AND lease_token=? AND status='RUNNING'", (job_id, token))
+                if exc.provider_limited:
+                    db.execute("INSERT INTO health(key,value,updated_at) VALUES('codex_research_backoff_until',?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value,updated_at=excluded.updated_at",
+                               (_later(exc.retry_seconds), now()))
             finish_job(db, job_id, token, error=str(exc), retry_seconds=exc.retry_seconds)
         except Exception as exc:
             with transaction(db):
@@ -186,7 +195,8 @@ def run(config: Config | None = None, *, once: bool = False) -> None:
                 if research_future is not None and research_future.done():
                     research_future.result()
                     research_future = None
-                if research_future is None and config.research_recurring_enabled:
+                provider_pause = db.execute("SELECT value FROM health WHERE key='codex_research_backoff_until'").fetchone()
+                if research_future is None and config.research_recurring_enabled and (not provider_pause or provider_pause[0] <= now()):
                     research_job = claim_job(db, owner, kinds=("PHOTO_REVIEW", "RESEARCH_LEAD", "RESEARCH_SWEEP"), lease_seconds=180)
                     if research_job is not None:
                         research_future = research_pool.submit(_run_research_job, config, research_job["id"], research_job["lease_token"])
