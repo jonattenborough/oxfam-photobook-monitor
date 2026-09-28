@@ -240,7 +240,7 @@ class RadarPersistenceTests(unittest.TestCase):
         self.assertEqual(run_lead_research(self.db, job, config, provider=lambda *_: result, link_check=lambda *_: True)["status"], "REJECTED")
         self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events").fetchone()[0], 0)
 
-    def test_gem_label_without_copy_evidence_stays_off_phone(self):
+    def test_unproven_gem_is_sent_as_a_cautious_lead(self):
         config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True,
                         allow_real_notifications=True, notification_enabled=True,
                         research_provider="codex_cli", research_recurring_enabled=True)
@@ -257,8 +257,43 @@ class RadarPersistenceTests(unittest.TestCase):
                   "opportunity_reason": "A cheap copy, but the actual printing is not identified by the seller.",
                   "edition_note": "Printing unknown.", "risk": "It could be a routine reprint.",
                   "source_urls": ["https://www.moma.org/books/bikeriders"]}
-        self.assertEqual(run_lead_research(self.db, job, config, provider=lambda *_: result, link_check=lambda *_: True)["status"], "REJECTED")
-        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events").fetchone()[0], 0)
+        outcome = run_lead_research(self.db, job, config, provider=lambda *_: result, link_check=lambda *_: True)
+        self.assertEqual((outcome["status"], outcome["verdict"]), ("DONE", "PAY_ATTENTION"))
+        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events WHERE stage='RESEARCHED_FIND'").fetchone()[0], 1)
+
+    def test_non_ebay_book_can_be_researched_and_alerted_from_recent_feed(self):
+        config = Config(data_dir=Path(self.folder.name), mode="production", allow_real_notifications=True,
+                        notification_enabled=True, research_provider="codex_cli", research_recurring_enabled=True)
+        item = {"key": "specialist:123", "title": "Danny Lyon The Bikeriders", "price_gbp": "35",
+                "available": True, "url": "https://bookshop.thephotographersgallery.org.uk/products/the-bikeriders"}
+        with transaction(self.db):
+            listing_id = capture(self.db, item, source_id="specialist", origin_key="fresh-shop", imported=False)
+            observation = self.db.execute("SELECT current_observation_id FROM listings WHERE id=?", (listing_id,)).fetchone()[0]
+            enqueue_job(self.db, "research:shop", "RESEARCH_LEAD", listing_id=listing_id,
+                        payload={"observation_id": observation})
+        job = claim_job(self.db, "research-test", kinds=("RESEARCH_LEAD",), lease_seconds=180)
+        result = {"decision": "PAY_ATTENTION", "actual_book": True, "collector_fit": True, "edition_supported": False,
+                  "context": "Danny Lyon's Bikeriders is a major documentary photobook.",
+                  "opportunity_reason": "The seller has a reasonably priced copy that warrants checking for an early printing.",
+                  "edition_note": "Printing unknown.", "risk": "Confirm availability and edition with the seller.",
+                  "source_urls": []}
+        outcome = run_lead_research(self.db, job, config, provider=lambda *_: result, link_check=lambda *_: False)
+        self.assertEqual((outcome["status"], outcome["verdict"]), ("DONE", "PAY_ATTENTION"))
+        self.assertTrue(send_one(self.db, config, fake=True))
+
+    def test_unfamiliar_signed_photobook_is_researched(self):
+        config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True,
+                        research_provider="codex_cli", research_recurring_enabled=True)
+        item = {"key": "ebay:123456789012", "title": "Signed documentary photobook by an unfamiliar artist",
+                "price_gbp": "120", "url": "https://www.ebay.co.uk/itm/123456789012"}
+        with transaction(self.db):
+            listing_id = capture(self.db, item, source_id="ebay", origin_key="unfamiliar", imported=False)
+            enqueue_job(self.db, "triage:unfamiliar", "TRIAGE", listing_id=listing_id)
+        run_triage(self.db, claim_job(self.db, "test", kinds=("TRIAGE",)), config)
+        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM jobs WHERE kind='RESEARCH_LEAD'").fetchone()[0], 1)
+
+    def test_research_cap_can_cover_more_than_sixteen_promising_books(self):
+        Config(data_dir=Path(self.folder.name), research_daily_jobs=48).validate()
 
     def test_codex_lead_schema_accepts_context_response(self):
         from photobook_radar import research_sweeps
@@ -604,7 +639,7 @@ class RadarPersistenceTests(unittest.TestCase):
             listing_id = capture(self.db, {"key": "ebay:123456789012", "title": "Possible book"}, source_id="ebay", origin_key="possible", imported=False)
             observation = self.db.execute("SELECT current_observation_id FROM listings WHERE id=?", (listing_id,)).fetchone()[0]
             review = self.db.execute("INSERT INTO reviews(listing_id,observation_id,provider,policy_hash,verdict,status,result_json) VALUES(?,?,?,?,?,?,?)",
-                                     (listing_id, observation, "codex_cli", "collector-research-v2", "PAY_ATTENTION", "DONE", "{}"))
+                                     (listing_id, observation, "codex_cli", "collector-research-v3", "PAY_ATTENTION", "DONE", "{}"))
             self.db.execute("INSERT INTO live_checks(listing_id,observation_id,provider,checked_at,availability,price_minor,currency,result_json) VALUES(?,?,?,?,?,?,?,?)",
                             (listing_id, observation, "ebay_browse", now(), "LIVE", 2000, "GBP", "{}"))
             enqueue_notification(self.db, listing_id=listing_id, stage="RESEARCHED_FIND", material_version="initial", channel="telegram", payload={"message": "Check listing", "review_id": review.lastrowid})
@@ -621,7 +656,7 @@ class RadarPersistenceTests(unittest.TestCase):
                                  source_id="ebay", origin_key="before", imported=False)
             observation = self.db.execute("SELECT current_observation_id FROM listings WHERE id=?", (listing_id,)).fetchone()[0]
             review = self.db.execute("INSERT INTO reviews(listing_id,observation_id,provider,policy_hash,verdict,status,result_json) VALUES(?,?,?,?,?,?,?)",
-                                     (listing_id, observation, "codex_cli", "collector-research-v2", "GEM", "DONE", "{}"))
+                                     (listing_id, observation, "codex_cli", "collector-research-v3", "GEM", "DONE", "{}"))
             self.db.execute("INSERT INTO live_checks(listing_id,observation_id,provider,checked_at,availability,price_minor,currency,result_json) VALUES(?,?,?,?,?,?,?,?)",
                             (listing_id, observation, "ebay_browse", now(), "LIVE", 2000, "GBP", "{}"))
             enqueue_notification(self.db, listing_id=listing_id, stage="RESEARCHED_FIND", material_version=str(observation),
