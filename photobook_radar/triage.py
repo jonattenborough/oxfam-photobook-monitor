@@ -152,6 +152,12 @@ def run_triage(db: sqlite3.Connection, job: sqlite3.Row, config: Config) -> dict
             if row["platform"] == "ebay":
                 enqueue_job(db, f"verify:{job['listing_id']}:{row['current_observation_id']}", "VERIFY", listing_id=job["listing_id"], priority=80 if end else 50, payload={"observation_id": row["current_observation_id"]})
             if config.research_recurring_enabled and config.research_provider == "codex_cli":
+                # Search routes can find the same item in several windows. Only
+                # the current observation can be researched, so retire older
+                # queued work before it consumes the research queue.
+                db.execute("UPDATE jobs SET status='CANCELLED',last_error='Superseded by a newer listing observation' "
+                           "WHERE kind='RESEARCH_LEAD' AND listing_id=? AND status='PENDING' "
+                           "AND job_key!=?", (job["listing_id"], f"research-lead:{job['listing_id']}:{row['current_observation_id']}"))
                 pending = db.execute("SELECT COUNT(*) FROM jobs WHERE kind='RESEARCH_LEAD' AND status IN ('PENDING','RUNNING')").fetchone()[0]
                 if pending < 120:
                     enqueue_job(db, f"research-lead:{job['listing_id']}:{row['current_observation_id']}", "RESEARCH_LEAD",
