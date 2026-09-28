@@ -1,4 +1,4 @@
-"""Bounded hourly rotation of Parr/Badger exact-title AbeBooks searches."""
+"""Bounded quarter-hour rotation of Parr/Badger exact-title AbeBooks searches."""
 from __future__ import annotations
 
 import hashlib
@@ -16,18 +16,19 @@ from .db import transaction
 from .store import capture_page, enqueue_job, now
 
 SOURCE = "abebooks"
-SEARCHES_PER_HOUR = 24
+SEARCHES_PER_CYCLE = 24
+CADENCE_SECONDS = 15 * 60
 
 
 def _later() -> str:
-    return (datetime.now(timezone.utc) + timedelta(hours=1)).isoformat(timespec="seconds").replace("+00:00", "Z")
+    return (datetime.now(timezone.utc) + timedelta(seconds=CADENCE_SECONDS)).isoformat(timespec="seconds").replace("+00:00", "Z")
 
 
 def schedule_abebooks(db: sqlite3.Connection, config: Config) -> int:
     if not (config.production and config.allow_marketplace_network and config.source_abebooks):
         return 0
     with transaction(db):
-        db.execute("INSERT OR IGNORE INTO sources(id,adapter,status,cadence_seconds) VALUES(?,?,'SCHEDULED',3600)", (SOURCE, "abebooks-html"))
+        db.execute("INSERT INTO sources(id,adapter,status,cadence_seconds) VALUES(?,?,'SCHEDULED',?) ON CONFLICT(id) DO UPDATE SET cadence_seconds=excluded.cadence_seconds", (SOURCE, "abebooks-html", CADENCE_SECONDS))
         due = db.execute("SELECT value FROM health WHERE key='abebooks_next_schedule'").fetchone()
         if due and due[0] > now():
             return 0
@@ -37,7 +38,7 @@ def schedule_abebooks(db: sqlite3.Connection, config: Config) -> int:
         position = db.execute("SELECT value FROM health WHERE key='abebooks_cursor'").fetchone()
         cursor = int(position[0]) if position else 0
         count = 0
-        for index in range(min(SEARCHES_PER_HOUR, len(records))):
+        for index in range(min(SEARCHES_PER_CYCLE, len(records))):
             record = records[(cursor + index) % len(records)]
             url, query = market_monitor.target_url("abebooks", record)
             parsed = urllib.parse.urlsplit(url)
@@ -54,7 +55,7 @@ def schedule_abebooks(db: sqlite3.Connection, config: Config) -> int:
                                     "baseline": route["last_success_at"] is None}):
                 count += 1
         stamp = now()
-        for key, value in (("abebooks_cursor", str((cursor + SEARCHES_PER_HOUR) % len(records))), ("abebooks_next_schedule", _later())):
+        for key, value in (("abebooks_cursor", str((cursor + SEARCHES_PER_CYCLE) % len(records))), ("abebooks_next_schedule", _later())):
             db.execute("INSERT INTO health(key,value,updated_at) VALUES(?,?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value,updated_at=excluded.updated_at", (key, value, stamp))
         return count
 
