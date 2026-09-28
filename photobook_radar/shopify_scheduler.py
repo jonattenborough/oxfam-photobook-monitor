@@ -110,24 +110,38 @@ def parse_products(route_id: str, payload: dict) -> list[dict]:
         variants = product.get("variants")
         if not isinstance(variants, list):
             raise ValueError("Shopify product variants are invalid")
-        prices = []
-        available = False
-        for variant in variants:
-            if not isinstance(variant, dict):
-                continue
-            available |= bool(variant.get("available"))
-            try:
-                prices.append(float(variant["price"]))
-            except (ValueError, TypeError, KeyError):
-                pass
         description = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]*>", " ", str(product.get("body_html") or "")))).strip()[:5000]
-        rows.append({
-            "key": f"{source if source == 'charity' else route_id}:{key}",
-            "external_id": key, "title": title, "description": description,
-            "url": f"{base}/products/{urllib.parse.quote(handle, safe='')}", "price_gbp": min(prices) if prices and source != "publisher" else None,
-            "available": available, "published_at": product.get("published_at"),
-            "vendor": product.get("vendor") or name, "source_name": name,
-        })
+        # A product can have signed, unsigned and special editions at different
+        # prices. Keep each purchasable variant separate so the cheapest price
+        # cannot be paired with the description of a more valuable edition.
+        offered = [variant for variant in variants if isinstance(variant, dict) and variant.get("available")]
+        if not offered:
+            offered = [variant for variant in variants if isinstance(variant, dict)][:1]
+        if source == "publisher":
+            offered = offered[:1]
+        for index, variant in enumerate(offered):
+            variant_name = str(variant.get("title") or "").strip()
+            variant_id = variant.get("id")
+            multi = len(variants) > 1 and source != "publisher"
+            suffix = str(variant_id) if variant_id is not None else str(index)
+            try:
+                price = float(variant["price"])
+            except (ValueError, TypeError, KeyError):
+                price = None
+            url = f"{base}/products/{urllib.parse.quote(handle, safe='')}"
+            if multi and variant_id is not None:
+                url += "?" + urllib.parse.urlencode({"variant": variant_id})
+            option = variant_name if variant_name.casefold() != "default title" else ""
+            rows.append({
+                "key": f"{source if source == 'charity' else route_id}:{key}" + (f":{suffix}" if multi else ""),
+                "external_id": key + (f":{suffix}" if multi else ""),
+                "title": title + (f" — {option}" if multi and option else ""),
+                "description": (f"Offered variant: {option}. Product description may describe other variants. " if multi and option else "") + description,
+                "offered_variant": option, "variant_id": variant_id,
+                "url": url, "price_gbp": price if variant.get("available") and source != "publisher" else None,
+                "available": bool(variant.get("available")), "published_at": product.get("published_at"),
+                "vendor": product.get("vendor") or name, "source_name": name,
+            })
     return rows
 
 
