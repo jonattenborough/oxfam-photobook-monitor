@@ -118,7 +118,7 @@ class RadarPersistenceTests(unittest.TestCase):
                                  source_id="ebay", origin_key="price-rise", imported=False)
             observation = self.db.execute("SELECT current_observation_id FROM listings WHERE id=?", (listing_id,)).fetchone()[0]
             review = self.db.execute("INSERT INTO reviews(listing_id,observation_id,provider,policy_hash,verdict,status,result_json) VALUES(?,?,?,?,?,?,?)",
-                                     (listing_id, observation, "codex_cli", "collector-bargains-v5", "GEM", "DONE",
+                                     (listing_id, observation, "codex_cli", "collector-bargains-v6", "GEM", "DONE",
                                       '{"bargain_screen":{"accepted":true}}'))
             enqueue_notification(self.db, listing_id=listing_id, stage="BARGAIN_FIND", material_version="price-rise",
                                  channel="telegram", payload={"title": "Gem", "review_id": review.lastrowid,
@@ -584,6 +584,44 @@ class RadarPersistenceTests(unittest.TestCase):
         self.assertEqual(self.db.execute("SELECT COUNT(*) FROM live_checks").fetchone()[0], 0)
         self.assertEqual(self.db.execute("SELECT availability FROM listings WHERE id=?", (listing_id,)).fetchone()[0], "UNKNOWN")
 
+    def test_research_uses_seller_detail_from_exact_ebay_check(self):
+        config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True,
+                        research_provider="codex_cli", research_recurring_enabled=True)
+        with transaction(self.db):
+            listing_id = capture(self.db, {"key": "ebay:123456789012", "title": "Danny Lyon The Bikeriders",
+                                           "price_gbp": "20", "url": "https://www.ebay.co.uk/itm/123456789012"},
+                                 source_id="ebay", origin_key="seller-detail")
+            observation = self.db.execute("SELECT current_observation_id FROM listings WHERE id=?", (listing_id,)).fetchone()[0]
+            enqueue_job(self.db, "verify:seller-detail", "VERIFY", listing_id=listing_id,
+                        payload={"observation_id": observation})
+            enqueue_job(self.db, "research:seller-detail", "RESEARCH_LEAD", listing_id=listing_id,
+                        payload={"observation_id": observation})
+        detail = {"itemId": "v1|123456789012|0", "title": "Danny Lyon The Bikeriders",
+                  "price": {"value": "20", "currency": "GBP"},
+                  "itemWebUrl": "https://www.ebay.co.uk/itm/123456789012",
+                  "buyingOptions": ["FIXED_PRICE"], "condition": "Very Good",
+                  "description": "<style>ignore this CSS</style><p>Signed first edition with dust jacket.</p>",
+                  "localizedAspects": [{"name": "Edition", "value": "First Edition"},
+                                       {"name": "Publisher", "value": "Macmillan"}]}
+        run_verify(self.db, claim_job(self.db, "test", kinds=("VERIFY",)), config,
+                   lookup=lambda *_: (True, "live", detail))
+        checked = json.loads(self.db.execute("SELECT result_json FROM live_checks WHERE listing_id=?", (listing_id,)).fetchone()[0])
+        self.assertEqual(checked["seller_description"], "Signed first edition with dust jacket.")
+        self.assertEqual(checked["seller_aspects"]["Edition"], "First Edition")
+        prompts = []
+        def provider(_, prompt):
+            prompts.append(prompt)
+            return {"decision": "PASS", "actual_book": True, "collector_fit": False,
+                    "edition_supported": False, "context": "Ordinary copy.",
+                    "opportunity_reason": "No verified resale margin.", "edition_note": "Seller claim.",
+                    "risk": "Confirm the printing.", "source_urls": [], "market_comparables": []}
+        run_lead_research(self.db, claim_job(self.db, "test", kinds=("RESEARCH_LEAD",)), config,
+                          provider=provider)
+        self.assertIn("Signed first edition with dust jacket.", prompts[0])
+        self.assertIn('"seller_condition": "Very Good"', prompts[0])
+        self.assertIn('"Edition": "First Edition"', prompts[0])
+        self.assertNotIn("ignore this CSS", prompts[0])
+
     def test_fresh_capture_waits_for_research_before_phone_event(self):
         config = Config(data_dir=Path(self.folder.name), mode="production", allow_real_notifications=True,
                         notification_enabled=True, research_provider="codex_cli", research_recurring_enabled=True)
@@ -908,7 +946,7 @@ class RadarPersistenceTests(unittest.TestCase):
             listing_id = capture(self.db, {"key": "ebay:123456789012", "title": "Possible book"}, source_id="ebay", origin_key="possible", imported=False)
             observation = self.db.execute("SELECT current_observation_id FROM listings WHERE id=?", (listing_id,)).fetchone()[0]
             review = self.db.execute("INSERT INTO reviews(listing_id,observation_id,provider,policy_hash,verdict,status,result_json) VALUES(?,?,?,?,?,?,?)",
-                                     (listing_id, observation, "codex_cli", "collector-bargains-v5", "GEM", "DONE", '{"bargain_screen":{"accepted":true}}'))
+                                     (listing_id, observation, "codex_cli", "collector-bargains-v6", "GEM", "DONE", '{"bargain_screen":{"accepted":true}}'))
             self.db.execute("INSERT INTO live_checks(listing_id,observation_id,provider,checked_at,availability,price_minor,currency,result_json) VALUES(?,?,?,?,?,?,?,?)",
                             (listing_id, observation, "ebay_browse", now(), "LIVE", 2000, "GBP", "{}"))
             enqueue_notification(self.db, listing_id=listing_id, stage="BARGAIN_FIND", material_version="initial", channel="telegram", payload={"message": "Check listing", "review_id": review.lastrowid, "price_minor": 2000, "shipping_minor": None, "shipping_currency": None})
@@ -1005,7 +1043,7 @@ class RadarPersistenceTests(unittest.TestCase):
                                  source_id="ebay", origin_key="before", imported=False)
             observation = self.db.execute("SELECT current_observation_id FROM listings WHERE id=?", (listing_id,)).fetchone()[0]
             review = self.db.execute("INSERT INTO reviews(listing_id,observation_id,provider,policy_hash,verdict,status,result_json) VALUES(?,?,?,?,?,?,?)",
-                                     (listing_id, observation, "codex_cli", "collector-bargains-v5", "GEM", "DONE", '{"bargain_screen":{"accepted":true}}'))
+                                     (listing_id, observation, "codex_cli", "collector-bargains-v6", "GEM", "DONE", '{"bargain_screen":{"accepted":true}}'))
             self.db.execute("INSERT INTO live_checks(listing_id,observation_id,provider,checked_at,availability,price_minor,currency,result_json) VALUES(?,?,?,?,?,?,?,?)",
                             (listing_id, observation, "ebay_browse", now(), "LIVE", 2000, "GBP", "{}"))
             enqueue_notification(self.db, listing_id=listing_id, stage="BARGAIN_FIND", material_version=str(observation),
