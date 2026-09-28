@@ -5,10 +5,12 @@ import tempfile
 import unittest
 import urllib.error
 from datetime import datetime, timedelta, timezone
+from decimal import Decimal
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
 from photobook_radar.config import Config
+from photobook_radar.bargains import assess_bargain
 from photobook_radar.db import connect, migrate, transaction
 from photobook_radar.ebay_gateway import BrowseWindow, MeteredEbayBrowseClient
 from photobook_radar.ebay_lanes import run_ebay_lane_job, schedule_ebay_lanes
@@ -35,6 +37,60 @@ class RadarPersistenceTests(unittest.TestCase):
     def tearDown(self):
         self.db.close()
         self.folder.cleanup()
+
+    def test_bargain_screen_requires_recent_sold_like_for_like_and_margin(self):
+        today = datetime.now(timezone.utc).date().isoformat()
+        comps = [{"url": "https://www.ebay.co.uk/itm/200000000001", "kind": "SOLD", "price_gbp": 200,
+                  "sold_date": today, "same_edition": True, "condition_no_better": True},
+                 {"url": "https://www.abaa.org/book/second", "kind": "ASKING", "price_gbp": 180,
+                  "sold_date": "", "same_edition": True, "condition_no_better": True}]
+        def assess(candidates, *, price_minor=2000, currency="GBP", checker=lambda *_: True):
+            return assess_bargain(candidates, title="Danny Lyon The Bikeriders", price_minor=price_minor,
+                                  currency=currency, shipping_minor=None, shipping_currency=None,
+                                  max_buy_gbp=Decimal("150"), min_profit_gbp=Decimal("50"),
+                                  min_discount_pct=60, checker=checker)
+        good = assess(comps)
+        self.assertTrue(good["accepted"])
+        self.assertEqual(good["landed_gbp"], Decimal("40"))
+        self.assertEqual(good["comp_floor_gbp"], Decimal("180"))
+        self.assertFalse(assess([{**comps[0], "same_edition": False}, comps[1]])["accepted"])
+        self.assertFalse(assess([{**comps[0], "kind": "ASKING"}, comps[1]])["accepted"])
+        self.assertFalse(assess([{**comps[0], "sold_date": "2018-01-01"}, comps[1]])["accepted"])
+        self.assertFalse(assess(comps, checker=lambda *_: False)["accepted"])
+        self.assertFalse(assess(comps, currency="EUR")["accepted"])
+        self.assertFalse(assess(comps, price_minor=9000)["accepted"])
+        self.assertFalse(assess(comps, price_minor=15000)["accepted"])
+
+    def test_old_research_alert_waiting_in_outbox_is_suppressed(self):
+        config = Config(data_dir=Path(self.folder.name), mode="production", allow_real_notifications=True,
+                        notification_enabled=True)
+        with transaction(self.db):
+            listing_id = capture(self.db, {"key": "ebay:123456789012", "title": "Possible book"},
+                                 source_id="ebay", origin_key="old", imported=False)
+            enqueue_notification(self.db, listing_id=listing_id, stage="RESEARCHED_FIND", material_version="old",
+                                 channel="telegram", payload={"title": "Old lead"})
+        self.assertFalse(send_one(self.db, config, fake=True))
+        self.assertEqual(self.db.execute("SELECT status FROM notification_events").fetchone()[0], "SUPPRESSED")
+
+    def test_bargain_alert_is_suppressed_if_live_price_rose(self):
+        config = Config(data_dir=Path(self.folder.name), mode="production", allow_real_notifications=True,
+                        notification_enabled=True)
+        with transaction(self.db):
+            listing_id = capture(self.db, {"key": "ebay:123456789012", "title": "Danny Lyon The Bikeriders",
+                                           "price_gbp": "20", "url": "https://www.ebay.co.uk/itm/123456789012"},
+                                 source_id="ebay", origin_key="price-rise", imported=False)
+            observation = self.db.execute("SELECT current_observation_id FROM listings WHERE id=?", (listing_id,)).fetchone()[0]
+            review = self.db.execute("INSERT INTO reviews(listing_id,observation_id,provider,policy_hash,verdict,status,result_json) VALUES(?,?,?,?,?,?,?)",
+                                     (listing_id, observation, "codex_cli", "collector-bargains-v4", "GEM", "DONE",
+                                      '{"bargain_screen":{"accepted":true}}'))
+            enqueue_notification(self.db, listing_id=listing_id, stage="BARGAIN_FIND", material_version="price-rise",
+                                 channel="telegram", payload={"title": "Gem", "review_id": review.lastrowid,
+                                                              "price_minor": 2000, "shipping_minor": None,
+                                                              "shipping_currency": None})
+            self.db.execute("INSERT INTO live_checks(listing_id,observation_id,provider,checked_at,availability,price_minor,currency,result_json) VALUES(?,?,?,?,?,?,?,?)",
+                            (listing_id, observation, "ebay_browse", now(), "LIVE", 4500, "GBP", "{}"))
+        self.assertFalse(send_one(self.db, config, fake=True))
+        self.assertEqual(self.db.execute("SELECT status FROM notification_events").fetchone()[0], "SUPPRESSED")
 
     def test_observation_order_and_repeat_import(self):
         item = {"key": "ebay:123456789012", "title": "Danny Lyon Bikeriders first", "price_gbp": "20"}
@@ -197,7 +253,7 @@ class RadarPersistenceTests(unittest.TestCase):
         row = self.db.execute("SELECT status,last_error FROM sources WHERE id='research-wider'").fetchone()
         self.assertEqual(tuple(row), ("ACTIVE", None))
 
-    def test_researched_collector_find_requires_live_copy_and_verified_reference(self):
+    def test_bargain_alert_requires_live_copy_and_checked_market_comparables(self):
         config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True,
                         allow_real_notifications=True, notification_enabled=True,
                         research_provider="codex_cli", research_recurring_enabled=True)
@@ -207,18 +263,24 @@ class RadarPersistenceTests(unittest.TestCase):
             observation = self.db.execute("SELECT current_observation_id FROM listings WHERE id=?", (listing_id,)).fetchone()[0]
             enqueue_job(self.db, "research:lead", "RESEARCH_LEAD", listing_id=listing_id, payload={"observation_id": observation})
         job = claim_job(self.db, "research-test", kinds=("RESEARCH_LEAD",), lease_seconds=180)
-        result = {"decision": "PAY_ATTENTION", "actual_book": True, "collector_fit": True, "edition_supported": False,
+        sold_date = datetime.now(timezone.utc).date().isoformat()
+        comps = [{"url": "https://www.ebay.co.uk/itm/200000000001", "kind": "SOLD", "price_gbp": 200,
+                  "sold_date": sold_date, "same_edition": True, "condition_no_better": True, "note": "Same printing, worn jacket"},
+                 {"url": "https://www.abaa.org/book/200000000002", "kind": "ASKING", "price_gbp": 180,
+                  "sold_date": "", "same_edition": True, "condition_no_better": True, "note": "Same printing, similar wear"}]
+        result = {"decision": "GEM", "actual_book": True, "collector_fit": True, "edition_supported": True,
                   "context": "Danny Lyon's documentary book is a key work.",
-                  "opportunity_reason": "The exact book is listed cheaply and the seller has not identified its printing.",
-                  "edition_note": "Seller has not proved the edition.", "risk": "Inspect title page and condition.",
-                  "source_urls": ["https://www.moma.org/books/bikeriders"]}
+                  "opportunity_reason": "The seller identifies the early printing, far below two like-for-like market pages.",
+                  "edition_note": "Seller identifies the first printing.", "risk": "Inspect title page and condition.",
+                  "source_urls": ["https://www.moma.org/books/bikeriders"], "market_comparables": comps}
         with self.assertRaises(ResearchDeferred):
             run_lead_research(self.db, job, config, provider=lambda *_: result, link_check=lambda *_: True)
         with transaction(self.db):
             self.db.execute("INSERT INTO live_checks(listing_id,observation_id,provider,checked_at,availability,price_minor,currency,result_json) VALUES(?,?,?,?,?,?,?,?)",
                             (listing_id, observation, "ebay_browse", now(), "LIVE", 2000, "GBP", "{}"))
-        self.assertEqual(run_lead_research(self.db, job, config, provider=lambda *_: result, link_check=lambda *_: True)["status"], "DONE")
-        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events WHERE stage='RESEARCHED_FIND'").fetchone()[0], 1)
+        self.assertEqual(run_lead_research(self.db, job, config, provider=lambda *_: result, link_check=lambda *_: True,
+                                           market_check=lambda *_: True)["status"], "DONE")
+        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events WHERE stage='BARGAIN_FIND'").fetchone()[0], 1)
         self.assertTrue(send_one(self.db, config, fake=True))
         with transaction(self.db):
             capture(self.db, {"key": "ebay:123456789012", "title": "Danny Lyon The Bikeriders first printing 1968",
@@ -230,8 +292,9 @@ class RadarPersistenceTests(unittest.TestCase):
             self.db.execute("INSERT INTO live_checks(listing_id,observation_id,provider,checked_at,availability,price_minor,currency,result_json) VALUES(?,?,?,?,?,?,?,?)",
                             (listing_id, newer_observation, "ebay_browse", now(), "LIVE", 1900, "GBP", "{}"))
         newer_job = claim_job(self.db, "research-test", kinds=("RESEARCH_LEAD",), lease_seconds=180)
-        self.assertEqual(run_lead_research(self.db, newer_job, config, provider=lambda *_: result, link_check=lambda *_: True)["status"], "DONE")
-        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events WHERE stage='RESEARCHED_FIND'").fetchone()[0], 1)
+        self.assertEqual(run_lead_research(self.db, newer_job, config, provider=lambda *_: result, link_check=lambda *_: True,
+                                           market_check=lambda *_: True)["status"], "DONE")
+        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events WHERE stage='BARGAIN_FIND'").fetchone()[0], 1)
 
     def test_research_rejects_generic_or_unsupported_find(self):
         config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True,
@@ -247,11 +310,12 @@ class RadarPersistenceTests(unittest.TestCase):
         job = claim_job(self.db, "research-test", kinds=("RESEARCH_LEAD",), lease_seconds=180)
         result = {"decision": "PASS", "actual_book": True, "collector_fit": False, "edition_supported": False,
                   "context": "Routine reprint.", "opportunity_reason": "No collector opportunity.",
-                  "edition_note": "Later edition.", "risk": "Common copy.", "source_urls": ["https://www.moma.org/books/bikeriders"]}
+                  "edition_note": "Later edition.", "risk": "Common copy.", "source_urls": ["https://www.moma.org/books/bikeriders"],
+                  "market_comparables": []}
         self.assertEqual(run_lead_research(self.db, job, config, provider=lambda *_: result, link_check=lambda *_: True)["status"], "REJECTED")
         self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events").fetchone()[0], 0)
 
-    def test_unproven_gem_is_sent_as_a_cautious_lead(self):
+    def test_unproven_gem_stays_off_telegram(self):
         config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True,
                         allow_real_notifications=True, notification_enabled=True,
                         research_provider="codex_cli", research_recurring_enabled=True)
@@ -267,10 +331,10 @@ class RadarPersistenceTests(unittest.TestCase):
                   "context": "This is a major documentary photobook.",
                   "opportunity_reason": "A cheap copy, but the actual printing is not identified by the seller.",
                   "edition_note": "Printing unknown.", "risk": "It could be a routine reprint.",
-                  "source_urls": ["https://www.moma.org/books/bikeriders"]}
+                  "source_urls": ["https://www.moma.org/books/bikeriders"], "market_comparables": []}
         outcome = run_lead_research(self.db, job, config, provider=lambda *_: result, link_check=lambda *_: True)
-        self.assertEqual((outcome["status"], outcome["verdict"]), ("DONE", "PAY_ATTENTION"))
-        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events WHERE stage='RESEARCHED_FIND'").fetchone()[0], 1)
+        self.assertEqual((outcome["status"], outcome["verdict"]), ("NEEDS_EVIDENCE", "PAY_ATTENTION"))
+        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events WHERE stage='BARGAIN_FIND'").fetchone()[0], 0)
 
     def test_non_ebay_book_can_be_researched_and_alerted_from_recent_feed(self):
         config = Config(data_dir=Path(self.folder.name), mode="production", allow_real_notifications=True,
@@ -283,13 +347,19 @@ class RadarPersistenceTests(unittest.TestCase):
             enqueue_job(self.db, "research:shop", "RESEARCH_LEAD", listing_id=listing_id,
                         payload={"observation_id": observation})
         job = claim_job(self.db, "research-test", kinds=("RESEARCH_LEAD",), lease_seconds=180)
-        result = {"decision": "PAY_ATTENTION", "actual_book": True, "collector_fit": True, "edition_supported": False,
+        result = {"decision": "GEM", "actual_book": True, "collector_fit": True, "edition_supported": True,
                   "context": "Danny Lyon's Bikeriders is a major documentary photobook.",
-                  "opportunity_reason": "The seller has a reasonably priced copy that warrants checking for an early printing.",
-                  "edition_note": "Printing unknown.", "risk": "Confirm availability and edition with the seller.",
-                  "source_urls": []}
-        outcome = run_lead_research(self.db, job, config, provider=lambda *_: result, link_check=lambda *_: False)
-        self.assertEqual((outcome["status"], outcome["verdict"]), ("DONE", "PAY_ATTENTION"))
+                  "opportunity_reason": "The seller's identified printing is far below a matched sold copy and a live offer.",
+                  "edition_note": "Printing identified by seller.", "risk": "Confirm availability and edition with the seller.",
+                  "source_urls": [], "market_comparables": [
+                      {"url": "https://www.ebay.co.uk/itm/200000000003", "kind": "SOLD", "price_gbp": 240,
+                       "sold_date": datetime.now(timezone.utc).date().isoformat(), "same_edition": True,
+                       "condition_no_better": True, "note": "Similar copy"},
+                      {"url": "https://www.abaa.org/book/200000000004", "kind": "ASKING", "price_gbp": 220,
+                       "sold_date": "", "same_edition": True, "condition_no_better": True, "note": "Same printing"}]}
+        outcome = run_lead_research(self.db, job, config, provider=lambda *_: result, link_check=lambda *_: False,
+                                    market_check=lambda *_: True)
+        self.assertEqual((outcome["status"], outcome["verdict"]), ("DONE", "GEM"))
         self.assertTrue(send_one(self.db, config, fake=True))
 
     def test_unfamiliar_signed_photobook_is_researched(self):
@@ -310,7 +380,8 @@ class RadarPersistenceTests(unittest.TestCase):
         from photobook_radar import research_sweeps
         response = {"decision": "PASS", "actual_book": False, "collector_fit": False, "edition_supported": False,
                     "context": "A short verified context.", "opportunity_reason": "No particular opportunity.",
-                    "edition_note": "Edition unknown.", "risk": "Inspect condition.", "source_urls": []}
+                    "edition_note": "Edition unknown.", "risk": "Inspect condition.", "source_urls": [],
+                    "market_comparables": []}
         def fake_run(command, **kwargs):
             Path(command[command.index("-o") + 1]).write_text(__import__("json").dumps(response))
             return type("Completed", (), {"returncode": 0})()
@@ -658,10 +729,10 @@ class RadarPersistenceTests(unittest.TestCase):
             listing_id = capture(self.db, {"key": "ebay:123456789012", "title": "Possible book"}, source_id="ebay", origin_key="possible", imported=False)
             observation = self.db.execute("SELECT current_observation_id FROM listings WHERE id=?", (listing_id,)).fetchone()[0]
             review = self.db.execute("INSERT INTO reviews(listing_id,observation_id,provider,policy_hash,verdict,status,result_json) VALUES(?,?,?,?,?,?,?)",
-                                     (listing_id, observation, "codex_cli", "collector-research-v3", "PAY_ATTENTION", "DONE", "{}"))
+                                     (listing_id, observation, "codex_cli", "collector-bargains-v4", "GEM", "DONE", '{"bargain_screen":{"accepted":true}}'))
             self.db.execute("INSERT INTO live_checks(listing_id,observation_id,provider,checked_at,availability,price_minor,currency,result_json) VALUES(?,?,?,?,?,?,?,?)",
                             (listing_id, observation, "ebay_browse", now(), "LIVE", 2000, "GBP", "{}"))
-            enqueue_notification(self.db, listing_id=listing_id, stage="RESEARCHED_FIND", material_version="initial", channel="telegram", payload={"message": "Check listing", "review_id": review.lastrowid})
+            enqueue_notification(self.db, listing_id=listing_id, stage="BARGAIN_FIND", material_version="initial", channel="telegram", payload={"message": "Check listing", "review_id": review.lastrowid, "price_minor": 2000, "shipping_minor": None, "shipping_currency": None})
             self.db.execute("UPDATE notification_events SET status='DELIVERY_UNKNOWN',attempts=1,lease_until='2020-01-01T00:00:00Z'")
         self.assertTrue(send_one(self.db, config, fake=True))
         row = self.db.execute("SELECT status,attempts FROM notification_events").fetchone()
@@ -722,11 +793,12 @@ class RadarPersistenceTests(unittest.TestCase):
                                  source_id="ebay", origin_key="before", imported=False)
             observation = self.db.execute("SELECT current_observation_id FROM listings WHERE id=?", (listing_id,)).fetchone()[0]
             review = self.db.execute("INSERT INTO reviews(listing_id,observation_id,provider,policy_hash,verdict,status,result_json) VALUES(?,?,?,?,?,?,?)",
-                                     (listing_id, observation, "codex_cli", "collector-research-v3", "GEM", "DONE", "{}"))
+                                     (listing_id, observation, "codex_cli", "collector-bargains-v4", "GEM", "DONE", '{"bargain_screen":{"accepted":true}}'))
             self.db.execute("INSERT INTO live_checks(listing_id,observation_id,provider,checked_at,availability,price_minor,currency,result_json) VALUES(?,?,?,?,?,?,?,?)",
                             (listing_id, observation, "ebay_browse", now(), "LIVE", 2000, "GBP", "{}"))
-            enqueue_notification(self.db, listing_id=listing_id, stage="RESEARCHED_FIND", material_version=str(observation),
-                                 channel="telegram", payload={"message": "Potential gem", "review_id": review.lastrowid})
+            enqueue_notification(self.db, listing_id=listing_id, stage="BARGAIN_FIND", material_version=str(observation),
+                                 channel="telegram", payload={"message": "Potential gem", "review_id": review.lastrowid,
+                                                              "price_minor": 2000, "shipping_minor": None, "shipping_currency": None})
             capture(self.db, {"key": "ebay:123456789012", "title": "Different later reprint", "price_gbp": "20",
                               "url": "https://www.ebay.co.uk/itm/123456789012"}, source_id="ebay", origin_key="after", imported=False)
         self.assertFalse(send_one(self.db, config, fake=True))

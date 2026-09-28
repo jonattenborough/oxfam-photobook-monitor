@@ -41,6 +41,8 @@ class Config:
     source_publishers: bool = False
     source_prizes: bool = False
     max_recommended_item_gbp: str = "150.00"
+    min_net_profit_gbp: str = "50.00"
+    min_discount_pct: int = 60
     ebay_daily_limit: int = 5000
     ebay_reserve: int = 650
     ebay_endgame_cap: int = 3600
@@ -78,8 +80,12 @@ class Config:
             raise ValueError("Research daily jobs must be between 0 and 48")
         if self.research_model != "gpt-6-sol":
             raise ValueError("Research model must be the tested GPT-6 Sol configuration")
-        if Decimal(self.max_recommended_item_gbp) > Decimal("150.00"):
-            raise ValueError("Raising the recommendation cap requires a separately audited policy change")
+        max_buy = Decimal(self.max_recommended_item_gbp) if self.max_recommended_item_gbp != "unlimited" else Decimal("100000")
+        minimum_profit = Decimal(self.min_net_profit_gbp)
+        if not max_buy.is_finite() or not Decimal("0") < max_buy <= Decimal("100000"):
+            raise ValueError("Invalid collector cash limit")
+        if not minimum_profit.is_finite() or not Decimal("0") <= minimum_profit <= Decimal("10000") or not 0 <= self.min_discount_pct <= 95:
+            raise ValueError("Invalid bargain margin thresholds")
         if self.ebay_reserve < 650 or self.ebay_endgame_cap > 3600:
             raise ValueError("eBay reserve or Endgame cap exceeds the approved plan")
         if self.ebay_daily_limit < self.ebay_reserve or self.tick_seconds < 5:
@@ -124,6 +130,8 @@ def load_config(path: Path | None = None) -> Config:
         source_publishers=bool(sources.get("publishers", False)),
         source_prizes=bool(sources.get("prizes", False)),
         max_recommended_item_gbp=str(policy.get("max_recommended_item_gbp", "150.00")),
+        min_net_profit_gbp=str(policy.get("min_net_profit_gbp", "50.00")),
+        min_discount_pct=int(policy.get("min_discount_pct", 60)),
         ebay_daily_limit=int(ebay.get("nominal_daily_browse_limit", 5000)),
         ebay_reserve=int(ebay.get("protected_reserve", 650)),
         ebay_endgame_cap=int(ebay.get("endgame_daily_cap", 3600)),
