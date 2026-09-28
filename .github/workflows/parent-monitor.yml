@@ -1,8 +1,6 @@
 name: Oxfam broad Art and Photography monitor
 
 on:
-  schedule:
-    - cron: "6,16,26,36,46,56 * * * *"
   workflow_dispatch:
   push:
     branches: [main]

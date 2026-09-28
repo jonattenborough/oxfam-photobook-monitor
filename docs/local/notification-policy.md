@@ -1,0 +1,7 @@
+# Notification policy
+
+Jon selected Telegram as the primary channel. The bot token and private chat ID are stored locally. Telegram accepted one labelled setup message (message ID 3); Jon confirmed receipt on his phone. The default `config.toml` keeps delivery disabled, and shadow mode cannot send automatic events. Pushover is implemented as an optional adapter and remains unused.
+
+A fresh, locally triaged under-GBP-150 lead can create one durable initial `FAST_LEAD` outbox event per listing when production delivery is enabled. The message says `POTENTIAL GEM / INVESTIGATE`, states the observed price and timestamp, labels missing postage and current status explicitly, and links directly to the seller listing. Imported historical stock is silent. Expired auctions and owner-dismissed leads are suppressed before sending. Fixed-price fast leads expire after two hours. An ambiguous provider result gets at most one later retry, with an explicit possible-duplicate label; a second unknown result stays `DELIVERY_UNKNOWN` for inspection. Provider acceptance is distinct from a phone receipt. There is no automatic BUY, BID or offer message without exact-copy evidence.
+
+The first phone test is a clearly labelled setup message, not a purchase recommendation. Jon confirmed this setup test arrived on his phone. A direct seller-link test is still pending. Quiet hours, emergency acknowledgement and repeat policy remain unconfigured, so no emergency repeats are sent.

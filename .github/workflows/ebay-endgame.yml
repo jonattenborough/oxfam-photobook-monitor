@@ -1,8 +1,6 @@
 name: eBay Endgame Auction Radar
 
 on:
-  schedule:
-    - cron: "2/5 * * * *"
   workflow_dispatch:
   push:
     branches: [main]

@@ -1,0 +1,501 @@
+{
+  "generated_at": "2026-09-28T06:36:04Z",
+  "commit": "692dc69c2a1352c750e1d69b394abd425d15a9b5",
+  "remote_workflow_state_verified": false,
+  "workflows": [
+    {
+      "path": ".github/workflows/bhf-full-scan.yml",
+      "name": "BHF full book inventory scan",
+      "schedules": [],
+      "dispatch": true,
+      "configured_as_recurring": false,
+      "remote_enabled_state": "NOT_VERIFIED",
+      "area": "Historical/manual workflow",
+      "entry_points": "bhf_full_scan.py",
+      "state_and_config": "see workflow",
+      "queue_prefixes": "manual outputs",
+      "scripts": [
+        "bhf_full_scan.py"
+      ],
+      "sha256": "026b40eade91ea3a2b9c3094c7e8b337853086f9cea2dddf25b80a419b436d91"
+    },
+    {
+      "path": ".github/workflows/catalogue-audit.yml",
+      "name": "Oxfam full catalogue gem audit",
+      "schedules": [],
+      "dispatch": true,
+      "configured_as_recurring": false,
+      "remote_enabled_state": "NOT_VERIFIED",
+      "area": "Historical/manual workflow",
+      "entry_points": "catalogue_audit.py; parent_full_scan.py",
+      "state_and_config": "see workflow",
+      "queue_prefixes": "manual outputs",
+      "scripts": [
+        "catalogue_audit.py",
+        "parent_full_scan.py"
+      ],
+      "sha256": "0970a6fcb90dced33e02ef025e5a207369ad0ef17bdd7313200a14a4b70dfda3"
+    },
+    {
+      "path": ".github/workflows/charity-full-scan.yml",
+      "name": "Charity existing inventory scan",
+      "schedules": [],
+      "dispatch": true,
+      "configured_as_recurring": false,
+      "remote_enabled_state": "NOT_VERIFIED",
+      "area": "Historical/manual workflow",
+      "entry_points": "charity_full_scan.py",
+      "state_and_config": "see workflow",
+      "queue_prefixes": "manual outputs",
+      "scripts": [
+        "charity_full_scan.py"
+      ],
+      "sha256": "95f89e2e9d56cb56135d8023f1f4e712a4375702ec3b084777f23bda021db256"
+    },
+    {
+      "path": ".github/workflows/ebay-endgame.yml",
+      "name": "eBay Endgame Auction Radar",
+      "schedules": [
+        "2/5 * * * *"
+      ],
+      "dispatch": true,
+      "configured_as_recurring": true,
+      "remote_enabled_state": "NOT_VERIFIED",
+      "area": "eBay Endgame auctions",
+      "entry_points": "ebay_endgame.py; ebay_search_checkpoint.py",
+      "state_and_config": "data/ebay_endgame_state.json; data/ebay_endgame_targets.json",
+      "queue_prefixes": "ENDGAME_EARLY; ENDGAME_4H",
+      "scripts": [
+        "ebay_endgame.py"
+      ],
+      "sha256": "730afd80c490fdc645a59446463c012f4634c9bc69a24f932c47d8b17b866a3b"
+    },
+    {
+      "path": ".github/workflows/ebay-private-full-library-scan.yml",
+      "name": "One-time eBay private full-library scan",
+      "schedules": [],
+      "dispatch": true,
+      "configured_as_recurring": false,
+      "remote_enabled_state": "NOT_VERIFIED",
+      "area": "Historical/manual workflow",
+      "entry_points": "ebay_private_full_library_scan.py",
+      "state_and_config": "see workflow",
+      "queue_prefixes": "manual outputs",
+      "scripts": [
+        "ebay_private_full_library_scan.py"
+      ],
+      "sha256": "32b3c41ccf34b93d6fddf8754dfebb67d6770c59149d83b7190e711391a47281"
+    },
+    {
+      "path": ".github/workflows/ebay-private-international-accelerator.yml",
+      "name": "eBay international backfill accelerator",
+      "schedules": [],
+      "dispatch": true,
+      "configured_as_recurring": false,
+      "remote_enabled_state": "NOT_VERIFIED",
+      "area": "Historical/manual workflow",
+      "entry_points": "ebay_private_international_backfill.py",
+      "state_and_config": "see workflow",
+      "queue_prefixes": "manual outputs",
+      "scripts": [
+        "ebay_private_international_backfill.py"
+      ],
+      "sha256": "e4207919c2cff89ff2c6317ea449950c1a43082b1cbfdacf87807857f51a265a"
+    },
+    {
+      "path": ".github/workflows/ebay-private-seller-monitor.yml",
+      "name": "eBay private seller photobook discovery",
+      "schedules": [
+        "4 * * * *"
+      ],
+      "dispatch": true,
+      "configured_as_recurring": true,
+      "remote_enabled_state": "NOT_VERIFIED",
+      "area": "eBay private fixed price",
+      "entry_points": "ebay_private_recall_monitor.py; ebay_private_alert_builder.py; ebay_private_issue_sync.py",
+      "state_and_config": "data/ebay_private_seller_state.json; data/ebay_private_recall_searches.json",
+      "queue_prefixes": "EBAY_PRIVATE_NEW",
+      "scripts": [
+        "ebay_private_alert_builder.py",
+        "ebay_private_issue_sync.py",
+        "ebay_private_recall_monitor.py",
+        "photobook_recognition.py",
+        "photobook_review_handoff.py",
+        "photobook_review_health.py"
+      ],
+      "sha256": "38a99407c2ce6fd20aac9ec3cd9e48f70cbdf83a1a161fb4b1789d274d7e362e"
+    },
+    {
+      "path": ".github/workflows/ebay-seller-monitor.yml",
+      "name": "eBay charity seller photobook monitor",
+      "schedules": [
+        "9 * * * *"
+      ],
+      "dispatch": true,
+      "configured_as_recurring": true,
+      "remote_enabled_state": "NOT_VERIFIED",
+      "area": "eBay charity/library sellers",
+      "entry_points": "ebay_seller_monitor.py; ebay_charity_issue_sync.py",
+      "state_and_config": "data/ebay_seller_state.json; data/ebay_sellers.json",
+      "queue_prefixes": "CHARITY_NEW",
+      "scripts": [
+        "ebay_charity_issue_sync.py",
+        "ebay_seller_monitor.py"
+      ],
+      "sha256": "0fc788c8d8d9c434332c1e12ba3ad9e2580b7f498e21ef149bd610da6c296716"
+    },
+    {
+      "path": ".github/workflows/full-scan.yml",
+      "name": "Oxfam full catalogue scan",
+      "schedules": [],
+      "dispatch": true,
+      "configured_as_recurring": false,
+      "remote_enabled_state": "NOT_VERIFIED",
+      "area": "Historical/manual workflow",
+      "entry_points": "full_scan.py",
+      "state_and_config": "see workflow",
+      "queue_prefixes": "manual outputs",
+      "scripts": [
+        "full_scan.py"
+      ],
+      "sha256": "40de4ff91f8afb82184a7e3731af3034817babe3b2759ae0fb2fcc69c39f0d46"
+    },
+    {
+      "path": ".github/workflows/initial-market-sweep.yml",
+      "name": "One-time Parr Badger initial market sweep",
+      "schedules": [],
+      "dispatch": true,
+      "configured_as_recurring": false,
+      "remote_enabled_state": "NOT_VERIFIED",
+      "area": "Historical/manual workflow",
+      "entry_points": "initial_market_sweep.py; parr_badger_runner.py",
+      "state_and_config": "see workflow",
+      "queue_prefixes": "manual outputs",
+      "scripts": [
+        "initial_market_sweep.py",
+        "parr_badger_runner.py"
+      ],
+      "sha256": "43070d1c6a259ad22b6ead0a5f4cf4ea2591d71e0150f74c9600e8782f0f5954"
+    },
+    {
+      "path": ".github/workflows/market-monitor.yml",
+      "name": "Comprehensive photobook market discovery",
+      "schedules": [
+        "27 * * * *"
+      ],
+      "dispatch": true,
+      "configured_as_recurring": true,
+      "remote_enabled_state": "NOT_VERIFIED",
+      "area": "Four specialist feeds, two broad eBay feeds, AbeBooks targets",
+      "entry_points": "market_monitor_safe.py; market_monitor.py; market_issue_batches.py",
+      "state_and_config": "data/market_state.json",
+      "queue_prefixes": "EXTERNAL_NEW",
+      "scripts": [
+        "market_issue_batches.py",
+        "market_monitor.py",
+        "market_monitor_safe.py"
+      ],
+      "sha256": "0ed0c258549e6d104264ee83bed436522ac4b19cc7b89733ec3924c9aa5b2ec3"
+    },
+    {
+      "path": ".github/workflows/monitor.yml",
+      "name": "Charity photobook monitor",
+      "schedules": [
+        "3,13,23,33,43,53 * * * *"
+      ],
+      "dispatch": true,
+      "configured_as_recurring": true,
+      "remote_enabled_state": "NOT_VERIFIED",
+      "area": "Oxfam Photography; Shelter/Crisis",
+      "entry_points": "monitor.py; canon_runner.py; charity_monitor.py",
+      "state_and_config": "data/state.json; data/charity_state.json",
+      "queue_prefixes": "OXFAM_NEW; CHARITY_NEW",
+      "scripts": [
+        "canon_runner.py"
+      ],
+      "sha256": "258c6b2c1acc3e5e906b04549206e0c62bfa9ac457109dcb8d5d72611ff3ba25"
+    },
+    {
+      "path": ".github/workflows/parent-full-scan.yml",
+      "name": "Oxfam full Art and Photography parent scan",
+      "schedules": [],
+      "dispatch": true,
+      "configured_as_recurring": false,
+      "remote_enabled_state": "NOT_VERIFIED",
+      "area": "Historical/manual workflow",
+      "entry_points": "parent_full_scan.py",
+      "state_and_config": "see workflow",
+      "queue_prefixes": "manual outputs",
+      "scripts": [
+        "parent_full_scan.py"
+      ],
+      "sha256": "6c7ad5a07d1c62af8f78730e4842d347f7ec32ac4bede6eb57de64cb5c2040b1"
+    },
+    {
+      "path": ".github/workflows/parent-monitor.yml",
+      "name": "Oxfam broad Art and Photography monitor",
+      "schedules": [
+        "6,16,26,36,46,56 * * * *"
+      ],
+      "dispatch": true,
+      "configured_as_recurring": true,
+      "remote_enabled_state": "NOT_VERIFIED",
+      "area": "Oxfam broad Art and Photography",
+      "entry_points": "parent_monitor.py; oxfam_parent_common.py",
+      "state_and_config": "data/parent_state.json",
+      "queue_prefixes": "OXFAM_ART_NEW",
+      "scripts": [
+        "canon_runner.py"
+      ],
+      "sha256": "375f6bf51e433de2448a80e8fac13a351171b56d2d4d659885377fd7930871b0"
+    },
+    {
+      "path": ".github/workflows/photobook-review-health.yml",
+      "name": "Photobook review health and queue index",
+      "schedules": [
+        "13,43 * * * *"
+      ],
+      "dispatch": true,
+      "configured_as_recurring": true,
+      "remote_enabled_state": "NOT_VERIFIED",
+      "area": "Review health and handoff",
+      "entry_points": "photobook_review_health.py; photobook_review_handoff.py",
+      "state_and_config": "data/photobook_review_index.json; data/photobook_review_handoff.json",
+      "queue_prefixes": "reporting only",
+      "scripts": [
+        "photobook_review_handoff.py",
+        "photobook_review_health.py"
+      ],
+      "sha256": "478ec8e911ed727f2238a5777f27fd6841f44dcd6d6aa1eb0f545a9701dd6684"
+    }
+  ],
+  "state_files": {
+    "state.json": {
+      "last_reported_success_or_run": "2026-09-27T17:03:17Z",
+      "timestamp_field": "last_successful_fetch",
+      "bytes": 753549,
+      "sha256": "15c877623d0e18cc0ec2f3ae1d9ebd0e0d3f907a51c0d2132482bb3a2744f20e"
+    },
+    "parent_state.json": {
+      "last_reported_success_or_run": "2026-09-27T21:38:46Z",
+      "timestamp_field": "last_successful_fetch",
+      "bytes": 1100088,
+      "sha256": "0eece872a21b8f6bb6d22c7761eb7b120fe11377326a2a10c1c0e588c4c693ec"
+    },
+    "charity_state.json": {
+      "last_reported_success_or_run": "2026-09-27T17:03:27Z",
+      "timestamp_field": "last_checked",
+      "bytes": 449373,
+      "sha256": "a034d4723997a8a3ae05d35801230ac82a524d5b2f3f617a0591d64f12a549cc"
+    },
+    "market_state.json": {
+      "last_reported_success_or_run": "2026-09-28T00:54:43Z",
+      "timestamp_field": "last_successful_run",
+      "bytes": 1172588,
+      "sha256": "724d58874d2e03d9ffa4923c984685fc31dcbdadbf3632d0f0400cd2628f1489"
+    },
+    "ebay_private_seller_state.json": {
+      "last_reported_success_or_run": "2026-09-28T00:27:07Z",
+      "timestamp_field": "last_run",
+      "bytes": 6945614,
+      "sha256": "df36fc599c3c9653b82c06391a84c4310e0351412ab2c04aef66f425b41aa111"
+    },
+    "ebay_seller_state.json": {
+      "last_reported_success_or_run": "2026-09-28T00:36:29Z",
+      "timestamp_field": "last_run",
+      "bytes": 5978868,
+      "sha256": "f2c73e8dbcef7400948bf27897eb3a938422b188cb9047d4839abdf97daa2ed0"
+    },
+    "ebay_endgame_state.json": {
+      "last_reported_success_or_run": "2026-09-28T01:35:28Z",
+      "timestamp_field": "last_discovery_at",
+      "bytes": 78441978,
+      "sha256": "fa1ad74dab2a43fbde79c00d21b6b21aac7d569c989e4ca14a7f2f9eebf6f212"
+    },
+    "external_state.json": {
+      "last_reported_success_or_run": null,
+      "timestamp_field": "last_run",
+      "bytes": 36,
+      "sha256": "01bda822b5654654f072993031ffe53ef4b0aa3cb006f70ce8b5e0a8b47682bd"
+    }
+  },
+  "source_config": {
+    "core_tiers": {
+      "1": 50,
+      "2": 70,
+      "3": 55
+    },
+    "endgame_discovery_interval_minutes": 15,
+    "endgame_daily_cap": 3600,
+    "shared_reserve": 650,
+    "endgame_alert_minutes": [
+      2880,
+      240
+    ],
+    "private_max_logical_calls_per_run": 17,
+    "private_capture_max_price_gbp": 750,
+    "market_retained_feed_ids": [
+      "tpg_new",
+      "photobookstore",
+      "village",
+      "setanta"
+    ],
+    "market_exact_target_markets": [
+      "abebooks"
+    ],
+    "market_wrapper_evidence": "market_monitor_safe.py FEEDS filter and TARGET_MARKETS assignment",
+    "seller_config_type": "dict"
+  },
+  "data_files": [
+    "data/PHOTBOOK_CANON_README.md",
+    "data/catalogue_audit_trigger.txt",
+    "data/charity_full_candidates.json",
+    "data/charity_state.json",
+    "data/ebay_endgame_bootstrap_trigger.txt",
+    "data/ebay_endgame_state.json",
+    "data/ebay_endgame_targets.json",
+    "data/ebay_private_forensic_audit_candidates.json",
+    "data/ebay_private_forensic_audit_report.md",
+    "data/ebay_private_forensic_audit_summary.json",
+    "data/ebay_private_forensic_audit_trigger.txt",
+    "data/ebay_private_forensic_chunks/batch-001.json.gz",
+    "data/ebay_private_forensic_chunks/batch-002.json.gz",
+    "data/ebay_private_forensic_chunks/batch-003.json.gz",
+    "data/ebay_private_forensic_chunks/batch-004.json.gz",
+    "data/ebay_private_forensic_chunks/batch-005.json.gz",
+    "data/ebay_private_forensic_chunks/batch-006.json.gz",
+    "data/ebay_private_forensic_chunks/batch-007.json.gz",
+    "data/ebay_private_forensic_chunks/batch-008.json.gz",
+    "data/ebay_private_forensic_chunks/batch-009.json.gz",
+    "data/ebay_private_forensic_chunks/batch-010.json.gz",
+    "data/ebay_private_forensic_chunks/batch-011.json.gz",
+    "data/ebay_private_forensic_scan_state.json",
+    "data/ebay_private_forensic_verified.json",
+    "data/ebay_private_forensic_verified_report.md",
+    "data/ebay_private_forensic_verify_state.json",
+    "data/ebay_private_full_library_scan_findings.json",
+    "data/ebay_private_full_library_scan_state.json",
+    "data/ebay_private_full_library_scan_trigger.txt",
+    "data/ebay_private_international_backfill_findings.json",
+    "data/ebay_private_international_backfill_state.json",
+    "data/ebay_private_international_markets.json",
+    "data/ebay_private_recall_policy.json",
+    "data/ebay_private_recall_searches.json",
+    "data/ebay_private_searches.json",
+    "data/ebay_private_seller_backfill_findings.json",
+    "data/ebay_private_seller_backfill_state.json",
+    "data/ebay_private_seller_review_history.json",
+    "data/ebay_private_seller_state.json",
+    "data/ebay_seller_backfill_findings.json",
+    "data/ebay_seller_backfill_state.json",
+    "data/ebay_seller_state.json",
+    "data/ebay_sellers.json",
+    "data/external_buy_now_priority_targets.json",
+    "data/external_buy_now_rotation.json",
+    "data/external_buy_now_sources.json",
+    "data/external_state.json",
+    "data/full_candidates.json",
+    "data/full_catalogue.json",
+    "data/initial_market_sweep_trigger.txt",
+    "data/initial_web_sweep_hits.json",
+    "data/initial_web_sweep_state.json",
+    "data/market_state.json",
+    "data/oxfam_catalogue_audit_queue.json",
+    "data/oxfam_catalogue_audit_state.json",
+    "data/oxfam_parent_full_candidates.json",
+    "data/parent_state.json",
+    "data/parr_badger_master/README.md",
+    "data/parr_badger_master/part-001.csv",
+    "data/parr_badger_master/part-002.csv",
+    "data/parr_badger_master/part-003.csv",
+    "data/parr_badger_master/part-004.csv",
+    "data/photobook_recognition/README.md",
+    "data/photobook_recognition/contemporary_documentary.csv",
+    "data/photobook_recognition/curated_target_editions.csv",
+    "data/photobook_recognition/openlibrary_publisher_backlists.csv",
+    "data/photobook_recognition/openlibrary_publishers.json",
+    "data/photobook_recognition/pre1970_unicorns.csv",
+    "data/photobook_recognition/priority_seed.csv",
+    "data/photobook_recognition/user_priority_watches.csv",
+    "data/photobook_review_handoff.json",
+    "data/photobook_review_health.json",
+    "data/photobook_review_index.json",
+    "data/photobook_review_queue/charity_new-0001.json",
+    "data/photobook_review_queue/charity_new-0002.json",
+    "data/photobook_review_queue/charity_new-0003.json",
+    "data/photobook_review_queue/charity_new-0004.json",
+    "data/photobook_review_queue/ebay_private_new-0001.json",
+    "data/photobook_review_queue/ebay_private_new-0002.json",
+    "data/photobook_review_queue/ebay_private_new-0003.json",
+    "data/photobook_review_queue/ebay_private_new-0004.json",
+    "data/photobook_review_queue/ebay_private_new-0005.json",
+    "data/photobook_review_queue/ebay_private_new-0006.json",
+    "data/photobook_review_queue/ebay_private_new-0007.json",
+    "data/photobook_review_queue/ebay_private_new-0008.json",
+    "data/photobook_review_queue/ebay_private_new-0009.json",
+    "data/photobook_review_queue/ebay_private_new-0010.json",
+    "data/photobook_review_queue/ebay_private_new-0011.json",
+    "data/photobook_review_queue/ebay_private_new-0012.json",
+    "data/photobook_review_queue/ebay_private_new-0013.json",
+    "data/photobook_review_queue/ebay_private_new-0014.json",
+    "data/photobook_review_queue/ebay_private_new-0015.json",
+    "data/photobook_review_queue/ebay_private_new-0016.json",
+    "data/photobook_review_queue/ebay_private_new-0017.json",
+    "data/photobook_review_queue/ebay_private_new-0018.json",
+    "data/photobook_review_queue/ebay_private_new-0019.json",
+    "data/photobook_review_queue/ebay_private_new-0020.json",
+    "data/photobook_review_queue/ebay_private_new-0021.json",
+    "data/photobook_review_queue/ebay_private_new-0022.json",
+    "data/photobook_review_queue/ebay_private_new-0023.json",
+    "data/photobook_review_queue/ebay_private_new-0024.json",
+    "data/photobook_review_queue/ebay_private_new-0025.json",
+    "data/photobook_review_queue/ebay_private_new-0026.json",
+    "data/photobook_review_queue/ebay_private_new-0027.json",
+    "data/photobook_review_queue/ebay_private_new-0028.json",
+    "data/photobook_review_queue/ebay_private_new-0029.json",
+    "data/photobook_review_queue/endgame_4h-0001.json",
+    "data/photobook_review_queue/endgame_4h-0002.json",
+    "data/photobook_review_queue/endgame_4h-0003.json",
+    "data/photobook_review_queue/endgame_early-0001.json",
+    "data/photobook_review_queue/endgame_early-0002.json",
+    "data/photobook_review_queue/endgame_early-0003.json",
+    "data/photobook_review_queue/endgame_early-0004.json",
+    "data/photobook_review_queue/endgame_early-0005.json",
+    "data/photobook_review_queue/endgame_early-0006.json",
+    "data/photobook_review_queue/endgame_early-0007.json",
+    "data/photobook_review_queue/external_new-0001.json",
+    "data/photobook_review_queue/oxfam_art_new-0001.json",
+    "data/photobook_review_queue/oxfam_new-0001.json",
+    "data/photobook_reviewer_receipt.json",
+    "data/roth_101_master.csv",
+    "data/state.json"
+  ],
+  "manual_code": [
+    "bhf_full_scan.py",
+    "catalogue_audit.py",
+    "charity_full_scan.py",
+    "ebay_private_forensic_audit.py",
+    "ebay_private_forensic_scan.py",
+    "ebay_private_forensic_verify.py",
+    "ebay_private_international_backfill.py",
+    "ebay_private_seller_backfill.py",
+    "ebay_seller_backfill.py",
+    "full_scan.py",
+    "initial_market_sweep.py",
+    "parent_full_scan.py",
+    "test_catalogue_audit.py",
+    "test_ebay_private_forensic_audit.py",
+    "test_ebay_private_forensic_scan.py",
+    "test_ebay_private_forensic_verify.py",
+    "test_ebay_private_international_backfill.py",
+    "test_ebay_private_seller_backfill.py",
+    "test_ebay_seller_backfill.py"
+  ],
+  "unmigrated_responsibilities": [
+    "ChatGPT Wider Web task",
+    "Publisher/Future Canon task",
+    "Prize Watch task",
+    "other ChatGPT review tasks: current state and full task export not accessible in this checkout"
+  ],
+  "local_source_status": "SHADOW_IMPORT_ONLY"
+}

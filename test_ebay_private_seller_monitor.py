@@ -51,13 +51,15 @@ class PrivateSellerMonitorTests(unittest.TestCase):
             )
         )
 
-    def test_private_and_charity_schedules_match_reduced_budgets(self):
+    def test_legacy_private_and_charity_workflows_are_manual_after_local_cutover(self):
         private_workflow = Path(".github/workflows/ebay-private-seller-monitor.yml").read_text(encoding="utf-8")
         charity_workflow = Path(".github/workflows/ebay-seller-monitor.yml").read_text(encoding="utf-8")
-        self.assertEqual(private_workflow.count('cron: "4 * * * *"'), 1)
+        self.assertNotIn("schedule:", private_workflow)
+        self.assertIn("workflow_dispatch:", private_workflow)
         self.assertNotIn("--assignee", private_workflow)
         self.assertNotIn("@jonattenborough", private_workflow)
-        self.assertEqual(charity_workflow.count('cron: "9 * * * *"'), 1)
+        self.assertNotIn("schedule:", charity_workflow)
+        self.assertIn("workflow_dispatch:", charity_workflow)
         self.assertIn("--sellers-per-run 12", charity_workflow)
         self.assertNotIn("\n  push:\n", private_workflow)
         self.assertNotIn("\n  push:\n", charity_workflow)

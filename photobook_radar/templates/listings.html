@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="hero">
+  <div><p class="eyebrow">PRIVATE COLLECTING DESK</p><h1>{{ title }}</h1><p class="lede">{% if section == 'finds' %}Promising books discovered during the fresh watch.{% elif section == 'urgent' %}Freshly discovered auctions with a known ending time. Check the seller page before acting.{% elif section == 'saved' %}Books you chose to save or watch.{% else %}Older records kept for reference. Their price and availability may be out of date.{% endif %}</p></div>
+  <div class="hero-stat"><strong>{{ count|int }}</strong><span>{{ 'matches' if q else 'records' }}</span></div>
+</section>
+<div class="status-line"><span class="status-dot" aria-hidden="true"></span> {% if mode == 'shadow' %}Shadow mode: live scans and automatic alerts are off.{% else %}Local monitoring mode: see System for source and alert status.{% endif %} {% if fresh_start %}Fresh watch began {{ fresh_start|localtime }}.{% endif %} {{ scanned }} fresh records screened; {{ pending }} waiting.</div>
+<form class="searchbar" action="/{{ section }}" method="get" role="search"><label for="q">Search title, photographer or listing ID</label><div><input id="q" name="q" value="{{ q }}" placeholder="Try a title, name or item ID"><button type="submit">Search</button></div></form>
+{% if cards %}<div class="card-grid">
+{% for book in cards %}
+<article class="book-card">
+  <div class="card-top"><span class="pill {{ 'warm' if book.verdict else '' }}">{{ book.verdict or ('Awaiting screening' if not book.triage_score else 'Recorded') }}</span><span class="source">{{ book.platform|upper }}</span></div>
+  <h2><a href="/listing/{{ book.id }}">{{ book.title }}</a></h2>
+  <p class="byline">{{ book.photographer or 'Photographer not confirmed' }}{% if book.core_tier %}<span class="core">Core 175, Tier {{ book.core_tier }}</span>{% endif %}</p>
+  <p class="reason">{{ book.triage_reason or 'Retained for screening. No assessment has been made yet.' }}</p>
+  <div class="amounts"><div><small>Item</small><strong>{{ book.price_minor|money(book.currency) }}</strong></div><div><small>Postage</small><strong>{{ book.shipping_minor|money(book.shipping_currency) if book.shipping_minor is not none else 'Unknown' }}</strong></div><div><small>Total</small><strong>{{ book.total_minor|money(book.currency) if book.total_minor is not none else 'Unknown' }}</strong></div></div>
+  {% if book.auction_end_at %}<p class="deadline">Ends {{ book.auction_end_at|localtime }}</p>{% endif %}
+  <p class="meta">Observed {{ book.observed_at|localtime }}. {% if book.imported %}Historical import; live status unverified.{% else %}Live status not verified.{% endif %}</p>
+  <div class="card-actions">{% if book.canonical_url %}<a class="primary" href="{{ book.canonical_url }}" target="_blank" rel="noopener noreferrer">Open listing</a>{% endif %}<a href="/listing/{{ book.id }}">View assessment</a></div>
+</article>
+{% endfor %}
+</div>
+<nav class="pagination" aria-label="Pages">{% if page > 1 %}<a href="?q={{ q|urlencode }}&page={{ page - 1 }}">Previous</a>{% endif %}<span>Page {{ page }} of {{ ((count + 29) // 30) or 1 }}</span>{% if page * 30 < count %}<a href="?q={{ q|urlencode }}&page={{ page + 1 }}">Next</a>{% endif %}</nav>
+{% else %}<div class="empty"><h2>No listings in this view</h2><p>{% if section == 'finds' %}The fresh watch has no eligible finds yet. The older records are available in Archive, and System shows which live sources are enabled.{% else %}Try another search or view the Archive.{% endif %}</p></div>{% endif %}
+{% endblock %}
