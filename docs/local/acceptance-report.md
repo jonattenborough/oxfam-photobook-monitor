@@ -1,3 +1,5 @@
+> This report is the pre-cutover shadow snapshot. For the current production state and first live results, see [live-cutover-2026-09-28.md](live-cutover-2026-09-28.md).
+
 # Photobook Radar commissioning report
 
 **Release / commit:** Local preview `0.1.0` on branch `build/photobook-radar-local`; base `692dc69c`

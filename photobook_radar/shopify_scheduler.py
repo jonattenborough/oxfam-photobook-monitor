@@ -105,7 +105,7 @@ def parse_products(route_id: str, payload: dict) -> list[dict]:
         if source == "publisher" and any(word in product_type for word in ("beans", "coffee", "apparel", "clothing", "t-shirt", "tote", "merch")):
             continue
         handle = str(product.get("handle") or "").strip()
-        if not title or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_-]*", handle):
+        if not title or not handle or len(handle) > 250 or any(ord(char) < 32 or char in "/\\?#" for char in handle):
             raise ValueError("Shopify product lacks a safe title or handle")
         variants = product.get("variants")
         if not isinstance(variants, list):
@@ -124,7 +124,7 @@ def parse_products(route_id: str, payload: dict) -> list[dict]:
         rows.append({
             "key": f"{source if source == 'charity' else route_id}:{key}",
             "external_id": key, "title": title, "description": description,
-            "url": f"{base}/products/{handle}", "price_gbp": min(prices) if prices and source != "publisher" else None,
+            "url": f"{base}/products/{urllib.parse.quote(handle, safe='')}", "price_gbp": min(prices) if prices and source != "publisher" else None,
             "available": available, "published_at": product.get("published_at"),
             "vendor": product.get("vendor") or name, "source_name": name,
         })

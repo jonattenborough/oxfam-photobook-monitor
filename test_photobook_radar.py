@@ -112,6 +112,15 @@ class RadarPersistenceTests(unittest.TestCase):
         self.assertEqual(run_shopify_job(self.db, next_job, config, fetch=lambda *_: {"products": [{**product, "variants": [{"available": True, "price": "18.00"}]}]})["count"], 1)
         self.assertEqual(self.db.execute("SELECT COUNT(*) FROM jobs WHERE kind='TRIAGE'").fetchone()[0], 1)
 
+    def test_shopify_unicode_handle_is_encoded_as_one_safe_path_segment(self):
+        product = {"id": 1234, "title": "Japanese photobook", "handle": "消えたママ友-mf-comic-essay",
+                   "variants": [{"available": True, "price": "20.00"}]}
+        row = parse_products("charity:shelter-books", {"products": [product]})[0]
+        self.assertIn("/products/%E6%B6%88", row["url"])
+        product["handle"] = "../private"
+        with self.assertRaises(ValueError):
+            parse_products("charity:shelter-books", {"products": [product]})
+
     def test_three_ebay_lanes_schedule_with_one_durable_budget(self):
         config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True,
                         source_ebay_private=True, source_ebay_charity=True, source_ebay_endgame=True)
@@ -239,6 +248,17 @@ class RadarPersistenceTests(unittest.TestCase):
             listing_id = capture(self.db, item, source_id="ebay", origin_key="imported", imported=True)
             enqueue_job(self.db, f"triage:{listing_id}", "TRIAGE", listing_id=listing_id)
         run_triage(self.db, claim_job(self.db, "test", kinds=("TRIAGE",)), config)
+        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events").fetchone()[0], 0)
+
+    def test_generic_cheap_photo_book_is_retained_without_phone_alert(self):
+        config = Config(data_dir=Path(self.folder.name), mode="production", allow_real_notifications=True, notification_enabled=True)
+        with transaction(self.db):
+            listing_id = capture(self.db, {"key": "ebay:123456789012", "title": "Bath Abbey Britain in Old Photographs",
+                                           "price_gbp": "5.98", "url": "https://www.ebay.co.uk/itm/123456789012"},
+                                 source_id="ebay", origin_key="generic", imported=False)
+            enqueue_job(self.db, "triage:generic", "TRIAGE", listing_id=listing_id)
+        run_triage(self.db, claim_job(self.db, "test", kinds=("TRIAGE",)), config)
+        self.assertEqual(self.db.execute("SELECT triage_score FROM listings WHERE id=?", (listing_id,)).fetchone()[0], 59)
         self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events").fetchone()[0], 0)
 
     def test_unknown_photobook_retained_but_above_cap_or_ended_is_not_actionable(self):
