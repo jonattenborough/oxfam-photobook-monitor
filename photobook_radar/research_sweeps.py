@@ -77,6 +77,51 @@ def _later(seconds: int) -> str:
     return (datetime.now(timezone.utc) + timedelta(seconds=seconds)).isoformat(timespec="seconds").replace("+00:00", "Z")
 
 
+def _recent_rejected_review(db: sqlite3.Connection, row: sqlite3.Row, item: dict,
+                            price_minor: int | None, currency: str | None,
+                            shipping_minor: int | None, shipping_currency: str | None) -> sqlite3.Row | None:
+    """Reuse a recent screen when another search route finds the same copy."""
+    facts = ("title", "description", "author", "publisher", "isbn", "edition", "condition",
+             "publication_year", "seller", "vendor", "available", "buying_options")
+    def value(raw: dict, key: str) -> object:
+        field = raw.get(key)
+        return re.sub(r"\s+", " ", field).strip() if isinstance(field, str) else field
+
+    candidates = db.execute(
+        "SELECT r.verdict,o.id AS observation_id,o.raw_json,o.price_minor,o.currency,"
+        "o.shipping_minor,o.shipping_currency,o.auction_end_at "
+        "FROM reviews r JOIN observations o ON o.id=r.observation_id "
+        "WHERE r.listing_id=? AND r.policy_hash=? AND r.status IN ('REJECTED','NEEDS_EVIDENCE') "
+        "AND r.finished_at>=? ORDER BY r.id DESC LIMIT 40",
+        (row["id"], LEAD_POLICY, _later(-2 * 3600)),
+    )
+    for previous in candidates:
+        old = json.loads(previous["raw_json"])
+        # New seller detail can change the edition or condition, so research it.
+        # Missing detail on a later search result does not invalidate a fuller
+        # review of the same item, price and live eBay offer.
+        if any(value(item, key) not in (None, "", []) and value(item, key) != value(old, key)
+               for key in facts):
+            continue
+        if previous["auction_end_at"] != row["auction_end_at"]:
+            continue
+        if row["platform"] == "ebay":
+            old_live = db.execute(
+                "SELECT price_minor,currency,shipping_minor,shipping_currency FROM live_checks "
+                "WHERE listing_id=? AND observation_id=? AND provider='ebay_browse' "
+                "ORDER BY checked_at DESC LIMIT 1", (row["id"], previous["observation_id"]),
+            ).fetchone()
+            if not old_live:
+                continue
+            old_price = tuple(old_live)
+        else:
+            old_price = (previous["price_minor"], previous["currency"],
+                         previous["shipping_minor"], previous["shipping_currency"])
+        if old_price == (price_minor, currency, shipping_minor, shipping_currency):
+            return previous
+    return None
+
+
 def _enabled(config: Config, lane: str) -> bool:
     return config.production and config.allow_marketplace_network and config.research_recurring_enabled and config.research_provider == "codex_cli" and {
         "wider": config.source_wider_web, "publishers": config.source_publishers, "prizes": config.source_prizes,
@@ -300,6 +345,9 @@ def run_lead_research(db: sqlite3.Connection, job: sqlite3.Row, config: Config, 
         price_minor, currency = row["price_minor"], row["currency"]
         shipping_minor, shipping_currency = row["shipping_minor"], row["shipping_currency"]
         checked_at = row["captured_at"]
+    reused = _recent_rejected_review(db, row, item, price_minor, currency, shipping_minor, shipping_currency)
+    if reused:
+        return {"reused": True, "verdict": reused["verdict"]}
     source = "research-leads"
     with transaction(db):
         db.execute("INSERT OR IGNORE INTO sources(id,adapter,status) VALUES(?,?,'ACTIVE')", (source, "codex-web"))
