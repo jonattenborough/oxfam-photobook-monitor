@@ -395,6 +395,60 @@ class RadarPersistenceTests(unittest.TestCase):
         self.assertEqual(run_lead_research(self.db, job, config, provider=lambda *_: result, link_check=lambda *_: True)["status"], "REJECTED")
         self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events").fetchone()[0], 0)
 
+    def test_duplicate_search_result_reuses_review_but_price_and_condition_changes_do_not(self):
+        config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True,
+                        research_provider="codex_cli", research_recurring_enabled=True)
+        result = {"decision": "PASS", "actual_book": True, "collector_fit": False, "edition_supported": False,
+                  "context": "This is a routine printing of a documentary book.",
+                  "opportunity_reason": "The seller has not identified a collectible edition.",
+                  "edition_note": "Printing unknown.", "risk": "Do not assume it is a first printing.",
+                  "source_urls": [], "market_comparables": []}
+        calls = []
+        def provider(*_):
+            calls.append(1)
+            return result
+        def review(number, price, condition):
+            with transaction(self.db):
+                listing_id = capture(self.db, {"key": "ebay:123456789012", "title": "Danny Lyon The Bikeriders",
+                                               "price_gbp": price, "condition": condition,
+                                               "source_name": f"route-{number}",
+                                               "url": f"https://www.ebay.co.uk/itm/123456789012?_skw=route{number}"},
+                                     source_id="ebay", origin_key=f"route-{number}")
+                observation = self.db.execute("SELECT current_observation_id FROM listings WHERE id=?", (listing_id,)).fetchone()[0]
+                enqueue_job(self.db, f"research:route-{number}", "RESEARCH_LEAD", listing_id=listing_id,
+                            payload={"observation_id": observation})
+                self.db.execute("INSERT INTO live_checks(listing_id,observation_id,provider,checked_at,availability,price_minor,currency,result_json) VALUES(?,?,?,?,?,?,?,?)",
+                                (listing_id, observation, "ebay_browse", now(), "LIVE", int(Decimal(price) * 100), "GBP", "{}"))
+            job = claim_job(self.db, "research-test", kinds=("RESEARCH_LEAD",))
+            outcome = run_lead_research(self.db, job, config, provider=provider)
+            finish_job(self.db, job["id"], job["lease_token"])
+            return outcome
+        self.assertEqual(review(1, "20", "Used: Good")["status"], "REJECTED")
+        self.assertTrue(review(2, "20", "Used: Good")["reused"])
+        self.assertEqual(len(calls), 1)
+        self.assertEqual(review(3, "19", "Used: Good")["status"], "REJECTED")
+        self.assertEqual(review(4, "19", "Used: Very Good")["status"], "REJECTED")
+        self.assertEqual(len(calls), 3)
+
+    def test_new_observation_cancels_superseded_pending_research(self):
+        config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True,
+                        research_provider="codex_cli", research_recurring_enabled=True)
+        with transaction(self.db):
+            listing_id = capture(self.db, {"key": "ebay:123456789012", "title": "Danny Lyon The Bikeriders",
+                                           "price_gbp": "20", "url": "https://www.ebay.co.uk/itm/123456789012"},
+                                 source_id="ebay", origin_key="route-one")
+            enqueue_job(self.db, "triage:route-one", "TRIAGE", listing_id=listing_id)
+        run_triage(self.db, claim_job(self.db, "test", kinds=("TRIAGE",)), config)
+        with transaction(self.db):
+            capture(self.db, {"key": "ebay:123456789012", "title": "Danny Lyon The Bikeriders",
+                              "price_gbp": "19", "url": "https://www.ebay.co.uk/itm/123456789012"},
+                    source_id="ebay", origin_key="route-two")
+            enqueue_job(self.db, "triage:route-two", "TRIAGE", listing_id=listing_id)
+        run_triage(self.db, claim_job(self.db, "test", kinds=("TRIAGE",)), config)
+        states = [row[0] for row in self.db.execute(
+            "SELECT status FROM jobs WHERE kind='RESEARCH_LEAD' AND listing_id=? ORDER BY id", (listing_id,))]
+        self.assertEqual(states, ["CANCELLED", "PENDING"])
+
     def test_unproven_gem_stays_off_telegram(self):
         config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True,
                         allow_real_notifications=True, notification_enabled=True,
