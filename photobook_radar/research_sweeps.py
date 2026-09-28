@@ -48,7 +48,7 @@ SCHEMA = {
 }
 LEAD_SCHEMA = {
     "type": "object", "additionalProperties": False,
-    "properties": {"decision": {"type": "string", "enum": ["PASS", "PAY_ATTENTION", "GEM", "UNICORN", "COLLECTOR"]},
+    "properties": {"decision": {"type": "string", "enum": ["PASS", "PAY_ATTENTION", "GEM", "UNICORN", "COLLECTOR", "POSSIBLE_GEM", "POSSIBLE_COLLECTOR"]},
                    "actual_book": {"type": "boolean"}, "collector_fit": {"type": "boolean"},
                    "edition_supported": {"type": "boolean"}, "context": {"type": "string"},
                    "opportunity_reason": {"type": "string"}, "edition_note": {"type": "string"}, "risk": {"type": "string"},
@@ -64,7 +64,7 @@ LEAD_SCHEMA = {
 }
 LEAD_DOMAINS = {"aperture.org", "mackbooks.co.uk", "tate.org.uk", "moma.org", "icp.org", "getty.edu",
                 "nazraeli.com", "stanleybarker.co.uk", "rrbphotobooks.com", "gostbooks.com", "steidl.de", "phaidon.com"}
-LEAD_POLICY = "collector-bargains-v6"
+LEAD_POLICY = "collector-bargains-v7"
 
 
 class ResearchDeferred(RuntimeError):
@@ -407,13 +407,19 @@ def run_lead_research(db: sqlite3.Connection, job: sqlite3.Row, config: Config, 
               "book is not a GEM. First identify the actual offered book and edition from seller facts. Then find direct public "
               "market comparable pages for the same edition or a less valuable copy in no better condition. Return at most four. "
               "A SOLD comparable needs a visible realized GBP sale price and date within the last three years; an ended-unsold "
-              "listing and an asking price are not sold evidence. Never compare an unsigned standard book to a signed deluxe "
+              "listing and an asking price are not sold evidence. For ASKING comparables, use currently purchasable direct seller "
+              "pages showing a GBP price, never search snippets or sold-out pages. Never compare an unsigned standard book to a signed deluxe "
               "book-and-print edition. Mark same_edition and condition_no_better false when uncertain. "
-              "Use GEM or UNICORN for a flip only when the current copy is clearly identified, at least one genuine sold comp "
-              "and another like-for-like price support a conservative floor, and the buy price is well below that floor after "
-              "postage and selling costs. Use COLLECTOR only for a specific essential work by a Tier 1 photographer that the "
+              "Use GEM or UNICORN for a flip when the current copy is clearly identified, at least one genuine sold comp "
+              "and another like-for-like price support a conservative floor. When no qualifying sold comp is available, use "
+              "POSSIBLE_GEM if at least two independent live seller listings for the same edition and comparable condition "
+              "show a strong discount and at least GBP " + str(config.min_net_profit_gbp) + " indicative resale room after costs. "
+              "Treat asking prices as uncertain evidence of resale value; do not claim an actual sale or guaranteed profit. "
+              "Use COLLECTOR only for a specific essential work by a Tier 1 photographer that the "
               "local library marks as a curated priority; a routine book by a Tier 1 name does not qualify. A collector choice "
               "needs a seller-supported edition and at least one genuine like-for-like sold comp but need not show resale profit. "
+              "Use POSSIBLE_COLLECTOR for the same curated priority when two independent live asking listings support the price "
+              "gap but no suitable sold comp is available. "
               "Otherwise use PAY_ATTENTION for the dashboard or PASS. Do not dismiss an overlooked photographer "
               "solely for being outside the existing list, but do not invent a resale market for one. For non-eBay sellers, "
               "check the direct product page when possible and flag availability uncertainty. Set edition_supported true only "
@@ -424,10 +430,10 @@ def run_lead_research(db: sqlite3.Connection, job: sqlite3.Row, config: Config, 
               ". Flip threshold: at least " + str(config.min_discount_pct) +
               "% below checked comparables and at least GBP " + str(config.min_net_profit_gbp) +
               " likely resale room after costs. Collector threshold: at least " + str(config.collector_min_discount_pct) +
-              "% below a checked sold comparable, regardless of projected profit. Public listing data: " + json.dumps(context, ensure_ascii=False))
+              "% below the lowest checked comparable, regardless of projected profit. Public listing data: " + json.dumps(context, ensure_ascii=False))
     try:
         result = (provider or (lambda cfg, text: _codex(cfg, text, schema=LEAD_SCHEMA)))(config, prompt)
-        if (not isinstance(result, dict) or result.get("decision") not in {"PASS", "PAY_ATTENTION", "GEM", "UNICORN", "COLLECTOR"}
+        if (not isinstance(result, dict) or result.get("decision") not in {"PASS", "PAY_ATTENTION", "GEM", "UNICORN", "COLLECTOR", "POSSIBLE_GEM", "POSSIBLE_COLLECTOR"}
                 or any(type(result.get(field)) is not bool for field in ("actual_book", "collector_fit", "edition_supported"))
                 or any(not isinstance(result.get(field), str) for field in ("context", "opportunity_reason", "edition_note", "risk"))
                 or not isinstance(result.get("source_urls"), list)
@@ -438,39 +444,55 @@ def run_lead_research(db: sqlite3.Connection, job: sqlite3.Row, config: Config, 
         verified = [url for url in result["source_urls"][:3] if isinstance(url, str) and checker(url, str(reference_title), LEAD_DOMAINS)]
         decision = result["decision"]
         max_buy = Decimal("100000") if config.max_recommended_item_gbp == "unlimited" else Decimal(config.max_recommended_item_gbp)
-        market = assess_bargain(result["market_comparables"] if decision in {"GEM", "UNICORN", "COLLECTOR"} else [],
+        market = assess_bargain(result["market_comparables"] if decision in {"GEM", "UNICORN", "COLLECTOR", "POSSIBLE_GEM", "POSSIBLE_COLLECTOR"} else [],
                                 title=str(reference_title), price_minor=price_minor,
                                 currency=currency, shipping_minor=shipping_minor, shipping_currency=shipping_currency,
                                 max_buy_gbp=max_buy, min_profit_gbp=None,
-                                min_discount_pct=config.collector_min_discount_pct,
-                                checker=market_check or check_comparable, min_comparables=1)
-        flip = bool(decision in {"GEM", "UNICORN"} and market["accepted"]
-                    and len(market["comparables"]) >= 2
-                    and market["discount_pct"] >= config.min_discount_pct
-                    and market["net_profit_gbp"] >= Decimal(config.min_net_profit_gbp))
-        collection = bool(decision == "COLLECTOR" and market["accepted"]
-                          and str(matched["core_tier"]) == "1" and priority_record)
+                                min_discount_pct=min(config.min_discount_pct, config.collector_min_discount_pct),
+                                checker=market_check or check_comparable, min_comparables=1, require_sold=False)
+        checked = market["comparables"]
+        has_sold = any(comp["kind"] == "SOLD" for comp in checked)
+        independent = len({comp["marketplace"] for comp in checked}) >= 2
+        flip_margin = bool(market["accepted"] and len(checked) >= 2
+                           and market["discount_pct"] >= config.min_discount_pct
+                           and market["net_profit_gbp"] >= Decimal(config.min_net_profit_gbp))
+        flip = bool(decision in {"GEM", "UNICORN"} and has_sold and flip_margin)
+        possible_flip = bool(not flip and decision in {"POSSIBLE_GEM", "GEM", "UNICORN"}
+                             and independent and flip_margin)
+        collection_margin = bool(market["accepted"] and str(matched["core_tier"]) == "1" and priority_record
+                                 and market["discount_pct"] >= config.collector_min_discount_pct)
+        collection = bool(decision == "COLLECTOR" and has_sold and collection_margin)
+        possible_collection = bool(not collection and decision in {"POSSIBLE_COLLECTOR", "COLLECTOR"}
+                                   and independent and len(checked) >= 2 and collection_margin)
         accepted = bool(result["actual_book"] and result["collector_fit"] and result["edition_supported"]
-                        and (flip or collection)
+                        and (flip or possible_flip or collection or possible_collection)
                         and row["listing_type"] != "AUCTION"
                         and len(result["opportunity_reason"].strip()) >= 25
                         and len(result["context"].strip()) >= 15)
         verdict = ("COLLECTOR" if accepted and collection else
                    "UNICORN" if accepted and decision == "UNICORN" and market["discount_pct"] >= 80
-                   and market["net_profit_gbp"] >= 200 else "GEM" if accepted else
+                   and market["net_profit_gbp"] >= 200 else "GEM" if accepted and flip else
+                   "POSSIBLE_COLLECTOR" if accepted and possible_collection else
+                   "POSSIBLE_GEM" if accepted and possible_flip else
                    "PAY_ATTENTION" if result["actual_book"] and result["collector_fit"] and decision != "PASS" else "PASS")
         status = "DONE" if accepted else "NEEDS_EVIDENCE" if verdict == "PAY_ATTENTION" else "REJECTED"
-        screen = {"accepted": accepted, "route": "collection" if accepted and collection else "flip" if accepted else "none",
+        possible = accepted and (possible_flip or possible_collection)
+        screen = {"accepted": accepted, "route": "collection" if accepted and collection else
+                  "possible_collection" if accepted and possible_collection else
+                  "possible_flip" if accepted and possible_flip else "flip" if accepted else "none",
                   "reason": "verified collection priority" if accepted and collection else
-                            "verified flip margin" if accepted else market["reason"] if not market["accepted"] else
+                            "verified flip margin" if accepted and flip else
+                            "asking-price gap; resale unproven" if possible else market["reason"] if not market["accepted"] else
                             "collector importance or flip margin not established",
                   "landed_gbp": str(market.get("landed_gbp", "")), "comp_floor_gbp": str(market.get("comp_floor_gbp", "")),
                   "discount_pct": str(market.get("discount_pct", "")), "net_profit_gbp": str(market.get("net_profit_gbp", "")),
-                  "checked_comparables": len(market["comparables"])}
+                  "checked_comparables": len(checked), "independent_marketplaces": len({comp["marketplace"] for comp in checked}),
+                  "has_sold_comparable": has_sold}
         with transaction(db):
             review = db.execute("INSERT INTO reviews(listing_id,observation_id,provider,policy_hash,verdict,confidence,status,started_at,finished_at,result_json) VALUES(?,?,?,?,?,?,?,?,?,?)",
                                 (row["id"], row["observation_id"], "codex_cli", LEAD_POLICY, verdict,
-                                 "SUPPORTED" if accepted else "PROVISIONAL" if status == "NEEDS_EVIDENCE" else "LOW",
+                                 "INDICATIVE" if possible else "SUPPORTED" if accepted else
+                                 "PROVISIONAL" if status == "NEEDS_EVIDENCE" else "LOW",
                                  status, now(), now(), json.dumps({**result, "bargain_screen": screen,
                                                                    "seller_detail_fingerprint": detail_fingerprint})))
             for url in verified:
@@ -484,25 +506,30 @@ def run_lead_research(db: sqlite3.Connection, job: sqlite3.Row, config: Config, 
             prior_find = db.execute("SELECT 1 FROM notification_events WHERE listing_id=? AND stage='BARGAIN_FIND' AND status IN ('QUEUED','SENDING','PROVIDER_ACCEPTED','DELIVERY_UNKNOWN') LIMIT 1",
                                     (row["id"],)).fetchone()
             if accepted and not prior_find and config.allow_real_notifications:
-                icon = {"GEM": "💎🔥🔥", "UNICORN": "🦄🔥🔥🔥", "COLLECTOR": "📚⭐"}[verdict]
+                icon = {"GEM": "💎🔥🔥", "UNICORN": "🦄🔥🔥🔥", "COLLECTOR": "📚⭐",
+                        "POSSIBLE_GEM": "🔎💎 POSSIBLE GEM", "POSSIBLE_COLLECTOR": "🔎📚 POSSIBLE COLLECTION BUY"}[verdict]
                 bibliography = " · Parr/Badger" if "parr/badger" in canon else " · Roth 101" if "roth 101" in canon else ""
                 tier = f"Tier {matched['core_tier']} · " if matched["core_tier"] else ""
                 compact = lambda value, width: re.sub(r"\s+", " ", value).strip()[:width]
                 postage_note = " (includes £20 postage buffer)" if market["postage_estimated"] else " including postage"
                 margin_line = ("📚 Collection priority: profit estimate is not required\n" if collection else
+                               "📚 Collection price gap based on asking prices; resale unproven\n" if possible_collection else
+                               f"🔁 ~£{market['net_profit_gbp']:.0f} indicative resale room from asking prices, not sales\n" if possible_flip else
                                f"🔁 ~£{market['net_profit_gbp']:.0f} possible resale margin after assumed costs\n")
                 message = (f"💷 ~£{market['landed_gbp']:.2f} all-in{postage_note}\n"
-                           f"📉 ~{market['discount_pct']:.0f}% below checked comparable £{market['comp_floor_gbp']:.2f}\n"
+                           f"📉 ~{market['discount_pct']:.0f}% below lowest checked {'asking price' if possible else 'comparable'} £{market['comp_floor_gbp']:.2f}\n"
                            f"{margin_line}"
                            f"{tier}{compact(str(result['context']), 105)}{bibliography}\n"
                            f"Why: {compact(result['opportunity_reason'], 145)}\n"
                            f"Check: {compact(result['risk'], 105)}"
                            + ("\nAvailability: check seller page" if row["platform"] != "ebay" else ""))
-                sold_comp = next(comp for comp in market["comparables"] if comp["kind"] == "SOLD")
+                primary_comp = (next(comp for comp in checked if comp["kind"] == "SOLD") if not possible else
+                                min(checked, key=lambda comp: comp["price_gbp"]))
                 enqueue_notification(db, listing_id=row["id"], stage="BARGAIN_FIND", material_version=str(row["observation_id"]),
                                      channel=config.notification_primary,
                                      payload={"title": f"{icon} {row['title'][:100]}", "message": message,
-                                              "url": row["canonical_url"], "comp_url": sold_comp["url"],
+                                              "url": row["canonical_url"], "comp_url": primary_comp["url"],
+                                              "comp_label": "Asking comp" if possible else "Sold comp",
                                               "review_id": review.lastrowid, "price_minor": price_minor,
                                               "shipping_minor": shipping_minor, "shipping_currency": shipping_currency},
                                      expires_at=row["auction_end_at"] or _later(1800))
