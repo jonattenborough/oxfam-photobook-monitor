@@ -87,7 +87,7 @@ def run_triage(db: sqlite3.Connection, job: sqlite3.Row, config: Config) -> dict
     ended = bool(end and end <= now())
     availability = "ENDED" if ended else row["availability"]
     price_ok = row["currency"] == "GBP" and row["price_minor"] is not None and row["price_minor"] <= int(Decimal(config.max_recommended_item_gbp) * 100)
-    lead = result["score"] >= 58 and price_ok and not ended
+    lead = result["score"] >= 58 and price_ok and not ended and bool(result["matches"] or result["core_matches"])
     with transaction(db):
         owned = db.execute("SELECT 1 FROM jobs WHERE id=? AND lease_token=? AND status='RUNNING'", (job["id"], job["lease_token"])).fetchone()
         if not owned:

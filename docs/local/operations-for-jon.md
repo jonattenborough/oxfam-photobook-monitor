@@ -1,8 +1,8 @@
 # Operating Photobook Radar on this Mac
 
-Open the **Photobook Radar** shortcut on the Desktop, or visit `http://127.0.0.1:8765` on this Mac. Finds and Urgent will contain fresh discoveries only; the old imported listings remain under Archive as reference material. A promising label is not a current stock check or a valuation; open the seller link before acting.
+Open **Photobook Radar** from the Desktop shortcut, or visit `http://127.0.0.1:8765` on the Mac. The System page shows the 12 selected search lanes and their last success or error. Finds and Urgent show current candidates; older imported listings stay in Archive. Open the seller link to confirm stock, condition and edition before buying.
 
-The installation uses three macOS LaunchAgents: `com.jonattenborough.photobook-radar.web`, `.worker`, and `.backup`. The service is designed to recover after a process crash or a login session restart. FileVault requires the Mac's storage to be unlocked; a per-user LaunchAgent does not run at the pre-login screen. Reboot, sleep, screen lock and logout recovery still need an observed test. Keep this Mac powered, online and signed into Jon's user session for routine operation.
+The Mac Studio is the scanner and Telegram is the alert channel. GitHub keeps the source code and archived history; its seven old scheduled scanners were removed from the remote default branch on 28 September 2026. Manual GitHub workflow triggers remain available. A first pass through each route quietly records existing stock, so the initial few hours will have fewer alerts. A clearly labelled **lead** goes to Telegram immediately when local matching finds a promising new or changed listing. GPT‑6 Sol can follow with a short, source-checked research update. GPT‑6 Luna runs the broader web, publisher and prize sweeps. The research budget is 16 jobs per UTC day; leads continue if it is exhausted.
 
 From Terminal in `/Users/jon/Documents/Book Radar/oxfam-photobook-monitor`:
 
@@ -11,9 +11,8 @@ From Terminal in `/Users/jon/Documents/Book Radar/oxfam-photobook-monitor`:
 ./scripts/doctor
 ./scripts/service restart
 ./scripts/backup
-./scripts/restore-test "$(ls -t "$HOME/Library/Application Support/Photobook Radar/backups"/*.db.gz | head -1)"
 ```
 
-The private application data and backup directory are under `~/Library/Application Support/Photobook Radar/`; logs are in its `logs` folder. The restore test makes a temporary isolated copy and removes it after checking integrity. The dashboard passphrase is in the owner-only `~/Library/Application Support/Photobook Radar/dashboard-passphrase.txt` file on this Mac. It can be changed with `.venv/bin/python -m photobook_radar.cli set-passphrase`. Credentials and the Telegram chat ID are already stored privately. Telegram has accepted one labelled test message; Jon confirmed its arrival on his phone.
+The owner-only settings, credentials, database, backups and logs are under `~/Library/Application Support/Photobook Radar/`. Do not put the Telegram or eBay secrets in the repository. The dashboard passphrase is stored locally in the owner-only `dashboard-passphrase.txt` file and can be changed with `.venv/bin/python -m photobook_radar.cli set-passphrase`.
 
-The current installation is a **shadow archive with a fresh monitoring epoch**. Historical screening jobs were cancelled; older records are no longer actionable Finds. The [search menu](search-menu-for-jon.md) lists every proposed lane, its cadence and scale. Built local source switches default to off while Jon chooses. The installation does not yet replace GitHub scanning or send automatic alerts. Source cutover, remote phone access and AI research have not been enabled. Jon selected Codex allowance for later deeper assessments; the planned default is GPT-6 Sol for selected leads, with a measured sample before routine use.
+To stop one search, edit its setting under `[sources]` in the local `config.toml` to `false`, then run `./scripts/service restart`. The [search menu](search-menu-for-jon.md) explains each switch. To pause every scan and phone alert, restore `config.shadow-20260928.toml` as `config.toml` and restart. The Mac needs power, internet and Jon’s logged-in user session; FileVault prevents per-user agents from running before unlock. Reboot, logout and 24-hour recovery checks are still to be observed.

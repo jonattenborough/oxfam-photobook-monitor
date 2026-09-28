@@ -138,12 +138,20 @@ def run(config: Config | None = None, *, once: bool = False) -> None:
 
     signal.signal(signal.SIGTERM, stop)
     signal.signal(signal.SIGINT, stop)
-    source_pool = ThreadPoolExecutor(max_workers=3, thread_name_prefix="radar-source")
+    source_pool = ThreadPoolExecutor(max_workers=8, thread_name_prefix="radar-source")
     verify_pool = ThreadPoolExecutor(max_workers=1, thread_name_prefix="radar-verify")
     research_pool = ThreadPoolExecutor(max_workers=1, thread_name_prefix="radar-research")
-    source_future = None
-    ebay_future = None
-    shopify_future = None
+    source_futures = {name: None for name in ("oxfam", "oxfam_broad", "ebay_endgame", "ebay_private", "ebay_charity", "ebay_broad", "shopify", "abebooks")}
+    source_groups = {
+        "oxfam": ("SCAN_OXFAM",),
+        "oxfam_broad": ("SCAN_OXFAM_BROAD",),
+        "ebay_endgame": ("SCAN_EBAY_ENDGAME",),
+        "ebay_private": ("SCAN_EBAY_PRIVATE",),
+        "ebay_charity": ("SCAN_EBAY_CHARITY",),
+        "ebay_broad": ("SCAN_EBAY_BROAD",),
+        "shopify": ("SCAN_SHOPIFY",),
+        "abebooks": ("SCAN_ABEBOOKS",),
+    }
     verify_future = None
     research_future = None
     next_source_check = 0.0
@@ -164,15 +172,10 @@ def run(config: Config | None = None, *, once: bool = False) -> None:
                     research_job = claim_job(db, owner, kinds=("RESEARCH_LEAD", "RESEARCH_SWEEP"), lease_seconds=180)
                     if research_job is not None:
                         research_future = research_pool.submit(_run_research_job, config, research_job["id"], research_job["lease_token"])
-                if source_future is not None and source_future.done():
-                    source_future.result()
-                    source_future = None
-                if ebay_future is not None and ebay_future.done():
-                    ebay_future.result()
-                    ebay_future = None
-                if shopify_future is not None and shopify_future.done():
-                    shopify_future.result()
-                    shopify_future = None
+                for group, future in source_futures.items():
+                    if future is not None and future.done():
+                        future.result()
+                        source_futures[group] = None
                 schedule_oxfam(db, config)
                 schedule_oxfam_broad(db, config)
                 schedule_ebay_broad(db, config)
@@ -180,18 +183,11 @@ def run(config: Config | None = None, *, once: bool = False) -> None:
                 schedule_shopify(db, config)
                 schedule_abebooks(db, config)
                 schedule_research(db, config)
-                if source_future is None and (config.source_oxfam_photography or config.source_oxfam_broad):
-                    source_job = claim_job(db, owner, kinds=("SCAN_OXFAM", "SCAN_OXFAM_BROAD"))
-                    if source_job is not None:
-                        source_future = source_pool.submit(_run_source_job, config, source_job["id"], source_job["lease_token"])
-                if ebay_future is None and (config.source_ebay_broad or config.source_ebay_private or config.source_ebay_charity or config.source_ebay_endgame):
-                    ebay_job = claim_job(db, owner, kinds=("SCAN_EBAY_BROAD", "SCAN_EBAY_PRIVATE", "SCAN_EBAY_CHARITY", "SCAN_EBAY_ENDGAME"))
-                    if ebay_job is not None:
-                        ebay_future = source_pool.submit(_run_source_job, config, ebay_job["id"], ebay_job["lease_token"])
-                if shopify_future is None and (config.source_charity_shops or config.source_specialist_shops or config.source_publishers or config.source_abebooks):
-                    shopify_job = claim_job(db, owner, kinds=("SCAN_SHOPIFY", "SCAN_ABEBOOKS"))
-                    if shopify_job is not None:
-                        shopify_future = source_pool.submit(_run_source_job, config, shopify_job["id"], shopify_job["lease_token"])
+                for group, kinds in source_groups.items():
+                    if source_futures[group] is None:
+                        source_job = claim_job(db, owner, kinds=kinds)
+                        if source_job is not None:
+                            source_futures[group] = source_pool.submit(_run_source_job, config, source_job["id"], source_job["lease_token"])
                 next_source_check = time.monotonic() + 15
             worked = tick(db, config, owner)
             if once:
