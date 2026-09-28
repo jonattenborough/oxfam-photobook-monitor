@@ -25,6 +25,8 @@ from .store import claim_job, finish_job, now
 from .triage import run_triage
 from .verification import run_verify
 
+RESEARCH_CONCURRENCY = 2
+
 
 def tick(db: sqlite3.Connection, config: Config, owner: str) -> bool:
     with transaction(db):
@@ -154,7 +156,7 @@ def run(config: Config | None = None, *, once: bool = False) -> None:
     signal.signal(signal.SIGINT, stop)
     source_pool = ThreadPoolExecutor(max_workers=8, thread_name_prefix="radar-source")
     verify_pool = ThreadPoolExecutor(max_workers=1, thread_name_prefix="radar-verify")
-    research_pool = ThreadPoolExecutor(max_workers=1, thread_name_prefix="radar-research")
+    research_pool = ThreadPoolExecutor(max_workers=RESEARCH_CONCURRENCY, thread_name_prefix="radar-research")
     source_futures = {name: None for name in ("oxfam", "oxfam_broad", "ebay_endgame", "ebay_private", "ebay_charity", "ebay_broad", "shopify", "abebooks")}
     source_groups = {
         "oxfam": ("SCAN_OXFAM",),
@@ -167,7 +169,7 @@ def run(config: Config | None = None, *, once: bool = False) -> None:
         "abebooks": ("SCAN_ABEBOOKS",),
     }
     verify_future = None
-    research_future = None
+    research_futures = set()
     next_source_check = 0.0
     next_telegram_check = 0.0
     try:
@@ -192,14 +194,17 @@ def run(config: Config | None = None, *, once: bool = False) -> None:
                     verify_job = claim_job(db, owner, kinds=("VERIFY",))
                     if verify_job is not None:
                         verify_future = verify_pool.submit(_run_verify_job, config, verify_job["id"], verify_job["lease_token"])
-                if research_future is not None and research_future.done():
-                    research_future.result()
-                    research_future = None
+                for future in tuple(research_futures):
+                    if future.done():
+                        future.result()
+                        research_futures.remove(future)
                 provider_pause = db.execute("SELECT value FROM health WHERE key='codex_research_backoff_until'").fetchone()
-                if research_future is None and config.research_recurring_enabled and (not provider_pause or provider_pause[0] <= now()):
+                while (len(research_futures) < RESEARCH_CONCURRENCY and config.research_recurring_enabled
+                       and (not provider_pause or provider_pause[0] <= now())):
                     research_job = claim_job(db, owner, kinds=("PHOTO_REVIEW", "RESEARCH_LEAD", "RESEARCH_SWEEP"), lease_seconds=180)
-                    if research_job is not None:
-                        research_future = research_pool.submit(_run_research_job, config, research_job["id"], research_job["lease_token"])
+                    if research_job is None:
+                        break
+                    research_futures.add(research_pool.submit(_run_research_job, config, research_job["id"], research_job["lease_token"]))
                 for group, future in source_futures.items():
                     if future is not None and future.done():
                         future.result()
