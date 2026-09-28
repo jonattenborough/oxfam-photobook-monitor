@@ -25,7 +25,8 @@ from .store import claim_job, finish_job, now
 from .triage import run_triage
 from .verification import run_verify
 
-RESEARCH_CONCURRENCY = 2
+RESEARCH_CONCURRENCY = 3
+VERIFY_CONCURRENCY = 2
 
 
 def tick(db: sqlite3.Connection, config: Config, owner: str) -> bool:
@@ -155,7 +156,7 @@ def run(config: Config | None = None, *, once: bool = False) -> None:
     signal.signal(signal.SIGTERM, stop)
     signal.signal(signal.SIGINT, stop)
     source_pool = ThreadPoolExecutor(max_workers=8, thread_name_prefix="radar-source")
-    verify_pool = ThreadPoolExecutor(max_workers=1, thread_name_prefix="radar-verify")
+    verify_pool = ThreadPoolExecutor(max_workers=VERIFY_CONCURRENCY, thread_name_prefix="radar-verify")
     research_pool = ThreadPoolExecutor(max_workers=RESEARCH_CONCURRENCY, thread_name_prefix="radar-research")
     source_futures = {name: None for name in ("oxfam", "oxfam_broad", "ebay_endgame", "ebay_private", "ebay_charity", "ebay_broad", "shopify", "abebooks")}
     source_groups = {
@@ -168,7 +169,7 @@ def run(config: Config | None = None, *, once: bool = False) -> None:
         "shopify": ("SCAN_SHOPIFY",),
         "abebooks": ("SCAN_ABEBOOKS",),
     }
-    verify_future = None
+    verify_futures = set()
     research_futures = set()
     next_source_check = 0.0
     next_telegram_check = 0.0
@@ -187,13 +188,15 @@ def run(config: Config | None = None, *, once: bool = False) -> None:
                         db.execute("INSERT INTO health(key,value,updated_at) VALUES('telegram_inbox_error',?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value,updated_at=excluded.updated_at", (f"{type(exc).__name__}: {str(exc)[:150]}", now()))
                 next_telegram_check = time.monotonic() + 15
             if config.production and config.allow_marketplace_network and time.monotonic() >= next_source_check:
-                if verify_future is not None and verify_future.done():
-                    verify_future.result()
-                    verify_future = None
-                if verify_future is None:
+                for future in tuple(verify_futures):
+                    if future.done():
+                        future.result()
+                        verify_futures.remove(future)
+                while len(verify_futures) < VERIFY_CONCURRENCY:
                     verify_job = claim_job(db, owner, kinds=("VERIFY",))
-                    if verify_job is not None:
-                        verify_future = verify_pool.submit(_run_verify_job, config, verify_job["id"], verify_job["lease_token"])
+                    if verify_job is None:
+                        break
+                    verify_futures.add(verify_pool.submit(_run_verify_job, config, verify_job["id"], verify_job["lease_token"]))
                 for future in tuple(research_futures):
                     if future.done():
                         future.result()
