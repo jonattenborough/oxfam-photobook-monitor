@@ -62,8 +62,8 @@ def check_comparable(url: str, title: str, amount_gbp: Decimal, kind: str, sold_
 
 def assess_bargain(comparables: object, *, title: str, price_minor: int | None, currency: str | None,
                    shipping_minor: int | None, shipping_currency: str | None,
-                   max_buy_gbp: Decimal, min_profit_gbp: Decimal, min_discount_pct: int,
-                   checker=check_comparable) -> dict:
+                   max_buy_gbp: Decimal, min_profit_gbp: Decimal | None, min_discount_pct: int,
+                   checker=check_comparable, min_comparables: int = 2) -> dict:
     """Use the lowest verified like-for-like comp and conservative selling costs."""
     outcome = {"accepted": False, "reason": "insufficient comparable sales", "comparables": []}
     if currency != "GBP" or price_minor is None or price_minor < 0 or not isinstance(comparables, list):
@@ -106,13 +106,13 @@ def assess_bargain(comparables: object, *, title: str, price_minor: int | None, 
             outcome["comparables"].append({"url": url, "kind": kind, "price_gbp": price,
                                             "sold_date": sold_date, "note": str(comp.get("note") or "")[:180]})
     checked = outcome["comparables"]
-    if len(checked) < 2 or not any(comp["kind"] == "SOLD" for comp in checked):
+    if len(checked) < min_comparables or not any(comp["kind"] == "SOLD" for comp in checked):
         return outcome
     floor = min(comp["price_gbp"] for comp in checked)
     discount = (Decimal(1) - landed / floor) * 100
     net_profit = floor * (Decimal(1) - FEE_FRACTION) - landed - OUTBOUND_POSTAGE_GBP
     outcome.update({"comp_floor_gbp": floor, "discount_pct": discount, "net_profit_gbp": net_profit})
-    if discount < min_discount_pct or net_profit < min_profit_gbp:
+    if discount < min_discount_pct or (min_profit_gbp is not None and net_profit < min_profit_gbp):
         outcome["reason"] = "margin below collector bargain threshold"
         return outcome
     outcome.update({"accepted": True, "reason": "verified bargain margin"})

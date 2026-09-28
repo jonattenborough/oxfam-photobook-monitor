@@ -7,7 +7,10 @@ allow_real_notifications = false
 allow_github_mutations = false
 
 [policy]
-max_recommended_item_gbp = "150.00"
+max_recommended_item_gbp = "200.00"
+min_net_profit_gbp = "50.00"
+min_discount_pct = 40
+collector_min_discount_pct = 20
 
 [scheduler]
 tick_seconds = 15

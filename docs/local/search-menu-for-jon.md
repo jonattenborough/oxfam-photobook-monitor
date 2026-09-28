@@ -9,7 +9,7 @@
 | 3 | Shelter and Crisis | Four charity-shop book collections, including rare and secondhand. | Every 10 minutes; paginated product feeds. |
 | 4 | Specialist shops | The Photographers’ Gallery, Photobookstore, Village Books and Setanta. | Hourly; paginated product feeds. |
 | 5 | eBay broad | UK Books searches for `photobook` and `photography book`. | Hourly; first 200 results of each search. |
-| 6 | eBay private sellers | Rotating names, titles, wrong-category, signed and broad individual-seller searches. | Hourly; about 16 first-page searches, up to 200 results each. Discovery up to £750; lead alerts at £150 or less. |
+| 6 | eBay private sellers | Rotating names, titles, wrong-category, signed and broad individual-seller searches. | Hourly; about 16 first-page searches, up to 200 results each. Discovery up to £750; researched book alerts at £200 all-in or less. |
 | 7 | eBay charity sellers | Rotating named charity and library sellers in the UK and US. | Hourly; 12 sellers from 103, up to five pages per seller when needed. |
 | 8 | eBay Endgame | Auctions ending soon across 16 eBay markets. | Every 15 minutes; quota-paced up to 35 first-page searches per cycle and two pages per route. |
 | 9 | AbeBooks targets | Rotating exact book titles from the reference library. | Hourly; 24 searches. |
@@ -17,6 +17,6 @@
 | 11 | Publishers | Direct feeds from MACK/SPBH, STANLEY/BARKER, TBW, Loose Joints, RRB, Deadbeat, GOST and Setanta; official-page sweep for Nazraeli and VOID. | Product feeds every six hours; one bounded GPT‑6 Luna sweep every six hours. |
 | 12 | Photography prizes | Official book award announcements and shortlists. | One bounded GPT‑6 Luna sweep daily. |
 
-**Alerts:** A promising lead goes to Telegram immediately from local matching. GPT‑6 Sol may send a short, separately labelled research update after checking an authoritative book reference. The 175 photographers in three tiers, Parr/Badger’s three volumes and Roth’s *101 Books* remain recognition clues; unfamiliar books remain eligible. Tier and bibliography badges appear only when supported. An estimated percentage below market value is omitted until comparable copies of the same edition and condition are verified.
+**Alerts:** GPT‑6 Sol researches a promising book before Telegram sends it. 💎/🦄 flip alerts need at least 40% below checked comparable prices and £50 indicative net resale room; 📚⭐ collection priorities need a curated Tier 1 work at least 20% below a checked sale, without a profit requirement. Both routes have a £200 all-in limit. The 175 photographers in three tiers, Parr/Badger’s three volumes and Roth’s *101 Books* remain recognition clues; unfamiliar books remain eligible for flip alerts. Tier and bibliography badges appear only when supported.
 
 **Shared eBay allowance:** The account’s live Browse limit is 5,000 requests per day. Every local Browse attempt is recorded. The scheduler preserves 650 calls and caps Endgame at 3,600; its pace responds to the provider’s remaining quota. The dashboard’s System page shows source health. Seven old GitHub scan schedules were removed at cutover; their manual triggers remain available. GitHub stays as source control, while the Mac is the scanner.
