@@ -187,6 +187,16 @@ class RadarPersistenceTests(unittest.TestCase):
         self.assertEqual(self.db.execute("SELECT COUNT(*) FROM research_sweeps WHERE status='DONE'").fetchone()[0], 1)
         self.assertEqual(self.db.execute("SELECT imported FROM listings").fetchone()[0], 1)
 
+    def test_reserved_research_capacity_is_not_a_source_failure(self):
+        config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True,
+                        research_provider="codex_cli", research_recurring_enabled=True,
+                        research_daily_jobs=0, source_wider_web=True)
+        with transaction(self.db):
+            self.db.execute("INSERT INTO sources(id,adapter,status,last_error) VALUES('research-wider','codex-web','DEGRADED','Daily Codex research job limit reached')")
+        self.assertEqual(schedule_research(self.db, config), 0)
+        row = self.db.execute("SELECT status,last_error FROM sources WHERE id='research-wider'").fetchone()
+        self.assertEqual(tuple(row), ("ACTIVE", None))
+
     def test_researched_collector_find_requires_live_copy_and_verified_reference(self):
         config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True,
                         allow_real_notifications=True, notification_enabled=True,

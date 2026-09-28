@@ -89,7 +89,7 @@ def schedule_research(db: sqlite3.Connection, config: Config) -> int:
             if db.execute("SELECT 1 FROM jobs WHERE route_id=? AND kind='RESEARCH_SWEEP' AND status IN ('PENDING','RUNNING')", (source,)).fetchone():
                 continue
             if _today_count(db) + count >= _sweep_cap(config):
-                db.execute("UPDATE sources SET status='DEGRADED',last_error='Daily Codex research job limit reached' WHERE id=?", (source,))
+                db.execute("UPDATE sources SET status='ACTIVE',last_error=NULL WHERE id=? AND last_error='Daily Codex research job limit reached'", (source,))
                 continue
             window = f"{source}:{now()}"
             if enqueue_job(db, f"research:{window}", "RESEARCH_SWEEP", route_id=source, priority=12,
@@ -213,7 +213,7 @@ def run_research_job(db: sqlite3.Connection, job: sqlite3.Row, config: Config, *
     source = LANES[lane][0]
     if _today_count(db) >= _sweep_cap(config):
         with transaction(db):
-            db.execute("UPDATE sources SET status='DEGRADED',last_error='Daily Codex research job limit reached' WHERE id=?", (source,))
+            db.execute("UPDATE sources SET status='ACTIVE',last_error=NULL WHERE id=? AND last_error='Daily Codex research job limit reached'", (source,))
         return {"budget_exhausted": True}
     with transaction(db):
         cursor = db.execute("INSERT INTO research_sweeps(source_id,job_id,started_at,provider,model,status) VALUES(?,?,?,?,?,'RUNNING')",
