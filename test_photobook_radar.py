@@ -137,6 +137,18 @@ class RadarPersistenceTests(unittest.TestCase):
         self.assertEqual(self.db.execute("SELECT imported FROM listings WHERE platform='ebay'").fetchone()[0], 1)
         self.assertEqual(self.db.execute("SELECT COUNT(*) FROM jobs WHERE kind='TRIAGE'").fetchone()[0], 0)
 
+    def test_belgian_ebay_listing_uses_the_real_marketplace_host(self):
+        from ebay_api import MARKETPLACE_DOMAINS, listing_from_summary
+        source = {"id": "ebay-endgame", "name": "eBay Belgium", "marketplace": "EBAY_BE"}
+        item = {"itemId": "v1|123456789012|0", "title": "Collectible photobook",
+                "itemWebUrl": "https://www.benl.ebay.be/itm/123456789012",
+                "price": {"value": "20", "currency": "EUR"}}
+        self.assertEqual(MARKETPLACE_DOMAINS["EBAY_BE"], "www.benl.ebay.be")
+        self.assertEqual(parse_browse_page({"itemSummaries": [item], "total": 1, "offset": 0}, source).items[0]["url"], item["itemWebUrl"])
+        self.assertEqual(listing_from_summary({k: v for k, v in item.items() if k != "itemWebUrl"}, source)["url"], item["itemWebUrl"])
+        with self.assertRaisesRegex(ValueError, "unexpected seller URL"):
+            parse_browse_page({"itemSummaries": [{**item, "itemWebUrl": "https://www.evil.example/itm/123456789012"}], "total": 1, "offset": 0}, source)
+
     def test_foreign_endgame_category_uses_a_market_query(self):
         from photobook_radar import ebay_lanes
         config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True)
