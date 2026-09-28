@@ -1,7 +1,7 @@
 {
   "version": 1,
   "daily_call_cap": 3600,
-  "shared_quota_reserve": 650,
+  "shared_quota_reserve": 25,
   "discovery_interval_minutes": 15,
   "max_primary_searches_per_discovery": 26,
   "max_catchup_cycles": 24,

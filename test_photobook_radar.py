@@ -1,6 +1,7 @@
 """Failure cases for the local radar persistence and screening boundary."""
 from __future__ import annotations
 
+import json
 import tempfile
 import unittest
 import urllib.error
@@ -10,10 +11,11 @@ from pathlib import Path
 from unittest.mock import MagicMock, patch
 
 from photobook_radar.config import Config
+from photobook_radar.abebooks_scheduler import schedule_abebooks
 from photobook_radar.bargains import assess_bargain
 from photobook_radar.db import connect, migrate, transaction
 from photobook_radar.ebay_gateway import BrowseWindow, MeteredEbayBrowseClient
-from photobook_radar.ebay_lanes import run_ebay_lane_job, schedule_ebay_lanes
+from photobook_radar.ebay_lanes import _endgame_slots, run_ebay_lane_job, schedule_ebay_lanes
 from photobook_radar.ebay_scheduler import run_ebay_broad_job, schedule_ebay_broad
 from photobook_radar.notifications import send_one
 from photobook_radar.source_scheduler import run_oxfam_scan_job, schedule_oxfam
@@ -217,7 +219,7 @@ class RadarPersistenceTests(unittest.TestCase):
         config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True,
                         source_ebay_private=True, source_ebay_charity=True, source_ebay_endgame=True)
         counts = schedule_ebay_lanes(self.db, config)
-        self.assertGreaterEqual(counts["private"], 10)
+        self.assertEqual(counts["private"], 24)
         self.assertEqual(counts["charity"], 12)
         self.assertEqual(counts["endgame"], 26)
         self.assertEqual(schedule_ebay_lanes(self.db, config), {})
@@ -228,6 +230,25 @@ class RadarPersistenceTests(unittest.TestCase):
         self.assertEqual(result["items"], 1)
         self.assertEqual(self.db.execute("SELECT imported FROM listings WHERE platform='ebay'").fetchone()[0], 1)
         self.assertEqual(self.db.execute("SELECT COUNT(*) FROM jobs WHERE kind='TRIAGE'").fetchone()[0], 0)
+
+    def test_endgame_yields_quota_to_private_sellers(self):
+        config = Config(data_dir=Path(self.folder.name), ebay_reserve=25)
+        reset = (datetime.now(timezone.utc) + timedelta(days=1)).isoformat(timespec="seconds").replace("+00:00", "Z")
+        with transaction(self.db):
+            self.db.execute("INSERT INTO api_windows(bucket,window_start,reset_at,provider_limit,provider_remaining) VALUES('ebay_browse',?,?,5000,5000)", (now(), reset))
+        self.assertLess(_endgame_slots(self.db, config), 20)
+        with transaction(self.db):
+            self.db.execute("UPDATE api_windows SET provider_remaining=100 WHERE bucket='ebay_browse'")
+        self.assertEqual(_endgame_slots(self.db, config), 0)
+
+    def test_abebooks_rotates_ninety_six_titles_per_hour(self):
+        config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True, source_abebooks=True)
+        self.assertEqual(schedule_abebooks(self.db, config), 24)
+        self.assertEqual(self.db.execute("SELECT cadence_seconds FROM sources WHERE id='abebooks'").fetchone()[0], 900)
+        with transaction(self.db):
+            self.db.execute("UPDATE health SET value='2000-01-01T00:00:00Z' WHERE key='abebooks_next_schedule'")
+        self.assertEqual(schedule_abebooks(self.db, config), 24)
+        self.assertEqual(self.db.execute("SELECT value FROM health WHERE key='abebooks_cursor'").fetchone()[0], "48")
 
     def test_belgian_ebay_listing_uses_the_real_marketplace_host(self):
         from ebay_api import MARKETPLACE_DOMAINS, listing_from_summary
@@ -270,6 +291,8 @@ class RadarPersistenceTests(unittest.TestCase):
                         source_wider_web=True, source_publishers=True, source_prizes=True)
         self.assertEqual(schedule_research(self.db, config), 3)
         self.assertEqual(schedule_research(self.db, config), 0)
+        wider = self.db.execute("SELECT payload_json FROM jobs WHERE kind='RESEARCH_SWEEP' AND route_id='research-wider'").fetchone()
+        self.assertEqual(json.loads(wider[0])["market"], "Biblio")
         job = claim_job(self.db, "research-test", kinds=("RESEARCH_SWEEP",), lease_seconds=180)
         result = {"items": [{"title": "New photobook", "url": "https://www.biblio.com/book/123456789",
                              "source_name": "Biblio", "why": "Photographer's book", "published_at": "", "price_amount": None, "currency": ""}]}
@@ -277,6 +300,21 @@ class RadarPersistenceTests(unittest.TestCase):
         self.assertEqual(outcome["validated"], 1)
         self.assertEqual(self.db.execute("SELECT COUNT(*) FROM research_sweeps WHERE status='DONE'").fetchone()[0], 1)
         self.assertEqual(self.db.execute("SELECT imported FROM listings").fetchone()[0], 1)
+
+    def test_wider_web_rotates_sites_every_half_hour(self):
+        config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True,
+                        research_provider="codex_cli", research_recurring_enabled=True, source_wider_web=True)
+        self.assertEqual(schedule_research(self.db, config), 1)
+        first = claim_job(self.db, "research-test", kinds=("RESEARCH_SWEEP",), lease_seconds=180)
+        self.assertEqual(json.loads(first["payload_json"])["market"], "Biblio")
+        run_research_job(self.db, first, config, provider=lambda *_: {"items": []})
+        finish_job(self.db, first["id"], first["lease_token"])
+        with transaction(self.db):
+            self.db.execute("UPDATE source_routes SET next_due_at='2000-01-01T00:00:00Z' WHERE id='research-wider'")
+        self.assertEqual(schedule_research(self.db, config), 1)
+        second = self.db.execute("SELECT payload_json FROM jobs WHERE kind='RESEARCH_SWEEP' AND status='PENDING'").fetchone()
+        self.assertEqual(json.loads(second[0])["market"], "viaLibri")
+        self.assertEqual(self.db.execute("SELECT cadence_seconds FROM sources WHERE id='research-wider'").fetchone()[0], 1800)
 
     def test_old_local_research_limit_does_not_block_wider_sweep(self):
         config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True,
@@ -662,7 +700,7 @@ class RadarPersistenceTests(unittest.TestCase):
         gateway._access_token = "fake-token"
         gateway._token_expires_at = datetime.now(timezone.utc) + timedelta(hours=1)
         gateway.browse_window = BrowseWindow(
-            "2026-09-28T00:00:00Z", "2099-09-29T00:00:00Z", 5000, 652,
+            "2026-09-28T00:00:00Z", "2099-09-29T00:00:00Z", 5000, config.ebay_reserve + 2,
             datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
         )
         reply = MagicMock()

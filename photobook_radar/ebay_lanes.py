@@ -21,7 +21,11 @@ from .sources.ebay import capture_browse_page, parse_browse_page
 from .store import enqueue_job, now
 
 ROOT = Path(__file__).resolve().parent.parent
-LANES = {"private": ("ebay-private", "SCAN_EBAY_PRIVATE", 3600),
+PRIVATE_PLAN_STEPS_PER_CYCLE = 26
+PRIVATE_SEARCHES_PER_CYCLE = 24
+NON_PRIVATE_CALLS_PER_CYCLE = 10
+ENDGAME_EXTRA_PAGE_FACTOR = 1.18
+LANES = {"private": ("ebay-private", "SCAN_EBAY_PRIVATE", 900),
          "charity": ("ebay-charity", "SCAN_EBAY_CHARITY", 3600),
          "endgame": ("ebay-endgame", "SCAN_EBAY_ENDGAME", 900)}
 CATEGORY_FALLBACK_QUERY = {
@@ -85,7 +89,7 @@ def _schedule_private(db: sqlite3.Connection) -> int:
     config = private_recall.recall_config(private_legacy.load_config(ROOT / "data/ebay_private_searches.json"))
     state = json.loads(_health(db, "ebay_private_cursors") or '{"cursors":{}}')
     state.setdefault("cursors", {})
-    steps = private_recall._build_fresh_search_plan(config, state, datetime.now(timezone.utc), 17)
+    steps = private_recall._build_fresh_search_plan(config, state, datetime.now(timezone.utc), PRIVATE_PLAN_STEPS_PER_CYCLE)
     count = 0
     for step in steps:
         definition = {"query": step["query"], "marketplace": "EBAY_GB", "category_ids": step.get("category_ids"),
@@ -124,9 +128,12 @@ def _endgame_slots(db: sqlite3.Connection, config: Config) -> int:
     seconds = (datetime.fromisoformat(latest["reset_at"].replace("Z", "+00:00")) - datetime.now(timezone.utc)).total_seconds()
     cycles = max(1, int((seconds + 899) // 900))
     usable = max(0, int(latest["provider_remaining"]) - config.ebay_reserve)
-    # Broad, private and charity together need about eight first-page calls
-    # per quarter hour. Spend the rest where the Endgame task matrix is due.
-    return min(35, max(0, usable // cycles - 8))
+    # Protect the private-seller batch first, then allow for charity searches,
+    # verification, broad search and Endgame's own continuation pages. Recompute
+    # on every cycle from the provider's remaining allowance so unused calls
+    # flow back to Endgame before the reset.
+    other_calls = PRIVATE_SEARCHES_PER_CYCLE + NON_PRIVATE_CALLS_PER_CYCLE
+    return min(35, max(0, int((usable / cycles - other_calls) / ENDGAME_EXTRA_PAGE_FACTOR)))
 
 
 def _schedule_endgame(db: sqlite3.Connection, config: Config) -> int:
@@ -158,7 +165,7 @@ def schedule_ebay_lanes(db: sqlite3.Connection, config: Config) -> dict[str, int
         for lane, (source, kind, cadence) in LANES.items():
             if not _enabled(config, lane):
                 continue
-            db.execute("INSERT OR IGNORE INTO sources(id,adapter,status,cadence_seconds) VALUES(?,?,'SCHEDULED',?)", (source, "ebay-browse", cadence))
+            db.execute("INSERT INTO sources(id,adapter,status,cadence_seconds) VALUES(?,?,'SCHEDULED',?) ON CONFLICT(id) DO UPDATE SET cadence_seconds=excluded.cadence_seconds", (source, "ebay-browse", cadence))
             key = f"ebay_{lane}_last_schedule"
             last = _health(db, key)
             if last and last > now():

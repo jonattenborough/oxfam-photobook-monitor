@@ -44,7 +44,7 @@ class Config:
     min_discount_pct: int = 40
     collector_min_discount_pct: int = 20
     ebay_daily_limit: int = 5000
-    ebay_reserve: int = 650
+    ebay_reserve: int = 25
     ebay_endgame_cap: int = 3600
     tick_seconds: int = 15
 
@@ -85,8 +85,8 @@ class Config:
         if (not minimum_profit.is_finite() or not Decimal("0") <= minimum_profit <= Decimal("10000")
                 or not 0 <= self.min_discount_pct <= 95 or not 0 <= self.collector_min_discount_pct <= 95):
             raise ValueError("Invalid bargain margin thresholds")
-        if self.ebay_reserve < 650 or self.ebay_endgame_cap > 3600:
-            raise ValueError("eBay reserve or Endgame cap exceeds the approved plan")
+        if self.ebay_reserve < 25 or self.ebay_endgame_cap > 3600:
+            raise ValueError("eBay reserve or Endgame cap is outside the supported range")
         if self.ebay_daily_limit < self.ebay_reserve or self.tick_seconds < 5:
             raise ValueError("Invalid quota or scheduler interval")
 
@@ -132,7 +132,7 @@ def load_config(path: Path | None = None) -> Config:
         min_discount_pct=int(policy.get("min_discount_pct", 40)),
         collector_min_discount_pct=int(policy.get("collector_min_discount_pct", 20)),
         ebay_daily_limit=int(ebay.get("nominal_daily_browse_limit", 5000)),
-        ebay_reserve=int(ebay.get("protected_reserve", 650)),
+        ebay_reserve=int(ebay.get("protected_reserve", 25)),
         ebay_endgame_cap=int(ebay.get("endgame_daily_cap", 3600)),
         tick_seconds=int(scheduler.get("tick_seconds", 15)),
     )
