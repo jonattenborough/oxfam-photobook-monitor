@@ -103,7 +103,8 @@ def schedule_research(db: sqlite3.Connection, config: Config) -> int:
                 cursor = db.execute("SELECT value FROM health WHERE key='wider_market_cursor'").fetchone()
                 position = int(cursor[0]) if cursor else 0
                 payload["market"] = list(WIDER_MARKETS)[position % len(WIDER_MARKETS)]
-            if enqueue_job(db, f"research:{window}", "RESEARCH_SWEEP", route_id=source, priority=12, payload=payload):
+            # A due market sweep must run even when lead research has a backlog.
+            if enqueue_job(db, f"research:{window}", "RESEARCH_SWEEP", route_id=source, priority=150, payload=payload):
                 db.execute("UPDATE source_routes SET next_due_at=? WHERE id=?", (_later(cadence), source))
                 if lane == "wider":
                     db.execute("INSERT INTO health(key,value,updated_at) VALUES('wider_market_cursor',?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value,updated_at=excluded.updated_at", (str(position + 1), now()))
