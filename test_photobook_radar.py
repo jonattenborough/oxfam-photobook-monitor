@@ -229,7 +229,7 @@ class RadarPersistenceTests(unittest.TestCase):
         self.assertEqual(self.db.execute("SELECT imported FROM listings WHERE platform='oxfam'").fetchone()[0], 1)
         self.assertEqual(self.db.execute("SELECT COUNT(*) FROM jobs WHERE kind='TRIAGE'").fetchone()[0], 0)
 
-    def test_research_sweeps_have_three_schedules_and_a_daily_cap(self):
+    def test_research_sweeps_have_three_cadenced_schedules(self):
         config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True,
                         research_provider="codex_cli", research_recurring_enabled=True,
                         source_wider_web=True, source_publishers=True, source_prizes=True)
@@ -243,13 +243,13 @@ class RadarPersistenceTests(unittest.TestCase):
         self.assertEqual(self.db.execute("SELECT COUNT(*) FROM research_sweeps WHERE status='DONE'").fetchone()[0], 1)
         self.assertEqual(self.db.execute("SELECT imported FROM listings").fetchone()[0], 1)
 
-    def test_reserved_research_capacity_is_not_a_source_failure(self):
+    def test_old_local_research_limit_does_not_block_wider_sweep(self):
         config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True,
                         research_provider="codex_cli", research_recurring_enabled=True,
-                        research_daily_jobs=0, source_wider_web=True)
+                        source_wider_web=True)
         with transaction(self.db):
             self.db.execute("INSERT INTO sources(id,adapter,status,last_error) VALUES('research-wider','codex-web','DEGRADED','Daily Codex research job limit reached')")
-        self.assertEqual(schedule_research(self.db, config), 0)
+        self.assertEqual(schedule_research(self.db, config), 1)
         row = self.db.execute("SELECT status,last_error FROM sources WHERE id='research-wider'").fetchone()
         self.assertEqual(tuple(row), ("ACTIVE", None))
 
@@ -308,6 +308,10 @@ class RadarPersistenceTests(unittest.TestCase):
             self.db.execute("INSERT INTO live_checks(listing_id,observation_id,provider,checked_at,availability,price_minor,currency,result_json) VALUES(?,?,?,?,?,?,?,?)",
                             (listing_id, observation, "ebay_browse", now(), "LIVE", 2000, "GBP", "{}"))
         job = claim_job(self.db, "research-test", kinds=("RESEARCH_LEAD",), lease_seconds=180)
+        with transaction(self.db):
+            self.db.execute("INSERT INTO sources(id,adapter,status) VALUES('research-leads','codex-web','ACTIVE')")
+            self.db.executemany("INSERT INTO research_sweeps(source_id,job_id,started_at,provider,model,status) VALUES('research-leads',?,?,'codex_cli','gpt-6-sol','DONE')",
+                                [(job["id"], now())] * 48)
         result = {"decision": "PASS", "actual_book": True, "collector_fit": False, "edition_supported": False,
                   "context": "Routine reprint.", "opportunity_reason": "No collector opportunity.",
                   "edition_note": "Later edition.", "risk": "Common copy.", "source_urls": ["https://www.moma.org/books/bikeriders"],
@@ -373,8 +377,29 @@ class RadarPersistenceTests(unittest.TestCase):
         run_triage(self.db, claim_job(self.db, "test", kinds=("TRIAGE",)), config)
         self.assertEqual(self.db.execute("SELECT COUNT(*) FROM jobs WHERE kind='RESEARCH_LEAD'").fetchone()[0], 1)
 
-    def test_research_cap_can_cover_more_than_sixteen_promising_books(self):
-        Config(data_dir=Path(self.folder.name), research_daily_jobs=48).validate()
+    def test_codex_account_limit_defers_without_exhausting_job_attempts(self):
+        from photobook_radar import research_sweeps, worker
+        config = Config(data_dir=Path(self.folder.name), mode="production", research_provider="codex_cli",
+                        research_recurring_enabled=True)
+        with transaction(self.db):
+            listing_id = capture(self.db, {"key": "ebay:123456789012", "title": "Danny Lyon The Bikeriders"},
+                                 source_id="ebay", origin_key="limit-test", imported=False)
+            enqueue_job(self.db, "research:limit-test", "RESEARCH_LEAD", listing_id=listing_id,
+                        payload={"observation_id": self.db.execute("SELECT current_observation_id FROM listings WHERE id=?", (listing_id,)).fetchone()[0]})
+        job = claim_job(self.db, "limit-test", kinds=("RESEARCH_LEAD",))
+        with patch.object(research_sweeps.shutil, "which", return_value="/usr/bin/true"), patch.object(
+            research_sweeps.subprocess, "run", return_value=type("Completed", (), {"returncode": 1, "stderr": "Usage limit reached"})()
+        ):
+            with self.assertRaises(ResearchDeferred) as raised:
+                research_sweeps._codex(config, "prompt")
+        self.assertTrue(raised.exception.provider_limited)
+        with patch.object(worker, "run_lead_research", side_effect=raised.exception):
+            worker._run_research_job(config, job["id"], job["lease_token"])
+        state = self.db.execute("SELECT status,attempts,last_error FROM jobs WHERE id=?", (job["id"],)).fetchone()
+        self.assertEqual((state["status"], state["attempts"]), ("PENDING", 0))
+        self.assertIn("Codex account usage limit", state["last_error"])
+        pause = self.db.execute("SELECT value FROM health WHERE key='codex_research_backoff_until'").fetchone()
+        self.assertGreater(pause[0], now())
 
     def test_codex_lead_schema_accepts_context_response(self):
         from photobook_radar import research_sweeps
@@ -761,6 +786,10 @@ class RadarPersistenceTests(unittest.TestCase):
         self.assertEqual(ingest_updates(self.db, [message], "123"), 0)
         job = claim_job(self.db, "photo-test", kinds=("PHOTO_REVIEW",))
         self.assertEqual(__import__("json").loads(job["payload_json"])["file_id"], "large")
+        with transaction(self.db):
+            self.db.execute("INSERT INTO sources(id,adapter,status) VALUES('telegram-photos','telegram','ACTIVE')")
+            self.db.executemany("INSERT INTO research_sweeps(source_id,job_id,started_at,provider,model,status) VALUES('telegram-photos',?,?,'codex_cli','gpt-6-sol','DONE')",
+                                [(job["id"], now())] * 48)
         def download(_config, _file_id, folder):
             path = folder / "photo.jpg"
             path.write_bytes(b"\xff\xd8\xff\xd9")

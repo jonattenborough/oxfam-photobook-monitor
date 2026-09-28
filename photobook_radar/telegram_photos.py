@@ -5,7 +5,6 @@ import json
 import re
 import sqlite3
 import tempfile
-from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import quote
 
@@ -14,7 +13,7 @@ import httpx
 from .config import Config
 from .db import transaction
 from .notifications import private_secrets
-from .research_sweeps import ResearchDeferred, _codex, _today_count
+from .research_sweeps import _codex
 from .store import enqueue_job, enqueue_notification, now
 
 PHOTO_POLICY = "telegram-photo-review-v1"
@@ -138,9 +137,6 @@ def run_photo_research(db: sqlite3.Connection, job: sqlite3.Row, config: Config,
                        (payload.get("alert_event_id"), job["listing_id"])).fetchone()
     if not alert or not payload.get("file_id"):
         return {"stale": True}
-    if _today_count(db) >= config.research_daily_jobs:
-        tomorrow = (datetime.now(timezone.utc) + timedelta(days=1)).replace(hour=0, minute=5, second=0, microsecond=0)
-        raise ResearchDeferred("daily photo research allowance reached", max(60, int((tomorrow - datetime.now(timezone.utc)).total_seconds())))
     with transaction(db):
         db.execute("INSERT OR IGNORE INTO sources(id,adapter,status) VALUES('telegram-photos','telegram','ACTIVE')")
         sweep = db.execute("INSERT INTO research_sweeps(source_id,job_id,started_at,provider,model,status) VALUES('telegram-photos',?,?,?,?,'RUNNING')",

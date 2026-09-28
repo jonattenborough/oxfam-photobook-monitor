@@ -26,7 +26,6 @@ class Config:
     notification_primary: str = "telegram"
     research_provider: str = "none"
     research_recurring_enabled: bool = False
-    research_daily_jobs: int = 16
     research_model: str = "gpt-6-sol"
     source_oxfam_photography: bool = False
     source_oxfam_broad: bool = False
@@ -76,8 +75,6 @@ class Config:
             raise ValueError("Unknown research provider")
         if self.research_recurring_enabled and self.research_provider != "codex_cli":
             raise ValueError("Recurring research requires the local Codex CLI provider")
-        if self.research_daily_jobs < 0 or self.research_daily_jobs > 48:
-            raise ValueError("Research daily jobs must be between 0 and 48")
         if self.research_model != "gpt-6-sol":
             raise ValueError("Research model must be the tested GPT-6 Sol configuration")
         max_buy = Decimal(self.max_recommended_item_gbp) if self.max_recommended_item_gbp != "unlimited" else Decimal("100000")
@@ -115,7 +112,6 @@ def load_config(path: Path | None = None) -> Config:
         notification_primary=str(notifications.get("primary", "telegram")),
         research_provider=str(research.get("provider", "none")),
         research_recurring_enabled=bool(research.get("recurring_enabled", False)),
-        research_daily_jobs=int(research.get("daily_jobs", 16)),
         research_model=str(research.get("model", "gpt-6-sol")),
         source_oxfam_photography=bool(sources.get("oxfam_photography", False)),
         source_oxfam_broad=bool(sources.get("oxfam_broad", False)),
