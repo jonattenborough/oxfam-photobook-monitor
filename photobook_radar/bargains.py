@@ -15,6 +15,8 @@ MARKET_DOMAINS = {
     "abebooks.de", "abaa.org", "pbfa.org", "vialibri.net", "liveauctioneers.com",
     "ha.com", "heritageauctions.com", "bonhams.com", "christies.com",
     "sothebys.com", "catawiki.com", "forumauctions.co.uk", "invaluable.com",
+    "photobookstore.co.uk", "setantabooks.com", "fosterbooks.co.uk",
+    "rrbphotobooks.com", "mackbooks.co.uk", "stanleybarker.co.uk",
 }
 SOLD_MARKER = re.compile(r"\b(?:this listing sold|sold on|sold for|sold price|winning bid|hammer price|realized price|realised price)\b", re.I)
 STOP = {"the", "and", "book", "books", "photo", "photographs", "photography", "edition", "signed", "first"}
@@ -60,12 +62,22 @@ def check_comparable(url: str, title: str, amount_gbp: Decimal, kind: str, sold_
     return True
 
 
+def marketplace_identity(url: str) -> str:
+    """Treat country sites of one marketplace as one source of price evidence."""
+    host = (urllib.parse.urlsplit(url).hostname or "").removeprefix("www.")
+    for group, domains in (("ebay", ("ebay.co.uk", "ebay.com")),
+                           ("abebooks", ("abebooks.co.uk", "abebooks.com", "abebooks.de"))):
+        if any(host == domain or host.endswith("." + domain) for domain in domains):
+            return group
+    return host
+
+
 def assess_bargain(comparables: object, *, title: str, price_minor: int | None, currency: str | None,
                    shipping_minor: int | None, shipping_currency: str | None,
                    max_buy_gbp: Decimal, min_profit_gbp: Decimal | None, min_discount_pct: int,
-                   checker=check_comparable, min_comparables: int = 2) -> dict:
+                   checker=check_comparable, min_comparables: int = 2, require_sold: bool = True) -> dict:
     """Use the lowest verified like-for-like comp and conservative selling costs."""
-    outcome = {"accepted": False, "reason": "insufficient comparable sales", "comparables": []}
+    outcome = {"accepted": False, "reason": "insufficient comparable sales" if require_sold else "insufficient comparable listings", "comparables": []}
     if currency != "GBP" or price_minor is None or price_minor < 0 or not isinstance(comparables, list):
         outcome["reason"] = "GBP purchase price or comparables unavailable"
         return outcome
@@ -104,9 +116,10 @@ def assess_bargain(comparables: object, *, title: str, price_minor: int | None, 
                 continue
         if checker(url, title, price, kind, sold_date):
             outcome["comparables"].append({"url": url, "kind": kind, "price_gbp": price,
+                                            "marketplace": marketplace_identity(url),
                                             "sold_date": sold_date, "note": str(comp.get("note") or "")[:180]})
     checked = outcome["comparables"]
-    if len(checked) < min_comparables or not any(comp["kind"] == "SOLD" for comp in checked):
+    if len(checked) < min_comparables or (require_sold and not any(comp["kind"] == "SOLD" for comp in checked)):
         return outcome
     floor = min(comp["price_gbp"] for comp in checked)
     discount = (Decimal(1) - landed / floor) * 100
