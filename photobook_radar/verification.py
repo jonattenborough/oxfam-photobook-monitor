@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 import re
 import sqlite3
+from html.parser import HTMLParser
 from typing import Callable
 from urllib.parse import urlsplit
 
@@ -13,6 +14,48 @@ from .config import Config
 from .db import transaction
 from .ebay_gateway import thread_client
 from .store import finish_job, money_minor, now, safe_url
+
+
+class _SellerText(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.parts: list[str] = []
+        self.ignored = 0
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag in {"script", "style", "noscript"}:
+            self.ignored += 1
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag in {"script", "style", "noscript"} and self.ignored:
+            self.ignored -= 1
+
+    def handle_data(self, data: str) -> None:
+        if not self.ignored:
+            self.parts.append(data)
+
+
+def _seller_description(value: object) -> str:
+    if not isinstance(value, str):
+        return ""
+    parser = _SellerText()
+    parser.feed(value[:100_000])
+    return re.sub(r"\s+", " ", " ".join(parser.parts)).strip()[:3500]
+
+
+def _seller_aspects(value: object) -> dict[str, str]:
+    if not isinstance(value, list):
+        return {}
+    aspects: dict[str, str] = {}
+    for part in value[:40]:
+        if not isinstance(part, dict):
+            continue
+        name, answer = part.get("name"), part.get("value")
+        if isinstance(name, str) and isinstance(answer, str) and name.strip() and answer.strip():
+            aspects[name.strip()[:80]] = re.sub(r"\s+", " ", answer).strip()[:200]
+        if len(aspects) >= 20:
+            break
+    return aspects
 
 
 def _live_ebay(db: sqlite3.Connection, config: Config, item_id: str) -> tuple[bool, str, dict]:
@@ -62,7 +105,13 @@ def run_verify(db: sqlite3.Connection, job: sqlite3.Row, config: Config, *, look
         raise ValueError("Unexpected seller URL in eBay detail response")
     availability = "LIVE" if live else "ENDED" if reason == "listing ended" else "UNAVAILABLE"
     checked_at = now()
-    result = {"reason": reason, "item_id": returned_id, "title": mapped["title"], "buying_options": mapped.get("buying_options"), "item_end_date": mapped.get("item_end_date"), "estimated_availability": detail.get("estimatedAvailabilityStatus")}
+    result = {"reason": reason, "item_id": returned_id, "title": mapped["title"],
+              "buying_options": mapped.get("buying_options"), "item_end_date": mapped.get("item_end_date"),
+              "estimated_availability": detail.get("estimatedAvailabilityStatus"),
+              "seller_description": _seller_description(detail.get("description")),
+              "seller_condition": str(detail.get("condition") or "")[:120],
+              "condition_description": _seller_description(detail.get("conditionDescription"))[:500],
+              "seller_aspects": _seller_aspects(detail.get("localizedAspects"))}
     with transaction(db):
         owned = db.execute("SELECT 1 FROM jobs WHERE id=? AND lease_token=? AND status='RUNNING'", (job["id"], job["lease_token"])).fetchone()
         current = db.execute("SELECT current_observation_id FROM listings WHERE id=?", (job["listing_id"],)).fetchone()
