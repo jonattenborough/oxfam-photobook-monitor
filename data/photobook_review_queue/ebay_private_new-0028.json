@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-28T00:28:42Z",
+  "checked_at": "2026-09-28T01:11:30Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
     {
@@ -439,6 +439,60 @@
       ]
     },
     {
+      "number": 3488,
+      "title": "EBAY_PRIVATE_NEW: REVIEW 6 | top 88 | 0 under £100 | 4 special | 1 changed | 32/32",
+      "created_at": "2026-09-28T00:28:36Z",
+      "updated_at": "2026-09-28T00:28:36Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/3488",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 102.62,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 76/100 - Legacy - Photographs Inside The Chernobyl Exclusion Zone - Signed John Darwell",
+          "listing_ids": [
+            "267643447417"
+          ],
+          "observed_price_gbp": 103.66
+        },
+        {
+          "title": "REVIEW 76/100 - In Sickness and In Health by Colin Gray Steidl Mack First Edition 2010",
+          "listing_ids": [
+            "116206364631"
+          ],
+          "observed_price_gbp": 208.7
+        },
+        {
+          "title": "REVIEW 75/100 - Self Portrait (Renaissance to Contemporary) Hard Back Book (Barely Looked At)",
+          "listing_ids": [
+            "227539302396"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "REVIEW 74/100 - David Goldblatt — South Africa: The Structure of Things Then — Hardcover, 1998",
+          "listing_ids": [
+            "227539837819"
+          ],
+          "observed_price_gbp": 102.62
+        },
+        {
+          "title": "REVIEW 72/100 - Gerry Johansson American Winter Photo Book",
+          "listing_ids": [
+            "237094017136"
+          ],
+          "observed_price_gbp": 260.7
+        },
+        {
+          "title": "CHANGED 88/100 - Diane Arbus (1972) Signiert - Absoute Rarität",
+          "listing_ids": [
+            "318642588683"
+          ],
+          "observed_price_gbp": 429.94
+        }
+      ]
+    },
+    {
       "number": 3184,
       "title": "EBAY_PRIVATE_NEW: REVIEW 1 | top 72 | 0 under £100 | 25/25",
       "created_at": "2026-09-26T12:53:19Z",
@@ -555,39 +609,6 @@
             "117429388464"
           ],
           "observed_price_gbp": null
-        }
-      ]
-    },
-    {
-      "number": 3046,
-      "title": "EBAY_PRIVATE_NEW: REVIEW 3 | top 88 | 0 under £100 | 2 special | 28/28",
-      "created_at": "2026-09-25T18:24:51Z",
-      "updated_at": "2026-09-25T18:24:51Z",
-      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/3046",
-      "earliest_end_at": null,
-      "all_end_times": [],
-      "lowest_observed_gbp": 294.95,
-      "candidate_summaries": [
-        {
-          "title": "REVIEW 88/100 - William Eggleston 5x7 978-1931885485 Photo Book Rare 2006 limited 300 copies 2nd",
-          "listing_ids": [
-            "206577536678"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "REVIEW 78/100 - The Sweet Flypaper of Life Roy DeCarava & Langston Hughes",
-          "listing_ids": [
-            "198663475138"
-          ],
-          "observed_price_gbp": null
-        },
-        {
-          "title": "REVIEW 77/100 - KÖPFE DES ALLTAGS. Unbekannte Menschen, Gesehen Von Helmar Lerski - 1931 1st Ed",
-          "listing_ids": [
-            "166344935790"
-          ],
-          "observed_price_gbp": 294.95
         }
       ]
     }

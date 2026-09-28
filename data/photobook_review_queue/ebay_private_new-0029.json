@@ -1,7 +1,40 @@
 {
-  "checked_at": "2026-09-28T00:28:42Z",
+  "checked_at": "2026-09-28T01:11:30Z",
   "source": "EBAY_PRIVATE_NEW",
   "issues": [
+    {
+      "number": 3046,
+      "title": "EBAY_PRIVATE_NEW: REVIEW 3 | top 88 | 0 under £100 | 2 special | 28/28",
+      "created_at": "2026-09-25T18:24:51Z",
+      "updated_at": "2026-09-25T18:24:51Z",
+      "url": "https://github.com/jonattenborough/oxfam-photobook-monitor/issues/3046",
+      "earliest_end_at": null,
+      "all_end_times": [],
+      "lowest_observed_gbp": 294.95,
+      "candidate_summaries": [
+        {
+          "title": "REVIEW 88/100 - William Eggleston 5x7 978-1931885485 Photo Book Rare 2006 limited 300 copies 2nd",
+          "listing_ids": [
+            "206577536678"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "REVIEW 78/100 - The Sweet Flypaper of Life Roy DeCarava & Langston Hughes",
+          "listing_ids": [
+            "198663475138"
+          ],
+          "observed_price_gbp": null
+        },
+        {
+          "title": "REVIEW 77/100 - KÖPFE DES ALLTAGS. Unbekannte Menschen, Gesehen Von Helmar Lerski - 1931 1st Ed",
+          "listing_ids": [
+            "166344935790"
+          ],
+          "observed_price_gbp": 294.95
+        }
+      ]
+    },
     {
       "number": 3183,
       "title": "EBAY_PRIVATE_NEW: REVIEW 10 | top 82 | 0 under £100 | 2 special | 24/25",
