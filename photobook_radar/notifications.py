@@ -72,7 +72,7 @@ def claim(db: sqlite3.Connection, config: Config) -> sqlite3.Row | None:
             except (json.JSONDecodeError, TypeError, AttributeError):
                 screen = {}
             valid = bool(review and review["policy_hash"] == LEAD_POLICY and review["status"] == "DONE"
-                         and review["verdict"] in {"GEM", "UNICORN", "COLLECTOR"}
+                         and review["verdict"] in {"GEM", "UNICORN", "COLLECTOR", "POSSIBLE_GEM", "POSSIBLE_COLLECTOR"}
                          and screen.get("accepted") is True
                          and review["observation_id"] == review["current_observation_id"] and not review["imported"]
                          and (not review["auction_end_at"] or review["auction_end_at"] > current)
@@ -112,7 +112,7 @@ def send_one(db: sqlite3.Connection, config: Config, *, fake: bool = False) -> b
                     buttons = [{"text": "Open listing", "url": url}]
                     comp_url = str(payload.get("comp_url") or "")
                     if comp_url.startswith("https://") and safe_url(comp_url) == comp_url:
-                        buttons.append({"text": "Sold comp", "url": comp_url})
+                        buttons.append({"text": "Asking comp" if payload.get("comp_label") == "Asking comp" else "Sold comp", "url": comp_url})
                     message["reply_markup"] = {"inline_keyboard": [buttons]}
                 with httpx.Client(timeout=15, follow_redirects=False) as client:
                     reply = client.post(f"https://api.telegram.org/bot{token}/sendMessage", json=message)
