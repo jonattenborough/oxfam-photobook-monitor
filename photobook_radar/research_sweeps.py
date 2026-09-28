@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import html
+import hashlib
 import json
 import os
 import re
@@ -63,7 +64,7 @@ LEAD_SCHEMA = {
 }
 LEAD_DOMAINS = {"aperture.org", "mackbooks.co.uk", "tate.org.uk", "moma.org", "icp.org", "getty.edu",
                 "nazraeli.com", "stanleybarker.co.uk", "rrbphotobooks.com", "gostbooks.com", "steidl.de", "phaidon.com"}
-LEAD_POLICY = "collector-bargains-v5"
+LEAD_POLICY = "collector-bargains-v6"
 
 
 class ResearchDeferred(RuntimeError):
@@ -79,7 +80,8 @@ def _later(seconds: int) -> str:
 
 def _recent_rejected_review(db: sqlite3.Connection, row: sqlite3.Row, item: dict,
                             price_minor: int | None, currency: str | None,
-                            shipping_minor: int | None, shipping_currency: str | None) -> sqlite3.Row | None:
+                            shipping_minor: int | None, shipping_currency: str | None,
+                            seller_detail_fingerprint: str | None) -> sqlite3.Row | None:
     """Reuse a recent screen when another search route finds the same copy."""
     facts = ("title", "description", "author", "publisher", "isbn", "edition", "condition",
              "publication_year", "seller", "vendor", "available", "buying_options")
@@ -88,7 +90,7 @@ def _recent_rejected_review(db: sqlite3.Connection, row: sqlite3.Row, item: dict
         return re.sub(r"\s+", " ", field).strip() if isinstance(field, str) else field
 
     candidates = db.execute(
-        "SELECT r.verdict,o.id AS observation_id,o.raw_json,o.price_minor,o.currency,"
+        "SELECT r.verdict,r.result_json,o.id AS observation_id,o.raw_json,o.price_minor,o.currency,"
         "o.shipping_minor,o.shipping_currency,o.auction_end_at "
         "FROM reviews r JOIN observations o ON o.id=r.observation_id "
         "WHERE r.listing_id=? AND r.policy_hash=? AND r.status IN ('REJECTED','NEEDS_EVIDENCE') "
@@ -96,6 +98,8 @@ def _recent_rejected_review(db: sqlite3.Connection, row: sqlite3.Row, item: dict
         (row["id"], LEAD_POLICY, _later(-2 * 3600)),
     )
     for previous in candidates:
+        if row["platform"] == "ebay" and json.loads(previous["result_json"]).get("seller_detail_fingerprint") != seller_detail_fingerprint:
+            continue
         old = json.loads(previous["raw_json"])
         # New seller detail can change the edition or condition, so research it.
         # Missing detail on a later search result does not invalidate a fuller
@@ -337,6 +341,11 @@ def run_lead_research(db: sqlite3.Connection, job: sqlite3.Row, config: Config, 
         price_minor, currency = live["price_minor"], live["currency"]
         shipping_minor, shipping_currency = live["shipping_minor"], live["shipping_currency"]
         checked_at = live["checked_at"]
+        seller_detail = json.loads(live["result_json"] or "{}")
+        detail_fingerprint = hashlib.sha256(json.dumps(
+            {key: seller_detail.get(key) for key in ("seller_description", "seller_condition",
+                                                        "condition_description", "seller_aspects")},
+            sort_keys=True, ensure_ascii=False).encode()).hexdigest()
     else:
         if not row["canonical_url"] or safe_url(row["canonical_url"]) != row["canonical_url"] or row["captured_at"] < _later(-7200):
             return {"rejected": "seller feed is stale or URL is unsafe"}
@@ -345,7 +354,10 @@ def run_lead_research(db: sqlite3.Connection, job: sqlite3.Row, config: Config, 
         price_minor, currency = row["price_minor"], row["currency"]
         shipping_minor, shipping_currency = row["shipping_minor"], row["shipping_currency"]
         checked_at = row["captured_at"]
-    reused = _recent_rejected_review(db, row, item, price_minor, currency, shipping_minor, shipping_currency)
+        seller_detail = {}
+        detail_fingerprint = None
+    reused = _recent_rejected_review(db, row, item, price_minor, currency, shipping_minor, shipping_currency,
+                                     detail_fingerprint)
     if reused:
         return {"reused": True, "verdict": reused["verdict"]}
     source = "research-leads"
@@ -360,15 +372,25 @@ def run_lead_research(db: sqlite3.Connection, job: sqlite3.Row, config: Config, 
                           if (work := {w for w in re.findall(r"[a-z0-9]+", str(m.get("title") or "").casefold())
                                        if len(w) >= 4 and w not in {"the", "and", "book", "photo", "photography", "photographs"}})
                           and work.issubset(seller_tokens)), None)
+    aspects = seller_detail.get("seller_aspects") if isinstance(seller_detail.get("seller_aspects"), dict) else {}
+    seller_facts = dict(item)
+    for target, names in (("publisher", ("publisher",)), ("isbn", ("isbn", "isbn-13")),
+                          ("edition", ("edition",)), ("publication_year", ("publication year", "year published"))):
+        if not seller_facts.get(target):
+            seller_facts[target] = next((value for name, value in aspects.items() if name.casefold() in names), None)
     import photobook_recognition
     edition_status = photobook_recognition.assess_edition(
-        {key: item[key] for key in ("title", "publication_year", "edition", "publisher", "isbn") if key in item},
+        {key: seller_facts[key] for key in ("title", "publication_year", "edition", "publisher", "isbn") if seller_facts.get(key)},
         library_match)[0] if library_match else "unknown"
     canon = str(library_match.get("canon_sources") or "").casefold() if library_match else ""
     priority_record = bool(library_match and any(source in canon for source in
                            ("parr/badger", "roth 101", "priority seed", "curated contemporary documentary")))
     special_claim = bool(re.search(r"\b(signed|inscribed|limited|numbered)\b|\bbook\s*(?:and|&|\+)\s*print\b", seller_title))
-    context = {"listing_title": row["title"], "seller_description": str(item.get("description") or "")[:1000],
+    context = {"listing_title": row["title"],
+               "seller_description": str(seller_detail.get("seller_description") or item.get("description") or item.get("context") or "")[:2500],
+               "seller_condition": str(seller_detail.get("seller_condition") or item.get("condition") or "")[:120],
+               "condition_description": str(seller_detail.get("condition_description") or "")[:500],
+               "seller_item_specifics": aspects,
                "url": row["canonical_url"], "platform": row["platform"],
                "observed_price": price_minor / 100 if price_minor is not None else None, "currency": currency,
                "checked_at": checked_at, "shipping": shipping_minor / 100 if shipping_minor is not None else None,
@@ -449,7 +471,8 @@ def run_lead_research(db: sqlite3.Connection, job: sqlite3.Row, config: Config, 
             review = db.execute("INSERT INTO reviews(listing_id,observation_id,provider,policy_hash,verdict,confidence,status,started_at,finished_at,result_json) VALUES(?,?,?,?,?,?,?,?,?,?)",
                                 (row["id"], row["observation_id"], "codex_cli", LEAD_POLICY, verdict,
                                  "SUPPORTED" if accepted else "PROVISIONAL" if status == "NEEDS_EVIDENCE" else "LOW",
-                                 status, now(), now(), json.dumps({**result, "bargain_screen": screen})))
+                                 status, now(), now(), json.dumps({**result, "bargain_screen": screen,
+                                                                   "seller_detail_fingerprint": detail_fingerprint})))
             for url in verified:
                 db.execute("INSERT INTO evidence(listing_id,review_id,url,retrieved_at,evidence_type,supported_field,claim_kind,excerpt) VALUES(?,?,?,?,?,?,?,?)",
                            (row["id"], review.lastrowid, url, now(), "REFERENCE_PAGE", "book_context", "VERIFIED_LINK", str(result["context"])[:250]))
