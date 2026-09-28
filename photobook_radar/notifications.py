@@ -6,7 +6,6 @@ import secrets
 import sqlite3
 import tomllib
 from datetime import datetime, timedelta, timezone
-from decimal import Decimal
 from pathlib import Path
 
 import httpx
@@ -14,7 +13,7 @@ import httpx
 from .config import Config
 from .db import transaction
 from .research_sweeps import LEAD_POLICY, _later
-from .store import now
+from .store import now, safe_url
 
 
 def private_secrets(config: Config) -> dict:
@@ -48,17 +47,24 @@ def claim(db: sqlite3.Connection, config: Config) -> sqlite3.Row | None:
             db.execute("UPDATE notification_events SET status='SUPPRESSED',suppression_reason='owner decision' WHERE id=?", (row["id"],))
             return None
         payload = json.loads(row["payload_json"])
-        review = db.execute("SELECT r.*,l.current_observation_id,l.imported,o.auction_end_at FROM reviews r JOIN listings l ON l.id=r.listing_id JOIN observations o ON o.id=l.current_observation_id WHERE r.id=? AND r.listing_id=?",
+        review = db.execute("SELECT r.*,l.current_observation_id,l.imported,l.platform,l.canonical_url,l.availability,o.auction_end_at,o.captured_at,o.available FROM reviews r JOIN listings l ON l.id=r.listing_id JOIN observations o ON o.id=l.current_observation_id WHERE r.id=? AND r.listing_id=?",
                             (payload.get("review_id"), row["listing_id"])).fetchone()
-        live = db.execute("SELECT * FROM live_checks WHERE listing_id=? AND observation_id=? AND provider='ebay_browse' ORDER BY checked_at DESC LIMIT 1",
-                          (row["listing_id"], review["observation_id"] if review else -1)).fetchone()
+        if review and review["platform"] == "ebay":
+            live = db.execute("SELECT * FROM live_checks WHERE listing_id=? AND observation_id=? AND provider='ebay_browse' ORDER BY checked_at DESC LIMIT 1",
+                              (row["listing_id"], review["observation_id"])).fetchone()
+            source_current = bool(live and live["availability"] == "LIVE" and live["checked_at"] >= _later(-1800)
+                                  and live["price_minor"] is not None)
+        else:
+            source_current = bool(review and review["canonical_url"]
+                                  and safe_url(review["canonical_url"]) == review["canonical_url"]
+                                  and review["captured_at"] >= _later(-7200)
+                                  and review["available"] not in {"False", "false", "0"}
+                                  and review["availability"] not in {"ENDED", "UNAVAILABLE"})
         valid = bool(review and review["policy_hash"] == LEAD_POLICY and review["status"] == "DONE"
                      and review["verdict"] in {"PAY_ATTENTION", "GEM", "UNICORN"}
                      and review["observation_id"] == review["current_observation_id"] and not review["imported"]
                      and (not review["auction_end_at"] or review["auction_end_at"] > current)
-                     and live and live["availability"] == "LIVE" and live["checked_at"] >= _later(-1800)
-                     and live["currency"] == "GBP" and live["price_minor"] is not None
-                     and live["price_minor"] <= int(Decimal(config.max_recommended_item_gbp) * 100))
+                     and source_current)
         if not valid:
             db.execute("UPDATE notification_events SET status='SUPPRESSED',suppression_reason='research or current listing check no longer valid' WHERE id=?", (row["id"],))
             return None

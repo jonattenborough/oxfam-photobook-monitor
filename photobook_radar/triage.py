@@ -17,6 +17,7 @@ from .store import enqueue_job, now
 PHOTO_CLUES = ("photobook", "photo book", "photographs", "street photography", "documentary photography", "monograph", "photographic")
 NOISE = ("camera manual", "photography handbook", "photoshop", "lightroom", "how to photograph")
 TITLE_STOPWORDS = {"the", "and", "for", "with", "from", "book", "books", "photographs", "photography", "photo", "first", "edition"}
+COLLECTOR_CLUES = ("first edition", "first printing", "signed", "inscribed", "limited edition", "numbered", "book and print", "out of print")
 
 
 def _tokens(value: object) -> set[str]:
@@ -36,6 +37,19 @@ def object_in_seller_title(item: dict, result: dict) -> bool:
         if author and author.issubset(title) and any(clue in str(item.get("title") or "").casefold() for clue in ("book", "photograph", "photo", "signed", "edition")):
             return True
     return False
+
+
+def research_candidate(item: dict, result: dict) -> bool:
+    """Shortlist plausible books, including uncertain and unfamiliar gems."""
+    title = str(item.get("title") or "").casefold()
+    if any(noise in title for noise in NOISE):
+        return False
+    if object_in_seller_title(item, result):
+        return True
+    photobook_title = any(clue in title for clue in ("photobook", "photo book", "photographs", "photography", "photographic monograph"))
+    known_in_description = bool(result["matches"] or result["core_matches"])
+    collectible_claim = any(clue in title for clue in COLLECTOR_CLUES)
+    return bool(photobook_title and (known_in_description or collectible_claim))
 
 
 def visible_item(item: dict) -> dict:
@@ -105,8 +119,10 @@ def run_triage(db: sqlite3.Connection, job: sqlite3.Row, config: Config) -> dict
     end = row["auction_end_at"]
     ended = bool(end and end <= now())
     availability = "ENDED" if ended else row["availability"]
-    price_ok = row["currency"] == "GBP" and row["price_minor"] is not None and row["price_minor"] <= int(Decimal(config.max_recommended_item_gbp) * 100)
-    lead = result["score"] >= 58 and price_ok and not ended and object_in_seller_title(item, result)
+    priced = row["currency"] in {"GBP", "EUR", "USD", "CHF", "AUD", "CAD"} and row["price_minor"] is not None
+    title = str(item.get("title") or "").casefold()
+    unfamiliar_collectible = any(clue in title for clue in COLLECTOR_CLUES) and any(clue in title for clue in PHOTO_CLUES)
+    lead = (result["score"] >= 55 or unfamiliar_collectible) and (priced or result["score"] >= 75) and not ended and research_candidate(item, result)
     with transaction(db):
         owned = db.execute("SELECT 1 FROM jobs WHERE id=? AND lease_token=? AND status='RUNNING'", (job["id"], job["lease_token"])).fetchone()
         if not owned:
@@ -120,16 +136,17 @@ def run_triage(db: sqlite3.Connection, job: sqlite3.Row, config: Config) -> dict
         db.execute("DELETE FROM recognition_matches WHERE listing_id=?", (job["listing_id"],))
         for match in result["matches"]:
             db.execute("INSERT OR REPLACE INTO recognition_matches(listing_id,book_record_key,contributor,score,reason,source,matched_at) VALUES(?,?,?,?,?,?,?)", (job["listing_id"], match.get("record_id") or (str(match.get("contributor")) + "|" + str(match.get("title"))), match.get("contributor"), match.get("score"), match.get("reason"), match.get("source"), now()))
-        # Local matching only shortlists candidates. Research and a current exact
-        # listing check must both pass before a phone event can be created.
+        # Local matching only shortlists candidates; it does not make the
+        # collector decision or create a phone event.
         if lead and not row["imported"] and row["canonical_url"]:
-            enqueue_job(db, f"verify:{job['listing_id']}:{row['current_observation_id']}", "VERIFY", listing_id=job["listing_id"], priority=80 if end else 50, payload={"observation_id": row["current_observation_id"]})
-            research_worthy = result["score"] >= 70 or bool(result["matches"]) or (result["score"] >= 58 and row["price_minor"] is not None and row["price_minor"] <= 3000)
-            if config.research_recurring_enabled and config.research_provider == "codex_cli" and research_worthy:
+            if row["platform"] == "ebay":
+                enqueue_job(db, f"verify:{job['listing_id']}:{row['current_observation_id']}", "VERIFY", listing_id=job["listing_id"], priority=80 if end else 50, payload={"observation_id": row["current_observation_id"]})
+            if config.research_recurring_enabled and config.research_provider == "codex_cli":
                 pending = db.execute("SELECT COUNT(*) FROM jobs WHERE kind='RESEARCH_LEAD' AND status IN ('PENDING','RUNNING')").fetchone()[0]
-                if pending < 24:
+                if pending < 120:
                     enqueue_job(db, f"research-lead:{job['listing_id']}:{row['current_observation_id']}", "RESEARCH_LEAD",
-                                listing_id=job["listing_id"], priority=60 + result["score"], payload={"observation_id": row["current_observation_id"]})
+                                listing_id=job["listing_id"], priority=60 + result["score"] + (25 if end else 0),
+                                payload={"observation_id": row["current_observation_id"]})
         done = db.execute("UPDATE jobs SET status='DONE',lease_token=NULL,lease_owner=NULL,lease_until=NULL WHERE id=? AND lease_token=? AND status='RUNNING'", (job["id"], job["lease_token"]))
         if done.rowcount != 1:
             raise RuntimeError("Stale triage result")

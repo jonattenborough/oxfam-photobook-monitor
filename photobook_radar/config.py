@@ -74,8 +74,8 @@ class Config:
             raise ValueError("Unknown research provider")
         if self.research_recurring_enabled and self.research_provider != "codex_cli":
             raise ValueError("Recurring research requires the local Codex CLI provider")
-        if self.research_daily_jobs < 0 or self.research_daily_jobs > 16:
-            raise ValueError("Research daily jobs must remain within the tested allowance")
+        if self.research_daily_jobs < 0 or self.research_daily_jobs > 48:
+            raise ValueError("Research daily jobs must be between 0 and 48")
         if self.research_model != "gpt-6-sol":
             raise ValueError("Research model must be the tested GPT-6 Sol configuration")
         if Decimal(self.max_recommended_item_gbp) > Decimal("150.00"):
