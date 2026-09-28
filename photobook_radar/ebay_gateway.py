@@ -24,6 +24,10 @@ from .config import Config
 from .store import now, reserve_request, settle_request, stamp
 
 _THREAD = threading.local()
+_TOKEN_LOCK = threading.RLock()
+_TOKEN_CACHE: tuple[str, str, str, datetime] | None = None
+_QUOTA_LOCK = threading.Lock()
+_QUOTA_CACHE: BrowseWindow | None = None
 
 
 def load_credentials(config: Config) -> tuple[str, str]:
@@ -84,11 +88,10 @@ class MeteredEbayBrowseClient(EbayBrowseClient):
             raise RuntimeError("Live eBay requests are disabled")
         if url.path == urllib.parse.urlsplit(TOKEN_URL).path:
             start, reset = self._day_window()
-            # A conservative local cap, well below eBay's published 1,000/day.
-            return reserve_request(self.db, bucket="ebay_oauth_client_credentials", window_start=start, reset_at=reset, provider_limit=100, reserve=0, lane_cap=None, route_id="oauth", reason=label)
+            return reserve_request(self.db, bucket="ebay_oauth_client_credentials", window_start=start, reset_at=reset, provider_limit=1000, reserve=0, lane_cap=None, route_id="oauth", reason=label)
         if url.path == urllib.parse.urlsplit(RATE_LIMIT_URL).path:
             start, reset = self._day_window()
-            return reserve_request(self.db, bucket="ebay_developer_analytics", window_start=start, reset_at=reset, provider_limit=200, reserve=0, lane_cap=None, route_id="analytics", reason=label)
+            return reserve_request(self.db, bucket="ebay_developer_analytics", window_start=start, reset_at=reset, provider_limit=5000, reserve=0, lane_cap=None, route_id="analytics", reason=label)
         if not url.path.startswith("/buy/browse/v1/"):
             raise ValueError("Unsupported eBay API route")
         window = self.browse_window
@@ -110,6 +113,9 @@ class MeteredEbayBrowseClient(EbayBrowseClient):
         except urllib.error.HTTPError as exc:
             settle_request(self.db, request_id, response_class=f"HTTP {exc.code}")
             if exc.code == 401:
+                global _TOKEN_CACHE
+                with _TOKEN_LOCK:
+                    _TOKEN_CACHE = None
                 self._access_token = None
             # Do not include a potentially sensitive URL, credential, or body.
             raise EbayApiError(f"{label} returned HTTP {exc.code}; retry must be scheduled as a new metered attempt") from None
@@ -126,23 +132,31 @@ class MeteredEbayBrowseClient(EbayBrowseClient):
         return payload
 
     def access_token(self) -> str:
+        global _TOKEN_CACHE
         if self._access_token and datetime.now(timezone.utc) < self._token_expires_at:
             return self._access_token
-        self._access_token = None
-        basic = base64.b64encode(f"{self.client_id}:{self.client_secret}".encode()).decode("ascii")
-        body = urllib.parse.urlencode({"grant_type": "client_credentials", "scope": API_SCOPE}).encode("ascii")
-        request = urllib.request.Request(TOKEN_URL, data=body, method="POST", headers={"Authorization": f"Basic {basic}", "Content-Type": "application/x-www-form-urlencoded", "Accept": "application/json"})
-        result = self._json_request(request, "eBay OAuth")
-        token = result.get("access_token")
-        try:
-            lifetime = int(result.get("expires_in"))
-        except (ValueError, TypeError):
-            lifetime = 0
-        if not isinstance(token, str) or not token or lifetime <= 60:
-            raise EbayApiError("eBay OAuth returned no usable access token or expiry")
-        self._access_token = token
-        self._token_expires_at = datetime.now(timezone.utc) + timedelta(seconds=lifetime - 60)
-        return token
+        with _TOKEN_LOCK:
+            cached = _TOKEN_CACHE
+            if (cached and cached[0] == self.client_id and cached[1] == self.client_secret
+                    and datetime.now(timezone.utc) < cached[3]):
+                self._access_token, self._token_expires_at = cached[2], cached[3]
+                return self._access_token
+            self._access_token = None
+            basic = base64.b64encode(f"{self.client_id}:{self.client_secret}".encode()).decode("ascii")
+            body = urllib.parse.urlencode({"grant_type": "client_credentials", "scope": API_SCOPE}).encode("ascii")
+            request = urllib.request.Request(TOKEN_URL, data=body, method="POST", headers={"Authorization": f"Basic {basic}", "Content-Type": "application/x-www-form-urlencoded", "Accept": "application/json"})
+            result = self._json_request(request, "eBay OAuth")
+            token = result.get("access_token")
+            try:
+                lifetime = int(result.get("expires_in"))
+            except (ValueError, TypeError):
+                lifetime = 0
+            if not isinstance(token, str) or not token or lifetime <= 60:
+                raise EbayApiError("eBay OAuth returned no usable access token or expiry")
+            self._access_token = token
+            self._token_expires_at = datetime.now(timezone.utc) + timedelta(seconds=lifetime - 60)
+            _TOKEN_CACHE = (self.client_id, self.client_secret, token, self._token_expires_at)
+            return token
 
     def refresh_browse_quota(self) -> BrowseWindow:
         window = BrowseWindow.from_analytics(self.browse_quota())
@@ -151,7 +165,8 @@ class MeteredEbayBrowseClient(EbayBrowseClient):
 
 
 def thread_client(db: sqlite3.Connection, config: Config, route_id: str, *, marketplace: str = "EBAY_GB") -> MeteredEbayBrowseClient:
-    """Reuse OAuth in one bounded source thread, refresh account quota every 15m."""
+    """Share OAuth and one recent account quota reading across source threads."""
+    global _QUOTA_CACHE
     if marketplace not in MARKETPLACE_DOMAINS:
         raise ValueError("Unsupported eBay marketplace")
     client_id, client_secret = load_credentials(config)
@@ -163,7 +178,10 @@ def thread_client(db: sqlite3.Connection, config: Config, route_id: str, *, mark
     client.config = config
     client.route_id = route_id
     client.marketplace = marketplace
-    window = client.browse_window
-    if window is None or datetime.fromisoformat(window.measured_at.replace("Z", "+00:00")) <= datetime.now(timezone.utc) - timedelta(minutes=15):
-        client.refresh_browse_quota()
+    with _QUOTA_LOCK:
+        window = _QUOTA_CACHE
+        if window is None or datetime.fromisoformat(window.measured_at.replace("Z", "+00:00")) <= datetime.now(timezone.utc) - timedelta(minutes=15):
+            window = client.refresh_browse_quota()
+            _QUOTA_CACHE = window
+        client.browse_window = window
     return client
