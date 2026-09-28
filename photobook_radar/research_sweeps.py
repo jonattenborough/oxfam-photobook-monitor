@@ -334,7 +334,9 @@ def run_lead_research(db: sqlite3.Connection, job: sqlite3.Row, config: Config, 
                 db.execute("INSERT INTO evidence(listing_id,review_id,url,retrieved_at,evidence_type,supported_field,claim_kind,excerpt) VALUES(?,?,?,?,?,?,?,?)",
                            (row["id"], review.lastrowid, url, now(), "REFERENCE_PAGE", "book_context", "VERIFIED_LINK", str(result["context"])[:250]))
             db.execute("UPDATE research_sweeps SET status=?,finished_at=?,result_json=? WHERE id=?", (status, now(), json.dumps({"verified_links": len(verified)}), sweep_id))
-            if accepted and config.allow_real_notifications and config.notification_enabled:
+            prior_find = db.execute("SELECT 1 FROM notification_events WHERE listing_id=? AND stage='RESEARCHED_FIND' AND status IN ('QUEUED','SENDING','PROVIDER_ACCEPTED','DELIVERY_UNKNOWN') LIMIT 1",
+                                    (row["id"],)).fetchone()
+            if accepted and not prior_find and config.allow_real_notifications and config.notification_enabled:
                 icon = {"PAY_ATTENTION": "👀", "GEM": "💎🔥🔥", "UNICORN": "🦄🔥🔥🔥"}[decision]
                 price = f"£{live['price_minor']/100:.2f}"
                 postage = f" + £{live['shipping_minor']/100:.2f} postage" if live["shipping_minor"] is not None and live["shipping_currency"] == "GBP" else " + postage unknown"

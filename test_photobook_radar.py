@@ -197,6 +197,18 @@ class RadarPersistenceTests(unittest.TestCase):
         self.assertEqual(run_lead_research(self.db, job, config, provider=lambda *_: result, link_check=lambda *_: True)["status"], "DONE")
         self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events WHERE stage='RESEARCHED_FIND'").fetchone()[0], 1)
         self.assertTrue(send_one(self.db, config, fake=True))
+        with transaction(self.db):
+            capture(self.db, {"key": "ebay:123456789012", "title": "Danny Lyon The Bikeriders first printing 1968",
+                              "price_gbp": "19", "url": "https://www.ebay.co.uk/itm/123456789012"},
+                    source_id="ebay", origin_key="lead-price-change")
+            newer_observation = self.db.execute("SELECT current_observation_id FROM listings WHERE id=?", (listing_id,)).fetchone()[0]
+            enqueue_job(self.db, "research:lead:new-price", "RESEARCH_LEAD", listing_id=listing_id,
+                        payload={"observation_id": newer_observation})
+            self.db.execute("INSERT INTO live_checks(listing_id,observation_id,provider,checked_at,availability,price_minor,currency,result_json) VALUES(?,?,?,?,?,?,?,?)",
+                            (listing_id, newer_observation, "ebay_browse", now(), "LIVE", 1900, "GBP", "{}"))
+        newer_job = claim_job(self.db, "research-test", kinds=("RESEARCH_LEAD",), lease_seconds=180)
+        self.assertEqual(run_lead_research(self.db, newer_job, config, provider=lambda *_: result, link_check=lambda *_: True)["status"], "DONE")
+        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events WHERE stage='RESEARCHED_FIND'").fetchone()[0], 1)
 
     def test_research_rejects_generic_or_unsupported_find(self):
         config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True,
