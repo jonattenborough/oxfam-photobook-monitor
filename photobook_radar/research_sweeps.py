@@ -64,7 +64,7 @@ LEAD_SCHEMA = {
 }
 LEAD_DOMAINS = {"aperture.org", "mackbooks.co.uk", "tate.org.uk", "moma.org", "icp.org", "getty.edu",
                 "nazraeli.com", "stanleybarker.co.uk", "rrbphotobooks.com", "gostbooks.com", "steidl.de", "phaidon.com"}
-LEAD_POLICY = "collector-bargains-v7"
+LEAD_POLICY = "collector-bargains-v8"
 
 
 class ResearchDeferred(RuntimeError):
@@ -387,6 +387,7 @@ def run_lead_research(db: sqlite3.Connection, job: sqlite3.Row, config: Config, 
                            ("parr/badger", "roth 101", "priority seed", "curated contemporary documentary")))
     special_claim = bool(re.search(r"\b(signed|inscribed|limited|numbered)\b|\bbook\s*(?:and|&|\+)\s*print\b", seller_title))
     context = {"listing_title": row["title"],
+               "offered_variant": str(item.get("offered_variant") or "")[:120],
                "seller_description": str(seller_detail.get("seller_description") or item.get("description") or item.get("context") or "")[:2500],
                "seller_condition": str(seller_detail.get("seller_condition") or item.get("condition") or "")[:120],
                "condition_description": str(seller_detail.get("condition_description") or "")[:500],
@@ -404,8 +405,9 @@ def run_lead_research(db: sqlite3.Connection, job: sqlite3.Row, config: Config, 
               "socially engaged, British/Irish social documentary, portrait and significant colour photobooks, including overlooked "
               "photographers. The phone has two distinct opportunities: a well-underpriced flip, or an essential collection book. "
               "A famous name, low sticker price, generic anthology, unrelated mention, ordinary reprint, or merely interesting "
-              "book is not a GEM. First identify the actual offered book and edition from seller facts. Then find direct public "
-              "market comparable pages for the same edition or a less valuable copy in no better condition. Return at most four. "
+              "book is not a GEM. First identify the actual offered book and edition from seller facts. "
+              "For a Shopify product, the selected offered variant controls its price and signature status; generic product text may describe another variant. "
+              "Then find direct public market comparable pages for the same edition or a less valuable copy in no better condition. Return at most four. "
               "A SOLD comparable needs a visible realized GBP sale price and date within the last three years; an ended-unsold "
               "listing and an asking price are not sold evidence. For ASKING comparables, use currently purchasable direct seller "
               "pages showing a GBP price, never search snippets or sold-out pages. Never compare an unsigned standard book to a signed deluxe "
@@ -444,7 +446,7 @@ def run_lead_research(db: sqlite3.Connection, job: sqlite3.Row, config: Config, 
         verified = [url for url in result["source_urls"][:3] if isinstance(url, str) and checker(url, str(reference_title), LEAD_DOMAINS)]
         decision = result["decision"]
         max_buy = Decimal("100000") if config.max_recommended_item_gbp == "unlimited" else Decimal(config.max_recommended_item_gbp)
-        market = assess_bargain(result["market_comparables"] if decision in {"GEM", "UNICORN", "COLLECTOR", "POSSIBLE_GEM", "POSSIBLE_COLLECTOR"} else [],
+        market = assess_bargain(result["market_comparables"],
                                 title=str(reference_title), price_minor=price_minor,
                                 currency=currency, shipping_minor=shipping_minor, shipping_currency=shipping_currency,
                                 max_buy_gbp=max_buy, min_profit_gbp=None,
@@ -456,14 +458,12 @@ def run_lead_research(db: sqlite3.Connection, job: sqlite3.Row, config: Config, 
         flip_margin = bool(market["accepted"] and len(checked) >= 2
                            and market["discount_pct"] >= config.min_discount_pct
                            and market["net_profit_gbp"] >= Decimal(config.min_net_profit_gbp))
-        flip = bool(decision in {"GEM", "UNICORN"} and has_sold and flip_margin)
-        possible_flip = bool(not flip and decision in {"POSSIBLE_GEM", "GEM", "UNICORN"}
-                             and independent and flip_margin)
+        flip = bool(has_sold and flip_margin)
+        possible_flip = bool(not flip and independent and flip_margin)
         collection_margin = bool(market["accepted"] and str(matched["core_tier"]) == "1" and priority_record
                                  and market["discount_pct"] >= config.collector_min_discount_pct)
-        collection = bool(decision == "COLLECTOR" and has_sold and collection_margin)
-        possible_collection = bool(not collection and decision in {"POSSIBLE_COLLECTOR", "COLLECTOR"}
-                                   and independent and len(checked) >= 2 and collection_margin)
+        collection = bool(has_sold and collection_margin)
+        possible_collection = bool(not collection and independent and len(checked) >= 2 and collection_margin)
         accepted = bool(result["actual_book"] and result["collector_fit"] and result["edition_supported"]
                         and (flip or possible_flip or collection or possible_collection)
                         and row["listing_type"] != "AUCTION"
@@ -476,7 +476,9 @@ def run_lead_research(db: sqlite3.Connection, job: sqlite3.Row, config: Config, 
                    "POSSIBLE_GEM" if accepted and possible_flip else
                    "PAY_ATTENTION" if result["actual_book"] and result["collector_fit"] and decision != "PASS" else "PASS")
         status = "DONE" if accepted else "NEEDS_EVIDENCE" if verdict == "PAY_ATTENTION" else "REJECTED"
-        possible = accepted and (possible_flip or possible_collection)
+        possible = verdict in {"POSSIBLE_GEM", "POSSIBLE_COLLECTOR"}
+        opportunity_reason = ("Exact-edition asking prices indicate a large gap; check condition and availability before buying."
+                              if accepted and decision in {"PASS", "PAY_ATTENTION"} else str(result["opportunity_reason"]))
         screen = {"accepted": accepted, "route": "collection" if accepted and collection else
                   "possible_collection" if accepted and possible_collection else
                   "possible_flip" if accepted and possible_flip else "flip" if accepted else "none",
@@ -520,7 +522,7 @@ def run_lead_research(db: sqlite3.Connection, job: sqlite3.Row, config: Config, 
                            f"📉 ~{market['discount_pct']:.0f}% below lowest checked {'asking price' if possible else 'comparable'} £{market['comp_floor_gbp']:.2f}\n"
                            f"{margin_line}"
                            f"{tier}{compact(str(result['context']), 105)}{bibliography}\n"
-                           f"Why: {compact(result['opportunity_reason'], 145)}\n"
+                           f"Why: {compact(opportunity_reason, 145)}\n"
                            f"Check: {compact(result['risk'], 105)}"
                            + ("\nAvailability: check seller page" if row["platform"] != "ebay" else ""))
                 primary_comp = (next(comp for comp in checked if comp["kind"] == "SOLD") if not possible else

@@ -17,6 +17,11 @@ MARKET_DOMAINS = {
     "sothebys.com", "catawiki.com", "forumauctions.co.uk", "invaluable.com",
     "photobookstore.co.uk", "setantabooks.com", "fosterbooks.co.uk",
     "rrbphotobooks.com", "mackbooks.co.uk", "stanleybarker.co.uk",
+    "photobookjunkies.com", "84cxrarebooks.com", "dewilewis.com",
+    "lovereading.co.uk", "rarewaves.com", "guardianbookshop.com",
+    "phototitles.uk", "martinparrfoundation.org", "saltsmillshop.co.uk",
+    "tenderbooks.co.uk", "ideanow.online", "magalleria.co.uk",
+    "hatchards.co.uk",
 }
 SOLD_MARKER = re.compile(r"\b(?:this listing sold|sold on|sold for|sold price|winning bid|hammer price|realized price|realised price)\b", re.I)
 STOP = {"the", "and", "book", "books", "photo", "photographs", "photography", "edition", "signed", "first"}
