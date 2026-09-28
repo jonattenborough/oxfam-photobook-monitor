@@ -24,6 +24,13 @@ ROOT = Path(__file__).resolve().parent.parent
 LANES = {"private": ("ebay-private", "SCAN_EBAY_PRIVATE", 3600),
          "charity": ("ebay-charity", "SCAN_EBAY_CHARITY", 3600),
          "endgame": ("ebay-endgame", "SCAN_EBAY_ENDGAME", 900)}
+CATEGORY_FALLBACK_QUERY = {
+    "EBAY_AT": "Fotobuch", "EBAY_AU": "photography book", "EBAY_BE": "fotoboek",
+    "EBAY_CA": "photography book", "EBAY_CH": "Fotobuch", "EBAY_DE": "Fotobuch",
+    "EBAY_ES": "fotolibro", "EBAY_FR": "livre photographie", "EBAY_HK": "photography book",
+    "EBAY_IE": "photography book", "EBAY_IT": "libro fotografico", "EBAY_NL": "fotoboek",
+    "EBAY_PL": "książka fotograficzna", "EBAY_SG": "photography book", "EBAY_US": "photography book",
+}
 _ENDGAME_TASKS: list[dict] | None = None
 
 
@@ -177,7 +184,13 @@ def _fetch(db: sqlite3.Connection, config: Config, payload: dict) -> dict:
         return client.search_page(None, limit=200, category_ids="261186", fixed_price_only=True,
                                   seller_ids=[definition["seller_id"]], delivery_country=definition.get("delivery_country"), sort="newlyListed")
     end = datetime.now(timezone.utc) + timedelta(hours=definition["horizon_hours"])
-    return client.search_page(definition.get("query"), limit=200, category_ids=definition.get("category_ids"),
+    query = definition.get("query")
+    category_ids = definition.get("category_ids")
+    if definition.get("lane_name") == "category" and definition["marketplace"] != "EBAY_GB":
+        # The UK photography-book category ID is not valid in every market.
+        query = CATEGORY_FALLBACK_QUERY[definition["marketplace"]]
+        category_ids = None
+    return client.search_page(query, limit=200, category_ids=category_ids,
                               fixed_price_only=False, buying_options=["AUCTION"], ending_start_date=now(),
                               ending_end_date=end.isoformat(timespec="seconds").replace("+00:00", "Z"),
                               search_in_description=definition.get("search_in_description", False), sort="endingSoonest")
