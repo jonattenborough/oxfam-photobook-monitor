@@ -20,7 +20,7 @@ from pathlib import Path
 import ebay_endgame
 
 from .config import Config
-from .bargains import assess_bargain, check_comparable
+from .bargains import assess_bargain, check_comparable, check_ebay_asking
 from .db import transaction
 from .store import capture_page, enqueue_job, enqueue_notification, now, safe_url, stamp
 
@@ -65,6 +65,7 @@ LEAD_SCHEMA = {
 LEAD_DOMAINS = {"aperture.org", "mackbooks.co.uk", "tate.org.uk", "moma.org", "icp.org", "getty.edu",
                 "nazraeli.com", "stanleybarker.co.uk", "rrbphotobooks.com", "gostbooks.com", "steidl.de", "phaidon.com"}
 LEAD_POLICY = "collector-bargains-v8"
+MARKET_CHECK_VERSION = 2
 
 
 class ResearchDeferred(RuntimeError):
@@ -98,7 +99,10 @@ def _recent_rejected_review(db: sqlite3.Connection, row: sqlite3.Row, item: dict
         (row["id"], LEAD_POLICY, _later(-2 * 3600)),
     )
     for previous in candidates:
-        if row["platform"] == "ebay" and json.loads(previous["result_json"]).get("seller_detail_fingerprint") != seller_detail_fingerprint:
+        previous_result = json.loads(previous["result_json"])
+        if previous_result.get("market_check_version") != MARKET_CHECK_VERSION:
+            continue
+        if row["platform"] == "ebay" and previous_result.get("seller_detail_fingerprint") != seller_detail_fingerprint:
             continue
         old = json.loads(previous["raw_json"])
         # New seller detail can change the edition or condition, so research it.
@@ -446,12 +450,23 @@ def run_lead_research(db: sqlite3.Connection, job: sqlite3.Row, config: Config, 
         verified = [url for url in result["source_urls"][:3] if isinstance(url, str) and checker(url, str(reference_title), LEAD_DOMAINS)]
         decision = result["decision"]
         max_buy = Decimal("100000") if config.max_recommended_item_gbp == "unlimited" else Decimal(config.max_recommended_item_gbp)
+        def verify_comparable(url: str, title: str, price: Decimal, kind: str, sold_date: str) -> bool:
+            host = urllib.parse.urlsplit(url).hostname or ""
+            if host in {"www.ebay.co.uk", "ebay.co.uk", "www.ebay.com", "ebay.com"} and kind == "ASKING":
+                from .ebay_gateway import thread_client
+                try:
+                    return check_ebay_asking(url, title, price, kind,
+                                             thread_client(db, config, "ebay-comparable").get_item_by_legacy_id)
+                except Exception:
+                    return False
+            return check_comparable(url, title, price, kind, sold_date)
+
         market = assess_bargain(result["market_comparables"],
                                 title=str(reference_title), price_minor=price_minor,
                                 currency=currency, shipping_minor=shipping_minor, shipping_currency=shipping_currency,
                                 max_buy_gbp=max_buy, min_profit_gbp=None,
                                 min_discount_pct=min(config.min_discount_pct, config.collector_min_discount_pct),
-                                checker=market_check or check_comparable, min_comparables=1, require_sold=False)
+                                checker=market_check or verify_comparable, min_comparables=1, require_sold=False)
         checked = market["comparables"]
         has_sold = any(comp["kind"] == "SOLD" for comp in checked)
         independent = len({comp["marketplace"] for comp in checked}) >= 2
@@ -495,7 +510,8 @@ def run_lead_research(db: sqlite3.Connection, job: sqlite3.Row, config: Config, 
                                 (row["id"], row["observation_id"], "codex_cli", LEAD_POLICY, verdict,
                                  "INDICATIVE" if possible else "SUPPORTED" if accepted else
                                  "PROVISIONAL" if status == "NEEDS_EVIDENCE" else "LOW",
-                                 status, now(), now(), json.dumps({**result, "bargain_screen": screen,
+                                status, now(), now(), json.dumps({**result, "bargain_screen": screen,
+                                                                   "market_check_version": MARKET_CHECK_VERSION,
                                                                    "seller_detail_fingerprint": detail_fingerprint})))
             for url in verified:
                 db.execute("INSERT INTO evidence(listing_id,review_id,url,retrieved_at,evidence_type,supported_field,claim_kind,excerpt) VALUES(?,?,?,?,?,?,?,?)",

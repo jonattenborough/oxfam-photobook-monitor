@@ -12,7 +12,7 @@ from unittest.mock import MagicMock, patch
 
 from photobook_radar.config import Config
 from photobook_radar.abebooks_scheduler import schedule_abebooks
-from photobook_radar.bargains import assess_bargain
+from photobook_radar.bargains import assess_bargain, check_ebay_asking
 from photobook_radar.db import connect, migrate, transaction
 from photobook_radar.ebay_gateway import BrowseWindow, MeteredEbayBrowseClient
 from photobook_radar.ebay_lanes import _endgame_slots, run_ebay_lane_job, schedule_ebay_lanes
@@ -298,6 +298,16 @@ class RadarPersistenceTests(unittest.TestCase):
                          [("unsigned", 70.0), ("signed", 80.0)])
         self.assertNotEqual(rows[0]["key"], rows[1]["key"])
         self.assertTrue(rows[0]["url"].endswith("?variant=21"))
+
+    def test_ebay_asking_comparable_uses_exact_live_browse_price(self):
+        item = {"title": "Danny Lyon The Bikeriders 1968 first edition", "price": {"value": "200", "currency": "GBP"},
+                "buyingOptions": ["FIXED_PRICE"]}
+        url = "https://www.ebay.co.uk/itm/123456789012"
+        self.assertTrue(check_ebay_asking(url, "Danny Lyon The Bikeriders", Decimal("200"), "ASKING", lambda _: item))
+        self.assertFalse(check_ebay_asking(url, "Danny Lyon The Bikeriders", Decimal("160"), "ASKING", lambda _: item))
+        self.assertFalse(check_ebay_asking(url, "Danny Lyon The Bikeriders", Decimal("200"), "SOLD", lambda _: item))
+        self.assertFalse(check_ebay_asking(url, "Danny Lyon The Bikeriders", Decimal("200"), "ASKING",
+                                           lambda _: {**item, "buyingOptions": ["AUCTION"]}))
 
     def test_three_ebay_lanes_schedule_with_one_durable_budget(self):
         config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True,

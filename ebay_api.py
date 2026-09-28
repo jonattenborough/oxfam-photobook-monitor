@@ -16,6 +16,7 @@ from typing import Any
 TOKEN_URL = "https://api.ebay.com/identity/v1/oauth2/token"
 SEARCH_URL = "https://api.ebay.com/buy/browse/v1/item_summary/search"
 ITEM_URL = "https://api.ebay.com/buy/browse/v1/item/{item_id}"
+LEGACY_ITEM_URL = "https://api.ebay.com/buy/browse/v1/item/get_item_by_legacy_id"
 RATE_LIMIT_URL = "https://api.ebay.com/developer/analytics/v1_beta/rate_limit/"
 API_SCOPE = "https://api.ebay.com/oauth/api_scope"
 DEFAULT_MARKETPLACE = "EBAY_GB"
@@ -461,6 +462,18 @@ class EbayBrowseClient:
         self.browse_calls += 1
         payload = self._json_request(request, "eBay Browse item")
         return payload
+
+    def get_item_by_legacy_id(self, item_id: str) -> dict[str, Any]:
+        """Resolve an active eBay listing URL's numeric ID to exact Browse details."""
+        cleaned = str(item_id or "").strip()
+        if not re.fullmatch(r"[0-9]{9,15}", cleaned):
+            raise ValueError("Invalid eBay legacy item ID")
+        request = urllib.request.Request(
+            LEGACY_ITEM_URL + "?" + urllib.parse.urlencode({"legacy_item_id": cleaned}),
+            headers=self._headers(),
+        )
+        self.browse_calls += 1
+        return self._json_request(request, "eBay Browse legacy item")
 
     def live_status(self, item_id: str) -> tuple[bool, str, dict[str, Any]]:
         """Return whether a listing is currently available, plus the fetched item."""
