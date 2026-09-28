@@ -36,7 +36,7 @@ def claim(db: sqlite3.Connection, config: Config) -> sqlite3.Row | None:
             return None
         # Delivery is the final safety boundary. Old queued lead/discovery
         # events can never escape when notifications are re-enabled.
-        if row["stage"] not in {"RESEARCHED_FIND", "PHOTO_REVIEW_REPLY"}:
+        if row["stage"] not in {"BARGAIN_FIND", "PHOTO_REVIEW_REPLY"}:
             db.execute("UPDATE notification_events SET status='SUPPRESSED',suppression_reason='research-first collector policy' WHERE id=?", (row["id"],))
             return None
         if row["expires_at"] and row["expires_at"] <= current:
@@ -58,15 +58,22 @@ def claim(db: sqlite3.Connection, config: Config) -> sqlite3.Row | None:
                 live = db.execute("SELECT * FROM live_checks WHERE listing_id=? AND observation_id=? AND provider='ebay_browse' ORDER BY checked_at DESC LIMIT 1",
                                   (row["listing_id"], review["observation_id"])).fetchone()
                 source_current = bool(live and live["availability"] == "LIVE" and live["checked_at"] >= _later(-1800)
-                                      and live["price_minor"] is not None)
+                                      and live["price_minor"] == payload.get("price_minor")
+                                      and live["shipping_minor"] == payload.get("shipping_minor")
+                                      and live["shipping_currency"] == payload.get("shipping_currency"))
             else:
                 source_current = bool(review and review["canonical_url"]
                                       and safe_url(review["canonical_url"]) == review["canonical_url"]
                                       and review["captured_at"] >= _later(-7200)
                                       and review["available"] not in {"False", "false", "0"}
                                       and review["availability"] not in {"ENDED", "UNAVAILABLE"})
+            try:
+                screen = json.loads(review["result_json"] or "{}").get("bargain_screen", {}) if review else {}
+            except (json.JSONDecodeError, TypeError, AttributeError):
+                screen = {}
             valid = bool(review and review["policy_hash"] == LEAD_POLICY and review["status"] == "DONE"
-                         and review["verdict"] in {"PAY_ATTENTION", "GEM", "UNICORN"}
+                         and review["verdict"] in {"GEM", "UNICORN"}
+                         and screen.get("accepted") is True
                          and review["observation_id"] == review["current_observation_id"] and not review["imported"]
                          and (not review["auction_end_at"] or review["auction_end_at"] > current)
                          and source_current)
@@ -102,7 +109,11 @@ def send_one(db: sqlite3.Connection, config: Config, *, fake: bool = False) -> b
                 if type(payload.get("reply_to_message_id")) is int:
                     message["reply_parameters"] = {"message_id": payload["reply_to_message_id"], "allow_sending_without_reply": True}
                 if url.startswith("https://"):
-                    message["reply_markup"] = {"inline_keyboard": [[{"text": "Open listing", "url": url}]]}
+                    buttons = [{"text": "Open listing", "url": url}]
+                    comp_url = str(payload.get("comp_url") or "")
+                    if comp_url.startswith("https://") and safe_url(comp_url) == comp_url:
+                        buttons.append({"text": "Sold comp", "url": comp_url})
+                    message["reply_markup"] = {"inline_keyboard": [buttons]}
                 with httpx.Client(timeout=15, follow_redirects=False) as client:
                     reply = client.post(f"https://api.telegram.org/bot{token}/sendMessage", json=message)
                 reply.raise_for_status()

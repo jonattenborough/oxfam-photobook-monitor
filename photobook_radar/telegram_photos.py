@@ -56,7 +56,7 @@ def ingest_updates(db: sqlite3.Connection, updates: list[dict], chat_id: str) ->
                 if not file and isinstance(document, dict) and document.get("mime_type") in {"image/jpeg", "image/png"}:
                     file = document
                 if file and 0 < int(file.get("file_size") or 1) <= MAX_IMAGE_BYTES and type(reply.get("message_id")) is int:
-                    alert = db.execute("SELECT id,listing_id FROM notification_events WHERE channel='telegram' AND stage='RESEARCHED_FIND' AND status='PROVIDER_ACCEPTED' AND provider_request=? ORDER BY id DESC LIMIT 1",
+                    alert = db.execute("SELECT id,listing_id FROM notification_events WHERE channel='telegram' AND stage IN ('RESEARCHED_FIND','BARGAIN_FIND') AND status='PROVIDER_ACCEPTED' AND provider_request=? ORDER BY id DESC LIMIT 1",
                                        (str(reply["message_id"]),)).fetchone()
                     if alert and enqueue_job(db, f"telegram-photo:{update_id}", "PHOTO_REVIEW", listing_id=alert["listing_id"],
                                              priority=250, payload={"update_id": update_id, "message_id": message["message_id"],
@@ -134,7 +134,7 @@ def run_photo_research(db: sqlite3.Connection, job: sqlite3.Row, config: Config,
     if not (config.production and config.research_recurring_enabled and config.research_provider == "codex_cli"):
         raise RuntimeError("Photo research is disabled")
     payload = json.loads(job["payload_json"])
-    alert = db.execute("SELECT e.id,e.listing_id,e.provider_request,l.title,l.canonical_url,l.current_observation_id,r.result_json AS earlier_review FROM notification_events e JOIN listings l ON l.id=e.listing_id LEFT JOIN reviews r ON r.id=json_extract(e.payload_json,'$.review_id') WHERE e.id=? AND e.stage='RESEARCHED_FIND' AND e.status='PROVIDER_ACCEPTED' AND e.listing_id=?",
+    alert = db.execute("SELECT e.id,e.listing_id,e.provider_request,l.title,l.canonical_url,l.current_observation_id,r.result_json AS earlier_review FROM notification_events e JOIN listings l ON l.id=e.listing_id LEFT JOIN reviews r ON r.id=json_extract(e.payload_json,'$.review_id') WHERE e.id=? AND e.stage IN ('RESEARCHED_FIND','BARGAIN_FIND') AND e.status='PROVIDER_ACCEPTED' AND e.listing_id=?",
                        (payload.get("alert_event_id"), job["listing_id"])).fetchone()
     if not alert or not payload.get("file_id"):
         return {"stale": True}
