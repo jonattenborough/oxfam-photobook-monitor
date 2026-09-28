@@ -137,6 +137,18 @@ class RadarPersistenceTests(unittest.TestCase):
         self.assertEqual(self.db.execute("SELECT imported FROM listings WHERE platform='ebay'").fetchone()[0], 1)
         self.assertEqual(self.db.execute("SELECT COUNT(*) FROM jobs WHERE kind='TRIAGE'").fetchone()[0], 0)
 
+    def test_foreign_endgame_category_uses_a_market_query(self):
+        from photobook_radar import ebay_lanes
+        config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True)
+        payload = {"route_id": "ebay-endgame:fr", "lane": "endgame",
+                   "definition": {"marketplace": "EBAY_FR", "lane_name": "category", "category_ids": "261186", "query": None, "horizon_hours": 72}}
+        with patch.object(ebay_lanes, "thread_client") as factory:
+            factory.return_value.search_page.return_value = {"itemSummaries": []}
+            ebay_lanes._fetch(self.db, config, payload)
+            args, kwargs = factory.return_value.search_page.call_args
+        self.assertEqual(args[0], "livre photographie")
+        self.assertIsNone(kwargs["category_ids"])
+
     def test_oxfam_broad_uses_newest_first_and_silent_baseline(self):
         config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True, source_oxfam_broad=True)
         self.assertTrue(schedule_oxfam_broad(self.db, config))
