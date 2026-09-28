@@ -2,21 +2,40 @@
 from __future__ import annotations
 
 import json
+import re
 import sqlite3
-from datetime import datetime, timedelta, timezone
 from decimal import Decimal
 
 import ebay_core_targets
 import photobook_recognition
 
 from .config import Config
-from .alert_format import format_lead
 from .db import transaction
-from .store import enqueue_job, enqueue_notification, now
+from .store import enqueue_job, now
 
 
 PHOTO_CLUES = ("photobook", "photo book", "photographs", "street photography", "documentary photography", "monograph", "photographic")
 NOISE = ("camera manual", "photography handbook", "photoshop", "lightroom", "how to photograph")
+TITLE_STOPWORDS = {"the", "and", "for", "with", "from", "book", "books", "photographs", "photography", "photo", "first", "edition"}
+
+
+def _tokens(value: object) -> set[str]:
+    return {word for word in re.findall(r"[a-z0-9]+", str(value or "").casefold()) if len(word) >= 3 and word not in TITLE_STOPWORDS}
+
+
+def object_in_seller_title(item: dict, result: dict) -> bool:
+    """A description-only bibliography hit is not the object being sold."""
+    title = _tokens(item.get("title"))
+    for match in result["matches"]:
+        work = _tokens(match.get("title"))
+        author = _tokens(match.get("contributor"))
+        if work and work.issubset(title) and (len(work) >= 2 or bool(author & title)):
+            return True
+    for match in result["core_matches"]:
+        author = _tokens(match.get("name"))
+        if author and author.issubset(title) and any(clue in str(item.get("title") or "").casefold() for clue in ("book", "photograph", "photo", "signed", "edition")):
+            return True
+    return False
 
 
 def visible_item(item: dict) -> dict:
@@ -87,7 +106,7 @@ def run_triage(db: sqlite3.Connection, job: sqlite3.Row, config: Config) -> dict
     ended = bool(end and end <= now())
     availability = "ENDED" if ended else row["availability"]
     price_ok = row["currency"] == "GBP" and row["price_minor"] is not None and row["price_minor"] <= int(Decimal(config.max_recommended_item_gbp) * 100)
-    lead = result["score"] >= 58 and price_ok and not ended and bool(result["matches"] or result["core_matches"])
+    lead = result["score"] >= 58 and price_ok and not ended and object_in_seller_title(item, result)
     with transaction(db):
         owned = db.execute("SELECT 1 FROM jobs WHERE id=? AND lease_token=? AND status='RUNNING'", (job["id"], job["lease_token"])).fetchone()
         if not owned:
@@ -101,8 +120,8 @@ def run_triage(db: sqlite3.Connection, job: sqlite3.Row, config: Config) -> dict
         db.execute("DELETE FROM recognition_matches WHERE listing_id=?", (job["listing_id"],))
         for match in result["matches"]:
             db.execute("INSERT OR REPLACE INTO recognition_matches(listing_id,book_record_key,contributor,score,reason,source,matched_at) VALUES(?,?,?,?,?,?,?)", (job["listing_id"], match.get("record_id") or (str(match.get("contributor")) + "|" + str(match.get("title"))), match.get("contributor"), match.get("score"), match.get("reason"), match.get("source"), now()))
-        # Historical imports are silent. A fresh lead can alert with an explicit
-        # live-status warning while its independent exact-listing job runs.
+        # Local matching only shortlists candidates. Research and a current exact
+        # listing check must both pass before a phone event can be created.
         if lead and not row["imported"] and row["canonical_url"]:
             enqueue_job(db, f"verify:{job['listing_id']}:{row['current_observation_id']}", "VERIFY", listing_id=job["listing_id"], priority=80 if end else 50, payload={"observation_id": row["current_observation_id"]})
             research_worthy = result["score"] >= 70 or bool(result["matches"]) or (result["score"] >= 58 and row["price_minor"] is not None and row["price_minor"] <= 3000)
@@ -111,14 +130,6 @@ def run_triage(db: sqlite3.Connection, job: sqlite3.Row, config: Config) -> dict
                 if pending < 24:
                     enqueue_job(db, f"research-lead:{job['listing_id']}:{row['current_observation_id']}", "RESEARCH_LEAD",
                                 listing_id=job["listing_id"], priority=60 + result["score"], payload={"observation_id": row["current_observation_id"]})
-            if config.production and config.allow_real_notifications and config.notification_enabled:
-                headline, message = format_lead(row, result)
-                enqueue_notification(
-                    db, listing_id=job["listing_id"], stage="FAST_LEAD", material_version=str(row["current_observation_id"]),
-                    channel=config.notification_primary,
-                    payload={"title": headline, "message": message, "url": row["canonical_url"]},
-                    expires_at=end or (datetime.now(timezone.utc) + timedelta(hours=2)).isoformat(timespec="seconds").replace("+00:00", "Z"),
-                )
         done = db.execute("UPDATE jobs SET status='DONE',lease_token=NULL,lease_owner=NULL,lease_until=NULL WHERE id=? AND lease_token=? AND status='RUNNING'", (job["id"], job["lease_token"]))
         if done.rowcount != 1:
             raise RuntimeError("Stale triage result")

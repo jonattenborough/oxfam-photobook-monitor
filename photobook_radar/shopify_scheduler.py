@@ -13,7 +13,7 @@ from typing import Callable
 
 from .config import Config
 from .db import transaction
-from .store import capture_page, enqueue_job, enqueue_notification, now
+from .store import capture_page, enqueue_job, now
 
 PAGE_SIZE = 250
 MAX_PAGES = 20
@@ -155,17 +155,8 @@ def run_shopify_job(db: sqlite3.Connection, job: sqlite3.Row, config: Config, *,
                  items=rows, page_number=page, continuation={"next_page": page + 1 if more else None}, complete=not more,
                  imported=bool(payload["baseline"]), followup_job=next_job, next_due_at=_due(ROUTES[route_id][3]) if not more else None,
                  coverage_note=note, lease_job_id=job["id"], lease_token=job["lease_token"])
-    if route_id.startswith("publisher:") and config.allow_real_notifications and config.notification_enabled:
-        with transaction(db):
-            for listing_id, item in zip(ids, rows):
-                listing = db.execute("SELECT imported,current_observation_id FROM listings WHERE id=?", (listing_id,)).fetchone()
-                if listing["imported"]:
-                    continue
-                observation = db.execute("SELECT content_hash FROM observations WHERE id=?", (listing["current_observation_id"],)).fetchone()
-                enqueue_notification(db, listing_id=listing_id, stage="PUBLISHER_RELEASE", material_version=observation[0],
-                                     channel=config.notification_primary,
-                                     payload={"title": f"📰 New at {item['source_name']}: {item['title'][:100]}",
-                                              "message": "Publisher page checked. Edition and future collectibility need review.", "url": item["url"]})
+    # Publisher products stay in the dashboard. A new product alone is not a
+    # researched collector opportunity and must not trigger a phone alert.
     with transaction(db):
         db.execute("UPDATE sources SET status=?,last_error=NULL,last_success_at=? WHERE id=?", ("PARTIAL" if note else "ACTIVE" if not more else "BASELINING", now(), route_id.split(":", 1)[0]))
     return {"route_id": route_id, "page": page, "count": len(rows), "complete": not more}

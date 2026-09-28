@@ -6,12 +6,14 @@ import secrets
 import sqlite3
 import tomllib
 from datetime import datetime, timedelta, timezone
+from decimal import Decimal
 from pathlib import Path
 
 import httpx
 
 from .config import Config
 from .db import transaction
+from .research_sweeps import LEAD_POLICY, _later
 from .store import now
 
 
@@ -24,7 +26,7 @@ def private_secrets(config: Config) -> dict:
     return tomllib.loads(path.read_text())
 
 
-def claim(db: sqlite3.Connection) -> sqlite3.Row | None:
+def claim(db: sqlite3.Connection, config: Config) -> sqlite3.Row | None:
     with transaction(db):
         current = now()
         db.execute("UPDATE notification_events SET status='DELIVERY_UNKNOWN',last_error='worker stopped during send' WHERE status='SENDING' AND lease_until<?", (current,))
@@ -33,12 +35,32 @@ def claim(db: sqlite3.Connection) -> sqlite3.Row | None:
         row = db.execute("SELECT * FROM notification_events WHERE status='QUEUED' ORDER BY id LIMIT 1").fetchone()
         if row is None:
             return None
+        # Delivery is the final safety boundary. Old queued lead/discovery
+        # events can never escape when notifications are re-enabled.
+        if row["stage"] != "RESEARCHED_FIND":
+            db.execute("UPDATE notification_events SET status='SUPPRESSED',suppression_reason='research-first collector policy' WHERE id=?", (row["id"],))
+            return None
         if row["expires_at"] and row["expires_at"] <= current:
             db.execute("UPDATE notification_events SET status='EXPIRED',suppression_reason='auction deadline passed' WHERE id=?", (row["id"],))
             return None
         decision = db.execute("SELECT action FROM user_decisions WHERE listing_id=? AND undone_at IS NULL ORDER BY id DESC LIMIT 1", (row["listing_id"],)).fetchone()
         if decision and decision[0] in {"DISMISS", "BOUGHT", "OWNED"}:
             db.execute("UPDATE notification_events SET status='SUPPRESSED',suppression_reason='owner decision' WHERE id=?", (row["id"],))
+            return None
+        payload = json.loads(row["payload_json"])
+        review = db.execute("SELECT r.*,l.current_observation_id,l.imported,o.auction_end_at FROM reviews r JOIN listings l ON l.id=r.listing_id JOIN observations o ON o.id=l.current_observation_id WHERE r.id=? AND r.listing_id=?",
+                            (payload.get("review_id"), row["listing_id"])).fetchone()
+        live = db.execute("SELECT * FROM live_checks WHERE listing_id=? AND observation_id=? AND provider='ebay_browse' ORDER BY checked_at DESC LIMIT 1",
+                          (row["listing_id"], review["observation_id"] if review else -1)).fetchone()
+        valid = bool(review and review["policy_hash"] == LEAD_POLICY and review["status"] == "DONE"
+                     and review["verdict"] in {"PAY_ATTENTION", "GEM", "UNICORN"}
+                     and review["observation_id"] == review["current_observation_id"] and not review["imported"]
+                     and (not review["auction_end_at"] or review["auction_end_at"] > current)
+                     and live and live["availability"] == "LIVE" and live["checked_at"] >= _later(-1800)
+                     and live["currency"] == "GBP" and live["price_minor"] is not None
+                     and live["price_minor"] <= int(Decimal(config.max_recommended_item_gbp) * 100))
+        if not valid:
+            db.execute("UPDATE notification_events SET status='SUPPRESSED',suppression_reason='research or current listing check no longer valid' WHERE id=?", (row["id"],))
             return None
         token = secrets.token_hex(16)
         until = (datetime.now(timezone.utc) + timedelta(seconds=90)).isoformat(timespec="seconds").replace("+00:00", "Z")
@@ -49,7 +71,7 @@ def claim(db: sqlite3.Connection) -> sqlite3.Row | None:
 def send_one(db: sqlite3.Connection, config: Config, *, fake: bool = False) -> bool:
     if not fake and not (config.production and config.allow_real_notifications and config.notification_enabled):
         return False
-    event = claim(db)
+    event = claim(db, config)
     if event is None:
         return False
     payload = json.loads(event["payload_json"])

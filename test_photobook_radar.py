@@ -16,12 +16,12 @@ from photobook_radar.ebay_scheduler import run_ebay_broad_job, schedule_ebay_bro
 from photobook_radar.notifications import send_one
 from photobook_radar.source_scheduler import run_oxfam_scan_job, schedule_oxfam
 from photobook_radar.oxfam_broad import run_oxfam_broad_job, schedule_oxfam_broad
-from photobook_radar.research_sweeps import run_lead_research, run_research_job, schedule_research
+from photobook_radar.research_sweeps import ResearchDeferred, run_lead_research, run_research_job, schedule_research
 from photobook_radar.shopify_scheduler import parse_products, run_shopify_job, schedule_shopify
 from photobook_radar.sources.ebay import capture_browse_page, parse_browse_page
 from photobook_radar.sources.oxfam import capture_photography_page, parse_photography_page
-from photobook_radar.store import capture, capture_page, claim_job, decide, enqueue_job, enqueue_notification, finish_job, reserve_request, safe_url, settle_request
-from photobook_radar.triage import run_triage, score
+from photobook_radar.store import capture, capture_page, claim_job, decide, enqueue_job, enqueue_notification, finish_job, now, reserve_request, safe_url, settle_request
+from photobook_radar.triage import object_in_seller_title, run_triage, score
 from photobook_radar.verification import run_verify
 
 
@@ -174,7 +174,31 @@ class RadarPersistenceTests(unittest.TestCase):
         self.assertEqual(self.db.execute("SELECT COUNT(*) FROM research_sweeps WHERE status='DONE'").fetchone()[0], 1)
         self.assertEqual(self.db.execute("SELECT imported FROM listings").fetchone()[0], 1)
 
-    def test_researched_lead_update_requires_verified_reference_link(self):
+    def test_researched_collector_find_requires_live_copy_and_verified_reference(self):
+        config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True,
+                        allow_real_notifications=True, notification_enabled=True,
+                        research_provider="codex_cli", research_recurring_enabled=True)
+        with transaction(self.db):
+            listing_id = capture(self.db, {"key": "ebay:123456789012", "title": "Danny Lyon The Bikeriders first printing 1968", "price_gbp": "20",
+                                           "url": "https://www.ebay.co.uk/itm/123456789012"}, source_id="ebay", origin_key="lead")
+            observation = self.db.execute("SELECT current_observation_id FROM listings WHERE id=?", (listing_id,)).fetchone()[0]
+            enqueue_job(self.db, "research:lead", "RESEARCH_LEAD", listing_id=listing_id, payload={"observation_id": observation})
+        job = claim_job(self.db, "research-test", kinds=("RESEARCH_LEAD",), lease_seconds=180)
+        result = {"decision": "PAY_ATTENTION", "actual_book": True, "collector_fit": True, "edition_supported": False,
+                  "context": "Danny Lyon's documentary book is a key work.",
+                  "opportunity_reason": "The exact book is listed cheaply and the seller has not identified its printing.",
+                  "edition_note": "Seller has not proved the edition.", "risk": "Inspect title page and condition.",
+                  "source_urls": ["https://www.moma.org/books/bikeriders"]}
+        with self.assertRaises(ResearchDeferred):
+            run_lead_research(self.db, job, config, provider=lambda *_: result, link_check=lambda *_: True)
+        with transaction(self.db):
+            self.db.execute("INSERT INTO live_checks(listing_id,observation_id,provider,checked_at,availability,price_minor,currency,result_json) VALUES(?,?,?,?,?,?,?,?)",
+                            (listing_id, observation, "ebay_browse", now(), "LIVE", 2000, "GBP", "{}"))
+        self.assertEqual(run_lead_research(self.db, job, config, provider=lambda *_: result, link_check=lambda *_: True)["status"], "DONE")
+        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events WHERE stage='RESEARCHED_FIND'").fetchone()[0], 1)
+        self.assertTrue(send_one(self.db, config, fake=True))
+
+    def test_research_rejects_generic_or_unsupported_find(self):
         config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True,
                         allow_real_notifications=True, notification_enabled=True,
                         research_provider="codex_cli", research_recurring_enabled=True)
@@ -183,15 +207,40 @@ class RadarPersistenceTests(unittest.TestCase):
                                            "url": "https://www.ebay.co.uk/itm/123456789012"}, source_id="ebay", origin_key="lead")
             observation = self.db.execute("SELECT current_observation_id FROM listings WHERE id=?", (listing_id,)).fetchone()[0]
             enqueue_job(self.db, "research:lead", "RESEARCH_LEAD", listing_id=listing_id, payload={"observation_id": observation})
+            self.db.execute("INSERT INTO live_checks(listing_id,observation_id,provider,checked_at,availability,price_minor,currency,result_json) VALUES(?,?,?,?,?,?,?,?)",
+                            (listing_id, observation, "ebay_browse", now(), "LIVE", 2000, "GBP", "{}"))
         job = claim_job(self.db, "research-test", kinds=("RESEARCH_LEAD",), lease_seconds=180)
-        result = {"context": "Danny Lyon's documentary book is a key work.", "edition_note": "Seller has not proved the edition.",
-                  "risk": "Inspect title page and condition.", "source_urls": ["https://www.moma.org/books/bikeriders"]}
-        self.assertEqual(run_lead_research(self.db, job, config, provider=lambda *_: result, link_check=lambda *_: True)["status"], "DONE")
-        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events WHERE stage='RESEARCH_UPDATE'").fetchone()[0], 1)
+        result = {"decision": "PASS", "actual_book": True, "collector_fit": False, "edition_supported": False,
+                  "context": "Routine reprint.", "opportunity_reason": "No collector opportunity.",
+                  "edition_note": "Later edition.", "risk": "Common copy.", "source_urls": ["https://www.moma.org/books/bikeriders"]}
+        self.assertEqual(run_lead_research(self.db, job, config, provider=lambda *_: result, link_check=lambda *_: True)["status"], "REJECTED")
+        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events").fetchone()[0], 0)
+
+    def test_gem_label_without_copy_evidence_stays_off_phone(self):
+        config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True,
+                        allow_real_notifications=True, notification_enabled=True,
+                        research_provider="codex_cli", research_recurring_enabled=True)
+        with transaction(self.db):
+            listing_id = capture(self.db, {"key": "ebay:123456789012", "title": "Danny Lyon The Bikeriders", "price_gbp": "20",
+                                           "url": "https://www.ebay.co.uk/itm/123456789012"}, source_id="ebay", origin_key="lead")
+            observation = self.db.execute("SELECT current_observation_id FROM listings WHERE id=?", (listing_id,)).fetchone()[0]
+            enqueue_job(self.db, "research:lead", "RESEARCH_LEAD", listing_id=listing_id, payload={"observation_id": observation})
+            self.db.execute("INSERT INTO live_checks(listing_id,observation_id,provider,checked_at,availability,price_minor,currency,result_json) VALUES(?,?,?,?,?,?,?,?)",
+                            (listing_id, observation, "ebay_browse", now(), "LIVE", 2000, "GBP", "{}"))
+        job = claim_job(self.db, "research-test", kinds=("RESEARCH_LEAD",), lease_seconds=180)
+        result = {"decision": "GEM", "actual_book": True, "collector_fit": True, "edition_supported": False,
+                  "context": "This is a major documentary photobook.",
+                  "opportunity_reason": "A cheap copy, but the actual printing is not identified by the seller.",
+                  "edition_note": "Printing unknown.", "risk": "It could be a routine reprint.",
+                  "source_urls": ["https://www.moma.org/books/bikeriders"]}
+        self.assertEqual(run_lead_research(self.db, job, config, provider=lambda *_: result, link_check=lambda *_: True)["status"], "REJECTED")
+        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events").fetchone()[0], 0)
 
     def test_codex_lead_schema_accepts_context_response(self):
         from photobook_radar import research_sweeps
-        response = {"context": "A short verified context.", "edition_note": "Edition unknown.", "risk": "Inspect condition.", "source_urls": []}
+        response = {"decision": "PASS", "actual_book": False, "collector_fit": False, "edition_supported": False,
+                    "context": "A short verified context.", "opportunity_reason": "No particular opportunity.",
+                    "edition_note": "Edition unknown.", "risk": "Inspect condition.", "source_urls": []}
         def fake_run(command, **kwargs):
             Path(command[command.index("-o") + 1]).write_text(__import__("json").dumps(response))
             return type("Completed", (), {"returncode": 0})()
@@ -239,19 +288,18 @@ class RadarPersistenceTests(unittest.TestCase):
         self.assertEqual(self.db.execute("SELECT COUNT(*) FROM live_checks").fetchone()[0], 0)
         self.assertEqual(self.db.execute("SELECT availability FROM listings WHERE id=?", (listing_id,)).fetchone()[0], "UNKNOWN")
 
-    def test_fresh_capture_to_durable_fake_phone_event(self):
-        config = Config(data_dir=Path(self.folder.name), mode="production", allow_real_notifications=True, notification_enabled=True)
+    def test_fresh_capture_waits_for_research_before_phone_event(self):
+        config = Config(data_dir=Path(self.folder.name), mode="production", allow_real_notifications=True,
+                        notification_enabled=True, research_provider="codex_cli", research_recurring_enabled=True)
         item = {"key": "ebay:123456789012", "title": "The Bikeriders Danny Lyon first printing 1968", "price_gbp": "20", "url": "https://www.ebay.co.uk/itm/123456789012"}
         with transaction(self.db):
             listing_id = capture(self.db, item, source_id="ebay", origin_key="fresh", imported=False)
             enqueue_job(self.db, f"triage:{listing_id}", "TRIAGE", listing_id=listing_id)
         job = claim_job(self.db, "test", kinds=("TRIAGE",))
         run_triage(self.db, job, config)
-        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events WHERE status='QUEUED'").fetchone()[0], 1)
-        self.assertTrue(send_one(self.db, config, fake=True))
-        event = self.db.execute("SELECT status,provider_request,payload_json FROM notification_events").fetchone()
-        self.assertEqual((event["status"], event["provider_request"]), ("PROVIDER_ACCEPTED", "FAKE-REPLAY-ONLY"))
-        self.assertIn("Live status and exact edition are not yet verified", event["payload_json"])
+        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events").fetchone()[0], 0)
+        self.assertFalse(send_one(self.db, config, fake=True))
+        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM jobs WHERE kind='RESEARCH_LEAD'").fetchone()[0], 1)
 
     def test_imported_stock_is_silent(self):
         config = Config(data_dir=Path(self.folder.name), mode="production", allow_real_notifications=True, notification_enabled=True)
@@ -340,7 +388,26 @@ class RadarPersistenceTests(unittest.TestCase):
         run_triage(self.db, claim_job(self.db, "first", kinds=("TRIAGE",)), config)
         capture_page(self.db, source_id="ebay", route_id="route", window_id="window2", page_number=1, continuation={}, complete=True, items=[{**item, "context": "different search query"}])
         self.assertIsNone(claim_job(self.db, "second", kinds=("TRIAGE",)))
-        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events").fetchone()[0], 1)
+        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events").fetchone()[0], 0)
+
+    def test_description_only_book_mentions_do_not_enter_research_queue(self):
+        config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True,
+                        research_provider="codex_cli", research_recurring_enabled=True)
+        examples = [
+            ("Copy, Tweak, Paste", "Discusses Ed Ruscha's Twentysix Gasoline Stations"),
+            ("Women Seeing Women", "Includes a mention of Clementina, Lady Hawarden by Virginia Dodier"),
+            ("Master Photographers", "Martin Parr is mentioned in the description"),
+        ]
+        for index, (title, description) in enumerate(examples):
+            item = {"key": f"ebay:{123456789012 + index}", "title": title, "description": description,
+                    "price_gbp": "20", "url": f"https://www.ebay.co.uk/itm/{123456789012 + index}"}
+            self.assertFalse(object_in_seller_title(item, score(item)))
+            with transaction(self.db):
+                listing_id = capture(self.db, item, source_id="ebay", origin_key=f"false-positive-{index}", imported=False)
+                enqueue_job(self.db, f"triage:false-positive-{index}", "TRIAGE", listing_id=listing_id)
+            run_triage(self.db, claim_job(self.db, "test", kinds=("TRIAGE",)), config)
+        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM jobs WHERE kind='RESEARCH_LEAD'").fetchone()[0], 0)
+        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events").fetchone()[0], 0)
 
     def test_obsolete_screening_job_cannot_overwrite_newer_capture(self):
         item = {"key": "ebay:123456789012", "title": "The Bikeriders Danny Lyon", "price_gbp": "20"}
@@ -505,17 +572,40 @@ class RadarPersistenceTests(unittest.TestCase):
             listing_id = capture(self.db, {"key": "ebay:123456789012", "title": "Old auction"}, source_id="ebay", origin_key="expired", imported=True)
             enqueue_notification(self.db, listing_id=listing_id, stage="FAST_LEAD", material_version="1", channel="telegram", payload={"title": "Expired"}, expires_at="2020-01-01T00:00:00Z")
         self.assertFalse(send_one(self.db, config, fake=True))
-        self.assertEqual(self.db.execute("SELECT status FROM notification_events").fetchone()[0], "EXPIRED")
+        self.assertEqual(self.db.execute("SELECT status FROM notification_events").fetchone()[0], "SUPPRESSED")
 
     def test_unknown_delivery_has_one_bounded_disclosed_retry(self):
         config = Config(data_dir=Path(self.folder.name), mode="production", allow_real_notifications=True, notification_enabled=True)
         with transaction(self.db):
             listing_id = capture(self.db, {"key": "ebay:123456789012", "title": "Possible book"}, source_id="ebay", origin_key="possible", imported=False)
-            enqueue_notification(self.db, listing_id=listing_id, stage="FAST_LEAD", material_version="initial", channel="telegram", payload={"message": "Check listing"})
+            observation = self.db.execute("SELECT current_observation_id FROM listings WHERE id=?", (listing_id,)).fetchone()[0]
+            review = self.db.execute("INSERT INTO reviews(listing_id,observation_id,provider,policy_hash,verdict,status,result_json) VALUES(?,?,?,?,?,?,?)",
+                                     (listing_id, observation, "codex_cli", "collector-research-v2", "PAY_ATTENTION", "DONE", "{}"))
+            self.db.execute("INSERT INTO live_checks(listing_id,observation_id,provider,checked_at,availability,price_minor,currency,result_json) VALUES(?,?,?,?,?,?,?,?)",
+                            (listing_id, observation, "ebay_browse", now(), "LIVE", 2000, "GBP", "{}"))
+            enqueue_notification(self.db, listing_id=listing_id, stage="RESEARCHED_FIND", material_version="initial", channel="telegram", payload={"message": "Check listing", "review_id": review.lastrowid})
             self.db.execute("UPDATE notification_events SET status='DELIVERY_UNKNOWN',attempts=1,lease_until='2020-01-01T00:00:00Z'")
         self.assertTrue(send_one(self.db, config, fake=True))
         row = self.db.execute("SELECT status,attempts FROM notification_events").fetchone()
         self.assertEqual(tuple(row), ("PROVIDER_ACCEPTED", 2))
+
+    def test_researched_alert_is_suppressed_after_listing_changes(self):
+        config = Config(data_dir=Path(self.folder.name), mode="production", allow_real_notifications=True, notification_enabled=True)
+        with transaction(self.db):
+            listing_id = capture(self.db, {"key": "ebay:123456789012", "title": "Danny Lyon The Bikeriders",
+                                           "price_gbp": "20", "url": "https://www.ebay.co.uk/itm/123456789012"},
+                                 source_id="ebay", origin_key="before", imported=False)
+            observation = self.db.execute("SELECT current_observation_id FROM listings WHERE id=?", (listing_id,)).fetchone()[0]
+            review = self.db.execute("INSERT INTO reviews(listing_id,observation_id,provider,policy_hash,verdict,status,result_json) VALUES(?,?,?,?,?,?,?)",
+                                     (listing_id, observation, "codex_cli", "collector-research-v2", "GEM", "DONE", "{}"))
+            self.db.execute("INSERT INTO live_checks(listing_id,observation_id,provider,checked_at,availability,price_minor,currency,result_json) VALUES(?,?,?,?,?,?,?,?)",
+                            (listing_id, observation, "ebay_browse", now(), "LIVE", 2000, "GBP", "{}"))
+            enqueue_notification(self.db, listing_id=listing_id, stage="RESEARCHED_FIND", material_version=str(observation),
+                                 channel="telegram", payload={"message": "Potential gem", "review_id": review.lastrowid})
+            capture(self.db, {"key": "ebay:123456789012", "title": "Different later reprint", "price_gbp": "20",
+                              "url": "https://www.ebay.co.uk/itm/123456789012"}, source_id="ebay", origin_key="after", imported=False)
+        self.assertFalse(send_one(self.db, config, fake=True))
+        self.assertEqual(self.db.execute("SELECT status FROM notification_events").fetchone()[0], "SUPPRESSED")
 
     def test_owner_dismissal_suppresses_queued_phone_alert(self):
         config = Config(data_dir=Path(self.folder.name), mode="production", allow_real_notifications=True, notification_enabled=True)

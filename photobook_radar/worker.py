@@ -19,7 +19,7 @@ from .source_scheduler import ROUTE as OXFAM_ROUTE, run_oxfam_scan_job, schedule
 from .oxfam_broad import SOURCE as OXFAM_BROAD_SOURCE, run_oxfam_broad_job, schedule_oxfam_broad
 from .shopify_scheduler import run_shopify_job, schedule_shopify
 from .abebooks_scheduler import run_abebooks_job, schedule_abebooks
-from .research_sweeps import run_lead_research, run_research_job, schedule_research
+from .research_sweeps import ResearchDeferred, run_lead_research, run_research_job, schedule_research
 from .store import claim_job, finish_job, now
 from .triage import run_triage
 from .verification import run_verify
@@ -108,6 +108,8 @@ def _run_research_job(config: Config, job_id: int, token: str) -> None:
             else:
                 run_research_job(db, job, config)
             finish_job(db, job_id, token)
+        except ResearchDeferred as exc:
+            finish_job(db, job_id, token, error=str(exc), retry_seconds=exc.retry_seconds)
         except Exception as exc:
             with transaction(db):
                 db.execute("UPDATE sources SET status='DEGRADED',last_error=? WHERE id=?", (f"{type(exc).__name__}: {str(exc)[:180]}", job["route_id"] or "research-leads"))
