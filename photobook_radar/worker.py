@@ -20,6 +20,7 @@ from .oxfam_broad import SOURCE as OXFAM_BROAD_SOURCE, run_oxfam_broad_job, sche
 from .shopify_scheduler import run_shopify_job, schedule_shopify
 from .abebooks_scheduler import run_abebooks_job, schedule_abebooks
 from .research_sweeps import ResearchDeferred, run_lead_research, run_research_job, schedule_research
+from .telegram_photos import poll_updates, run_photo_research
 from .store import claim_job, finish_job, now
 from .triage import run_triage
 from .verification import run_verify
@@ -103,7 +104,9 @@ def _run_research_job(config: Config, job_id: int, token: str) -> None:
         if job is None:
             return
         try:
-            if job["kind"] == "RESEARCH_LEAD":
+            if job["kind"] == "PHOTO_REVIEW":
+                run_photo_research(db, job, config)
+            elif job["kind"] == "RESEARCH_LEAD":
                 run_lead_research(db, job, config)
             else:
                 run_research_job(db, job, config)
@@ -130,7 +133,7 @@ def run(config: Config | None = None, *, once: bool = False) -> None:
             if not (config.production and config.allow_marketplace_network and enabled):
                 db.execute("UPDATE jobs SET status='CANCELLED',lease_token=NULL,lease_owner=NULL,lease_until=NULL,last_error='Source deselected or shadow mode' WHERE kind=? AND status IN ('PENDING','RUNNING')", (kind,))
         if not (config.production and config.research_recurring_enabled and config.research_provider == "codex_cli"):
-            db.execute("UPDATE jobs SET status='CANCELLED',lease_token=NULL,lease_owner=NULL,lease_until=NULL,last_error='Research deselected or shadow mode' WHERE kind='RESEARCH_LEAD' AND status IN ('PENDING','RUNNING')")
+            db.execute("UPDATE jobs SET status='CANCELLED',lease_token=NULL,lease_owner=NULL,lease_until=NULL,last_error='Research deselected or shadow mode' WHERE kind IN ('RESEARCH_LEAD','PHOTO_REVIEW') AND status IN ('PENDING','RUNNING')")
     owner = f"{socket.gethostname()}:{os.getpid()}"
     stopped = False
 
@@ -157,8 +160,21 @@ def run(config: Config | None = None, *, once: bool = False) -> None:
     verify_future = None
     research_future = None
     next_source_check = 0.0
+    next_telegram_check = 0.0
     try:
         while not stopped:
+            if (config.production and config.notification_enabled and config.notification_primary == "telegram"
+                    and config.research_recurring_enabled and config.research_provider == "codex_cli"
+                    and time.monotonic() >= next_telegram_check):
+                try:
+                    poll_updates(db, config)
+                    with transaction(db):
+                        db.execute("INSERT INTO health(key,value,updated_at) VALUES('telegram_inbox_poll',?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value,updated_at=excluded.updated_at", (now(), now()))
+                        db.execute("DELETE FROM health WHERE key='telegram_inbox_error'")
+                except Exception as exc:
+                    with transaction(db):
+                        db.execute("INSERT INTO health(key,value,updated_at) VALUES('telegram_inbox_error',?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value,updated_at=excluded.updated_at", (f"{type(exc).__name__}: {str(exc)[:150]}", now()))
+                next_telegram_check = time.monotonic() + 15
             if config.production and config.allow_marketplace_network and time.monotonic() >= next_source_check:
                 if verify_future is not None and verify_future.done():
                     verify_future.result()
@@ -171,7 +187,7 @@ def run(config: Config | None = None, *, once: bool = False) -> None:
                     research_future.result()
                     research_future = None
                 if research_future is None and config.research_recurring_enabled:
-                    research_job = claim_job(db, owner, kinds=("RESEARCH_LEAD", "RESEARCH_SWEEP"), lease_seconds=180)
+                    research_job = claim_job(db, owner, kinds=("PHOTO_REVIEW", "RESEARCH_LEAD", "RESEARCH_SWEEP"), lease_seconds=180)
                     if research_job is not None:
                         research_future = research_pool.submit(_run_research_job, config, research_job["id"], research_job["lease_token"])
                 for group, future in source_futures.items():

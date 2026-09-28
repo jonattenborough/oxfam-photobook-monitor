@@ -36,35 +36,40 @@ def claim(db: sqlite3.Connection, config: Config) -> sqlite3.Row | None:
             return None
         # Delivery is the final safety boundary. Old queued lead/discovery
         # events can never escape when notifications are re-enabled.
-        if row["stage"] != "RESEARCHED_FIND":
+        if row["stage"] not in {"RESEARCHED_FIND", "PHOTO_REVIEW_REPLY"}:
             db.execute("UPDATE notification_events SET status='SUPPRESSED',suppression_reason='research-first collector policy' WHERE id=?", (row["id"],))
             return None
         if row["expires_at"] and row["expires_at"] <= current:
             db.execute("UPDATE notification_events SET status='EXPIRED',suppression_reason='auction deadline passed' WHERE id=?", (row["id"],))
             return None
-        decision = db.execute("SELECT action FROM user_decisions WHERE listing_id=? AND undone_at IS NULL ORDER BY id DESC LIMIT 1", (row["listing_id"],)).fetchone()
-        if decision and decision[0] in {"DISMISS", "BOUGHT", "OWNED"}:
-            db.execute("UPDATE notification_events SET status='SUPPRESSED',suppression_reason='owner decision' WHERE id=?", (row["id"],))
-            return None
         payload = json.loads(row["payload_json"])
-        review = db.execute("SELECT r.*,l.current_observation_id,l.imported,l.platform,l.canonical_url,l.availability,o.auction_end_at,o.captured_at,o.available FROM reviews r JOIN listings l ON l.id=r.listing_id JOIN observations o ON o.id=l.current_observation_id WHERE r.id=? AND r.listing_id=?",
-                            (payload.get("review_id"), row["listing_id"])).fetchone()
-        if review and review["platform"] == "ebay":
-            live = db.execute("SELECT * FROM live_checks WHERE listing_id=? AND observation_id=? AND provider='ebay_browse' ORDER BY checked_at DESC LIMIT 1",
-                              (row["listing_id"], review["observation_id"])).fetchone()
-            source_current = bool(live and live["availability"] == "LIVE" and live["checked_at"] >= _later(-1800)
-                                  and live["price_minor"] is not None)
+        if row["stage"] == "PHOTO_REVIEW_REPLY":
+            review = db.execute("SELECT 1 FROM reviews WHERE id=? AND listing_id=? AND policy_hash='telegram-photo-review-v1' AND status='DONE'",
+                                (payload.get("review_id"), row["listing_id"])).fetchone()
+            valid = bool(review and row["channel"] == "telegram" and type(payload.get("reply_to_message_id")) is int)
         else:
-            source_current = bool(review and review["canonical_url"]
-                                  and safe_url(review["canonical_url"]) == review["canonical_url"]
-                                  and review["captured_at"] >= _later(-7200)
-                                  and review["available"] not in {"False", "false", "0"}
-                                  and review["availability"] not in {"ENDED", "UNAVAILABLE"})
-        valid = bool(review and review["policy_hash"] == LEAD_POLICY and review["status"] == "DONE"
-                     and review["verdict"] in {"PAY_ATTENTION", "GEM", "UNICORN"}
-                     and review["observation_id"] == review["current_observation_id"] and not review["imported"]
-                     and (not review["auction_end_at"] or review["auction_end_at"] > current)
-                     and source_current)
+            decision = db.execute("SELECT action FROM user_decisions WHERE listing_id=? AND undone_at IS NULL ORDER BY id DESC LIMIT 1", (row["listing_id"],)).fetchone()
+            if decision and decision[0] in {"DISMISS", "BOUGHT", "OWNED"}:
+                db.execute("UPDATE notification_events SET status='SUPPRESSED',suppression_reason='owner decision' WHERE id=?", (row["id"],))
+                return None
+            review = db.execute("SELECT r.*,l.current_observation_id,l.imported,l.platform,l.canonical_url,l.availability,o.auction_end_at,o.captured_at,o.available FROM reviews r JOIN listings l ON l.id=r.listing_id JOIN observations o ON o.id=l.current_observation_id WHERE r.id=? AND r.listing_id=?",
+                                (payload.get("review_id"), row["listing_id"])).fetchone()
+            if review and review["platform"] == "ebay":
+                live = db.execute("SELECT * FROM live_checks WHERE listing_id=? AND observation_id=? AND provider='ebay_browse' ORDER BY checked_at DESC LIMIT 1",
+                                  (row["listing_id"], review["observation_id"])).fetchone()
+                source_current = bool(live and live["availability"] == "LIVE" and live["checked_at"] >= _later(-1800)
+                                      and live["price_minor"] is not None)
+            else:
+                source_current = bool(review and review["canonical_url"]
+                                      and safe_url(review["canonical_url"]) == review["canonical_url"]
+                                      and review["captured_at"] >= _later(-7200)
+                                      and review["available"] not in {"False", "false", "0"}
+                                      and review["availability"] not in {"ENDED", "UNAVAILABLE"})
+            valid = bool(review and review["policy_hash"] == LEAD_POLICY and review["status"] == "DONE"
+                         and review["verdict"] in {"PAY_ATTENTION", "GEM", "UNICORN"}
+                         and review["observation_id"] == review["current_observation_id"] and not review["imported"]
+                         and (not review["auction_end_at"] or review["auction_end_at"] > current)
+                         and source_current)
         if not valid:
             db.execute("UPDATE notification_events SET status='SUPPRESSED',suppression_reason='research or current listing check no longer valid' WHERE id=?", (row["id"],))
             return None
@@ -94,6 +99,8 @@ def send_one(db: sqlite3.Connection, config: Config, *, fake: bool = False) -> b
                 url = str(payload.get("url") or "")
                 possible_repeat = "Possible duplicate: an earlier send had no confirmed result.\n" if event["attempts"] > 1 else ""
                 message = {"chat_id": str(chat_id), "text": (possible_repeat + str(payload.get("title") or "Photobook Radar") + "\n" + str(payload.get("message") or ""))[:4000], "disable_web_page_preview": True}
+                if type(payload.get("reply_to_message_id")) is int:
+                    message["reply_parameters"] = {"message_id": payload["reply_to_message_id"], "allow_sending_without_reply": True}
                 if url.startswith("https://"):
                     message["reply_markup"] = {"inline_keyboard": [[{"text": "Open listing", "url": url}]]}
                 with httpx.Client(timeout=15, follow_redirects=False) as client:
