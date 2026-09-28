@@ -67,6 +67,33 @@ def check_comparable(url: str, title: str, amount_gbp: Decimal, kind: str, sold_
     return True
 
 
+def check_ebay_asking(url: str, title: str, amount_gbp: Decimal, kind: str, lookup) -> bool:
+    """Verify a live GBP asking price through Browse when eBay blocks page fetches."""
+    if kind != "ASKING" or safe_url(url) != url:
+        return False
+    parts = urllib.parse.urlsplit(url)
+    if parts.hostname not in {"www.ebay.co.uk", "ebay.co.uk", "www.ebay.com", "ebay.com"}:
+        return False
+    match = re.search(r"/itm/(?:[^/?#]+/)?([0-9]{9,15})(?:[/?#]|$)", parts.path + "/")
+    if not match:
+        return False
+    try:
+        item = lookup(match.group(1))
+        value = item.get("price") or {}
+        current = Decimal(str(value.get("value")))
+    except (AttributeError, InvalidOperation, TypeError, ValueError):
+        return False
+    if value.get("currency") != "GBP" or abs(current - amount_gbp) > max(Decimal("1"), amount_gbp * Decimal("0.03")):
+        return False
+    if str(item.get("estimatedAvailabilityStatus") or "").upper() in {"OUT_OF_STOCK", "UNAVAILABLE"}:
+        return False
+    if "FIXED_PRICE" not in (item.get("buyingOptions") or []):
+        return False
+    words = [word for word in re.findall(r"[a-z0-9]+", title.casefold()) if len(word) >= 4 and word not in STOP]
+    found = str(item.get("title") or "").casefold()
+    return bool(words and sum(word in found for word in words) >= min(3, len(words)))
+
+
 def marketplace_identity(url: str) -> str:
     """Treat country sites of one marketplace as one source of price evidence."""
     host = (urllib.parse.urlsplit(url).hostname or "").removeprefix("www.")
