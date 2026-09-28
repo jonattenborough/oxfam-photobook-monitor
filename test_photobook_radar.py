@@ -21,7 +21,7 @@ from photobook_radar.shopify_scheduler import parse_products, run_shopify_job, s
 from photobook_radar.sources.ebay import capture_browse_page, parse_browse_page
 from photobook_radar.sources.oxfam import capture_photography_page, parse_photography_page
 from photobook_radar.store import capture, capture_page, claim_job, decide, enqueue_job, enqueue_notification, finish_job, now, reserve_request, safe_url, settle_request
-from photobook_radar.triage import object_in_seller_title, run_triage, score
+from photobook_radar.triage import object_in_seller_title, research_candidate, run_triage, score
 from photobook_radar.verification import run_verify
 
 
@@ -467,6 +467,14 @@ class RadarPersistenceTests(unittest.TestCase):
             run_triage(self.db, claim_job(self.db, "test", kinds=("TRIAGE",)), config)
         self.assertEqual(self.db.execute("SELECT COUNT(*) FROM jobs WHERE kind='RESEARCH_LEAD'").fetchone()[0], 0)
         self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events").fetchone()[0], 0)
+
+    def test_plain_work_title_with_photographer_in_opening_is_researched(self):
+        item = {"title": "The End Sends Advance Warning",
+                "description": "The End Sends Advance Warning by Todd Hido. Limited, signed and numbered photobook.",
+                "price_gbp": "700"}
+        result = score(item)
+        self.assertFalse(object_in_seller_title(item, result))
+        self.assertTrue(research_candidate(item, result))
 
     def test_obsolete_screening_job_cannot_overwrite_newer_capture(self):
         item = {"key": "ebay:123456789012", "title": "The Bikeriders Danny Lyon", "price_gbp": "20"}

@@ -46,6 +46,16 @@ def research_candidate(item: dict, result: dict) -> bool:
         return False
     if object_in_seller_title(item, result):
         return True
+    # Some specialist sellers put only the work's title in the product name.
+    # Its opening description can establish that the named photographer made
+    # this item, unlike a bibliography mention buried later in the page.
+    opening = re.sub(r"[^a-z0-9]+", " ", str(item.get("description") or "")[:240].casefold()).strip()
+    named_title = re.sub(r"[^a-z0-9]+", " ", title).strip()
+    names = [match.get("contributor") for match in result["matches"]] + [match.get("name") for match in result["core_matches"]]
+    if len(named_title) >= 12 and f" {named_title} " in f" {opening} " and any(
+        f" {re.sub(r'[^a-z0-9]+', ' ', str(name).casefold()).strip()} " in f" {opening} " for name in names if name
+    ):
+        return True
     photobook_title = any(clue in title for clue in ("photobook", "photo book", "photographs", "photography", "photographic monograph"))
     known_in_description = bool(result["matches"] or result["core_matches"])
     collectible_claim = any(clue in title for clue in COLLECTOR_CLUES)
