@@ -815,13 +815,18 @@ def match_listing(item: dict[str, Any], *, limit: int = 5) -> list[dict[str, Any
     matches: list[dict[str, Any]] = []
     for row in _candidate_records(listing_full):
         scored = pb.score_record(row, listing_title, listing_full)
-        if scored is not None and not _short_title_guard(
-            row,
-            str(row.get("_title_norm") or ""),
-            listing_title,
-            scored[1],
-        ):
-            scored = None
+        if scored is not None:
+            guarded = _short_title_guard(row, str(row.get("_title_norm") or ""), listing_title, scored[1])
+            if not guarded:
+                # Specialist shops sometimes title a product with only the
+                # two-word work name. Accept that exact object when the
+                # opening seller description names its photographer.
+                opening = set(pb.normalize(str(item.get("description") or "")[:240]).split())
+                contributor = _raw_name_tokens(row.get("Contributor"))
+                guarded = bool(listing_title == row.get("_title_norm") and contributor
+                               and contributor <= opening and scored[1].startswith("exact"))
+            if not guarded:
+                scored = None
         for alias in row.get("_title_aliases") or []:
             alias_scored = _score_alias(row, alias, listing_title, listing_full)
             if alias_scored is not None and (scored is None or alias_scored[0] > scored[0]):

@@ -20,7 +20,7 @@ from photobook_radar.ebay_scheduler import run_ebay_broad_job, schedule_ebay_bro
 from photobook_radar.notifications import send_one
 from photobook_radar.source_scheduler import run_oxfam_scan_job, schedule_oxfam
 from photobook_radar.oxfam_broad import run_oxfam_broad_job, schedule_oxfam_broad
-from photobook_radar.research_sweeps import ResearchDeferred, run_lead_research, run_research_job, schedule_research
+from photobook_radar.research_sweeps import LEAD_POLICY, ResearchDeferred, run_lead_research, run_research_job, schedule_research
 from photobook_radar.shopify_scheduler import parse_products, run_shopify_job, schedule_shopify
 from photobook_radar.sources.ebay import capture_browse_page, parse_browse_page
 from photobook_radar.sources.oxfam import capture_photography_page, parse_photography_page
@@ -169,7 +169,7 @@ class RadarPersistenceTests(unittest.TestCase):
         self.assertEqual(self.db.execute("SELECT COUNT(*) FROM reviews WHERE listing_id=?", (listing_id,)).fetchone()[0], 0)
         self.assertEqual(self.db.execute("SELECT status FROM research_sweeps ORDER BY id DESC LIMIT 1").fetchone()[0], "DEFERRED")
 
-    def test_possible_collection_buy_uses_two_independent_asking_prices(self):
+    def test_collector_pick_can_use_one_checked_asking_price(self):
         config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True,
                         allow_real_notifications=True, notification_enabled=True,
                         research_provider="codex_cli", research_recurring_enabled=True)
@@ -184,19 +184,40 @@ class RadarPersistenceTests(unittest.TestCase):
                             (listing_id, observation, "ebay_browse", now(), "LIVE", 10000, "GBP", "{}"))
         result = {"decision": "POSSIBLE_COLLECTOR", "actual_book": True, "collector_fit": True,
                   "edition_supported": True, "context": "A central book by a Tier 1 documentary photographer.",
-                  "opportunity_reason": "The seller identifies the desired edition below two independent offers.",
+                  "opportunity_reason": "The seller identifies the desired edition below a checked offer.",
                   "edition_note": "The seller identifies the first printing.", "risk": "Verify printing and condition.",
                   "source_urls": [], "market_comparables": [
-                      {"url": "https://www.ebay.co.uk/itm/200000000001", "kind": "ASKING", "price_gbp": 200,
-                       "sold_date": "", "same_edition": True, "condition_no_better": True, "note": "Same edition"},
                       {"url": "https://www.abebooks.co.uk/book/200000000002", "kind": "ASKING", "price_gbp": 195,
                        "sold_date": "", "same_edition": True, "condition_no_better": True, "note": "Same edition"}]}
         outcome = run_lead_research(self.db, claim_job(self.db, "test", kinds=("RESEARCH_LEAD",)), config,
                                      provider=lambda *_: result, market_check=lambda *_: True)
         self.assertEqual((outcome["status"], outcome["verdict"]), ("DONE", "POSSIBLE_COLLECTOR"))
         payload = json.loads(self.db.execute("SELECT payload_json FROM notification_events WHERE stage='BARGAIN_FIND'").fetchone()[0])
-        self.assertIn("POSSIBLE COLLECTION BUY", payload["title"])
+        self.assertIn("COLLECTOR PICK", payload["title"])
+        self.assertIn("one checked asking price", payload["message"])
         self.assertIn("resale unproven", payload["message"])
+
+        with transaction(self.db):
+            other = capture(self.db, {"key": "ebay:123456789013", "title": "Alec Soth Sleeping by the Mississippi first edition",
+                                      "price_gbp": "100", "url": "https://www.ebay.co.uk/itm/123456789013"},
+                            source_id="ebay", origin_key="unchecked-cheaper")
+            other_observation = self.db.execute("SELECT current_observation_id FROM listings WHERE id=?", (other,)).fetchone()[0]
+            enqueue_job(self.db, "research:unchecked-cheaper", "RESEARCH_LEAD", listing_id=other,
+                        payload={"observation_id": other_observation})
+            self.db.execute("INSERT INTO live_checks(listing_id,observation_id,provider,checked_at,availability,price_minor,currency,result_json) VALUES(?,?,?,?,?,?,?,?)",
+                            (other, other_observation, "ebay_browse", now(), "LIVE", 10000, "GBP", "{}"))
+        cheaper = {"url": "https://november-books.com/products/sleeping-by-the-mississippi", "kind": "ASKING",
+                   "price_gbp": 125, "sold_date": "", "same_edition": True,
+                   "condition_no_better": True, "note": "Cheaper matching offer needs a live check"}
+        blocked = run_lead_research(self.db, claim_job(self.db, "test", kinds=("RESEARCH_LEAD",)), config,
+                                    provider=lambda *_: {**result, "market_comparables": result["market_comparables"] + [cheaper]},
+                                    market_check=lambda url, *_: url != cheaper["url"])
+        self.assertEqual(blocked["verdict"], "PAY_ATTENTION")
+        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events WHERE stage='BARGAIN_FIND'").fetchone()[0], 1)
+
+    def test_november_books_is_a_supported_market_comparable(self):
+        from photobook_radar.bargains import MARKET_DOMAINS
+        self.assertIn("november-books.com", MARKET_DOMAINS)
 
     def test_old_research_alert_waiting_in_outbox_is_suppressed(self):
         config = Config(data_dir=Path(self.folder.name), mode="production", allow_real_notifications=True,
@@ -218,7 +239,7 @@ class RadarPersistenceTests(unittest.TestCase):
                                  source_id="ebay", origin_key="price-rise", imported=False)
             observation = self.db.execute("SELECT current_observation_id FROM listings WHERE id=?", (listing_id,)).fetchone()[0]
             review = self.db.execute("INSERT INTO reviews(listing_id,observation_id,provider,policy_hash,verdict,status,result_json) VALUES(?,?,?,?,?,?,?)",
-                                     (listing_id, observation, "codex_cli", "collector-bargains-v8", "GEM", "DONE",
+                                     (listing_id, observation, "codex_cli", LEAD_POLICY, "GEM", "DONE",
                                       '{"bargain_screen":{"accepted":true}}'))
             enqueue_notification(self.db, listing_id=listing_id, stage="BARGAIN_FIND", material_version="price-rise",
                                  channel="telegram", payload={"title": "Gem", "review_id": review.lastrowid,
@@ -1103,7 +1124,7 @@ class RadarPersistenceTests(unittest.TestCase):
             listing_id = capture(self.db, {"key": "ebay:123456789012", "title": "Possible book"}, source_id="ebay", origin_key="possible", imported=False)
             observation = self.db.execute("SELECT current_observation_id FROM listings WHERE id=?", (listing_id,)).fetchone()[0]
             review = self.db.execute("INSERT INTO reviews(listing_id,observation_id,provider,policy_hash,verdict,status,result_json) VALUES(?,?,?,?,?,?,?)",
-                                     (listing_id, observation, "codex_cli", "collector-bargains-v8", "GEM", "DONE", '{"bargain_screen":{"accepted":true}}'))
+                                     (listing_id, observation, "codex_cli", LEAD_POLICY, "GEM", "DONE", '{"bargain_screen":{"accepted":true}}'))
             self.db.execute("INSERT INTO live_checks(listing_id,observation_id,provider,checked_at,availability,price_minor,currency,result_json) VALUES(?,?,?,?,?,?,?,?)",
                             (listing_id, observation, "ebay_browse", now(), "LIVE", 2000, "GBP", "{}"))
             enqueue_notification(self.db, listing_id=listing_id, stage="BARGAIN_FIND", material_version="initial", channel="telegram", payload={"message": "Check listing", "review_id": review.lastrowid, "price_minor": 2000, "shipping_minor": None, "shipping_currency": None})
@@ -1200,7 +1221,7 @@ class RadarPersistenceTests(unittest.TestCase):
                                  source_id="ebay", origin_key="before", imported=False)
             observation = self.db.execute("SELECT current_observation_id FROM listings WHERE id=?", (listing_id,)).fetchone()[0]
             review = self.db.execute("INSERT INTO reviews(listing_id,observation_id,provider,policy_hash,verdict,status,result_json) VALUES(?,?,?,?,?,?,?)",
-                                     (listing_id, observation, "codex_cli", "collector-bargains-v8", "GEM", "DONE", '{"bargain_screen":{"accepted":true}}'))
+                                     (listing_id, observation, "codex_cli", LEAD_POLICY, "GEM", "DONE", '{"bargain_screen":{"accepted":true}}'))
             self.db.execute("INSERT INTO live_checks(listing_id,observation_id,provider,checked_at,availability,price_minor,currency,result_json) VALUES(?,?,?,?,?,?,?,?)",
                             (listing_id, observation, "ebay_browse", now(), "LIVE", 2000, "GBP", "{}"))
             enqueue_notification(self.db, listing_id=listing_id, stage="BARGAIN_FIND", material_version=str(observation),

@@ -64,7 +64,7 @@ LEAD_SCHEMA = {
 }
 LEAD_DOMAINS = {"aperture.org", "mackbooks.co.uk", "tate.org.uk", "moma.org", "icp.org", "getty.edu",
                 "nazraeli.com", "stanleybarker.co.uk", "rrbphotobooks.com", "gostbooks.com", "steidl.de", "phaidon.com"}
-LEAD_POLICY = "collector-bargains-v8"
+LEAD_POLICY = "collector-bargains-v11"
 MARKET_CHECK_VERSION = 2
 
 
@@ -424,8 +424,10 @@ def run_lead_research(db: sqlite3.Connection, job: sqlite3.Row, config: Config, 
               "Use COLLECTOR only for a specific essential work by a Tier 1 photographer that the "
               "local library marks as a curated priority; a routine book by a Tier 1 name does not qualify. A collector choice "
               "needs a seller-supported edition and at least one genuine like-for-like sold comp but need not show resale profit. "
-              "Use POSSIBLE_COLLECTOR for the same curated priority when two independent live asking listings support the price "
-              "gap but no suitable sold comp is available. "
+              "Use POSSIBLE_COLLECTOR for the same curated priority when at least one checked live asking listing "
+              "supports a " + str(config.collector_min_discount_pct) + "% price gap but no suitable sold comp is available. Search for cheaper counterexamples "
+              "across specialist shops, publishers, foundations and marketplaces, and report the lowest comparable "
+              "you find. A single asking price is uncertain evidence: state that clearly and do not infer flip profit. "
               "Otherwise use PAY_ATTENTION for the dashboard or PASS. Do not dismiss an overlooked photographer "
               "solely for being outside the existing list, but do not invent a resale market for one. For non-eBay sellers, "
               "check the direct product page when possible and flag availability uncertainty. Set edition_supported true only "
@@ -470,6 +472,20 @@ def run_lead_research(db: sqlite3.Connection, job: sqlite3.Row, config: Config, 
                                 min_discount_pct=min(config.min_discount_pct, config.collector_min_discount_pct),
                                 checker=market_check or verify_comparable, min_comparables=1, require_sold=False)
         checked = market["comparables"]
+        checked_urls = {comp["url"] for comp in checked}
+        unchecked_cheaper = []
+        if checked and market["comp_floor_gbp"]:
+            for comp in result["market_comparables"]:
+                if (not isinstance(comp, dict) or comp.get("same_edition") is not True
+                        or comp.get("condition_no_better") is not True
+                        or comp.get("url") in checked_urls):
+                    continue
+                try:
+                    comp_price = Decimal(str(comp.get("price_gbp")))
+                except (ValueError, TypeError, ArithmeticError):
+                    continue
+                if comp_price.is_finite() and comp_price < market["comp_floor_gbp"]:
+                    unchecked_cheaper.append(str(comp.get("url") or ""))
         has_sold = any(comp["kind"] == "SOLD" for comp in checked)
         independent = len({comp["marketplace"] for comp in checked}) >= 2
         flip_margin = bool(market["accepted"] and len(checked) >= 2
@@ -480,8 +496,10 @@ def run_lead_research(db: sqlite3.Connection, job: sqlite3.Row, config: Config, 
         collection_margin = bool(market["accepted"] and str(matched["core_tier"]) == "1" and priority_record
                                  and market["discount_pct"] >= config.collector_min_discount_pct)
         collection = bool(has_sold and collection_margin)
-        possible_collection = bool(not collection and independent and len(checked) >= 2 and collection_margin)
+        possible_collection = bool(not collection and collection_margin and
+                                   (independent or (len(checked) == 1 and decision in {"POSSIBLE_COLLECTOR", "COLLECTOR"})))
         accepted = bool(result["actual_book"] and result["collector_fit"] and result["edition_supported"]
+                        and not unchecked_cheaper
                         and (flip or possible_flip or collection or possible_collection)
                         and row["listing_type"] != "AUCTION"
                         and len(result["opportunity_reason"].strip()) >= 25
@@ -499,13 +517,16 @@ def run_lead_research(db: sqlite3.Connection, job: sqlite3.Row, config: Config, 
         screen = {"accepted": accepted, "route": "collection" if accepted and collection else
                   "possible_collection" if accepted and possible_collection else
                   "possible_flip" if accepted and possible_flip else "flip" if accepted else "none",
-                  "reason": "verified collection priority" if accepted and collection else
+                  "reason": "cheaper comparison needs verification" if unchecked_cheaper else
+                            "verified collection priority" if accepted and collection else
                             "verified flip margin" if accepted and flip else
+                            "one checked asking price; resale unproven" if possible_collection and len(checked) == 1 else
                             "asking-price gap; resale unproven" if possible else market["reason"] if not market["accepted"] else
                             "collector importance or flip margin not established",
                   "landed_gbp": str(market.get("landed_gbp", "")), "comp_floor_gbp": str(market.get("comp_floor_gbp", "")),
                   "discount_pct": str(market.get("discount_pct", "")), "net_profit_gbp": str(market.get("net_profit_gbp", "")),
-                  "checked_comparables": len(checked), "independent_marketplaces": len({comp["marketplace"] for comp in checked}),
+                  "checked_comparables": len(checked), "unchecked_cheaper_comparables": len(unchecked_cheaper),
+                  "independent_marketplaces": len({comp["marketplace"] for comp in checked}),
                   "has_sold_comparable": has_sold}
         with transaction(db):
             review = db.execute("INSERT INTO reviews(listing_id,observation_id,provider,policy_hash,verdict,confidence,status,started_at,finished_at,result_json) VALUES(?,?,?,?,?,?,?,?,?,?)",
@@ -527,13 +548,13 @@ def run_lead_research(db: sqlite3.Connection, job: sqlite3.Row, config: Config, 
                                     (row["id"],)).fetchone()
             if accepted and not prior_find and config.allow_real_notifications:
                 icon = {"GEM": "💎🔥🔥", "UNICORN": "🦄🔥🔥🔥", "COLLECTOR": "📚⭐",
-                        "POSSIBLE_GEM": "🔎💎 POSSIBLE GEM", "POSSIBLE_COLLECTOR": "🔎📚 POSSIBLE COLLECTION BUY"}[verdict]
+                        "POSSIBLE_GEM": "🔎💎 POSSIBLE GEM", "POSSIBLE_COLLECTOR": "📚 COLLECTOR PICK"}[verdict]
                 bibliography = " · Parr/Badger" if "parr/badger" in canon else " · Roth 101" if "roth 101" in canon else ""
                 tier = f"Tier {matched['core_tier']} · " if matched["core_tier"] else ""
                 compact = lambda value, width: re.sub(r"\s+", " ", value).strip()[:width]
                 postage_note = " (includes £20 postage buffer)" if market["postage_estimated"] else " including postage"
                 margin_line = ("📚 Collection priority: profit estimate is not required\n" if collection else
-                               "📚 Collection price gap based on asking prices; resale unproven\n" if possible_collection else
+                               f"📚 Collector pick: {'one checked asking price' if len(checked) == 1 else 'checked asking prices'}; resale unproven\n" if possible_collection else
                                f"🔁 ~£{market['net_profit_gbp']:.0f} indicative resale room from asking prices, not sales\n" if possible_flip else
                                f"🔁 ~£{market['net_profit_gbp']:.0f} possible resale margin after assumed costs\n")
                 message = (f"💷 ~£{market['landed_gbp']:.2f} all-in{postage_note}\n"

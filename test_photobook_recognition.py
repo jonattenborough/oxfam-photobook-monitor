@@ -28,6 +28,16 @@ class PhotobookRecognitionTests(unittest.TestCase):
         self.assertEqual(str(rows[0].get("Search priority")), "0")
         self.assertEqual(str(rows[0].get("Collectibility tier")), "S")
 
+    def test_exact_short_work_title_uses_opening_seller_description_for_contributor(self):
+        offered = {"title": "Survival Programmes",
+                   "description": "First edition by the Exit Photography Group (Paul Trevor, Nicholas Battye, Chris Steele-Perkins), 1982. Signed by Paul Trevor."}
+        matches = recognition.match_listing(offered)
+        self.assertEqual(matches[0]["record_id"], "chris-steele-perkins-survival-programmes")
+        unrelated = {"title": "Survival Programmes",
+                     "description": "A book with this generic title and no named photographer."}
+        self.assertFalse(any(match["record_id"] == "chris-steele-perkins-survival-programmes"
+                             for match in recognition.match_listing(unrelated)))
+
     def test_canonical_edition_metadata_beats_publisher_reissue_metadata(self):
         row = next(
             row for row in recognition.load_library()
