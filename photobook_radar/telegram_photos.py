@@ -151,7 +151,7 @@ def run_photo_research(db: sqlite3.Connection, job: sqlite3.Row, config: Config,
                        "FROM notification_events e JOIN listings l ON l.id=e.listing_id "
                        "LEFT JOIN reviews r ON r.id=json_extract(e.payload_json,'$.review_id') "
                        "LEFT JOIN reviews latest ON latest.id=(SELECT MAX(id) FROM reviews WHERE listing_id=e.listing_id "
-                       "AND policy_hash LIKE 'collector-bargains-%') "
+                       "AND (policy_hash LIKE 'collector-bargains-%' OR policy_hash LIKE 'collector-editorial-%')) "
                        "WHERE e.id=? AND e.stage IN (?,?,?,?) AND e.status='PROVIDER_ACCEPTED' AND e.listing_id=?",
                        (payload.get("alert_event_id"), *PHOTO_ALERT_STAGES, job["listing_id"])).fetchone()
     if not alert or not payload.get("file_id"):

@@ -65,19 +65,19 @@ class RadarPersistenceTests(unittest.TestCase):
         self.assertFalse(assess(comps, price_minor=9000)["accepted"])
         self.assertFalse(assess(comps, price_minor=19000)["accepted"])
 
-    def test_collector_priority_can_have_no_flip_profit_but_requires_curated_tier_one_work(self):
+    def test_collector_priority_includes_tier_two_without_flip_profit(self):
         config = Config(data_dir=Path(self.folder.name), mode="production", allow_real_notifications=True,
                         notification_enabled=True, research_provider="codex_cli", research_recurring_enabled=True)
         sold = [{"url": "https://www.ebay.co.uk/itm/200000000001", "kind": "SOLD", "price_gbp": 200,
                  "sold_date": datetime.now(timezone.utc).date().isoformat(), "same_edition": True,
                  "condition_no_better": True, "note": "Same edition and wear"}]
         result = {"decision": "COLLECTOR", "actual_book": True, "collector_fit": True, "edition_supported": True,
-                  "context": "A central photography book by a Tier 1 artist.",
+                  "context": "An important documentary photography book.",
                   "opportunity_reason": "The identified priority edition is offered below the checked matching sale.",
                   "edition_note": "The seller identifies this printing.", "risk": "Check the title page and wear.",
                   "source_urls": [], "market_comparables": sold}
-        for number, title, expected in ((1, "Alec Soth Sleeping by the Mississippi first edition", "DONE"),
-                                        (2, "Good Morning America Volume Two Mark Power Signed", "NEEDS_EVIDENCE")):
+        for number, title in ((1, "Alec Soth Sleeping by the Mississippi first edition"),
+                              (2, "Good Morning America Volume Two Mark Power Signed")):
             with transaction(self.db):
                 listing_id = capture(self.db, {"key": f"ebay:12345678901{number}", "title": title,
                                                "price_gbp": "140", "url": f"https://www.ebay.co.uk/itm/12345678901{number}"},
@@ -90,9 +90,9 @@ class RadarPersistenceTests(unittest.TestCase):
             job = claim_job(self.db, "collector-test", kinds=("RESEARCH_LEAD",))
             outcome = run_lead_research(self.db, job, config, provider=lambda *_: result,
                                         link_check=lambda *_: True, market_check=lambda *_: True)
-            self.assertEqual(outcome["status"], expected)
+            self.assertEqual((outcome["status"], outcome["verdict"]), ("DONE", "COLLECTOR"))
         event = self.db.execute("SELECT payload_json FROM notification_events WHERE stage='BARGAIN_FIND'").fetchone()
-        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events WHERE stage='BARGAIN_FIND'").fetchone()[0], 1)
+        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events WHERE stage='BARGAIN_FIND'").fetchone()[0], 2)
         payload = __import__("json").loads(event[0])
         self.assertIn("Collection priority", payload["message"])
         self.assertNotIn("possible resale margin", payload["message"])
@@ -131,13 +131,13 @@ class RadarPersistenceTests(unittest.TestCase):
         self.assertEqual((outcome["status"], outcome["verdict"]), ("DONE", "POSSIBLE_GEM"))
         payload = json.loads(self.db.execute("SELECT payload_json FROM notification_events WHERE stage='BARGAIN_FIND'").fetchone()[0])
         self.assertIn("POSSIBLE GEM", payload["title"])
-        self.assertIn("asking prices, not sales", payload["message"])
+        self.assertIn("Asking prices, not sales", payload["message"])
         self.assertEqual(payload["comp_label"], "Asking comp")
         self.assertTrue(send_one(self.db, config, fake=True))
         same_market = [sold_free_comps[0], {**sold_free_comps[1], "url": "https://www.ebay.co.uk/itm/200000000002"}]
-        self.assertEqual(review(2, same_market)["status"], "NEEDS_EVIDENCE")
-        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events WHERE stage='BARGAIN_FIND'").fetchone()[0], 1)
-        self.assertEqual(review(3, sold_free_comps, decision="PASS")["verdict"], "POSSIBLE_GEM")
+        self.assertEqual(review(2, same_market)["status"], "DONE")
+        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events WHERE stage='BARGAIN_FIND'").fetchone()[0], 2)
+        self.assertEqual(review(3, sold_free_comps, decision="PASS")["verdict"], "PASS")
         self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events WHERE stage='BARGAIN_FIND'").fetchone()[0], 2)
 
     def test_research_waits_for_ebay_comparable_quota_instead_of_rejecting(self):
@@ -212,8 +212,122 @@ class RadarPersistenceTests(unittest.TestCase):
         blocked = run_lead_research(self.db, claim_job(self.db, "test", kinds=("RESEARCH_LEAD",)), config,
                                     provider=lambda *_: {**result, "market_comparables": result["market_comparables"] + [cheaper]},
                                     market_check=lambda url, *_: url != cheaper["url"])
-        self.assertEqual(blocked["verdict"], "PAY_ATTENTION")
-        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events WHERE stage='BARGAIN_FIND'").fetchone()[0], 1)
+        self.assertEqual(blocked["verdict"], "INVESTIGATE")
+        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events WHERE stage='BARGAIN_FIND'").fetchone()[0], 2)
+
+    def test_cheap_signed_collector_book_can_alert_without_a_sold_comparable(self):
+        config = Config(data_dir=Path(self.folder.name), mode="production", allow_real_notifications=True,
+                        notification_enabled=True, research_provider="codex_cli", research_recurring_enabled=True)
+        with transaction(self.db):
+            listing_id = capture(self.db, {"key": "specialist:guidi-signed", "title": "Guido Guidi Album 1969-82 signed first edition photobook",
+                                          "price_gbp": "45", "url": "https://photobookstore.co.uk/products/guidi-album-signed"},
+                                 source_id="specialist", origin_key="cheap-signed")
+            observation = self.db.execute("SELECT current_observation_id FROM listings WHERE id=?", (listing_id,)).fetchone()[0]
+            enqueue_job(self.db, "research:cheap-signed", "RESEARCH_LEAD", listing_id=listing_id,
+                        payload={"observation_id": observation})
+        result = {"decision": "COLLECTOR", "actual_book": True, "collector_fit": True,
+                  "edition_supported": True, "context": "Guidi's early work is an important documentary photography sequence.",
+                  "opportunity_reason": "A signed first edition is a strong inexpensive collection copy despite limited market evidence.",
+                  "edition_note": "Seller identifies the signed first edition.", "risk": "Check the edge bump and final postage.",
+                  "source_urls": [], "market_comparables": []}
+        outcome = run_lead_research(self.db, claim_job(self.db, "test", kinds=("RESEARCH_LEAD",)), config,
+                                    provider=lambda *_: result)
+        self.assertEqual((outcome["status"], outcome["verdict"]), ("DONE", "POSSIBLE_COLLECTOR"))
+        event = self.db.execute("SELECT payload_json FROM notification_events WHERE stage='BARGAIN_FIND'").fetchone()
+        self.assertIn("No checked like-for-like price yet", json.loads(event[0])["message"])
+        self.assertTrue(send_one(self.db, config, fake=True))
+
+    def test_explicit_investigate_alerts_without_claiming_a_verified_buy(self):
+        config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True,
+                        allow_real_notifications=True, notification_enabled=True,
+                        research_provider="codex_cli", research_recurring_enabled=True)
+        with transaction(self.db):
+            listing_id = capture(self.db, {"key": "ebay:123456789012", "title": "Signed Danny Lyon The Bikeriders photobook",
+                                          "price_gbp": "30", "url": "https://www.ebay.co.uk/itm/123456789012"},
+                                 source_id="ebay", origin_key="investigate")
+            observation = self.db.execute("SELECT current_observation_id FROM listings WHERE id=?", (listing_id,)).fetchone()[0]
+            enqueue_job(self.db, "research:investigate", "RESEARCH_LEAD", listing_id=listing_id,
+                        payload={"observation_id": observation})
+            self.db.execute("INSERT INTO live_checks(listing_id,observation_id,provider,checked_at,availability,price_minor,currency,result_json) VALUES(?,?,?,?,?,?,?,?)",
+                            (listing_id, observation, "ebay_browse", now(), "LIVE", 3000, "GBP", "{}"))
+        result = {"decision": "INVESTIGATE", "actual_book": True, "collector_fit": True,
+                  "edition_supported": False, "context": "An early Bikeriders could be a key documentary photobook.",
+                  "opportunity_reason": "The low asking price could hide a desirable signed printing if the seller claim is genuine.",
+                  "edition_note": "Printing and signature not visible.", "risk": "Ask for title page and signature photographs.",
+                  "source_urls": [], "market_comparables": []}
+        outcome = run_lead_research(self.db, claim_job(self.db, "test", kinds=("RESEARCH_LEAD",)), config,
+                                    provider=lambda *_: result)
+        self.assertEqual((outcome["status"], outcome["verdict"]), ("DONE", "INVESTIGATE"))
+        event = json.loads(self.db.execute("SELECT payload_json FROM notification_events WHERE stage='BARGAIN_FIND'").fetchone()[0])
+        self.assertIn("INVESTIGATE", event["title"])
+        self.assertIn("verify before buying", event["message"])
+
+    def test_cheap_signed_collector_copy_with_unverified_signature_is_investigate(self):
+        config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True,
+                        allow_real_notifications=True, notification_enabled=True,
+                        research_provider="codex_cli", research_recurring_enabled=True)
+        with transaction(self.db):
+            listing_id = capture(self.db, {"key": "ebay:123456789012", "title": "Siân Davey The Garden signed photobook",
+                                          "price_gbp": "32", "url": "https://www.ebay.co.uk/itm/123456789012"},
+                                 source_id="ebay", origin_key="signed-uncertain")
+            observation = self.db.execute("SELECT current_observation_id FROM listings WHERE id=?", (listing_id,)).fetchone()[0]
+            enqueue_job(self.db, "research:signed-uncertain", "RESEARCH_LEAD", listing_id=listing_id,
+                        payload={"observation_id": observation})
+            self.db.execute("INSERT INTO live_checks(listing_id,observation_id,provider,checked_at,availability,price_minor,currency,result_json) VALUES(?,?,?,?,?,?,?,?)",
+                            (listing_id, observation, "ebay_browse", now(), "LIVE", 3200, "GBP", "{}"))
+        result = {"decision": "COLLECTOR", "actual_book": True, "collector_fit": True,
+                  "edition_supported": False, "context": "An important intimate British community portrait book.",
+                  "opportunity_reason": "The claimed signed copy is inexpensive, but the signature needs checking against the actual copy.",
+                  "edition_note": "Seller title claims a signature.", "risk": "Ask for a clear photo of the signature and condition.",
+                  "source_urls": [], "market_comparables": []}
+        outcome = run_lead_research(self.db, claim_job(self.db, "test", kinds=("RESEARCH_LEAD",)), config,
+                                    provider=lambda *_: result)
+        self.assertEqual((outcome["status"], outcome["verdict"]), ("DONE", "INVESTIGATE"))
+        event = json.loads(self.db.execute("SELECT payload_json FROM notification_events WHERE stage='BARGAIN_FIND'").fetchone()[0])
+        self.assertIn("Ask for a clear photo", event["message"])
+
+        with transaction(self.db):
+            second = capture(self.db, {"key": "ebay:123456789013", "title": "Siân Davey The Garden signed photobook",
+                                       "price_gbp": "32", "url": "https://www.ebay.co.uk/itm/123456789013"},
+                             source_id="ebay", origin_key="signed-possible-gem")
+            second_observation = self.db.execute("SELECT current_observation_id FROM listings WHERE id=?", (second,)).fetchone()[0]
+            enqueue_job(self.db, "research:signed-possible-gem", "RESEARCH_LEAD", listing_id=second,
+                        payload={"observation_id": second_observation})
+            self.db.execute("INSERT INTO live_checks(listing_id,observation_id,provider,checked_at,availability,price_minor,currency,result_json) VALUES(?,?,?,?,?,?,?,?)",
+                            (second, second_observation, "ebay_browse", now(), "LIVE", 3200, "GBP", "{}"))
+        possible = {**result, "decision": "POSSIBLE_GEM", "edition_supported": True}
+        outcome = run_lead_research(self.db, claim_job(self.db, "test", kinds=("RESEARCH_LEAD",)), config,
+                                    provider=lambda *_: possible)
+        self.assertEqual((outcome["status"], outcome["verdict"]), ("DONE", "INVESTIGATE"))
+
+    def test_auction_alert_says_current_bid_can_rise(self):
+        config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True,
+                        allow_real_notifications=True, notification_enabled=True,
+                        research_provider="codex_cli", research_recurring_enabled=True)
+        end = (datetime.now(timezone.utc) + timedelta(hours=2)).isoformat()
+        with transaction(self.db):
+            listing_id = capture(self.db, {"key": "ebay:123456789012", "title": "Signed Danny Lyon The Bikeriders first photobook",
+                                          "price_gbp": "20", "buying_options": ["AUCTION"], "auction_end_at": end,
+                                          "url": "https://www.ebay.co.uk/itm/123456789012"},
+                                 source_id="ebay", origin_key="auction")
+            observation = self.db.execute("SELECT current_observation_id FROM listings WHERE id=?", (listing_id,)).fetchone()[0]
+            enqueue_job(self.db, "research:auction", "RESEARCH_LEAD", listing_id=listing_id,
+                        payload={"observation_id": observation})
+            self.db.execute("INSERT INTO live_checks(listing_id,observation_id,provider,checked_at,availability,price_minor,currency,result_json) VALUES(?,?,?,?,?,?,?,?)",
+                            (listing_id, observation, "ebay_browse", now(), "LIVE", 2000, "GBP", "{}"))
+        result = {"decision": "GEM", "actual_book": True, "collector_fit": True,
+                  "edition_supported": True, "context": "An early Bikeriders is a major documentary photobook.",
+                  "opportunity_reason": "The current auction bid is far below a checked copy of this printing.",
+                  "edition_note": "Seller identifies the early printing.", "risk": "Confirm the signature and jacket.",
+                  "source_urls": [], "market_comparables": [
+                      {"url": "https://www.abaa.org/book/200000000002", "kind": "ASKING", "price_gbp": 160,
+                       "sold_date": "", "same_edition": True, "condition_no_better": True, "note": "Same printing"}]}
+        outcome = run_lead_research(self.db, claim_job(self.db, "test", kinds=("RESEARCH_LEAD",)), config,
+                                    provider=lambda *_: result, market_check=lambda *_: True)
+        self.assertEqual((outcome["status"], outcome["verdict"]), ("DONE", "INVESTIGATE"))
+        event = json.loads(self.db.execute("SELECT payload_json FROM notification_events WHERE stage='BARGAIN_FIND'").fetchone()[0])
+        self.assertIn("current bid", event["message"])
+        self.assertIn("Current bid may rise", event["message"])
 
     def test_november_books_is_a_supported_market_comparable(self):
         from photobook_radar.bargains import MARKET_DOMAINS
