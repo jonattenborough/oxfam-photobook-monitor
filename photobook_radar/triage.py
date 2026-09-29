@@ -158,11 +158,9 @@ def run_triage(db: sqlite3.Connection, job: sqlite3.Row, config: Config) -> dict
                 db.execute("UPDATE jobs SET status='CANCELLED',last_error='Superseded by a newer listing observation' "
                            "WHERE kind='RESEARCH_LEAD' AND listing_id=? AND status='PENDING' "
                            "AND job_key!=?", (job["listing_id"], f"research-lead:{job['listing_id']}:{row['current_observation_id']}"))
-                pending = db.execute("SELECT COUNT(*) FROM jobs WHERE kind='RESEARCH_LEAD' AND status IN ('PENDING','RUNNING')").fetchone()[0]
-                if pending < 120:
-                    enqueue_job(db, f"research-lead:{job['listing_id']}:{row['current_observation_id']}", "RESEARCH_LEAD",
-                                listing_id=job["listing_id"], priority=60 + result["score"] + (25 if end else 0),
-                                payload={"observation_id": row["current_observation_id"]})
+                enqueue_job(db, f"research-lead:{job['listing_id']}:{row['current_observation_id']}", "RESEARCH_LEAD",
+                            listing_id=job["listing_id"], priority=60 + result["score"] + (25 if end else 0),
+                            payload={"observation_id": row["current_observation_id"]})
         done = db.execute("UPDATE jobs SET status='DONE',lease_token=NULL,lease_owner=NULL,lease_until=NULL WHERE id=? AND lease_token=? AND status='RUNNING'", (job["id"], job["lease_token"]))
         if done.rowcount != 1:
             raise RuntimeError("Stale triage result")
