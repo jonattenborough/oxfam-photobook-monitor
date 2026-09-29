@@ -269,12 +269,14 @@ class QuotaDeferred(RuntimeError):
         self.retry_seconds = max(30, int((reset - datetime.now(timezone.utc)).total_seconds()) + 15)
 
 
-def reserve_request(db: sqlite3.Connection, *, bucket: str, window_start: str, reset_at: str, provider_limit: int, reserve: int, lane_cap: int | None, route_id: str, reason: str, provider_remaining: int | None = None) -> int:
+def reserve_request(db: sqlite3.Connection, *, bucket: str, window_start: str, reset_at: str, provider_limit: int, reserve: int, lane_cap: int | None, route_id: str, reason: str, provider_remaining: int | None = None, provider_measured_at: str | None = None) -> int:
     """Reserve immediately before one physical attempt; a crash leaves uncertainty."""
     if not stamp(reset_at) or not stamp(window_start) or stamp(reset_at) <= now():
         raise ValueError("A current provider quota window is required")
+    if provider_measured_at is not None and not stamp(provider_measured_at):
+        raise ValueError("Invalid provider quota reading time")
     with transaction(db):
-        db.execute("INSERT OR IGNORE INTO api_windows(bucket,window_start,reset_at,provider_limit,provider_remaining) VALUES(?,?,?,?,?)", (bucket, window_start, reset_at, provider_limit, provider_remaining))
+        db.execute("INSERT OR IGNORE INTO api_windows(bucket,window_start,reset_at,provider_limit,provider_remaining,provider_measured_at) VALUES(?,?,?,?,?,?)", (bucket, window_start, reset_at, provider_limit, provider_remaining, provider_measured_at))
         row = db.execute("SELECT * FROM api_windows WHERE bucket=? AND window_start=?", (bucket, window_start)).fetchone()
         if row["reset_at"] != reset_at:
             raise RuntimeError("Quota window reset mismatch")
@@ -283,7 +285,15 @@ def reserve_request(db: sqlite3.Connection, *, bucket: str, window_start: str, r
         if provider_remaining is not None:
             if provider_remaining < 0:
                 raise ValueError("Provider remaining cannot be negative")
-            remaining = min(remaining, provider_remaining) if remaining is not None else provider_remaining
+            if provider_measured_at is not None:
+                if row["provider_measured_at"] is None or provider_measured_at > row["provider_measured_at"]:
+                    # A newer account reading can correct a stale count just
+                    # after reset. Reused cached readings cannot replenish
+                    # calls already reserved by this worker.
+                    remaining = min(provider_remaining, min(row["provider_limit"], provider_limit) - used)
+                # An older or repeated reading must not overwrite reservations.
+            else:
+                remaining = min(remaining, provider_remaining) if remaining is not None else provider_remaining
         # The provider reading is a remaining balance, not an allowance to add
         # to our local usage. Decrement it at reservation time, including for
         # attempts whose response is lost or whose worker crashes.
@@ -296,7 +306,8 @@ def reserve_request(db: sqlite3.Connection, *, bucket: str, window_start: str, r
                 lane_used = db.execute("SELECT COUNT(*) FROM api_requests WHERE window_id=? AND route_id=?", (row["id"], route_id)).fetchone()[0]
             if lane_used + 1 > lane_cap:
                 raise QuotaDeferred("Route API cap reached", reset_at)
-        db.execute("UPDATE api_windows SET reserved=reserved+1,provider_remaining=? WHERE id=?", (remaining - 1 if remaining is not None else None, row["id"]))
+        measured_at = provider_measured_at if provider_measured_at and (row["provider_measured_at"] is None or provider_measured_at > row["provider_measured_at"]) else row["provider_measured_at"]
+        db.execute("UPDATE api_windows SET reserved=reserved+1,provider_remaining=?,provider_measured_at=? WHERE id=?", (remaining - 1 if remaining is not None else None, measured_at, row["id"]))
         request = db.execute("INSERT INTO api_requests(window_id,route_id,reason,reserved_at,status) VALUES(?,?,?,?,?)", (row["id"], route_id, reason, now(), "RESERVED"))
         return int(request.lastrowid)
 

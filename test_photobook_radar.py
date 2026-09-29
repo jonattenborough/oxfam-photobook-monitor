@@ -934,6 +934,26 @@ class RadarPersistenceTests(unittest.TestCase):
         window = self.db.execute("SELECT consumed,reserved,uncertain,provider_remaining FROM api_windows").fetchone()
         self.assertEqual(tuple(window), (1, 0, 1, 650))
 
+    def test_newer_provider_reading_corrects_stale_count_after_reset(self):
+        first_read = (datetime.now(timezone.utc) - timedelta(minutes=1)).isoformat(timespec="seconds").replace("+00:00", "Z")
+        new_read = now()
+        opts = dict(bucket="browse", window_start="2026-09-29T07:00:00Z",
+                    reset_at="2099-09-30T07:00:00Z", provider_limit=5000, reserve=25,
+                    lane_cap=None, route_id="private", reason="search")
+        for _ in range(2):
+            request = reserve_request(self.db, **opts, provider_remaining=27, provider_measured_at=first_read)
+            settle_request(self.db, request, response_class="200")
+        with self.assertRaises(QuotaDeferred):
+            reserve_request(self.db, **opts, provider_remaining=27, provider_measured_at=first_read)
+        first = reserve_request(self.db, **opts, provider_remaining=5000, provider_measured_at=new_read)
+        settle_request(self.db, first, response_class="200")
+        second = reserve_request(self.db, **opts, provider_remaining=5000, provider_measured_at=new_read)
+        settle_request(self.db, second, response_class="200")
+        window = self.db.execute("SELECT consumed,provider_remaining,provider_measured_at FROM api_windows").fetchone()
+        self.assertEqual(tuple(window), (4, 4996, new_read))
+        reserve_request(self.db, **opts, provider_remaining=27, provider_measured_at=first_read)
+        self.assertEqual(self.db.execute("SELECT provider_remaining FROM api_windows").fetchone()[0], 4995)
+
     def test_second_connection_cannot_reserve_last_protected_request(self):
         other = connect(Path(self.folder.name) / "radar.db", existing=True)
         opts = dict(bucket="browse", window_start="2026-09-28T00:00:00Z", reset_at="2099-09-29T00:00:00Z", provider_limit=2, reserve=1, lane_cap=None, route_id="private", reason="search")
