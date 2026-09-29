@@ -197,6 +197,28 @@ class RadarPersistenceTests(unittest.TestCase):
         self.assertIn("one checked asking price", payload["message"])
         self.assertIn("resale unproven", payload["message"])
 
+        with transaction(self.db):
+            other = capture(self.db, {"key": "ebay:123456789013", "title": "Alec Soth Sleeping by the Mississippi first edition",
+                                      "price_gbp": "100", "url": "https://www.ebay.co.uk/itm/123456789013"},
+                            source_id="ebay", origin_key="unchecked-cheaper")
+            other_observation = self.db.execute("SELECT current_observation_id FROM listings WHERE id=?", (other,)).fetchone()[0]
+            enqueue_job(self.db, "research:unchecked-cheaper", "RESEARCH_LEAD", listing_id=other,
+                        payload={"observation_id": other_observation})
+            self.db.execute("INSERT INTO live_checks(listing_id,observation_id,provider,checked_at,availability,price_minor,currency,result_json) VALUES(?,?,?,?,?,?,?,?)",
+                            (other, other_observation, "ebay_browse", now(), "LIVE", 10000, "GBP", "{}"))
+        cheaper = {"url": "https://november-books.com/products/sleeping-by-the-mississippi", "kind": "ASKING",
+                   "price_gbp": 125, "sold_date": "", "same_edition": True,
+                   "condition_no_better": True, "note": "Cheaper matching offer needs a live check"}
+        blocked = run_lead_research(self.db, claim_job(self.db, "test", kinds=("RESEARCH_LEAD",)), config,
+                                    provider=lambda *_: {**result, "market_comparables": result["market_comparables"] + [cheaper]},
+                                    market_check=lambda url, *_: url != cheaper["url"])
+        self.assertEqual(blocked["verdict"], "PAY_ATTENTION")
+        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events WHERE stage='BARGAIN_FIND'").fetchone()[0], 1)
+
+    def test_november_books_is_a_supported_market_comparable(self):
+        from photobook_radar.bargains import MARKET_DOMAINS
+        self.assertIn("november-books.com", MARKET_DOMAINS)
+
     def test_old_research_alert_waiting_in_outbox_is_suppressed(self):
         config = Config(data_dir=Path(self.folder.name), mode="production", allow_real_notifications=True,
                         notification_enabled=True)
