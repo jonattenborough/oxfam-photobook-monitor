@@ -21,12 +21,23 @@ from .shopify_scheduler import run_shopify_job, schedule_shopify
 from .abebooks_scheduler import run_abebooks_job, schedule_abebooks
 from .research_sweeps import ResearchDeferred, _later, run_lead_research, run_research_job, schedule_research
 from .telegram_photos import poll_updates, run_photo_research
-from .store import claim_job, finish_job, now
+from .store import QuotaDeferred, claim_job, finish_job, now
 from .triage import run_triage
 from .verification import run_verify
 
 RESEARCH_CONCURRENCY = 3
 VERIFY_CONCURRENCY = 2
+
+
+def _defer_quota_job(db: sqlite3.Connection, job_id: int, token: str, exc: QuotaDeferred) -> None:
+    # Waiting for the provider's reset is not a failed attempt.
+    with transaction(db):
+        db.execute("UPDATE jobs SET attempts=MAX(0,attempts-1) WHERE id=? AND lease_token=? AND status='RUNNING'",
+                   (job_id, token))
+    try:
+        finish_job(db, job_id, token, error=str(exc), retry_seconds=exc.retry_seconds)
+    except RuntimeError:
+        pass
 
 
 def tick(db: sqlite3.Connection, config: Config, owner: str) -> bool:
@@ -71,6 +82,8 @@ def _run_source_job(config: Config, job_id: int, token: str) -> None:
             else:
                 raise ValueError("Unknown source job")
             finish_job(db, job_id, token)
+        except QuotaDeferred as exc:
+            _defer_quota_job(db, job_id, token, exc)
         except Exception as exc:
             with transaction(db):
                 source_id = OXFAM_ROUTE if job["kind"] == "SCAN_OXFAM" else OXFAM_BROAD_SOURCE if job["kind"] == "SCAN_OXFAM_BROAD" else "abebooks" if job["kind"] == "SCAN_ABEBOOKS" else str(job["route_id"]).split(":", 1)[0] if job["kind"] == "SCAN_SHOPIFY" else next((definition[0] for definition in EBAY_LANES.values() if definition[1] == job["kind"]), EBAY_BROAD_SOURCE)
@@ -91,6 +104,8 @@ def _run_verify_job(config: Config, job_id: int, token: str) -> None:
             return
         try:
             run_verify(db, job, config)
+        except QuotaDeferred as exc:
+            _defer_quota_job(db, job_id, token, exc)
         except Exception as exc:
             try:
                 finish_job(db, job_id, token, error=str(exc), retry_seconds=120)
@@ -116,6 +131,8 @@ def _run_research_job(config: Config, job_id: int, token: str) -> None:
             finish_job(db, job_id, token)
             with transaction(db):
                 db.execute("DELETE FROM health WHERE key='codex_research_backoff_until'")
+        except QuotaDeferred as exc:
+            _defer_quota_job(db, job_id, token, exc)
         except ResearchDeferred as exc:
             with transaction(db):
                 # Waiting for source verification or the provider is not a

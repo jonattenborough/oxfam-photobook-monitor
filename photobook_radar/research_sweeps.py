@@ -22,7 +22,7 @@ import ebay_endgame
 from .config import Config
 from .bargains import assess_bargain, check_comparable, check_ebay_asking
 from .db import transaction
-from .store import capture_page, enqueue_job, enqueue_notification, now, safe_url, stamp
+from .store import QuotaDeferred, capture_page, enqueue_job, enqueue_notification, now, safe_url, stamp
 
 LANES = {
     "wider": ("research-wider", 30 * 60, {"biblio.com", "vialibri.net", "zvab.com", "pbfa.org", "catawiki.com"}),
@@ -457,6 +457,8 @@ def run_lead_research(db: sqlite3.Connection, job: sqlite3.Row, config: Config, 
                 try:
                     return check_ebay_asking(url, title, price, kind,
                                              thread_client(db, config, "ebay-comparable").get_item_by_legacy_id)
+                except QuotaDeferred as exc:
+                    raise ResearchDeferred("waiting for eBay Browse quota reset", exc.retry_seconds) from exc
                 except Exception:
                     return False
             return check_comparable(url, title, price, kind, sold_date)
@@ -552,6 +554,11 @@ def run_lead_research(db: sqlite3.Connection, job: sqlite3.Row, config: Config, 
                                               "shipping_minor": shipping_minor, "shipping_currency": shipping_currency},
                                      expires_at=row["auction_end_at"] or _later(1800))
         return {"status": status, "verdict": verdict, "verified_links": len(verified), "checked_comparables": len(market["comparables"])}
+    except ResearchDeferred as exc:
+        with transaction(db):
+            db.execute("UPDATE research_sweeps SET status='DEFERRED',finished_at=?,error=? WHERE id=?",
+                       (now(), str(exc)[:180], sweep_id))
+        raise
     except Exception as exc:
         with transaction(db):
             db.execute("UPDATE research_sweeps SET status='FAILED',finished_at=?,error=? WHERE id=?", (now(), f"{type(exc).__name__}: {str(exc)[:180]}", sweep_id))

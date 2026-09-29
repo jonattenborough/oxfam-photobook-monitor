@@ -24,7 +24,7 @@ from photobook_radar.research_sweeps import ResearchDeferred, run_lead_research,
 from photobook_radar.shopify_scheduler import parse_products, run_shopify_job, schedule_shopify
 from photobook_radar.sources.ebay import capture_browse_page, parse_browse_page
 from photobook_radar.sources.oxfam import capture_photography_page, parse_photography_page
-from photobook_radar.store import capture, capture_page, claim_job, decide, enqueue_job, enqueue_notification, finish_job, now, reserve_request, safe_url, settle_request
+from photobook_radar.store import QuotaDeferred, capture, capture_page, claim_job, decide, enqueue_job, enqueue_notification, finish_job, now, reserve_request, safe_url, settle_request
 from photobook_radar.telegram_photos import ingest_updates, run_photo_research
 from photobook_radar.triage import object_in_seller_title, research_candidate, run_triage, score
 from photobook_radar.verification import run_verify
@@ -139,6 +139,35 @@ class RadarPersistenceTests(unittest.TestCase):
         self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events WHERE stage='BARGAIN_FIND'").fetchone()[0], 1)
         self.assertEqual(review(3, sold_free_comps, decision="PASS")["verdict"], "POSSIBLE_GEM")
         self.assertEqual(self.db.execute("SELECT COUNT(*) FROM notification_events WHERE stage='BARGAIN_FIND'").fetchone()[0], 2)
+
+    def test_research_waits_for_ebay_comparable_quota_instead_of_rejecting(self):
+        config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True,
+                        research_provider="codex_cli", research_recurring_enabled=True)
+        with transaction(self.db):
+            listing_id = capture(self.db, {"key": "ebay:123456789012", "title": "Danny Lyon The Bikeriders first printing 1968",
+                                           "price_gbp": "20", "url": "https://www.ebay.co.uk/itm/123456789012"},
+                                 source_id="ebay", origin_key="quota-research")
+            observation = self.db.execute("SELECT current_observation_id FROM listings WHERE id=?", (listing_id,)).fetchone()[0]
+            enqueue_job(self.db, "research:quota", "RESEARCH_LEAD", listing_id=listing_id,
+                        payload={"observation_id": observation})
+            self.db.execute("INSERT INTO live_checks(listing_id,observation_id,provider,checked_at,availability,price_minor,currency,result_json) VALUES(?,?,?,?,?,?,?,?)",
+                            (listing_id, observation, "ebay_browse", now(), "LIVE", 2000, "GBP", "{}"))
+        result = {"decision": "POSSIBLE_GEM", "actual_book": True, "collector_fit": True, "edition_supported": True,
+                  "context": "Danny Lyon's documentary book is a key work.",
+                  "opportunity_reason": "The identified printing is well below current offers.",
+                  "edition_note": "First printing identified.", "risk": "Check condition.", "source_urls": [],
+                  "market_comparables": [{"url": "https://www.ebay.co.uk/itm/200000000001", "kind": "ASKING",
+                                          "price_gbp": 220, "sold_date": "", "same_edition": True,
+                                          "condition_no_better": True, "note": "Matching copy"}]}
+        client = MagicMock()
+        client.get_item_by_legacy_id.side_effect = QuotaDeferred("Shared API reserve protected",
+            (datetime.now(timezone.utc) + timedelta(minutes=5)).isoformat(timespec="seconds").replace("+00:00", "Z"))
+        with patch("photobook_radar.ebay_gateway.thread_client", return_value=client):
+            with self.assertRaises(ResearchDeferred):
+                run_lead_research(self.db, claim_job(self.db, "quota-test", kinds=("RESEARCH_LEAD",)),
+                                  config, provider=lambda *_: result)
+        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM reviews WHERE listing_id=?", (listing_id,)).fetchone()[0], 0)
+        self.assertEqual(self.db.execute("SELECT status FROM research_sweeps ORDER BY id DESC LIMIT 1").fetchone()[0], "DEFERRED")
 
     def test_possible_collection_buy_uses_two_independent_asking_prices(self):
         config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True,
@@ -893,6 +922,23 @@ class RadarPersistenceTests(unittest.TestCase):
                 reserve_request(other, **opts)
         finally:
             other.close()
+
+    def test_quota_reserve_waits_until_reset_without_using_a_job_attempt(self):
+        from photobook_radar.worker import _defer_quota_job
+        reset = (datetime.now(timezone.utc) + timedelta(seconds=60)).isoformat(timespec="seconds").replace("+00:00", "Z")
+        opts = dict(bucket="browse", window_start="2026-09-28T00:00:00Z", reset_at=reset,
+                    provider_limit=2, reserve=1, lane_cap=None, route_id="private", reason="search")
+        reserve_request(self.db, **opts)
+        with self.assertRaises(QuotaDeferred) as raised:
+            reserve_request(self.db, **opts)
+        self.assertGreaterEqual(raised.exception.retry_seconds, 30)
+        with transaction(self.db):
+            enqueue_job(self.db, "quota-wait", "SCAN_EBAY_PRIVATE")
+        job = claim_job(self.db, "quota-test", kinds=("SCAN_EBAY_PRIVATE",))
+        _defer_quota_job(self.db, job["id"], job["lease_token"], raised.exception)
+        saved = self.db.execute("SELECT status,attempts,due_at FROM jobs WHERE id=?", (job["id"],)).fetchone()
+        self.assertEqual((saved["status"], saved["attempts"]), ("PENDING", 0))
+        self.assertGreater(saved["due_at"], reset)
 
     def test_endgame_cap_is_shared_across_its_routes(self):
         opts = dict(bucket="browse", window_start="2026-09-28T00:00:00Z", reset_at="2099-09-29T00:00:00Z", provider_limit=5000, reserve=650, lane_cap=1, reason="search")
