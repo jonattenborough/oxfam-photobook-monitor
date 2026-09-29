@@ -260,6 +260,15 @@ def enqueue_notification(db: sqlite3.Connection, *, listing_id: int, stage: str,
     return cursor.rowcount == 1
 
 
+class QuotaDeferred(RuntimeError):
+    """A metered request can run after the provider's current window resets."""
+
+    def __init__(self, message: str, reset_at: str):
+        super().__init__(message)
+        reset = datetime.fromisoformat(reset_at.replace("Z", "+00:00"))
+        self.retry_seconds = max(30, int((reset - datetime.now(timezone.utc)).total_seconds()) + 15)
+
+
 def reserve_request(db: sqlite3.Connection, *, bucket: str, window_start: str, reset_at: str, provider_limit: int, reserve: int, lane_cap: int | None, route_id: str, reason: str, provider_remaining: int | None = None) -> int:
     """Reserve immediately before one physical attempt; a crash leaves uncertainty."""
     if not stamp(reset_at) or not stamp(window_start) or stamp(reset_at) <= now():
@@ -279,14 +288,14 @@ def reserve_request(db: sqlite3.Connection, *, bucket: str, window_start: str, r
         # to our local usage. Decrement it at reservation time, including for
         # attempts whose response is lost or whose worker crashes.
         if used + 1 > min(row["provider_limit"], provider_limit) - reserve or (remaining is not None and remaining - 1 < reserve):
-            raise RuntimeError("Shared API reserve protected")
+            raise QuotaDeferred("Shared API reserve protected", reset_at)
         if lane_cap is not None:
             if route_id.startswith(("endgame", "ebay-endgame:")):
                 lane_used = db.execute("SELECT COUNT(*) FROM api_requests WHERE window_id=? AND (route_id LIKE 'endgame%' OR route_id LIKE 'ebay-endgame:%')", (row["id"],)).fetchone()[0]
             else:
                 lane_used = db.execute("SELECT COUNT(*) FROM api_requests WHERE window_id=? AND route_id=?", (row["id"], route_id)).fetchone()[0]
             if lane_used + 1 > lane_cap:
-                raise RuntimeError("Route API cap reached")
+                raise QuotaDeferred("Route API cap reached", reset_at)
         db.execute("UPDATE api_windows SET reserved=reserved+1,provider_remaining=? WHERE id=?", (remaining - 1 if remaining is not None else None, row["id"]))
         request = db.execute("INSERT INTO api_requests(window_id,route_id,reason,reserved_at,status) VALUES(?,?,?,?,?)", (row["id"], route_id, reason, now(), "RESERVED"))
         return int(request.lastrowid)
