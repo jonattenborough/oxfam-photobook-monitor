@@ -543,6 +543,23 @@ class RadarPersistenceTests(unittest.TestCase):
             "SELECT status FROM jobs WHERE kind='RESEARCH_LEAD' AND listing_id=? ORDER BY id", (listing_id,))]
         self.assertEqual(states, ["CANCELLED", "PENDING"])
 
+    def test_triage_does_not_drop_lead_when_research_queue_is_busy(self):
+        config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True,
+                        research_provider="codex_cli", research_recurring_enabled=True)
+        with transaction(self.db):
+            for index in range(120):
+                enqueue_job(self.db, f"busy-research:{index}", "RESEARCH_LEAD")
+            listing_id = capture(self.db, {"key": "ebay:123456789012", "title": "Danny Lyon The Bikeriders",
+                                           "price_gbp": "20", "url": "https://www.ebay.co.uk/itm/123456789012"},
+                                 source_id="ebay", origin_key="busy-queue")
+            observation = self.db.execute("SELECT current_observation_id FROM listings WHERE id=?", (listing_id,)).fetchone()[0]
+            enqueue_job(self.db, "triage:busy-queue", "TRIAGE", listing_id=listing_id,
+                        payload={"observation_id": observation})
+        run_triage(self.db, claim_job(self.db, "test", kinds=("TRIAGE",)), config)
+        queued = self.db.execute("SELECT COUNT(*) FROM jobs WHERE kind='RESEARCH_LEAD' AND listing_id=? AND status='PENDING'",
+                                 (listing_id,)).fetchone()[0]
+        self.assertEqual(queued, 1)
+
     def test_unproven_gem_stays_off_telegram(self):
         config = Config(data_dir=Path(self.folder.name), mode="production", allow_marketplace_network=True,
                         allow_real_notifications=True, notification_enabled=True,
