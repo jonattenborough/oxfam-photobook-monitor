@@ -102,6 +102,7 @@ class MeteredEbayBrowseClient(EbayBrowseClient):
             provider_limit=min(self.config.ebay_daily_limit, window.limit), reserve=self.config.ebay_reserve,
             lane_cap=self.config.ebay_endgame_cap if self.route_id.startswith(("endgame", "ebay-endgame:")) else None,
             route_id=self.route_id, reason=label, provider_remaining=window.remaining,
+            provider_measured_at=window.measured_at,
         )
 
     def _json_request(self, request: urllib.request.Request, label: str) -> dict[str, Any]:
