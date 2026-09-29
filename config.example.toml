@@ -8,6 +8,7 @@ allow_github_mutations = false
 
 [policy]
 max_recommended_item_gbp = "200.00"
+# Legacy rollback settings; collector-editorial-v3 does not use these as alert gates.
 min_net_profit_gbp = "50.00"
 min_discount_pct = 40
 collector_min_discount_pct = 20
