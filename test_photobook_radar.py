@@ -1204,6 +1204,41 @@ class RadarPersistenceTests(unittest.TestCase):
         self.assertEqual(ingest_updates(self.db, [update], "123"), 0)
         self.assertEqual(self.db.execute("SELECT COUNT(*) FROM jobs WHERE kind='PHOTO_REVIEW'").fetchone()[0], 0)
 
+    def test_photo_reply_uses_corrected_collector_review(self):
+        config = Config(data_dir=Path(self.folder.name), mode="production", allow_real_notifications=True,
+                        notification_enabled=True, research_provider="codex_cli", research_recurring_enabled=True)
+        with transaction(self.db):
+            listing_id = capture(self.db, {"key": "ebay:123456789012", "title": "The Bikeriders Danny Lyon",
+                                           "price_gbp": "20", "url": "https://www.ebay.co.uk/itm/123456789012"},
+                                 source_id="ebay", origin_key="corrected-photo", imported=False)
+            observation = self.db.execute("SELECT current_observation_id FROM listings WHERE id=?", (listing_id,)).fetchone()[0]
+            original = self.db.execute("INSERT INTO reviews(listing_id,observation_id,policy_hash,status,result_json) VALUES(?,?,?,?,?)",
+                                       (listing_id, observation, LEAD_POLICY, "DONE", '{"risk":"old inflated price"}'))
+            enqueue_notification(self.db, listing_id=listing_id, stage="BARGAIN_FIND", material_version="initial",
+                                 channel="telegram", payload={"review_id": original.lastrowid})
+            self.db.execute("UPDATE notification_events SET status='PROVIDER_ACCEPTED',provider_request='42'")
+            self.db.execute("INSERT INTO reviews(listing_id,observation_id,policy_hash,status,result_json) VALUES(?,?,?,?,?)",
+                            (listing_id, observation, LEAD_POLICY, "NEEDS_EVIDENCE", '{"risk":"cheaper comparable found"}'))
+        update = {"update_id": 91, "message": {"chat": {"id": 123, "type": "private"}, "message_id": 99,
+                                               "reply_to_message": {"message_id": 42},
+                                               "photo": [{"file_id": "image", "file_size": 400}]}}
+        self.assertEqual(ingest_updates(self.db, [update], "123"), 1)
+        job = claim_job(self.db, "photo-test", kinds=("PHOTO_REVIEW",))
+        def download(_config, _file_id, folder):
+            path = folder / "photo.jpg"
+            path.write_bytes(b"\xff\xd8\xff\xd9")
+            return path
+        prompts = []
+        def research(_config, prompt, _path):
+            prompts.append(prompt)
+            return {"assessment": "UNCLEAR", "visible": "Cover shown.",
+                    "edition_condition": "Copyright page absent.",
+                    "collector_impact": "Cheaper comparable remains relevant.",
+                    "next_check": "Verify the printing."}
+        run_photo_research(self.db, job, config, provider=research, downloader=download)
+        self.assertIn("cheaper comparable found", prompts[0])
+        self.assertNotIn("old inflated price", prompts[0])
+
     def test_private_photo_reply_to_earlier_quick_lead_is_reviewed(self):
         config = Config(data_dir=Path(self.folder.name), mode="production", allow_real_notifications=True,
                         notification_enabled=True, research_provider="codex_cli", research_recurring_enabled=True)
